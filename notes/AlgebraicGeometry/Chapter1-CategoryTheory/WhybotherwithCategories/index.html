@@ -1,0 +1,1047 @@
+<html lang="en-us"><head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Why bother with Categories?
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="/public/css/mystyle.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="/public/css/theorem.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+  <link rel="stylesheet" href="/public/css/color.css">
+  <link rel="stylesheet" href="/public/css/colorbox.css">
+
+
+  <!-- JS -->
+  <script type="text/x-mathjax-config;executed=true">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      displayMath: [ ['$$','$$'] ],
+      processEscapes: true,
+    }
+  });
+  </script>
+  <script type="text/javascript" async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+  <!-- MathJax local
+  <script type="text/javascript" async src="/js/MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <!--
+  <script type="text/javascript" src="/js/turn/turn.min.js"></script>
+  -->
+
+  <!-- colorbox -->
+  <script src="/js/jquery.colorbox-min.js"></script>
+  <script>
+    $(document).ready(function(){
+			$(".cooking").colorbox({rel:'cooking'});
+  	  $(".coffee").colorbox({rel:'coffee'});
+    });
+  </script>
+
+  <!-- Add mermaid -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/harvardicon.png">
+  <link rel="shortcut icon" href="/public/harvardicon.png">
+
+  <!-- tooltip -->
+  <style>
+  .tooltip {
+      position: relative;
+      display: inline-block;
+  }
+
+  .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 300px;
+      background-color: black;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 5px 0;
+
+      /* Position the tooltip */
+      position: absolute;
+      z-index: 1;
+      top: 20px;
+  }
+
+  .tooltip:hover .tooltiptext {
+      visibility: visible;
+  }
+  </style>
+
+<style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><style type="text/css">.mjx-chtml {display: inline-block; line-height: 0; text-indent: 0; text-align: left; text-transform: none; font-style: normal; font-weight: normal; font-size: 100%; font-size-adjust: none; letter-spacing: normal; word-wrap: normal; word-spacing: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; margin: 0; padding: 1px 0}
+.MJXc-display {display: block; text-align: center; margin: 1em 0; padding: 0}
+.mjx-chtml[tabindex]:focus, body :focus .mjx-chtml[tabindex] {display: inline-table}
+.mjx-full-width {text-align: center; display: table-cell!important; width: 10000em}
+.mjx-math {display: inline-block; border-collapse: separate; border-spacing: 0}
+.mjx-math * {display: inline-block; -webkit-box-sizing: content-box!important; -moz-box-sizing: content-box!important; box-sizing: content-box!important; text-align: left}
+.mjx-numerator {display: block; text-align: center}
+.mjx-denominator {display: block; text-align: center}
+.MJXc-stacked {height: 0; position: relative}
+.MJXc-stacked > * {position: absolute}
+.MJXc-bevelled > * {display: inline-block}
+.mjx-stack {display: inline-block}
+.mjx-op {display: block}
+.mjx-under {display: table-cell}
+.mjx-over {display: block}
+.mjx-over > * {padding-left: 0px!important; padding-right: 0px!important}
+.mjx-under > * {padding-left: 0px!important; padding-right: 0px!important}
+.mjx-stack > .mjx-sup {display: block}
+.mjx-stack > .mjx-sub {display: block}
+.mjx-prestack > .mjx-presup {display: block}
+.mjx-prestack > .mjx-presub {display: block}
+.mjx-delim-h > .mjx-char {display: inline-block}
+.mjx-surd {vertical-align: top}
+.mjx-mphantom * {visibility: hidden}
+.mjx-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 2px 3px; font-style: normal; font-size: 90%}
+.mjx-annotation-xml {line-height: normal}
+.mjx-menclose > svg {fill: none; stroke: currentColor}
+.mjx-mtr {display: table-row}
+.mjx-mlabeledtr {display: table-row}
+.mjx-mtd {display: table-cell; text-align: center}
+.mjx-label {display: table-row}
+.mjx-box {display: inline-block}
+.mjx-block {display: block}
+.mjx-span {display: inline}
+.mjx-char {display: block; white-space: pre}
+.mjx-itable {display: inline-table; width: auto}
+.mjx-row {display: table-row}
+.mjx-cell {display: table-cell}
+.mjx-table {display: table; width: 100%}
+.mjx-line {display: block; height: 0}
+.mjx-strut {width: 0; padding-top: 1em}
+.mjx-vsize {width: 0}
+.MJXc-space1 {margin-left: .167em}
+.MJXc-space2 {margin-left: .222em}
+.MJXc-space3 {margin-left: .278em}
+.mjx-chartest {display: block; visibility: hidden; position: absolute; top: 0; line-height: normal; font-size: 500%}
+.mjx-chartest .mjx-char {display: inline}
+.mjx-chartest .mjx-box {padding-top: 1000px}
+.MJXc-processing {visibility: hidden; position: fixed; width: 0; height: 0; overflow: hidden}
+.MJXc-processed {display: none}
+.mjx-test {display: block; font-style: normal; font-weight: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow: hidden; height: 1px}
+.mjx-ex-box-test {position: absolute; width: 1px; height: 60ex}
+.mjx-line-box-test {display: table!important}
+.mjx-line-box-test span {display: table-cell!important; width: 10000em!important; min-width: 0; max-width: none; padding: 0; border: 0; margin: 0}
+#MathJax_CHTML_Tooltip {background-color: InfoBackground; color: InfoText; border: 1px solid black; box-shadow: 2px 2px 5px #AAAAAA; -webkit-box-shadow: 2px 2px 5px #AAAAAA; -moz-box-shadow: 2px 2px 5px #AAAAAA; -khtml-box-shadow: 2px 2px 5px #AAAAAA; padding: 3px 4px; z-index: 401; position: absolute; left: 0; top: 0; width: auto; height: auto; display: none}
+.mjx-chtml .mjx-noError {line-height: 1.2; vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+.MJXc-TeX-unknown-R {font-family: STIXGeneral,'Cambria Math','Arial Unicode MS',serif; font-style: normal; font-weight: normal}
+.MJXc-TeX-unknown-I {font-family: STIXGeneral,'Cambria Math','Arial Unicode MS',serif; font-style: italic; font-weight: normal}
+.MJXc-TeX-unknown-B {font-family: STIXGeneral,'Cambria Math','Arial Unicode MS',serif; font-style: normal; font-weight: bold}
+.MJXc-TeX-unknown-BI {font-family: STIXGeneral,'Cambria Math','Arial Unicode MS',serif; font-style: italic; font-weight: bold}
+.MJXc-TeX-ams-R {font-family: MJXc-TeX-ams-R,MJXc-TeX-ams-Rw}
+.MJXc-TeX-cal-B {font-family: MJXc-TeX-cal-B,MJXc-TeX-cal-Bx,MJXc-TeX-cal-Bw}
+.MJXc-TeX-frak-R {font-family: MJXc-TeX-frak-R,MJXc-TeX-frak-Rw}
+.MJXc-TeX-frak-B {font-family: MJXc-TeX-frak-B,MJXc-TeX-frak-Bx,MJXc-TeX-frak-Bw}
+.MJXc-TeX-math-BI {font-family: MJXc-TeX-math-BI,MJXc-TeX-math-BIx,MJXc-TeX-math-BIw}
+.MJXc-TeX-sans-R {font-family: MJXc-TeX-sans-R,MJXc-TeX-sans-Rw}
+.MJXc-TeX-sans-B {font-family: MJXc-TeX-sans-B,MJXc-TeX-sans-Bx,MJXc-TeX-sans-Bw}
+.MJXc-TeX-sans-I {font-family: MJXc-TeX-sans-I,MJXc-TeX-sans-Ix,MJXc-TeX-sans-Iw}
+.MJXc-TeX-script-R {font-family: MJXc-TeX-script-R,MJXc-TeX-script-Rw}
+.MJXc-TeX-type-R {font-family: MJXc-TeX-type-R,MJXc-TeX-type-Rw}
+.MJXc-TeX-cal-R {font-family: MJXc-TeX-cal-R,MJXc-TeX-cal-Rw}
+.MJXc-TeX-main-B {font-family: MJXc-TeX-main-B,MJXc-TeX-main-Bx,MJXc-TeX-main-Bw}
+.MJXc-TeX-main-I {font-family: MJXc-TeX-main-I,MJXc-TeX-main-Ix,MJXc-TeX-main-Iw}
+.MJXc-TeX-main-R {font-family: MJXc-TeX-main-R,MJXc-TeX-main-Rw}
+.MJXc-TeX-math-I {font-family: MJXc-TeX-math-I,MJXc-TeX-math-Ix,MJXc-TeX-math-Iw}
+.MJXc-TeX-size1-R {font-family: MJXc-TeX-size1-R,MJXc-TeX-size1-Rw}
+.MJXc-TeX-size2-R {font-family: MJXc-TeX-size2-R,MJXc-TeX-size2-Rw}
+.MJXc-TeX-size3-R {font-family: MJXc-TeX-size3-R,MJXc-TeX-size3-Rw}
+.MJXc-TeX-size4-R {font-family: MJXc-TeX-size4-R,MJXc-TeX-size4-Rw}
+@font-face {font-family: MJXc-TeX-ams-R; src: local('MathJax_AMS'), local('MathJax_AMS-Regular')}
+@font-face {font-family: MJXc-TeX-ams-Rw; src /*1*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/eot/MathJax_AMS-Regular.eot'); src /*2*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_AMS-Regular.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_AMS-Regular.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-cal-B; src: local('MathJax_Caligraphic Bold'), local('MathJax_Caligraphic-Bold')}
+@font-face {font-family: MJXc-TeX-cal-Bx; src: local('MathJax_Caligraphic'); font-weight: bold}
+@font-face {font-family: MJXc-TeX-cal-Bw; src /*1*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/eot/MathJax_Caligraphic-Bold.eot'); src /*2*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Caligraphic-Bold.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Caligraphic-Bold.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-frak-R; src: local('MathJax_Fraktur'), local('MathJax_Fraktur-Regular')}
+@font-face {font-family: MJXc-TeX-frak-Rw; src /*1*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/eot/MathJax_Fraktur-Regular.eot'); src /*2*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Fraktur-Regular.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Fraktur-Regular.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-frak-B; src: local('MathJax_Fraktur Bold'), local('MathJax_Fraktur-Bold')}
+@font-face {font-family: MJXc-TeX-frak-Bx; src: local('MathJax_Fraktur'); font-weight: bold}
+@font-face {font-family: MJXc-TeX-frak-Bw; src /*1*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/eot/MathJax_Fraktur-Bold.eot'); src /*2*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Fraktur-Bold.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Fraktur-Bold.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-math-BI; src: local('MathJax_Math BoldItalic'), local('MathJax_Math-BoldItalic')}
+@font-face {font-family: MJXc-TeX-math-BIx; src: local('MathJax_Math'); font-weight: bold; font-style: italic}
+@font-face {font-family: MJXc-TeX-math-BIw; src /*1*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/eot/MathJax_Math-BoldItalic.eot'); src /*2*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Math-BoldItalic.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Math-BoldItalic.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-sans-R; src: local('MathJax_SansSerif'), local('MathJax_SansSerif-Regular')}
+@font-face {font-family: MJXc-TeX-sans-Rw; src /*1*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/eot/MathJax_SansSerif-Regular.eot'); src /*2*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_SansSerif-Regular.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_SansSerif-Regular.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-sans-B; src: local('MathJax_SansSerif Bold'), local('MathJax_SansSerif-Bold')}
+@font-face {font-family: MJXc-TeX-sans-Bx; src: local('MathJax_SansSerif'); font-weight: bold}
+@font-face {font-family: MJXc-TeX-sans-Bw; src /*1*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/eot/MathJax_SansSerif-Bold.eot'); src /*2*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_SansSerif-Bold.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_SansSerif-Bold.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-sans-I; src: local('MathJax_SansSerif Italic'), local('MathJax_SansSerif-Italic')}
+@font-face {font-family: MJXc-TeX-sans-Ix; src: local('MathJax_SansSerif'); font-style: italic}
+@font-face {font-family: MJXc-TeX-sans-Iw; src /*1*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/eot/MathJax_SansSerif-Italic.eot'); src /*2*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_SansSerif-Italic.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_SansSerif-Italic.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-script-R; src: local('MathJax_Script'), local('MathJax_Script-Regular')}
+@font-face {font-family: MJXc-TeX-script-Rw; src /*1*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/eot/MathJax_Script-Regular.eot'); src /*2*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Script-Regular.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Script-Regular.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-type-R; src: local('MathJax_Typewriter'), local('MathJax_Typewriter-Regular')}
+@font-face {font-family: MJXc-TeX-type-Rw; src /*1*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/eot/MathJax_Typewriter-Regular.eot'); src /*2*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Typewriter-Regular.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Typewriter-Regular.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-cal-R; src: local('MathJax_Caligraphic'), local('MathJax_Caligraphic-Regular')}
+@font-face {font-family: MJXc-TeX-cal-Rw; src /*1*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/eot/MathJax_Caligraphic-Regular.eot'); src /*2*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Caligraphic-Regular.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Caligraphic-Regular.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-main-B; src: local('MathJax_Main Bold'), local('MathJax_Main-Bold')}
+@font-face {font-family: MJXc-TeX-main-Bx; src: local('MathJax_Main'); font-weight: bold}
+@font-face {font-family: MJXc-TeX-main-Bw; src /*1*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/eot/MathJax_Main-Bold.eot'); src /*2*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Main-Bold.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Main-Bold.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-main-I; src: local('MathJax_Main Italic'), local('MathJax_Main-Italic')}
+@font-face {font-family: MJXc-TeX-main-Ix; src: local('MathJax_Main'); font-style: italic}
+@font-face {font-family: MJXc-TeX-main-Iw; src /*1*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/eot/MathJax_Main-Italic.eot'); src /*2*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Main-Italic.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Main-Italic.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-main-R; src: local('MathJax_Main'), local('MathJax_Main-Regular')}
+@font-face {font-family: MJXc-TeX-main-Rw; src /*1*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/eot/MathJax_Main-Regular.eot'); src /*2*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Main-Regular.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-math-I; src: local('MathJax_Math Italic'), local('MathJax_Math-Italic')}
+@font-face {font-family: MJXc-TeX-math-Ix; src: local('MathJax_Math'); font-style: italic}
+@font-face {font-family: MJXc-TeX-math-Iw; src /*1*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/eot/MathJax_Math-Italic.eot'); src /*2*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Math-Italic.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Math-Italic.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-size1-R; src: local('MathJax_Size1'), local('MathJax_Size1-Regular')}
+@font-face {font-family: MJXc-TeX-size1-Rw; src /*1*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/eot/MathJax_Size1-Regular.eot'); src /*2*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Size1-Regular.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Size1-Regular.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-size2-R; src: local('MathJax_Size2'), local('MathJax_Size2-Regular')}
+@font-face {font-family: MJXc-TeX-size2-Rw; src /*1*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/eot/MathJax_Size2-Regular.eot'); src /*2*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Size2-Regular.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Size2-Regular.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-size3-R; src: local('MathJax_Size3'), local('MathJax_Size3-Regular')}
+@font-face {font-family: MJXc-TeX-size3-Rw; src /*1*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/eot/MathJax_Size3-Regular.eot'); src /*2*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Size3-Regular.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Size3-Regular.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-size4-R; src: local('MathJax_Size4'), local('MathJax_Size4-Regular')}
+@font-face {font-family: MJXc-TeX-size4-Rw; src /*1*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/eot/MathJax_Size4-Regular.eot'); src /*2*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Size4-Regular.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Size4-Regular.otf') format('opentype')}
+</style></head>
+
+
+  <body class="theme-base-0h"><div id="MathJax_Message" style="display: none;"></div>
+
+    <div class="sidebar w3-hide-small" id="mySidebar">
+  <div class="container">
+    <button class="w3-button sidebar w3-text-white w3-hide-medium w3-hide-large w3-right" onclick="sidebar_close()">☰</button>
+    <div class="sidebar-about">
+      <div class="w3-text-white w3-center" style="font-size:20px;">
+         Rushabh Mehta
+      </div>
+      
+      <p class="lead" style="font-size:16px;font-style:italic;">Do not practice art, but get at the very heart of it; this it deserves, for only art and science raise men to the God-head.<br> - Ludwig Van Beethoven</p>
+      
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">About Me</a>
+      <a class="sidebar-nav-item" href="/research/">Research</a>
+      <!--<a class="sidebar-nav-item" href="/book/">Book</a>-->
+      <a class="sidebar-nav-item" href="/blog/">Blog</a>
+      <!--<a class="sidebar-nav-item" href="/coffee/">Coffee</a>-->
+      <a class="sidebar-nav-item" href="/notes/">Notes</a>
+      <a class="sidebar-nav-item" href="/resources/">Resources</a>
+      <!--<a class="sidebar-nav-item" href="/conjecture/">Conjectures</a>-->
+    </nav>
+  </div>
+
+  <div class="w3-bottom">
+    <p style="font-size:12px">© 2021 Chi-Ning Chou.</p>
+  </div>
+</div>
+
+<div class="sidebar w3-hide-medium w3-hide-large w3-right" id="mySmallSidebar">
+  <button class="w3-button sidebar w3-text-white" onclick="sidebar_open()">☰</button>
+</div>
+
+
+    <div class="content container">
+      <div style="display:none">
+<span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-1-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mtext mathcolor=&quot;red&quot;>\ie</mtext></mrow><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mtext mathcolor=&quot;red&quot;>\cf</mtext></mrow></math>" role="presentation" style="font-size: 123%; position: relative;"><span id="MJXc-Node-1" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-2" class="mjx-mrow"><span id="MJXc-Node-3" class="mjx-texatom"><span id="MJXc-Node-4" class="mjx-mrow"><span id="MJXc-Node-5" class="mjx-mtext" style="color: red;"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.491em; padding-bottom: 0.599em;">\ie</span></span></span></span><span id="MJXc-Node-6" class="mjx-texatom"><span id="MJXc-Node-7" class="mjx-mrow"><span id="MJXc-Node-8" class="mjx-mtext" style="color: red;"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.491em; padding-bottom: 0.599em;">\cf</span></span></span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow class="MJX-TeXAtom-ORD"><mtext mathcolor="red">\ie</mtext></mrow><mrow class="MJX-TeXAtom-ORD"><mtext mathcolor="red">\cf</mtext></mrow></math></span></span><script type="math/tex" id="MathJax-Element-1">
+    \newcommand{\undefined}{}
+    \newcommand{\hfill}{}
+    \newcommand{\qedhere}{\square}
+    \newcommand{\qed}{\square}
+    \newcommand{\ensuremath}[1]{#1}
+    \newcommand{\bit}{\{0,1\}}
+    \newcommand{\Bit}{\{-1,1\}}
+    \newcommand{\Stab}{\mathbf{Stab}}
+    \newcommand{\NS}{\mathbf{NS}}
+    \newcommand{\ba}{\mathbf{a}}
+    \newcommand{\bc}{\mathbf{c}}
+    \newcommand{\bd}{\mathbf{d}}
+    \newcommand{\be}{\mathbf{e}}
+    \newcommand{\bh}{\mathbf{h}}
+    \newcommand{\br}{\mathbf{r}}
+    \newcommand{\bs}{\mathbf{s}}
+    \newcommand{\bx}{\mathbf{x}}
+    \newcommand{\by}{\mathbf{y}}
+    \newcommand{\bz}{\mathbf{z}}
+    \newcommand{\Var}{\mathbf{Var}}
+    \newcommand{\dist}{\text{dist}}
+    \newcommand{\norm}[1]{\\|#1\\|}
+    \newcommand{\etal}
+		\newcommand{\ie} 
+		\newcommand{\eg} 
+		\newcommand{\cf}
+    \newcommand{\rank}{\text{rank}}
+    \newcommand{\tr}{\text{tr}}
+    \newcommand{\mor}{\text{Mor}}
+    \newcommand{\hom}{\text{Hom}}
+    \newcommand{\id}{\text{id}}
+    \newcommand{\obj}{\text{obj}}
+    \newcommand{\pr}{\text{pr}}
+    \newcommand{\ker}{\text{ker}}
+    \newcommand{\coker}{\text{coker}}
+    \newcommand{\im}{\text{im}}
+    \newcommand{\vol}{\text{vol}}
+    \newcommand{\disc}{\text{disc}}
+
+    \newcommand{\bbA}{\mathbb A}
+    \newcommand{\bbB}{\mathbb B}
+    \newcommand{\bbC}{\mathbb C}
+    \newcommand{\bbD}{\mathbb D}
+    \newcommand{\bbE}{\mathbb E}
+    \newcommand{\bbF}{\mathbb F}
+    \newcommand{\bbG}{\mathbb G}
+    \newcommand{\bbH}{\mathbb H}
+    \newcommand{\bbI}{\mathbb I}
+    \newcommand{\bbJ}{\mathbb J}
+    \newcommand{\bbK}{\mathbb K}
+    \newcommand{\bbL}{\mathbb L}
+    \newcommand{\bbM}{\mathbb M}
+    \newcommand{\bbN}{\mathbb N}
+    \newcommand{\bbO}{\mathbb O}
+    \newcommand{\bbP}{\mathbb P}
+    \newcommand{\bbQ}{\mathbb Q}
+    \newcommand{\bbR}{\mathbb R}
+    \newcommand{\bbS}{\mathbb S}
+    \newcommand{\bbT}{\mathbb T}
+    \newcommand{\bbU}{\mathbb U}
+    \newcommand{\bbV}{\mathbb V}
+    \newcommand{\bbW}{\mathbb W}
+    \newcommand{\bbX}{\mathbb X}
+    \newcommand{\bbY}{\mathbb Y}
+    \newcommand{\bbZ}{\mathbb Z}
+
+    \newcommand{\sA}{\mathscr A}
+    \newcommand{\sB}{\mathscr B}
+    \newcommand{\sC}{\mathscr C}
+    \newcommand{\sD}{\mathscr D}
+    \newcommand{\sE}{\mathscr E}
+    \newcommand{\sF}{\mathscr F}
+    \newcommand{\sG}{\mathscr G}
+    \newcommand{\sH}{\mathscr H}
+    \newcommand{\sI}{\mathscr I}
+    \newcommand{\sJ}{\mathscr J}
+    \newcommand{\sK}{\mathscr K}
+    \newcommand{\sL}{\mathscr L}
+    \newcommand{\sM}{\mathscr M}
+    \newcommand{\sN}{\mathscr N}
+    \newcommand{\sO}{\mathscr O}
+    \newcommand{\sP}{\mathscr P}
+    \newcommand{\sQ}{\mathscr Q}
+    \newcommand{\sR}{\mathscr R}
+    \newcommand{\sS}{\mathscr S}
+    \newcommand{\sT}{\mathscr T}
+    \newcommand{\sU}{\mathscr U}
+    \newcommand{\sV}{\mathscr V}
+    \newcommand{\sW}{\mathscr W}
+    \newcommand{\sX}{\mathscr X}
+    \newcommand{\sY}{\mathscr Y}
+    \newcommand{\sZ}{\mathscr Z}
+
+    \newcommand{\sfA}{\mathsf A}
+    \newcommand{\sfB}{\mathsf B}
+    \newcommand{\sfC}{\mathsf C}
+    \newcommand{\sfD}{\mathsf D}
+    \newcommand{\sfE}{\mathsf E}
+    \newcommand{\sfF}{\mathsf F}
+    \newcommand{\sfG}{\mathsf G}
+    \newcommand{\sfH}{\mathsf H}
+    \newcommand{\sfI}{\mathsf I}
+    \newcommand{\sfJ}{\mathsf J}
+    \newcommand{\sfK}{\mathsf K}
+    \newcommand{\sfL}{\mathsf L}
+    \newcommand{\sfM}{\mathsf M}
+    \newcommand{\sfN}{\mathsf N}
+    \newcommand{\sfO}{\mathsf O}
+    \newcommand{\sfP}{\mathsf P}
+    \newcommand{\sfQ}{\mathsf Q}
+    \newcommand{\sfR}{\mathsf R}
+    \newcommand{\sfS}{\mathsf S}
+    \newcommand{\sfT}{\mathsf T}
+    \newcommand{\sfU}{\mathsf U}
+    \newcommand{\sfV}{\mathsf V}
+    \newcommand{\sfW}{\mathsf W}
+    \newcommand{\sfX}{\mathsf X}
+    \newcommand{\sfY}{\mathsf Y}
+    \newcommand{\sfZ}{\mathsf Z}
+
+    \newcommand{\cA}{\mathcal A}
+    \newcommand{\cB}{\mathcal B}
+    \newcommand{\cC}{\mathcal C}
+    \newcommand{\cD}{\mathcal D}
+    \newcommand{\cE}{\mathcal E}
+    \newcommand{\cF}{\mathcal F}
+    \newcommand{\cG}{\mathcal G}
+    \newcommand{\cH}{\mathcal H}
+    \newcommand{\cI}{\mathcal I}
+    \newcommand{\cJ}{\mathcal J}
+    \newcommand{\cK}{\mathcal K}
+    \newcommand{\cL}{\mathcal L}
+    \newcommand{\cM}{\mathcal M}
+    \newcommand{\cN}{\mathcal N}
+    \newcommand{\cO}{\mathcal O}
+    \newcommand{\cP}{\mathcal P}
+    \newcommand{\cQ}{\mathcal Q}
+    \newcommand{\cR}{\mathcal R}
+    \newcommand{\cS}{\mathcal S}
+    \newcommand{\cT}{\mathcal T}
+    \newcommand{\cU}{\mathcal U}
+    \newcommand{\cV}{\mathcal V}
+    \newcommand{\cW}{\mathcal W}
+    \newcommand{\cX}{\mathcal X}
+    \newcommand{\cY}{\mathcal Y}
+    \newcommand{\cZ}{\mathcal Z}
+
+    \newcommand{\bfA}{\mathbf A}
+    \newcommand{\bfB}{\mathbf B}
+    \newcommand{\bfC}{\mathbf C}
+    \newcommand{\bfD}{\mathbf D}
+    \newcommand{\bfE}{\mathbf E}
+    \newcommand{\bfF}{\mathbf F}
+    \newcommand{\bfG}{\mathbf G}
+    \newcommand{\bfH}{\mathbf H}
+    \newcommand{\bfI}{\mathbf I}
+    \newcommand{\bfJ}{\mathbf J}
+    \newcommand{\bfK}{\mathbf K}
+    \newcommand{\bfL}{\mathbf L}
+    \newcommand{\bfM}{\mathbf M}
+    \newcommand{\bfN}{\mathbf N}
+    \newcommand{\bfO}{\mathbf O}
+    \newcommand{\bfP}{\mathbf P}
+    \newcommand{\bfQ}{\mathbf Q}
+    \newcommand{\bfR}{\mathbf R}
+    \newcommand{\bfS}{\mathbf S}
+    \newcommand{\bfT}{\mathbf T}
+    \newcommand{\bfU}{\mathbf U}
+    \newcommand{\bfV}{\mathbf V}
+    \newcommand{\bfW}{\mathbf W}
+    \newcommand{\bfX}{\mathbf X}
+    \newcommand{\bfY}{\mathbf Y}
+    \newcommand{\bfZ}{\mathbf Z}
+
+    \newcommand{\rmA}{\mathfrak A}
+    \newcommand{\rmB}{\mathfrak B}
+    \newcommand{\rmC}{\mathfrak C}
+    \newcommand{\rmD}{\mathfrak D}
+    \newcommand{\rmE}{\mathfrak E}
+    \newcommand{\rmF}{\mathfrak F}
+    \newcommand{\rmG}{\mathfrak G}
+    \newcommand{\rmH}{\mathfrak H}
+    \newcommand{\rmI}{\mathfrak I}
+    \newcommand{\rmJ}{\mathfrak J}
+    \newcommand{\rmK}{\mathfrak K}
+    \newcommand{\rmL}{\mathfrak L}
+    \newcommand{\rmM}{\mathfrak M}
+    \newcommand{\rmN}{\mathfrak N}
+    \newcommand{\rmO}{\mathfrak O}
+    \newcommand{\rmP}{\mathfrak P}
+    \newcommand{\rmQ}{\mathfrak Q}
+    \newcommand{\rmR}{\mathfrak R}
+    \newcommand{\rmS}{\mathfrak S}
+    \newcommand{\rmT}{\mathfrak T}
+    \newcommand{\rmU}{\mathfrak U}
+    \newcommand{\rmV}{\mathfrak V}
+    \newcommand{\rmW}{\mathfrak W}
+    \newcommand{\rmX}{\mathfrak X}
+    \newcommand{\rmY}{\mathfrak Y}
+    \newcommand{\rmZ}{\mathfrak Z}
+
+
+    \newcommand{\bb}{\mathbf{b}}
+    \newcommand{\bv}{\mathbf{v}}
+    \newcommand{\bw}{\mathbf{w}}
+    \newcommand{\bx}{\mathbf{x}}
+    \newcommand{\by}{\mathbf{y}}
+    \newcommand{\bz}{\mathbf{z}}
+
+    \newcommand{\paren}[1]{( #1 )}
+    \newcommand{\Paren}[1]{\left( #1 \right)}
+    \newcommand{\bigparen}[1]{\bigl( #1 \bigr)}
+    \newcommand{\Bigparen}[1]{\Bigl( #1 \Bigr)}
+    \newcommand{\biggparen}[1]{\biggl( #1 \biggr)}
+    \newcommand{\Biggparen}[1]{\Biggl( #1 \Biggr)}
+    \newcommand{\abs}[1]{\lvert #1 \rvert}
+    \newcommand{\Abs}[1]{\left\lvert #1 \right\rvert}
+    \newcommand{\bigabs}[1]{\bigl\lvert #1 \bigr\rvert}
+    \newcommand{\Bigabs}[1]{\Bigl\lvert #1 \Bigr\rvert}
+    \newcommand{\biggabs}[1]{\biggl\lvert #1 \biggr\rvert}
+    \newcommand{\Biggabs}[1]{\Biggl\lvert #1 \Biggr\rvert}
+    \newcommand{\card}[1]{\left| #1 \right|}
+    \newcommand{\Card}[1]{\left\lvert #1 \right\rvert}
+    \newcommand{\bigcard}[1]{\bigl\lvert #1 \bigr\rvert}
+    \newcommand{\Bigcard}[1]{\Bigl\lvert #1 \Bigr\rvert}
+    \newcommand{\biggcard}[1]{\biggl\lvert #1 \biggr\rvert}
+    \newcommand{\Biggcard}[1]{\Biggl\lvert #1 \Biggr\rvert}
+    \newcommand{\norm}[1]{\lVert #1 \rVert}
+    \newcommand{\Norm}[1]{\left\lVert #1 \right\rVert}
+    \newcommand{\bignorm}[1]{\bigl\lVert #1 \bigr\rVert}
+    \newcommand{\Bignorm}[1]{\Bigl\lVert #1 \Bigr\rVert}
+    \newcommand{\biggnorm}[1]{\biggl\lVert #1 \biggr\rVert}
+    \newcommand{\Biggnorm}[1]{\Biggl\lVert #1 \Biggr\rVert}
+    \newcommand{\iprod}[1]{\langle #1 \rangle}
+    \newcommand{\Iprod}[1]{\left\langle #1 \right\rangle}
+    \newcommand{\bigiprod}[1]{\bigl\langle #1 \bigr\rangle}
+    \newcommand{\Bigiprod}[1]{\Bigl\langle #1 \Bigr\rangle}
+    \newcommand{\biggiprod}[1]{\biggl\langle #1 \biggr\rangle}
+    \newcommand{\Biggiprod}[1]{\Biggl\langle #1 \Biggr\rangle}
+    \newcommand{\set}[1]{\lbrace #1 \rbrace}
+    \newcommand{\Set}[1]{\left\lbrace #1 \right\rbrace}
+    \newcommand{\bigset}[1]{\bigl\lbrace #1 \bigr\rbrace}
+    \newcommand{\Bigset}[1]{\Bigl\lbrace #1 \Bigr\rbrace}
+    \newcommand{\biggset}[1]{\biggl\lbrace #1 \biggr\rbrace}
+    \newcommand{\Biggset}[1]{\Biggl\lbrace #1 \Biggr\rbrace}
+    \newcommand{\bracket}[1]{\lbrack #1 \rbrack}
+    \newcommand{\Bracket}[1]{\left\lbrack #1 \right\rbrack}
+    \newcommand{\bigbracket}[1]{\bigl\lbrack #1 \bigr\rbrack}
+    \newcommand{\Bigbracket}[1]{\Bigl\lbrack #1 \Bigr\rbrack}
+    \newcommand{\biggbracket}[1]{\biggl\lbrack #1 \biggr\rbrack}
+    \newcommand{\Biggbracket}[1]{\Biggl\lbrack #1 \Biggr\rbrack}
+    \newcommand{\ucorner}[1]{\ulcorner #1 \urcorner}
+    \newcommand{\Ucorner}[1]{\left\ulcorner #1 \right\urcorner}
+    \newcommand{\bigucorner}[1]{\bigl\ulcorner #1 \bigr\urcorner}
+    \newcommand{\Bigucorner}[1]{\Bigl\ulcorner #1 \Bigr\urcorner}
+    \newcommand{\biggucorner}[1]{\biggl\ulcorner #1 \biggr\urcorner}
+    \newcommand{\Biggucorner}[1]{\Biggl\ulcorner #1 \Biggr\urcorner}
+    \newcommand{\ceil}[1]{\lceil #1 \rceil}
+    \newcommand{\Ceil}[1]{\left\lceil #1 \right\rceil}
+    \newcommand{\bigceil}[1]{\bigl\lceil #1 \bigr\rceil}
+    \newcommand{\Bigceil}[1]{\Bigl\lceil #1 \Bigr\rceil}
+    \newcommand{\biggceil}[1]{\biggl\lceil #1 \biggr\rceil}
+    \newcommand{\Biggceil}[1]{\Biggl\lceil #1 \Biggr\rceil}
+    \newcommand{\floor}[1]{\lfloor #1 \rfloor}
+    \newcommand{\Floor}[1]{\left\lfloor #1 \right\rfloor}
+    \newcommand{\bigfloor}[1]{\bigl\lfloor #1 \bigr\rfloor}
+    \newcommand{\Bigfloor}[1]{\Bigl\lfloor #1 \Bigr\rfloor}
+    \newcommand{\biggfloor}[1]{\biggl\lfloor #1 \biggr\rfloor}
+    \newcommand{\Biggfloor}[1]{\Biggl\lfloor #1 \Biggr\rfloor}
+    \newcommand{\lcorner}[1]{\llcorner #1 \lrcorner}
+    \newcommand{\Lcorner}[1]{\left\llcorner #1 \right\lrcorner}
+    \newcommand{\biglcorner}[1]{\bigl\llcorner #1 \bigr\lrcorner}
+    \newcommand{\Biglcorner}[1]{\Bigl\llcorner #1 \Bigr\lrcorner}
+    \newcommand{\bigglcorner}[1]{\biggl\llcorner #1 \biggr\lrcorner}
+    \newcommand{\Bigglcorner}[1]{\Biggl\llcorner #1 \Biggr\lrcorner}
+
+    \newcommand{\e}{\varepsilon}
+    \newcommand{\eps}{\varepsilon}
+    \newcommand{\from}{\colon}
+    \newcommand{\super}[2]{#1^{(#2)}}
+    \newcommand{\varsuper}[2]{#1^{\scriptscriptstyle (#2)}}
+    \newcommand{\tensor}{\otimes}
+
+    \newcommand{\eset}{\emptyset}
+    \newcommand{\sse}{\subseteq}
+    \newcommand{\sst}{\substack}
+    \newcommand{\ot}{\otimes}
+
+    \newcommand{\Esst}[1]{\bbE_{\substack{#1}}}
+
+    \newcommand{\vbig}{\vphantom{\bigoplus}}
+
+    \newcommand{\seteq}{\mathrel{\mathop:}=}
+    \newcommand{\defeq}{\stackrel{\mathrm{def}}=}
+
+    \newcommand{\Mid}{\mathrel{}\middle|\mathrel{}}
+
+    \newcommand{\Ind}{\mathbf 1}
+
+    \newcommand{\bits}{\{0,1\}}
+    \newcommand{\sbits}{\{\pm 1\}}
+    \newcommand{\R}{\mathbb R}
+    \newcommand{\Rnn}{\R_{\ge 0}}
+    \newcommand{\N}{\mathbb N}
+    \newcommand{\Z}{\mathbb Z}
+    \newcommand{\Q}{\mathbb Q}
+    \newcommand{\C}{\mathbb C}
+    \newcommand{\A}{\mathbb A}
+    \newcommand{\Real}{\mathbb R}
+
+    \newcommand{\mper}{\,.}
+    \newcommand{\mcom}{\,,}
+
+
+    \DeclareMathOperator{\Id}{Id}
+    \DeclareMathOperator{\cone}{cone}
+    \DeclareMathOperator{\vol}{vol}
+    \DeclareMathOperator{\val}{val}
+    \DeclareMathOperator{\opt}{opt}
+    \DeclareMathOperator{\Opt}{Opt}
+    \DeclareMathOperator{\Val}{Val}
+    \DeclareMathOperator{\LP}{LP}
+    \DeclareMathOperator{\SDP}{SDP}
+    \DeclareMathOperator{\Tr}{Tr}
+    \DeclareMathOperator{\Inf}{Inf}
+    \DeclareMathOperator{\size}{size}
+    \DeclareMathOperator{\poly}{poly}
+    \DeclareMathOperator{\polylog}{polylog}
+    \DeclareMathOperator{\min}{min}
+    \DeclareMathOperator{\max}{max}
+    \DeclareMathOperator{\argmax}{arg\,max}
+    \DeclareMathOperator{\argmin}{arg\,min}
+    \DeclareMathOperator{\qpoly}{qpoly}
+    \DeclareMathOperator{\qqpoly}{qqpoly}
+    \DeclareMathOperator{\conv}{conv}
+    \DeclareMathOperator{\Conv}{Conv}
+    \DeclareMathOperator{\supp}{supp}
+    \DeclareMathOperator{\sign}{sign}
+    \DeclareMathOperator{\perm}{perm}
+    \DeclareMathOperator{\mspan}{span}
+    \DeclareMathOperator{\mrank}{rank}
+    \DeclareMathOperator{\E}{\mathbb E}
+    \DeclareMathOperator{\pE}{\tilde{\mathbb E}}
+    \DeclareMathOperator{\Pr}{\mathbb P}
+    \DeclareMathOperator{\Span}{Span}
+    \DeclareMathOperator{\Cone}{Cone}
+    \DeclareMathOperator{\junta}{junta}
+    \DeclareMathOperator{\NSS}{NSS}
+    \DeclareMathOperator{\SA}{SA}
+    \DeclareMathOperator{\SOS}{SOS}
+    \DeclareMathOperator{\Stab}{\mathbf Stab}
+    \DeclareMathOperator{\Det}{\textbf{Det}}
+    \DeclareMathOperator{\Perm}{\textbf{Perm}}
+    \DeclareMathOperator{\Sym}{\textbf{Sym}}
+    \DeclareMathOperator{\Pow}{\textbf{Pow}}
+    \DeclareMathOperator{\Gal}{\textbf{Gal}}
+    \DeclareMathOperator{\Aut}{\textbf{Aut}}
+
+    \newcommand{\iprod}[1]{\langle #1 \rangle}
+    \newcommand{\cE}{\mathcal{E}}
+    \newcommand{\E}{\mathbb{E}}
+    \newcommand{\pE}{\tilde{\mathbb{E}}}
+    \newcommand{\N}{\mathbb{N}}
+    \renewcommand{\P}{\mathcal{P}}
+    \notag
+</script>
+</div>
+<div style="display:none">
+<span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-2-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; />" role="presentation" style="font-size: 123%; position: relative;"><span id="MJXc-Node-9" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-10" class="mjx-mrow"></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"></math></span></span><script type="math/tex" id="MathJax-Element-2">
+  \newcommand{\sleq}{\ensuremath{\preceq}}
+  \newcommand{\sgeq}{\ensuremath{\succeq}}
+  \newcommand{\diag}{\ensuremath{\mathrm{diag}}}
+  \newcommand{\support}{\ensuremath{\mathrm{support}}}
+  \newcommand{\zo}{\ensuremath{\{0,1\}}}
+  \newcommand{\pmo}{\ensuremath{\{\pm 1\}}}
+  \newcommand{\uppersos}{\ensuremath{\overline{\mathrm{sos}}}}
+  \newcommand{\lambdamax}{\ensuremath{\lambda_{\mathrm{max}}}}
+  \newcommand{\rank}{\ensuremath{\mathrm{rank}}}
+  \newcommand{\Mslow}{\ensuremath{M_{\mathrm{slow}}}}
+  \newcommand{\Mfast}{\ensuremath{M_{\mathrm{fast}}}}
+  \newcommand{\Mdiag}{\ensuremath{M_{\mathrm{diag}}}}
+  \newcommand{\Mcross}{\ensuremath{M_{\mathrm{cross}}}}
+  \newcommand{\eqdef}{\ensuremath{ =^{def}}}
+  \newcommand{\threshold}{\ensuremath{\mathrm{threshold}}}
+  \newcommand{\vbls}{\ensuremath{\mathrm{vbls}}}
+  \newcommand{\cons}{\ensuremath{\mathrm{cons}}}
+  \newcommand{\edges}{\ensuremath{\mathrm{edges}}}
+  \newcommand{\cl}{\ensuremath{\mathrm{cl}}}
+  \newcommand{\xor}{\ensuremath{\oplus}}
+  \newcommand{\1}{\ensuremath{\mathrm{1}}}
+  \notag
+</script>
+</div>
+<div style="display:none">
+<span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-3-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; />" role="presentation" style="font-size: 123%; position: relative;"><span id="MJXc-Node-11" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-12" class="mjx-mrow"></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"></math></span></span><script type="math/tex" id="MathJax-Element-3">
+  \newcommand{\transpose}[1]{\ensuremath{#1{}^{\mkern-2mu\intercal}}}
+  \newcommand{\dyad}[1]{\ensuremath{#1#1{}^{\mkern-2mu\intercal}}}
+  \newcommand{\nchoose}[1]{\ensuremath}
+  \newcommand{\generated}[1]{\ensuremath{\langle #1 \rangle}}
+  \notag
+</script>
+</div>
+<div style="display:none">
+<span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-4-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><merror><mtext>\newcommand{\eqdef}{\mathbin{\stackrel{\rm&amp;#xA0;def}{=}}}&amp;#xA0;&amp;#xA0;\newcommand{\R}&amp;#xA0;%&amp;#xA0;real&amp;#xA0;numbers&amp;#xA0;&amp;#xA0;\newcommand{\N}}&amp;#xA0;%&amp;#xA0;natural&amp;#xA0;numbers&amp;#xA0;&amp;#xA0;\newcommand{\Z}&amp;#xA0;%&amp;#xA0;integers&amp;#xA0;&amp;#xA0;\newcommand{\F}&amp;#xA0;%&amp;#xA0;a&amp;#xA0;field&amp;#xA0;&amp;#xA0;\newcommand{\Q}&amp;#xA0;%&amp;#xA0;the&amp;#xA0;rationals&amp;#xA0;&amp;#xA0;\newcommand{\C}{\mathbb{C}}&amp;#xA0;%&amp;#xA0;the&amp;#xA0;complexes&amp;#xA0;&amp;#xA0;\newcommand{\poly}}&amp;#xA0;&amp;#xA0;\newcommand{\polylog}}&amp;#xA0;&amp;#xA0;\newcommand{\loglog}}}&amp;#xA0;&amp;#xA0;\newcommand{\zo}{\{0,1\}}&amp;#xA0;&amp;#xA0;\newcommand{\suchthat}&amp;#xA0;&amp;#xA0;\newcommand{\pr}[1]{\Pr\left[#1\right]}&amp;#xA0;&amp;#xA0;\newcommand{\deffont}{\em}&amp;#xA0;&amp;#xA0;\newcommand{\getsr}{\mathbin{\stackrel{\mbox{\tiny&amp;#xA0;R}}{\gets}}}&amp;#xA0;&amp;#xA0;\newcommand{\Exp}{\mathop{\mathrm&amp;#xA0;E}\displaylimits}&amp;#xA0;%&amp;#xA0;expectation&amp;#xA0;&amp;#xA0;\newcommand{\Var}{\mathop{\mathrm&amp;#xA0;Var}\displaylimits}&amp;#xA0;%&amp;#xA0;variance&amp;#xA0;&amp;#xA0;\newcommand{\xor}{\oplus}&amp;#xA0;&amp;#xA0;\newcommand{\GF}{\mathrm{GF}}&amp;#xA0;&amp;#xA0;\newcommand{\eps}{\varepsilon}&amp;#xA0;&amp;#xA0;\notag</mtext></merror></math>" role="presentation" style="font-size: 123%; position: relative;"><span id="MJXc-Node-13" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-14" class="mjx-mrow"><span class="mjx-noError" style="vertical-align: -12.15em;">\newcommand{\eqdef}{\mathbin{\stackrel{\rm&nbsp;def}{=}}}<br>&nbsp;&nbsp;\newcommand{\R}&nbsp;%&nbsp;real&nbsp;numbers<br>&nbsp;&nbsp;\newcommand{\N}}&nbsp;%&nbsp;natural&nbsp;numbers<br>&nbsp;&nbsp;\newcommand{\Z}&nbsp;%&nbsp;integers<br>&nbsp;&nbsp;\newcommand{\F}&nbsp;%&nbsp;a&nbsp;field<br>&nbsp;&nbsp;\newcommand{\Q}&nbsp;%&nbsp;the&nbsp;rationals<br>&nbsp;&nbsp;\newcommand{\C}{\mathbb{C}}&nbsp;%&nbsp;the&nbsp;complexes<br>&nbsp;&nbsp;\newcommand{\poly}}<br>&nbsp;&nbsp;\newcommand{\polylog}}<br>&nbsp;&nbsp;\newcommand{\loglog}}}<br>&nbsp;&nbsp;\newcommand{\zo}{\{0,1\}}<br>&nbsp;&nbsp;\newcommand{\suchthat}<br>&nbsp;&nbsp;\newcommand{\pr}[1]{\Pr\left[#1\right]}<br>&nbsp;&nbsp;\newcommand{\deffont}{\em}<br>&nbsp;&nbsp;\newcommand{\getsr}{\mathbin{\stackrel{\mbox{\tiny&nbsp;R}}{\gets}}}<br>&nbsp;&nbsp;\newcommand{\Exp}{\mathop{\mathrm&nbsp;E}\displaylimits}&nbsp;%&nbsp;expectation<br>&nbsp;&nbsp;\newcommand{\Var}{\mathop{\mathrm&nbsp;Var}\displaylimits}&nbsp;%&nbsp;variance<br>&nbsp;&nbsp;\newcommand{\xor}{\oplus}<br>&nbsp;&nbsp;\newcommand{\GF}{\mathrm{GF}}<br>&nbsp;&nbsp;\newcommand{\eps}{\varepsilon}<br>&nbsp;&nbsp;\notag</span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><merror><mtext>\newcommand{\eqdef}{\mathbin{\stackrel{\rm&nbsp;def}{=}}}&nbsp;&nbsp;\newcommand{\R}&nbsp;%&nbsp;real&nbsp;numbers&nbsp;&nbsp;\newcommand{\N}}&nbsp;%&nbsp;natural&nbsp;numbers&nbsp;&nbsp;\newcommand{\Z}&nbsp;%&nbsp;integers&nbsp;&nbsp;\newcommand{\F}&nbsp;%&nbsp;a&nbsp;field&nbsp;&nbsp;\newcommand{\Q}&nbsp;%&nbsp;the&nbsp;rationals&nbsp;&nbsp;\newcommand{\C}{\mathbb{C}}&nbsp;%&nbsp;the&nbsp;complexes&nbsp;&nbsp;\newcommand{\poly}}&nbsp;&nbsp;\newcommand{\polylog}}&nbsp;&nbsp;\newcommand{\loglog}}}&nbsp;&nbsp;\newcommand{\zo}{\{0,1\}}&nbsp;&nbsp;\newcommand{\suchthat}&nbsp;&nbsp;\newcommand{\pr}[1]{\Pr\left[#1\right]}&nbsp;&nbsp;\newcommand{\deffont}{\em}&nbsp;&nbsp;\newcommand{\getsr}{\mathbin{\stackrel{\mbox{\tiny&nbsp;R}}{\gets}}}&nbsp;&nbsp;\newcommand{\Exp}{\mathop{\mathrm&nbsp;E}\displaylimits}&nbsp;%&nbsp;expectation&nbsp;&nbsp;\newcommand{\Var}{\mathop{\mathrm&nbsp;Var}\displaylimits}&nbsp;%&nbsp;variance&nbsp;&nbsp;\newcommand{\xor}{\oplus}&nbsp;&nbsp;\newcommand{\GF}{\mathrm{GF}}&nbsp;&nbsp;\newcommand{\eps}{\varepsilon}&nbsp;&nbsp;\notag</mtext></merror></math></span></span><script type="math/tex" id="MathJax-Element-4">
+  \newcommand{\eqdef}{\mathbin{\stackrel{\rm def}{=}}}
+  \newcommand{\R} % real numbers
+  \newcommand{\N}} % natural numbers
+  \newcommand{\Z} % integers
+  \newcommand{\F} % a field
+  \newcommand{\Q} % the rationals
+  \newcommand{\C}{\mathbb{C}} % the complexes
+  \newcommand{\poly}}
+  \newcommand{\polylog}}
+  \newcommand{\loglog}}}
+  \newcommand{\zo}{\{0,1\}}
+  \newcommand{\suchthat}
+  \newcommand{\pr}[1]{\Pr\left[#1\right]}
+  \newcommand{\deffont}{\em}
+  \newcommand{\getsr}{\mathbin{\stackrel{\mbox{\tiny R}}{\gets}}}
+  \newcommand{\Exp}{\mathop{\mathrm E}\displaylimits} % expectation
+  \newcommand{\Var}{\mathop{\mathrm Var}\displaylimits} % variance
+  \newcommand{\xor}{\oplus}
+  \newcommand{\GF}{\mathrm{GF}}
+  \newcommand{\eps}{\varepsilon}
+  \notag
+</script>
+</div>
+<div style="display:none">
+<span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-5-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; />" role="presentation" style="font-size: 123%; position: relative;"><span id="MJXc-Node-15" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-16" class="mjx-mrow"></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"></math></span></span><script type="math/tex" id="MathJax-Element-5">
+  \newcommand{\class}[1]{\mathbf{#1}}
+  \newcommand{\coclass}[1]{\mathbf{co\mbox{-}#1}} % and their complements
+  \newcommand{\BPP}{\class{BPP}}
+  \newcommand{\NP}{\class{NP}}
+  \newcommand{\RP}{\class{RP}}
+  \newcommand{\coRP}{\coclass{RP}}
+  \newcommand{\ZPP}{\class{ZPP}}
+  \newcommand{\BQP}{\class{BQP}}
+  \newcommand{\FP}{\class{FP}}
+  \newcommand{\QP}{\class{QuasiP}}
+  \newcommand{\VF}{\class{VF}}
+  \newcommand{\VBP}{\class{VBP}}
+  \newcommand{\VP}{\class{VP}}
+  \newcommand{\VNP}{\class{VNP}}
+  \newcommand{\RNC}{\class{RNC}}
+  \newcommand{\RL}{\class{RL}}
+  \newcommand{\BPL}{\class{BPL}}
+  \newcommand{\coRL}{\coclass{RL}}
+  \newcommand{\IP}{\class{IP}}
+  \newcommand{\AM}{\class{AM}}
+  \newcommand{\MA}{\class{MA}}
+  \newcommand{\SBP}{\class{SBP}}
+  \newcommand{\coAM}{\class{coAM}}
+  \newcommand{\coMA}{\class{coMA}}
+  \renewcommand{\P}{\class{P}}
+  \newcommand\prBPP{\class{prBPP}}
+  \newcommand\prRP{\class{prRP}}
+  \newcommand\prP{\class{prP}}
+  \newcommand{\Ppoly}{\class{P/poly}}
+  \newcommand{\NPpoly}{\class{NP/poly}}
+  \newcommand{\coNPpoly}{\class{coNP/poly}}
+  \newcommand{\DTIME}{\class{DTIME}}
+  \newcommand{\TIME}{\class{TIME}}
+  \newcommand{\SIZE}{\class{SIZE}}
+  \newcommand{\SPACE}{\class{SPACE}}
+  \newcommand{\ETIME}{\class{E}}
+  \newcommand{\BPTIME}{\class{BPTIME}}
+  \newcommand{\RPTIME}{\class{RPTIME}}
+  \newcommand{\ZPTIME}{\class{ZPTIME}}
+  \newcommand{\EXP}{\class{EXP}}
+  \newcommand{\ZPEXP}{\class{ZPEXP}}
+  \newcommand{\RPEXP}{\class{RPEXP}}
+  \newcommand{\BPEXP}{\class{BPEXP}}
+  \newcommand{\SUBEXP}{\class{SUBEXP}}
+  \newcommand{\NTIME}{\class{NTIME}}
+  \newcommand{\NL}{\class{NL}}
+  \renewcommand{\L}{\class{L}}
+  \newcommand{\NQP}{\class{NQP}}
+  \newcommand{\NEXP}{\class{NEXP}}
+  \newcommand{\coNEXP}{\coclass{NEXP}}
+  \newcommand{\NPSPACE}{\class{NPSPACE}}
+  \newcommand{\PSPACE}{\class{PSPACE}}
+  \newcommand{\NSPACE}{\class{NSPACE}}
+  \newcommand{\coNSPACE}{\coclass{NSPACE}}
+  \newcommand{\coL}{\coclass{L}}
+  \newcommand{\coP}{\coclass{P}}
+  \newcommand{\coNP}{\coclass{NP}}
+  \newcommand{\coNL}{\coclass{NL}}
+  \newcommand{\coNPSPACE}{\coclass{NPSPACE}}
+  \newcommand{\APSPACE}{\class{APSPACE}}
+  \newcommand{\LINSPACE}{\class{LINSPACE}}
+  \newcommand{\qP}{\class{\tilde{P}}}
+  \newcommand{\PH}{\class{PH}}
+  \newcommand{\EXPSPACE}{\class{EXPSPACE}}
+  \newcommand{\SigmaTIME}[1]{\class{\Sigma_{#1}TIME}}
+  \newcommand{\PiTIME}[1]{\class{\Pi_{#1}TIME}}
+  \newcommand{\SigmaP}[1]{\class{\Sigma_{#1}P}}
+  \newcommand{\PiP}[1]{\class{\Pi_{#1}P}}
+  \newcommand{\DeltaP}[1]{\class{\Delta_{#1}P}}
+  \newcommand{\ATIME}{\class{ATIME}}
+  \newcommand{\ASPACE}{\class{ASPACE}}
+  \newcommand{\AP}{\class{AP}}
+  \newcommand{\AL}{\class{AL}}
+  \newcommand{\APSPACE}{\class{APSPACE}}
+  \newcommand{\VNC}[1]{\class{VNC^{#1}}}
+  \newcommand{\NC}[1]{\class{NC^{#1}}}
+  \newcommand{\AC}[1]{\class{AC^{#1}}}
+  \newcommand{\ACC}[1]{\class{ACC^{#1}}}
+  \newcommand{\TC}[1]{\class{TC^{#1}}}
+  \newcommand{\ShP}{\class{\# P}}
+  \newcommand{\PaP}{\class{\oplus P}}
+  \newcommand{\PCP}{\class{PCP}}
+  \newcommand{\kMIP}[1]{\class{#1\mbox{-}MIP}}
+  \newcommand{\MIP}{\class{MIP}}
+</script>
+</div>
+<div style="display:none">
+<span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-6-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mtext mathcolor=&quot;red&quot;>\no</mtext></mrow></math>" role="presentation" style="font-size: 123%; position: relative;"><span id="MJXc-Node-17" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-18" class="mjx-mrow"><span id="MJXc-Node-19" class="mjx-texatom"><span id="MJXc-Node-20" class="mjx-mrow"><span id="MJXc-Node-21" class="mjx-mtext" style="color: red;"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.491em; padding-bottom: 0.599em;">\no</span></span></span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow class="MJX-TeXAtom-ORD"><mtext mathcolor="red">\no</mtext></mrow></math></span></span><script type="math/tex" id="MathJax-Element-6">
+  \newcommand{\textprob}[1]{\text{#1}}
+  \newcommand{\mathprob}[1]{\textbf{#1}}
+  \newcommand{\Satisfiability}{\textprob{Satisfiability}}
+  \newcommand{\Mor}{\textprob{Mor}}
+  \newcommand{\Hom}{\textprob{Hom}}
+  \newcommand{\cok}{\textprob{cok}}
+  \newcommand{\ker}{\textprob{ker}}
+  \newcommand{\im}{\textprob{im}}
+  \newcommand{\coim}{\textprob{coim}}
+  \newcommand{\id}{\textprob{id}}
+  \newcommand{\LP}{\mathprob{LP}}
+  \newcommand{\Factor}{\textprob{Factoring}}
+  \newcommand{\CircVal}{\textprob{Circuit Value}}
+  \newcommand{\CVAL}{\mathprob{CVAL}}
+  \newcommand{\CircSat}{\textprob{Circuit Satisfiability}}
+  \newcommand{\CSAT}{\textprob{CSAT}}
+  \newcommand{\CycleCovers}{\textprob{Cycle Covers}}
+  \newcommand{\MonCircVal}{\textprob{Monotone Circuit Value}}
+  \newcommand{\Reachability}{\textprob{Reachability}}
+  \newcommand{\Unreachability}{\textprob{Unreachability}}
+  \newcommand{\RCH}{\mathprob{RCH}}
+  \newcommand{\BddHalt}{\textprob{Bounded Halting}}
+  \newcommand{\BH}{\mathprob{BH}}
+  \newcommand{\DiscreteLog}{\textprob{Discrete Log}}
+  \newcommand{\REE}{\mathprob{REE}}
+  \newcommand{\QBF}{\mathprob{QBF}}
+  \newcommand{\MCSP}{\mathprob{MCSP}}
+  \newcommand{\GGEO}{\mathprob{GGEO}}
+  \newcommand{\CKTMIN}{\mathprob{CKT-MIN}}
+  \newcommand{\MINCKT}{\mathprob{MIN-CKT}}
+  \newcommand{\IdentityTest}{\textprob{Identity Testing}}
+  \newcommand{\Majority}{\textprob{Majority}}
+  \newcommand{\CountIndSets}{\textprob{\#Independent Sets}}
+  \newcommand{\Parity}{\textprob{Parity}}
+  \newcommand{\Clique}{\textprob{Clique}}
+  \newcommand{\CountCycles}{\textprob{#Cycles}}
+  \newcommand{\CountPerfMatchings}{\textprob{\#Perfect Matchings}}
+  \newcommand{\CountMatchings}{\textprob{\#Matchings}}
+  \newcommand{\CountMatch}{\mathprob{\#Matchings}}
+  \newcommand{\ECSAT}{\mathprob{E#SAT}}
+  \newcommand{\ShSAT}{\mathprob{#SAT}}
+  \newcommand{\ShTSAT}{\mathprob{#3SAT}}
+  \newcommand{\HamCycle}{\textprob{Hamiltonian Cycle}}
+  \newcommand{\Permanent}{\textprob{Permanent}}
+  \newcommand{\ModPermanent}{\textprob{Modular Permanent}}
+  \newcommand{\GraphNoniso}{\textprob{Graph Nonisomorphism}}
+  \newcommand{\GI}{\mathprob{GI}}
+  \newcommand{\GNI}{\mathprob{GNI}}
+  \newcommand{\GraphIso}{\textprob{Graph Isomorphism}}
+  \newcommand{\QuantBoolForm}{\textprob{Quantified Boolean
+      Formulae}}
+  \newcommand{\GenGeography}{\textprob{Generalized Geography}}
+  \newcommand{\MAXTSAT}{\mathprob{Max3SAT}}
+  \newcommand{\GapMaxTSAT}{\mathprob{GapMax3SAT}}
+  \newcommand{\ELIN}{\mathprob{E3LIN2}}
+  \newcommand{\CSP}{\mathprob{CSP}}
+  \newcommand{\Lin}{\mathprob{Lin}}
+
+  \newcommand{\ONE}{\mathbf{ONE}}
+  \newcommand{\ZERO}{\mathbf{ZERO}}
+
+  \newcommand{\yes}
+  \newcommand{\no}
+</script>
+</div>
+
+      
+      <div style="float:right"><a href="/notes/AlgebraicGeometry/Chapter1-CategoryTheory/WhybotherwithCategories/"><bf>Next: Why bother with Categories?</bf></a></div>
+<div><a href="/notes/AlgebraicGeometry/Chapter1-CategoryTheory/"><bf>Back to Chapter 1 - Category Theory</bf></a></div>
+
+
+<div class="post">
+  <h1 class="post-title">Why bother with Categories?</h1>
+
+  
+  <div class="w3-white w3-round-xlarge w3-tiny">
+    <div class="w3-container w3-blue w3-round-xlarge" style="width:100%">100%</div>
+  </div>
+  <br>
+  
+
+  <ul id="markdown-toc">
+  <li><a href="#russell" id="markdown-toc-russell">Russell's Paradox</a>
+  </li>
+  <li><a href="#universal-properties" id="markdown-toc-universal-properties">Universal Properties</a>
+  </li>
+</ul>
+  
+<p>The definition of a category seems somewhat uninspired when you first encounter it. What are "objects"? What are "morphisms"? Why bother creating a notion of a category?</p>
+
+<h2 id="russell">Russell's Paradox</h2>
+
+<p>The most obvious reason is Russell's paradox. We want a way of dealing with large collections of objects without running into set-theoretic issues. So unlike sets, which allow for comprehensions over all of its members simultaneously via the axiom of specification, categories only allow you to access data on its members locally, via observing the maps between any pair of objects. </p>
+
+<p>But this reason alone isn't sufficient to bother working with categories. In fact, if our sole goal was to create a powerful extension of ZFC to arbitrary classes, we would end up with <a href='https://en.wikipedia.org/wiki/Von_Neumann%E2%80%93Bernays%E2%80%93G%C3%B6del_set_theory'>NBG set theory</a>.</p>
+  
+ 
+<h2 id="universal-properties">Universal Properties</h2>
+	
+	<p>The second reason we care about categories is that it allows us to formulate <strong>universal properties</strong> in a very convenient fashion. Vakil presents the following example:</p>
+
+  <p>Generally, we define the cartesian product of sets as follows: $$M\times N=\{(m,n)\mid m\in M,\;n\in N\}$$But what if we defined the cartesian product as $$M\times N=\left\{{m\atop n}\mid m\in M,\;n\in M\right\}$$Most likely, you'd have no issue with this, as you'd easily identify the contents of these definitions to be identical. But from a symbolic standpoint, it's not obvious at all that these two representations have the same information content. Instead, if we came up with a definition based on the information content of \(M\times N\), we'd be able to identify these definitions as identical.</p>
+  
+  <p>Instead, category theorists define the cartesian product of \(M,N\) as the \(P\) that satisfies the commutative diagram.</p>
+  
+  <p><a class="gallery img-center-short cboxElement" href="/public/diag1.png"><img src="/public/diag1.png" width="100%"></a></p>
+  
+  <p>The idea is that the cartesian product is some set \(P\), with projection maps \(p_m,\;p_n\) to \(M,N\), such that for any \(Q\) that also projects onto \(M,N\) via maps \(q_m,q_n\), there exists a unique \(f\) such that \(q_m=p_m\circ f\), \(q_n=p_n\circ f\). In other words, any set that projects onto \(M,N\) factors those projections through \(P\). </p>
+  
+  <p>The beauty of this definition is that it implies that if \(P\) exists, it is unique up to isomorphism. To see why, assume that \(P,P'\) with maps \(p_m,p_n,p'_m,p'_n\) satisfies the graph. Then, consider the following diagram:</p>
+  
+  <p><a class="gallery img-center-short cboxElement" href="/public/diag2.png"><img src="/public/diag2.png" width="100%"></a></p>
+  
+  <p>Both \(f\) and \(g\) are unique and thus, their composition must be unique. But, \(\id_P\) is a map that satisfies \(p_m\circ\id_P=p_m\) and \(p_n\circ\id_P=p_n\), so \(g\circ f=\id_P\). A symmetric argument shows that \(f\circ g=\id_{P'}\), which shows that \(P,P'\) are isomorphic, as \(f,g\) are inverses.</p>
+  
+  <p>This tells us that this definition is more than just a <a href='https://en.wikipedia.org/wiki/Duck_test'>duck test</a>, as it guarantees that if we can find an object \(P\) that satisfies the diagram, we can call that object the product, since any other object satisfying the diagram will be isomorphic to \(P\). This is a common theme for universal properties: the diagram itself will imply the uniqueness of any solution to the diagram. The simplicity of expressing these relations in category theory is what lends the field so much power.</p>
+  
+</div>
+
+    </div>
+
+    <script id="dsq-count-scr" src="//rmehtany.disqus.com/count.js" async=""></script>
+  
+
+  <!-- Footer -->
+
+<script>
+// collapse
+function myCollapse(id) {
+    var x = document.getElementById(id);
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+    id_but = id.concat("-but");
+    var y = document.getElementById(id_but);
+    if (y != null) {
+      if (y.className.indexOf("fa-chevron-circle-down") != -1) {
+        y.className = y.className.replace(" fa-chevron-circle-down", " fa-chevron-circle-up");
+      } else {
+        y.className = y.className.replace(" fa-chevron-circle-up", " fa-chevron-circle-down");
+      }
+    }
+}
+</script>
+
+<script>
+// colorbox
+ jQuery('a.gallery').colorbox();
+ $(".gallery").colorbox({
+  width: "60%"
+});
+</script><div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button type="button" id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div></div>
+
+<script>
+// sidebar collapse
+function sidebar_open() {
+  document.getElementById("mySidebar").classList.remove("w3-hide-small");
+  document.getElementById("mySmallSidebar").classList.add("w3-hide-small");
+}
+function sidebar_close() {
+  document.getElementById("mySidebar").classList.add("w3-hide-small");
+  document.getElementById("mySmallSidebar").classList.remove("w3-hide-small");
+}
+</script>
+
+
+
+</body></html>
