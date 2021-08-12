@@ -986,7 +986,7 @@
     <li> For any objects \(A,B\in\rmA\), and additive functor \(F:\mathfrak A\to\mathfrak B\), \(F\) induces a group homomorphism \(\Hom(A,B)\to\Hom(F(A),F(B))\) via \(f\mapsto F(f)\). Thus, \(F(0_{ZZ})=0_{F(Z)F(Z)}\), and \(F(\id_Z)=\id_{F(Z)}\). Thus, zero objects are mapped to other zero objects.</li>
     <li>The first bullet unintentionally proves that \(0\circ f=f\circ 0=0\) for any morphism \(f\) and for any \(0\) morphism. This necessarily implies that \(0_{AB}=A\to0\to B\), where \(0\) is a zero-object, and \(A\to0\) and \(0\to B\) are the unique morphisms in \(\Hom(A,0)\) and \(\Hom(0,B)\). In fact, it's convenient to define \(0_{AB}\) this way for categories with zero objects.</li>
     <li>Additive categories also have coproducts. In fact, products and coproducts (as long as they are finite) are isomorphic! This will be proven below. This is why the finite product of abelian groups and finite direct sum of abelian groups are isomorphic.</li>
-    <li>Fibered products have a simple characterization in abelian categories: Given \(a: X\to Z\), \(b: Y\to Z\), and letting \(c:X\times Y\cong X\sqcup Y\to Z\) induced by \(a,-b\), \(X\times_ZY\cong\ker c\). For the dual, given \(a:Z\to X\), \(b:Z\to Y\), and \(c:Z\to X\times Y\) induced by \(a,-b\), \(X\sqcup_ZY\cong\cok c\).</li>
+    <li><a id='prop'>Fibered products have a simple characterization in abelian categories: Given \(a: X\to Z\), \(b: Y\to Z\), and letting \(c:X\times Y\cong X\sqcup Y\to Z\) induced by \(a,-b\), \(X\times_ZY\cong\ker c\). For the dual, given \(a:Z\to X\), \(b:Z\to Y\), and \(c:Z\to X\times Y\) induced by \(a,-b\), \(X\sqcup_ZY\cong\cok c\).</a></li>
     <li>\(Mod_A\) is additive. All the properties are pretty easy to verify so it is left to the reader.</li>
   </ul>
   
@@ -1051,7 +1051,7 @@
   </div>
 </div>
       
-      <div class="Lemma 1" title="Epic (Monic) map is its own coimage (image)"> For any epimorphism \(g:B\to C\), \(g=\coim(g)\).
+      <div class="Lemma 1" title="Epic (Monic) map is its own coimage (image)" id="lem1"> For any epimorphism \(g:B\to C\), \(g=\coim(g)\).
 <div class="proof">
   <p><a onclick="myCollapse('epoch')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="epoch-but"></i></a><br></p>
   <div id="epoch" class="w3-container w3-hide">
@@ -1060,15 +1060,15 @@
   </div>
 </div>
         
-   <div class="Lemma 2" title="Mono and epimorphism is isomorphism"> If \(f:A\to B\) is a monomorphism and epimorphism, it is an isomorphism. 
+   <div class="Lemma 2" title="Mono and epimorphism is isomorphism" id="lem2"> If \(f:A\to B\) is a monomorphism and epimorphism, it is an isomorphism. 
 <div class="proof">
   <p><a onclick="myCollapse('iso')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="iso-but"></i></a><br></p>
   <div id="iso" class="w3-container w3-hide">
-    From Lemma \(1\), \(\cok(\ker(f))=f\). And, from a result above, \(\ker f=0\). The cokernel of the \(0\) map is clearly an isomorphism by universal properties of the cokernel.
+    From <a href='#lem1'>Lemma 1</a>, \(\cok(\ker(f))=f\). And, from a result above, \(\ker f=0\). The cokernel of the \(0\) map is clearly an isomorphism by universal properties of the cokernel.
   </div>
 </div>
      
-   <div class="Lemma 3" title="Coimage to codomain is epic"> For any \(f:A\to B\), the induced map \(i:\coim f\to B\) is monic.
+   <div class="Lemma 3" title="Coimage to codomain is epic" id="lem3"> For any \(f:A\to B\), the induced map \(i:\coim f\to B\) is monic.
 <div class="proof">
   <p><a onclick="myCollapse('pepic')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="pepic-but"></i></a><br></p>
   <div id="pepic" class="w3-container w3-hide">
@@ -1079,13 +1079,13 @@
   </div>
 </div>
 
-     <div class="Lemma 4" title="Image is isomorphic to Coimage"> For any \(f:A\to B\), there exists a unique morphism \(f^*:\coim f\to\im f\) that satisfies the diagram below. It is also an isomorphism.
+     <div class="Lemma 4" title="Image is isomorphic to Coimage" id="lem4"> For any \(f:A\to B\), there exists a unique morphism \(f^*:\coim f\to\im f\) that satisfies the diagram below. It is also an isomorphism.
 <div class="proof">
   <p><a onclick="myCollapse('coimage')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="coimage-but"></i></a><br></p>
   <div id="coimage" class="w3-container w3-hide">
     <p><a class="gallery img-center-short cboxElement" href="/public/diag32.png"><img src="/public/diag32.png" width="100%"></a></p>
-    <p>Let \(j:A\to\im f\) be defined as in Lemma \(3\). Thus, $$f\circ\ker f=\im f\circ j\circ \ker f=0$$Since we showed in Lemma \(4\) that \(\im f\) is monomorphic, \(j\circ\ker f=0\). Thus, since \(\coim f\) is the cokernel of \(\ker f\), there exists a unique \(f^*\) such that \(f^*\circ\coim f=j\).</p>
-    <p>But, \(A\to\im f\) being epic and \(\coim f\to B\) being monic implies \(f^*\) is epic and monic, which by Lemma \(2\) implies that \(f^*\) is an isomorphism. Thus, the image object, with the new coimage map being \(f^*\circ c\) (where \(c\) was the coimage map \(A\to\coim f\)), satisfies the properties of the coimage and thus can be considered to be the coimage. Thus, we often refer to the image as both the image and coimage, and impart both of their properties onto \(\im f\).</p>
+	  <p>Let \(j:A\to\im f\) be defined as in <a href='#lem3'>Lemma 3</a>. Thus, $$f\circ\ker f=\im f\circ j\circ \ker f=0$$Since we showed in <a href='#lem1'>Lemma 1</a> that \(\im f\) is monomorphic, \(j\circ\ker f=0\). Thus, since \(\coim f\) is the cokernel of \(\ker f\), there exists a unique \(f^*\) such that \(f^*\circ\coim f=j\).</p>
+    <p>But, \(A\to\im f\) being epic and \(\coim f\to B\) being monic implies \(f^*\) is epic and monic, which by <a href='#lem2'>Lemma 2</a> implies that \(f^*\) is an isomorphism. Thus, the image object, with the new coimage map being \(f^*\circ c\) (where \(c\) was the coimage map \(A\to\coim f\)), satisfies the properties of the coimage and thus can be considered to be the coimage. Thus, we often refer to the image as both the image and coimage, and impart both of their properties onto \(\im f\).</p>
   </div>
 </div>
 
