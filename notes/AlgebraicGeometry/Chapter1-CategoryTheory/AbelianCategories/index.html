@@ -989,7 +989,7 @@
   
   <div class="Theorem 1" title="Products are coproducts"> In an additive category \(\mathfrak A\) with objects \(A,B\in\mathfrak A\), the coproduct \(A\sqcup B\) exists, as \(A\times B\) satisfies its diagram.
 <div class="proof">
-  <p><a onclick="myCollapse('coprod-set')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="coprod-but"></i></a><br></p>
+  <p><a onclick="myCollapse('coprod')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="coprod-but"></i></a><br></p>
   <div id="coprod" class="w3-container w3-hide">
     Let \(p:A\times B\to A\) and \(q:A\times B\to B\) be the projection maps that define \(A\times B\) as the product. Let \(i:A\to A\times B\) be defined by the product diagram below:<p><a class="gallery img-center-short cboxElement" href="/public/diag25.png"><img src="/public/diag25.png" width="100%"></a></p>
     <p>And likewise, let \(j:B\to A\times B\) be defined by the product diagram below:</p>
@@ -1005,7 +1005,7 @@
 
     <p style="font-style: normal;">As hinted upon earlier in our remarks, we can actually define the <strong>direct sum</strong> as the product endowed with the morphisms \(i,j\) as defined above. It's not hard to see that \(i,j\), and the product fully determine \(p,q\), so some definitions endow the direct sum with all \(4\) maps.</p>
     
-    <h2 id='cokernel'>(Co)kernels</h2>
+    <h2 id='cokernel' style="font-style: normal;">(Co)kernels</h2>
     
     <p style="font-style: normal;">The categorical notion of a kernel generalizes the algebraic notion of kernels, by defining them as the largest object that gets mapped to \(0\) by a morphism.</p>
     <p style="font-style: normal;">Let \(\mathfrak C\) be a category with a zero-object called \(0\). For some morphism \(f:B\to C\), the <strong>kernel</strong> is an object \(A\) paired with an inclusion \(i:A\hookrightarrow B\) such that \(f\circ i=0\), and for any other object \(A^*\) with map \(i^*\) with the aforementioned properties, there exists a unique map \(k:A^*\to A\) such that \(i^*=i\circ k\) (you should recognize this as the standard universal property trick to ensure uniqueness of the kernel). In diagram form, we have</p>
@@ -1014,13 +1014,13 @@
     <p style="font-style: normal;">Kernel maps are often indicated by \(\hookrightarrow\) or \(\rightarrowtail\). Cokernel maps are often indicated by \(\twoheadrightarrow\).</p>
     
     <ul>
-      <li>Kernels in categories with zero objects (and thus \(0\)-morphisms) are monomorphisms. For any kernel \(k:K\to A\) of \(f:A\to B\), and for any \(g:C\to K\), observe that \(f\circ k\circ g=0\), so by the universal property of the kernel, \(g\) is unique. By an identical argument, cokernels are epimorphisms.</li>
-      <li>The kernel map (if it exists) is the \(0\) map iff \(f\) is a monomorphism (this should make sense: what is the kernel of an injection?). For one direction, note that $$f\circ\ker f=0=f\circ 0$$and since \(f\) is a monomorphism, \(\ker f=0\). For the other, observe that for any \(g,h\) with \(f\circ g=f\circ h\), \(f\circ(g-h)=0\). So, if \(f\circ i\neq0\) for all \(i\neq0:C\to A\), then \(f\) is a monomorphism. Now for any map \(i:C\to A\), if \(f\circ i=0\), by the kernel property, there exists a map \(k:C\to0\) such that \(i=k\circ l\), where \(l\) is the kernel morphism. \(k=0\), so \(i=0\). This shows \(f\) is a monomorphism.<p style="font-style: normal;">This argument in the dual proves that the cokernel map is the \(0\) map iff \(f\) is an epimorphism. When \(f\) is a monomorphism, we say that \(A\) is a <strong>subobject</strong> of \(B\). When \(f\) is an epimorphism, we say \(B\) is a <strong>quotient object</strong> of \(A\).</p></li>
+      <li><p style="font-style: normal;">Kernels in categories with zero objects (and thus \(0\)-morphisms) are monomorphisms. For any kernel \(k:K\to A\) of \(f:A\to B\), and for any \(g:C\to K\), observe that \(f\circ k\circ g=0\), so by the universal property of the kernel, \(g\) is unique. By an identical argument, cokernels are epimorphisms.</p></li>
+      <li><p style="font-style: normal;">The kernel map (if it exists) is the \(0\) map iff \(f\) is a monomorphism (this should make sense: what is the kernel of an injection?). For one direction, note that $$f\circ\ker f=0=f\circ 0$$and since \(f\) is a monomorphism, \(\ker f=0\). For the other, observe that for any \(g,h\) with \(f\circ g=f\circ h\), \(f\circ(g-h)=0\). So, if \(f\circ i\neq0\) for all \(i\neq0:C\to A\), then \(f\) is a monomorphism. Now for any map \(i:C\to A\), if \(f\circ i=0\), by the kernel property, there exists a map \(k:C\to0\) such that \(i=k\circ l\), where \(l\) is the kernel morphism. \(k=0\), so \(i=0\). This shows \(f\) is a monomorphism.</p><p style="font-style: normal;">This argument in the dual proves that the cokernel map is the \(0\) map iff \(f\) is an epimorphism. When \(f\) is a monomorphism, we say that \(A\) is a <strong>subobject</strong> of \(B\). When \(f\) is an epimorphism, we say \(B\) is a <strong>quotient object</strong> of \(A\).</p></li>
     </ul>
     
     <div class="Remark" title="(Co)kernels are morphisms"> But, we'll often refer to them as objects. In particular, kernels are maps \(k:A\to B\), so if we refer to the kernel as an object, we mean \(A\). If we refer to the kernel as a map, we mean \(k\). Likewise, for cokernel \(j:A\to B\), if we refer to an object, we mean \(B\). If we refer to a map, we mean \(j\).</div>
     
-    <h2 id='abelian'>Abelian Categories</h2>
+    <h2 id='abelian' style="font-style: normal;">Abelian Categories</h2>
     
     <p style="font-style: normal;">As our tangent on kernels and cokernels showed us, kernels (cokernels) are monomorphisms (epimorphisms) if they exist. But we might ask the reverse question: are all monomorphisms (epimorphisms) kernels (cokernels) of some map? In the study of abelian groups, this is the case, and is known as the first isomorphism theorem of group theory. Abelian categories are defined to generalize this concept.</p>
     <div class="Definition" title="Abelian Category"> An <strong>abelian category</strong> is an additive category $\rmA$ such that
@@ -1076,7 +1076,7 @@
   </div>
 </div>
 
-     <div class="Lemma 4" title="Image is isomorphic to Coimage"> For any \(f:A\to B\), there exists a unique morphism \(f^*:coim f\to\im f\) that satisfies the diagram below. It is also an isomorphism.
+     <div class="Lemma 4" title="Image is isomorphic to Coimage"> For any \(f:A\to B\), there exists a unique morphism \(f^*:\coim f\to\im f\) that satisfies the diagram below. It is also an isomorphism.
 <div class="proof">
   <p><a onclick="myCollapse('coimage')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="coimage-but"></i></a><br></p>
   <div id="coimage" class="w3-container w3-hide">
@@ -1086,9 +1086,9 @@
   </div>
 </div>
 
-<div class="Remark" title="What does Lemma 4 mean?"> To understand intuitively what happened in the proof, we've essentially proved a more general form of the first isomorphism theorem. Note that in the category of modules, \(\coim f=B/\ker f\), and thus we showed that \(B/\ker f\cong\im f\).</div>
+<div class="Remark" title="What does Lemma 4 mean?"> <p style="font-style: normal;">To understand intuitively what happened in the proof, we've essentially proved a more general form of the first isomorphism theorem. Note that in the category of modules, \(\coim f=B/\ker f\), and thus we showed that \(B/\ker f\cong\im f\).</p></div>
        
- <div class="Lemma 5" title="Finite (co)limits exist"> Given any finite category \(J\) (finitely many objects and morphisms), with functor \(F:J\to\mathfrak C\) and \(\rmC\) abelian, the (co)limit of $F$ exists in $\rmC$.
+ <div class="Lemma 5" title="Finite (co)limits exist"> Given any finite category \(J\) (finitely many objects and morphisms), with functor \(F:J\to\mathfrak C\) and \(\rmC\) abelian, the (co)limit of \(F\) exists in \(\rmC\).
 <div class="proof">
   <p><a onclick="myCollapse('colimit')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="colimit-but"></i></a><br></p>
   <div id="colimit" class="w3-container w3-hide">
@@ -1100,13 +1100,13 @@
   </div>
 </div>
 
-   <h2 id='example'>Examples</h2>
+   <h2 id='example' style="font-style: normal;">Examples</h2>
    <p style="font-style: normal;">All but the first example are non-abelian, as we'll encounter important examples of abelian categories later.</p>
    <ul>
-     <li>\(Mod_A\) for any commutative ring \(A\) is abelian. This construction would be pointless otherwise.</li>
-     <li>Consider the subcategory of \(Mod_\mathbb R\) consisting of just the spaces of even dimension. The map \(f:\mathbb R^2\to\mathbb R^2\) given by \((a,b)\mapsto(a,0)\) is a morphism on this category, but it has no kernel. This category is additive but not abelian.</li>
+     <li><p style="font-style: normal;">\(Mod_A\) for any commutative ring \(A\) is abelian. This construction would be pointless otherwise.</p></li>
+     <li><p style="font-style: normal;">Consider the subcategory of \(Mod_\mathbb R\) consisting of just the spaces of even dimension. The map \(f:\mathbb R^2\to\mathbb R^2\) given by \((a,b)\mapsto(a,0)\) is a morphism on this category, but it has no kernel. This category is additive but not abelian.</p></li>
      <li><strong>Ring</strong> is not additive, since it doesn't have a zero-object.</li>
-     <li>The category of torsion free abelian groups is additive but not abelian. Consider the map \(\phi:\mathbb Z\to\mathbb Z\), \(\phi(n)=2n\). Suppose \(\phi\) has a cokernel \(f:\mathbb Z\to X\) in the category. Thus, \(f\circ\phi=0\). In particular, \(f(2)=0\). So, \(f(1)+f(1)=0\), and since \(X\) is torsion-free, \(f(1)=0\), which implies that \(X=\{0\}\). Thus, if the cokernel of \(\phi\) exists, it is \(\mathbb Z\to0\). But that's an issue, since the kernel of the map \(\mathbb Z\to\mathbb Z\) is \(\id_{\mathbb Z}\), which would imply that \(\phi\) is not monic, a contradiction.</li>
+     <li><p style="font-style: normal;">The category of torsion free abelian groups is additive but not abelian. Consider the map \(\phi:\mathbb Z\to\mathbb Z\), \(\phi(n)=2n\). Suppose \(\phi\) has a cokernel \(f:\mathbb Z\to X\) in the category. Thus, \(f\circ\phi=0\). In particular, \(f(2)=0\). So, \(f(1)+f(1)=0\), and since \(X\) is torsion-free, \(f(1)=0\), which implies that \(X=\{0\}\). Thus, if the cokernel of \(\phi\) exists, it is \(\mathbb Z\to0\). But that's an issue, since the kernel of the map \(\mathbb Z\to\mathbb Z\) is \(\id_{\mathbb Z}\), which would imply that \(\phi\) is not monic, a contradiction.</p></li>
    </ul>
 
 
