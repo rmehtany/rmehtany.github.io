@@ -982,7 +982,7 @@
   <p>Suppose we removed \(\alpha\) from the diagram and asked whether there exists a unique \(\alpha\) satisfying the diagram. Interestingly, the answer is yes! And, the answer to the same question with \(\gamma\) is also yes. In particular, if \(\beta,\gamma\) are isomorphisms, so must be \(\alpha\) (to see why, consider the diagram formed with \(\beta^{-1},\gamma^{-1}\), which by universal property generates a map \(\alpha^{-1}\) by uniqueness. The same logic holds if \(\alpha,\beta\) are given as isomorphisms). But, it isn't true for \(\beta\). Consider the following diagram:</p>
   <p><a class="gallery img-center-short cboxElement" href="/public/diag39.png"><img src="/public/diag39.png" width="100%"></a></p>
   <p>However, we can say something about \(\beta\) given sufficient conditions on \(\alpha,\gamma\).</p>
-  <div class="Theorem" title="Short Five Lemma" id="short"> If \(\alpha,\gamma\) are monic (epic) in the short exact sequence chain morphism diagram, then \(\beta\) is monic (epic).
+  <a id="short"></a><div class="Theorem" title="Short Five Lemma"> If \(\alpha,\gamma\) are monic (epic) in the short exact sequence chain morphism diagram, then \(\beta\) is monic (epic).
 <div class="proof">
   <p><a onclick="myCollapse('short-set')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="short-but"></i></a><br></p>
   <div id="short-set" class="w3-container w3-hide">
@@ -995,7 +995,7 @@
     </div>
     
  <p style="font-style: normal;">Not all exact sequences are short, so we want to generalize this concept to arbitrary exact sequences.</p>
-  <div class="Theorem" title="Five Lemma" id="five"> Given the following chain map of exact sequences, if \(f_2,f_4\) are isomorphisms, \(f_1\) is epic, and \(f_5\) is monic, \(f_3\) is an isomorphism.<p><a class="gallery img-center-short cboxElement" href="/public/diag40.png"><img src="/public/diag40.png" width="100%"></a></p>
+  <a id="five"></a><div class="Theorem" title="Five Lemma"> Given the following chain map of exact sequences, if \(f_2,f_4\) are isomorphisms, \(f_1\) is epic, and \(f_5\) is monic, \(f_3\) is an isomorphism.<p><a class="gallery img-center-short cboxElement" href="/public/diag40.png"><img src="/public/diag40.png" width="100%"></a></p>
 <div class="proof">
   <p><a onclick="myCollapse('five-set')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="five-set-but"></i></a><br></p>
   <div id="five-set" class="w3-container w3-hide">
@@ -1020,14 +1020,14 @@
   </div>
 </div>
 <p style="font-style: normal;"><a id="before"></a>Observe that via the cartesian square, we can induce maps \(j_*:\ker i\to\ker g\) and \(f_*:\cok i\to\cok g\) as follows: Since $$0=f\circ i\circ\ker i=g\circ j\circ\ker i$$there exists a unique morphism \(j_*\) such that \(\ker g\circ j_*=j\circ\ker i\). Likewise, since $$0=\cok g\circ g\circ j=\cok g\circ f\circ i$$there exists a unique map \(f_*\) such that \(\cok g\circ f=f_*\circ\cok i\).</p>
-<div class="Lemma" title="(Co)cartesian isomorphisms" id="lem2"> If the square is cartesian, then \(j_*\) is an isomorphism. If it is cocartesian, \(f_*\) is.
+<a id="lem2"></a><div class="Lemma" title="(Co)cartesian isomorphisms"> If the square is cartesian, then \(j_*\) is an isomorphism. If it is cocartesian, \(f_*\) is.
 <div class="proof">
   <p><a onclick="myCollapse('lem2-set')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="lem2-set-but"></i></a><br></p>
   <div id="lem2-set" class="w3-container w3-hide">
     <p>Observe that $$g\circ\ker g=f\circ0=0$$so by the cartesian property, there exists a map \(\eta:\ker g\to W\) such that $$i\circ\eta=0,\;j\circ\eta=\ker g$$By kernel properties, there exists a unique map \(j_*^{-1}:\ker g\to\ker i\) such that \(\eta=\ker i\circ j^{-1}_*\). Since uniqueness composes, \(j_*\circ j^{-1}_*\) and \(j^{-1}_*\circ j_*\) are both unique maps that satisfy their respective relations. Since \(\id_W\) and \(\id_B\) satisfy the respective relations, we have that \(j_*\) and \(j_*^{-1}\) are inverses and thus isomorphisms. By duality, the lemma follows.</p>
   </div>
 </div>
-<div class="Lemma" title="Cartesian squares are cocartesian" id="lem3"> If the square is cartesian and \(g\) is epic, then \(i\) is epic and the square is also cocartesian. Dually, if the square is cocartesian and \(j\) is monic, then \(f\) is monic and the square is also cartesian.
+<a id="lem3"></a><div class="Lemma" title="Cartesian squares are cocartesian"> If the square is cartesian and \(g\) is epic, then \(i\) is epic and the square is also cocartesian. Dually, if the square is cocartesian and \(j\) is monic, then \(f\) is monic and the square is also cartesian.
 <div class="proof">
   <p><a onclick="myCollapse('lem3-set')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="lem3-set-but"></i></a><br></p>
   <div id="lem3-set" class="w3-container w3-hide">
@@ -1046,7 +1046,7 @@
   </div>
 </div>
 
-  <div class="Lemma" title="(co)kernel sequence is exact" id="lem5"> Given the following commutative diagram, if the first row is exact and \(k\) monic, the induced sequence (see the paragraph before <a href='#before'>Lemma 2</a> for an explicit induction) $$\ker a\xrightarrow d\ker b\xrightarrow e\ker c$$ is exact. Dually, if the second row is exact and \(g\) is epic, \(\cok a\to\cok b\to\cok c\) is exact.
+<a id="lem5"></a><div class="Lemma" title="(co)kernel sequence is exact"> Given the following commutative diagram, if the first row is exact and \(k\) monic, the induced sequence (see the paragraph before <a href='#before'>Lemma 2</a> for an explicit induction) $$\ker a\xrightarrow d\ker b\xrightarrow e\ker c$$ is exact. Dually, if the second row is exact and \(g\) is epic, \(\cok a\to\cok b\to\cok c\) is exact.
 <div class="proof">
   <p><a onclick="myCollapse('lem5-set')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="lem5-set-but"></i></a><br></p>
   <div id="lem5-set" class="w3-container w3-hide">
@@ -1057,7 +1057,7 @@
     <p>By <a href='#lem4'>Lemma 4</a>, \(\ker a\to\ker b\to\ker c\) is exact. By duality, the rest follows.</p>
   </div>
 </div>
-<div class="Theorem" title="Snake Lemma" id="snake"> Consider the following chain morphism of exact sequences:<p><a class="gallery img-center-short cboxElement" href="/public/diag48.png"><img src="/public/diag48.png" width="100%"></a></p>There exists a unique morphism \(\partial:\ker c\to\cok a\) that satisfies the commutative diagram<p><a class="gallery img-center-short cboxElement" href="/public/diag49.png"><img src="/public/diag49.png" width="100%"></a></p>And the following sequence is exact:$$\ker a\xrightarrow{f^*}\ker b\xrightarrow{g^*}\ker c\xrightarrow\partial\cok a\xrightarrow{k^*}\cok b\xrightarrow{l^*}\cok c$$with \(f^*\) monic if \(f\) is, and \(l^*\) epic if \(l\) is.
+<a id="snake"></a><div class="Theorem" title="Snake Lemma"> Consider the following chain morphism of exact sequences:<p><a class="gallery img-center-short cboxElement" href="/public/diag48.png"><img src="/public/diag48.png" width="100%"></a></p>There exists a unique morphism \(\partial:\ker c\to\cok a\) that satisfies the commutative diagram<p><a class="gallery img-center-short cboxElement" href="/public/diag49.png"><img src="/public/diag49.png" width="100%"></a></p>And the following sequence is exact:$$\ker a\xrightarrow{f^*}\ker b\xrightarrow{g^*}\ker c\xrightarrow\partial\cok a\xrightarrow{k^*}\cok b\xrightarrow{l^*}\cok c$$with \(f^*\) monic if \(f\) is, and \(l^*\) epic if \(l\) is.
 <div class="proof">
   <p><a onclick="myCollapse('snake-set')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="snake-set-but"></i></a><br></p>
   <div id="snake-set" class="w3-container w3-hide">
@@ -1078,7 +1078,7 @@
       
       <p style="font-style: normal;">Infinite chain complexes are very useful, since they inherit a lot of the structure of the underlying category. In fact, we can define a category of cochain complexes as follows (one can do this for chain complexes as well). Let \(\rmC\) be an abelian category. We define the category \(Com_\rmC\) as follows. The elements are infinite cochain complexes $$A^*:\qquad\ldots\to A^{i-1}\xrightarrow{f^{i-1}}A^i\xrightarrow{f^i}A^{i+1}\to\ldots$$of objects in \(\rmC\), and morphisms \(A^*\to B^*\) are morphisms \(m_i:A^i\to B^i\) satisfying the diagram</p>
       <p><a class="gallery img-center-short cboxElement" href="/public/diag52.png"><img src="/public/diag52.png" width="100%"></a></p>
-      <div class="Theorem" title="The category of chain complexes is abelian" id='complex'> \(Com_\rmC\) is abelian.
+      <div class="Theorem" title="The category of chain complexes is abelian" id='complex'>   \(Com_\rmC\) is abelian.
 <div class="proof">
   <p><a onclick="myCollapse('complex-set')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="complex-set-but"></i></a><br></p>
   <div id="complex-set" class="w3-container w3-hide">
@@ -1086,8 +1086,8 @@
   </div>
 </div>
   
-        <h2 id='cohom'> (Co)homology Morphisms</h2>
-        <div class="Theorem" title="Homology as a functor" id='hom'> A morphism \(m:A^*\to B^*\) induces a homology map \(H^i(A^*)\to H^i(B^*)\), and thus creates a functor \(H^i:Com_\rmC\mapsto\rmC\).
+	      <p style="font-style: normal;"><h2 id='cohom'> (Co)homology Morphisms</h2></p>
+        <a id="hom"></a><div class="Theorem" title="Homology as a functor"> A morphism \(m:A^*\to B^*\) induces a homology map \(H^i(A^*)\to H^i(B^*)\), and thus creates a functor \(H^i:Com_\rmC\mapsto\rmC\).
 <div class="proof">
   <p><a onclick="myCollapse('hom-set')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="hom-set-but"></i></a><br></p>
   <div id="hom-set" class="w3-container w3-hide">
@@ -1099,7 +1099,7 @@
     <p>Let \(x_A:\ker f^i\to H^i(A^*)\) be the cokernel of \(j_A\), and define \(x_B\) similarly. So, $$0=x_B\circ j_B\circ I=x_B\circ K\circ j_A$$Thus, by the cokernel property of \(x_A\), there exists a unique map \(H:H^i(A^*)\to H^i(B^*)\) such that \(x_B\circ K=H\circ x_A\). We define the functor \(H^i\) as the functor that sends \(m\to H\). By construction, it is a covariant functor.</p>
   </div>
 </div>
-<div class="Theorem" title="Long exact homology sequence" id='long'> Given a short exact sequence in \(Com_\rmC\) (\(X^*\) is the cochain complex $$X_i\xrightarrow{d^X_i}X_{i+1}\xrightarrow{d^X_{i+1}}\ldots$$and \(h:X^*\to Y^*\) are morphisms \(h^i:X_i\to Y_i\) satisfying the natural commutative diagram)$$0\to A^*\xrightarrow fB^*\xrightarrow gC^*\to0$$There exists a long exact sequence of cohomology (dually, homology)<p><a class="gallery img-center-short cboxElement" href="/public/diag53.png"><img src="/public/diag53.png" width="100%"></a></p>
+<a id="long"></a><div class="Theorem" title="Long exact homology sequence"> Given a short exact sequence in \(Com_\rmC\) (\(X^*\) is the cochain complex $$X_i\xrightarrow{d^X_i}X_{i+1}\xrightarrow{d^X_{i+1}}\ldots$$and \(h:X^*\to Y^*\) are morphisms \(h^i:X_i\to Y_i\) satisfying the natural commutative diagram)$$0\to A^*\xrightarrow fB^*\xrightarrow gC^*\to0$$There exists a long exact sequence of cohomology (dually, homology)<p><a class="gallery img-center-short cboxElement" href="/public/diag53.png"><img src="/public/diag53.png" width="100%"></a></p>
 <div class="proof">
   <p><a onclick="myCollapse('long-set')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="long-set-but"></i></a><br></p>
   <div id="long-set" class="w3-container w3-hide">
