@@ -1,15 +1,15 @@
 rmehtany.github.io
-rmehtany.github.io/notes
+rmehtany.github.io/notes/
 rmehtany.github.io/notes/AlgebraicGeometry/
-rmehtany.github.io/notes/AlgebraicGeometry/Chapter1-CategoryTheory
-rmehtany.github.io/notes/AlgebraicGeometry/Chapter1-CategoryTheory/WhatisaCategory
-rmehtany.github.io/notes/AlgebraicGeometry/Chapter1-CategoryTheory/WhybotherwithCategories
-rmehtany.github.io/notes/AlgebraicGeometry/Chapter1-CategoryTheory/ExamplesofBasicCategoriesandTools
-rmehtany.github.io/notes/AlgebraicGeometry/Chapter1-CategoryTheory/UniversalProperties
-rmehtany.github.io/notes/AlgebraicGeometry/Chapter1-CategoryTheory/YonedaLemma
-rmehtany.github.io/notes/AlgebraicGeometry/Chapter1-CategoryTheory/AbelianCategories
-rmehtany.github.io/notes/AlgebraicGeometry/Chapter1-CategoryTheory/CohomologyandExactness
-rmehtany.github.io/notes/AlgebraicGeometry/Chapter1-CategoryTheory/CochainMorphisms
-rmehtany.github.io/notes/AlgebraicGeometry/Chapter1-CategoryTheory/InteractionsofUniversalProperties
-rmehtany.github.io/notes/AlgebraicGeometry/Chapter2-Sheaves
+rmehtany.github.io/notes/AlgebraicGeometry/Chapter1-CategoryTheory/
+rmehtany.github.io/notes/AlgebraicGeometry/Chapter1-CategoryTheory/WhatisaCategory/
+rmehtany.github.io/notes/AlgebraicGeometry/Chapter1-CategoryTheory/WhybotherwithCategories/
+rmehtany.github.io/notes/AlgebraicGeometry/Chapter1-CategoryTheory/ExamplesofBasicCategoriesandTools/
+rmehtany.github.io/notes/AlgebraicGeometry/Chapter1-CategoryTheory/UniversalProperties/
+rmehtany.github.io/notes/AlgebraicGeometry/Chapter1-CategoryTheory/YonedaLemma/
+rmehtany.github.io/notes/AlgebraicGeometry/Chapter1-CategoryTheory/AbelianCategories/
+rmehtany.github.io/notes/AlgebraicGeometry/Chapter1-CategoryTheory/CohomologyandExactness/
+rmehtany.github.io/notes/AlgebraicGeometry/Chapter1-CategoryTheory/CochainMorphisms/
+rmehtany.github.io/notes/AlgebraicGeometry/Chapter1-CategoryTheory/InteractionsofUniversalProperties/
+rmehtany.github.io/notes/AlgebraicGeometry/Chapter2-Sheaves/
 
