@@ -976,7 +976,7 @@
 
 <p>For a lot of universal properties, the intuition behind the definitions is unclear from the setup, but examples can often help show the purpose of the properties. I've provided a few examples for each property.</p>
 
-<h2 id="init">Initial/Final/Zero Objects</h2>
+<h2 id="init"><i>Initial/Final/Zero Objects</i></h2>
 
 <p>An object \(C\in\mathfrak C\) is <strong>initial</strong> if for all \(A\in\mathfrak C\), \(|\Mor(C,A)|=1\). Likewise, an object \(C\in\mathfrak C\) is <strong>final</strong> if for all \(A\in\mathfrak C\), \(|\Mor(A,C)|=1\). An object \(C\in\mathfrak C\) is called the <strong>zero object</strong> if it is both initial and final.</p>
   
@@ -987,7 +987,7 @@
 <li>For any commutative ring \(A\) and \(S\subset A\), we can define \(S^{-1}A\) as the initial element of the category of \(A\)-algebras that send every element of \(S\) to a unit. Observe that the initial element exists if \(S\) is a multiplicative subset of \(A\). We call \(S^{-1}A\), if it exists, the <strong>localization</strong> of \(A\) at \(S\).      </li>
 </ul>
  
-<h2 id="tensor">Tensor Product</h2>
+<h2 id="tensor"><i>Tensor Product</i></h2>
 <p>Given two elements \(M,N\in Mod_A\), we define \(M\otimes_A N\), the <strong>tensor product</strong> of \(M,N\), as the \(A\)-module, paired with an \(A\)-bilinear map \(\phi:M\times N\to M\otimes N\), that satisfies the diagram below for any \(A\)-bilinear map \(f:M\times N\to Z\), where \(Z\in Mod_A\).</p>  
 
 <p><a class="gallery img-center-short cboxElement" href="/public/diag4.png"><img src="/public/diag4.png" width="100%"></a></p>
@@ -999,7 +999,7 @@
 <a class="gallery img-center-short cboxElement" href="/public/diag5.png"><img src="/public/diag5.png" width="100%"></a></p></li>
 </ul>
 
-<h2 id="limit">Limits</h2>
+<h2 id="limit"><i>Limits</i></h2>
 
 <p>Given a small category \(\mathfrak F\), category \(\mathfrak C\), and functor \(F:\mathfrak F\to\mathfrak C\), the <strong>limit</strong> of \(\mathfrak C\) with respect to \(F\), written as \(\varprojlim\limits_F\; \mathfrak C\), is an object of \(\mathfrak C\), paired with morphisms \(m_A:\varprojlim\limits_F\; \mathfrak C\to F(A)\) for each \(A\in\mathfrak F\), such that for each morphism \(h:X\to Y\) in \(\mathfrak F\), the following diagram holds:</p>
 <p><a class="gallery img-center-short cboxElement" href="/public/diag19.png"><img src="/public/diag19.png" width="100%"></a></p>
@@ -1011,7 +1011,7 @@
 \(\mathbb Z/p^m\to\mathbb Z/p^n\) (\(n\leq m\in[1,\infty]\)) given by dropping all but the first \(n\) terms. Thus, the following diagram shows how the \(p\)-adic integers can be viewed as a limit:<a class="gallery img-center-short cboxElement" href="/public/diag7.png"><img src="/public/diag7.png" width="100%"></a></li>
 </ul>
 
-<h2 id="colimit">Colimits</h2>
+<h2 id="colimit"><i>Colimits</i></h2>
 
 <p>Colimits, denoted by \(\varinjlim\limits_F\;\mathfrak C\), are the dual notion to limits (i.e., they satisfy the diagram with arrows reversed). More precisely, \(m_A:F(A)\to\varinjlim\limits_F\;\rmC\) is defined for each \(A\in\mathfrak F\), the diagram below holds for all \(h:X\to Y\in\mathfrak F\), and for any \(W\in\mathfrak C\) that satisfies the above properties (with \(m^*_A:F(A)\to W\) as the maps, there exists a map \(\psi:\varinjlim\limits_F\;\mathfrak C\to W\) such that \(m^*_A=\psi\circ m_A\) for each \(A\in\mathfrak F\).</p>
 <p><a class="gallery img-center-short cboxElement" href="/public/diag8.png"><img src="/public/diag8.png" width="100%"></a></p>
@@ -1024,7 +1024,7 @@
 We often write this as \(\varinjlim s^{-1}A=S^{-1}A\). Letting \(S=\mathbb N\), \(A=\mathbb Z\), we have \(\varinjlim\frac1n\mathbb Z=\mathbb Q\).</li>
 </ul>
 
-<h2 id="adjoint">Adjoints</h2>
+<h2 id="adjoint"><i>Adjoints</i></h2>
 
 <p>Let \(F:\mathfrak A\to\mathfrak B\) and \(G:\mathfrak B\to\mathfrak A\) be functors. We say \(F\) and \(G\) are <strong>adjoint</strong> iff for each \(A\in\mathfrak A\), \(B\in\mathfrak B\), there exists a morphism \(\tau_{A,B}:\Mor_\mathfrak B(F(A),B)\to\Mor_\mathfrak A(A,G(B))\) such that for any \(f:A\to A^*\in\mathfrak A\), the following diagram holds:</p>
 <p><a class="gallery img-center-short cboxElement" href="/public/diag9.png"><img src="/public/diag9.png" width="100%"></a></p>
@@ -1041,7 +1041,7 @@ We often write this as \(\varinjlim s^{-1}A=S^{-1}A\). Letting \(S=\mathbb N\), 
 <li>A classic example of adjoints is <strong>groupification</strong>. Loosely speaking, it's the process of finding the smallest abelian group containing a semigroup. To formalize this idea, we define the groupification of an abelian semigroup \(S\) to be a map of abelian semigroups \(\phi:S\to G\), with \(G\) an abelian group, such that for any abelian group \(G^\prime\) with abelian semigroup map \(\psi:S\to G^\prime\), the following diagram holds:<p><a class="gallery img-center-short cboxElement" href="/public/diag14.png"><img src="/public/diag14.png" width="100%"></a></p>This diagram is the dual of the quotient space universal property diagram (not presented on this blog, but it's one of the first ones you'll encounter). This is expected behavior, since quotient spaces are "shrinking" the space, while groupification is "expanding" it. And, since the identity morphism satisfies the universal property for \(\phi\) when \(S\) is an abelian group, the groupification of an abelian group is itself. As such, groupification can be viewed as a <strong>closure operator</strong> on the category of abelian semigroups. Groupification can also be viewed as a functor from \(\mathfrak S\), the category of non-empty abelian semigroups, to <em>Ab</em>, the category of abelian groups. The inverse of this functor intuitively is the functor that <em>forgets</em> the fact that a given group has inverses and an identity. We call this functor, from \(Ab\to\mathfrak S\), the <strong>forgetful functor</strong>. Showing that these functors are adjoint (with the forgetful functor as the right adjoint) is a straightforward application of definitions. In general, we expect the forgetful functor to be a right adjoint for any natural functors from a category to a sub-category.</li>
 </ul>
 
-<h2 id="mono">(Mono/Epi)morphisms</h2>
+<h2 id="mono"><i>(Mono/Epi)morphisms</i></h2>
 
 <p>A map \(f:X\to Y\) is a <strong>monomorphism</strong> if for any \(\phi:Z\to Y\), there is at most one map \(\psi\) satisfying the diagram below.</p>
 <p><a class="gallery img-center-short cboxElement" href="/public/diag15.png"><img src="/public/diag15.png" width="100%"></a></p>
