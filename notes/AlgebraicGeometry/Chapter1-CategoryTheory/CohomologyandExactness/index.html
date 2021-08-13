@@ -963,14 +963,21 @@
 	  </ul>
   </li>
   <li><a href="#cohom" id="markdown-toc-cohom">(Co)homology</a>
+	  <ul>
+		  <li><a href='#thmnew' id='markdown-toc-thmnew'>Equivalence of homology</a></li>
+	  </ul>
   </li>
     <li><a href="#facto" id="markdown-toc-facto">Factoring Long Complex Sequences</a>
+	    <ul>
+		    <li><a href='#factor1' id='markdown-toc-factor1'>Kernel-image short exact sequence</a></li>
+		    <li><a href='#factor2' id='markdown-toc-factor2'>Homology short exact sequence</a></li>
+	    </ul>
     </li>
 </ul>
 
 <p>In this post, we'll generalize the notions of homology, cohomology, and exactness from contexts of differential geometry, algebra, or wherever else you've seen it to abelian categories.</p>
   
-  <h2 id='exact'>Exactness</h2>
+	<h2 id='exact'><i>Exactness</i></h2>
   
   <p>Given some sequence of objects and morphisms$$\ldots\to A\xrightarrow fB\xrightarrow gC\to\ldots$$</p>
   <p>we say that the sequence is a <strong>complex</strong> at \(B\) if \(g\circ f=0\). If you come from a differential geometry context, you may be more familiar with the term <em>closed</em>. If a sequence is a complex everywhere, we call it a <strong>complex sequence</strong>. We say that the sequence is <strong>exact</strong> at \(B\) if \(\ker g=\im f\) (more precisely, there exists a map \(\im f\to B\) which is a kernel map of \(g\)). An exact sequence is a sequence that is exact everywhere. The following result shouldn't be surprising.</p>
@@ -991,7 +998,7 @@
 		<li><a id='ex2'></a><p style="font-style: normal;">A classic short exact sequence is defined for any non-trivial principal ideal \(\langle k\rangle\subset R\), where \(R\) is a commutative integral domain:$$0\to R\xrightarrow{\times k}R\to R/\langle k\rangle\to0$$We can generalize as follows: given any monomorphism \(f:A\to B\) with cokernel \(g:B\to C\), observe that \(g\) is an epimorphism and \(g\circ f=0\). Thus, the following is a short exact sequence:$$0\to A\xrightarrow fB\xrightarrow gC\to0$$Likewise, given epimorphism \(g\), we can generate the same exact sequence by letting \(f=\ker g\).</p></li>
 	  </ul>
 	  
-	  <div class="Theorem" title="Split Short Exact Sequences" id='split'> Given an exact sequence $$0\to A\xrightarrow fB\xrightarrow gC\to0$$The following statements are equivalent:
+	  <a id='split'></a><div class="Theorem" title="Split Short Exact Sequences"> Given an exact sequence $$0\to A\xrightarrow fB\xrightarrow gC\to0$$The following statements are equivalent:
 		  <ol>
 			  <li>There exists a map \(t:B\to A\) such that \(t\circ f=\text{id}_A\).</li>
 			  <li>There exists a map \(r:C\to B\) such that \(g\circ r=\text{id}_C\).</li>
@@ -1011,13 +1018,20 @@
 </div>
 
 
-<p style="font-style: normal;"><h2 id='cohom'>(Co)homology</h2></p>
+<h2 id='cohom'>(Co)homology</h2>
 
-<p style="font-style: normal;">Let's consider the following complex sequence.$$\ldots\to A\xrightarrow fB\xrightarrow gC\to\ldots$$The <strong>homology</strong> of the sequence at \(B\) is $$\cok(\im f\to\ker g)=\ker g/\im f$$In fact, the homology can also equivalently be defined as \(\ker(\cok f\to\coim g)\)To see the equivalence of these constructions, consider the diagram below:</p>
+<p style="font-style: normal;">Let's consider the following complex sequence.$$\ldots\to A\xrightarrow fB\xrightarrow gC\to\ldots$$The <strong>homology</strong> of the sequence at \(B\) is $$\cok(\im f\to\ker g)=\ker g/\im f$$</p>
+	  <a id='thmnew'></a><div class="Theorem" title="Equivalent definition of homology"> The homology is isomorphic to \(\ker(\cok f\to\coim g)\).
+<div class="proof">
+  <p><a onclick="myCollapse('thmnew-set')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="pull-back-set-but"></i></a><br></p>
+  <div id="thmnew-set" class="w3-container w3-hide">
 <p><a class="gallery img-center-short cboxElement" href="/public/diag35.png"><img src="/public/diag35.png" width="100%"></a></p>			  
-<p style="font-style: normal;">The diagram induces a sequence $$A\to\im f\xrightarrow i\ker g\xrightarrow jB\xrightarrow p\cok f\xrightarrow q\coim g\to C$$such that the composition equals \(g\circ f=0\). Since \(A\to\im f\) is epic and \(\coim g\to C\) is monic, we can strip them off the sequence to get $$\im f\xrightarrow i\ker g\xrightarrow jB\xrightarrow p\cok f\xrightarrow q\coim g$$ whose composition equals \(0\). So, we have the diagram:</p>
+<p>The diagram induces a sequence $$A\to\im f\xrightarrow i\ker g\xrightarrow jB\xrightarrow p\cok f\xrightarrow q\coim g\to C$$such that the composition equals \(g\circ f=0\). Since \(A\to\im f\) is epic and \(\coim g\to C\) is monic, we can strip them off the sequence to get $$\im f\xrightarrow i\ker g\xrightarrow jB\xrightarrow p\cok f\xrightarrow q\coim g$$ whose composition equals \(0\). So, we have the diagram:</p>
 <p><a class="gallery img-center-short cboxElement" href="/public/diag36.png"><img src="/public/diag36.png" width="100%"></a></p>
-<p style="font-style: normal;">Since \(q\circ p\circ j=0\) as \(j\) is the kernel of \(q\circ p\), by the kernel properties of \(v\), there exists a unique map \(y\) satisfying the diagram above. Likewise, since \(p\circ j\circ i=0\) as \(p\) is the cokernel of \(j\circ i\), by the cokernel properties of \(u\), there exists a unique map \(x\) satisfying the diagram above. And, $$0=p\circ j\circ i=v\circ x\circ i$$since \(v\) is monic, \(x\circ i=0\). Thus, by the cokernel properties of \(u\), there exists a unique morphism \(z:\cok i\to\ker q\) that satisfies \(z\circ u=x\). By the dual argument, there exists a unique morphism \(z^*:\ker q\to\cok i\) such that \(v\circ z^*=y\). Thus, \(z\circ z^*\) and \(z^*\circ z\), by uniqueness, must be identity morphisms, and thus, \(\ker q\) and \(\cok i\) are isomorphic. This shows the equivalence of our notions of homology.</p>
+<p>Since \(q\circ p\circ j=0\) as \(j\) is the kernel of \(q\circ p\), by the kernel properties of \(v\), there exists a unique map \(y\) satisfying the diagram above. Likewise, since \(p\circ j\circ i=0\) as \(p\) is the cokernel of \(j\circ i\), by the cokernel properties of \(u\), there exists a unique map \(x\) satisfying the diagram above. And, $$0=p\circ j\circ i=v\circ x\circ i$$since \(v\) is monic, \(x\circ i=0\). Thus, by the cokernel properties of \(u\), there exists a unique morphism \(z:\cok i\to\ker q\) that satisfies \(z\circ u=x\). By the dual argument, there exists a unique morphism \(z^*:\ker q\to\cok i\) such that \(v\circ z^*=y\). Thus, \(z\circ z^*\) and \(z^*\circ z\), by uniqueness, must be identity morphisms, and thus, \(\ker q\) and \(\cok i\) are isomorphic. This shows the equivalence of our notions of homology.</p>
+  </div>
+</div>
+
 <p style="font-style: normal;">Thus, exactness is equivalent to the homology being trivial. We call the elements of \(\ker g\) (assuming that category is concrete) <strong>cycles</strong> and the elements of \(\im f\) <strong>boundaries</strong>, as the standard pedagogical example of homology is that of homology groups of simplicial complexes.</p>
 <p style="font-style: normal;">There are two types of complex sequences we are especially interested in:</p>
 <ul>
