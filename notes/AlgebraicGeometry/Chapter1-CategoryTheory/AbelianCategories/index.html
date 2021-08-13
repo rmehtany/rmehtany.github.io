@@ -957,10 +957,27 @@
 
   <ul id="markdown-toc">
   <li><a href="#additive" id="markdown-toc-additive">Additive Categories</a>
+	  <ul>
+		  <li><a href='#def' id="markdown-toc-def">Definition</a></li>
+		  <li><a href='#prop' id="markdown-toc-prop">Properties</a></li>
+		  <li><a href='#thm1' id="markdown-toc-thm1">Products are coproducts</a></li>
+	  </ul>
+		  
   </li>
   <li><a href="#cokernel" id="markdown-toc-cokernel">(Co)kernels</a>
+	  <ul>
+		  <li><a href='#prop2' id="markdown-toc-prop2">Properties</a></li>
+	  </ul>
+		  
   </li>
     <li><a href="#abelian" id="markdown-toc-abelian">Abelian Categories</a>
+	    <ul>
+		    <li><a href='#thm2' id="markdown-toc-thm2">Freyd-Mitchell Embedding Theorem</a></li>
+		    <li><a href='#lem1' id="markdown-toc-lem1">(Monic/Epic) morphism is its own (image/coimage)</a></li>
+		    <li><a href='#lem2' id="markdown-toc-lem2">Monomorphic epimorphism is an isomorphism</a></li>
+		    <li><a href='#lem3' id="markdown-toc-lem3">(Monic/Epic) Coimage to codomain is epic</a></li>
+		    <li><a href='#lem4' id="markdown-toc-lem4">Image is isomorphic to coimage</a></li>
+		    <li><a href='#lem5' id="markdown-toc-lem5">Finite (co)limits exist</a></li>
     </li>
     <li><a href="#example" id="markdown-toc-example">Examples</a></li>
 </ul>
@@ -968,9 +985,9 @@
 <p>If you've survived the drawl that was the first \(5\) parts of this chapter, congratulations! There shouldn't be any more terminology dumps on this blog (I hope?), and we can finally do some math (Some may argue that the proof of Yoneda's lemma is "math", but in my opinion, the lemma is just a rephrasing of the definition of categories, rather than a novel observation).</p>
 <p>In this post, we'll be defining abelian categories, which have a technical definition, but can be thought intuitively as categories that behave similarly to \(Mod_A\).</p>
 
-  <h2 id='additive'>Additive Categories</h2>
+	<h2 id='additive'><i>Additive Categories</i></h2>
   
-  <div class="Definition" title="Additive Category"> An <strong>additive category</strong> is a category \(\mathfrak C\), such that for any \(A,B,C\in\rmC\):
+	<a id='def'></a><div class="Definition" title="Additive Category"> An <strong>additive category</strong> is a category \(\mathfrak C\), such that for any \(A,B,C\in\rmC\):
     <ol>
       <li>\(\Mor(A,B)\) has a binary operation \(+\) such that \(\Mor(A,B)\) is an abelian group. We call the identity element \(0_{AB}\).</li>
       <li>\(\circ:\Mor(B,C)\times\Mor(A,B)\to\Mor(A,C)\) is a <strong>bilinear</strong> mapping (linear on each input).</li>
@@ -980,7 +997,7 @@
   </div>
   
   <p style="font-style: normal;">For additive categories, we rename \(\Mor\) to \(\Hom\), representing sets of <strong>homomorphisms</strong>. An <strong>additive functor</strong> is a functor \(F\) such that for all \(A,B\), \(F(A\times B)=F(A)\times F(B)\).</p>
-  <p style="font-style: normal;">Properties of additive categories/functors:</p>
+	  <a id='prop'></a><p style="font-style: normal;">Properties of additive categories/functors:</p>
   <ul>
     <li>If \(Z\) is the zero-object, then \(|\Hom(Z,Z)|=1\), so the sole element must be the identity map, which also is \(0_{ZZ}\). And, if \(\id_Z=0_{ZZ}\), then by property \(2\):$$0\circ f=(0+0)\circ f=0\circ f+0\circ f$$so \(0\circ f=0\) for all \(f\) and dually, \(f\circ0=0\). But, $$0=0\circ f=\id\circ f=f$$This implies that the homomorphism groups \(\Hom(Z,A),\;\Hom(A,Z)\) for any \(A\) are trivial, so \(Z\) is the zero-object. Thus, \(Z\) is a zero object iff \(\id_Z=0_{ZZ}\).</li>
     <li> For any objects \(A,B\in\rmA\), and additive functor \(F:\mathfrak A\to\mathfrak B\), \(F\) induces a group homomorphism \(\Hom(A,B)\to\Hom(F(A),F(B))\) via \(f\mapsto F(f)\). Thus, \(F(0_{ZZ})=0_{F(Z)F(Z)}\), and \(F(\id_Z)=\id_{F(Z)}\). Thus, zero objects are mapped to other zero objects.</li>
@@ -990,7 +1007,7 @@
     <li>\(Mod_A\) is additive. All the properties are pretty easy to verify so it is left to the reader.</li>
   </ul>
   
-  <div class="Theorem 1" title="Products are coproducts"> In an additive category \(\mathfrak A\) with objects \(A,B\in\mathfrak A\), the coproduct \(A\sqcup B\) exists, as \(A\times B\) satisfies its diagram.
+	<a id='thm1></a><div class="Theorem 1" title="Products are coproducts"> In an additive category \(\mathfrak A\) with objects \(A,B\in\mathfrak A\), the coproduct \(A\sqcup B\) exists, as \(A\times B\) satisfies its diagram.
 <div class="proof">
   <p><a onclick="myCollapse('coprod')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="coprod-but"></i></a><br></p>
   <div id="coprod" class="w3-container w3-hide">
@@ -1008,7 +1025,7 @@
 
     <p style="font-style: normal;">As hinted upon earlier in our remarks, we can actually define the <strong>direct sum</strong> as the product endowed with the morphisms \(i,j\) as defined above. It's not hard to see that \(i,j\), and the product fully determine \(p,q\), so some definitions endow the direct sum with all \(4\) maps.</p>
     
-    <h2 id='cokernel' style="font-style: normal;">(Co)kernels</h2>
+    <h2 id='cokernel'>(Co)kernels</h2>
     
     <p style="font-style: normal;">The categorical notion of a kernel generalizes the algebraic notion of kernels, by defining them as the largest object that gets mapped to \(0\) by a morphism.</p>
     <p style="font-style: normal;">Let \(\mathfrak C\) be a category with a zero-object called \(0\). For some morphism \(f:B\to C\), the <strong>kernel</strong> is an object \(A\) paired with an inclusion \(i:A\hookrightarrow B\) such that \(f\circ i=0\), and for any other object \(A^*\) with map \(i^*\) with the aforementioned properties, there exists a unique map \(k:A^*\to A\) such that \(i^*=i\circ k\) (you should recognize this as the standard universal property trick to ensure uniqueness of the kernel). In diagram form, we have</p>
@@ -1016,17 +1033,17 @@
     <p style="font-style: normal;">and similarly, we can define the cokernel as the colimit of the reversed diagram. I chose not to define quotient spaces earlier on (which probably lead to some rather tedious work-arounds) since quotient objects can be defined strictly as cokernels of additive categories.</p>
     <p style="font-style: normal;">Kernel maps are often indicated by \(\hookrightarrow\) or \(\rightarrowtail\). Cokernel maps are often indicated by \(\twoheadrightarrow\).</p>
     
-    <ul>
+	<a id='prop2'></a><ul>
       <li><p style="font-style: normal;">Kernels in categories with zero objects (and thus \(0\)-morphisms) are monomorphisms. For any kernel \(k:K\to A\) of \(f:A\to B\), and for any \(g:C\to K\), observe that \(f\circ k\circ g=0\), so by the universal property of the kernel, \(g\) is unique. By an identical argument, cokernels are epimorphisms.</p></li>
       <li><p style="font-style: normal;">The kernel map (if it exists) is the \(0\) map iff \(f\) is a monomorphism (this should make sense: what is the kernel of an injection?). For one direction, note that $$f\circ\ker f=0=f\circ 0$$and since \(f\) is a monomorphism, \(\ker f=0\). For the other, observe that for any \(g,h\) with \(f\circ g=f\circ h\), \(f\circ(g-h)=0\). So, if \(f\circ i\neq0\) for all \(i\neq0:C\to A\), then \(f\) is a monomorphism. Now for any map \(i:C\to A\), if \(f\circ i=0\), by the kernel property, there exists a map \(k:C\to0\) such that \(i=k\circ l\), where \(l\) is the kernel morphism. \(k=0\), so \(i=0\). This shows \(f\) is a monomorphism.</p><p style="font-style: normal;">This argument in the dual proves that the cokernel map is the \(0\) map iff \(f\) is an epimorphism. When \(f\) is a monomorphism, we say that \(A\) is a <strong>subobject</strong> of \(B\). When \(f\) is an epimorphism, we say \(B\) is a <strong>quotient object</strong> of \(A\).</p></li>
     </ul>
     
     <div class="Remark" title="(Co)kernels are morphisms"><p style="font-style: normal;">But, we'll often refer to them as objects. In particular, kernels are maps \(k:A\to B\), so if we refer to the kernel as an object, we mean \(A\). If we refer to the kernel as a map, we mean \(k\). Likewise, for cokernel \(j:A\to B\), if we refer to an object, we mean \(B\). If we refer to a map, we mean \(j\).</div>
     
-    <h2 id='abelian' style="font-style: normal;">Abelian Categories</h2>
+    <h2 id='abelian'>Abelian Categories</h2>
     
     <p style="font-style: normal;">As our tangent on kernels and cokernels showed us, kernels (cokernels) are monomorphisms (epimorphisms) if they exist. But we might ask the reverse question: are all monomorphisms (epimorphisms) kernels (cokernels) of some map? In the study of abelian groups, this is the case, and is known as the first isomorphism theorem of group theory. Abelian categories are defined to generalize this concept.</p>
-    <div class="Definition" title="Abelian Category"> An <strong>abelian category</strong> is an additive category \(\rmA\) such that
+	<div class="Definition" title="Abelian Category"> An <strong>abelian category</strong> is an additive category \(\rmA\) such that
       <ol>
         <li>Every morphism has a kernel and cokernel</li>
         <li>Every monomorphism is the kernel of some morphism (i.e., monomorphisms are <strong>normal</strong>).</li>
@@ -1034,7 +1051,7 @@
       </ol>
     </div>
     
-    <p style="font-style: normal;">Some terminology/facts used in abelian categories for a morphism \(f:A\to B\):</p>
+	<p style="font-style: normal;">Some terminology/facts used in abelian categories for a morphism \(f:A\to B\):</p>
     
     <ul>
       <li>The <strong>image</strong> of \(f\) is defined by \(\im(f)=\ker(\cok(f))\). Likewise, the <strong>coimage</strong> of \(f\) is defined as \(\coim(f)=\cok(\ker(f))\).</li>
@@ -1043,7 +1060,7 @@
     
     <p style="font-style: normal;">Some important results to show the power of these conditions:</p>
     
-    <div class="Theorem 2" title="Freyd-Mitchell Embedding Theorem"> For any small abelian category \(\rmC\), there exists an exact, fully faithful functor \(F:\rmC\to Mod_A\) for some ring \(A\) such that it embeds \(\rmC\) as a full subcategory.
+	<a id='thm2'></a><div class="Theorem 2" title="Freyd-Mitchell Embedding Theorem"> For any small abelian category \(\rmC\), there exists an exact, fully faithful functor \(F:\rmC\to Mod_A\) for some ring \(A\) such that it embeds \(\rmC\) as a full subcategory.
 <div class="proof">
   <p><a onclick="myCollapse('freyd')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="freyd-but"></i></a><br></p>
   <div id="freyd" class="w3-container w3-hide">
@@ -1103,7 +1120,7 @@
   </div>
 </div>
 
-   <h2 id='example' style="font-style: normal;">Examples</h2>
+   <h2 id='example'>Examples</h2>
    <p style="font-style: normal;">All but the first example are non-abelian, as we'll encounter important examples of abelian categories later.</p>
    <ul>
      <li><p style="font-style: normal;">\(Mod_A\) for any commutative ring \(A\) is abelian. This construction would be pointless otherwise.</p></li>
