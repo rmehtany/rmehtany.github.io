@@ -992,10 +992,10 @@
 
 	  <p style="font-style: normal;">A <strong>short exact sequence</strong> is an exact sequence with \(5\) terms, with the first and last being \(0\) (essentially, replace the \(\ldots\) with \(0\) in the sequence above).</p>
 	  
-	  <h3 id='basic'><p style="font-style: normal;">Basic Examples:</p></h3>
+	  <h3 id='basic' style="font-style: normal;">Basic Examples:</h3>
     	<ul>
-		<li><a id='ex1'></a><p style="font-style: normal;">The sequence $$0\to A\xrightarrow fB$$is exact iff \(f\) is a monomorphism. In particular, if \(B=0,\;A=0\). Likewise,  the sequence $$A\xrightarrow fB\to0$$is exact iff \(f\) is an epimorphism.</p></li>
-		<li><a id='ex2'></a><p style="font-style: normal;">A classic short exact sequence is defined for any non-trivial principal ideal \(\langle k\rangle\subset R\), where \(R\) is a commutative integral domain:$$0\to R\xrightarrow{\times k}R\to R/\langle k\rangle\to0$$We can generalize as follows: given any monomorphism \(f:A\to B\) with cokernel \(g:B\to C\), observe that \(g\) is an epimorphism and \(g\circ f=0\). Thus, the following is a short exact sequence:$$0\to A\xrightarrow fB\xrightarrow gC\to0$$Likewise, given epimorphism \(g\), we can generate the same exact sequence by letting \(f=\ker g\).</p></li>
+		<li style="font-style: normal;"><a id='ex1'></a>The sequence $$0\to A\xrightarrow fB$$is exact iff \(f\) is a monomorphism. In particular, if \(B=0,\;A=0\). Likewise,  the sequence $$A\xrightarrow fB\to0$$is exact iff \(f\) is an epimorphism.</li>
+		<li style="font-style: normal;"><a id='ex2'></a>A classic short exact sequence is defined for any non-trivial principal ideal \(\langle k\rangle\subset R\), where \(R\) is a commutative integral domain:$$0\to R\xrightarrow{\times k}R\to R/\langle k\rangle\to0$$We can generalize as follows: given any monomorphism \(f:A\to B\) with cokernel \(g:B\to C\), observe that \(g\) is an epimorphism and \(g\circ f=0\). Thus, the following is a short exact sequence:$$0\to A\xrightarrow fB\xrightarrow gC\to0$$Likewise, given epimorphism \(g\), we can generate the same exact sequence by letting \(f=\ker g\).</li>
 	  </ul>
 	  
 	  <a id='split'></a><div class="Theorem" title="Split Short Exact Sequences"> Given an exact sequence $$0\to A\xrightarrow fB\xrightarrow gC\to0$$The following statements are equivalent:
@@ -1035,16 +1035,16 @@
 <p style="font-style: normal;">Thus, exactness is equivalent to the homology being trivial. We call the elements of \(\ker g\) (assuming that category is concrete) <strong>cycles</strong> and the elements of \(\im f\) <strong>boundaries</strong>, as the standard pedagogical example of homology is that of homology groups of simplicial complexes.</p>
 <p style="font-style: normal;">There are two types of complex sequences we are especially interested in:</p>
 <ul>
-	<li><p style="font-style: normal;">A <strong>chain complex</strong> is a complex sequence of the following form: $$\ldots\to A_n\to A_{n-1}\to\ldots\to0$$</p></li>
-	<li><p style="font-style: normal;">A <strong>cochain complex</strong> is a complex sequence of the following form: $$0\to\ldots\to A_n\to A_{n+1}\to\ldots$$</p></li>
+	<li style="font-style: normal;">A <strong>chain complex</strong> is a complex sequence of the following form: $$\ldots\to A_n\to A_{n-1}\to\ldots\to0$$</li>
+	<li style="font-style: normal;">A <strong>cochain complex</strong> is a complex sequence of the following form: $$0\to\ldots\to A_n\to A_{n+1}\to\ldots$$</li>
 </ul>
 <p style="font-style: normal;">Generally, for a chain complex \(A^*\), we define \(H_i(A^*)\) as the homology at \(A_i\). We define \(H^i(A^*)\) identically if it is a cochain complex, but we call it <strong>cohomology</strong> instead.</p>
 
-<p style="font-style: normal;"><h2 id='facto'>Factoring Long Complex Sequences</h2></p>
+<h2 id='facto' style="font-style: normal;">Factoring Long Complex Sequences</h2>
 
 <p style="font-style: normal;">An infinite exact sequence is sometimes called a <strong>long exact sequence</strong> if it is infinite. Likewise, a (co)chain complex is sometimes called long if it is infinite. Long sequences can be tough to deal with, so we try to factor long sequences into short ones.</p>
 <p style="font-style: normal;">Consider the following cochain complex:$$A^*:\qquad\ldots\xrightarrow{}A^{i-1}\xrightarrow{f^{i-1}}A^i\xrightarrow{f^i}A^{i+1}\xrightarrow{f^{i+1}}\ldots$$We will construct short exact sequences which represent the data of the complex.</p>
-<p style="font-style: normal;"><a id='factor1'></a>Let \(k\) be the kernel of \(f^i\), \(f^*:A^i\to\im f^i\) the unique morphism satisfying \(f^i=\im f\circ f^*\), and \(g:X\to A^i\) some morphism such that \(f^*\circ g=0\). Thus, $$0=\im f\circ f^*\circ g=f^i\circ g$$so by kernel properties of \(k\), there exists a unique \(k^*\) such that \(g=k\circ k^*\). Since this works for any \(g\), this shows that \(k\) is a kernel for \(f^*\), so \(\ker f^*=\ker f^i\). But, $k$ is a monomorphism, so \(\im f^i=\ker f^i\). Thus, we have \(\ker f^*=\im k\). These results are summarized in the diagram below:</p>
+<p style="font-style: normal;"><a id='factor1'></a>Let \(k\) be the kernel of \(f^i\), \(f^*:A^i\to\im f^i\) the unique morphism satisfying \(f^i=\im f\circ f^*\), and \(g:X\to A^i\) some morphism such that \(f^*\circ g=0\). Thus, $$0=\im f\circ f^*\circ g=f^i\circ g$$so by kernel properties of \(k\), there exists a unique \(k^*\) such that \(g=k\circ k^*\). Since this works for any \(g\), this shows that \(k\) is a kernel for \(f^*\), so \(\ker f^*=\ker f^i\). But, \(k\) is a monomorphism, so \(\im f^i=\ker f^i\). Thus, we have \(\ker f^*=\im k\). These results are summarized in the diagram below:</p>
 <p><a class="gallery img-center-short cboxElement" href="/public/diag37.png"><img src="/public/diag37.png" width="100%"></a></p>
 <p style="font-style: normal;">As \(k\) is monic and \(f^*\) is epic, we have the following short exact sequence:$$0\to\ker f^i\xrightarrow{k}A^i\xrightarrow{f^*}\im f^i\to0$$This is an interesting short exact sequence, but it doesn't contain any information regarding the <strong>cocycle condition</strong> (the condition that requires the composition of adjacent maps to be \(0\)), as it only involves one morphism from the original cochain complex. Let's construct another short exact sequence to encode that information.</p>
 <p style="font-style: normal;"><a id='factor2'></a>Since \(f^i\circ f^{i-1}=0\), if \(k:\ker f^i\to A^i\) is the kernel of \(f^i\) and \(c:A^i\to\cok f^{i-1}\) is the cokernel of \(f^{i-1}\), then there exists a unique \(f^{i-1}_*:A^{i-1}\to\ker f^i\) and a unique \(f^i_*:\cok f^{i-1}\to A^i\) such that \(f^{i-1}=k\circ f^{i-1}_*\) and \(f^i=f^i_*\circ c\). If \(i:\im f^{i-1}\to A^i\) is the kernel of \(c\) (and thus the image of \(f^{i-1}\)), then $$f^i\circ i=f^i_*\circ c\circ i=f^i_*\circ0=0$$Thus, by the kernel properties of \(k\), there exists a unique morphism \(j:\im f^{i-1}\to\ker f^i\) such that \(k\circ j=i\). Since \(k,i\) are monic as they are kernels, so is \(j\). These observations are summarized in the diagram below:</p>
@@ -1053,7 +1053,7 @@
 
 </div>
 
-<div style="float:right"><a href="#top"style="font-style: normal;"><bf>Top</bf></a></div>
+<div style="float:right"><a href="#top" style="font-style: normal;"><bf>Top</bf></a></div>
     </div>
 
 
