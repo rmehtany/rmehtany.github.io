@@ -1034,11 +1034,11 @@
     <p style="font-style: normal;">Kernel maps are often indicated by \(\hookrightarrow\) or \(\rightarrowtail\). Cokernel maps are often indicated by \(\twoheadrightarrow\).</p>
     
 	<a id='prop2'></a><ul>
-      <li><p style="font-style: normal;">Kernels in categories with zero objects (and thus \(0\)-morphisms) are monomorphisms. For any kernel \(k:K\to A\) of \(f:A\to B\), and for any \(g:C\to K\), observe that \(f\circ k\circ g=0\), so by the universal property of the kernel, \(g\) is unique. By an identical argument, cokernels are epimorphisms.</p></li>
-      <li><p style="font-style: normal;">The kernel map (if it exists) is the \(0\) map iff \(f\) is a monomorphism (this should make sense: what is the kernel of an injection?). For one direction, note that $$f\circ\ker f=0=f\circ 0$$and since \(f\) is a monomorphism, \(\ker f=0\). For the other, observe that for any \(g,h\) with \(f\circ g=f\circ h\), \(f\circ(g-h)=0\). So, if \(f\circ i\neq0\) for all \(i\neq0:C\to A\), then \(f\) is a monomorphism. Now for any map \(i:C\to A\), if \(f\circ i=0\), by the kernel property, there exists a map \(k:C\to0\) such that \(i=k\circ l\), where \(l\) is the kernel morphism. \(k=0\), so \(i=0\). This shows \(f\) is a monomorphism.</p><p style="font-style: normal;">This argument in the dual proves that the cokernel map is the \(0\) map iff \(f\) is an epimorphism. When \(f\) is a monomorphism, we say that \(A\) is a <strong>subobject</strong> of \(B\). When \(f\) is an epimorphism, we say \(B\) is a <strong>quotient object</strong> of \(A\).</p></li>
+      <li style="font-style: normal;">Kernels in categories with zero objects (and thus \(0\)-morphisms) are monomorphisms. For any kernel \(k:K\to A\) of \(f:A\to B\), and for any \(g:C\to K\), observe that \(f\circ k\circ g=0\), so by the universal property of the kernel, \(g\) is unique. By an identical argument, cokernels are epimorphisms.</li>
+      <li style="font-style: normal;">The kernel map (if it exists) is the \(0\) map iff \(f\) is a monomorphism (this should make sense: what is the kernel of an injection?). For one direction, note that $$f\circ\ker f=0=f\circ 0$$and since \(f\) is a monomorphism, \(\ker f=0\). For the other, observe that for any \(g,h\) with \(f\circ g=f\circ h\), \(f\circ(g-h)=0\). So, if \(f\circ i\neq0\) for all \(i\neq0:C\to A\), then \(f\) is a monomorphism. Now for any map \(i:C\to A\), if \(f\circ i=0\), by the kernel property, there exists a map \(k:C\to0\) such that \(i=k\circ l\), where \(l\) is the kernel morphism. \(k=0\), so \(i=0\). This shows \(f\) is a monomorphism.</p><p>This argument in the dual proves that the cokernel map is the \(0\) map iff \(f\) is an epimorphism. When \(f\) is a monomorphism, we say that \(A\) is a <strong>subobject</strong> of \(B\). When \(f\) is an epimorphism, we say \(B\) is a <strong>quotient object</strong> of \(A\).</li>
     </ul>
     
-    <div class="Remark" title="(Co)kernels are morphisms"><p style="font-style: normal;">But, we'll often refer to them as objects. In particular, kernels are maps \(k:A\to B\), so if we refer to the kernel as an object, we mean \(A\). If we refer to the kernel as a map, we mean \(k\). Likewise, for cokernel \(j:A\to B\), if we refer to an object, we mean \(B\). If we refer to a map, we mean \(j\).</div>
+    <div class="Remark" title="(Co)kernels are morphisms" style="font-style: normal;">But, we'll often refer to them as objects. In particular, kernels are maps \(k:A\to B\), so if we refer to the kernel as an object, we mean \(A\). If we refer to the kernel as a map, we mean \(k\). Likewise, for cokernel \(j:A\to B\), if we refer to an object, we mean \(B\). If we refer to a map, we mean \(j\).</div>
     
     <h2 id='abelian'>Abelian Categories</h2>
     
@@ -1064,7 +1064,7 @@
 <div class="proof">
   <p><a onclick="myCollapse('freyd')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="freyd-but"></i></a><br></p>
   <div id="freyd" class="w3-container w3-hide">
-    We won't prove this result since it requires machinery beyond the scope of these notes. Other than the term exactness, which will be talked about <a href='/notes/AlgebraicGeometry/Chapter1-CategoryTheory/InteractionsofUniversalProperties/#exact'>here</a>, you should be able to understand the statement. I also don't mind not proving this result since all of my proofs work without it, but if you are dead-set on understanding the proof of the result, check out <a href='https://arxiv.org/pdf/1901.08591.pdf'>this proof</a>.<p>To summarize, it is most often used to translate results from \(Mod_A\) to small categories (and then via some hacking, to locally small categories).</p>
+    We won't prove this result since it requires machinery beyond the scope of these notes. Other than the term exactness, which will be talked about <a href='/notes/AlgebraicGeometry/Chapter1-CategoryTheory/InteractionsofUniversalProperties/#exact'>here</a>, you should be able to understand the statement. I also don't mind not proving this result since all of my proofs work without it, but if you are dead-set on understanding the proof of the result, check out <a href='https://arxiv.org/pdf/1901.08591.pdf'>this proof</a>. To summarize, it is most often used to translate results from \(Mod_A\) to small categories (and then via some hacking, to locally small categories).
   </div>
 </div>
       
@@ -1073,7 +1073,7 @@
   <p><a onclick="myCollapse('epoch')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="epoch-but"></i></a><br></p>
   <div id="epoch" class="w3-container w3-hide">
     <p><a class="gallery img-center-short cboxElement" href="/public/diag30.png"><img src="/public/diag30.png" width="100%"></a></p>
-    <p>Let \(f\) be a map such that \(g=\cok(f)\). Let \(k=\ker(g)\). By kernel properties, there exists a map \(f^*\) satisfying the diagram above. Let \(y\) be a morphism such that \(y\circ k=0_{IY}\) as in the diagram. Thus, $$y\circ f=y\circ k\circ f^*=0_{AY}$$so by the cokernel properties of \(g\), there exists a unique \(y^*\) such that \(y^*\circ g=y\). Thus, \(g\) is also the cokernel of \(k\), and thus the coimage of itself. The dual argument shows that for any monomorphism \(f:A\to B\), \(f=\im(f)\).</p>
+    Let \(f\) be a map such that \(g=\cok(f)\). Let \(k=\ker(g)\). By kernel properties, there exists a map \(f^*\) satisfying the diagram above. Let \(y\) be a morphism such that \(y\circ k=0_{IY}\) as in the diagram. Thus, $$y\circ f=y\circ k\circ f^*=0_{AY}$$so by the cokernel properties of \(g\), there exists a unique \(y^*\) such that \(y^*\circ g=y\). Thus, \(g\) is also the cokernel of \(k\), and thus the coimage of itself. The dual argument shows that for any monomorphism \(f:A\to B\), \(f=\im(f)\).
   </div>
 </div>
         
@@ -1092,7 +1092,7 @@
     <p>Let \(k=\ker f\), \(p=\cok(k)=\coim f\). Thus, since \(p\) is the cokernel of \(k\), and \(f\circ k=0\), there exists a unique \(i:\coim f\to B\) such that \(i\circ p=f\). We've seen earlier that if for any \(x: X\to\coim f\), \(i\circ x=0\) implies \(x=0\), then \(i\) is monic. Let \(x\) be such a map. Let \(q:\coim f\to\cok x\) be the cokernel of \(x\). By the same argument as above, there exists a unique \(j: \cok x\to B\) such that \(i=j\circ q\). We can summarize these results in the diagram below:</p>
     <p><a class="gallery img-center-short cboxElement" href="/public/diag31.png"><img src="/public/diag31.png" width="100%"></a></p>
     <p>Since epimorphisms are preserved under composition, \(q\circ p\) is epimorphic, and thus, there exists a morphism \(h:C\to A\) such that \(q\circ p=\cok h\). So, $$f\circ h=j\circ q\circ p\circ h=0$$By the kernel properties of \(k\), there exists a unique \(h^*\) such that \(h=k\circ h^*\). Thus, $$p\circ h=p\circ k\circ h^*=0\circ h^*=0$$By the cokernel properties of \(q\circ p\), there exists a unique \(p^*\) such that \(p=p^*\circ q\circ p\). Since \(p\) is epimorphic, we have \(p^*\circ q=\id\). Thus, \(q\) is monic, and since we have \(q\circ x=0\), that implies \(x=0\), so \(i\) must be monic.</p>
-    <p>Dually, the induced map \(j:A\to\im f\) is epic.</p>
+    Dually, the induced map \(j:A\to\im f\) is epic.
   </div>
 </div>
 
@@ -1102,7 +1102,7 @@
   <div id="coimage" class="w3-container w3-hide">
     <p><a class="gallery img-center-short cboxElement" href="/public/diag32.png"><img src="/public/diag32.png" width="100%"></a></p>
 	  <p>Let \(j:A\to\im f\) be defined as in <a href='#lem3'>Lemma 3</a>. Thus, $$f\circ\ker f=\im f\circ j\circ \ker f=0$$Since we showed in <a href='#lem1'>Lemma 1</a> that \(\im f\) is monomorphic, \(j\circ\ker f=0\). Thus, since \(\coim f\) is the cokernel of \(\ker f\), there exists a unique \(f^*\) such that \(f^*\circ\coim f=j\).</p>
-    <p>But, \(A\to\im f\) being epic and \(\coim f\to B\) being monic implies \(f^*\) is epic and monic, which by <a href='#lem2'>Lemma 2</a> implies that \(f^*\) is an isomorphism. Thus, the image object, with the new coimage map being \(f^*\circ c\) (where \(c\) was the coimage map \(A\to\coim f\)), satisfies the properties of the coimage and thus can be considered to be the coimage. Thus, we often refer to the image as both the image and coimage, and impart both of their properties onto \(\im f\).</p>
+    But, \(A\to\im f\) being epic and \(\coim f\to B\) being monic implies \(f^*\) is epic and monic, which by <a href='#lem2'>Lemma 2</a> implies that \(f^*\) is an isomorphism. Thus, the image object, with the new coimage map being \(f^*\circ c\) (where \(c\) was the coimage map \(A\to\coim f\)), satisfies the properties of the coimage and thus can be considered to be the coimage. Thus, we often refer to the image as both the image and coimage, and impart both of their properties onto \(\im f\).
   </div>
 </div>
 
@@ -1116,17 +1116,17 @@
     <p>Let \(d_j:D\to F(j)\) and \(r_\alpha:R\to F(j)\) refer to projection maps (where \(\alpha:i\to j\in\Mor J\)).</p>
     <p>For all \(\alpha:i\to j\in\Mor J\), let \(g_\alpha:D\to F(j)\) be the morphism \(F(\alpha)\circ d_i-d_j\). By the definition of product, there exists a unique morphism \(g:D\to R\) such that for all \(\alpha\), \(g_\alpha=r_\alpha\circ g\). Let \(k:K\to D\) be the kernel of \(g\).</p>
     <p>I claim that \(K\), with projection maps \(K_j=d_j\circ k\), satisfies the universal property of the limit. For each \(\alpha:i\to j\in\Mor J\), $$F(\alpha)\circ K_i=F(\alpha)\circ d_i\circ k=g_\alpha\circ k+d_j\circ k=d_j\circ k=K_j$$</p>
-    <p>And, if there exists an object \(E\), with projection maps \(E_j\) that satisfies \(F(\alpha)\circ E_i=E_j\) for all \(\alpha:i\to j\in\Mor J\), then by product properties, there exists a unique map \(e:E\to D\) such that for all \(j\), \(d_j\circ e=E_j\). And, for all \(\alpha:i\to j\in\Mor J\),$$g_\alpha\circ e=F(\alpha)\circ d_i\circ e-d_j\circ e=F(\alpha)\circ E_i-E_j=E_j-E_j=0$$By product properties, this implies that \(g\circ e=0\). By kernel properties of \(k\), there exists a unique map \(h:E\to K\) such that \(e=k\circ h\). This completes the proof of \(K\) being the limit of \(F\). The dual proof shows all finite colimits exist.</p>
+    And, if there exists an object \(E\), with projection maps \(E_j\) that satisfies \(F(\alpha)\circ E_i=E_j\) for all \(\alpha:i\to j\in\Mor J\), then by product properties, there exists a unique map \(e:E\to D\) such that for all \(j\), \(d_j\circ e=E_j\). And, for all \(\alpha:i\to j\in\Mor J\),$$g_\alpha\circ e=F(\alpha)\circ d_i\circ e-d_j\circ e=F(\alpha)\circ E_i-E_j=E_j-E_j=0$$By product properties, this implies that \(g\circ e=0\). By kernel properties of \(k\), there exists a unique map \(h:E\to K\) such that \(e=k\circ h\). This completes the proof of \(K\) being the limit of \(F\). The dual proof shows all finite colimits exist.
   </div>
 </div>
 
    <h2 id='example'>Examples</h2>
    <p style="font-style: normal;">All but the first example are non-abelian, as we'll encounter important examples of abelian categories later.</p>
    <ul>
-     <li><p style="font-style: normal;">\(Mod_A\) for any commutative ring \(A\) is abelian. This construction would be pointless otherwise.</p></li>
-     <li><p style="font-style: normal;">Consider the subcategory of \(Mod_\mathbb R\) consisting of just the spaces of even dimension. The map \(f:\mathbb R^2\to\mathbb R^2\) given by \((a,b)\mapsto(a,0)\) is a morphism on this category, but it has no kernel. This category is additive but not abelian.</p></li>
-     <li><p style="font-style: normal;"><strong>Ring</strong> is not additive, since it doesn't have a zero-object.</p></li>
-     <li><p style="font-style: normal;">The category of torsion free abelian groups is additive but not abelian. Consider the map \(\phi:\mathbb Z\to\mathbb Z\), \(\phi(n)=2n\). Suppose \(\phi\) has a cokernel \(f:\mathbb Z\to X\) in the category. Thus, \(f\circ\phi=0\). In particular, \(f(2)=0\). So, \(f(1)+f(1)=0\), and since \(X\) is torsion-free, \(f(1)=0\), which implies that \(X=\{0\}\). Thus, if the cokernel of \(\phi\) exists, it is \(\mathbb Z\to0\). But that's an issue, since the kernel of the map \(\mathbb Z\to\mathbb Z\) is \(\id_{\mathbb Z}\), which would imply that \(\phi\) is not monic, a contradiction.</p></li>
+     <li style="font-style: normal;">\(Mod_A\) for any commutative ring \(A\) is abelian. This construction would be pointless otherwise.</li>
+     <li style="font-style: normal;">Consider the subcategory of \(Mod_\mathbb R\) consisting of just the spaces of even dimension. The map \(f:\mathbb R^2\to\mathbb R^2\) given by \((a,b)\mapsto(a,0)\) is a morphism on this category, but it has no kernel. This category is additive but not abelian.</li>
+     <li style="font-style: normal;"><strong>Ring</strong> is not additive, since it doesn't have a zero-object.</li>
+     <li style="font-style: normal;">The category of torsion free abelian groups is additive but not abelian. Consider the map \(\phi:\mathbb Z\to\mathbb Z\), \(\phi(n)=2n\). Suppose \(\phi\) has a cokernel \(f:\mathbb Z\to X\) in the category. Thus, \(f\circ\phi=0\). In particular, \(f(2)=0\). So, \(f(1)+f(1)=0\), and since \(X\) is torsion-free, \(f(1)=0\), which implies that \(X=\{0\}\). Thus, if the cokernel of \(\phi\) exists, it is \(\mathbb Z\to0\). But that's an issue, since the kernel of the map \(\mathbb Z\to\mathbb Z\) is \(\id_{\mathbb Z}\), which would imply that \(\phi\) is not monic, a contradiction.</li>
    </ul>
 
 
