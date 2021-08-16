@@ -986,7 +986,7 @@
 <div class="proof">
   <p><a onclick="myCollapse('closed-set')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="closed-set-but"></i></a><br></p>
   <div id="closed-set" class="w3-container w3-hide">
-	  <p>As observed in the previous post, \(f\) can be factored into a map \(f^*:A\to\im f\) and a kernel map \(k:\im f\to B\). So, $$g\circ f=g\circ k\circ f^*$$\(g\circ k=0\), so that completes the proof.</p>
+	  As observed in the previous post, \(f\) can be factored into a map \(f^*:A\to\im f\) and a kernel map \(k:\im f\to B\). So, $$g\circ f=g\circ k\circ f^*$$\(g\circ k=0\), so that completes the proof.
   </div>
 </div>
 
@@ -1011,7 +1011,7 @@
 		  <li>\((3\Longrightarrow1,2)\): Let \(t=p\) and \(r=j\). The results follow naturally.</li>
 		  <li><p>\((1\Longrightarrow3)\): By the product properties of \(A\oplus C\), there exists a morphism \(\phi:B\to A\oplus C\) such that \(p\circ\phi=t\), \(q\circ\phi=g\). I claim that the following is a chain morphism of short exact sequences (chain morphisms will be defined properly in the <a href='/notes/AlgebraicGeometry/Chapter1-CategoryTheory/CochainMorphisms/'>next post</a>).</p>
 			<p><a class="gallery img-center-short cboxElement" href="/public/diag34.png"><img src="/public/diag34.png" width="100%"></a></p>
-			  <p>Observe that $$p\circ\phi\circ f=t\circ f=\text{id}_A$$so \(p\) is the left inverse of \(\phi\circ f\), which means that by uniqueness, \(\phi\circ f=i\). This shows that the commutative diagram holds, and thus, this is a chain morphism of short exact sequences. We'll show this in the <a href='notes/AlgebraicGeometry/Chapter1-CategoryTheory/CochainMorphisms/'>next post</a>, but in a chain morphism between short exact sequences, if the left and right morphisms are isomorphisms, so is the middle. Thus, \(B\cong A\oplus C\).</p></li>
+			  Observe that $$p\circ\phi\circ f=t\circ f=\text{id}_A$$so \(p\) is the left inverse of \(\phi\circ f\), which means that by uniqueness, \(\phi\circ f=i\). This shows that the commutative diagram holds, and thus, this is a chain morphism of short exact sequences. We'll show this in the <a href='notes/AlgebraicGeometry/Chapter1-CategoryTheory/CochainMorphisms/'>next post</a>, but in a chain morphism between short exact sequences, if the left and right morphisms are isomorphisms, so is the middle. Thus, \(B\cong A\oplus C\).</li>
 		  <li>\((2\Longrightarrow3)\): Essentially the same as the last part, except using the coproduct notion of \(A\oplus C\) rather than the product one. If this isn't clear, you should do it as an exercise (it is very similar to the proof above).</li>
 	  </ul>
   </div>
@@ -1028,7 +1028,7 @@
 <p><a class="gallery img-center-short cboxElement" href="/public/diag35.png"><img src="/public/diag35.png" width="100%"></a></p>			  
 <p>The diagram induces a sequence $$A\to\im f\xrightarrow i\ker g\xrightarrow jB\xrightarrow p\cok f\xrightarrow q\coim g\to C$$such that the composition equals \(g\circ f=0\). Since \(A\to\im f\) is epic and \(\coim g\to C\) is monic, we can strip them off the sequence to get $$\im f\xrightarrow i\ker g\xrightarrow jB\xrightarrow p\cok f\xrightarrow q\coim g$$ whose composition equals \(0\). So, we have the diagram:</p>
 <p><a class="gallery img-center-short cboxElement" href="/public/diag36.png"><img src="/public/diag36.png" width="100%"></a></p>
-<p>Since \(q\circ p\circ j=0\) as \(j\) is the kernel of \(q\circ p\), by the kernel properties of \(v\), there exists a unique map \(y\) satisfying the diagram above. Likewise, since \(p\circ j\circ i=0\) as \(p\) is the cokernel of \(j\circ i\), by the cokernel properties of \(u\), there exists a unique map \(x\) satisfying the diagram above. And, $$0=p\circ j\circ i=v\circ x\circ i$$since \(v\) is monic, \(x\circ i=0\). Thus, by the cokernel properties of \(u\), there exists a unique morphism \(z:\cok i\to\ker q\) that satisfies \(z\circ u=x\). By the dual argument, there exists a unique morphism \(z^*:\ker q\to\cok i\) such that \(v\circ z^*=y\). Thus, \(z\circ z^*\) and \(z^*\circ z\), by uniqueness, must be identity morphisms, and thus, \(\ker q\) and \(\cok i\) are isomorphic. This shows the equivalence of our notions of homology.</p>
+Since \(q\circ p\circ j=0\) as \(j\) is the kernel of \(q\circ p\), by the kernel properties of \(v\), there exists a unique map \(y\) satisfying the diagram above. Likewise, since \(p\circ j\circ i=0\) as \(p\) is the cokernel of \(j\circ i\), by the cokernel properties of \(u\), there exists a unique map \(x\) satisfying the diagram above. And, $$0=p\circ j\circ i=v\circ x\circ i$$since \(v\) is monic, \(x\circ i=0\). Thus, by the cokernel properties of \(u\), there exists a unique morphism \(z:\cok i\to\ker q\) that satisfies \(z\circ u=x\). By the dual argument, there exists a unique morphism \(z^*:\ker q\to\cok i\) such that \(v\circ z^*=y\). Thus, \(z\circ z^*\) and \(z^*\circ z\), by uniqueness, must be identity morphisms, and thus, \(\ker q\) and \(\cok i\) are isomorphic. This shows the equivalence of our notions of homology.
   </div>
 </div>
 
