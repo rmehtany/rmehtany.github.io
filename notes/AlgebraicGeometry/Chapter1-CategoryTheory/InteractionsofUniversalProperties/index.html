@@ -998,7 +998,7 @@
   <p><a onclick="myCollapse('thm1-set')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="thm1-set-but"></i></a><br></p>
   <div id="thm1-set" class="w3-container w3-hide">
     <p>Let \(f:A\to B\) be a kernel of \(g:B\to C\). Thus, \(0\to A\xrightarrow fB\xrightarrow gC\) is exact, so \(0\to F(A)\to F(B)\to F(C)\) is exact. Thus, \(F(A)\to F(B)\) is a monomorphism, so \(\im F(A)\to F(B)\) is just \(F(A)\to F(B)\). And \(\ker F(B)\to F(C)\) is \(F(A)\to F(B)\) since left-exact functors preserve kernels. To see that this is an alternate characterization of left-exactness, note that if additive \(F\) sends kernels to kernels, then for any exact sequence \(0\to A\xrightarrow fB\xrightarrow gC\), \(f\) is a kernel of \(g\). So, \(F(f)=\ker F(g)\), but this implies \(0\to F(A)\to F(B)\to F(C)\) is exact.</p>
-    <p>A similar proof works for contravariant functors, and the dual proof shows the rest.</p>
+    A similar proof works for contravariant functors, and the dual proof shows the rest.
   </div>
 </div>
 <div class="Corollary" title="Exactness and Homology"> Exact Functors preserve homology
@@ -1014,7 +1014,7 @@
   <p><a onclick="myCollapse('thm2-set')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="thm2-set-but"></i></a><br></p>
   <div id="thm2-set" class="w3-container w3-hide">
     <p>In <a href='/notes/AlgebraicGeometry/Chapter1-CategoryTheory/AbelianCategories/#lem5' target='_blank'>Lemma 5 of Abelian Categories</a> where the existence of all finite limits and colimits was proved, the kernel and product structures were used to generate the limit, and by duality, the coproduct and cokernel structures to generate the colimit. Left exact functors preserve kernels and direct sums, and right exact functors preserve cokernels and direct sums, so this shows that they preserve limits/colimits respectively.</p>
-    <p>We've seen already that products and kernels can be written as limits, and coproducts and cokernels as colimits, so a functor that preserves all finite limits is left-exact, and a functor that preserves all finite colimits is right-exact. Thus, this is an alternate characterization.</p>
+    <br>We've seen already that products and kernels can be written as limits, and coproducts and cokernels as colimits, so a functor that preserves all finite limits is left-exact, and a functor that preserves all finite colimits is right-exact. Thus, this is an alternate characterization.
   </div>
 </div>
 
@@ -1030,18 +1030,17 @@
     <p>Since sequence \((4)\) is exact, the map \(F\:\im d_i\to FA^{i+1}\to F\:\cok d_i\) is the \(0\) map by the cocycle condition, and thus by kernel properties, there exists a unique map \(\phi:F\:\im d_i\to \im Fd_i\) such that \(F\:\im d_i\to FA^{i+1}\) in sequence \((4)\) factors into \(\phi\) and the kernel morphism \(\im Fd_i\to FA^{i+1}\). To encode this information, we can consider the following diagram:</p>
     <p><a class="gallery img-center-short cboxElement" href="/public/diag60.png"><img src="/public/diag60.png" width="100%"></a></p>
     <p>By construction of \(\phi\), the square consisting of the \(\im\) and \(FA^{i+1}\) terms commutes. And, since the first and third vertical maps are isomorphisms, the rectangle consisting of the \(\cok\)and \(FA^{i+1}\) terms commutes. Thus, the square consisting of the \(\im\)and \(\cok\)terms commutes. Thus, the map $$FH^i(A^*)\to F\:\cok d_i\to\cok Fd_i\to\im Fd_i$$is the map $$FH^i(A^*)\to F\:\cok d_i\to F\:\im d_i\xrightarrow\phi\im Fd_i$$which is \(0\) by the cocycle condition. Thus, by the kernel property of \(H^i(FA^*)\), there exists a unique morphism \(FH^i(A^*)\to H^i(FA^*)\) that commutes with the diagram.</p>
-    <p>A dual argument will show that for a left-exact functor, we get a unique morphism \(H^i(FA^*)\to FH^i(A^*)\). And since uniqueness is preserved by composition, for exact functors, these unique morphisms are inverses of each other, and thus are isomorphisms.</p>
+    A dual argument will show that for a left-exact functor, we get a unique morphism \(H^i(FA^*)\to FH^i(A^*)\). And since uniqueness is preserved by composition, for exact functors, these unique morphisms are inverses of each other, and thus are isomorphisms.
   </div>
 </div>
-<div class="Remark" title="Commutativity"></div>
-      <p style="font-style: normal;">In general, we'd like most of our universal properties to commute with each other. One very important class of commuting properties are adjoints and limits. In particular, the <a href='#thm4'>next theorem</a> will show that right-adjoints and limits commute, and dually, left-adjoints and colimits commute.</p>
+<div class="Remark" title="Commutativity" style="font-style: normal;">In general, we'd like most of our universal properties to commute with each other. One very important class of commuting properties are adjoints and limits. In particular, the <a href='#thm4'>next theorem</a> will show that right-adjoints and limits commute, and dually, left-adjoints and colimits commute.
       </div>
   <a id='thm4'></a><div class="Theorem" title="(Left/Right) adjoints commute with (colimits/limits)"> Let \(F:\rmC\to\rmD\) and \(G:\rmD\to\rmC\) be an adjoint pair. Then, if \(A=\varprojlim A_i\) in \(\rmD\), then \(GA=\varprojlim GA_i\).
 <div class="proof">
   <p><a onclick="myCollapse('thm4-set')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="thm4-set-but"></i></a><br></p>
   <div id="thm4-set" class="w3-container w3-hide">
     This proof is in Vakil's text.
-    <p>We need to show that \(GA\to GA_i\) satisfies the limit conditions. Let \(W\to GA_i\) be a collection of maps commuting as in the limit definition. Thus, by the adjointness of \(F,G\), \(FW\to A_i\) is a collection of maps commuting as in the limit definition. Thus, there exists a unique map \(FW\to A\) such that the maps \(FW\to A_i\) are factored as \(FW\to A\to A_i\). Thus, the maps \(W\to GA_i\) are factored as \(W\to GA\to GA_i\). The rest of the limit conditions for \(GA\) hold by functors respecting composition. Thus, \(GA\) satisfies the conditions for the limit.</p>
+    <br>We need to show that \(GA\to GA_i\) satisfies the limit conditions. Let \(W\to GA_i\) be a collection of maps commuting as in the limit definition. Thus, by the adjointness of \(F,G\), \(FW\to A_i\) is a collection of maps commuting as in the limit definition. Thus, there exists a unique map \(FW\to A\) such that the maps \(FW\to A_i\) are factored as \(FW\to A\to A_i\). Thus, the maps \(W\to GA_i\) are factored as \(W\to GA\to GA_i\). The rest of the limit conditions for \(GA\) hold by functors respecting composition. Thus, \(GA\) satisfies the conditions for the limit.
   </div>
 </div>
   
@@ -1053,18 +1052,18 @@
   </div>
 </div>
 
-    <div class="Remark" title="(Limits/Colimits) as (right/left) adjoints">
-    <p style="font-style: normal;">If we let \(Func(\rmA,\rmB)\) be the category of functors from \(\rmA\to\rmB\), and morphisms be natural transformations, consider the case in which \(\rmA\) is a small category and \(\rmB\) contains all limits/colimits of functors in \(Func(\rmA,\rmB)\). For any element \(B\) in \(\rmB\), there is a functor in \(Func(\rmA,\rmB)\) which sends all objects to \(B\) and all morphisms to \(\id_B\). We call this functor \(\Delta B\), the constant functor on \(B\). Thus, there is a functor \(F:\rmB\to Func(\rmA,\rmB)\) which sends objects to their constant functors, and morphisms to the corresponding natural transformation.</p>
-      <p style="font-style: normal;">If we let \(G\) be the functor (unique up to isomorphism) \(Func(\rmA,\rmB)\to\rmB\) which sends functors to their limits, observe that we can define a map \(\phi:\Mor(FX, Y)\to\Mor(X, GY)\) with \(X\in\rmB\), \(Y\in Func(\rmA,\rmB)\) as follows. Let \(\eta\in\Mor(\Delta X,Y)\) (\(FX=\Delta X\)), with \(\eta_A:\Delta X(A)\to Y(A)\) for each \(A\in\rmA\). By the definition of natural transformation, the following diagram commutes for any \(\alpha:I\to J\in\rmA\):</p>
+    <div class="Remark" title="(Limits/Colimits) as (right/left) adjoints" style="font-style: normal;">
+    <p>If we let \(Func(\rmA,\rmB)\) be the category of functors from \(\rmA\to\rmB\), and morphisms be natural transformations, consider the case in which \(\rmA\) is a small category and \(\rmB\) contains all limits/colimits of functors in \(Func(\rmA,\rmB)\). For any element \(B\) in \(\rmB\), there is a functor in \(Func(\rmA,\rmB)\) which sends all objects to \(B\) and all morphisms to \(\id_B\). We call this functor \(\Delta B\), the constant functor on \(B\). Thus, there is a functor \(F:\rmB\to Func(\rmA,\rmB)\) which sends objects to their constant functors, and morphisms to the corresponding natural transformation.</p>
+      <p>If we let \(G\) be the functor (unique up to isomorphism) \(Func(\rmA,\rmB)\to\rmB\) which sends functors to their limits, observe that we can define a map \(\phi:\Mor(FX, Y)\to\Mor(X, GY)\) with \(X\in\rmB\), \(Y\in Func(\rmA,\rmB)\) as follows. Let \(\eta\in\Mor(\Delta X,Y)\) (\(FX=\Delta X\)), with \(\eta_A:\Delta X(A)\to Y(A)\) for each \(A\in\rmA\). By the definition of natural transformation, the following diagram commutes for any \(\alpha:I\to J\in\rmA\):</p>
     <p><a class="gallery img-center-short cboxElement" href="/public/diag61.png"><img src="/public/diag61.png" width="100%"></a></p>
-      <p style="font-style: normal;">By the limit properties of \(\varprojlim Y\) with projection maps \(y_I:\varprojlim Y\to Y(I)\) for all \(I\in\rmA\), there exists a unique map \(\psi\in\Mor(X,\varprojlim Y)\) such that for all \(I\in\rmA\), \(\eta_I=y_I\circ\psi\). Since \(\varprojlim Y=GY\), we can define \(\phi(\eta)=\psi\). It's not too hard to show that this definition is a natural bijection, which shows that \(G\) is a right adjoint to the constant functor. Dually, the colimit functor is a left adjoint to the constant functor.</p>
+      <br>By the limit properties of \(\varprojlim Y\) with projection maps \(y_I:\varprojlim Y\to Y(I)\) for all \(I\in\rmA\), there exists a unique map \(\psi\in\Mor(X,\varprojlim Y)\) such that for all \(I\in\rmA\), \(\eta_I=y_I\circ\psi\). Since \(\varprojlim Y=GY\), we can define \(\phi(\eta)=\psi\). It's not too hard to show that this definition is a natural bijection, which shows that \(G\) is a right adjoint to the constant functor. Dually, the colimit functor is a left adjoint to the constant functor.
     </div>
     
     <div class="Corollary" title="(Limits/Colimits) commute with (limits/colimits)">
 <div class="proof">
   <p><a onclick="myCollapse('commie-set')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="commie-set-but"></i></a><br></p>
   <div id="commie-set" class="w3-container w3-hide">
-    <p>This is a trivial consequence of <a href='#thm4'>Theorem 4</a> and the previous remark.</p>
+    This is a trivial consequence of <a href='#thm4'>Theorem 4</a> and the previous remark.
   </div>
 </div>
       
@@ -1077,15 +1076,15 @@
     <p><a class="gallery img-center-short cboxElement" href="/public/diag62.png"><img src="/public/diag62.png" width="100%"></a></p>
     <p>Note that for any map \(\tau:A_i\to A_j\), the induced map \(\tau^*:\ker f_i\to\ker f_j\) satisfies \(k_j\circ\tau^*=\tau\circ k_i\). So, letting \(g_i:\ker f_i\to C_A\) be the map \(\alpha_i\circ k_i\), for any induced map \(tau^*:\ker f_i\to\ker f_j\), $$g_j\circ\tau^*=\alpha_j\circ k_j\circ\tau^*=\alpha_j\circ\tau\circ k_i=\alpha_i\circ k_i=g_i$$where the penultimate equality comes from the colimit properties of \(C_A\). Thus, by the colimit property of \(C\), there exists a map \(\zeta:C\to C_A\) such that for all \(i\in I\), $$\zeta\circ\gamma_i=g_i=\alpha_i\circ k_i$$Observe that for all \(i\), $$\psi\circ\zeta\circ\gamma_i=\psi\circ\alpha_i\circ k_i=\beta_i\circ f_i\circ k_i=0$$Thus, there exists a unique map \(\eta:C\to C_B\) by colimit properties of \(C\) such that for all \(i\)$$\eta\circ\gamma_i=\psi\circ\zeta\circ\gamma_i=0$$Thus, \(\eta=0\), and by uniqueness, \(\psi\circ\zeta=0\). </p>
     <p>By kernel properties of \(\ker\psi\), there exists a unique morphism \(\phi:C\to\ker\psi\) such that \(\ker\psi\circ\phi=\zeta\). Thus, we've constructed our natural epimorphism \(\phi\). It is epimorphic since colimits commute with colimits, and cokernels are a type of colimit.</p>
-    <p>To see that \(\phi\) is an isomorphism when \(I\) is a filtered partially ordered set and \(\rmA=Mod_R\), notice that the characterization provided for the colimit of a filtered partially ordered set for subcategories of <strong>Set</strong> also holds for \(Mod_R\) (this is relatively straightforward to show). Moreover, we get injectivity of \(\phi\) as follows: if there exists some non-zero \(y\in C\) such that \(\phi(y)=0\), then there exists some \(x\neq0\in\ker f_i\) for some \(i\in I\) such that \(\gamma_i(x)=y\). Thus, $$\ker\psi\circ\phi\circ\gamma_i=\alpha_i\circ k_i$$But, the left side evaluates \(x\to0\), but the right side is monic, and thus does not. This is a contradiction, which proves injectivity. Since injectivity is the same thing as monic for \(Mod_R\), we are done. Note that this proof essentially works for any category that is "similar enough" to <strong>Set</strong> to use the alternate characterization of the colimit.</p>
+    To see that \(\phi\) is an isomorphism when \(I\) is a filtered partially ordered set and \(\rmA=Mod_R\), notice that the characterization provided for the colimit of a filtered partially ordered set for subcategories of <strong>Set</strong> also holds for \(Mod_R\) (this is relatively straightforward to show). Moreover, we get injectivity of \(\phi\) as follows: if there exists some non-zero \(y\in C\) such that \(\phi(y)=0\), then there exists some \(x\neq0\in\ker f_i\) for some \(i\in I\) such that \(\gamma_i(x)=y\). Thus, $$\ker\psi\circ\phi\circ\gamma_i=\alpha_i\circ k_i$$But, the left side evaluates \(x\to0\), but the right side is monic, and thus does not. This is a contradiction, which proves injectivity. Since injectivity is the same thing as monic for \(Mod_R\), we are done. Note that this proof essentially works for any category that is "similar enough" to <strong>Set</strong> to use the alternate characterization of the colimit.
   </div>
 </div>
 <div class="Corollary" title="Filtered colimits commute with homology in small categories"></div>
     </div>
       
-<div class="Remark" title="Conclusion">
-      <p style="font-style: normal;">The conclusion one should take away from this is that in sufficiently nice spaces (i.e., ones that resemble <strong>Set</strong> with additional structure), most interesting colimits are exact, as are most interesting limits. But this doesn't mean that all right-exact functors commute with colimits. The double dual functor \(D:Mod_k\to Mod_k\) sending a vector space to its double dual is covariant and right-exact, but does not commute with direct sums, since $$\oplus_{n=1}^\infty k=\oplus_{n=1}^\infty(D k)\neq D\left(\oplus_{n=1}^\infty k\right)$$As infinite dimensional vector spaces have double duals not isomorphic to the original space.
-	</p></div>
+<div class="Remark" title="Conclusion" style="font-style: normal;">
+      The conclusion one should take away from this is that in sufficiently nice spaces (i.e., ones that resemble <strong>Set</strong> with additional structure), most interesting colimits are exact, as are most interesting limits. But this doesn't mean that all right-exact functors commute with colimits. The double dual functor \(D:Mod_k\to Mod_k\) sending a vector space to its double dual is covariant and right-exact, but does not commute with direct sums, since $$\oplus_{n=1}^\infty k=\oplus_{n=1}^\infty(D k)\neq D\left(\oplus_{n=1}^\infty k\right)$$As infinite dimensional vector spaces have double duals not isomorphic to the original space.
+	</div>
 	  </div>
 	  
 <div style="float:right"><a href="#top"style="font-style: normal;"><bf>Top</bf></a></div>
