@@ -36,7 +36,7 @@ hr {
     left: 0;
     bottom: 0;
     z-index: 100;
-    width: 200px;
+    width: 400px;
     overflow-y: visible;     
 }
 
@@ -72,7 +72,7 @@ hr {
 .tm-site-logo i { color: #0CC; }
 
 .tm-main {
-    margin-left: 400px;
+    margin-left: 200px;
     padding: 80px 100px 25px;
 }
 
