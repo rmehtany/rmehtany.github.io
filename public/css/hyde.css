@@ -887,12 +887,12 @@ a.sidebar-nav-item:focus {
 
 /* Cyan */
 .theme-base-0h .sidebar {
-  background-color: #10cccc;
+  background-color: #0a37cc;
 }
 .theme-base-0h .content a,
 .theme-base-0h .content-nosidebar a,
 .theme-base-0h .related-posts li a:hover {
-  color: #10cccc;
+  color: #0a37cc;
 }
 
 /* Blue */
