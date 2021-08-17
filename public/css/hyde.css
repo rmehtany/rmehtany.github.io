@@ -887,12 +887,12 @@ a.sidebar-nav-item:focus {
 
 /* Cyan */
 .theme-base-0c .sidebar {
-  background-color: #75b5aa;
+  background-color: #10cccc;
 }
 .theme-base-0c .content a,
 .theme-base-0c .content-nosidebar a,
 .theme-base-0c .related-posts li a:hover {
-  color: #75b5aa;
+  color: #10cccc;
 }
 
 /* Blue */
@@ -927,10 +927,11 @@ a.sidebar-nav-item:focus {
 
 /* Havard */
 .theme-base-0h .sidebar {
-  background-color: #10cccc;
+  background-color: #651e12;
 }
 .theme-base-0h .content a,
 .theme-base-0h .content-nosidebar a,
 .theme-base-0h .related-posts li a:hover {
-  color: #10cccc;
+  color: #651e12;
 }
+
