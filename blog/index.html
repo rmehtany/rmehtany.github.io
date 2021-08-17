@@ -30,7 +30,7 @@ https://templatemo.com/tm-553-xtra-blog
             if( client.responseText != '' )
             {
                 var txt = client.responseText.split("\n");
-		window.alert(txt[0]);
+		window.alert(txt);
 		if (notEOF && txt[page*6-6] != "EOF"){
 			var data = txt[page*6-6].split("@");
 			document.getElementById("link1").setAttribute("href",data[0]);
