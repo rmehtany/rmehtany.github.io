@@ -927,10 +927,10 @@ a.sidebar-nav-item:focus {
 
 /* Havard */
 .theme-base-0h .sidebar {
-  background-color: #651e12;
+  background-color: #10cccc;
 }
 .theme-base-0h .content a,
 .theme-base-0h .content-nosidebar a,
 .theme-base-0h .related-posts li a:hover {
-  color: #651e12;
+  color: #10cccc;
 }
