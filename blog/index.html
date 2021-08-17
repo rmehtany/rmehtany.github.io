@@ -19,7 +19,7 @@ https://templatemo.com/tm-553-xtra-blog
     <script src="/blog/js/templatemo-script.js"></script>
     <script src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
 <script>
-    function readfileautomatically () {
+    $(document).ready() {
 	var page = 1;
 	var notEOF = true;
         var client = new XMLHttpRequest();
@@ -121,7 +121,7 @@ https://templatemo.com/tm-553-xtra-blog
     }
 </script>
 </head>
-<body onload="readfileautomatically();">
+<body>
 	
 	<header class="tm-header" id="tm-header">
         <div class="tm-header-wrapper">
