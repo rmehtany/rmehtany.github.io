@@ -36,12 +36,10 @@ https://templatemo.com/tm-553-xtra-blog
         var client = new XMLHttpRequest();
 	var temp = "string";
         client.open('GET', '/blog/blogdata.txt');
+	var txt = client.responseText.split("\n");
         client.onload = function()
         {
-            if(client.responseText != '')
-            {
-                var txt = client.responseText.split("\n");
-		if (notEOF && txt[page*6-6] != "EOF"){
+		if (txt[page*6-6] != "EOF"){
 			var data = txt[page*6-6].split("@");
 			document.getElementById("link1").setAttribute("href",data[0]);
 			document.getElementById("image1").setAttribute("src",data[1]);
@@ -113,7 +111,6 @@ https://templatemo.com/tm-553-xtra-blog
 			notEOF = false;
 			$("#article6").hide();
 		}
-            }
         }
 	var blog_html = "/blog/page";
 	document.getElementById("prev").setAttribute("href",blog_html.concat((page-1).toString()));
