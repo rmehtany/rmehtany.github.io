@@ -1,0 +1,42 @@
+<!-- Footer -->
+
+<script>
+// collapse
+function myCollapse(id) {
+    var x = document.getElementById(id);
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+    id_but = id.concat("-but");
+    var y = document.getElementById(id_but);
+    if (y != null) {
+      if (y.className.indexOf("fa-chevron-circle-down") != -1) {
+        y.className = y.className.replace(" fa-chevron-circle-down", " fa-chevron-circle-up");
+      } else {
+        y.className = y.className.replace(" fa-chevron-circle-up", " fa-chevron-circle-down");
+      }
+    }
+}
+</script>
+
+<script>
+// colorbox
+ jQuery('a.gallery').colorbox();
+ $(".gallery").colorbox({
+  width: "60%"
+});
+</script>
+
+<script>
+// sidebar collapse
+function sidebar_open() {
+  document.getElementById("mySidebar").classList.remove("w3-hide-small");
+  document.getElementById("mySmallSidebar").classList.add("w3-hide-small");
+}
+function sidebar_close() {
+  document.getElementById("mySidebar").classList.add("w3-hide-small");
+  document.getElementById("mySmallSidebar").classList.remove("w3-hide-small");
+}
+</script>

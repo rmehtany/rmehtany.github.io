@@ -1,0 +1,112 @@
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    {% if page.title == "TGINF" %}
+      TGINF
+    {% else %}
+      {{ page.title }} &middot; {{ site.title }}
+    {% endif %}
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ site.baseurl }}public/css/poole.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}public/css/syntax.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}public/css/hyde.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}public/css/mystyle.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="{{ site.baseurl }}public/css/theorem.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}public/css/color.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}public/css/colorbox.css">
+
+
+  <!-- JS -->
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      displayMath: [ ['$$','$$'] ],
+      processEscapes: true,
+    }
+  });
+  </script>
+  <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+  <!-- MathJax local
+  <script type="text/javascript" async src="/js/MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <!--
+  <script type="text/javascript" src="/js/turn/turn.min.js"></script>
+  -->
+
+  <!-- colorbox -->
+  <script src="{{ site.baseurl }}js/jquery.colorbox-min.js"></script>
+  <script>
+    $(document).ready(function(){
+			$(".cooking").colorbox({rel:'cooking'});
+  	  $(".coffee").colorbox({rel:'coffee'});
+    });
+  </script>
+
+  <!-- Add mermaid -->
+  <script src="https://cdn.rawgit.com/knsv/mermaid/6.0.0/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({
+      startOnLoad:true
+    });
+  </script>
+  <link rel="stylesheet" href="/js/mermaid/dist/mermaid.css">
+
+  <!-- Add cytoscape -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.17.1/cytoscape.min.js" integrity="sha512-dR5Qb5zIoRodLJCkh0InsAi/uyP1Pd3lMAliXEdv5ol71k2qCwWFS9N18LIGH9MQuAPWu3adPyww5SK2deReog==" crossorigin="anonymous"></script>
+
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ site.baseurl }}public/harvardicon.png">
+  <link rel="shortcut icon" href="{{ site.baseurl }}public/harvardicon.png">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <!-- tooltip -->
+  <style>
+  .tooltip {
+      position: relative;
+      display: inline-block;
+  }
+
+  .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 300px;
+      background-color: black;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 5px 0;
+
+      /* Position the tooltip */
+      position: absolute;
+      z-index: 1;
+      top: 20px;
+  }
+
+  .tooltip:hover .tooltiptext {
+      visibility: visible;
+  }
+  </style>
+
+</head>

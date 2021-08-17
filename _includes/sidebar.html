@@ -1,0 +1,47 @@
+<div class="sidebar w3-hide-small" id="mySidebar">
+  <div class="container">
+    <button class="w3-button sidebar w3-text-white w3-hide-medium w3-hide-large w3-right" onclick="sidebar_close()">&#9776;</button>
+    <div class="sidebar-about">
+      <div class="w3-text-white w3-center" style="font-size:20px;">
+        Chi-Ning Chou
+        <br>
+        (周紀寧)
+      </div>
+      {% if page.title=="Research" %}
+      <p class="lead" style="font-size:16px;font-style:italic;">The best theory is inspired by practice. The best practice is inspired by theory.<br> - Donald Knuth</p>
+      {% elsif page.title=="Blog" %}
+      <p class="lead" style="font-size:16px;font-style:italic;">Good mathematicians see analogies. Great mathematicians see analogies between analogies.<br> - Stefan Banach</p>
+      {% elsif page.title=="Notes" %}
+      <p class="lead" style="font-size:16px;font-style:italic;">Do not practice art, but get at the very heart of it; this it deserves, for only art and science raise men to the God-head.<br> - Ludwig Van Beethoven</p>
+      {% elsif page.layout=="notes" %}
+      <p class="lead" style="font-size:16px;font-style:italic;">Do not practice art, but get at the very heart of it; this it deserves, for only art and science raise men to the God-head.<br> - Ludwig Van Beethoven</p>
+      {% elsif page.layout=="notes-cat" %}
+      <p class="lead" style="font-size:16px;font-style:italic;">The essence of math lies in its freedom.<br> - Georg Cantor</p>
+      {% elsif page.title=="Resources" %}
+      <p class="lead" style="font-size:16px;font-style:italic;">It is not knowledge, but the act of learning, ..., which grants the greatest enjoyment.<br> - Carl Friedrich Gauss</p>
+      {% else %}
+      <p class="lead" style="font-size:16px;font-style:italic;">{{ site.description }}</p>
+      {% endif %}
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}">About Me</a>
+      <a class="sidebar-nav-item{% if page.url == '/research/' %} active{% endif %}" href="/research/">Research</a>
+      <!--<a class="sidebar-nav-item{% if page.url == '/book/' %} active{% endif %}" href="/book/">Book</a>-->
+      <a class="sidebar-nav-item{% if page.url == '/blog/' %} active{% endif %}" href="/blog/">Blog</a>
+      <!--<a class="sidebar-nav-item{% if page.url == '/coffee/' %} active{% endif %}" href="/coffee/">Coffee</a>-->
+      <a class="sidebar-nav-item{% if page.url == '/notes/' %} active{% endif %}" href="/notes/">Notes</a>
+      <a class="sidebar-nav-item{% if page.url == '/resources/' %} active{% endif %}" href="/resources/">Resources</a>
+      <a class="sidebar-nav-item{% if page.url == '/TGINF/' %} active{% endif %}" href="/TGINF/">TGINF</a>
+      <!--<a class="sidebar-nav-item{% if page.url == '/conjecture/' %} active{% endif %}" href="/conjecture/">Conjectures</a>-->
+    </nav>
+  </div>
+
+  <div class="w3-bottom">
+    <p style="font-size:12px">&copy; {{ site.time | date: '%Y' }} Chi-Ning Chou.</p>
+  </div>
+</div>
+
+<div class="sidebar w3-hide-medium w3-hide-large w3-right" id="mySmallSidebar">
+  <button class="w3-button sidebar w3-text-white" onclick="sidebar_open()">&#9776;</button>
+</div>
