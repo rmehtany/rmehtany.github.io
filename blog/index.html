@@ -20,30 +20,26 @@ https://templatemo.com/tm-553-xtra-blog
     <script src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
 
 <script>
-    $(document).ready(function() {
-	var page = 1;
-	var notEOF = true;
-        var client = new XMLHttpRequest();
-	var temp = "string";
-        client.open('GET', '/blog/blogdata.txt');
-        client.onload = function()
-        {
-            if(client.responseText != '')
-            {
-                var txt = client.responseText.split("\n");
-		if (notEOF && txt[page*6-6] != "EOF"){
-			var data = txt[page*6-6].split("@");
-			document.getElementById("link1").setAttribute("href",data[0]);
-			document.getElementById("image1").setAttribute("src",data[1]);
-			document.getElementById("title1").innerHTML = data[2];
-			document.getElementById("text1").innerHTML = data[3];
-			document.getElementById("tags1").innerHTML = data[4];
-			document.getElementById("date1").innerHTML = data[5];
-		} else {
-			notEOF = false;
-			$("#article1").hide();
-		}
-		if (notEOF && txt[page*6-5] != "EOF"){
+    $(function() {
+        var page = 1;
+        var notEOF = true;
+        var temp = "string";
+        $.get('/blog/blogdata.txt', function(responseText) {
+            if (!responseText || responseText.toString().trim() === "") return
+            const txt = responseText.split("\n");
+	    if (notEOF && txt[page*6-6] != "EOF"){
+        	var data = txt[page*6-6].split("@");
+		document.getElementById("link1").setAttribute("href",data[0]);
+		document.getElementById("image1").setAttribute("src",data[1]);
+		document.getElementById("title1").innerHTML = data[2];
+		document.getElementById("text1").innerHTML = data[3];
+		document.getElementById("tags1").innerHTML = data[4];
+		document.getElementById("date1").innerHTML = data[5];
+	    } else {
+		notEOF = false;
+		$("#article1").hide();
+	    }
+       	if (notEOF && txt[page*6-5] != "EOF"){
 			var data = txt[page*6-5].split("@");
 			document.getElementById("link2").setAttribute("href",data[0]);
 			document.getElementById("image2").setAttribute("src",data[1]);
@@ -117,7 +113,6 @@ https://templatemo.com/tm-553-xtra-blog
 	if (!notEOF) {
 		$("#next").addClass("disabled tm-mr-20");
 	}
-	client.send()
     });
 </script>
 </head>
