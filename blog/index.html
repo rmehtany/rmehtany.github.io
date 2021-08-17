@@ -35,6 +35,9 @@ https://templatemo.com/tm-553-xtra-blog
 	var notEOF = true;
         var client = new XMLHttpRequest();
 	var temp = "string";
+	var blog_html = "/blog/page";
+	document.getElementById("prev").setAttribute("href",blog_html.concat((page-1).toString()));
+	document.getElementById("next").setAttribute("href",blog_html.concat((page+1).toString()));
         client.open('GET', '/blog/blogdata.txt');
         client.onload = function()
         {
@@ -113,19 +116,17 @@ https://templatemo.com/tm-553-xtra-blog
 			notEOF = false;
 			$("#article6").hide();
 		}
+		if (!notEOF) {
+			$("#next").addClass("disabled tm-mr-20");
+		}
             }
         }
-	var blog_html = "/blog/page";
-	document.getElementById("prev").setAttribute("href",blog_html.concat((page-1).toString()));
-	document.getElementById("next").setAttribute("href",blog_html.concat((page+1).toString()));
+
 	if (page == 1) {
 		$("#prev").addClass("disabled tm-mr-20");
 	}
 	if (page == 2) {
 		document.getElementById("prev").setAttribute("href","/blog/");
-	}
-	if (!notEOF) {
-		$("#next").addClass("disabled tm-mr-20");
 	}
 	client.send()
     });
