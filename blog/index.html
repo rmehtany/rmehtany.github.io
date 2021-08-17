@@ -30,7 +30,6 @@ https://templatemo.com/tm-553-xtra-blog
             if( client.responseText != '' )
             {
                 var txt = client.responseText.split("\n");
-		window.alert(txt);
 		if (notEOF && txt[page*6-6] != "EOF"){
 			var data = txt[page*6-6].split("@");
 			document.getElementById("link1").setAttribute("href",data[0]);
@@ -103,6 +102,7 @@ https://templatemo.com/tm-553-xtra-blog
 			notEOF = false;
 			$("#article6").hide();
 		}
+		window.alert(notEOF);
             }
         }
 	var blog_html = "/blog/page";
