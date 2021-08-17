@@ -18,107 +18,6 @@ https://templatemo.com/tm-553-xtra-blog
 </head>
 <body onload="readfileautomatically();">
 	
-<script>
-    function readfileautomatically () {
-	var page = 1;
-	var notEOF = true;
-        var client = new XMLHttpRequest();
-	var temp = "string";
-        client.open('GET', '/blog/blogdata.txt');
-        client.onreadystatechange = function()
-        {
-            if( client.responseText != '' )
-            {
-                var txt = client.responseText.split("\n");
-		if (notEOF && txt[page*6-6] != "EOF"){
-			var data = txt[page*6-6].split("@");
-			document.getElementById("link1").setAttribute("href",data[0]);
-			document.getElementById("image1").setAttribute("src",data[1]);
-			document.getElementById("title1").innerHTML = data[2];
-			document.getElementById("text1").innerHTML = data[3];
-			document.getElementById("tags1").innerHTML = data[4];
-			document.getElementById("date1").innerHTML = data[5];
-		} else {
-			notEOF = false;
-			$("#article1").hide();
-		}
-		if (notEOF && txt[page*6-5] != "EOF"){
-			var data = txt[page*6-5].split("@");
-			document.getElementById("link2").setAttribute("href",data[0]);
-			document.getElementById("image2").setAttribute("src",data[1]);
-			document.getElementById("title2").innerHTML = data[2];
-			document.getElementById("text2").innerHTML = data[3];
-			document.getElementById("tags2").innerHTML = data[4];
-			document.getElementById("date2").innerHTML = data[5];
-		} else {
-			notEOF = false;
-			$("#article2").hide();
-		}
-		if (notEOF && txt[page*6-4] != "EOF"){
-			var data = txt[page*6-4].split("@");
-			document.getElementById("link3").setAttribute("href",data[0]);
-			document.getElementById("image3").setAttribute("src",data[1]);
-			document.getElementById("title3").innerHTML = data[2];
-			document.getElementById("text3").innerHTML = data[3];
-			document.getElementById("tags3").innerHTML = data[4];
-			document.getElementById("date3").innerHTML = data[5];
-		} else {
-			notEOF = false;
-			$("#article3").hide();
-		}
-		if (notEOF && txt[page*6-3] != "EOF"){
-			var data = txt[page*6-3].split("@");
-			document.getElementById("link4").setAttribute("href",data[0]);
-			document.getElementById("image4").setAttribute("src",data[1]);
-			document.getElementById("title4").innerHTML = data[2];
-			document.getElementById("text4").innerHTML = data[3];
-			document.getElementById("tags4").innerHTML = data[4];
-			document.getElementById("date4").innerHTML = data[5];
-		} else {
-			notEOF = false;
-			$("#article4").hide();
-		}
-		if (notEOF && txt[page*6-2] != "EOF"){
-			var data = txt[page*6-2].split("@");
-			document.getElementById("link5").setAttribute("href",data[0]);
-			document.getElementById("image5").setAttribute("src",data[1]);
-			document.getElementById("title5").innerHTML = data[2];
-			document.getElementById("text5").innerHTML = data[3];
-			document.getElementById("tags5").innerHTML = data[4];
-			document.getElementById("date5").innerHTML = data[5];
-		} else {
-			notEOF = false;
-			$("#article5").hide();
-		}
-		if (notEOF && txt[page*6-1] != "EOF"){
-			var data = txt[page*6-1].split("@");
-			document.getElementById("link6").setAttribute("href",data[0]);
-			document.getElementById("image6").setAttribute("src",data[1]);
-			document.getElementById("title6").innerHTML = data[2];
-			document.getElementById("text6").innerHTML = data[3];
-			document.getElementById("tags6").innerHTML = data[4];
-			document.getElementById("date6").innerHTML = data[5];
-		} else {
-			notEOF = false;
-			$("#article6").hide();
-		}
-            }
-        }
-	var blog_html = "/blog/page";
-	document.getElementById("prev").setAttribute("href",blog_html.concat((page-1).toString()));
-	document.getElementById("next").setAttribute("href",blog_html.concat((page+1).toString()));
-	if (page == 1) {
-		$("#prev").addClass("disabled tm-mr-20");
-	}
-	if (page == 2) {
-		document.getElementById("prev").setAttribute("href","/blog/");
-	}
-	if (not notEOF) {
-		$("#next").addClass("disabled tm-mr-20");
-	}
-        client.send();
-    }
-</script>
 	<header class="tm-header" id="tm-header">
         <div class="tm-header-wrapper">
             <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
@@ -272,5 +171,107 @@ https://templatemo.com/tm-553-xtra-blog
     </div>
     <script src="/blog/js/jquery.min.js"></script>
     <script src="/blog/js/templatemo-script.js"></script>
+<script>
+    function readfileautomatically () {
+	var page = 1;
+	var notEOF = true;
+        var client = new XMLHttpRequest();
+	var temp = "string";
+        client.open('GET', '/blog/blogdata.txt');
+        client.onreadystatechange = function()
+        {
+            if( client.responseText != '' )
+            {
+                var txt = client.responseText.split("\n");
+		if (notEOF && txt[page*6-6] != "EOF"){
+			var data = txt[page*6-6].split("@");
+			document.getElementById("link1").setAttribute("href",data[0]);
+			document.getElementById("image1").setAttribute("src",data[1]);
+			document.getElementById("title1").innerHTML = data[2];
+			document.getElementById("text1").innerHTML = data[3];
+			document.getElementById("tags1").innerHTML = data[4];
+			document.getElementById("date1").innerHTML = data[5];
+		} else {
+			notEOF = false;
+			$("#article1").hide();
+		}
+		if (notEOF && txt[page*6-5] != "EOF"){
+			var data = txt[page*6-5].split("@");
+			document.getElementById("link2").setAttribute("href",data[0]);
+			document.getElementById("image2").setAttribute("src",data[1]);
+			document.getElementById("title2").innerHTML = data[2];
+			document.getElementById("text2").innerHTML = data[3];
+			document.getElementById("tags2").innerHTML = data[4];
+			document.getElementById("date2").innerHTML = data[5];
+		} else {
+			notEOF = false;
+			$("#article2").hide();
+		}
+		if (notEOF && txt[page*6-4] != "EOF"){
+			var data = txt[page*6-4].split("@");
+			document.getElementById("link3").setAttribute("href",data[0]);
+			document.getElementById("image3").setAttribute("src",data[1]);
+			document.getElementById("title3").innerHTML = data[2];
+			document.getElementById("text3").innerHTML = data[3];
+			document.getElementById("tags3").innerHTML = data[4];
+			document.getElementById("date3").innerHTML = data[5];
+		} else {
+			notEOF = false;
+			$("#article3").hide();
+		}
+		if (notEOF && txt[page*6-3] != "EOF"){
+			var data = txt[page*6-3].split("@");
+			document.getElementById("link4").setAttribute("href",data[0]);
+			document.getElementById("image4").setAttribute("src",data[1]);
+			document.getElementById("title4").innerHTML = data[2];
+			document.getElementById("text4").innerHTML = data[3];
+			document.getElementById("tags4").innerHTML = data[4];
+			document.getElementById("date4").innerHTML = data[5];
+		} else {
+			notEOF = false;
+			$("#article4").hide();
+		}
+		if (notEOF && txt[page*6-2] != "EOF"){
+			var data = txt[page*6-2].split("@");
+			document.getElementById("link5").setAttribute("href",data[0]);
+			document.getElementById("image5").setAttribute("src",data[1]);
+			document.getElementById("title5").innerHTML = data[2];
+			document.getElementById("text5").innerHTML = data[3];
+			document.getElementById("tags5").innerHTML = data[4];
+			document.getElementById("date5").innerHTML = data[5];
+		} else {
+			notEOF = false;
+			$("#article5").hide();
+		}
+		if (notEOF && txt[page*6-1] != "EOF"){
+			var data = txt[page*6-1].split("@");
+			document.getElementById("link6").setAttribute("href",data[0]);
+			document.getElementById("image6").setAttribute("src",data[1]);
+			document.getElementById("title6").innerHTML = data[2];
+			document.getElementById("text6").innerHTML = data[3];
+			document.getElementById("tags6").innerHTML = data[4];
+			document.getElementById("date6").innerHTML = data[5];
+		} else {
+			notEOF = false;
+			$("#article6").hide();
+		}
+            }
+        }
+	var blog_html = "/blog/page";
+	document.getElementById("prev").setAttribute("href",blog_html.concat((page-1).toString()));
+	document.getElementById("next").setAttribute("href",blog_html.concat((page+1).toString()));
+	if (page == 1) {
+		$("#prev").addClass("disabled tm-mr-20");
+	}
+	if (page == 2) {
+		document.getElementById("prev").setAttribute("href","/blog/");
+	}
+	if (not notEOF) {
+		$("#next").addClass("disabled tm-mr-20");
+	}
+        client.send();
+    }
+</script>
+
 </body>
 </html>
