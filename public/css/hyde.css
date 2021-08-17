@@ -886,12 +886,12 @@ a.sidebar-nav-item:focus {
 }
 
 /* Cyan */
-.theme-base-0c .sidebar {
+.theme-base-0h .sidebar {
   background-color: #10cccc;
 }
-.theme-base-0c .content a,
-.theme-base-0c .content-nosidebar a,
-.theme-base-0c .related-posts li a:hover {
+.theme-base-0h .content a,
+.theme-base-0h .content-nosidebar a,
+.theme-base-0h .related-posts li a:hover {
   color: #10cccc;
 }
 
@@ -926,12 +926,12 @@ a.sidebar-nav-item:focus {
 }
 
 /* Havard */
-.theme-base-0h .sidebar {
+.theme-base-0c .sidebar {
   background-color: #651e12;
 }
-.theme-base-0h .content a,
-.theme-base-0h .content-nosidebar a,
-.theme-base-0h .related-posts li a:hover {
+.theme-base-0c .content a,
+.theme-base-0c .content-nosidebar a,
+.theme-base-0c .related-posts li a:hover {
   color: #651e12;
 }
 
