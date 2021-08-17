@@ -28,7 +28,7 @@ https://templatemo.com/tm-553-xtra-blog
         client.open('GET', '/blog/blogdata.txt');
         client.onload = function()
         {
-            if(client.readyState === XMLHttpRequest.DONE && client.responseText != '')
+            if(client.responseText != '')
             {
                 var txt = client.responseText.split("\n");
 		if (notEOF && txt[page*6-6] != "EOF"){
@@ -103,7 +103,6 @@ https://templatemo.com/tm-553-xtra-blog
 			notEOF = false;
 			$("#article6").hide();
 		}
-		window.alert(notEOF);
             }
         }
 	var blog_html = "/blog/page";
