@@ -375,7 +375,7 @@ figcaption { line-height: 1.4; }
 .tm-color-primary, span.tm-color-primary { color: #099; }
 a.tm-color-gray, .tm-color-gray { color: #999; }
 a.tm-color-gray:hover { color: #099; }
-.tm-bg-gray { background-color: #F3F4F5; }
+.tm-bg-gray { background-color: #dcdee0; }
 button:focus { outline: none; }
 a:hover { 
     text-decoration: none; 
