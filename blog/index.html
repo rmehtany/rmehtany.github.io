@@ -35,10 +35,6 @@ https://templatemo.com/tm-553-xtra-blog
 	document.cookie = "page=".concat(page.toString());
 	var notEOF = true;
         var client = new XMLHttpRequest();
-	var temp = "string";
-	var blog_html = "/blog/page";
-	document.getElementById("prev").setAttribute("href",blog_html.concat((page-1).toString()));
-	document.getElementById("next").setAttribute("href",blog_html.concat((page+1).toString()));
         client.open('GET', '/blog/blogdata.txt');
         client.onload = function()
         {
