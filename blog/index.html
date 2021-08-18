@@ -30,8 +30,9 @@ https://templatemo.com/tm-553-xtra-blog
     <script src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
 
 <script>
-    $(document).ready(function() {
-	var page = 1;
+    function change_page(num) {
+	var page = decodeURIComponent(document.cookie).substring(5).parseInt() + num.parseInt();
+	document.cookie = "page=".concat(page.toString());
 	var notEOF = true;
         var client = new XMLHttpRequest();
 	var temp = "string";
@@ -121,14 +122,14 @@ https://templatemo.com/tm-553-xtra-blog
 		}
             }
         }
-
 	if (page == 1) {
 		$("#prev").addClass("disabled tm-mr-20");
 	}
-	if (page == 2) {
-		document.getElementById("prev").setAttribute("href","/blog/");
-	}
 	client.send()
+    }
+    $(document).ready(function () {
+	document.cookie = "page=1";
+	change_page('0');
     });
 </script>
 </head>
@@ -280,8 +281,8 @@ https://templatemo.com/tm-553-xtra-blog
             </div>
             <div class="row tm-row tm-mt-100 tm-mb-75">
                 <div class="tm-prev-next-wrapper">
-                    <a href="#" class="mb-2 tm-btn tm-btn-primary tm-prev-next" id="prev">Prev</a>
-                    <a href="#" class="mb-2 tm-btn tm-btn-primary tm-prev-next" id="next">Next</a>
+                    <a href="#" class="mb-2 tm-btn tm-btn-primary tm-prev-next" id="prev" onclick='change_num("-1");'>Prev</a>
+                    <a href="#" class="mb-2 tm-btn tm-btn-primary tm-prev-next" id="next" onclick='change_num("1");'>Next</a>
                 </div>            
             </div>            
         </main>
