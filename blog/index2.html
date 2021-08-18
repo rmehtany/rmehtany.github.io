@@ -1,0 +1,230 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Rushabh Mehta</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="/public/css/hyde.css">
+    <link rel="stylesheet" href="/public/css/mystyle.css">
+    <link rel="stylesheet" href="/public/css/poole.css">
+    <link href="/blog/css/templatemo-xtra-blog.css" rel="stylesheet">
+    <link rel="stylesheet" href="/public/css/color.css">
+    <!-- scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+    
+
+
+
+    <script>
+      // for date formatting
+      const options = {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      };
+      const dtf = new Intl.DateTimeFormat('en-US', options);
+
+      const sidebar_open = () => {}
+      const sidebar_close = () => {}
+      $(function() {
+        let currentArticle = 0, nofArticles;
+        $("#cDate").text(new Date().getFullYear());
+        $("#mySmallSidebar .w3-button.sidebar").on("click", sidebar_open);
+        $("#mySidebar .w3-button.sidebar").on("click", sidebar_close);
+
+        $(".tm-prev-next-wrapper").on("click", ".tm-prev-next", function() { // use function to have `this` available, not available in arrow functions
+          const prev = this.id === "prev";
+          const next = this.id === "next";
+          if (this.disabled) return; // we cannot click
+          
+          $("article").eq(currentArticle).hide(); // hide the visible article
+          
+          const dir = next ? 1 : -1; // next or previous
+          currentArticle += dir;
+          
+          console.log(currentArticle,$("article").eq(currentArticle))
+          if (currentArticle >= nofArticles) currentArticle = nofArticles-1; // max
+          if (currentArticle < 0) currentArticle = 0; // min   
+          $("#prev")
+          .toggleClass("inactive",currentArticle===0)
+          .prop("disabled",currentArticle===0)
+          $("#next")
+          .toggleClass("inactive",currentArticle === nofArticles-1)
+          .prop("disabled",currentArticle === nofArticles-1)
+          
+          // show the article
+          $("article").eq(currentArticle).show();
+          
+        })
+        
+
+        $.get("blogdata.txt", function(blog) {
+          const lines = blog.split("\n");
+          const articles = lines.map(line => {
+            const [dateString, tags, htmlfile, image, title, text] = line.split("|"); // destructing
+            const [_, yyyy, mm, dd] = dateString.match(/(\d{4})(\d{2})(\d{2})/); // https://regex101.com/r/FJFKlg/1
+            const date = dtf.format(new Date(yyyy, mm - 1, dd)); // months are 0 based in JS
+            return {
+              date,
+              tags,
+              htmlfile,
+              image,
+              title,
+              text
+            }; // return the object
+          })
+          nofArticles = articles.length; // setting the global var
+          $("#articleContent").html(
+            articles.map((article,i) => `<article class="col-12 col-md-6 tm-post">
+              <hr class="tm-hr-primary">
+              <a href="${article.htmlfile}" class="effect-lily tm-post-link tm-pt-60">
+                <div class="tm-post-link-inner">
+                  <img src="${article.image}" alt="Image" class="img-fluid">
+                </div>
+                <h2 class="tm-pt-30 tm-color-primary tm-post-title">${article.title}</h2>
+              </a>
+              <p class="tm-pt-30">${article.text}</p>
+              <div class="d-flex justify-content-between tm-pt-45">
+                <span class="tm-color-primary tags">${article.tags}</span>
+                <span class="tm-color-primary" id="date1">${article.date}</span>
+              </div>
+            </article>`).join("")
+          );
+          
+          // rest of the stuff we need to do after having read the blog. 
+          // It is NOT available outside this scope
+          $("#prev")
+          .addClass("inactive")
+          .prop("disabled",true)
+          $("article").eq(currentArticle).show(); // show the first/current article          
+        });
+      });
+
+    </script>
+    <style>
+      article { display: none; } /* hide all */
+    </style>
+  </head>
+
+  <body class="theme-base-0h">
+    <div class="sidebar w3-hide-small" id="mySidebar">
+      <div class="container">
+        <button class="w3-button sidebar w3-text-white w3-hide-medium w3-hide-large w3-right">☰</button>
+        <div class="sidebar-about">
+          <div class="w3-text-white w3-center" style="font-size:20px;">
+            Rushabh Mehta
+          </div>
+
+          <p class="lead" style="font-size:16px;font-style:italic;color:rgba(255,255,255,0.5)">We write to taste life twice, in the moment and in retrospect.<br> - Anaïs Nin</p>
+
+        </div>
+
+        <nav class="sidebar-nav">
+          <a class="sidebar-nav-item" href="/">About Me</a>
+          <a class="sidebar-nav-item" href="/research/">Research</a>
+          <!--<a class="sidebar-nav-item" href="/book/">Book</a>-->
+          <a class="sidebar-nav-item active" href="/blog/">Blog</a>
+          <!--<a class="sidebar-nav-item" href="/coffee/">Coffee</a>-->
+          <a class="sidebar-nav-item" href="/notes/">Notes</a>
+          <a class="sidebar-nav-item" href="/resources/">Resources</a>
+          <a class="sidebar-nav-item" href="/contact/">Contact</a>
+          <!--<a class="sidebar-nav-item" href="/conjecture/">Conjectures</a>-->
+        </nav>
+      </div>
+
+      <div class="w3-bottom">
+        <p style="font-size:12px;color:rgba(255,255,255,0.5);">© <span id="cDate">2021</span> Rushabh Mehta</p>
+      </div>
+    </div>
+
+    <div class="sidebar w3-hide-medium w3-hide-large w3-right" id="mySmallSidebar">
+      <button class="w3-button sidebar w3-text-white">☰</button>
+    </div>
+
+    <div class="container-fluid">
+      <main class="tm-main">
+        <div class="row tm-row" id="articleContent"><article class="col-12 col-md-6 tm-post" style="display: block;">
+              <hr class="tm-hr-primary">
+              <a href="post_template.html" class="effect-lily tm-post-link tm-pt-60">
+                <div class="tm-post-link-inner">
+                  <img src="/blog/img/img-17.jpg" alt="Image" class="img-fluid">
+                </div>
+                <h2 class="tm-pt-30 tm-color-primary tm-post-title">August 17 - Title</h2>
+              </a>
+              <p class="tm-pt-30">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam id orci fringilla, tempor quam quis, efficitur arcu. Aliquam a leo vitae arcu aliquet sodales id in elit. Nunc tempus vehicula dictum.
+</p>
+              <div class="d-flex justify-content-between tm-pt-45">
+                <span class="tm-color-primary tags">Travel . Events</span>
+                <span class="tm-color-primary" id="date1">August 17, 2021</span>
+              </div>
+            </article><article class="col-12 col-md-6 tm-post">
+              <hr class="tm-hr-primary">
+              <a href="post_template.html" class="effect-lily tm-post-link tm-pt-60">
+                <div class="tm-post-link-inner">
+                  <img src="/blog/img/img-16.jpg" alt="Image" class="img-fluid">
+                </div>
+                <h2 class="tm-pt-30 tm-color-primary tm-post-title">August 16 - Title</h2>
+              </a>
+              <p class="tm-pt-30">Nulla non dapibus orci, vitae molestie nulla. Aenean tincidunt vulputate nisl sit amet facilisis. Fusce quam risus, vestibulum ut luctus a, luctus at purus.
+</p>
+              <div class="d-flex justify-content-between tm-pt-45">
+                <span class="tm-color-primary tags">Travel . Events</span>
+                <span class="tm-color-primary" id="date1">August 16, 2021</span>
+              </div>
+            </article><article class="col-12 col-md-6 tm-post">
+              <hr class="tm-hr-primary">
+              <a href="post_template.html" class="effect-lily tm-post-link tm-pt-60">
+                <div class="tm-post-link-inner">
+                  <img src="/blog/img/img-15.jpg" alt="Image" class="img-fluid">
+                </div>
+                <h2 class="tm-pt-30 tm-color-primary tm-post-title">August 15 - Title</h2>
+              </a>
+              <p class="tm-pt-30">Integer vitae augue vulputate, tristique magna eget, tempus arcu. Vestibulum eu sapien vel urna euismod pellentesque.
+</p>
+              <div class="d-flex justify-content-between tm-pt-45">
+                <span class="tm-color-primary tags">Travel . Events</span>
+                <span class="tm-color-primary" id="date1">August 15, 2021</span>
+              </div>
+            </article><article class="col-12 col-md-6 tm-post">
+              <hr class="tm-hr-primary">
+              <a href="post_template.html" class="effect-lily tm-post-link tm-pt-60">
+                <div class="tm-post-link-inner">
+                  <img src="/blog/img/img-14.jpg" alt="Image" class="img-fluid">
+                </div>
+                <h2 class="tm-pt-30 tm-color-primary tm-post-title">August 14 - Title</h2>
+              </a>
+              <p class="tm-pt-30">Nulla ac metus ac orci finibus imperdiet id in sem. Cras facilisis viverra ligula eu eleifend. Curabitur mi ante, ultrices nec nulla ac, rutrum sollicitudin nisl.
+</p>
+              <div class="d-flex justify-content-between tm-pt-45">
+                <span class="tm-color-primary tags">Travel . Events</span>
+                <span class="tm-color-primary" id="date1">August 14, 2021</span>
+              </div>
+            </article><article class="col-12 col-md-6 tm-post">
+              <hr class="tm-hr-primary">
+              <a href="post_template.html" class="effect-lily tm-post-link tm-pt-60">
+                <div class="tm-post-link-inner">
+                  <img src="/blog/img/img-13.jpg" alt="Image" class="img-fluid">
+                </div>
+                <h2 class="tm-pt-30 tm-color-primary tm-post-title">August 13 - Title</h2>
+              </a>
+              <p class="tm-pt-30">Aliquam venenatis nibh et felis pellentesque, at rutrum velit accumsan. Sed ac auctor nisl, eget aliquam leo. Suspendisse fermentum libero arcu, venenatis finibus orci convallis ac. Duis pulvinar cursus eros.</p>
+              <div class="d-flex justify-content-between tm-pt-45">
+                <span class="tm-color-primary tags">Travel . Events</span>
+                <span class="tm-color-primary" id="date1">August 13, 2021</span>
+              </div>
+            </article></div>
+        <div class="row tm-row tm-mt-100 tm-mb-75">
+          <div class="tm-prev-next-wrapper">
+            <a href="#" class="mb-2 tm-btn tm-btn-primary tm-prev-next inactive" id="prev">Prev</a>
+            <a href="#" class="mb-2 tm-btn tm-btn-primary tm-prev-next" id="next">Next</a>
+          </div>
+        </div>
+      </main>
+    </div>
+  
+
+
+</body></html>
