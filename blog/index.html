@@ -61,6 +61,7 @@ https://templatemo.com/tm-553-xtra-blog
 			$("#article1").hide();
 		}
 		entry++;
+		window.alert((100*entry+num_entries).toString());
 		if (entry >= 0 && entry < num_entries){
 			var data = txt[page*6-5].split("|");
 			document.getElementById("link2").setAttribute("href",data[0]);
