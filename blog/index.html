@@ -38,6 +38,7 @@ https://templatemo.com/tm-553-xtra-blog
 	sessionStorage.setItem('page',page.toString());
 	var page_str = "Page ";
 	document.getElementById('footer').innerHTML = page_str.concat(page.toString());
+	var next_button = true;
         var client = new XMLHttpRequest();
         client.open('GET', '/blog/blogdata.txt');
         client.onload = function()
@@ -56,7 +57,7 @@ https://templatemo.com/tm-553-xtra-blog
 			document.getElementById("tags1").innerHTML = data[4];
 			document.getElementById("date1").innerHTML = data[5];
 		} else {
-			$("#next").addClass("disabled tm-mr-20");
+			next_button = false;
 			$("#article1").hide();
 		}
 		entry++;
@@ -69,7 +70,7 @@ https://templatemo.com/tm-553-xtra-blog
 			document.getElementById("tags2").innerHTML = data[4];
 			document.getElementById("date2").innerHTML = data[5];
 		} else {
-			$("#next").addClass("disabled tm-mr-20");
+			next_button = false;
 			$("#article2").hide();
 		}
 		entry++;
@@ -82,7 +83,7 @@ https://templatemo.com/tm-553-xtra-blog
 			document.getElementById("tags3").innerHTML = data[4];
 			document.getElementById("date3").innerHTML = data[5];
 		} else {
-			$("#next").addClass("disabled tm-mr-20");
+			next_button = false;
 			$("#article3").hide();
 		}
 		entry++;
@@ -95,7 +96,7 @@ https://templatemo.com/tm-553-xtra-blog
 			document.getElementById("tags4").innerHTML = data[4];
 			document.getElementById("date4").innerHTML = data[5];
 		} else {
-			$("#next").addClass("disabled tm-mr-20");
+			next_button = false;
 			$("#article4").hide();
 		}
 		entry++;
@@ -108,7 +109,7 @@ https://templatemo.com/tm-553-xtra-blog
 			document.getElementById("tags5").innerHTML = data[4];
 			document.getElementById("date5").innerHTML = data[5];
 		} else {
-			$("#next").addClass("disabled tm-mr-20");
+			next_button = false;
 			$("#article5").hide();
 		}
 		entry++;
@@ -121,9 +122,14 @@ https://templatemo.com/tm-553-xtra-blog
 			document.getElementById("tags6").innerHTML = data[4];
 			document.getElementById("date6").innerHTML = data[5];
 		} else {
-			$("#next").addClass("disabled tm-mr-20");
+			next_button = false;
 			$("#article6").hide();
 		}
+		if (next_button) {
+		        $("#next").removeClass("disabled tm-mr-20");
+		} else {
+			$("#next").addClass("disabled tm-mr-20");
+	    	}
             }
         }
 	if (page <= 1) {
