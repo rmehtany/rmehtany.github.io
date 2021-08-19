@@ -29,12 +29,15 @@ https://templatemo.com/tm-553-xtra-blog
     <script src="/blog/js/jquery_ui.js"></script>
 
 <script>
-    function change_page(num) {
-	const page = parseInt(sessionStorage.getItem('page')) + parseInt(num);
+    function change_page(prev) {
+	if (prev) {
+	    var page = parseInt(sessionStorage.getItem('page')) - 1;
+	} else {
+	    var page = parseInt(sessionStorage.getItem('page')) + 1;
+	}
 	sessionStorage.setItem('page',page.toString());
 	var page_str = "Page ";
 	document.getElementById('footer').innerHTML = page_str.concat(page.toString());
-	var notEOF = true;
         var client = new XMLHttpRequest();
         client.open('GET', '/blog/blogdata.txt');
         client.onload = function()
@@ -42,7 +45,9 @@ https://templatemo.com/tm-553-xtra-blog
             if(client.responseText != '')
             {
                 var txt = client.responseText.split("\n");
-		if (notEOF && txt[page*6-6] != "EOF"){
+		var num_entries = txt.length-1;
+		var entry = page*6-6;
+		if (entry >= 0 && entry < num_entries){
 			var data = txt[page*6-6].split("|");
 			document.getElementById("link1").setAttribute("href",data[0]);
 			document.getElementById("image1").setAttribute("src",data[1]);
@@ -51,10 +56,11 @@ https://templatemo.com/tm-553-xtra-blog
 			document.getElementById("tags1").innerHTML = data[4];
 			document.getElementById("date1").innerHTML = data[5];
 		} else {
-			notEOF = false;
+			$("#next").addClass("disabled tm-mr-20");
 			$("#article1").hide();
 		}
-		if (notEOF && txt[page*6-5] != "EOF"){
+		entry++;
+		if (entry >= 0 && entry < num_entries){
 			var data = txt[page*6-5].split("|");
 			document.getElementById("link2").setAttribute("href",data[0]);
 			document.getElementById("image2").setAttribute("src",data[1]);
@@ -63,10 +69,11 @@ https://templatemo.com/tm-553-xtra-blog
 			document.getElementById("tags2").innerHTML = data[4];
 			document.getElementById("date2").innerHTML = data[5];
 		} else {
-			notEOF = false;
+			$("#next").addClass("disabled tm-mr-20");
 			$("#article2").hide();
 		}
-		if (notEOF && txt[page*6-4] != "EOF"){
+		entry++;
+		if (entry >= 0 && entry < num_entries){
 			var data = txt[page*6-4].split("|");
 			document.getElementById("link3").setAttribute("href",data[0]);
 			document.getElementById("image3").setAttribute("src",data[1]);
@@ -75,10 +82,11 @@ https://templatemo.com/tm-553-xtra-blog
 			document.getElementById("tags3").innerHTML = data[4];
 			document.getElementById("date3").innerHTML = data[5];
 		} else {
-			notEOF = false;
+			$("#next").addClass("disabled tm-mr-20");
 			$("#article3").hide();
 		}
-		if (notEOF && txt[page*6-3] != "EOF"){
+		entry++;
+		if (entry >= 0 && entry < num_entries){
 			var data = txt[page*6-3].split("|");
 			document.getElementById("link4").setAttribute("href",data[0]);
 			document.getElementById("image4").setAttribute("src",data[1]);
@@ -87,10 +95,11 @@ https://templatemo.com/tm-553-xtra-blog
 			document.getElementById("tags4").innerHTML = data[4];
 			document.getElementById("date4").innerHTML = data[5];
 		} else {
-			notEOF = false;
+			$("#next").addClass("disabled tm-mr-20");
 			$("#article4").hide();
 		}
-		if (notEOF && txt[page*6-2] != "EOF"){
+		entry++;
+		if (entry >= 0 && entry < num_entries){
 			var data = txt[page*6-2].split("|");
 			document.getElementById("link5").setAttribute("href",data[0]);
 			document.getElementById("image5").setAttribute("src",data[1]);
@@ -99,10 +108,11 @@ https://templatemo.com/tm-553-xtra-blog
 			document.getElementById("tags5").innerHTML = data[4];
 			document.getElementById("date5").innerHTML = data[5];
 		} else {
-			notEOF = false;
+			$("#next").addClass("disabled tm-mr-20");
 			$("#article5").hide();
 		}
-		if (notEOF && txt[page*6-1] != "EOF"){
+		entry++;
+		if (entry >= 0 && entry < num_entries){
 			var data = txt[page*6-1].split("|");
 			document.getElementById("link6").setAttribute("href",data[0]);
 			document.getElementById("image6").setAttribute("src",data[1]);
@@ -111,15 +121,12 @@ https://templatemo.com/tm-553-xtra-blog
 			document.getElementById("tags6").innerHTML = data[4];
 			document.getElementById("date6").innerHTML = data[5];
 		} else {
-			notEOF = false;
-			$("#article6").hide();
-		}
-		if (!notEOF) {
 			$("#next").addClass("disabled tm-mr-20");
+			$("#article6").hide();
 		}
             }
         }
-	if (page == 1) {
+	if (page <= 1) {
 		$("#prev").addClass("disabled tm-mr-20");
 	} else {
 		$("#prev").removeClass("disabled tm-mr-20");
@@ -127,16 +134,16 @@ https://templatemo.com/tm-553-xtra-blog
 	client.send()
     }
     function startup() {
-	sessionStorage.setItem('page','1');
+	sessionStorage.setItem('page','0');
 	document.getElementById('prev').addEventListener('click',prev_click);
         document.getElementById('next').addEventListener('click',next_click);
-	change_page('0');
+	change_page(false);
     }
     function prev_click() {
-	change_page('-1');
+	change_page(true);
     }
     function next_click() {
-	change_page('1');
+	change_page(false);
     }
     window.addEventListener('load',startup);
 </script>
