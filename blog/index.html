@@ -56,12 +56,12 @@ https://templatemo.com/tm-553-xtra-blog
 			document.getElementById("text1").innerHTML = data[3];
 			document.getElementById("tags1").innerHTML = data[4];
 			document.getElementById("date1").innerHTML = data[5];
+			$("#article1").show();
 		} else {
 			next_button = false;
 			$("#article1").hide();
 		}
 		entry++;
-		window.alert((entry >= 0 && entry < num_entries).toString());
 		if (entry >= 0 && entry < num_entries){
 			var data = txt[page*6-5].split("|");
 			document.getElementById("link2").setAttribute("href",data[0]);
@@ -70,6 +70,7 @@ https://templatemo.com/tm-553-xtra-blog
 			document.getElementById("text2").innerHTML = data[3];
 			document.getElementById("tags2").innerHTML = data[4];
 			document.getElementById("date2").innerHTML = data[5];
+			$("#article2").show();
 		} else {
 			next_button = false;
 			$("#article2").hide();
@@ -83,6 +84,7 @@ https://templatemo.com/tm-553-xtra-blog
 			document.getElementById("text3").innerHTML = data[3];
 			document.getElementById("tags3").innerHTML = data[4];
 			document.getElementById("date3").innerHTML = data[5];
+			$("#article3").show();
 		} else {
 			next_button = false;
 			$("#article3").hide();
@@ -96,6 +98,7 @@ https://templatemo.com/tm-553-xtra-blog
 			document.getElementById("text4").innerHTML = data[3];
 			document.getElementById("tags4").innerHTML = data[4];
 			document.getElementById("date4").innerHTML = data[5];
+			$("#article4").show();
 		} else {
 			next_button = false;
 			$("#article4").hide();
@@ -109,6 +112,7 @@ https://templatemo.com/tm-553-xtra-blog
 			document.getElementById("text5").innerHTML = data[3];
 			document.getElementById("tags5").innerHTML = data[4];
 			document.getElementById("date5").innerHTML = data[5];
+			$("#article5").show();
 		} else {
 			next_button = false;
 			$("#article5").hide();
@@ -122,6 +126,7 @@ https://templatemo.com/tm-553-xtra-blog
 			document.getElementById("text6").innerHTML = data[3];
 			document.getElementById("tags6").innerHTML = data[4];
 			document.getElementById("date6").innerHTML = data[5];
+			$("#article6").show();
 		} else {
 			next_button = false;
 			$("#article6").hide();
