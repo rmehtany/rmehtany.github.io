@@ -102,7 +102,10 @@ section {
 }
 
 #main > .inner {
-    padding: 100px;
+    padding-top: 100px;
+    padding-left: 0px;
+    padding-bottom: 100px;
+    padding-right: 100px;
 }
 
 /* Banner */
