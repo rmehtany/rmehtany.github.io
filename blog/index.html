@@ -121,6 +121,8 @@ https://templatemo.com/tm-553-xtra-blog
         }
 	if (page == 1) {
 		$("#prev").addClass("disabled tm-mr-20");
+	} else {
+		$("#prev").removeClass("disabled tm-mr-20");
 	}
 	client.send()
     }
@@ -286,8 +288,8 @@ https://templatemo.com/tm-553-xtra-blog
             </div>
             <div class="row tm-row tm-mt-100 tm-mb-75">
                 <div class="tm-prev-next-wrapper">
-                    <a href="#" class="mb-2 tm-btn tm-btn-primary tm-prev-next" id="prev">Prev</a>
-                    <a href="#" class="mb-2 tm-btn tm-btn-primary tm-prev-next" id="next">Next</a>
+                    <a href="/blog/" class="mb-2 tm-btn tm-btn-primary tm-prev-next" id="prev">Prev</a>
+                    <a href="/blog/" class="mb-2 tm-btn tm-btn-primary tm-prev-next" id="next">Next</a>
                 </div>            
             </div>        
 		 <footer class="row tm-row">
