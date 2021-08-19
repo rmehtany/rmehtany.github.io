@@ -30,7 +30,7 @@ https://templatemo.com/tm-553-xtra-blog
 
 <script>
     function change_page(num) {
-	const page = sessionStorage.getItem('page').parseInt() + num.parseInt();
+	const page = parseInt(sessionStorage.getItem('page')) + parseInt(num);
 	sessionStorage.setItem('page',page.toString());
 	var page_str = "Page ";
 	document.getElementById('footer').innerHTML = page_str.concat(page.toString());
