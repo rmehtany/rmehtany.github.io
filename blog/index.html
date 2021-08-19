@@ -17,13 +17,7 @@
   <link rel="stylesheet" href="/public/css/w3.css">
   <link rel="stylesheet" href="/public/css/color.css">
   <link rel="stylesheet" href="/public/css/colorbox.css">
-<!--
-    
-TemplateMo 553 Xtra Blog
 
-https://templatemo.com/tm-553-xtra-blog
-
--->
     <script src="/blog/js/jquery.min.js"></script>
     <script src="/blog/js/templatemo-script.js"></script>
     <script src="/blog/js/jquery_ui.js"></script>
@@ -46,7 +40,7 @@ https://templatemo.com/tm-553-xtra-blog
             if(client.responseText != '')
             {
                 var txt = client.responseText.split("\n");
-		var num_entries = txt.length-2;
+		var num_entries = txt.length-1;
 		var entry = page*6-6;
 		if (entry >= 0 && entry < num_entries){
 			var data = txt[page*6-6].split("|");
