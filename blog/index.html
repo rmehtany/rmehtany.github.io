@@ -126,14 +126,14 @@ https://templatemo.com/tm-553-xtra-blog
     }
     function startup() {
 	sessionStorage.setItem('page','1');
-	document.getElementById('prev').addEventListener('click',prev);
-        document.getElementById('next').addEventListener('click',next);
+	document.getElementById('prev').addEventListener('click',prev_click);
+        document.getElementById('next').addEventListener('click',next_click);
 	change_page('0');
     }
-    function prev() {
+    function prev_click() {
 	change_page('-1');
     }
-    function next() {
+    function next_click() {
 	change_page('1');
     }
     window.addEventListener('load',startup);
