@@ -30,8 +30,10 @@ https://templatemo.com/tm-553-xtra-blog
 
 <script>
     function change_page(num) {
-	var page = decodeURIComponent(document.cookie).substring(5).parseInt() + num.parseInt();
-	document.cookie = "page=".concat(page.toString());
+	const page = sessionStorage.getItem('page').parseInt() + num.parseInt();
+	sessionStorage.setItem('page',page.toString());
+	var page_str = "Page ";
+	document.getElementById('footer').innerHTML = page_str.concat(page.toString());
 	var notEOF = true;
         var client = new XMLHttpRequest();
         client.open('GET', '/blog/blogdata.txt');
@@ -123,14 +125,22 @@ https://templatemo.com/tm-553-xtra-blog
 	client.send()
     }
     function startup() {
-	document.cookie = "page=1";
+	sessionStorage.setItem('page','1');
 	change_page('0');
     }
+    function prev() {
+	change_page('-1');
+    }
+    function next() {
+	change_page('1');
+    }
+    document.addEventListener('load',startup);
+    document.getElementById('prev').addEventListener('click',prev);
+    document.getElementById('next').addEventListener('click',next);
 </script>
 </head>
-<body class="theme-base-0h" onload="startup()">    <div class="sidebar w3-hide-small" id="mySidebar">
+<body class="theme-base-0h">    <div class="sidebar w3-hide-small" id="mySidebar">
   <div class="container">
-    <button class="w3-button sidebar w3-text-white w3-hide-medium w3-hide-large w3-right" onclick="sidebar_close()">☰</button>
     <div class="sidebar-about">
       <div class="w3-text-white w3-center" style="font-size:20px;">
         Rushabh Mehta
@@ -276,10 +286,19 @@ https://templatemo.com/tm-553-xtra-blog
             </div>
             <div class="row tm-row tm-mt-100 tm-mb-75">
                 <div class="tm-prev-next-wrapper">
-                    <a href="#" class="mb-2 tm-btn tm-btn-primary tm-prev-next" id="prev" onclick='change_num("-1");'>Prev</a>
-                    <a href="#" class="mb-2 tm-btn tm-btn-primary tm-prev-next" id="next" onclick='change_num("1");'>Next</a>
+                    <a href="#" class="mb-2 tm-btn tm-btn-primary tm-prev-next" id="prev">Prev</a>
+                    <a href="#" class="mb-2 tm-btn tm-btn-primary tm-prev-next" id="next">Next</a>
                 </div>            
-            </div>            
+            </div>        
+		 <footer class="row tm-row">
+                <hr class="col-12">
+                <div class="col-md-6 col-12 tm-color-gray">
+                    Category: All
+                </div>
+                <div class="col-md-6 col-12 tm-color-gray tm-copyright" id="footer">
+                    TO BE FILLED
+                </div>
+            </footer>
         </main>
     </div>
 
