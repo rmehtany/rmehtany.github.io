@@ -43,7 +43,7 @@ https://templatemo.com/tm-553-xtra-blog
             {
                 var txt = client.responseText.split("\n");
 		if (notEOF && txt[page*6-6] != "EOF"){
-			var data = txt[page*6-6].split("@");
+			var data = txt[page*6-6].split("|");
 			document.getElementById("link1").setAttribute("href",data[0]);
 			document.getElementById("image1").setAttribute("src",data[1]);
 			document.getElementById("title1").innerHTML = data[2];
@@ -55,7 +55,7 @@ https://templatemo.com/tm-553-xtra-blog
 			$("#article1").hide();
 		}
 		if (notEOF && txt[page*6-5] != "EOF"){
-			var data = txt[page*6-5].split("@");
+			var data = txt[page*6-5].split("|");
 			document.getElementById("link2").setAttribute("href",data[0]);
 			document.getElementById("image2").setAttribute("src",data[1]);
 			document.getElementById("title2").innerHTML = data[2];
@@ -67,7 +67,7 @@ https://templatemo.com/tm-553-xtra-blog
 			$("#article2").hide();
 		}
 		if (notEOF && txt[page*6-4] != "EOF"){
-			var data = txt[page*6-4].split("@");
+			var data = txt[page*6-4].split("|");
 			document.getElementById("link3").setAttribute("href",data[0]);
 			document.getElementById("image3").setAttribute("src",data[1]);
 			document.getElementById("title3").innerHTML = data[2];
@@ -79,7 +79,7 @@ https://templatemo.com/tm-553-xtra-blog
 			$("#article3").hide();
 		}
 		if (notEOF && txt[page*6-3] != "EOF"){
-			var data = txt[page*6-3].split("@");
+			var data = txt[page*6-3].split("|");
 			document.getElementById("link4").setAttribute("href",data[0]);
 			document.getElementById("image4").setAttribute("src",data[1]);
 			document.getElementById("title4").innerHTML = data[2];
@@ -91,7 +91,7 @@ https://templatemo.com/tm-553-xtra-blog
 			$("#article4").hide();
 		}
 		if (notEOF && txt[page*6-2] != "EOF"){
-			var data = txt[page*6-2].split("@");
+			var data = txt[page*6-2].split("|");
 			document.getElementById("link5").setAttribute("href",data[0]);
 			document.getElementById("image5").setAttribute("src",data[1]);
 			document.getElementById("title5").innerHTML = data[2];
@@ -103,7 +103,7 @@ https://templatemo.com/tm-553-xtra-blog
 			$("#article5").hide();
 		}
 		if (notEOF && txt[page*6-1] != "EOF"){
-			var data = txt[page*6-1].split("@");
+			var data = txt[page*6-1].split("|");
 			document.getElementById("link6").setAttribute("href",data[0]);
 			document.getElementById("image6").setAttribute("src",data[1]);
 			document.getElementById("title6").innerHTML = data[2];
