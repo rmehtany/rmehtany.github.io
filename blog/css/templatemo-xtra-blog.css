@@ -174,7 +174,20 @@ ul {
     font-size: 1.2rem;
 }
 
+.tm-search-button {
+    width: 60px;
+    height: 60px;
+    border: none;
+    background-color: #0CC;
+    transition: all 0.3s ease;
+}
 
+.tm-search-button:hover { background-color: #09b6b6; }
+
+.tm-search-icon {
+    color: white;
+    font-size: 1.3rem;
+}
 
 .tm-post-link {
     display: block;
@@ -303,6 +316,7 @@ ul {
     padding-right: 15px;
 }
 
+.tm-copyright { text-align: right; }
 
 /* Single Post page */
 hr.tm-hr-primary { border-top: 5px solid #0CC; }
@@ -317,7 +331,12 @@ video {
     align-items: flex-start;
 }
 
+.tm-comment-figure {
+    margin-top: 10px;
+    margin-right: 30px;
+}
 
+.tm-comment-reply { padding-left: 37px; }
 
 .form-control {
     height: 45px;
@@ -325,6 +344,7 @@ video {
     border-radius: 0;
 }
 
+.tm-comment-form { max-width: 360px; }
 .tm-category-list { list-style-type: none; }
 figure { margin: 0; }
 figcaption { line-height: 1.4; }
@@ -375,170 +395,25 @@ a:hover figcaption { color: #056767; }
     width:100%;
 }
 
-
-/* Services */
-
-.services {
-	margin-top: 100px;
+.tm-social-links li { 
+    list-style: none; 
+    display: inline-block;
 }
 
-.services .container-fluid {
-	padding-left: 13px;
-	padding-right: 13px;
+.tm-social-links li a {
+    display: block;
+    color: white;
+    background-color: #0CC;
+    width: 45px;
+    height: 45px;    
+    margin-right: 15px;    
 }
 
-.services .col-md-4 {
-	padding-left: 2px;
-	padding-right: 2px;
-}
-
-.services .service-item {
-	margin-bottom: 3px;
-	background-color: #eaebef;
-	padding: 50px;
-	text-align: center;
-	transition: all 0.5s;
-}
-
-.services .service-item .icon {
-	width: 50px;
-	height: 50px;
-	display: inline-block;
-	margin-bottom: 30px;
-	background-size: cover;
-	background-repeat: no-repeat;
-	transition: all 0.5s;
-}
-
-.services .first-item .icon {
-	background-image: url(https://github.com/rmehtany/rmehtany.github.io/templatemo_529_ramayana/assets/images/icon_01.png);
-}
-.services .first-item:hover .icon {
-	background-image: url(https://github.com/rmehtany/rmehtany.github.io/templatemo_529_ramayana/assets/images/icon_hover_01.png);
-}
-
-.services .second-item .icon {
-	background-image: url(https://github.com/rmehtany/rmehtany.github.io/templatemo_529_ramayana/assets/images/icon_02.png);
-}
-.services .second-item:hover .icon {
-	background-image: url(https://github.com/rmehtany/rmehtany.github.io/templatemo_529_ramayana/assets/images/icon_hover_02.png);
-}
-
-.services .third-item .icon {
-	background-image: url(https://github.com/rmehtany/rmehtany.github.io/templatemo_529_ramayana/assets/images/icon_03.png);
-}
-.services .third-item:hover .icon {
-	background-image: url(https://github.com/rmehtany/rmehtany.github.io/templatemo_529_ramayana/assets/images/icon_hover_03.png);
-}
-
-.services .fourth-item .icon {
-	background-image: url(https://github.com/rmehtany/rmehtany.github.io/templatemo_529_ramayana/assets/images/icon_04.png);
-}
-.services .fourth-item:hover .icon {
-	background-image: url(https://github.com/rmehtany/rmehtany.github.io/templatemo_529_ramayana/assets/images/icon_hover_04.png);
-}
-
-.services .fivth-item .icon {
-	background-image: url(https://github.com/rmehtany/rmehtany.github.io/templatemo_529_ramayana/assets/images/icon_05.png);
-}
-.services .fivth-item:hover .icon {
-	background-image: url(https://github.com/rmehtany/rmehtany.github.io/templatemo_529_ramayana/assets/images/icon_hover_05.png);
-}
-
-.services .sixth-item .icon {
-	background-image: url(https://github.com/rmehtany/rmehtany.github.io/templatemo_529_ramayana/assets/images/icon_06.png);
-}
-.services .sixth-item:hover .icon {
-	background-image: url(https://github.com/rmehtany/rmehtany.github.io/templatemo_529_ramayana/assets/images/icon_hover_06.png);
-}
-
-.services .service-item:hover {
-	background-color: #10cccc;
-}
-.services .service-item:hover h4,
-.services .service-item:hover p {
-	color: #fff;
-}
-
-.services .service-item h4 {
-	margin-bottom: 20px;
-	transition: all 0.5s;
-}
-
-.services .service-item  p {
-	margin-bottom: 0px;
-	transition: all 0.5s;
-}
-
-/* Top Image */
-
-.top-image {
-	margin-top: 100px;
-}
-
-.top-image .container-fluid {
-	padding-left: 0px;
-	padding-right: 0px;
-}
-
-.top-image h4 {
-	margin: 30px 0px 20px 0px;
-}
-
-.top-image .primary-button {
-	margin-top: 30px;
-}
-
-/* Left Image */
-.left-image {
-	margin-top: 100px;
-}
-
-.left-image .container-fluid {
-	padding-left: 0px;
-	padding-right: 0px;
-}
-
-.left-image .right-content {
-	margin-left: 15px;
-}
-
-.left-image h4 {
-	margin: 0px 0px 20px 0px;
-}
-
-.left-image .primary-button {
-	margin-top: 30px;
-}
-
-/* Right Image */
-section.right-image {
-	border-bottom: none;
-	padding-bottom: 0px;
-}
-
-.right-image {
-	margin-top: 100px;
-}
-
-.right-image .container-fluid {
-	padding-left: 0px;
-	padding-right: 0px;
-}
-
-.right-image .left-content {
-	margin-right: 15px;
-}
-
-.right-image h4 {
-	margin: 0px 0px 20px 0px;
-}
-
-.right-image .primary-button {
-	margin-top: 30px;
-}
-
-/* Contact */
+.tm-social-links li a i { transition: all 0.3s ease; }
+.tm-social-links li a:hover i.fa-facebook { color: #3b5998; }
+.tm-social-links li a:hover i.fa-twitter { color: #00acee; }
+.tm-social-links li a:hover i.fa-youtube { color: #c4302b; }
+.tm-social-links li a:hover i.fa-instagram { color: #3f729b; }
 
 .tm-contact-right { padding-left: 55px; }
 .tm-contact-form { max-width: 488px; }
@@ -550,9 +425,6 @@ section.right-image {
 
 .tm-contact-form label { font-size: 1.4rem; }
 .tm-contact-form .form-group { display: flex; }
-
-
-
 
 @media (max-width: 1540px) {
     .tm-header { width: 320px; }
