@@ -126,6 +126,8 @@ https://templatemo.com/tm-553-xtra-blog
     }
     function startup() {
 	sessionStorage.setItem('page','1');
+	document.getElementById('prev').addEventListener('click',prev);
+        document.getElementById('next').addEventListener('click',next);
 	change_page('0');
     }
     function prev() {
@@ -135,8 +137,6 @@ https://templatemo.com/tm-553-xtra-blog
 	change_page('1');
     }
     document.addEventListener('load',startup);
-    document.getElementById('prev').addEventListener('click',prev);
-    document.getElementById('next').addEventListener('click',next);
 </script>
 </head>
 <body class="theme-base-0h">    <div class="sidebar w3-hide-small" id="mySidebar">
