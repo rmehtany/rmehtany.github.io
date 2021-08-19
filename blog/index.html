@@ -41,7 +41,6 @@
             {
                 var txt = client.responseText.split("\n");
 		var num_entries = txt.length-1;
-		window.alert(txt[num_entries]);
 		var entry = page*6-6;
 		if (entry >= 0 && entry < num_entries){
 			var data = txt[page*6-6].split("|");
