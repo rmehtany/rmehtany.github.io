@@ -38,26 +38,24 @@ https://templatemo.com/tm-553-xtra-blog
 		var num = txt.length-1;
 		var im = "image";
 		var tit = "title";
-		var rel = "#related";
-		var rel2 = "related";
+		var fig = "#fig";
+		var rel = "related";
 		var data = txt[num-post_id].split('|');
 		document.getElementById("title").innerHTML = data[2];
 		document.getElementById("tags").innerHTML = data[4];
 		document.getElementById("date").innerHTML = data[5];
 		if (num < 5) {
 		    var i = 1;
-		    window.alert('woo');
-		    $("#related1").hide();
-		    $("#related2").hide();
-		    $("#related3").hide();
+		    $("#fig1").hide();
+		    $("#fig2").hide();
+		    $("#rfig3").hide();
 		    for (let j = 0; j < num; j++) {
 		        if (num-post_id != j) {
-			    window.alert('poo');
 			    data = txt[j].split('|');
-			    document.getElementById(rel2.concat(i.toString())).setAttribute('href',data[0]);
+			    document.getElementById(rel.concat(i.toString())).setAttribute('href',data[0]);
 			    document.getElementById(im.concat(i.toString())).setAttribute('src',data[1]);
 			    document.getElementById(tit.concat(i.toString())).innerHTML = data[2];
-			    $(rel.concat(i.toString())).show();
+			    $(fig.concat(i.toString())).show();
 			    i++;
 			}
 		    }
@@ -69,7 +67,7 @@ https://templatemo.com/tm-553-xtra-blog
 		    }
 		    for (var j=1;j<4;j++) {
 			data = txt[bucket.splice(Math.floor(Math.random()*bucket.length), 1)[0]].split('|');
-			document.getElementById(rel2.concat(j.toString())).setAttribute('href',data[0]);
+			document.getElementById(rel.concat(j.toString())).setAttribute('href',data[0]);
 			document.getElementById(im.concat(j.toString())).setAttribute('src',data[1]);
 			document.getElementById(tit.concat(j.toString())).innerHTML = data[2];
 		    }
@@ -123,7 +121,7 @@ https://templatemo.com/tm-553-xtra-blog
 			
 			
                     <!-- Video player 1422x800 -->
-                    <iframe width="900" controls class="tm-mb-40" src='https://www.youtube.com/embed/3LopI4YeC4I'>							  
+                    <iframe width="900" height='505' controls class="tm-mb-40" src='https://www.youtube.com/embed/3LopI4YeC4I'>							  
                     </iframe>
                 </div>
             </div>
@@ -166,19 +164,19 @@ https://templatemo.com/tm-553-xtra-blog
                         <hr class="mb-3 tm-hr-primary">
                         <h2 class="tm-mb-40 tm-post-title tm-color-primary">Related Posts</h2>
                         <a href="#" class="d-block tm-mb-40" id='related1'>
-                            <figure>
+                            <figure id='fig1'>
                                 <img src="/blog/img/img-02.jpg" alt="Image" class="mb-3 img-fluid" id='image1'>
                                 <figcaption class="tm-color-primary" id='title1'>Duis mollis diam nec ex viverra scelerisque a sit</figcaption>
                             </figure>
                         </a>
                         <a href="#" class="d-block tm-mb-40" id='related2'>
-                            <figure>
+                            <figure id='fig2'>
                                 <img src="/blog/img/img-05.jpg" alt="Image" class="mb-3 img-fluid" id='image2'>
                                 <figcaption class="tm-color-primary" id='title2'>Integer quis lectus eget justo ullamcorper ullamcorper</figcaption>
                             </figure>
                         </a>
                         <a href="#" class="d-block tm-mb-40" id='related3'>
-                            <figure>
+                            <figure id='fig3'>
                                 <img src="/blog/img/img-06.jpg" alt="Image" class="mb-3 img-fluid" id='image3'>
                                 <figcaption class="tm-color-primary" id='title3'>Nam lobortis nunc sed faucibus commodo</figcaption>
                             </figure>
