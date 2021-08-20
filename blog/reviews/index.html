@@ -40,8 +40,7 @@
                 var txt = client.responseText.split("\n");
 		var num_entries = txt.length-1;
 		var entry = page*6-6;
-		if (entry >= 0 && entry < num_entries){
-			window.alert(num_entries.toString());
+		if (entry >= 0 && entry < num_entries && txt[0] != ''){
 			var data = txt[page*6-6].split("|");
 			document.getElementById("link1").setAttribute("href",data[0]);
 			document.getElementById("image1").setAttribute("src",data[1]);
