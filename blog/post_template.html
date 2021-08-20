@@ -4,7 +4,6 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Blog - Rushabh Mehta</title>
-	<link rel="stylesheet" href="/blog/fontawesome/css/all.min.css"> <!-- https://fontawesome.com/ -->
 	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet"> <!-- https://fonts.google.com/ -->
     <link href="/blog/css/bootstrap.min.css" rel="stylesheet">
     <link href="/blog/css/templatemo-xtra-blog.css" rel="stylesheet">
@@ -15,9 +14,8 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
   <link rel="stylesheet" href="/public/css/theorem.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+  <link rel="stylesheet" href="/public/css/w3.css">
   <link rel="stylesheet" href="/public/css/color.css">
-  <link rel="stylesheet" href="/public/css/colorbox.css">
 <!--
     
 TemplateMo 553 Xtra Blog
@@ -25,13 +23,13 @@ https://templatemo.com/tm-553-xtra-blog
 -->
     <script src="/blog/js/jquery.min.js"></script>
     <script src="/blog/js/templatemo-script.js"></script>
-    <script src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    <script src="/blog/js/jquery_ui.js"></script>
 
 <script>
-    $(document).ready(function() {
+    function startup() {
 	var post_id = 1;
         var client = new XMLHttpRequest();
-        client.open('GET', '/blog/food/blogdata.txt');
+        client.open('GET', '/blog/reviews/blogdata.txt');
         client.onload = function()
         {
             if(client.responseText != '')
@@ -42,7 +40,7 @@ https://templatemo.com/tm-553-xtra-blog
 		var tit = "title";
 		var rel = "#related";
 		var rel2 = "related";
-		var data = txt[num-post_id].split('@');
+		var data = txt[num-post_id].split('|');
 		document.getElementById("title").innerHTML = data[2];
 		document.getElementById("tags").innerHTML = data[4];
 		document.getElementById("date").innerHTML = data[5];
@@ -53,7 +51,7 @@ https://templatemo.com/tm-553-xtra-blog
 		    $("#related3").hide();
 		    for (let j = 0; j < num; j++) {
 		        if (num-post_id != j) {
-			    data = txt[j].split('@');
+			    data = txt[j].split('|');
 			    document.getElementById(rel2.concat(i.toString())).setAttribute('href',data[0]);
 			    document.getElementById(im.concat(i.toString())).setAttribute('src',data[1]);
 			    document.getElementById(tit.concat(i.toString())).innerHTML = data[2];
@@ -68,7 +66,7 @@ https://templatemo.com/tm-553-xtra-blog
     			bucket.push(i);}
 		    }
 		    for (var j=1;j<4;j++) {
-			data = txt[bucket.splice(Math.floor(Math.random()*bucket.length), 1)[0]].split('@');
+			data = txt[bucket.splice(Math.floor(Math.random()*bucket.length), 1)[0]].split('|');
 			document.getElementById(rel2.concat(j.toString())).setAttribute('href',data[0]);
 			document.getElementById(im.concat(j.toString())).setAttribute('src',data[1]);
 			document.getElementById(tit.concat(j.toString())).innerHTML = data[2];
@@ -76,8 +74,9 @@ https://templatemo.com/tm-553-xtra-blog
 		}
             }
         }
-	client.send()
-    });
+	client.send();
+    }
+    window.addEventListener('load',startup);
 </script>
 </head>
 <body class="theme-base-0h">    <div class="sidebar w3-hide-small" id="mySidebar">
@@ -88,7 +87,7 @@ https://templatemo.com/tm-553-xtra-blog
         Rushabh Mehta
       </div>
       
-      <p class="lead" style="font-size:16px;font-style:italic;color:rgba(255,255,255,0.5)">Quote<br> - Speaker</p>
+      <p class="lead" style="font-size:16px;font-style:italic;color:rgba(255,255,255,0.5)">Everywhere you will find that the wealth of the wealthy springs from the poverty of the poor.<br> - Peter Kropotkin</p>
       
     </div>
 
@@ -122,10 +121,8 @@ https://templatemo.com/tm-553-xtra-blog
 			
 			
                     <!-- Video player 1422x800 -->
-                    <video width="954" height="535" controls class="tm-mb-40">
-                        <source src="/blog/video/wheat-field.mp4" type="video/mp4">							  
-                        Your browser does not support the video tag.
-                    </video>
+                    <iframe width="954" height="535" controls class="tm-mb-40" src='https://www.youtube.com/watch?v=3LopI4YeC4I'>							  
+                    </iframe>
                 </div>
             </div>
             <div class="row tm-row">
@@ -138,21 +135,12 @@ https://templatemo.com/tm-553-xtra-blog
 				
 				
 				
+                            <p> One of the less pleasant parts of being home in these pandemic times has been listening to my younger sister gripe about her high school friendships, and all of the social faux pas she's made. The fact that this even makes my list of the worst parts of quarantine should tell you quite a lot about my quarantine experience. Yes, I've had several valued relatives pass too soon, and yes, I have (like most) felt the mental burden caused by the lockdowns, but when all is said and done, I've been extraordinarily lucky to have a comfortable home and stay-at-home job to keep me going during the pandemic.</p>
                             <p>
-                                This is a description of the video post. You can also have an image instead of
-                                the video. You can free download 
-                                <a rel="nofollow" href="https://templatemo.com/tm-553-xtra-blog" target="_blank">Xtra Blog Template</a> 
-                                from TemplateMo website. Phasellus maximus quis est sit amet maximus. Vestibulum vel rutrum
-                                lorem, ac sodales augue. Aliquam erat volutpat. Duis lectus orci, blandit in arcu
-                                est, elementum tincidunt lectus. Praesent vel justo tempor, varius lacus a,
-                        pharetra lacus. </p>
-                            <p>
-                                Duis pretium efficitur nunc. Mauris vehicula nibh nisi. Curabitur gravida neque
-                                dignissim, aliquet nulla sed, condimentum nulla. Pellentesque id venenatis
-                                quam, id cursus velit. Fusce semper tortor ac metus iaculis varius. Praesent
-                                aliquam ex vel lectus ornare tristique. Nunc et eros quis enim feugiat tincidunt
-                                et vitae dui.
-                            </p>
+                                I don't think I've ever had an issue with acknowledging my fortunate circumstances. But there was a time when I was uncomfortable with sharing that awareness with others. I used to think that talking about my luck was at best lowering the value of my hard work, and just plain condescending. No one wants to hear an <a href='https://www.youtube.com/watch?v=Y_rl4ZGdy34' target='_blank'>eight minute Macklemore song</a> about white privilege.</p>
+                            <p>That discomfort was multiplied by my internal comparisons to my father. While I grew up in a typical American middle class household, he grew up in a village without electricity, flowing water, or even a full school system. Despite that, he has "succeeded" in life, both in terms of his career, as well as his happiness. How can I compare my achievements to that? It's impossible.</p>
+				<p>I was reminded of all of this thanks to the video <i>Is success luck or hard work?</i> by Derek Muller. (Fun fact: I've actually met Derek a few years ago. I'll talk about that some other time.)</p>
+				
 				
 				
 				
@@ -170,8 +158,8 @@ https://templatemo.com/tm-553-xtra-blog
                             <li><a href="/blog/puzzles/" class="tm-color-primary">Puzzles</a></li>
                             <li><a href="/blog/travel/" class="tm-color-primary">Travel</a></li>
                             <li><a href="/blog/sports/" class="tm-color-primary">Sports</a></li>
-                            <li><a href="/blog/books/" class="tm-color-primary">Books</a></li>
-                            <li><a href="/blog/miscellaneous/" class="tm-color-primary">Miscellaneous</a></li>
+                            <li><a href="/blog/reviews/" class="tm-color-primary">Reviews</a></li>
+                            <li><a href="/blog/other/" class="tm-color-primary">Other</a></li>
                         </ul>
                         <hr class="mb-3 tm-hr-primary">
                         <h2 class="tm-mb-40 tm-post-title tm-color-primary">Related Posts</h2>
