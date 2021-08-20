@@ -34,7 +34,7 @@
 	document.getElementById('footer').innerHTML = page_str.concat(page.toString());
 	var next_button = true;
         var client = new XMLHttpRequest();
-        client.open('GET', '/blog/food/blogdata.txt');
+        client.open('GET', '/blog/other/blogdata.txt');
         client.onload = function()
         {
             if(client.responseText != '')
