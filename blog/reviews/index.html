@@ -37,8 +37,6 @@
         client.open('GET', '/blog/reviews/blogdata.txt');
         client.onload = function()
         {
-            if(client.responseText != '')
-            {
                 var txt = client.responseText.split("\n");
 		var num_entries = txt.length-1;
 		var entry = page*6-6;
@@ -124,7 +122,6 @@
 		} else {
 			$("#next").addClass("disabled tm-mr-20");
 	    	}
-            }
         }
 	if (page <= 1) {
 		$("#prev").addClass("disabled tm-mr-20");
@@ -155,7 +152,7 @@
         Rushabh Mehta
       </div>
       
-      <p class="lead" style="font-size:16px;font-style:italic;color:rgba(255,255,255,0.5)">We write to taste life twice, in the moment and in retrospect.<br> - Anaïs Nin</p>
+      <p class="lead" style="font-size:16px;font-style:italic;color:rgba(255,255,255,0.5)">Reviewing makes reading a participant sport, rather than a spectator sport.<br> - Patricia Hampl</p>
       
     </div>
 
