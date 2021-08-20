@@ -46,9 +46,6 @@ https://templatemo.com/tm-553-xtra-blog
 		document.getElementById("date").innerHTML = data[5];
 		if (num < 5) {
 		    var i = 1;
-		    $("#fig1").hide();
-		    $("#fig2").hide();
-		    $("#fig3").hide();
 		    for (let j = 0; j < num; j++) {
 		        if (num-post_id != j) {
 			    data = txt[j].split('|');
@@ -70,12 +67,16 @@ https://templatemo.com/tm-553-xtra-blog
 			document.getElementById(rel.concat(j.toString())).setAttribute('href',data[0]);
 			document.getElementById(im.concat(j.toString())).setAttribute('src',data[1]);
 			document.getElementById(tit.concat(j.toString())).innerHTML = data[2];
+			$(fig.concat(j.toString())).show();
 		    }
 		}
             }
         }
 	client.send();
     }
+    $("#fig1").hide();
+    $("#fig2").hide();
+    $("#fig3").hide();
     window.addEventListener('load',startup);
 </script>
 </head>
