@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Blog - Rushabh Mehta</title>
+	<title>Blog - Category: Puzzles</title>
 	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet"> <!-- https://fonts.google.com/ -->
     <link href="/blog/css/bootstrap.min.css" rel="stylesheet">
     <link href="/blog/css/templatemo-xtra-blog.css" rel="stylesheet">
@@ -34,7 +34,7 @@
 	document.getElementById('footer').innerHTML = page_str.concat(page.toString());
 	var next_button = true;
         var client = new XMLHttpRequest();
-        client.open('GET', '/blog/blogdata.txt');
+        client.open('GET', '/blog/puzzles/blogdata.txt');
         client.onload = function()
         {
             if(client.responseText != '')
@@ -48,7 +48,6 @@
 			document.getElementById("image1").setAttribute("src",data[1]);
 			document.getElementById("title1").innerHTML = data[2];
 			document.getElementById("text1").innerHTML = data[3];
-			document.getElementById("tags1").innerHTML = data[4];
 			document.getElementById("date1").innerHTML = data[5];
 			$("#article1").show();
 		} else {
@@ -62,7 +61,6 @@
 			document.getElementById("image2").setAttribute("src",data[1]);
 			document.getElementById("title2").innerHTML = data[2];
 			document.getElementById("text2").innerHTML = data[3];
-			document.getElementById("tags2").innerHTML = data[4];
 			document.getElementById("date2").innerHTML = data[5];
 			$("#article2").show();
 		} else {
@@ -76,7 +74,6 @@
 			document.getElementById("image3").setAttribute("src",data[1]);
 			document.getElementById("title3").innerHTML = data[2];
 			document.getElementById("text3").innerHTML = data[3];
-			document.getElementById("tags3").innerHTML = data[4];
 			document.getElementById("date3").innerHTML = data[5];
 			$("#article3").show();
 		} else {
@@ -90,7 +87,6 @@
 			document.getElementById("image4").setAttribute("src",data[1]);
 			document.getElementById("title4").innerHTML = data[2];
 			document.getElementById("text4").innerHTML = data[3];
-			document.getElementById("tags4").innerHTML = data[4];
 			document.getElementById("date4").innerHTML = data[5];
 			$("#article4").show();
 		} else {
@@ -104,7 +100,6 @@
 			document.getElementById("image5").setAttribute("src",data[1]);
 			document.getElementById("title5").innerHTML = data[2];
 			document.getElementById("text5").innerHTML = data[3];
-			document.getElementById("tags5").innerHTML = data[4];
 			document.getElementById("date5").innerHTML = data[5];
 			$("#article5").show();
 		} else {
@@ -118,7 +113,6 @@
 			document.getElementById("image6").setAttribute("src",data[1]);
 			document.getElementById("title6").innerHTML = data[2];
 			document.getElementById("text6").innerHTML = data[3];
-			document.getElementById("tags6").innerHTML = data[4];
 			document.getElementById("date6").innerHTML = data[5];
 			$("#article6").show();
 		} else {
@@ -203,7 +197,7 @@
                         Left side is a sticky menu bar. Right side is a blog content that will scroll up and down.
                     </p>
                     <div class="d-flex justify-content-between tm-pt-45">
-                        <span class="tm-color-primary" id="tags1">Travel . Events</span>
+			    <span class="tm-color-primary"><a href='/blog/puzzles/'>Puzzles</a></span>
                         <span class="tm-color-primary" id="date1">June 24, 2020</span>
                     </div>
             
@@ -221,7 +215,7 @@
                         Blog list, single post, about, contact pages are included. Left sidebar fixed width and content area is a fluid full-width.
                     </p>
                     <div class="d-flex justify-content-between tm-pt-45">
-                        <span class="tm-color-primary" id="tags2">Music . Audio</span>
+                        <span class="tm-color-primary"><a href='/blog/puzzles/'>Puzzles</a></span>
                         <span class="tm-color-primary" id="date2">June 11, 2020</span>
                     </div>
                 </article>
@@ -238,7 +232,7 @@
                         You can also use this for your clients. Thank you for choosing us.
                     </p>
                     <div class="d-flex justify-content-between tm-pt-45">
-                        <span class="tm-color-primary" id="tags3">Music . Audio</span>
+                        <span class="tm-color-primary"><a href='/blog/puzzles/'>Puzzles</a></span>
                         <span class="tm-color-primary" id="date3">June 11, 2020</span>
                     </div>
 
@@ -256,7 +250,7 @@
                         website. This is strongly prohibited as we worked hard for this template. Please contact TemplateMo for more information.
                     </p>
                     <div class="d-flex justify-content-between tm-pt-45">
-                        <span class="tm-color-primary" id="tags4">Artworks . Design</span>
+                        <span class="tm-color-primary"><a href='/blog/puzzles/'>Puzzles</a></span>
                         <span class="tm-color-primary" id="date4">June 4, 2020</span>
                     </div>
 
@@ -276,7 +270,7 @@
                         <span class="tm-color-primary">Text #999 Line #CCC Next #0CC Prev #F0F0F0</span>
                     </p>
                     <div class="d-flex justify-content-between tm-pt-45">
-                        <span class="tm-color-primary" id="tags5">Creative . Video . Audio</span>
+                        <span class="tm-color-primary"><a href='/blog/puzzles/'>Puzzles</a></span>
                         <span class="tm-color-primary" id="date5">May 31, 2020</span>
                     </div>
 
@@ -293,7 +287,7 @@
                         Quisque id ipsum vel sem maximus vulputate sed quis velit. Nunc vel turpis eget orci elementum cursus vitae in eros. Quisque vulputate nulla ut dolor consectetur luctus.
                     </p>
                     <div class="d-flex justify-content-between tm-pt-45">
-                        <span class="tm-color-primary" id="tags6">Visual . Artworks</span>
+                        <span class="tm-color-primary"><a href='/blog/puzzles/'>Puzzles</a></span>
                         <span class="tm-color-primary" id="date6">June 16, 2020</span>
                     </div>
 
@@ -308,7 +302,7 @@
 		 <footer class="row tm-row">
                 <hr class="col-12">
                 <div class="col-md-6 col-12 tm-color-gray">
-                    Category: All
+                    Category: Puzzles
                 </div>
                 <div class="col-md-6 col-12 tm-color-gray tm-copyright" id="footer">
                     TO BE FILLED
