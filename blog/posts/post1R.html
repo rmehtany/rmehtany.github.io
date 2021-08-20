@@ -46,11 +46,13 @@ https://templatemo.com/tm-553-xtra-blog
 		document.getElementById("date").innerHTML = data[5];
 		if (num < 5) {
 		    var i = 1;
+		    window.alert('woo');
 		    $("#related1").hide();
 		    $("#related2").hide();
 		    $("#related3").hide();
 		    for (let j = 0; j < num; j++) {
 		        if (num-post_id != j) {
+			    window.alert('poo');
 			    data = txt[j].split('|');
 			    document.getElementById(rel2.concat(i.toString())).setAttribute('href',data[0]);
 			    document.getElementById(im.concat(i.toString())).setAttribute('src',data[1]);
@@ -121,7 +123,7 @@ https://templatemo.com/tm-553-xtra-blog
 			
 			
                     <!-- Video player 1422x800 -->
-                    <iframe width="954" height="535" controls class="tm-mb-40" src='https://www.youtube.com/embed/3LopI4YeC4I'>							  
+                    <iframe width="900" controls class="tm-mb-40" src='https://www.youtube.com/embed/3LopI4YeC4I'>							  
                     </iframe>
                 </div>
             </div>
