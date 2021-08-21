@@ -328,7 +328,7 @@
          Rushabh Mehta
       </div>
       
-      <p class="lead" style="font-size:16px;font-style:italic;">There should be no such thing as boring mathematics<br> - Edgar Dijkstra</p>
+      <p class="lead" style="font-size:16px;font-style:italic;">There should be no such thing as boring mathematics<br> - Edsger Dijkstra</p>
       
     </div>
 
@@ -1017,7 +1017,7 @@
   <p>I have been somewhat sloppy with my definition of the basic problem, since I've left out a few nuances. The first (and less problematic) nuance is that of starting position. In defining \(V(\pi)\), implicit in the expected value is the knowledge of the starting state \(x_0\). Thus, it is often meaningful to denote \(V(\pi)\) as \(V(\pi,x_0)\) to emphasize that the starting position is \(x_0\).</p>	
   <p>The somewhat larger sin is my fuzzy handling of open vs closed loop basic problems. What we have defined above is called a <strong>closed loop minimization</strong> basic problem, since the action, \(u_k\), can depend on \(x_k\) (and similarly for the policy). In an <strong>open loop minimization</strong> basic problem, \(u_k\) must be chosen at time \(0\), to avoid any feedback to be involved in the policy choice.</p>
   It should be immediately obvious that the minimal cost of the closed loop problem should be at most that of the open loop problem, since any open loop policy is also a closed loop policy. Because of that, we'll mostly deal with closed loop problems, and I'll be very explicit when we aren't.
-</div>
+</div><br>
 <div class="Example" title="Closed Loop minimization can be strictly better than Open loop minimization" style='font-style:normal;'>
 	<p>Consider the following (silly) one turn DDS. We can either choose to gamble or not. If we gamble, we earn a randomly chosen value from \(\cN(0,1)\), the standard Gaussian. Otherwise, we earn nothing. We want to maximize our earnings</p>
 	Observe that an open loop minimization problem wouldn't permit a solution to do better on average than earning 0 points, since the random variable has mean zero, and we can't base our strategy on the output of the Gaussian. On the other hand, if we gamble only if the Gaussian is positive, our expected number of points is the expected value of the <a href='https://en.wikipedia.org/wiki/Half-normal_distribution' target='_blank'>half-normal distribution</a>, which is \(\sqrt{\pi^{-1}}>0\).
