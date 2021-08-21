@@ -8,7 +8,7 @@
 
   <title>
     
-      What is a Category?
+      The Basic Problem
     
   </title>
 
@@ -19,8 +19,7 @@
   <link rel="stylesheet" href="/public/css/mystyle.css">
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
   <link rel="stylesheet" href="/public/css/theorem.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+  <link rel="stylesheet" href="/public/css/w3.css">
   <link rel="stylesheet" href="/public/css/color.css">
   <link rel="stylesheet" href="/public/css/colorbox.css">
 
@@ -943,7 +942,7 @@
 </div>
 
       
-	    <!--<a id='top'></a><div style="float:right"><a href="/notes/AlgebraicGeometry/Chapter1-CategoryTheory/WhybotherwithCategories/"><bf>Next: Why bother with Categories?</bf></a></div>-->
+	    <a id='top'></a><div style="float:right"><a href="/notes/DynamicProgramming/Chapter1-DynamicProgramming/SolvingBasicProblems/"><bf>Next: Solving Basic Problems</bf></a></div>
 <div><a href="/notes/DynamicProgramming/Chapter1-DynamicProgramming/"><bf>Back to Chapter 1 - Dynamic Programming</bf></a></div>
 
 
@@ -988,7 +987,7 @@
   <p style="font-style: normal;"> The idea behind a DDS is that the state update of a dynamic system should be solely dependent on the current state, the action taken, and a noise parameter. In this sense, it is <a href='https://en.wikipedia.org/wiki/Markov_property'>Markovian</a>. Now, we'd like to consider possible collections of actions on this system.</p>
   
   <a id='pol'></a><div class="Definition" title="Policy">
-  Let \(\mu_k:S_k\to C_k\) be a function that determines the action taken by an individual at time \(k\). A <strong>policy</strong> is the data of \(\mu_k\) for each \(k\in\[n]\).
+  Let \(\mu_k:S_k\to C_k\) be a function that determines the action taken by an individual at time \(k\). A <strong>policy</strong> is the data of \(\mu_k\) for each \(k\in[n]\).
   </div>
   
   <a id='rem1'></a><div class="Remark" title="Interpreting a policy on a DDS" style="font-style: normal;">
@@ -1007,13 +1006,22 @@
   <a id='basic'></a><div class="Definition" title="The Basic Problem">
     We call a <strong>basic problem</strong> the following data:
   <ul>
-    <li>A DDS \(S_k,C_k,P_k,f_k) for \(k\in[n]\)</li>
+    <li>A DDS \(S_k,C_k,P_k,f_k\) for \(k\in[n]\)</li>
     <li>A collection of transition cost functions \(g_k\)</li>
     <li>A terminal cost function \(g_n\)</li>
   </ul>
   The basic problem is as follows: find the policy \(\pi_*\) such that for all policies \(\pi\), \(V(\pi_*)\leq V(\pi)\).  
   </div>
-  <p style='font-style:normal;'>An interesting question to ask about this setup is whether the basic problem even has a solution. To avoid these sorts of questions, we'll require (for now) that \(C_k\) is finite for all \(k\), which also means that the set of all policies is finite.</p>
+  <p style='font-style:normal;'>An interesting question (for pedantic mathematicians like me) to ask about this setup is whether the basic problem even has a solution. The answer is yes, since it is possible to show that the set of possible costs in the reals is a closed set (and has a lower bound of \(0\)). That being said, to avoid these sorts of questions, we'll often require that \(C_k\) is finite for all \(k\), which also means that the set of all policies is finite. With this assumption, we are free to use min instead of inf.</p>
+  <div class="Remark" title="Open and closed loop minimization" style='font-style:normal;'>
+  <p>I have been somewhat sloppy with my definition of the basic problem, since I've left out a few nuances. The first (and less problematic) nuance is that of starting position. In defining \(V(\pi)\), implicit in the expected value is the knowledge of the starting state \(x_0\). Thus, it is often meaningful to denote \(V(\pi)\) as \(V(\pi,x_0)\) to emphasize that the starting position is \(x_0\).</p>	
+  <p>The somewhat larger sin is my fuzzy handling of open vs closed loop basic problems. What we have defined above is called a <strong>closed loop minimization</strong> basic problem, since the action, \(u_k\), can depend on \(x_k\) (and similarly for the policy). In an <strong>open loop minimization</strong> basic problem, \(u_k\) must be chosen at time \(0\), to avoid any feedback to be involved in the policy choice.</p>
+  It should be immediately obvious that the minimal cost of the closed loop problem should be at most that of the open loop problem, since any open loop policy is also a closed loop policy. Because of that, we'll mostly deal with closed loop problems, and I'll be very explicit when we aren't.
+</div>
+<div class="Example" title="Closed Loop minimization can be strictly better than Open loop minimization" style='font-style:normal;'>
+	<p>Consider the following (silly) one turn DDS. We can either choose to gamble or not. If we gamble, we earn a randomly chosen value from \(\cN(0,1)\), the standard Gaussian. Otherwise, we earn nothing. We want to maximize our earnings</p>
+	Observe that an open loop minimization problem wouldn't permit a solution to do better on average than earning 0 points, since the random variable has mean zero, and we can't base our strategy on the output of the Gaussian. On the other hand, if we gamble only if the Gaussian is positive, our expected number of points is the expected value of the <a href='https://en.wikipedia.org/wiki/Half-normal_distribution' target='_blank'>half-normal distribution</a>, which is \(\sqrt{\pi^{-1}}>0\).
+	</div>
 </div>
 
 <div style="float:right"><a href="#top" style="font-style: normal;"><bf>Top</bf></a></div>
