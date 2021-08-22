@@ -1,1 +1,1 @@
-
+/blog/posts/post1P.html|/public/puzzler.gif|Solving "The Riddler": August 20th, 2021|In this post, I attempt to solve the <a href='https://fivethirtyeight.com/features/can-you-catch-the-cricket/' target='_blank'>Riddler</a> puzzles of the week.|<a href='/blog/puzzles'>Puzzles</a>|August 22, 2021
