@@ -993,7 +993,7 @@
   <a id='rem1'></a><div class="Remark" title="Interpreting a policy on a DDS" style="font-style: normal;">
     Observe that \(\text{Pr}(x_{k+1}=b\mid x_k=a)\) on a DDS with policy \(\{\mu_0,\ldots,\mu_{n-1}\}\) is $$\Pr(x_{k+1}=b\mid x_k=a)=P_k(\cdot\mid x_k=a,u_k=\mu_k(a))$$This necessarily implies that imposing a policy on a DDS converts the DDS into a (inhomogenous) Markov chain. In other words, we are taking the decisions out of the DDS. The transition matrix of this Markov chain is (given \(S_k=\{y_1,\ldots,y_m\}\)$$T_k(\mu_k)=\begin{bmatrix}P_k(y_1\mid y_1,\mu_l(y_1))&\ldots&P_k(y_1\mid y_m,\mu_k(y_m))\\\vdots&\ddots&\vdots\\P_k(y_m\mid y_1,\mu_l(y_1))&\ldots&P_k(y_m\mid y_m,\mu_k(y_m))\end{bmatrix}$$
   </div>
-  <h2 id='basich'>The Basic Problem</h2>
+	<h2 id='basich'><i>The Basic Problem</i></h2>
   <p style='font-style:normal;'>To evaluate which policy is best, we need a cost (or reward) function on the DDS. By convention, we consider additive cost functions, i.e., the total cost is the sum of the costs accrued throughout the process and a final cost. We define the cost function as follows. Given a policy \(\pi=\{\mu_0,\ldots,\mu_{n-1}\}\), we define two different types of costs (or rewards).</p>
   <ul>
     <li style='font-style:normal;'>Transition costs: At time \(k\in[n]\), we define a function $$g_k:S_k\times C_k\times P_k(\cdot\mid x_k,u_k)\to\mathbb R^{\geq0}$$which defines the cost of being at state \(x_k\) at time \(k\), engaging in action \(u_k\), and ending up in state \(x_{k+1}\). As noted earlier, this too is a slight abuse of notation.</li>
