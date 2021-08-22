@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Blog - Rushabh Mehta</title>
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet"> <!-- https://fonts.google.com/ -->
+    <link href="/blog/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/blog/css/templatemo-xtra-blog.css" rel="stylesheet">
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="/public/css/mystyle.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="/public/css/theorem.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/public/css/w3.css">
+  <link rel="stylesheet" href="/public/css/color.css">
+<!--
+    
+TemplateMo 553 Xtra Blog
+https://templatemo.com/tm-553-xtra-blog
+-->
+    <script src="/blog/js/jquery.min.js"></script>
+    <script src="/blog/js/templatemo-script.js"></script>
+    <script src="/blog/js/jquery_ui.js"></script>
+    <script type="text/javascript" async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/x-mathjax-config;executed=true">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      displayMath: [ ['$$','$$'] ],
+      processEscapes: true,
+    }
+  });
+  </script>
+
+<script>
+    function startup() {
+	var post_id = 1;
+        var client = new XMLHttpRequest();
+        client.open('GET', '/blog/puzzles/blogdata.txt');
+        client.onload = function()
+        {
+            if(client.responseText != '')
+            {
+                var txt = client.responseText.split('\n');
+		var num = txt.length-1;
+		var im = "image";
+		var tit = "title";
+		var fig = "#fig";
+		var rel = "related";
+		var data = txt[num-post_id].split('|');
+		document.getElementById("title").innerHTML = data[2];
+		document.getElementById("tags").innerHTML = data[4];
+		document.getElementById("date").innerHTML = data[5];
+		if (num < 5) {
+		    var i = 1;
+		    $("#fig1").hide();
+		    $("#fig2").hide();
+		    $("#fig3").hide();
+		    for (let j = 0; j < num; j++) {
+		        if (num-post_id != j) {
+			    data = txt[j].split('|');
+			    document.getElementById(rel.concat(i.toString())).setAttribute('href',data[0]);
+			    document.getElementById(im.concat(i.toString())).setAttribute('src',data[1]);
+			    document.getElementById(tit.concat(i.toString())).innerHTML = data[2];
+			    $(fig.concat(i.toString())).show();
+			    i++;
+			}
+		    }
+		} else {
+		    var bucket = [];
+		    for (var i=0;i<num;i++) {
+			if (i != num - post_id) {
+    			bucket.push(i);}
+		    }
+		    for (var j=1;j<4;j++) {
+			data = txt[bucket.splice(Math.floor(Math.random()*bucket.length), 1)[0]].split('|');
+			document.getElementById(rel.concat(j.toString())).setAttribute('href',data[0]);
+			document.getElementById(im.concat(j.toString())).setAttribute('src',data[1]);
+			document.getElementById(tit.concat(j.toString())).innerHTML = data[2];
+		    }
+		}
+            }
+        }
+	client.send();
+    }
+    window.addEventListener('load',startup);
+</script>
+</head>
+<body class="theme-base-0h">    <div class="sidebar w3-hide-small" id="mySidebar">
+  <div class="container">
+    <button class="w3-button sidebar w3-text-white w3-hide-medium w3-hide-large w3-right" onclick="sidebar_close()">☰</button>
+    <div class="sidebar-about">
+      <div class="w3-text-white w3-center" style="font-size:20px;">
+        Rushabh Mehta
+      </div>
+      
+      <p class="lead" style="font-size:16px;font-style:italic;color:rgba(255,255,255,0.5)">I thought I knew a lot of but in the end it was just one small piece from the puzzle.<br> - Deyth Banger</p>
+      
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">About Me</a>
+      <a class="sidebar-nav-item" href="/research/">Research</a>
+      <!--<a class="sidebar-nav-item" href="/book/">Book</a>-->
+      <a class="sidebar-nav-item active" href="/blog/">Blog</a>
+      <!--<a class="sidebar-nav-item" href="/coffee/">Coffee</a>-->
+      <a class="sidebar-nav-item" href="/notes/">Notes</a>
+      <a class="sidebar-nav-item" href="/resources/">Resources</a>
+	    <a class="sidebar-nav-item" href="/contact/">Contact</a>
+      <!--<a class="sidebar-nav-item" href="/conjecture/">Conjectures</a>-->
+    </nav>
+  </div>
+
+    <div class="w3-bottom">
+    <p style="font-size:12px;color:rgba(255,255,255,0.5);">© <script>document.write(new Date().getFullYear())</script> Rushabh Mehta</p>
+  </div>
+</div>
+
+<div class="sidebar w3-hide-medium w3-hide-large w3-right" id="mySmallSidebar">
+  <button class="w3-button sidebar w3-text-white" onclick="sidebar_open()">☰</button>
+</div>
+
+    <div class="container-fluid">
+        <main class="tm-main">     
+            <div class="row tm-row">
+                <div class="col-12">
+                    <hr class="tm-hr-primary tm-mb-55">
+			
+			
+                    <!-- Video player 1422x800 -->
+                  <img src="/public/post2P.webp" alt="Are you the cleverest in the room?">
+                </div>
+            </div>
+            <div class="row tm-row">
+                <div class="col-lg-8 tm-post-col">
+                    <div class="tm-post-full">                    
+                        <div class="mb-4">
+                            <h2 class="pt-2 tm-color-primary tm-post-title" id='title'>TITLE TO BE FILLED</h2>
+                            <p class="tm-mb-40" id='date'>DATE TO BE FILLED</p>
+				
+				
+				
+				
+                            <p>One of my friends informed me about the <a href='https://fivethirtyeight.com/features/are-you-clever-enough/' style='color:#0a37cc'>Riddler</a> column on 538. I'm going to try to see if I can solve the problems within a reasonable time limit of an hour for both.</p>
+                            <p>Today, I'm working on the August 13th problems, which were published four days ago</p>
+                          <h2>Are you clever enough?</h2>
+                          <p>In this problem, we are told that in Riddler nation, you are informed that you are among the top 10\% most clever people in the nation (although you don't know where among the top 10\% you are. I'm assuming a uniform distribution here). You are in a room with 9 other people. What is the probability (ignoring ties) of you being the smartest?</p>
+                          <p>Suppose that the probability of being smarter than a randomly chosen individual is \(p\). Clearly, based on the given information, \(p\) ranges between \(0.9\) and \(1\). I'm assuming uniformity since we aren't provided any additional information, so it is equally likely that \(p\) is at any point in \([0.9,1]\).</p>
+                          <p>The probability of us being the smartest in the room in a randomly chosen room of \(10\) people given \(p\) is just \(p^9\) by the independence assumption of the randomly chosen room. So, our answer is just $$\int\limits_{0.9}^1p^9\:dp\sim0.651$$
+                          <h2>Riddler Classic</h2>
+       
+                          <p>In this problem, we are given \(4\) dice, and we are asked to play a game, in which after each roll of dice, we have to freeze at least one die (i.e., keep its value locked), and roll all of the unfrozen dice again until all dice are frozen. If we seek to play to maximize our sum, what is the expected value of the game?</p>
+                          <p>I couldn't find a nice approach to this, so I just considered two dice to start. If they both come up above \(4\), freeze both and call it a day. This has an expected value of \(10\). Otherwise, freeze the larger die and roll the other again. If one of the dice rolls is above \(3\), then the expected value is \(5+3.5=8.5\). If both dice rolls are below \(4\), casework gets an expected value of \(\frac{107}{18}\).</p>
+                          <p>So the overall expected value of the game is \(\frac{593}{72}\). I did a similar process for \(3\) dice (which involved some pretty annoying case work) to get \(13.42\), but then ran out of time. I'm pretty confident with more time, I would have been able to finish the problem, but it certainly was a challenging one!</p>
+                          <h2>Conclusion</h2>
+                          
+                          <p>I was pretty close to finishing the Riddler Classic, but both problems were a lot of fun.</p>
+				
+				
+				
+                            <span class="d-block text-right tm-color-primary" id='tags'>TAGS TO BE PLACED HERE</span>
+                        </div>       
+                    </div>
+                </div>
+                <aside class="col-lg-4 tm-aside-col">
+                    <div class="tm-post-sidebar">
+                        <hr class="mb-3 tm-hr-primary">
+                        <h2 class="mb-4 tm-post-title tm-color-primary">Categories</h2>
+                        <ul class="tm-mb-75 pl-5 tm-category-list">
+                            <li><a href="/blog/food/" class="tm-color-primary">Food</a></li>
+                            <li><a href="/blog/puzzles/" class="tm-color-primary">Puzzles</a></li>
+                            <li><a href="/blog/travel/" class="tm-color-primary">Travel</a></li>
+                            <li><a href="/blog/sports/" class="tm-color-primary">Sports</a></li>
+                            <li><a href="/blog/reviews/" class="tm-color-primary">Reviews</a></li>
+                            <li><a href="/blog/other/" class="tm-color-primary">Other</a></li>
+                        </ul>
+                        <hr class="mb-3 tm-hr-primary">
+                        <h2 class="tm-mb-40 tm-post-title tm-color-primary">Related Posts</h2>
+                        <a href="#" class="d-block tm-mb-40" id='related1'>
+                            <figure id='fig1'>
+                                <img src="/blog/img/img-02.jpg" alt="Image" class="mb-3 img-fluid" id='image1'>
+                                <figcaption class="tm-color-primary" id='title1'>Duis mollis diam nec ex viverra scelerisque a sit</figcaption>
+                            </figure>
+                        </a>
+                        <a href="#" class="d-block tm-mb-40" id='related2'>
+                            <figure id='fig2'>
+                                <img src="/blog/img/img-05.jpg" alt="Image" class="mb-3 img-fluid" id='image2'>
+                                <figcaption class="tm-color-primary" id='title2'>Integer quis lectus eget justo ullamcorper ullamcorper</figcaption>
+                            </figure>
+                        </a>
+                        <a href="#" class="d-block tm-mb-40" id='related3'>
+                            <figure id='fig3'>
+                                <img src="/blog/img/img-06.jpg" alt="Image" class="mb-3 img-fluid" id='image3'>
+                                <figcaption class="tm-color-primary" id='title3'>Nam lobortis nunc sed faucibus commodo</figcaption>
+                            </figure>
+                        </a>
+                    </div>                    
+                </aside>
+            </div>
+        </main>
+    </div>
+    <script src="/blog/js/jquery.min.js"></script>
+    <script src="/blog/js/templatemo-script.js"></script>
+</body>
+</html>
