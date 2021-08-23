@@ -982,8 +982,7 @@ for <var>node</var> in <code>reverse_topological_sort</code> <var>T</var>
 	<var>node</var>.path = <var>max_child</var>.path + [<var>node</var>]
 Output: <var>root</var>.path
 </pre>
-	  <p>This algorithm is an example of <strong>backwards recursion</strong>. The idea is that at any particular node, we can treat it as the root node, find the optimal path from that node onwards, and treat the maximum sum as the weight of the node. Thus, we can recurse backwards until we reach the root node.</p>
-	Amazingly, this algorithm only involves a maximum of two calls to any particular node's weights (an update and a read), vs the brute force method might call a particular node an arbitrarily large number of times.	  
+	  This algorithm is an example of <strong>backwards recursion</strong>. The idea is that at any particular node, we can treat it as the root node, find the optimal path from that node onwards, and treat the maximum sum as the weight of the node. Thus, we can recurse backwards until we reach the root node. Amazingly, this algorithm only involves a maximum of two calls to any particular node's weights (an update and a read), vs the brute force method might call a particular node an arbitrarily large number of times.	  
   </div>
 </div>
 
