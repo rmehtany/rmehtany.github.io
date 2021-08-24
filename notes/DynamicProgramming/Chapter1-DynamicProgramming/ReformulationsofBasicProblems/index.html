@@ -942,7 +942,7 @@
 </div>
 
       
-	    <!--<a id='top'></a><div style="float:right"><a href="/notes/DynamicProgramming/Chapter1-DynamicProgramming/SolvingBasicProblems/"><bf>Next: Solving Basic Problems</bf></a></div>-->
+	    <a id='top'></a><div style="float:right"><a href="/notes/DynamicProgramming/Chapter1-DynamicProgramming/MathematicalIssues/"><bf>Next: Mathematical Issues</bf></a></div>
 <div><a href="/notes/DynamicProgramming/Chapter1-DynamicProgramming/SolvingBasicProblems"><bf>Previous: Solving Basic Problems</bf></a></div>
 
 
@@ -960,6 +960,7 @@
   <li><a href="#time" id="markdown-toc-time">Time Delays</a></li>
   <li><a href="#corr" id="markdown-toc-corr">Correlated Disturbances</a></li>
   <li><a href="#fore" id="markdown-toc-fore">Forecasts</a></li>
+  <li><a href="#cont" id="markdown-toc-cont">Simplifying Uncontrollable Components</a></li>
 </ul>
 
 <p>Last time, we briefly mentioned the issues with state augmentation to deal with reformulations to the basic problem. In this post, we'll go into a bit more detail about how to deal with such reformulations</p>
@@ -978,9 +979,19 @@
   <p>We can modify the problem into a basic problem. In fact, it's as simple as letting \(\tilde x_k=(x_k,w_k)\). See if you can figure out all of the details involved in converting this setup into a basic problem. This can even be generalized to multiple dimensions with matrix coefficients.</p>
   <p>Besides the state space growth (which in this case isn't too bad), the main issue with this approach is the assumption of perfect state knowledge. To be able to run our algorithm, we need to be able to perfectly measure the randomness and previous \(x_k\) state of the DDS in generating the state \(x_{k+1}\). But often, we can't do either, since \(w_k\) is generally an uncertainty on our measurement of \(x_k\). To deal with these sorts of situations, we'll have to wait until Chapter 4.</p>
   <h2 id='fore'><i>Forecasts</i></h2>
-  
-    
-  
+  <p>Suppose that we no longer are given the probability distribution \(P_k\), but rather are told that we now have a set of probability distributions \(Q_k\) (a finite set), and there exists a probability distribution \(\zeta_k\) on \(Q\) representing the likelihood of a particular distribution in \(Q\) being the one that determines the disturbance.</p>
+	<p>We call \(\zeta\) the <strong>forecast</strong>, since we are informed of its output before making the decision \(\mu\). (For simplicity, let \(\zeta_k^i\) refer to the probability of the \(i\)th element of \(Q\) being selected at time \(k\)).</p>
+  <p>As a real world example, \(\zeta_k\) could be a forecast of the demand for a product on year \(k\): small, medium or large. How do we convert this into a basic problem?</p>
+  <p>It's quite simple: let \(\tilde{x_k}=(x_k,\zeta_k)\) and the stochastic term be \(\tilde{w_k}=(w_k,\zeta_k)\). Can you see how to finish the setup?</p>
+
+	<h2 id='cont'><i>Simplifying Uncontrollable Components</i></h2>
+	
+   <p>In the three examples above, we've seen how to take complications in the setup of the basic problem, and via state augmentation, rewrite the complications as part of the basic problem. Of course, this adds to the size of the state space, which can very easily become unmanageable.</p>
+   <p>In general, there is no good way to deal with this expansion, other than heuristics. However, there is a special case that comes up relatively often.</p>
+    <p> Suppose we've augmented our space to have state \(\tilde{x_k}=(x_k,y_k)\), where \(x_k\) is the original state variable (\(x_{k+1}=f(\tilde{x_k},u_k,P(\cdot\mid\tilde{x_k},y_k))\)) and \(y_k\) is dependent on \(x_k\) stochastically. However, the controller observes the value of \(y_k\) prior to picking \(u_k\) (unlike \(w_k\)). Define$$\tilde{V_k}(x_k)=E_{y_k}\set{V_k(\tilde{x_k}\mid x_k)}$$</p>
+    <p>Via basic arithmetic, we have $$\tilde{V_k}(x_k)=E_{y_k}\Set{\min\limits_{u_k\in C_k(\tilde{x_k})}E_{w_k}\Set{g_k(\tilde{x_k},u_k,w_k)+\tilde{V_k}(f_k(\tilde{x_k},u_k,w_k))}\mid x_k}$$</p>
+    <p>We now can use the same approach as the Dynamic Programming Algorithm. The advantage is the size of the state space. If we just used the state augmentation approach, the state space size would be \(n\cdot m\), with \(n\) the state space size of \(x_k\) and \(m\) the state space size of \(y_k\). But, this approach leaves us with a state space of size \(n\).</p>
+	<p>Can you see how to directly simplify the augmentation of <a href='fore'>forecasts</a>?</p>
 </div>
 
 <div style="float:right"><a href="#top" style="font-style: normal;"><bf>Top</bf></a></div>
