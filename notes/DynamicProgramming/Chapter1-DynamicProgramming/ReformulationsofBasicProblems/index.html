@@ -975,7 +975,7 @@
 	
   <h2 id='corr'><i>Correlated Disturbances</i></h2>
   
-  <p>Consider the modification to the DDS model in which \(w_k\) now can depend on previous \(w_i\), i.e., the disturbances are correlated. There is no good way to handle this situation in general, but if we make the assumption that each \(w_k\) can be written as follows (with \(lambda\) a constant and \(\eta_k\) independent random variables)$$w_k=\lambda w_{k-1}+\eta_k$$</p>
+  <p>Consider the modification to the DDS model in which \(w_k\) now can depend on previous \(w_i\), i.e., the disturbances are correlated. There is no good way to handle this situation in general, but if we make the assumption that each \(w_k\) can be written as follows (with \(\lambda\) a constant and \(\eta_k\) independent random variables)$$w_k=\lambda w_{k-1}+\eta_k$$</p>
   <p>We can modify the problem into a basic problem. In fact, it's as simple as letting \(\tilde x_k=(x_k,w_k)\). See if you can figure out all of the details involved in converting this setup into a basic problem. This can even be generalized to multiple dimensions with matrix coefficients.</p>
   <p>Besides the state space growth (which in this case isn't too bad), the main issue with this approach is the assumption of perfect state knowledge. To be able to run our algorithm, we need to be able to perfectly measure the randomness and previous \(x_k\) state of the DDS in generating the state \(x_{k+1}\). But often, we can't do either, since \(w_k\) is generally an uncertainty on our measurement of \(x_k\). To deal with these sorts of situations, we'll have to wait until Chapter 4.</p>
   <h2 id='fore'><i>Forecasts</i></h2>
