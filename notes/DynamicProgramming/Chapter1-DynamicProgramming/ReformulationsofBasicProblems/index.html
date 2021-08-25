@@ -991,7 +991,7 @@
     <p> Suppose we've augmented our space to have state \(\tilde{x_k}=(x_k,y_k)\), where \(x_k\) is the original state variable (\(x_{k+1}=f(\tilde{x_k},u_k,P(\cdot\mid\tilde{x_k},y_k))\)) and \(y_k\) is dependent on \(x_k\) stochastically. However, the controller observes the value of \(y_k\) prior to picking \(u_k\) (unlike \(w_k\)). Define$$\tilde{V_k}(x_k)=E_{y_k}\set{V_k(\tilde{x_k}\mid x_k)}$$</p>
     <p>Via basic arithmetic, we have $$\tilde{V_k}(x_k)=E_{y_k}\Set{\min\limits_{u_k\in C_k(\tilde{x_k})}E_{w_k}\Set{g_k(\tilde{x_k},u_k,w_k)+\tilde{V_k}(f_k(\tilde{x_k},u_k,w_k))}\mid x_k}$$</p>
     <p>We now can use the same approach as the Dynamic Programming Algorithm. The advantage is the size of the state space. If we just used the state augmentation approach, the state space size would be \(n\cdot m\), with \(n\) the state space size of \(x_k\) and \(m\) the state space size of \(y_k\). But, this approach leaves us with a state space of size \(n\).</p>
-	<p>Can you see how to directly simplify the augmentation of <a href='fore'>forecasts</a>?</p>
+	<p>Can you see how to directly simplify the augmentation of <a href='#fore'>forecasts</a>?</p>
 </div>
 
 <div style="float:right"><a href="#top" style="font-style: normal;"><bf>Top</bf></a></div>
