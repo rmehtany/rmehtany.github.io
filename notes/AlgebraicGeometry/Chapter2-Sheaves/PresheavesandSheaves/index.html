@@ -942,8 +942,8 @@
 </div>
 
       
-	    <a id='top'></a><div style="float:right"><a href="/notes/AlgebraicGeometry/Chapter2-Sheaves/PresheafCategories/"><bf>Next: (Pre)sheaf Categories</bf></a></div>
-<div><a href="/notes/AlgebraicGeometry/Chapter2-Sheaves/UnderstandingSheaves/"><bf>Previous: Understanding Sheaves</bf></a></div>
+	    <a id='top'></a><div style="float:right"><a href="../PresheafCategories/"><bf>Next: (Pre)sheaf Categories</bf></a></div>
+<div><a href="../UnderstandingSheaves/"><bf>Previous: Understanding Sheaves</bf></a></div>
 
 <div class="post">
   <h1 class="post-title">Presheaves and Sheaves</h1>
@@ -985,7 +985,7 @@
     <li>For all \(W\subset V\subset U\), \(R_{U,W}=R_{V,W}\circ R_{U,V}\).</li>
   </div>
   
-  <p style="font-style: normal;">This definition should be intuitively clear based on our motivation from the post <a href='/notes/AlgebraicGeometry/Chapter2-Sheaves/UnderstandingSheaves/#prop' target='_blank'>Understanding Sheaves</a>. There are quite a few interesting ways to interpret the definition of presheaves.</p>
+  <p style="font-style: normal;">This definition should be intuitively clear based on our motivation from the post <a href='../UnderstandingSheaves/#prop' target='_blank'>Understanding Sheaves</a>. There are quite a few interesting ways to interpret the definition of presheaves.</p>
   <a id='lem1'></a><div class="Lemma" title="Presheaves as contravariant functors"> Given topological space \((X,\tau)\), we can partially order \(\tau\) by inclusion and thus form a poset category. From now on in this blog, \(\tau\) will both represent the topology and the category of open sets of \(X\) viewed as a poset category. The data of a contravariant function \(G:\tau\to\textbf{Set}\) is the same as that of a presheaf.
 <div class="proof">
   <p><a onclick="myCollapse('lem1-set')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="lem1-set-but"></i></a><br></p>
@@ -996,7 +996,7 @@
   
   <div class="Remark" title="Data of a presheaf" style="font-style: normal;">Obviously, if our data was stored as objects in set-like category \(\rmC\), the contravariant functor would be \(\tau\to\rmC\) instead of \(\tau\to\textbf{Set}\).</div>
   <a id='stalk'></a>
-  <p style="font-style: normal;">We define the stalk in two ways, similar to how we did it in <a href='/notes/AlgebraicGeometry/Chapter2-Sheaves/UnderstandingSheaves/#stalk' target='_blank'>Understanding Sheaves</a>. For the constructive approach, we define it as the set of germs \((f,U)\) with \(p\in U\in\tau\), \(f\in\rmF(U)\), under the equivalence relation \((f,U)\sim(g,V)\) iff there exists \(W\in\tau\subset U,V\) such that \(f\vert_W=g\vert_W\).</p>
+  <p style="font-style: normal;">We define the stalk in two ways, similar to how we did it in <a href='../UnderstandingSheaves/#stalk' target='_blank'>Understanding Sheaves</a>. For the constructive approach, we define it as the set of germs \((f,U)\) with \(p\in U\in\tau\), \(f\in\rmF(U)\), under the equivalence relation \((f,U)\sim(g,V)\) iff there exists \(W\in\tau\subset U,V\) such that \(f\vert_W=g\vert_W\).</p>
   <p style="font-style: normal;">For the categorical approach, let \(B_p\) be the subcategory of \(\tau\) consisting only of those open sets around \(p\). Let \(H_p\) be the restriction of the functor \(\rmF\) to \(B_p\). Then, the stalk is just \(\rmF_p=\varinjlim H_p\).</p>
     <p style="font-style: normal;">We call the image of any \(f\in\rmF(U)\) in \(\rmF_p\) for an open set \(U\) with \(p\in U\) the germ of \(f\) at \(p\). We sometimes notate the germ of \(f\) at \(p\) as \(f_p\), although this can be confusing at times since \(f_p\) is an overloaded term.</p>
   <h2 id='sheaf'>Sheaves</h2>
@@ -1007,7 +1007,7 @@
     <li>If there exists \(f_i\in\rmF(U_i)\) for each \(i\) such that for any \(i,j\), \(f_i\vert_{U_i\cap U_j}=f_j\vert_{U_i\cap U_j}\), then there exists \(f\in\rmF(U)\) such that \(f\vert_{U_i}=f_i\) for all \(i\).</li>
     </ol>
   </div>
-  <p style="font-style: normal;">Condition \(5\) is often called the identity axiom, and Condition \(6\) is often called the gluability axiom. Again, these conditions shouldn't be intuitively difficult given the motivation in <a href='/notes/AlgebraicGeometry/Chapter2-Sheaves/UnderstandingSheaves/#prop' target='_blank'>Understanding Sheaves</a>.</p>
+  <p style="font-style: normal;">Condition \(5\) is often called the identity axiom, and Condition \(6\) is often called the gluability axiom. Again, these conditions shouldn't be intuitively difficult given the motivation in <a href='../UnderstandingSheaves/#prop' target='_blank'>Understanding Sheaves</a>.</p>
   <a id='rem'></a><div class="Remark" title="(Pre)sheaves and the empty set" style="font-style: normal;">The sheaf axioms automatically imply that \(\rmF(\varnothing)\) is a final object of the category, as the gluability axiom implies that there is a map from \(\rmF(U)\to\rmF(\varnothing)\) for every \(U\in\tau\) and the identity axiom implies any two such maps must be equal. However, this isn't necessarily implied in presheaves. We'll see an example of this in the constant presheaf.</div>
   <a id='example'></a><p style="font-style: normal;">Some examples and non-examples:</p>
   <ul>
