@@ -157,29 +157,24 @@ https://templatemo.com/tm-553-xtra-blog
                             <p>Today, I'm working on the August 20th problems, which were published two days ago</p>
                           <h2>Can you catch the Cricket?</h2>
                           <p>In this problem, we are given a cricket which jumps a distance of \(1\) meter, twice, in two random directions, and are asked to find the <i>most probable</i> distance of the cricket from its starting point (i.e., the peak of the probability distribution on the distance from the starting point.)</p>
+			  <blockquote class="w3-panel w3-leftbar w3-light-grey">
+			<p>Help, there’s a cricket on my floor! I want to trap it with a cup so that I can safely move it outside. But every time I get close, it hops exactly 1 foot in a random direction.</p><p>I take note of its starting position and come closer. Boom — it hops in a random direction. I get close again. Boom — it takes another hop in a random direction, independent of the direction of the first hop.</p><p>What is the <i>most probable</i> distance between the cricket’s current position after two random jumps and its starting position? (Note: This puzzle is not asking for the <i>expected distance</i>, but rather the <i>most probable</i> distance. In other words, if you consider the probability distribution over all possible distances, where is the peak of this distribution?)</p>	
+			</blockquote>
+				
                           <p>Observe that the first jump's direction is irrelevant, since we can just rotate the problem. Thus, we can fix it onto a coordinate grid. Let the starting point of the cricket be at the origin on a coordinate plane, and the location of the cricket after the first jump be \((0,1)\). The possible locations of the cricket after the second jump and the resulting distance from the origin are plotted in <a href='#'>the animation</a> above.</p>
                           <p>The distance from the origin, given an angle \(\theta\) of the new jump from the old jump's direction is given by \(\sqrt{(1+\sin\theta)^2+(\cos\theta)^2}=\sqrt{2+2\sin\theta}\). Note that this function on the domain \(\theta\in(0,2\pi)\) is smooth.</p>
                           <p>The most probable point is that for which the distance from the origin changes the least with small shifts in \(\theta\). But that is just the derivative! Thus, a point with derivative \(0\) is more probable than a point with non-zero derivative. But there is exactly one point with derivative \(0\): the distance of \(2\) meters.</p>
                           <p>This may seem counterintuitive: why is the maximum distance the most probable? But it's actually quite simple: the closer to the origin the cricket gets, the faster the distance changes with changes in the angle \(\theta\). So it is to be expected that the most likely point is the farthest one.</p>
                           
                           <h2>Riddler Classic</h2>
-                          
-                          <p>We are asked to find probabilities \(p_1,\ldots,p_6\) (with \(p_1+\ldots+p_6=1\)) representing the probability of rolling a particular number on a die such that the distribution of the sum of two rolls is as uniform as possible.</p>
-                          <p>First, we try some values. After some fiddling, I found it was possible to get the variance (times \(n\)) under \(0.015\), with $$p_1=p_6=0.25,p_2=p_5=0.16,p_3=p_4=0.09$$I found these values by observing that \(p_1,p_6\) should be the largest as they are involved in the most sums, and \(p_3,p_4\) the smallest by the same token.</p>
+                          <blockquote class="w3-panel w3-leftbar w3-light-grey"><p>When you roll a pair of fair dice, the most likely outcome is \(7\) (which occurs \(\frac16\) of the time) and the least likely outcomes are \(2\) and \(12\) (which each occur \(\frac1{36}\) of the time).</p><p>Annoyed by the variance of these probabilities, I set out to create a pair of “uniform dice.” These dice still have sides that are uniquely numbered from \(1\) to \(6\), and they are identical to each other. However, they are weighted so that their sum is more uniformly distributed between \(2\) and \(12\) than that of fair dice.</p><p>The variance of the \(11\) probabilities is the average value of the squared difference between each probability and the average probability (which is \(\frac1{11}\)). One way to make my dice as uniform as possible is to minimize this variance.</p><p>So how should I make my dice as uniform as possible? In other words, which specific weighting of the dice minimizes the variance among the \(11\) probabilities? That is, what should the probabilities be for rolling \(1\), \(2\), \(3\), \(4\), \(5\) or \(6\) with one of the dice?</p>
+                          </blockquote>
+                          <p>Let \(p_i\) be the probability of rolling \(i\) on a single die. After some fiddling, I found it was possible to get the variance (times \(n\)) under \(0.015\), with $$p_1=p_6=0.25,p_2=p_5=0.16,p_3=p_4=0.09$$I found these values by observing that \(p_1,p_6\) should be the largest as they are involved in the most sums, and \(p_3,p_4\) the smallest by the same token.</p>
                           <p>Honestly, I spent a few hours on this problem, and I really have no clue other than grinding it out on my laptop. I guess I'll wait till next week to see how it was done.</p>
                           
                           <h2>Conclusion</h2>
                           
-                          <p>I wasn't able to solve the Riddler Classic this time, both due to a lack of time and the problem being somewhat challenging. I'm excited to see what's next!</p>
-			<blockquote class="w3-panel w3-leftbar w3-light-grey">
-  <p class="w3-large"><i>
-  There is truth, my boy. But the doctrine you desire, absolute, perfect, dogma that alone provides wisdom, does not exist. Nor should you long for perfect doctrine, my friend. Rather, you should long for the perfection of yourself. The deity is within you, not in ideas and books. Truth is lived, not taught. Be prepared for conflicts, Joseph Knecht, I can see they have already begun.
-  </i></p>
-  <p class="w3-large"><i>
-  真理是存在的，我的孩子。不過你渴望的那種純粹、完美並且提供智慧的學說是不存在的。你甚至不應該期盼有個完美的學說，我的朋友。你應該追尋自我的完美，畢竟道理是存在你心中而不是在思想和書本裡的，就如同真理是被實踐而非教導的。Joseph Knecht，準備好面對衝突、矛盾與困惑吧，我可以看到一切已經開始了。
-  </i></p>
-  <p><i>Page 83.</i></p>
-</blockquote>	
+                          <p>I wasn't able to solve the Riddler Classic this time, both due to a lack of time and the problem being somewhat challenging. I'm excited to see what's next!</p>	
 				
 				
                             <span class="d-block text-right tm-color-primary" id='tags'>TAGS TO BE PLACED HERE</span>
