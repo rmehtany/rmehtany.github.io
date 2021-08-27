@@ -1,0 +1,64 @@
+.recipe {
+	border: 1px solid #eee;
+	padding: 0;
+
+	header {
+		position: relative;
+		border-bottom: 1px solid #eee;
+		padding: 1rem 1rem 2rem 1rem;
+	}
+
+	&__img {
+		overflow: hidden;
+		height: 250px;
+		img {
+			object-fit: cover;
+		}
+	}
+
+	&__share {
+		position: absolute;
+		top: -3rem;
+		right: 1rem;
+	}
+	.recipe__content {
+		padding: 1rem;
+	}
+	&__servings {
+		width: 3rem;
+	}
+	// Ingredients
+	&__ingredients {
+		margin-top: 1rem;
+		padding-left: 1rem;
+		li {
+			list-style-type: none;
+		}
+		label {
+			cursor: pointer;
+			&:hover {
+				color: #3298dc;
+			}
+		}
+		input {
+			appearance: none;
+			position: relative;
+			&::before {
+				color: #666;
+				font-family: "Font Awesome 5 Free";
+				content: "\f0c8";
+				margin-right: 0.25rem;
+			}
+			&:checked {
+				~ span {
+					font-style: italic;
+					color: #666;
+					text-decoration: line-through;
+				}
+				&::before {
+					content: "\f14a";
+				}
+			}
+		}
+	}
+}
