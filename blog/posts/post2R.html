@@ -146,7 +146,7 @@ https://templatemo.com/tm-553-xtra-blog
             <div class="row tm-row">
                 <div class="col-lg-8 tm-post-col">
                     <div class="tm-post-full">                    
-                        <div class="mb-4">
+                        <div class="mb-4" style='color:black;'>
                             <h2 class="pt-2 tm-color-primary tm-post-title" id='title'>TITLE TO BE FILLED</h2>
                             <p class="tm-mb-40" id='date'>DATE TO BE FILLED</p>
 				
@@ -186,10 +186,10 @@ https://templatemo.com/tm-553-xtra-blog
 				<p>In general, division of numbers is a difficult task for computers, as compared to multiplication and addition. But there is one exception: division by a power of \(2\). Since numbers are stored in base \(2\), dividing by two is as simple as dropping the last bit of an integer (known as a right shift). Multiplication by \(2\) is a left shift.</p>
 				<p>C designates these operators as <code>>></code> and <code><<</code>. Remember that we found that \(z\sim2^{22}\cdot127-\frac y2\)? Well, we can write that as \(z\sim\text{ Constant }-(y>>1)\), since shifting right by \(1\) is equivalent to dividing by \(2\). That almost explains the line of code we see in the function...</p>
 				<h2>The magic number</h2>
-				<p>Based on our formula from above, you'd think, "Ah, the constant \(0x5f3759df\) is just hexadecimal for \(2^{22}cdot127\)". You'd be close, but not correct. Remember that \(z\sim2^{22}\cdot127-\frac y2\), but doesn't equal it.</p>
-				<p>A second guess for what the number might be is the constant \(C\) that minimizes the average value of \(|z_y-(C-0.5y)|\), where for every floating point \(y\), \(z_y\) is the floating point representation of the inverse square root. That, too, would be a great guess. But, the value that minimizes the average value of that expression is \(0x5f37642f\), which is close, but not exactly the constant.</p>
-				<p>The issue with this choice is that while it does minimize the average value of the formula, after applying the Newton-Raphson method (the last line of the code, which we'll discuss in a moment), it actually does worse than \(0x5f3759df\).</p>
-				<p>A third guess might be the constant which minimizes the average absolute difference of the Newton-Raphson method applied to \(C-0.5y\) and \(z_y\). This constant, \(0x5f375a86\), actually does better on average than \(0x5f3759df\), but barely. The author of the paper I'm reviewing, Chris Lomont, notes that he'd like to hear from Walsh about how he came up with this constant since there doesn't seem to be any rhyme or reason for it.</p>
+				<p>Based on our formula from above, you'd think, "Ah, the constant 0x5f3759df is just hexadecimal for \(2^{22}\cdot127\)". You'd be close, but not correct. Remember that \(z\sim2^{22}\cdot127-\frac y2\), but doesn't equal it.</p>
+				<p>A second guess for what the number might be is the constant \(C\) that minimizes the average value of \(|z_y-(C-0.5y)|\), where for every floating point \(y\), \(z_y\) is the floating point representation of the inverse square root. That, too, would be a great guess. But, the value that minimizes the average value of that expression is 0x5f37642f, which is close, but not exactly the constant.</p>
+				<p>The issue with this choice is that while it does minimize the average value of the formula, after applying the Newton-Raphson method (the last line of the code, which we'll discuss in a moment), it actually does worse than 0x5f3759df.</p>
+				<p>A third guess might be the constant which minimizes the average absolute difference of the Newton-Raphson method applied to \(C-0.5y\) and \(z_y\). This constant, 0x5f375a86, actually does better on average than 0x5f3759df, but barely. The author of the paper I'm reviewing, Chris Lomont, notes that he'd like to hear from Walsh about how he came up with this constant since there doesn't seem to be any rhyme or reason for it.</p>
 				<p>Walsh's response? "Honestly, I don't remember". I guess we'll never know!</p>
 				<h2>Newton-Raphson Method</h2>
                             	<p>This is perhaps the most important line of the program, since it takes a decent approximation, and makes it into a great one. I won't explain the whole method here (<a href='https://yihui.org/animation/example/newton-method/' target='_blank' style='color:#0a37cc'>this blog</a> does a fantastic job explaining it</a>), but the idea is that for a convex function, like \(y=x^{-0.5}\), the starting input for the method doesn't really matter, as long as you conduct the method enough times.</p>
