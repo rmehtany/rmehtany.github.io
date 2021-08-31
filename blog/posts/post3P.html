@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Blog - Rushabh Mehta</title>
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet"> <!-- https://fonts.google.com/ -->
+    <link href="/blog/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/blog/css/templatemo-xtra-blog.css" rel="stylesheet">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="/public/css/mystyle.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="/public/css/theorem.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/public/css/w3.css">
+  <link rel="stylesheet" href="/public/css/color.css">
+<!--
+    
+TemplateMo 553 Xtra Blog
+https://templatemo.com/tm-553-xtra-blog
+-->
+    <script src="/blog/js/jquery.min.js"></script>
+    <script src="/blog/js/templatemo-script.js"></script>
+    <script src="/blog/js/jquery_ui.js"></script>
+    <script type="text/javascript" async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/x-mathjax-config;executed=true">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      displayMath: [ ['$$','$$'] ],
+      processEscapes: true,
+    }
+  });
+  </script>
+
+<script>
+    function startup() {
+	var post_id = 3;
+        var client = new XMLHttpRequest();
+        client.open('GET', '/blog/puzzles/blogdata.txt');
+        client.onload = function()
+        {
+            if(client.responseText != '')
+            {
+                var txt = client.responseText.split('\n');
+		var num = txt.length-1;
+		var im = "image";
+		var tit = "title";
+		var fig = "#fig";
+		var rel = "related";
+		var data = txt[num-post_id].split('|');
+		document.getElementById("title").innerHTML = data[2];
+		document.getElementById("tags").innerHTML = data[4];
+		document.getElementById("date").innerHTML = data[5];
+		if (num < 5) {
+		    var i = 1;
+		    $("#fig1").hide();
+		    $("#fig2").hide();
+		    $("#fig3").hide();
+		    for (let j = 0; j < num; j++) {
+		        if (num-post_id != j) {
+			    data = txt[j].split('|');
+			    document.getElementById(rel.concat(i.toString())).setAttribute('href',data[0]);
+			    document.getElementById(im.concat(i.toString())).setAttribute('src',data[1]);
+			    document.getElementById(tit.concat(i.toString())).innerHTML = data[2];
+			    $(fig.concat(i.toString())).show();
+			    i++;
+			}
+		    }
+		} else {
+		    var bucket = [];
+		    for (var i=0;i<num;i++) {
+			if (i != num - post_id) {
+    			bucket.push(i);}
+		    }
+		    for (var j=1;j<4;j++) {
+			data = txt[bucket.splice(Math.floor(Math.random()*bucket.length), 1)[0]].split('|');
+			document.getElementById(rel.concat(j.toString())).setAttribute('href',data[0]);
+			document.getElementById(im.concat(j.toString())).setAttribute('src',data[1]);
+			document.getElementById(tit.concat(j.toString())).innerHTML = data[2];
+		    }
+		}
+            }
+        }
+	client.send();
+    }
+    window.addEventListener('load',startup);
+</script>
+</head>
+<body class="theme-base-0h">    <div class="sidebar w3-hide-small" id="mySidebar">
+  <div class="container">
+    <button class="w3-button sidebar w3-text-white w3-hide-medium w3-hide-large w3-right" onclick="sidebar_close()">☰</button>
+    <div class="sidebar-about">
+      <div class="w3-text-white w3-center" style="font-size:20px;">
+        Rushabh Mehta
+      </div>
+      
+      <p class="lead" style="font-size:16px;font-style:italic;color:rgba(255,255,255,0.5)">I thought I knew a lot of but in the end it was just one small piece from the puzzle.<br> - Deyth Banger</p>
+      
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">About Me</a>
+      <a class="sidebar-nav-item" href="/research/">Research</a>
+      <!--<a class="sidebar-nav-item" href="/book/">Book</a>-->
+      <a class="sidebar-nav-item active" href="/blog/">Blog</a>
+      <!--<a class="sidebar-nav-item" href="/coffee/">Coffee</a>-->
+      <a class="sidebar-nav-item" href="/notes/">Notes</a>
+      <a class="sidebar-nav-item" href="/resources/">Resources</a>
+	    <a class="sidebar-nav-item" href="/contact/">Contact</a>
+      <!--<a class="sidebar-nav-item" href="/conjecture/">Conjectures</a>-->
+    </nav>
+  </div>
+
+    <div class="w3-bottom">
+    <p style="font-size:12px;color:rgba(255,255,255,0.5);">© <script>document.write(new Date().getFullYear())</script> Rushabh Mehta</p>
+  </div>
+</div>
+
+<div class="sidebar w3-hide-medium w3-hide-large w3-right" id="mySmallSidebar">
+  <button class="w3-button sidebar w3-text-white" onclick="sidebar_open()">☰</button>
+</div>
+
+    <div class="container-fluid">
+        <main class="tm-main">     
+            <div class="row tm-row">
+                <div class="col-12">
+                    <hr class="tm-hr-primary tm-mb-55">
+			
+			
+                    <!-- Video player 1422x800 -->
+                  <img src="/public/post2P.webp" alt="Are you the cleverest in the room?">
+                </div>
+            </div>
+            <div class="row tm-row">
+                <div class="col-lg-8 tm-post-col">
+                    <div class="tm-post-full">                    
+                        <div class="mb-4">
+                            <h2 class="pt-2 tm-color-primary tm-post-title" id='title'>TITLE TO BE FILLED</h2>
+                            <p class="tm-mb-40" id='date'>DATE TO BE FILLED</p>
+				
+				
+				
+				
+                            <p>One of my friends informed me about the <a href='https://fivethirtyeight.com/features/are-you-clever-enough/' style='color:#0a37cc'>Riddler</a> column on 538. I'm going to try to see if I can solve the problems within a reasonable time limit of an hour for both.</p>
+                            <p>Today, I'm working on the August 13th problems, which were published four days ago</p>
+                          <h2>Are you clever enough?</h2>
+                          <blockquote class="w3-panel w3-leftbar w3-light-grey"><p>You and your two best friends are in a three-person league, drafting just three positions each for your teams: quarterback, running back and wide receiver. Yes, this is a simplified version of fantasy football.</p><p>The following table shows the top three athletes in each position, as well as the number of fantasy points they are expected to earn over the course of the season. You and your friends must each select exactly one player from each position.</p><table class="w3-table w3-bordered"><thead><tr><th colspan="2" class="text">Quarterback</th>
+ <th colspan="2" class="text">Running Back</th>
+ <th colspan="2" class="text">Wide Receiver</th>
+ </tr></thead><tbody><tr><td class="text">Matrick Pahomes</td>
+ <td style="color: #222222;background-color: #ed713a">400</td>
+ <td>Caffrey McChristian</td>
+ <td style="color: #222222;background-color: #f6b497">300</td>
+ <td>Avante Dadams</td>
+ <td style="color: #222222;background-color: #f9d3c2">250</td>
+ </tr><tr><td>Osh Jallen</td>
+ <td style="color: #222222;background-color: #f1946b">350</td>
+ <td>Calvin Dook</td>
+ <td style="color: #222222;background-color: #fbe2d6">225</td>
+ <td>Hyreek Till</td>
+ <td style="color: #222222;background-color: #fbe2d6">225</td>
+ </tr><tr><td>Myler Kurray</td>
+ <td style="color: #222222;background-color: #f6b497">300</td>
+ <td>Herrick Denry</td>
+ <td style="color: #222222;background-color: #fdf0eb">200</td>
+ <td>Defon Stiggs</td>
+ <td style="color: #222222;background-color: #ffffff">175</td>
+ </tr></tbody></table><p>The draft is a “snake draft.” If person A drafts first, B drafts second and C drafts third, then the order of the picks is as follows: A-B-C-C-B-A-A-B-C.</p><p>Your friends — being the kind people that they are — agree that you can choose your pick number. Which draft position should you choose to maximize your expected fantasy score?</p></blockquote>
+            <p>To solve this problem, we find the optimal strategy for each of the three players, \(A,\;B,\;C\), and then see which player does best. We consider \(9\) possibilities, corresponding to the \(9\) possible states we could be in after the first two drafts.</p>
+            <p>For each possible pair of choices made by \(A\) and \(B\) in the first two picks of the draw, we know that \(C\) gets two picks (which must be in distinct columns), and then the third pick will be the worst player in the column not chosen from by \(C\). This means that for each one of the \(9\) states, we can compute the optimal strategy for \(C\), which will be summarized in the following table. If two strategies are equal, both will be listed.</p>
+            <table class="w3-table w3-striped w3-bordered">
+  <tr>
+    <th>A</th>
+    <th>B</th>
+    <th>C C</th>
+  </tr>
+  <tr>
+    <td>Q</td>
+    <td>Q</td>
+    <td>RW</td>
+  </tr>
+  <tr>
+    <td>Q</td>
+    <td>R</td>
+    <td>QW</td>
+  </tr>
+  <tr>
+    <td>Q</td>
+    <td>W</td>
+    <td>QR/RW</td>
+  </tr>
+  <tr>
+    <td>R</td>
+    <td>Q</td>
+    <td>QW</td>
+  </tr>
+  <tr>
+    <td>R</td>
+    <td>R</td>
+    <td>QW</td>
+  </tr>
+  <tr>
+    <td>R</td>
+    <td>W</td>
+    <td>QW</td>
+  </tr>
+  <tr>
+    <td>W</td>
+    <td>Q</td>
+    <td>QR/RW</td>
+  </tr>
+  <tr>
+    <td>W</td>
+    <td>R</td>
+    <td>QW</td>
+  </tr>
+  <tr>
+    <td>W</td>
+    <td>W</td>
+    <td>QR</td>
+  </tr>
+</table>
+            <p>Next, observe that for \(B\), given one of the \(9\) states, we know the first four drafts given optimal play by \(C\). Moreover, after \(B\) makes their second draft, \(A\) will draft the highest player in the two columns it hasn't drafted from yet, and then \(B\) will draft again. This means that we can precisely calculate the best drafting strategy for each \(B\), based on the state we are in.</p>
+        <table class="w3-table w3-striped w3-bordered">
+  <tr>
+    <th>A</th>
+    <th>B</th>
+    <th>C C</th>
+    <th>B</th>
+    <th>A A</th>
+    <th>B</th>
+    <th>C</th>
+  </tr>
+  <tr>
+    <td>Q</td>
+    <td>Q</td>
+    <td>RW</td>
+    <td>W</td>
+    <td>RW</td>
+    <td>R</td>
+    <td>Q</td>
+  </tr>
+  <tr>
+    <td>Q</td>
+    <td>R</td>
+    <td>QW</td>
+    <td>W</td>
+    <td>RW</td>
+    <td>Q</td>
+    <td>R</td>
+  </tr>
+  <tr>
+    <td>Q</td>
+    <td>W</td>
+    <td>QR/RW</td>
+    <td>R</td>
+    <td>RW</td>
+    <td>Q</td>
+    <td>W/Q</td>
+  </tr>
+  <tr>
+    <td>R</td>
+    <td>Q</td>
+    <td>QW</td>
+    <td>W</td>
+    <td>QW</td>
+    <td>R</td>
+    <td>R</td>
+  </tr>
+  <tr>
+    <td>R</td>
+    <td>R</td>
+    <td>QW</td>
+    <td>W</td>
+    <td>QW</td>
+    <td>Q</td>
+    <td>R</td>
+  </tr>
+  <tr>
+    <td>R</td>
+    <td>W</td>
+    <td>QW</td>
+    <td>Q</td>
+    <td>QW</td>
+    <td>R</td>
+    <td>R</td>
+  </tr>
+  <tr>
+    <td>W</td>
+    <td>Q</td>
+    <td>QR/RW</td>
+    <td>R</td>
+    <td>QR</td>
+    <td>W</td>
+    <td>W/Q</td>
+  </tr>
+  <tr>
+    <td>W</td>
+    <td>R</td>
+    <td>QW</td>
+    <td>Q</td>
+    <td>QR</td>
+    <td>W</td>
+    <td>R</td>
+  </tr>
+  <tr>
+    <td>W</td>
+    <td>W</td>
+    <td>QR</td>
+    <td>Q</td>
+    <td>QR</td>
+    <td>R</td>
+    <td>W</td>
+  </tr>
+</table>    <p>Thus, we can list the team rating for each of these states for \(B\) to see the optimal strategy for \(B\).</p>
+<table class="w3-table w3-striped w3-bordered">
+  <tr>
+    <th>A</th>
+    <th>B</th>
+    <th>B Points</th>
+  </tr>
+  <tr>
+    <td>Q</td>
+    <td>Q</td>
+    <td>775</td>
+  </tr>
+  <tr>
+    <td>Q</td>
+    <td>R</td>
+    <td>825</td>
+  </tr>
+  <tr>
+    <td>Q</td>
+    <td>W</td>
+    <td>775/825</td>
+  </tr>
+  <tr>
+    <td>R</td>
+    <td>Q</td>
+    <td>850</td>
+  </tr>
+  <tr>
+    <td>R</td>
+    <td>R</td>
+    <td>750</td>
+  </tr>
+  <tr>
+    <td>R</td>
+    <td>W</td>
+    <td>825</td>
+  </tr>
+  <tr>
+    <td>W</td>
+    <td>Q</td>
+    <td>825/875</td>
+  </tr>
+  <tr>
+    <td>W</td>
+    <td>R</td>
+    <td>825</td>
+  </tr>
+  <tr>
+    <td>W</td>
+    <td>W</td>
+    <td>775</td>
+  </tr>
+</table>
+            <p>Thus, if \(A\) picks a quarterback first, \(B\) should pick a rightback first. If \(A\) doesn't pick a quarterback first, \(B\) should pick a quarterback.</p>
+            <p>So, if \(A\) picks a quarterback, his team is \(800\) points. If he picks a rightback, his team is \(775\) points. Otherwise, his team is \(750/800\) points. So, \(A\) should pick a quarterback first, and \(B\) should pick a right-back next. Thus, if everyone drafts optimally, the draft will be QRQWWRWQR.</p>
+            <p>So, \(A\) ends with \(800\) points, \(B\) ends with \(825\), and \(C\) ends with \(800\). Thus, you should pick \(B\).</p>
+            <h2>Riddler Classic</h2>
+       			<blockquote class="w3-panel w3-leftbar w3-light-grey"><p>Hames Jarrison has just intercepted a pass at one end zone of a football field, and begins running — at a constant speed of \(15\) miles per hour — to the other end zone, \(100\) yards away.</p><p>At the moment he catches the ball, you are on the very same goal line, but on the other end of the field, \(50\) yards away from Jarrison. Caught up in the moment, you decide you will always run directly toward Jarrison’s current position, rather than plan ahead to meet him downfield along a more strategic course.</p><p>Assuming you run at a constant speed (i.e., don’t worry about any transient acceleration), how fast must you be in order to catch Jarrison before he scores a touchdown?</p></blockquote>
+            <p>This one is a classic problem, known as the curve of pursuit. The solution is a classic ODE problem, and is presented <a href='https://www.usna.edu/Users/physics/mungan/_files/documents/Publications/EJP2.pdf' target='_blank' style='color:#0a37cc'>here</a>.</p>
+            <p>In particular, given we are \(H\) away from Jarrison in the beginning, and we catch Jarrison after he ran \(d\), the total distance \(D\) we ran is $$D=\frac{H+\sqrt{H^2+4d^2}}2$$Using this result, we know that \(H=50\), \(d=100\), so \(D\sim128.08\). So, we approximately run \(1.281\) times faster than Jarrison, which is \(19.215\) mph.</p>
+				
+				
+				
+                            <span class="d-block text-right tm-color-primary" id='tags'>TAGS TO BE PLACED HERE</span>
+                        </div>       
+                    </div>
+                </div>
+                <aside class="col-lg-4 tm-aside-col">
+                    <div class="tm-post-sidebar">
+                        <hr class="mb-3 tm-hr-primary">
+                        <h2 class="mb-4 tm-post-title tm-color-primary">Categories</h2>
+                        <ul class="tm-mb-75 pl-5 tm-category-list">
+                            <li><a href="/blog/food/" class="tm-color-primary">Food</a></li>
+                            <li><a href="/blog/puzzles/" class="tm-color-primary">Puzzles</a></li>
+                            <li><a href="/blog/travel/" class="tm-color-primary">Travel</a></li>
+                            <li><a href="/blog/sports/" class="tm-color-primary">Sports</a></li>
+                            <li><a href="/blog/reviews/" class="tm-color-primary">Reviews</a></li>
+                            <li><a href="/blog/other/" class="tm-color-primary">Other</a></li>
+                        </ul>
+                        <hr class="mb-3 tm-hr-primary">
+                        <h2 class="tm-mb-40 tm-post-title tm-color-primary">Related Posts</h2>
+                        <a href="#" class="d-block tm-mb-40" id='related1'>
+                            <figure id='fig1'>
+                                <img src="/blog/img/img-02.jpg" alt="Image" class="mb-3 img-fluid" id='image1'>
+                                <figcaption class="tm-color-primary" id='title1'>Duis mollis diam nec ex viverra scelerisque a sit</figcaption>
+                            </figure>
+                        </a>
+                        <a href="#" class="d-block tm-mb-40" id='related2'>
+                            <figure id='fig2'>
+                                <img src="/blog/img/img-05.jpg" alt="Image" class="mb-3 img-fluid" id='image2'>
+                                <figcaption class="tm-color-primary" id='title2'>Integer quis lectus eget justo ullamcorper ullamcorper</figcaption>
+                            </figure>
+                        </a>
+                        <a href="#" class="d-block tm-mb-40" id='related3'>
+                            <figure id='fig3'>
+                                <img src="/blog/img/img-06.jpg" alt="Image" class="mb-3 img-fluid" id='image3'>
+                                <figcaption class="tm-color-primary" id='title3'>Nam lobortis nunc sed faucibus commodo</figcaption>
+                            </figure>
+                        </a>
+                    </div>                    
+                </aside>
+            </div>
+        </main>
+    </div>
+    <script src="/blog/js/jquery.min.js"></script>
+    <script src="/blog/js/templatemo-script.js"></script>
+</body>
+</html>
