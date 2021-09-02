@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Blog - Rushabh Mehta</title>
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet"> <!-- https://fonts.google.com/ -->
+    <link href="/blog/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/blog/css/templatemo-xtra-blog.css" rel="stylesheet">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="/public/css/mystyle.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="/public/css/theorem.css">
+  <link rel="stylesheet" href="/public/css/w3.css">
+  <link rel="stylesheet" href="/public/css/color.css">
+<!--
+    
+TemplateMo 553 Xtra Blog
+https://templatemo.com/tm-553-xtra-blog
+-->
+    <script src="/blog/js/jquery.min.js"></script>
+    <script src="/blog/js/templatemo-script.js"></script>
+    <script src="/blog/js/jquery_ui.js"></script>
+
+<script>
+    function startup() {
+	var post_id = 1;
+        var client = new XMLHttpRequest();
+        client.open('GET', '/blog/sports/blogdata.txt');
+        client.onload = function()
+        {
+            if(client.responseText != '')
+            {
+                var txt = client.responseText.split('\n');
+		var num = txt.length-1;
+		var im = "image";
+		var tit = "title";
+		var fig = "#fig";
+		var rel = "related";
+		var data = txt[num-post_id].split('|');
+		document.getElementById("title").innerHTML = data[2];
+		document.getElementById("tags").innerHTML = data[4];
+		document.getElementById("date").innerHTML = data[5];
+		if (num < 5) {
+		    var i = 1;
+		    $("#fig1").hide();
+		    $("#fig2").hide();
+		    $("#fig3").hide();
+		    for (let j = 0; j < num; j++) {
+		        if (num-post_id != j) {
+			    data = txt[j].split('|');
+			    document.getElementById(rel.concat(i.toString())).setAttribute('href',data[0]);
+			    document.getElementById(im.concat(i.toString())).setAttribute('src',data[1]);
+			    document.getElementById(tit.concat(i.toString())).innerHTML = data[2];
+			    $(fig.concat(i.toString())).show();
+			    i++;
+			}
+		    }
+		} else {
+		    var bucket = [];
+		    for (var i=0;i<num;i++) {
+			if (i != num - post_id) {
+    			bucket.push(i);}
+		    }
+		    for (var j=1;j<4;j++) {
+			data = txt[bucket.splice(Math.floor(Math.random()*bucket.length), 1)[0]].split('|');
+			document.getElementById(rel.concat(j.toString())).setAttribute('href',data[0]);
+			document.getElementById(im.concat(j.toString())).setAttribute('src',data[1]);
+			document.getElementById(tit.concat(j.toString())).innerHTML = data[2];
+		    }
+		}
+            }
+        }
+	client.send();
+    }
+    window.addEventListener('load',startup);
+</script>
+</head>
+<body class="theme-base-0h">    <div class="sidebar w3-hide-small" id="mySidebar">
+  <div class="container">
+    <button class="w3-button sidebar w3-text-white w3-hide-medium w3-hide-large w3-right" onclick="sidebar_close()">☰</button>
+    <div class="sidebar-about">
+      <div class="w3-text-white w3-center" style="font-size:20px;">
+        Rushabh Mehta
+      </div>
+      
+      <p class="lead" style="font-size:16px;font-style:italic;color:rgba(255,255,255,0.5)">Djokovic stays focused all the time. I think his concentration is amazing. He is the toughest player to beat.<br> - Kei Nishikori</p>
+      
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">About Me</a>
+      <a class="sidebar-nav-item" href="/research/">Research</a>
+      <!--<a class="sidebar-nav-item" href="/book/">Book</a>-->
+      <a class="sidebar-nav-item active" href="/blog/">Blog</a>
+      <!--<a class="sidebar-nav-item" href="/coffee/">Coffee</a>-->
+      <a class="sidebar-nav-item" href="/notes/">Notes</a>
+      <a class="sidebar-nav-item" href="/resources/">Resources</a>
+	    <a class="sidebar-nav-item" href="/contact/">Contact</a>
+      <!--<a class="sidebar-nav-item" href="/conjecture/">Conjectures</a>-->
+    </nav>
+  </div>
+
+    <div class="w3-bottom">
+    <p style="font-size:12px;color:rgba(255,255,255,0.5);">© <script>document.write(new Date().getFullYear())</script> Rushabh Mehta</p>
+  </div>
+</div>
+
+<div class="sidebar w3-hide-medium w3-hide-large w3-right" id="mySmallSidebar">
+  <button class="w3-button sidebar w3-text-white" onclick="sidebar_open()">☰</button>
+</div>
+
+    <div class="container-fluid">
+        <main class="tm-main">     
+            <div class="row tm-row">
+                <div class="col-12">
+                    <hr class="tm-hr-primary tm-mb-55">
+			
+			
+                    <!-- Video player 1422x800 -->
+                  <iframe src="https://patsukhum.github.io/TennisGOAT/" width="890" height="499" style="border: 1px solid #10cccc" frameborder=0></iframe>
+                </div>
+            </div>
+            <div class="row tm-row">
+                <div class="col-lg-8 tm-post-col">
+                    <div class="tm-post-full">                    
+                        <div class="mb-4" style='color:black;'>
+                            <h2 class="pt-2 tm-color-primary tm-post-title" id='title'>TITLE TO BE FILLED</h2>
+                            <p class="tm-mb-40" id='date'>DATE TO BE FILLED</p>
+				
+				<p>Novak Djokovic has been the GOAT of tennis for a while now. Regardless of whether or not he wins the USO and the calendar slam this year, he's booked himself the number 1 spot in ATP history, barring some renaissance from either Federer or Nadal.</p>
+                          <p>But even the most loyal of Djokovic fans wouldn't have predicted the dominant grand slam performance that he's produced this year. Exactly one year ago, the slam distribution looked like the graphic above (thanks to Pat Sukhum for the cute animation)</p>
+        <p>That, of course, changed this year as Djokovic levelled the slam count at 20 a piece with his win over Matteo Berrettini at Wimbledon. So let's take a quick look at the stats in favor of each of the players. I've chosen the stats based on my own thoughts on the importance of certain achivements, as well as MTF's, but there's obviously some level of bias in choosing these parameters.</p>
+                          <table class="table">
+  <thead>
+    <tr>
+      <th colspan = '2' scope="col"></th>
+      <th scope="col">Federer</th>
+      <th scope="col">Nadal</th>
+      <th scope="col">Djokovic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope='rowgroup' rowspan='3'>Grand Slams</th>
+      <th scope="row">W</th>
+      <td style='color:#66ffcc;'>20<sup>*</sup></td>
+      <td style='color:#66ffcc;'>20<sup>*</sup></td>
+      <td style='color:#66ffcc;'>20</td>
+    </tr>    
+    <tr>
+      <th scope="row">F</th>
+      <td style='color:#66ffcc;'>11</td>
+      <td>8</td>
+      <td>10<sup>*</sup></td>
+    </tr>
+    <tr>
+      <th scope="row">F</th>
+      <td style='color:#66ffcc;'>13</td>
+      <td>7</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th scope='rowgroup' rowspan='5'>Streaks</th>
+      <th scope="row">3+ consecutive GS</th>
+      <td>2</td>
+      <td>1</td>
+      <td style='color:#66ffcc;'>4</td>
+    </tr>
+    <tr>
+      <th scope="row">Max slams at one slam</th>
+      <td>8</td>
+      <td style='color:#66ffcc;'>13</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th scope="row">Calendar Slam</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0<sup>*</sup></td>
+    </tr>
+    <tr>
+      <th scope="row">Career Slam</th>
+      <td>1</td>
+      <td>1</td>
+      <td style='color:#66ffcc;'>2</td>
+    </tr>
+    
+    <tr>
+      <th scope="row">Career Golden Masters</th>
+      <td>0</td>
+      <td>0</td>
+      <td style='color:#66ffcc;'>2</td>
+    </tr>
+    <tr>
+      <th scope='rowgroup' rowspan='3'>ATP Points</th>
+      <th scope="row">Year End #1</th>
+      <td>5</td>
+      <td>5</td>
+      <td style='color:#66ffcc;'>6</td>
+    </tr>
+    <tr>
+      <th scope="row">Weeks at #1</th>
+      <td>310</td>
+      <td>209</td>
+      <td style='color:#66ffcc;'>336</td>
+    </tr>
+    <tr>
+      <th scope="row">ATP Point Record</th>
+      <td>15903</td>
+      <td>15390</td>
+      <td style='color:#66ffcc;'>16950</td>
+    </tr>
+    <tr>
+      <th scope='rowgroup' rowspan='2'>Olympic Games</th>
+      <th scope="row">Gold Medals</th>
+      <td>0</td>
+      <td style='color:#66ffcc;'>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th scope="row">Total Medals</th>
+      <td>1</td>
+      <td style='color:#66ffcc;'>2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th scope='rowgroup' rowspan='4'>Win/Loss</th>
+      <th scope="row">Career W/L</th>
+      <td>0.82</td>
+      <td>0.83</td>
+      <td style='color:#66ffcc;'>0.84<sup>*</sup></td>
+    </tr>
+    <tr>
+      <th scope="row">GS W/L</th>
+      <td>0.86</td>
+      <td>0.88</td>
+      <td style='color:#66ffcc;'>0.89<sup>*</sup></td>
+    </tr>
+    <tr>
+      <th scope="row">Masters W/L</th>
+      <td>0.78</td>
+      <td style='color:#66ffcc;'>0.83</td>
+      <td style='color:#66ffcc;'>0.83<sup>*</sup></td>
+    </tr>
+    <tr>
+      <th scope="row">Head to Head</th>
+      <td>-12</td>
+      <td style='color:#66ffcc;'>6</td>
+      <td style='color:#66ffcc;'>6</td>
+    </tr>
+    <tr>
+      <th scope='rowgroup' rowspan='4'>Tournaments</th>
+      <th scope="row">Masters Titles</th>
+      <td>28</td>
+      <td style='color:#66ffcc;'>36</td>
+      <td style='color:#66ffcc;'>36</td>
+    </tr>
+    <tr>
+      <th scope="row">Masters Finals</th>
+      <td style='color:#66ffcc;'>22</td>
+      <td>16</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <th scope="row">ATP Finals Wins</th>
+      <td style='color:#66ffcc;'>6</td>
+      <td>0</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th scope="row">ATP 500 Wins</th>
+      <td style='color:#66ffcc;'>24</td>
+      <td>21</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th scope='rowgroup' rowspan='2'>Team Competitions</th>
+      <th scope="row">Davis Cup Wins</th>
+      <td>1</td>
+      <td style='color:#66ffcc;'>5</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th scope="row">ATP Cup wins</th>
+      <td>0</td>
+      <td>0</td>
+      <td style='color:#66ffcc;'>1</td>
+    </tr>
+    <tr>
+      <th scope='rowgroup'>Total</th>
+      <th scope="row"></th>
+      <td>7</td>
+      <td>7</td>
+      <td style='color:#66ffcc;'>13</td>
+    </tr>
+  </tbody>
+</table>
+                          <p>In the table above, colored cells refer to the best record in each category. Asterisks refer to records that could change in the current US Open. As I mentioned above, this list is far from perfect. Several of the statistics are debatable (do we want to reward losing grand slams/masters? How about metrics that measure longevity? What about team competitions?), but Djokovic is so far ahead that it doesn't even matter.</p>
+                          <p>Much has been written about why Djokovic doesn't get the same credit that Federer and Nadal do. I won't repeat these theories, nor will I discuss why I prefer Nadal as a player. But, from an objective standpoint, there isn't much to say in the GOAT debate anymore. Just enjoy the legends while you can.</p>
+                          
+                            <span class="d-block text-right tm-color-primary" id='tags'>TAGS TO BE PLACED HERE</span>
+                        </div>       
+                    </div>
+                </div>
+                <aside class="col-lg-4 tm-aside-col">
+                    <div class="tm-post-sidebar">
+                        <hr class="mb-3 tm-hr-primary">
+                        <h2 class="mb-4 tm-post-title tm-color-primary">Categories</h2>
+                        <ul class="tm-mb-75 pl-5 tm-category-list">
+                            <li><a href="/blog/food/" class="tm-color-primary">Food</a></li>
+                            <li><a href="/blog/puzzles/" class="tm-color-primary">Puzzles</a></li>
+                            <li><a href="/blog/travel/" class="tm-color-primary">Travel</a></li>
+                            <li><a href="/blog/sports/" class="tm-color-primary">Sports</a></li>
+                            <li><a href="/blog/reviews/" class="tm-color-primary">Reviews</a></li>
+                            <li><a href="/blog/other/" class="tm-color-primary">Other</a></li>
+                        </ul>
+                        <hr class="mb-3 tm-hr-primary">
+                        <h2 class="tm-mb-40 tm-post-title tm-color-primary">Related Posts</h2>
+                        <a href="#" class="d-block tm-mb-40" id='related1'>
+                            <figure id='fig1'>
+                                <img src="/blog/img/img-02.jpg" alt="Image" class="mb-3 img-fluid" id='image1'>
+                                <figcaption class="tm-color-primary" id='title1'>Duis mollis diam nec ex viverra scelerisque a sit</figcaption>
+                            </figure>
+                        </a>
+                        <a href="#" class="d-block tm-mb-40" id='related2'>
+                            <figure id='fig2'>
+                                <img src="/blog/img/img-05.jpg" alt="Image" class="mb-3 img-fluid" id='image2'>
+                                <figcaption class="tm-color-primary" id='title2'>Integer quis lectus eget justo ullamcorper ullamcorper</figcaption>
+                            </figure>
+                        </a>
+                        <a href="#" class="d-block tm-mb-40" id='related3'>
+                            <figure id='fig3'>
+                                <img src="/blog/img/img-06.jpg" alt="Image" class="mb-3 img-fluid" id='image3'>
+                                <figcaption class="tm-color-primary" id='title3'>Nam lobortis nunc sed faucibus commodo</figcaption>
+                            </figure>
+                        </a>
+                    </div>                    
+                </aside>
+            </div>
+        </main>
+    </div>
+    <script src="/blog/js/jquery.min.js"></script>
+    <script src="/blog/js/templatemo-script.js"></script>
+</body>
+</html>
