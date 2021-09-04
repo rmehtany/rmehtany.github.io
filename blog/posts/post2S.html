@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Blog - Rushabh Mehta</title>
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet"> <!-- https://fonts.google.com/ -->
+    <link href="/blog/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/blog/css/templatemo-xtra-blog.css" rel="stylesheet">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="/public/css/mystyle.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="/public/css/theorem.css">
+  <link rel="stylesheet" href="/public/css/w3.css">
+  <link rel="stylesheet" href="/public/css/color.css">
+<!--
+    
+TemplateMo 553 Xtra Blog
+https://templatemo.com/tm-553-xtra-blog
+-->
+    <script src="/blog/js/jquery.min.js"></script>
+    <script src="/blog/js/templatemo-script.js"></script>
+    <script src="/blog/js/jquery_ui.js"></script>
+
+<script>
+    function startup() {
+	var post_id = 2;
+        var client = new XMLHttpRequest();
+        client.open('GET', '/blog/sports/blogdata.txt');
+        client.onload = function()
+        {
+            if(client.responseText != '')
+            {
+                var txt = client.responseText.split('\n');
+		var num = txt.length-1;
+		var im = "image";
+		var tit = "title";
+		var fig = "#fig";
+		var rel = "related";
+		var data = txt[num-post_id].split('|');
+		document.getElementById("title").innerHTML = data[2];
+		document.getElementById("tags").innerHTML = data[4];
+		document.getElementById("date").innerHTML = data[5];
+		if (num < 5) {
+		    var i = 1;
+		    $("#fig1").hide();
+		    $("#fig2").hide();
+		    $("#fig3").hide();
+		    for (let j = 0; j < num; j++) {
+		        if (num-post_id != j) {
+			    data = txt[j].split('|');
+			    document.getElementById(rel.concat(i.toString())).setAttribute('href',data[0]);
+			    document.getElementById(im.concat(i.toString())).setAttribute('src',data[1]);
+			    document.getElementById(tit.concat(i.toString())).innerHTML = data[2];
+			    $(fig.concat(i.toString())).show();
+			    i++;
+			}
+		    }
+		} else {
+		    var bucket = [];
+		    for (var i=0;i<num;i++) {
+			if (i != num - post_id) {
+    			bucket.push(i);}
+		    }
+		    for (var j=1;j<4;j++) {
+			data = txt[bucket.splice(Math.floor(Math.random()*bucket.length), 1)[0]].split('|');
+			document.getElementById(rel.concat(j.toString())).setAttribute('href',data[0]);
+			document.getElementById(im.concat(j.toString())).setAttribute('src',data[1]);
+			document.getElementById(tit.concat(j.toString())).innerHTML = data[2];
+		    }
+		}
+            }
+        }
+	client.send();
+    }
+    window.addEventListener('load',startup);
+</script>
+</head>
+<body class="theme-base-0h">    <div class="sidebar w3-hide-small" id="mySidebar">
+  <div class="container">
+    <button class="w3-button sidebar w3-text-white w3-hide-medium w3-hide-large w3-right" onclick="sidebar_close()">☰</button>
+    <div class="sidebar-about">
+      <div class="w3-text-white w3-center" style="font-size:20px;">
+        Rushabh Mehta
+      </div>
+      
+      <p class="lead" style="font-size:16px;font-style:italic;color:rgba(255,255,255,0.5)">[Tsitsipas] is a small kid who doesn't know how to fight.<br> - Daniil Medvedev</p>
+      
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">About Me</a>
+      <a class="sidebar-nav-item" href="/research/">Research</a>
+      <!--<a class="sidebar-nav-item" href="/book/">Book</a>-->
+      <a class="sidebar-nav-item active" href="/blog/">Blog</a>
+      <!--<a class="sidebar-nav-item" href="/coffee/">Coffee</a>-->
+      <a class="sidebar-nav-item" href="/notes/">Notes</a>
+      <a class="sidebar-nav-item" href="/resources/">Resources</a>
+	    <a class="sidebar-nav-item" href="/contact/">Contact</a>
+      <!--<a class="sidebar-nav-item" href="/conjecture/">Conjectures</a>-->
+    </nav>
+  </div>
+
+    <div class="w3-bottom">
+    <p style="font-size:12px;color:rgba(255,255,255,0.5);">© <script>document.write(new Date().getFullYear())</script> Rushabh Mehta</p>
+  </div>
+</div>
+
+<div class="sidebar w3-hide-medium w3-hide-large w3-right" id="mySmallSidebar">
+  <button class="w3-button sidebar w3-text-white" onclick="sidebar_open()">☰</button>
+</div>
+
+    <div class="container-fluid">
+        <main class="tm-main">     
+            <div class="row tm-row">
+                <div class="col-12">
+                    <hr class="tm-hr-primary tm-mb-55">
+			
+			
+                    <!-- Video player 1422x800 -->
+                    <video width="100%" height="550" controls class="tm-mb-40">
+                        <source src="../img/bathroom.mp4" type="video/mp4">							  
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+            <div class="row tm-row">
+                <div class="col-lg-8 tm-post-col">
+                    <div class="tm-post-full">                    
+                        <div class="mb-4" style='color:black;'>
+                            <h2 class="pt-2 tm-color-primary tm-post-title" id='title'>TITLE TO BE FILLED</h2>
+                            <p class="tm-mb-40" id='date'>DATE TO BE FILLED</p>
+				
+                          <p>Another US Open post right after the Djokovic one? Well, the topic was too spicy to ignore. Two 18 year old phenoms just upset the men's and women's world number 3, Stefanos Tsitsipas and Naomi Osaka, respectively. While the matches were both fantastic, I'm more interested in talking about the context behind the video above, in which the crowd jokes to Alcaraz (the player who beat Tsitsipas) to "send Tsitsipas to the bathroom".</p>
+                          <p>What's fascinating about the stories of Osaka and Tsitsipas is the sheer pace from which they went from media darlings to crowd antagonists. What even happened?</p>
+                          <h2>The rise of the next-gen</h2>
+                          <p>Osaka and Tsitsipas both exploded onto the scene in 2018. Tsitsipas won the second edition of the Next-Gen ATP Finals, a new ATP tournament designed to highlight up and coming talent in the ATP scene (which I suspect was created due to the Big 3 continuing to dominate all major competitions). But it wasn't just the fact that Tsitsipas won that year, it's how he did it.</p>
+                          <p>Tsitsipas played seemingly effortlessly, taking time away from his opponents with a wristy forehand and penetrative one-handed backhand. With his good looks and classy sense of style, the comparisons to Federer were inevitable. Sponsors starting rolling in: Rolex came first, then came luxury men's care brand Rexona. Before long, Tsitsipas became the face of the next generation of tennis, replacing fellow next-gen tennis star Alexander Zverev in most of the ATP's promotional materials.</p>
+                          <p><a class="gallery img-center-short cbox-Element" href="/public/stefmodel.jpeg"><img src="/public/stefmodel.jpeg" width="100%"></a></p>
+                          <p>Contributing to his appeal was Tsitsipas's engagement with his fans. He became one of the first top players to establish a youtube channel (several more, like Gael Monfils and Yoshihito Nishioka, have since followed) and it became clear that Tsitsipas wanted to become an icon that grows larger than tennis itself. With his effortless play, classy image and modeling gigs, bubbly personality in the media, and fan engagement, his ascent to the zenith of the marketing world seemed inevitable.</p>
+                          <p><a class="gallery img-center-short cbox-Element" href="/public/stefyoutube.jpeg"><img src="/public/stefyoutube.jpeg" width="100%"></a></p>
+                          <p>Osaka's story was a bit different. After a middling first half of 2018, she beat top 5 players Simona Halep and Karolina Pliskova back to back at Indian Wells to win her first Masters 1000 title. She followed that up with an amazing run to the finals of the US Open, where she defeated Serena Williams in <a href='https://www.reuters.com/article/us-tennis-usopen/chair-umpire-ramos-has-lasting-impact-on-u-s-open-idUSKCN1VE05H' target="_blank" style="color:#0a37cc">a match immortalized for all the wrong reasons</a>.</p>
+                          <p><a class="gallery img-center-short cbox-Element" href="/public/osakausopen.jpeg"><img src="/public/osakausopen.jpeg" width="100%"></a></p>
+                          <p>Unlike Tsitsipas, Osaka wasn't naturally a charismatic speaker, especially in front of the media. However, this wasn't a bad thing from a PR standpoint. Osaka's gaffes were seen as cute by tennis fans, and her humble personality and identity as a half-Asian half-black tennis superstar lead her to quickly become a household name in the US.</p>
+                          <p>2019 saw both of these players truly become superstars. For Tsitsipas, his semifinal run at the Australian Open involved a 4-set defeat of Roger Federer, a moment viewed by many in the tennis community as a passing of the guard to Federer's stylistic successor. His win at the 2019 ATP Finals cemented his status as a top 10 player for the coming future.</p>
+                          <p>Osaka backed up her US Open performance with another grand slam win, this time at the Australian Open, which lead her to the number 1 ranking. This was the first time any Asian man or woman reached the number 1 ranking in tennis. This, of course, lead to huge sponsorship deals, leaving Osaka as the highest paid woman athlete of 2019, and the highest paid woman athlete in a single year ever.</p>
+                          <p>At this time, Osaka began to find social media as an effective method of engaging with her fans, and with modeling gigs coming up, Osaka, like Tsitsipas, was beginning to outgrow the sport that made her.</p>
+                          <h2>The shift</h2>
+                          <p>What's astonishing about these two players is the sheer speed with which they became household names for tennis fans globally. Perhaps this was an outcome of the long term dominance of tennis by the Big 3 + Serena, as tennis was hungry for new blood to rein the sport.</p>
+                          <p>But this level of attention isn't necessarily good for players. In today's social media age, it's increasingly difficult for stars to avoid every action of theirs ending up in the media.</p>
+                          <p>At the same time, tennis stars are often ill-equipped to deal with this attention. To reach the pinnacle of tennis, you need to (usually) come from a somewhat affluent background, focus all of your childhood developing your tennis skillset at the cost of social interaction and education, and have parents that are so pushy to the point of being a drag on the tennis player. Both Osaka and Tsitsipas had all of these.</p>
+                          <p>Tsitsipas's father became obsessed with tennis in his twenties, and decided that his child would grow to be a tennis superstar, regardless of whether they wanted to or not. He married a former top 200 WTA player, and he quit his job once Stefanos was old enough to play tournaments to take him everywhere he needs to go. In the beginning, tennis fans viewed this relationship as affectionate: a father sacrificing it all for his son's success. But that perception began to change as infighting among the Tsitsipas family became more public. Most notably, Tsitsipas slammed a tennis ball at his father's head after dropping a set at the 2019 ATP Cup.</p>
+                          <p><a class="gallery img-center-short cbox-Element" href="/public/stefatp.png"><img src="/public/stefatp.png" width="100%"></a></p>
+                          <p>Osaka's case is even more interesting. Osaka's father was transfixed by a broadcast of then 18 year old Venus Williams playing at the French Open in 1999, and after hearing about Richard Williams training plan to teach his daughters to become champions, Leonard Francois, Osaka's father, decided to follow the exact same model. He taught Mari and Naomi Osaka on clay courts, as Williams did for his daughters, and then moved to Florida when they were teens to assist their tennis development, as Williams had done in the years prior. Osaka said that she didn't particularly like hitting thousands of tennis balls a day, but she did it because she enjoyed beating her sister. This relationship, like that of Stefanos and Apostalos, was initially seen as positive, but after Osaka cut ties with Francois in early 2019 due to struggles in post-Australian Open performance, things started to get ugly.</p>
+                          <p><a class="gallery img-center-short cbox-Element" href="/public/osakafather.jpeg"><img src="/public/osakafather.jpeg" width="100%"></a></p>
+                          <h2>The "fall"</h2>
+                          <p>Fall might be a bit of a dramatic word to apply to the world number 3s, as both are still phenomenal tennis players, but going from crowd favorites to crowd antagonists in less than two years is alarming. How did it happen?</p>
+                          <p>A lot of it comes down to having to learn about adulthood while under intense media pressure. Tsitsipas and Osaka have both gotten a lot of flak about their "cringy" social media presence, but honestly, we've all had "cringy" phases. Imagine having to broadcast that phase to the public. I'm sure my feed would be worse than these tweets.</p>
+                          <blockquote class="twitter-tweet"><p lang="en" dir="ltr">I like me better naked. I don&#39;t mean that in a vain way... When you put clothes on, you immediately put a character on. Clothes are adjectives, they are indicators. When you don&#39;t have any clothes on, it&#39;s just you, raw, and you can&#39;t hide. <a href="https://t.co/LxkSaHBEBM">pic.twitter.com/LxkSaHBEBM</a></p>&mdash; Stefanos Tsitsipas (@steftsitsipas) <a href="https://twitter.com/steftsitsipas/status/1090857797368115200?ref_src=twsrc%5Etfw">January 31, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+				                  <blockquote class="twitter-tweet"><p lang="en" dir="ltr">anger is a lack of understanding. change makes people uncomfortable.</p>&mdash; NaomiOsaka大坂なおみ (@naomiosaka) <a href="https://twitter.com/naomiosaka/status/1399087503584411648?ref_src=twsrc%5Etfw">May 30, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                          <p>I think the point at which people began to draw the line for Osaka was during the French Open this year. Osaka withdrew from the tournament after a botched attempt to change press conferences by just not doing them. While she claimed that she was doing it to raise a message about mental awareness, fellow tennis stars called it a privileged move, since paying $15,000 a match is just not affordable for most. Her reply? She accused those questioning her motives of being deniers of mental health issues for athletes, and used her high-profile connections to channel the conversation into one about the stigmatization of mental health.</p>
+                          <p>This situation is really interesting because I do think Osaka's right: a lot of journalists are just looking for clickbait and will bait you into getting that juicy headline. But like her previous activism movements, she seems to have given the tennis world the vibe that she's viewing the situation as her vs the world, and her fans are more than happy to engage in that dynamic. That's created a gap between casual and more serious tennis fans. Casual fans view her as being wronged. More serious fans view her as entitled. And to be honest, it's a bit of both.</p>
+                          <p>A similar thing could be said about Tsitsipas. He's been pretty open about how he views a lot of the tradition around tennis as archaic, including the rule prohibiting coaching during matches, as well as the rules around bathroom breaks. This came to a boil during the last two tournaments, as several players vocalized their issues with his breaks and overall temperament. In response, he accused them of bullying and started a charitable movement for bullying causes. This has lead to more memes about his bathroom usage, including the video at the top of this post.</p>
+                          <p>The situation boils down to this: players like Osaka and Tsitsipas were given a huge platform for their talent in playing tennis. But, as they learn and begin to question the institutions around them, they often don't realize how the public perceives them, due to the entitlement that develops from being a superstar. I can't blame either of them, since having such overbearing parents and such an intense media spotlight would mess with anyone. Even veterans like Djokovic struggle to garner positive attention in the media landscape.</p>
+                          <p>So what is the correct way of interacting with the media? One approach is Federer's: don't. Always say the right thing, at the right time. Sure, it requires being a bit dishonest, but if it means avoiding the media drama that causes mental health issues, maybe it's the right approach.</p>
+                          <p>But what if you want to create change, as Osaka and Tsitsipas clearly want to do with their growing brands? Perhaps it's time to embrace the villain role, a la Djokovic.</p>
+                            <span class="d-block text-right tm-color-primary" id='tags'>TAGS TO BE PLACED HERE</span>
+                        </div>       
+                    </div>
+                </div>
+                <aside class="col-lg-4 tm-aside-col">
+                    <div class="tm-post-sidebar">
+                        <hr class="mb-3 tm-hr-primary">
+                        <h2 class="mb-4 tm-post-title tm-color-primary">Categories</h2>
+                        <ul class="tm-mb-75 pl-5 tm-category-list">
+                            <li><a href="/blog/food/" class="tm-color-primary">Food</a></li>
+                            <li><a href="/blog/puzzles/" class="tm-color-primary">Puzzles</a></li>
+                            <li><a href="/blog/travel/" class="tm-color-primary">Travel</a></li>
+                            <li><a href="/blog/sports/" class="tm-color-primary">Sports</a></li>
+                            <li><a href="/blog/reviews/" class="tm-color-primary">Reviews</a></li>
+                            <li><a href="/blog/other/" class="tm-color-primary">Other</a></li>
+                        </ul>
+                        <hr class="mb-3 tm-hr-primary">
+                        <h2 class="tm-mb-40 tm-post-title tm-color-primary">Related Posts</h2>
+                        <a href="#" class="d-block tm-mb-40" id='related1'>
+                            <figure id='fig1'>
+                                <img src="/blog/img/img-02.jpg" alt="Image" class="mb-3 img-fluid" id='image1'>
+                                <figcaption class="tm-color-primary" id='title1'>Duis mollis diam nec ex viverra scelerisque a sit</figcaption>
+                            </figure>
+                        </a>
+                        <a href="#" class="d-block tm-mb-40" id='related2'>
+                            <figure id='fig2'>
+                                <img src="/blog/img/img-05.jpg" alt="Image" class="mb-3 img-fluid" id='image2'>
+                                <figcaption class="tm-color-primary" id='title2'>Integer quis lectus eget justo ullamcorper ullamcorper</figcaption>
+                            </figure>
+                        </a>
+                        <a href="#" class="d-block tm-mb-40" id='related3'>
+                            <figure id='fig3'>
+                                <img src="/blog/img/img-06.jpg" alt="Image" class="mb-3 img-fluid" id='image3'>
+                                <figcaption class="tm-color-primary" id='title3'>Nam lobortis nunc sed faucibus commodo</figcaption>
+                            </figure>
+                        </a>
+                    </div>                    
+                </aside>
+            </div>
+        </main>
+    </div>
+    <script src="/blog/js/jquery.min.js"></script>
+    <script src="/blog/js/templatemo-script.js"></script>
+</body>
+</html>
