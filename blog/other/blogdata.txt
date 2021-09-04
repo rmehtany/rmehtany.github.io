@@ -1,1 +1,1 @@
-../posts/post1O.html|/blog/img/bigu.webp|Proving beautiful diagrams: part 1|A proof of a beautiful diagram I found in a blog|<a href='/blog/other'>Category: Other</a>|August 2, 2021
+../posts/post1O.html|/public/bigu.webp|Proving beautiful diagrams: part 1|A proof of a beautiful diagram I found in a blog|<a href='/blog/other'>Category: Other</a>|August 2, 2021
