@@ -979,7 +979,7 @@
   <a id='presheaf-def'></a><div class="Definition" title="Presheaf">
   <p>Given a topological space \((X,\tau)\) (\(\tau\) is a basis for the topology, not necessarily the topology itself), a <strong>presheaf</strong> \(\rmF\), represented as \(\rmF\rightharpoondown X\) (NOTE: this is not standard notation), is the following data:</p>
   <ol>
-    <li>To each \(U\in\tau\), we have a set (\rmF(U)\) (sometimes denoted as \(\Gamma(U,\rmF)\) or \(H^0(U,\rmF)\)). The elements of \(\rmF\) are called <strong>sections</strong> of \(\rmF\) over \(U\). If \(U\) isn't specified, \(U=X\). In this case, we call the sections <strong>global sections</strong>. In our motivating example, the sections were the differentiable morphisms \(U\to\mathbb R\).</li>
+    <li>To each \(U\in\tau\), we have a set \(\rmF(U)\) (sometimes denoted as \(\Gamma(U,\rmF)\) or \(H^0(U,\rmF)\)). The elements of \(\rmF\) are called <strong>sections</strong> of \(\rmF\) over \(U\). If \(U\) isn't specified, \(U=X\). In this case, we call the sections <strong>global sections</strong>. In our motivating example, the sections were the differentiable morphisms \(U\to\mathbb R\).</li>
     <li>For each \(V\subset U\), there exists a <strong>restriction map</strong> \(R_{U,V}:\rmF(U)\to\rmF(V)\). </li>
     <li>For all \(U\in\tau\), \(R_{U,U}=\id_{\rmF(U)}\).</li>
     <li>For all \(W\subset V\subset U\), \(R_{U,W}=R_{V,W}\circ R_{U,V}\).</li>
@@ -990,11 +990,11 @@
 <div class="proof">
   <p><a onclick="myCollapse('lem1-set')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="lem1-set-but"></i></a><br></p>
   <div id="lem1-set" class="w3-container w3-hide">
-    This is just a basic check of the definition. \(G(U)\) for any \(U\) gives us a set, \(G(V\to U)\) gives us a morphism \(G(U)\to G(V)\), which we call \(R_{U,V}\), $$R_{U,U}=G(U\to U)=G(\id)=\id$$, and condition \(4\) of the presheaf is equivalent to functors respecting composition. Thus, the data is identical.
+    This is just a basic check of the definition. \(G(U)\) for any \(U\) gives us a set, \(G(V\to U)\) gives us a morphism \(G(U)\to G(V)\), which we call \(R_{U,V}\), $$R_{U,U}=G(U\to U)=G(\id)=\id$$and condition \(4\) of the presheaf is equivalent to functors respecting composition. Thus, the data is identical.
   </div>
 </div>
   
-  <div class="Remark" title="Data of a presheaf" style="font-style: normal;">Obviously, if our data was stored as objects in set-like category \(\rmC\), the contravariant functor would be \(\tau\to\rmC\) instead of \(\tau\to\textbf{Set}\).</div>
+  <div class="Remark" title="Data of a presheaf" style="font-style: normal;"> Obviously, if our data was stored as objects in set-like category \(\rmC\), the contravariant functor would be \(\tau\to\rmC\) instead of \(\tau\to\textbf{Set}\).</div>
   <a id='stalk'></a>
   <p style="font-style: normal;">We define the stalk in two ways, similar to how we did it in <a href='../UnderstandingSheaves/#stalk' target='_blank'>Understanding Sheaves</a>. For the constructive approach, we define it as the set of germs \((f,U)\) with \(p\in U\in\tau\), \(f\in\rmF(U)\), under the equivalence relation \((f,U)\sim(g,V)\) iff there exists \(W\in\tau\subset U,V\) such that \(f\vert_W=g\vert_W\).</p>
   <p style="font-style: normal;">For the categorical approach, let \(B_p\) be the subcategory of \(\tau\) consisting only of those open sets around \(p\). Let \(H_p\) be the restriction of the functor \(\rmF\) to \(B_p\). Then, the stalk is just \(\rmF_p=\varinjlim H_p\).</p>
