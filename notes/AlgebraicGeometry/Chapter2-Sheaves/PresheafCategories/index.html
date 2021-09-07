@@ -961,6 +961,10 @@
 </ul>
   <p>It should be obvious to any readers (Does anyone read these notes? Hello!) that categorical objects are meaningful only through the morphisms between them. In this post, we’ll establish morphisms of (pre)sheaves, establish that they generate abelian categories, and then study the kernels and cokernels of the category.</p>
   <h2 id='morphisms'><i>Morphisms of (pre)sheaves</i></h2>
+  <div class="Definition" title="Morphism of a (pre)sheaf"> Given presheaves \(\rmF\rightharpoondown X\), \(\rmG\rightharpoondown X\), a <strong>morphism of presheaves</strong>, indicated by \(\phi:\rmF\to\rmG\), is a collection of maps \(\phi(U):\rmF(U)\to\rmG(U)\) for all \(U\) in the base of the topology, such that it respects restriction. In other words, for \(V\subset U\) in the base, $$\phi(U)\circ R_{U,V}=R_{U,V}\circ\phi(V)$$</div>
+  <p>The above definition defines presheaf morphisms, but sheaf morphisms are defined identically (in categorical terms, we say that the category of sheaves is a <strong>full subcategory</strong> of the category of presheaves. Can you define the term full subcategory?)</p>
+  <div class="Exercise" title="Presheaf Category" style="font-style:normal;"> Prove that the morphism definition above makes the collection of presheaves into a category.</div>
+  	
       </div>
 	<div style="float:right"><a href="#top"><bf>Top</bf></a></div>
     </div>
