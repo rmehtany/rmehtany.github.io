@@ -159,10 +159,10 @@ https://templatemo.com/tm-553-xtra-blog
                           <p>Since the only polyhedron with \(6\) edges is a tetrahedron, it makes sense to understand how to compute the volume of one. Let \(B\) be the area of the triangle spanned by \(3\) of the \(4\) vertices (of your choice), and let \(h\) be the shortest distance from the fourth vertex to the triangle. We call the triangle the <strong>base</strong>, and the segment representing the shortest distance the <strong>height</strong>.
                           <p>Now consider a point \(l\) away from the fourth vertex on the height. We can consider the plane through this point parallel to the plane containing the base, and consider the triangle formed by the intersection of this plane with the tetrahedron. In the diagram below, the base is green, and the newly constructed triangle is red.</p>
                           <p><a class="gallery img-center-short cbox-Element" href="/public/pic1.png"><img src="/public/pic1.png" width="100%"></a></p>
-				                  <p>It's not hard to show that the red triangle is similar to the green triangle, with the ratio of their side lengths being \(l:h\). Thus, the area of the red triangle is \(B\cdot\frac{l^2}{h^2}\). Since integrating this area over the height will give the volume (proof is pretty obvious), we have $$V_{tetrahedron}=\frac B{h^2}\limits_0^hl^2dl=\frac{Bh}3$$
+				                  <p>It's not hard to show that the red triangle is similar to the green triangle, with the ratio of their side lengths being \(l:h\). Thus, the area of the red triangle is \(B\cdot\frac{l^2}{h^2}\). Since integrating this area over the height will give the volume (proof is pretty obvious), we have $$V_{tetrahedron}=\frac B{h^2}\int\limits_0^hl^2dl=\frac{Bh}3$$
                           <h3>Possible placements of the 1-edges</h3>
                           <p>There are two possibilities for the locations of the \(4\) fixed length edges (which I'll call 1-edges) in the tetrahedron.</p>
-                          <ol>
+                          <ol style='color:gray;'>
                             <li>Three of the \(4\) 1-edges form a triangle</li>
                             <li>No three 1-edges are in the same plane</li>
                           </ol>
