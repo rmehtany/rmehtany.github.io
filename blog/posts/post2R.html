@@ -172,7 +172,7 @@ https://templatemo.com/tm-553-xtra-blog
 				<p>This implies that if \(z\) is the floating point representation of \(x^{-0.5}\), the inverse square root of \(x\), then$$2^{-23}z-127\sim\log_2x^{-0.5}=-0.5\log_2x\sim2^{-23}\left(-\frac y2\right)-\frac{127}2$$$$z\sim2^22\cdot127-\frac y2$$Does this formula look similar to the code at all?</p>
 				<h2>Bit Manipulation</h2>
 				<p>Let's first try to understand the line <code>i = * (long *) &y;</code>. For C programmers, what this line does is quite obvious, but for those who don't program in C, we can break it down as follows:</p>
-				<ul style='color:gray;'>
+				<ul style='color:lightgray;'>
 					<li><code>&y</code>: & returns the memory address of a variable. This gives us a pointer to the location of the contents of <code>y</code>.</li>
 					<li><code>(long *) &y</code>: The type of <code>&y</code> is <code>(float *)</code>, or in English, a pointer to a floating point variable. <code>(long *)</code> tells C that the contents of <code>y</code> are not a float, but a long integer (an integer with \(32\) bits).</li>
 					<li><code>i = * (long *) &y</code>: * is the inverse of &, as it takes a pointer, and outputs its content. In this case, the content of the long pointer <code>(long *) &y</code> is just <code>y</code>, but treated as a long integer.</li>
