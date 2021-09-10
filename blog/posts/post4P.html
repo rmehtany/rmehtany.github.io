@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Blog - Rushabh Mehta</title>
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet"> <!-- https://fonts.google.com/ -->
+    <link href="/blog/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/blog/css/templatemo-xtra-blog.css" rel="stylesheet">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="/public/css/mystyle.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="/public/css/theorem.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/public/css/w3.css">
+  <link rel="stylesheet" href="/public/css/color.css">
+<!--
+    
+TemplateMo 553 Xtra Blog
+https://templatemo.com/tm-553-xtra-blog
+-->
+    <script src="/blog/js/jquery.min.js"></script>
+    <script src="/blog/js/templatemo-script.js"></script>
+    <script src="/blog/js/jquery_ui.js"></script>
+    <script type="text/javascript" async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/x-mathjax-config;executed=true">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      displayMath: [ ['$$','$$'] ],
+      processEscapes: true,
+    }
+  });
+  </script>
+
+<script>
+    function startup() {
+	var post_id = 4;
+        var client = new XMLHttpRequest();
+        client.open('GET', '/blog/puzzles/blogdata.txt');
+        client.onload = function()
+        {
+            if(client.responseText != '')
+            {
+                var txt = client.responseText.split('\n');
+		var num = txt.length-1;
+		var im = "image";
+		var tit = "title";
+		var fig = "#fig";
+		var rel = "related";
+		var data = txt[num-post_id].split('|');
+		document.getElementById("title").innerHTML = data[2];
+		document.getElementById("tags").innerHTML = data[4];
+		document.getElementById("date").innerHTML = data[5];
+		if (num < 5) {
+		    var i = 1;
+		    $("#fig1").hide();
+		    $("#fig2").hide();
+		    $("#fig3").hide();
+		    for (let j = 0; j < num; j++) {
+		        if (num-post_id != j) {
+			    data = txt[j].split('|');
+			    document.getElementById(rel.concat(i.toString())).setAttribute('href',data[0]);
+			    document.getElementById(im.concat(i.toString())).setAttribute('src',data[1]);
+			    document.getElementById(tit.concat(i.toString())).innerHTML = data[2];
+			    $(fig.concat(i.toString())).show();
+			    i++;
+			}
+		    }
+		} else {
+		    var bucket = [];
+		    for (var i=0;i<num;i++) {
+			if (i != num - post_id) {
+    			bucket.push(i);}
+		    }
+		    for (var j=1;j<4;j++) {
+			data = txt[bucket.splice(Math.floor(Math.random()*bucket.length), 1)[0]].split('|');
+			document.getElementById(rel.concat(j.toString())).setAttribute('href',data[0]);
+			document.getElementById(im.concat(j.toString())).setAttribute('src',data[1]);
+			document.getElementById(tit.concat(j.toString())).innerHTML = data[2];
+		    }
+		}
+            }
+        }
+	client.send();
+    }
+    window.addEventListener('load',startup);
+</script>
+</head>
+<body class="theme-base-0h">    <div class="sidebar w3-hide-small" id="mySidebar">
+  <div class="container">
+    <button class="w3-button sidebar w3-text-white w3-hide-medium w3-hide-large w3-right" onclick="sidebar_close()">☰</button>
+    <div class="sidebar-about">
+      <div class="w3-text-white w3-center" style="font-size:20px;">
+        Rushabh Mehta
+      </div>
+      
+      <p class="lead" style="font-size:16px;font-style:italic;color:rgba(255,255,255,0.5)">The world's a puzzle; no need to make sense out of it.<br> - Socrates</p>
+      
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">About Me</a>
+      <a class="sidebar-nav-item" href="/research/">Research</a>
+      <!--<a class="sidebar-nav-item" href="/book/">Book</a>-->
+      <a class="sidebar-nav-item active" href="/blog/">Blog</a>
+      <!--<a class="sidebar-nav-item" href="/coffee/">Coffee</a>-->
+      <a class="sidebar-nav-item" href="/notes/">Notes</a>
+      <a class="sidebar-nav-item" href="/resources/">Resources</a>
+	    <a class="sidebar-nav-item" href="/contact/">Contact</a>
+      <!--<a class="sidebar-nav-item" href="/conjecture/">Conjectures</a>-->
+    </nav>
+  </div>
+
+    <div class="w3-bottom">
+    <p style="font-size:12px;color:rgba(255,255,255,0.5);">© <script>document.write(new Date().getFullYear())</script> Rushabh Mehta</p>
+  </div>
+</div>
+
+<div class="sidebar w3-hide-medium w3-hide-large w3-right" id="mySmallSidebar">
+  <button class="w3-button sidebar w3-text-white" onclick="sidebar_open()">☰</button>
+</div>
+
+    <div class="container-fluid">
+        <main class="tm-main">     
+            <div class="row tm-row">
+                <div class="col-12">
+                    <hr class="tm-hr-primary tm-mb-55">
+			
+			
+                    <!-- Video player 1422x800 -->
+                  <img width="100%" height='400px' src="/public/post4P.gif" alt="Crystal Key">
+                </div>
+            </div>
+            <div class="row tm-row">
+                <div class="col-lg-8 tm-post-col">
+                    <div class="tm-post-full">                    
+                        <div class="mb-4">
+                            <h2 class="pt-2 tm-color-primary tm-post-title" id='title'>TITLE TO BE FILLED</h2>
+                            <p class="tm-mb-40" id='date'>DATE TO BE FILLED</p>
+				
+				
+				<p>Before I get into the puzzles, here are a few updates. One: I've been posting pretty frequently as I've just started this website. I plan on slowing down thanks to work consuming more of my time, and focusing on adding to the notes section of the site. I haven't added much there since the site began.</p>
+        <p>However, there will be a surprise in the next Riddler! You'll have to wait a week to find out though. As always, I'm attempting to get as far as possible on both riddles of the <a href='https://fivethirtyeight.com/features/can-you-get-the-paper-cut/' target="_blank" style="color:#0a37cc">Riddler</a> as I can in an hour (not including writeup time).</p>
+                          <h2>Riddler Express</h2>
+                          <blockquote class="w3-panel w3-leftbar w3-light-grey"><p>Earlier this year, Dakota Jones used a crystal key to gain access to a hidden temple, deep in the Riddlerian Jungle. According to an ancient text, the crystal had exactly six edges, five of which were 1 inch long. Also, the key was the <i>largest</i> such polyhedron (by volume) with these edge lengths.</p><p>However, after consulting an expert, Jones realized she had the wrong translation. Instead of definitively having five edges that were 1 inch long, the crystal only needed to have four edges that were 1 inch long. In other words, five edges could have been 1 inch (or all six for that matter), but the crystal definitely had at least four edges that were 1 inch long.</p><p>The translator confirmed that the key was indeed the largest such polyhedron (by volume) with these edge lengths. Once again, Jones needs your help. Now what is the volume of the crystal key?</p></blockquote>
+                          <h3>Volume of a tetrahedron</h3>
+                          <p>Since the only polyhedron with \(6\) edges is a tetrahedron, it makes sense to understand how to compute the volume of one. Let \(B\) be the area of the triangle spanned by \(3\) of the \(4\) vertices (of your choice), and let \(h\) be the shortest distance from the fourth vertex to the triangle. We call the triangle the <strong>base</strong>, and the segment representing the shortest distance the <strong>height</strong>.
+                          <p>Now consider a point \(l\) away from the fourth vertex on the height. We can consider the plane through this point parallel to the plane containing the base, and consider the triangle formed by the intersection of this plane with the tetrahedron. In the diagram below, the base is green, and the newly constructed triangle is red.</p>
+                          <p><a class="gallery img-center-short cbox-Element" href="/public/pic1.png"><img src="/public/pic1.png" width="100%"></a></p>
+				                  <p>It's not hard to show that the red triangle is similar to the green triangle, with the ratio of their side lengths being \(l:h\). Thus, the area of the red triangle is \(B\cdot\frac{l^2}{h^2}\). Since integrating this area over the height will give the volume (proof is pretty obvious), we have $$V_{tetrahedron}=\frac B{h^2}\limits_0^hl^2dl=\frac{Bh}3$$
+                          <h3>Possible placements of the 1-edges</h3>
+                          <p>There are two possibilities for the locations of the \(4\) fixed length edges (which I'll call 1-edges) in the tetrahedron.</p>
+                          <ol>
+                            <li>Three of the \(4\) 1-edges form a triangle</li>
+                            <li>No three 1-edges are in the same plane</li>
+                          </ol>
+                          <p>That these are the only two cases should be obvious from inspection. We handle both cases individually.</p>
+                          <p><strong>Case 1</strong>: Let the triangle be our base. Thus, we have a unit equilateral triangle as the base of the tetrahedron. Thus, to maximize the volume of the tetrahedron, we simply want to maximize the height.</p>
+                          <p>Note that the height is necessarily at most the length of the shortest edge not in the base, since each such edge is a segment from the fourth vertex to the base. And, if the fourth fixed edge is normal to the base, the height is the length of the fixed edge. This proves the maximality of this case, so the maximal volume in case 1 is $$\frac{\sqrt3}4\cdot1\cdot\frac13=\frac1{4\sqrt3}$$</p>
+                          <p><strong>Case 2</strong>: Surprisingly, the only possibility is the one in the <a href='#' style="color:#0a37cc">animated gif</a> (with red edges fixed with length 1), as all other possibilities are in Case 1. Let the triangle spanned by the two edges not in the base be called \(A\), and the base triangle \(B\) (definition overload, I'm aware). By a similar argument to case 1, the volume is maximized when \(A\) is perpendicular to \(B\) (more precisely, the plane containing \(A\) is perpendicular to the plane containing \(B\)). Since \(A\) and \(B\) are congruent, we can call the angle opposing the unfixed side of \(A\) and \(B\) \(\theta\) (as both angles are equal). Now, we compute the volume of the tetrahedron based on \(\theta\).</p>
+                          <p>The base of the triangle has area \(\frac12\sin\theta\) by standard triangle area formulas. The height of the tetrahedron is just the height of triangle \(A\), which is \(\cos\frac\theta2\). Thus, the maximum volume is $$\max\limits_{\theta\in[0,\pi]}\frac16\sin\theta\cdot\cos\frac\theta2=\frac2{9\sqrt3}<\frac1{4\sqrt3}$$Thus, the final answer is \(\frac1{4\sqrt3}\).
+                          <h2>Can you get the paper cut?</h2>
+                          <blockquote class="w3-panel w3-leftbar w3-light-grey"><p>One morning, Phil was playing with my daughter, who loves to cut paper with her safety scissors. She especially likes cutting paper into “strips,” which are rectangular pieces of paper whose shorter sides are at most 1 inch long.</p><p>Whenever Phil gives her a piece of standard printer paper (8.5 inches by 11 inches), she picks one of the four sides at random and then cuts a 1-inch wide strip parallel to that side. Next, she discards the strip and repeats the process, picking another side at random and cutting the strip. Eventually, she is left with nothing but strips.</p><p>On average, how many cuts will she make before she is left only with strips?</p></blockquote>
+                          <p>This is just a standard coding exercise in implementing recursions. Let's first derive the recursion.</p>
+                          <p>Observe that there is a \(\frac12\) chance of cutting an inch off the height, and the same chance of cutting an inch off the width. If we let \(f(\text{width},\text{height})\) be the expected number of cuts on a paper with dimensions \(\text{width}\times\text{height}\), then we have $$f(\text{width},\text{height})=\frac12\cdot(f(\text{width}-1,\text{height})+f(\text{width},\text{height}-1))+1$$Our base case is that for any \(a,b\) with \(\min(a,b)\leq1\), \(f(a,b)=0\).</p>
+                      <p>Now for the code.</p>
+                      <pre>
+d = dict()
+
+def f(width,height):
+  if width <= 1 or height <= 1:
+    return 0
+  if (width,height) in d:
+    return d[(width,height)]
+  ans = 0.5*(f(width-1,height)+f(width,height-1))+1
+  d[(width,height)]=ans
+  return ans
+
+print(f(8.5,11))
+</pre>
+                      <p>For those not so familiar with <a href='/notes/DynamicProgramming/' target="_blank" style="color:#0a37cc">Dynamic Programming</a>, the above algorithm might seem a bit odd. Why bother with the dictionary? The key insight is that in this recursion, we call \(f(a,b)\) on the same inputs many, many times. On small inputs, this doesn't make too big a difference, but for larger inputs, the improvement in performance that the dynamic approach offers is tremendous.</p>
+                      <p>The answer is \(14.29058837890625\).</p>
+				
+                            <span class="d-block text-right tm-color-primary" id='tags'>TAGS TO BE PLACED HERE</span>
+                        </div>       
+                    </div>
+                </div>
+                <aside class="col-lg-4 tm-aside-col">
+                    <div class="tm-post-sidebar">
+                        <hr class="mb-3 tm-hr-primary">
+                        <h2 class="mb-4 tm-post-title tm-color-primary">Categories</h2>
+                        <ul class="tm-mb-75 pl-5 tm-category-list">
+                            <li><a href="/blog/food/" class="tm-color-primary">Food</a></li>
+                            <li><a href="/blog/puzzles/" class="tm-color-primary">Puzzles</a></li>
+                            <li><a href="/blog/travel/" class="tm-color-primary">Travel</a></li>
+                            <li><a href="/blog/sports/" class="tm-color-primary">Sports</a></li>
+                            <li><a href="/blog/reviews/" class="tm-color-primary">Reviews</a></li>
+                            <li><a href="/blog/other/" class="tm-color-primary">Other</a></li>
+                        </ul>
+                        <hr class="mb-3 tm-hr-primary">
+                        <h2 class="tm-mb-40 tm-post-title tm-color-primary">Related Posts</h2>
+                        <a href="#" class="d-block tm-mb-40" id='related1'>
+                            <figure id='fig1'>
+                                <img src="/blog/img/img-02.jpg" alt="Image" class="mb-3 img-fluid" id='image1'>
+                                <figcaption class="tm-color-primary" id='title1'>Duis mollis diam nec ex viverra scelerisque a sit</figcaption>
+                            </figure>
+                        </a>
+                        <a href="#" class="d-block tm-mb-40" id='related2'>
+                            <figure id='fig2'>
+                                <img src="/blog/img/img-05.jpg" alt="Image" class="mb-3 img-fluid" id='image2'>
+                                <figcaption class="tm-color-primary" id='title2'>Integer quis lectus eget justo ullamcorper ullamcorper</figcaption>
+                            </figure>
+                        </a>
+                        <a href="#" class="d-block tm-mb-40" id='related3'>
+                            <figure id='fig3'>
+                                <img src="/blog/img/img-06.jpg" alt="Image" class="mb-3 img-fluid" id='image3'>
+                                <figcaption class="tm-color-primary" id='title3'>Nam lobortis nunc sed faucibus commodo</figcaption>
+                            </figure>
+                        </a>
+                    </div>                    
+                </aside>
+            </div>
+        </main>
+    </div>
+    <script src="/blog/js/jquery.min.js"></script>
+    <script src="/blog/js/templatemo-script.js"></script>
+</body>
+</html>
