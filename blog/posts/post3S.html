@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Blog - Rushabh Mehta</title>
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet"> <!-- https://fonts.google.com/ -->
+    <link href="/blog/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/blog/css/templatemo-xtra-blog.css" rel="stylesheet">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="/public/css/mystyle.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="/public/css/theorem.css">
+  <link rel="stylesheet" href="/public/css/w3.css">
+  <link rel="stylesheet" href="/public/css/color.css">
+<!--
+    
+TemplateMo 553 Xtra Blog
+https://templatemo.com/tm-553-xtra-blog
+-->
+    <script src="/blog/js/jquery.min.js"></script>
+    <script src="/blog/js/templatemo-script.js"></script>
+    <script src="/blog/js/jquery_ui.js"></script>
+
+<script>
+    function startup() {
+	var post_id = 3;
+        var client = new XMLHttpRequest();
+        client.open('GET', '/blog/sports/blogdata.txt');
+        client.onload = function()
+        {
+            if(client.responseText != '')
+            {
+                var txt = client.responseText.split('\n');
+		var num = txt.length-1;
+		var im = "image";
+		var tit = "title";
+		var fig = "#fig";
+		var rel = "related";
+		var data = txt[num-post_id].split('|');
+		document.getElementById("title").innerHTML = data[2];
+		document.getElementById("tags").innerHTML = data[4];
+		document.getElementById("date").innerHTML = data[5];
+		if (num < 5) {
+		    var i = 1;
+		    $("#fig1").hide();
+		    $("#fig2").hide();
+		    $("#fig3").hide();
+		    for (let j = 0; j < num; j++) {
+		        if (num-post_id != j) {
+			    data = txt[j].split('|');
+			    document.getElementById(rel.concat(i.toString())).setAttribute('href',data[0]);
+			    document.getElementById(im.concat(i.toString())).setAttribute('src',data[1]);
+			    document.getElementById(tit.concat(i.toString())).innerHTML = data[2];
+			    $(fig.concat(i.toString())).show();
+			    i++;
+			}
+		    }
+		} else {
+		    var bucket = [];
+		    for (var i=0;i<num;i++) {
+			if (i != num - post_id) {
+    			bucket.push(i);}
+		    }
+		    for (var j=1;j<4;j++) {
+			data = txt[bucket.splice(Math.floor(Math.random()*bucket.length), 1)[0]].split('|');
+			document.getElementById(rel.concat(j.toString())).setAttribute('href',data[0]);
+			document.getElementById(im.concat(j.toString())).setAttribute('src',data[1]);
+			document.getElementById(tit.concat(j.toString())).innerHTML = data[2];
+		    }
+		}
+            }
+        }
+	client.send();
+    }
+    window.addEventListener('load',startup);
+</script>
+</head>
+<body class="theme-base-0h">    <div class="sidebar w3-hide-small" id="mySidebar">
+  <div class="container">
+    <button class="w3-button sidebar w3-text-white w3-hide-medium w3-hide-large w3-right" onclick="sidebar_close()">☰</button>
+    <div class="sidebar-about">
+      <div class="w3-text-white w3-center" style="font-size:20px;">
+        Rushabh Mehta
+      </div>
+      
+      <p class="lead" style="font-size:16px;font-style:italic;color:rgba(255,255,255,0.5)">Take heart Novak, the quest continues.<br> - Rod Laver</p>
+      
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">About Me</a>
+      <a class="sidebar-nav-item" href="/research/">Research</a>
+      <!--<a class="sidebar-nav-item" href="/book/">Book</a>-->
+      <a class="sidebar-nav-item active" href="/blog/">Blog</a>
+      <!--<a class="sidebar-nav-item" href="/coffee/">Coffee</a>-->
+      <a class="sidebar-nav-item" href="/notes/">Notes</a>
+      <a class="sidebar-nav-item" href="/resources/">Resources</a>
+	    <a class="sidebar-nav-item" href="/contact/">Contact</a>
+      <!--<a class="sidebar-nav-item" href="/conjecture/">Conjectures</a>-->
+    </nav>
+  </div>
+
+    <div class="w3-bottom">
+    <p style="font-size:12px;color:rgba(255,255,255,0.5);">© <script>document.write(new Date().getFullYear())</script> Rushabh Mehta</p>
+  </div>
+</div>
+
+<div class="sidebar w3-hide-medium w3-hide-large w3-right" id="mySmallSidebar">
+  <button class="w3-button sidebar w3-text-white" onclick="sidebar_open()">☰</button>
+</div>
+
+    <div class="container-fluid">
+        <main class="tm-main">     
+            <div class="row tm-row">
+                <div class="col-12">
+                    <hr class="tm-hr-primary tm-mb-55">
+			
+			
+                    <!-- Video player 1422x800 -->
+                    <img src="/public/novak1.webp" alt="Novak tearful after loss" width="100%" height='500px'>
+                </div>
+            </div>
+            <div class="row tm-row">
+                <div class="col-lg-8 tm-post-col">
+                    <div class="tm-post-full">                    
+                        <div class="mb-4" style='color:black;'>
+                            <h2 class="pt-2 tm-color-primary tm-post-title" id='title'>TITLE TO BE FILLED</h2>
+                            <p class="tm-mb-40" id='date'>DATE TO BE FILLED</p>
+                          
+                           <p>As my final US Open 2021 writeup, I want to go over some of my thoughts from the tournament.</p>
+                           <p>Many bemoaned the lack of Federer, Nadal, and Serena at this edition of the US Open, but in my opinion, this has been one of the most dynamic and exciting US Open tournaments in recent memory. Tennis is in good hands for the future.</p>
+                           <p>I already talked about <a href='/blog/posts/post2S.html' target="_blank" style="color:#0a37cc">Osaka's struggles with mental health</a>, but it's become increasingly obvious that she needs a break, and it's great for both her and tennis that she's taking one. With the amount of talent that she has, it seems inevitable that she'll be back for blood at some point.</p>
+                           <p>On the other hand, Emma Raducanu, the British-Romanian-Chinese teen phenomenon, was dominant in her run to the US Open title, not losing a single set as she became the first person in Open Era history to win a grand slam as a qualifier. 20 sets won, none lost. Amazing. With sponsorship money already running in, and commentators calling the match "the beginning of a new era", I can't help but feel deja vu to 2018, when Osaka defeated Serena Williams, or to Swiatek's excellent run at the French Open last year, also without dropping a set. Or, to Bianca Andreescu's miracle run to the US Open title in 2019. I'm a little worried about placing wild expectations on young talent, but I'm hopeful about the future of women's tennis. Plenty of new faces to keep us excited.</p>
+                           <p><a class="gallery img-center-short cbox-Element" href="/public/raducanu.webp"><img src="/public/raducanu.webp" width="100%"></a></p>
+                           <p>Speaking of fresh talents, I'd be remiss to not mention Leylah Fernandez. The canadian teen's run reminded me of Andreescu, as she handily defeated a series of impressive names, including 3 of the top 5 WTA players on tour. I was confident she'd lose every match against one of these greats, but she proved me wrong time and time again. I know that some people didn't like her frustrations during the final, but honestly, that screams ambitious to me, and that bodes well for her future.</p>
+                           <p><a class="gallery img-center-short cbox-Element" href="/public/fernandez.webp"><img src="/public/fernandez.webp" width="100%"></a></p>
+                           <p>As impressive as the young guns have been on the women's side, I can't help but feel for the veterans. Aryna Sabalenka knows the feeling of losing to the next big thing in the US Open semis all too well, as her loss to Osaka in 2018 led her to win the title. As was the case in 2018, the match was in her hands, but she dropped the ball. Sakkari's story is quite similar. What otherwise would be a great year for her with two semifinal performances feels bittersweet since her match against Raducanu was full of unforced errors.</p>
+                           <p><a class="gallery img-center-short cbox-Element" href="/public/sabalenka.webp"><img src="/public/sabalenka.webp" width="100%"></a></p>
+                           <p>While Carlos Alcaraz didn't make it as far as two WTA teen phenoms, his win over Tsitsipas was truly impressive, and he became the youngest ATP player to reach the quarterfinals since his compatriot Nadal. In a men's game increasingly dominated by the oldies, Alcaraz and his generation (who have been dubbed the "next-Next gen") seem very promising.</p>
+                           <p><a class="gallery img-center-short cbox-Element" href="/public/auger.webp"><img src="/public/auger.webp" width="100%"></a></p>
+                           <p>Alcaraz's run was cut short by another next-Next genner: Felix Auger-Aliassime. It doesn't feel like he's a part of the next Next-gen with how long he's been on tour, but with Toni Nadal's backing, it seems like Felix is finally putting together the tools that got people so excited about his game in the first place. Other than his loss to the eventual champion, his run was flawless.</p>
+                           <p>Tennis needs to get its game together on rulings. Forcing the audience to have vaccines while the athletes don't need to? Charging Reilly Opelka $10,000 for a slightly large logo on his pink bag? A complete lack of policy on domestic abuse? Continued abuse of bathroom breaks and coaching?</p>
+                           <p><a class="gallery img-center-short cbox-Element" href="/public/opelka.webp"><img src="/public/opelka.webp" width="100%"></a></p>
+				                   <p>This tournament was a great tournament for dutch/german qualifiers. Botic Van de Zandschulp, Oscar Otte, and Peter Gojowczyk both posted impressive runs in a sport increasingly dominated by the top players who can afford top tier coaching and technology. Here's to hoping we see more of them.</p>
+                           <p>Novak Djokovic: what a year this man has had. As much as I am a Nadal fanboy, this year completely closed the debate on who the greatest of all time is. 27 straight grand slam wins at the age of 34? Are you kidding me? Is there anything this man can't do?</p>
+                           <p><a class="gallery img-center-short cbox-Element" href="/public/novak2.webp"><img src="/public/novak2.webp" width="100%"></a></p>
+                           <p>Win a Calendar Slam, apparently. What seemed like a coronation match turned into a nightmare for Djokovic as Medvedev stayed true to his word of gunning for the title. After Novak lost the first set, it seemed almost inevitable he'd bounce back, given his record of winning all 10 matches from one set down in 2021 prior to the final. But Medvedev didn't let up, and Djokovic's legs were gone. By the middle of the third set, with Medvedev comfortably two breaks ahead, the crowd got behind Novak to lift his performance up. Novak looked into the crowd, and started crying. While this was a great loss, Novak acknowledged, it also was a win. This was the first time he felt loved by the New York crowd.</p>
+                           <p>Thus Rod Laver, the only man to win a calendar slam in the open era, who came to watch it happen again, gets to live another day having that exclusive honor.</p>
+                           <p><a class="gallery img-center-short cbox-Element" href="/public/laver.webp"><img src="/public/laver.webp" width="100%"></a></p>  
+                           <p>But perhaps the most iconic moment of the tournament came from the champion Daniil Medvedev, who upon winning immediately fell on the ground, emulating the "dead fish" taunt in FIFA.</p>
+                           <p><a class="gallery img-center-short cbox-Element" href="/public/med.webp"><img src="/public/med.webp" width="100%"></a></p>
+                           <p>What I love about tennis is the sheer variety on display. What a great ad for tennis that it can accommodate the games and styles of seven-footers and 5'6" battlers, teenagers and players in their 40s, Monfilsian crowd-pleasers and earnest careerists. Name me another sport with the level of gender and ethnic entanglement. We reflexively talk about “the 18-year-olds” and barely pause to note that one is a Spanish male; one a Toronto-born British female born to a Romanian dad and Chinese mom; the third a trilingual Canadienne of Ecuadorian and Filipina decent. Such a virtue, and one that tennis needs to exploit.</p>
+                          <span class="d-block text-right tm-color-primary" id='tags'>TAGS TO BE PLACED HERE</span>
+                        </div>       
+                    </div>
+                </div>
+                <aside class="col-lg-4 tm-aside-col">
+                    <div class="tm-post-sidebar">
+                        <hr class="mb-3 tm-hr-primary">
+                        <h2 class="mb-4 tm-post-title tm-color-primary">Categories</h2>
+                        <ul class="tm-mb-75 pl-5 tm-category-list">
+                            <li><a href="/blog/food/" class="tm-color-primary">Food</a></li>
+                            <li><a href="/blog/puzzles/" class="tm-color-primary">Puzzles</a></li>
+                            <li><a href="/blog/travel/" class="tm-color-primary">Travel</a></li>
+                            <li><a href="/blog/sports/" class="tm-color-primary">Sports</a></li>
+                            <li><a href="/blog/reviews/" class="tm-color-primary">Reviews</a></li>
+                            <li><a href="/blog/other/" class="tm-color-primary">Other</a></li>
+                        </ul>
+                        <hr class="mb-3 tm-hr-primary">
+                        <h2 class="tm-mb-40 tm-post-title tm-color-primary">Related Posts</h2>
+                        <a href="#" class="d-block tm-mb-40" id='related1'>
+                            <figure id='fig1'>
+                                <img src="/blog/img/img-02.jpg" alt="Image" class="mb-3 img-fluid" id='image1'>
+                                <figcaption class="tm-color-primary" id='title1'>Duis mollis diam nec ex viverra scelerisque a sit</figcaption>
+                            </figure>
+                        </a>
+                        <a href="#" class="d-block tm-mb-40" id='related2'>
+                            <figure id='fig2'>
+                                <img src="/blog/img/img-05.jpg" alt="Image" class="mb-3 img-fluid" id='image2'>
+                                <figcaption class="tm-color-primary" id='title2'>Integer quis lectus eget justo ullamcorper ullamcorper</figcaption>
+                            </figure>
+                        </a>
+                        <a href="#" class="d-block tm-mb-40" id='related3'>
+                            <figure id='fig3'>
+                                <img src="/blog/img/img-06.jpg" alt="Image" class="mb-3 img-fluid" id='image3'>
+                                <figcaption class="tm-color-primary" id='title3'>Nam lobortis nunc sed faucibus commodo</figcaption>
+                            </figure>
+                        </a>
+                    </div>                    
+                </aside>
+            </div>
+        </main>
+    </div>
+    <script src="/blog/js/jquery.min.js"></script>
+    <script src="/blog/js/templatemo-script.js"></script>
+</body>
+</html>
