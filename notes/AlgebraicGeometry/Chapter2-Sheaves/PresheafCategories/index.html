@@ -963,7 +963,20 @@
   <p>From now on, we let \(\textbf{Set}_X\) represent the category of set sheaves on \(X\), \(\textit{Ab}_X\) the category of abelian group sheaves on \(X\), etc. Let \(\textbf{Set}^{pre}_X\) be the category of set presheaves on \(X\), and likewise for other presheaf categories. Since <a href='../PresheavesandSheaves/#lem1'>we can interpret presheaves as contravariant functors</a>, presheaf morphisms can be viewed as natural transformations (verify this!)</p>
   <p>You might expect that a morphism on presheaves induces a morphism on stalks. And you'd be right. For any point \(p\in X\), let \(H^\rmF_p\) be defined as it is <a href='../PresheavesandSheaves/#stalk'>here</a> (in the link, the \(\rmF\) is omitted since there was only one presheaf in question) for presheaf \(\rmF\rightharpoondown X\). Let \(\phi:\rmF\to\rmG\) be a morphism of presheaves over \(X\). For some \(p\in X\), letting \(B_p\) be defined as in <a href='../PresheavesandSheaves/#stalk'>here</a>, we let \(f(U):\rmF(U)\to\rmF_p\) and \(g(U):\rmG(U)\to\rmG_p\) be the canonical embeddings defining the stalks for each \(U\in B_p\).</p>
   <p>Now how do we generate a canonical morphism between the stalks? Well, for each \(U\in B_p\), we have the morphism \(g(U)\circ\phi(U):\rmF(U)\to\rmG_p\). By the colimit properties of \(\rmF_p\), there exists a unique morphism \(\phi^*(p):\rmF_p\to\rmG_p\) such that for all \(U\), \(g(U)\circ\phi(U)=\phi^*(p)\circ f(U)\).</p>
- 
+  <a id='hom'></a><p>Interestingly, the set of all morphisms can itself be interpreted as a sheaf structure.</p>
+  <div class="Definition" title="Sheaf Hom"> Let \(\rmF,\rmG\rightharpoondown X\) be presheaves. For each \(U\), let $$\mathcal{Hom}(\rmF,\rmG)(U):=\Mor(\rmF\vert_U,\rmG\vert_U$$We call \(\mathcal{Hom}(\rmF,\rmG)\) the <strong>sheaf Hom</strong> of \(\rmF,\rmG\).
+  </div>
+  <div class="remark" title="Hom vs Mor" style="font-style:normal;"> Since we aren't working in an additive category (necessarily), the term sheaf Hom should really be sheaf Mor. However, for historical reasons, the terminology remains.</div>	
+	<p>It should be obvious to see that as a functor, the sheaf Hom is covariant on its second input and contravariant on its first. To show that the sheaf Hom can be viewed as a sheaf itself, we need a small lemma.</p>
+	<a id='lem1'></a>
+<div class="Lemma" title="The covariant sheaf Hom functor commutes with limits"> In this lemma, we'll assume that \(\mathcal{Hom}(\rmF,\rmG)\) is a presheaf, although that will be proven in the next theorem. Given a small category \(J\), presheaves \(rmF,\rmG\rightharpoondown X\), and a functor \(H:J\to\rmF\)
+<div class="proof">
+<p><a onclick="myCollapse('sheaf hom')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="sheaf hom-but"></i></a><br></p>
+<div id="sheaf hom" class="w3-container w3-hide">
+  
+</div>
+</div>
+
       </div>
 	<div style="float:right"><a href="#"><bf>Top</bf></a></div>
     </div>
