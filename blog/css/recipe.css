@@ -26,7 +26,7 @@ header { cursor: pointer; }
 
 .header {
   width: 100%;
-  height: 200px;
+  height: 250px;
   background: center / cover;
 }
 
@@ -35,7 +35,7 @@ header { cursor: pointer; }
   z-index: 1;
   font-size: 2rem;
   border-bottom: 2px solid rgba(0, 0, 0, 0.1);
-  padding: 20px;
+
   margin-top: 0px;
 }
 
