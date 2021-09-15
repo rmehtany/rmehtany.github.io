@@ -35,12 +35,12 @@ header { cursor: pointer; }
   z-index: 1;
   font-size: 2rem;
   border-bottom: 2px solid rgba(0, 0, 0, 0.1);
-
+  padding: 20px;
   margin-top: 0px;
 }
 
 #container.closed .title {
-  padding: 40px 20px 10px 20px;
+  padding: 40px 20px 0px 20px;
   margin-top: -87px;
   color: white;
   border: none;
