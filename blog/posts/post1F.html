@@ -30,6 +30,13 @@ https://templatemo.com/tm-553-xtra-blog
 
 <script>
     function startup() {
+	document.getElementById("toggle").onclick = function() {
+            if (document.getElementById("container").classList.contains("closed")) {
+                document.getElementById("container").classList.remove("closed");
+            } else {
+                document.getElementById("container").classList.add("closed");
+            }
+        }
 	var post_id = 1;
         var client = new XMLHttpRequest();
         client.open('GET', '/blog/food/blogdata.txt');
@@ -80,13 +87,6 @@ https://templatemo.com/tm-553-xtra-blog
 	client.send();
     }
     window.addEventListener('load',startup);
-    document.getElementById("toggle").onclick = function() {
-      if (document.getElementById("container").classList.contains("closed")) {
-        document.getElementById("container").classList.remove("closed");
-      } else {
-        document.getElementById("container").classList.add("closed");
-      }
-    }
 </script>
 </head>
 <body class="theme-base-0h">    <div class="sidebar w3-hide-small" id="mySidebar">
