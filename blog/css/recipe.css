@@ -61,7 +61,6 @@ header { cursor: pointer; }
 article {
   padding: 25px 30px;
   overflow: hidden;
-  max-height: 5000px;
 } 
 
 #container.closed article {
