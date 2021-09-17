@@ -33,8 +33,6 @@
 	    page = 1;
     }
     function startup() {
-	document.getElementById('prev').addEventListener('click',prev_click);
-        document.getElementById('next').addEventListener('click',next_click);
 	var page_str = "Page ";
 	document.getElementById('footer').innerHTML = page_str.concat(page.toString());
 	var next_button = true;
@@ -137,11 +135,13 @@
 	    	}
             }
         }
-	if (page <= 1) {
+	if (page == 1) {
 		$("#prev").addClass("disabled tm-mr-20");
 	} else {
 		$("#prev").removeClass("disabled tm-mr-20");
 	}
+	document.getElementById('prev').addEventListener('click',prev_click);
+        document.getElementById('next').addEventListener('click',next_click);
 	client.send()
     }
     function prev_click() {
