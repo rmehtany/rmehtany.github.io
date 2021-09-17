@@ -27,18 +27,17 @@
     <script src="/blog/js/jquery_ui.js"></script>
 
 <script>
-    function change_page(prev) {
-	if (prev) {
-	    var page = parseInt(sessionStorage.getItem('page')) - 1;
-	} else {
-	    var page = parseInt(sessionStorage.getItem('page')) + 1;
-	}
-	sessionStorage.setItem('page',page.toString());
+    let params = new URLSearchParams(document.location.search.substring(1));
+    var page = parseInt(params.get("page")) || 0;
+    if (page <= 0) {
+	    page = 1;
+    }
+    function startup() {
 	var page_str = "Page ";
 	document.getElementById('footer').innerHTML = page_str.concat(page.toString());
 	var next_button = true;
         var client = new XMLHttpRequest();
-        client.open('GET', '/blog/puzzles/blogdata.txt');
+        client.open('GET', '/blog/blogdata.txt');
         client.onload = function()
         {
             if(client.responseText != '')
@@ -52,6 +51,7 @@
 			document.getElementById("image1").setAttribute("src",data[1]);
 			document.getElementById("title1").innerHTML = data[2];
 			document.getElementById("text1").innerHTML = data[3];
+			document.getElementById("tags1").innerHTML = data[4];
 			document.getElementById("date1").innerHTML = data[5];
 			$("#article1").show();
 		} else {
@@ -65,6 +65,7 @@
 			document.getElementById("image2").setAttribute("src",data[1]);
 			document.getElementById("title2").innerHTML = data[2];
 			document.getElementById("text2").innerHTML = data[3];
+			document.getElementById("tags2").innerHTML = data[4];
 			document.getElementById("date2").innerHTML = data[5];
 			$("#article2").show();
 		} else {
@@ -78,6 +79,7 @@
 			document.getElementById("image3").setAttribute("src",data[1]);
 			document.getElementById("title3").innerHTML = data[2];
 			document.getElementById("text3").innerHTML = data[3];
+			document.getElementById("tags3").innerHTML = data[4];
 			document.getElementById("date3").innerHTML = data[5];
 			$("#article3").show();
 		} else {
@@ -91,6 +93,7 @@
 			document.getElementById("image4").setAttribute("src",data[1]);
 			document.getElementById("title4").innerHTML = data[2];
 			document.getElementById("text4").innerHTML = data[3];
+			document.getElementById("tags4").innerHTML = data[4];
 			document.getElementById("date4").innerHTML = data[5];
 			$("#article4").show();
 		} else {
@@ -104,6 +107,7 @@
 			document.getElementById("image5").setAttribute("src",data[1]);
 			document.getElementById("title5").innerHTML = data[2];
 			document.getElementById("text5").innerHTML = data[3];
+			document.getElementById("tags5").innerHTML = data[4];
 			document.getElementById("date5").innerHTML = data[5];
 			$("#article5").show();
 		} else {
@@ -117,6 +121,7 @@
 			document.getElementById("image6").setAttribute("src",data[1]);
 			document.getElementById("title6").innerHTML = data[2];
 			document.getElementById("text6").innerHTML = data[3];
+			document.getElementById("tags6").innerHTML = data[4];
 			document.getElementById("date6").innerHTML = data[5];
 			$("#article6").show();
 		} else {
@@ -130,24 +135,20 @@
 	    	}
             }
         }
-	if (page <= 1) {
+	if (page == 1) {
 		$("#prev").addClass("disabled tm-mr-20");
 	} else {
 		$("#prev").removeClass("disabled tm-mr-20");
 	}
-	client.send()
-    }
-    function startup() {
-	sessionStorage.setItem('page','0');
 	document.getElementById('prev').addEventListener('click',prev_click);
         document.getElementById('next').addEventListener('click',next_click);
-	change_page(false);
+	client.send()
     }
     function prev_click() {
-	change_page(true);
+	window.location.href = "?page=" + (page-1).toString();
     }
     function next_click() {
-	change_page(false);
+	window.location.href = "?page=" + (page+1).toString();
     }
     $("#article1").hide();
     $("#article2").hide();
@@ -300,8 +301,8 @@
             </div>
             <div class="row tm-row tm-mt-100 tm-mb-75">
                 <div class="tm-prev-next-wrapper">
-                    <a href="#" class="mb-2 tm-btn tm-btn-primary tm-prev-next" id="prev">Prev</a>
-                    <a href="#" class="mb-2 tm-btn tm-btn-primary tm-prev-next" id="next">Next</a>
+                    <label class="mb-2 tm-btn tm-btn-primary tm-prev-next" id="prev">Prev</label>
+                    <label class="mb-2 tm-btn tm-btn-primary tm-prev-next" id="next">Next</label>
                 </div>            
             </div>        
 		 <footer class="row tm-row">
