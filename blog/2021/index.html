@@ -27,18 +27,17 @@
     <script src="/blog/js/jquery_ui.js"></script>
 
 <script>
-    function change_page(prev) {
-	if (prev) {
-	    var page = parseInt(sessionStorage.getItem('page')) - 1;
-	} else {
-	    var page = parseInt(sessionStorage.getItem('page')) + 1;
-	}
-	sessionStorage.setItem('page',page.toString());
+    let params = new URLSearchParams(document.location.search.substring(1));
+    var page = parseInt(params.get("page")) || 0;
+    if (page <= 0) {
+	    page = 1;
+    }
+    function startup() {
 	var page_str = "Page ";
 	document.getElementById('footer').innerHTML = page_str.concat(page.toString());
 	var next_button = true;
         var client = new XMLHttpRequest();
-        client.open('GET', '/blog/2021/blogdata.txt');
+        client.open('GET', '/blog/blogdata.txt');
         client.onload = function()
         {
             if(client.responseText != '')
@@ -136,24 +135,20 @@
 	    	}
             }
         }
-	if (page <= 1) {
+	if (page == 1) {
 		$("#prev").addClass("disabled tm-mr-20");
 	} else {
 		$("#prev").removeClass("disabled tm-mr-20");
 	}
-	client.send()
-    }
-    function startup() {
-	sessionStorage.setItem('page','0');
 	document.getElementById('prev').addEventListener('click',prev_click);
         document.getElementById('next').addEventListener('click',next_click);
-	change_page(false);
+	client.send()
     }
     function prev_click() {
-	change_page(true);
+	window.location.href = "?page=" + (page-1).toString();
     }
     function next_click() {
-	change_page(false);
+	window.location.href = "?page=" + (page+1).toString();
     }
     $("#article1").hide();
     $("#article2").hide();
@@ -306,8 +301,8 @@
             </div>
             <div class="row tm-row tm-mt-100 tm-mb-75">
                 <div class="tm-prev-next-wrapper">
-                    <a href="#" class="mb-2 tm-btn tm-btn-primary tm-prev-next" id="prev">Prev</a>
-                    <a href="#" class="mb-2 tm-btn tm-btn-primary tm-prev-next" id="next">Next</a>
+                    <label class="mb-2 tm-btn tm-btn-primary tm-prev-next" id="prev">Prev</label>
+                    <label class="mb-2 tm-btn tm-btn-primary tm-prev-next" id="next">Next</label>
                 </div>            
             </div>        
 		 <footer class="row tm-row">
