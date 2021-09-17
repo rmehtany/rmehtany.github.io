@@ -145,10 +145,10 @@
 	client.send()
     }
     function prev_click() {
-	document.location.search = "?page=" + (page-1).toString();
+	window.location.href = "?page=" + (page-1).toString();
     }
     function next_click() {
-	document.location.search = "?page=" + (page+1).toString();
+	window.location.href = "?page=" + (page+1).toString();
     }
     $("#article1").hide();
     $("#article2").hide();
