@@ -962,10 +962,11 @@
   </li>
   <li><a href="#orth" id="markdown-toc-orth">Orthogonality</a>
     <ul>
-      <!--<li><a href="#eq3">Sine and Cosine are Orthogonal</a></li>-->
-     <!--<li><a href='#def'>Definition</a></li>-->
+      <li><a href='#def'>Definition</a></li>
+      <li><a href="#thm1">Sine and Cosine are Orthogonal</a></li>
     </ul>
   </li>
+<li><a href='#thm3'>Odd and Even functions as Fourier Series</a></li>
 </ul>
 
   <h2 id='definition'>Defining Fourier Series</h2>
@@ -979,7 +980,38 @@
   <p>This may seem obvious, but it has some rather interesting implications.</p>
   <p><a id='eq3'></a>From the sum to product formulas $$\cos px\cos qx=\frac12(\cos(p-q)x+\cos(p+q)x\tag{3}$$<a id='eq4'></a>$$\sin px\sin qx=\frac12(\cos(p-q)x-\cos(p+q)x)\tag{4}$$<a id='eq5'></a>$$\sin px\cos qx=\frac12(\sin(p-q)x+\sin(p+q)x)\tag{5}$$we see that if \(p\neq q\), then <a id='eq6'></a>$$\intp\cos px\cos qx dx=\frac12\left(\intp\cos(p-q)x dx+\intp\cos(p+q)x dx\right)=0\tag{6}$$And \(\intp\cos^2pxdx=\pi\) by using <a href='#eq3'>equation 3</a> again. We can apply <a href='#eq4'>equation 4</a> to show the same result holds if we replace \(\cos\) with \(\sin\) in <a href='#eq6'>equation 6</a>. Finally, for any integers \(p,q\), we have <a id='eq7'></a>$$\intp\sin px\cos qxdx=\frac12\left(\intp\sin(p-q)x+\intp\sin(p+q)x\right)=0\tag{7}$$by <a href='#eq5'>equation 5</a>.</p>
   <p>Why are these results important? As we saw in the <a href='../Preliminaries/#innerprod' target='_blank'>Preliminaries</a>, the inner product of two functions in an \(L_2\)-space is defined as the integral of their product. Clearly, \(\sin nx\) and \(\cos nx\) belong to \(\rmL=L_2((-\pi,\pi))\) for all \(n\in\bbZ\).</p>
-  <div class="Definition" title="Orthogonality"> </div>
+	<a id='def'></a><div class="Definition" title="Orthogonality"> Given an <a href='../Preliminaries/#l2' target='_blank'>\(L_2\) space</a>, we say that elements \(x,y\) are <strong>orthogonal</strong> (notated as \(x\bot y\)) if \(x\cdot y=0\).</div>
+	<p>As we saw in the <a href='../Preliminaries/#funcspace' target='_blank'>Preliminaries</a>, the \(L_2\) space we'll be concerning ourselves with in these notes is \(\rmL\), the space of square integrable functions on \([-\pi,\pi)\).</p>
+	<a id='thm1'></a> <div class="Theorem" title="Sin and Cosine are Orthogonal"> For any \(n\neq m\in\mathbb N\), \(\sin nx\bot\sin mx\) and \(\cos nx\bot\cos mx\). And, for any \(n,m\in\mathbb N\), \(\sin nx\bot\cos mx\).
+<div class="proof">
+<p><a onclick="myCollapse('id')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="id-but"></i></a><br></p>
+<div id="id" class="w3-container w3-hide">
+The proof is essentially given in the paragraphs above.
+</div>
+</div>
+	<h2 id='odd'>Odd and Even functions</h2>
+	<p>Odd and even functions have natural interpretations as Fourier Series. To see why, we need to show a very trivial result.</p>
+	<a id='thm2'></a><div class="Theorem" title="Product of odd and even functions"> The product of odd functions and the product of even functions is even. The product of an even and an odd function is odd.
+<div class="proof">
+<p><a onclick="myCollapse('odd')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="odd-but"></i></a><br></p>
+<div id="odd" class="w3-container w3-hide">
+<p>As a quick reminder, an odd function is a function for which for all \(x\in\bbR\), \(f(x)=-f(-x)\). Similarly, an even function is a function for which for all \(x\in\bbR\), \(f(x)=f(-x)\).</p>
+Let \(f,g\) be odd functions and \(i,j\) be even functions on \(\bbR\). Thus, for any \(x\in\bbR\), we have $$f(-x)\cdot g(-x)=(-1)^2f(x)\cdot g(x)=f(x)\cdot g(x)$$$$f(-x)\cdot i(-x)=-f(x)\cdot i(x)$$$$i(-x)\cdot j(-x)=i(x)\cdot j(x)$$This completes the proof.	
+</div>
+</div>
+
+<a id='thm3'></a><div class="Theorem" title="Odd and Even functions as Fourier Series"> If an odd function can be expressed as a Fourier Series, all of the cosine coefficients must be zero. Likewise, if an even function can be expressed as a Fourier Series, all of the sine coefficients must be zero.
+<div class="proof">
+<p><a onclick="myCollapse('thm3x')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="thm3x-but"></i></a><br></p>
+<div id="thm3x" class="w3-container w3-hide">
+<p>First, let's prove a quick result. Suppose \(g\) is odd. Then, \(\intp g=\int_{-\pi}^0g+\int_0^\pi g=0\).</p> 	
+<p>Let \(f\) have the Fourier expansion $$f(x)=c+a_1\sin x+b_1\cos x+a_2\sin 2x+\ldots$$Suppose \(f\) is even and let \(k\in\bbN\). Then, by orthogonality, $$\intp f\cdot\sin kx=a_k\intp \sin^2kx=a_k\pi$$But, by <a href='#thm2'>theorem 2</a>, \(f\cdot\sin kx\) is odd, and thus \(a_k\pi=0\). So, \(a_k=0\).</p>
+Suppose now that \(f\) is odd. Then, for any \(k\in\bbN\), orthogonality implies $$\intp f\cdot\cos kx=b_k\intp\cos^2kx=b_k\pi$$By an identical argument, since \(f\cdot\cos kx\) is odd, \(b_k=0\).	
+</div>
+</div>
+<p>In other words, odd functions are represented by a series of sines, and even functions by a series of cosines. So that motivates the question: can we look at a series of cosines and understand whether it converges to an even function (or an odd function for a series of sines?)</p>
+<p>The answer, in general, is no. However, there is a special series of cosines that we can evaluate easily, that will motivate other convergence tests we'll see in the future.</p>
+<p>Let \(G\) be the sum $$G(v)=\frac12+\sum\limits_{k=1}^n\cos kv$$We can use the relation <a id='eq8'></a>$$2\sin\frac v2\cos kv=\sin\left(k+\frac12\right)v-\sin\left(k-\frac12\right)v\tag{8}$$, which gives us $$2\sin\left(\frac v2\right)G(v)=\sin\frac v2+\sum\limits_{k=1}^n\left[\sin\left(k+\frac12\right)v-\sin\left(k-\frac12\right)v\right]$$$$=\sin\left(n+\frac12\right)v$$Thus, we have the relation <a id='eq9'></a>$$G(v)=\frac{\sin\left(n+\frac12\right)v}{2\sin\frac v2}\tag{9}$$</p>
 
 </div>
 
