@@ -969,12 +969,12 @@
 <li><a href='#thm3'>Odd and Even functions as Fourier Series</a></li>
 </ul>
 
-  <h2 id='definition'>Defining Fourier Series</h2>
+	<h2 id='definition'><i>Defining Fourier Series</i></h2>
   <p>Under rather general conditions on a function \(f\), it can be written as the following series of sines and cosines:<a id='eq1'></a>$$f(x)=c+a_1\sin x+b_1\cos x+a_2\sin 2x+b_2\cos 2x+\ldots\tag{1}$$for a particular set of coefficients \(c,a_1,\ldots,b_1,\ldots\). Given the choice of coefficients, we call the series above a <strong>Fourier Series</strong> of \(f\).</p>
   <p>For now, we'll assume that \(f\) is a real function, i.e., \(f:\bbR\to\bbR\). Since all of the summands in the Fourier series have period \(2\pi\), we expect \(f\) to as well. (A function \(\phi\) has period \(a\) iff for all \(x\), \(\phi(x+a)=\phi(x)\).)</p>
   <p>Given any function \(g:[0,2\pi)\to\bbR\), we can extend it to a function \(g^*:\bbR\to\bbR\) by letting \(g^*(x)=g(x\bmod{2\pi})\). Since this function has period \(2\pi\), we'll expect there to be a Fourier Series for \(g^*\). If we don't concern ourselves with the value of this series outside of \([0,2\pi)\), this is also a Fourier Series for \(g\). Unfortunately, there are some conditions we must impose on \(g\) for a Fourier Series of it to exist.</p>
   <p>Of course, this idea can work on a function \(h:[a,b)\to\bbR\), by dilating and translating \([a,b)\) to \([0,2\pi)\). It may not be obvious at this point, but this operation adds no complexity to the problem of finding and evaluating Fourier Series.</p>
-  <h2 id='orth'>Orthogonality</h2>
+	<h2 id='orth'><i>Orthogonality</i></h2>
   <p>Determining the coefficients of the Fourier Series is dependent on evaluating particular definite integrals involving sines and cosines. Observe first that for \(n\in\bbZ\setminus\set{0}\)<a id='eq2'></a>$$\intp\cos nx=\frac{\sin nx}n\Bigg\vert_{-\pi}^\pi=\frac{2\sin n\pi}n=0\tag{2}$$And likewise, for \(n\in\bbZ\), \(\int\limits_{-\pi}^\pi\sin nx=0\).</p>
   <p>However, \(\int\limits_{-\pi}^\pi\cos0x=\int\limits_{-\pi}^\pi1=2\pi\).</p>
   <p>This may seem obvious, but it has some rather interesting implications.</p>
@@ -990,7 +990,7 @@ The proof is essentially given in the paragraphs above.
 </div>
 </div>
 	<h2 id='odd'>Odd and Even functions</h2>
-	<p>Odd and even functions have natural interpretations as Fourier Series. To see why, we need to show a very trivial result.</p>
+	<p style="font-style:normal;">Odd and even functions have natural interpretations as Fourier Series. To see why, we need to show a very trivial result.</p>
 	<a id='thm2'></a><div class="Theorem" title="Product of odd and even functions"> The product of odd functions and the product of even functions is even. The product of an even and an odd function is odd.
 <div class="proof">
 <p><a onclick="myCollapse('odd')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="odd-but"></i></a><br></p>
@@ -1009,9 +1009,9 @@ Let \(f,g\) be odd functions and \(i,j\) be even functions on \(\bbR\). Thus, fo
 Suppose now that \(f\) is odd. Then, for any \(k\in\bbN\), orthogonality implies $$\intp f\cdot\cos kx=b_k\intp\cos^2kx=b_k\pi$$By an identical argument, since \(f\cdot\cos kx\) is odd, \(b_k=0\).	
 </div>
 </div>
-<p>In other words, odd functions are represented by a series of sines, and even functions by a series of cosines. So that motivates the question: can we look at a series of cosines and understand whether it converges to an even function (or an odd function for a series of sines?)</p>
-<p>The answer, in general, is no. However, there is a special series of cosines that we can evaluate easily, that will motivate other convergence tests we'll see in the future.</p>
-<p>Let \(G\) be the sum $$G(v)=\frac12+\sum\limits_{k=1}^n\cos kv$$We can use the relation <a id='eq8'></a>$$2\sin\frac v2\cos kv=\sin\left(k+\frac12\right)v-\sin\left(k-\frac12\right)v\tag{8}$$, which gives us $$2\sin\left(\frac v2\right)G(v)=\sin\frac v2+\sum\limits_{k=1}^n\left[\sin\left(k+\frac12\right)v-\sin\left(k-\frac12\right)v\right]$$$$=\sin\left(n+\frac12\right)v$$Thus, we have the relation <a id='eq9'></a>$$G(v)=\frac{\sin\left(n+\frac12\right)v}{2\sin\frac v2}\tag{9}$$</p>
+<p style="font-style:normal;">In other words, odd functions are represented by a series of sines, and even functions by a series of cosines. So that motivates the question: can we look at a series of cosines and understand whether it converges to an even function (or an odd function for a series of sines?)</p>
+<p style="font-style:normal;">The answer, in general, is no. However, there is a special series of cosines that we can evaluate easily, that will motivate other convergence tests we'll see in the future.</p>
+Let \(G\) be the sum $$G(v)=\frac12+\sum\limits_{k=1}^n\cos kv$$We can use the relation <a id='eq8'></a>$$2\sin\frac v2\cos kv=\sin\left(k+\frac12\right)v-\sin\left(k-\frac12\right)v\tag{8}$$, which gives us $$2\sin\left(\frac v2\right)G(v)=\sin\frac v2+\sum\limits_{k=1}^n\left[\sin\left(k+\frac12\right)v-\sin\left(k-\frac12\right)v\right]$$$$=\sin\left(n+\frac12\right)v$$Thus, we have the relation <a id='eq9'></a>$$G(v)=\frac{\sin\left(n+\frac12\right)v}{2\sin\frac v2}\tag{9}$$
 
 </div>
 
