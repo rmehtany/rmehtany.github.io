@@ -1,0 +1,958 @@
+<html lang="en-us"><head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Preliminaries
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="/public/css/mystyle.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="/public/css/theorem.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/public/css/w3.css">
+  <link rel="stylesheet" href="/public/css/color.css">
+  <link rel="stylesheet" href="/public/css/colorbox.css">
+
+
+  <!-- JS -->
+  <script type="text/x-mathjax-config;executed=true">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      displayMath: [ ['$$','$$'] ],
+      processEscapes: true,
+    }
+  });
+  </script>
+  <script type="text/javascript" async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+  <!-- MathJax local
+  <script type="text/javascript" async src="/js/MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <!--
+  <script type="text/javascript" src="/js/turn/turn.min.js"></script>
+  -->
+
+  <!-- colorbox -->
+  <script src="/js/jquery.colorbox-min.js"></script>
+  <script>
+    $(document).ready(function(){
+			$(".cooking").colorbox({rel:'cooking'});
+  	  $(".coffee").colorbox({rel:'coffee'});
+    });
+  </script>
+
+  <!-- Add mermaid -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/harvardicon.png">
+  <link rel="shortcut icon" href="/public/harvardicon.png">
+
+  <!-- tooltip -->
+  <style>
+  .tooltip {
+      position: relative;
+      display: inline-block;
+  }
+
+  .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 300px;
+      background-color: black;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 5px 0;
+
+      /* Position the tooltip */
+      position: absolute;
+      z-index: 1;
+      top: 20px;
+  }
+
+  .tooltip:hover .tooltiptext {
+      visibility: visible;
+  }
+  </style>
+
+<style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><style type="text/css">.mjx-chtml {display: inline-block; line-height: 0; text-indent: 0; text-align: left; text-transform: none; font-style: normal; font-weight: normal; font-size: 100%; font-size-adjust: none; letter-spacing: normal; word-wrap: normal; word-spacing: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; margin: 0; padding: 1px 0}
+.MJXc-display {display: block; text-align: center; margin: 1em 0; padding: 0}
+.mjx-chtml[tabindex]:focus, body :focus .mjx-chtml[tabindex] {display: inline-table}
+.mjx-full-width {text-align: center; display: table-cell!important; width: 10000em}
+.mjx-math {display: inline-block; border-collapse: separate; border-spacing: 0}
+.mjx-math * {display: inline-block; -webkit-box-sizing: content-box!important; -moz-box-sizing: content-box!important; box-sizing: content-box!important; text-align: left}
+.mjx-numerator {display: block; text-align: center}
+.mjx-denominator {display: block; text-align: center}
+.MJXc-stacked {height: 0; position: relative}
+.MJXc-stacked > * {position: absolute}
+.MJXc-bevelled > * {display: inline-block}
+.mjx-stack {display: inline-block}
+.mjx-op {display: block}
+.mjx-under {display: table-cell}
+.mjx-over {display: block}
+.mjx-over > * {padding-left: 0px!important; padding-right: 0px!important}
+.mjx-under > * {padding-left: 0px!important; padding-right: 0px!important}
+.mjx-stack > .mjx-sup {display: block}
+.mjx-stack > .mjx-sub {display: block}
+.mjx-prestack > .mjx-presup {display: block}
+.mjx-prestack > .mjx-presub {display: block}
+.mjx-delim-h > .mjx-char {display: inline-block}
+.mjx-surd {vertical-align: top}
+.mjx-mphantom * {visibility: hidden}
+.mjx-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 2px 3px; font-style: normal; font-size: 90%}
+.mjx-annotation-xml {line-height: normal}
+.mjx-menclose > svg {fill: none; stroke: currentColor}
+.mjx-mtr {display: table-row}
+.mjx-mlabeledtr {display: table-row}
+.mjx-mtd {display: table-cell; text-align: center}
+.mjx-label {display: table-row}
+.mjx-box {display: inline-block}
+.mjx-block {display: block}
+.mjx-span {display: inline}
+.mjx-char {display: block; white-space: pre}
+.mjx-itable {display: inline-table; width: auto}
+.mjx-row {display: table-row}
+.mjx-cell {display: table-cell}
+.mjx-table {display: table; width: 100%}
+.mjx-line {display: block; height: 0}
+.mjx-strut {width: 0; padding-top: 1em}
+.mjx-vsize {width: 0}
+.MJXc-space1 {margin-left: .167em}
+.MJXc-space2 {margin-left: .222em}
+.MJXc-space3 {margin-left: .278em}
+.mjx-chartest {display: block; visibility: hidden; position: absolute; top: 0; line-height: normal; font-size: 500%}
+.mjx-chartest .mjx-char {display: inline}
+.mjx-chartest .mjx-box {padding-top: 1000px}
+.MJXc-processing {visibility: hidden; position: fixed; width: 0; height: 0; overflow: hidden}
+.MJXc-processed {display: none}
+.mjx-test {display: block; font-style: normal; font-weight: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow: hidden; height: 1px}
+.mjx-ex-box-test {position: absolute; width: 1px; height: 60ex}
+.mjx-line-box-test {display: table!important}
+.mjx-line-box-test span {display: table-cell!important; width: 10000em!important; min-width: 0; max-width: none; padding: 0; border: 0; margin: 0}
+#MathJax_CHTML_Tooltip {background-color: InfoBackground; color: InfoText; border: 1px solid black; box-shadow: 2px 2px 5px #AAAAAA; -webkit-box-shadow: 2px 2px 5px #AAAAAA; -moz-box-shadow: 2px 2px 5px #AAAAAA; -khtml-box-shadow: 2px 2px 5px #AAAAAA; padding: 3px 4px; z-index: 401; position: absolute; left: 0; top: 0; width: auto; height: auto; display: none}
+.mjx-chtml .mjx-noError {line-height: 1.2; vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+.MJXc-TeX-unknown-R {font-family: STIXGeneral,'Cambria Math','Arial Unicode MS',serif; font-style: normal; font-weight: normal}
+.MJXc-TeX-unknown-I {font-family: STIXGeneral,'Cambria Math','Arial Unicode MS',serif; font-style: italic; font-weight: normal}
+.MJXc-TeX-unknown-B {font-family: STIXGeneral,'Cambria Math','Arial Unicode MS',serif; font-style: normal; font-weight: bold}
+.MJXc-TeX-unknown-BI {font-family: STIXGeneral,'Cambria Math','Arial Unicode MS',serif; font-style: italic; font-weight: bold}
+.MJXc-TeX-ams-R {font-family: MJXc-TeX-ams-R,MJXc-TeX-ams-Rw}
+.MJXc-TeX-cal-B {font-family: MJXc-TeX-cal-B,MJXc-TeX-cal-Bx,MJXc-TeX-cal-Bw}
+.MJXc-TeX-frak-R {font-family: MJXc-TeX-frak-R,MJXc-TeX-frak-Rw}
+.MJXc-TeX-frak-B {font-family: MJXc-TeX-frak-B,MJXc-TeX-frak-Bx,MJXc-TeX-frak-Bw}
+.MJXc-TeX-math-BI {font-family: MJXc-TeX-math-BI,MJXc-TeX-math-BIx,MJXc-TeX-math-BIw}
+.MJXc-TeX-sans-R {font-family: MJXc-TeX-sans-R,MJXc-TeX-sans-Rw}
+.MJXc-TeX-sans-B {font-family: MJXc-TeX-sans-B,MJXc-TeX-sans-Bx,MJXc-TeX-sans-Bw}
+.MJXc-TeX-sans-I {font-family: MJXc-TeX-sans-I,MJXc-TeX-sans-Ix,MJXc-TeX-sans-Iw}
+.MJXc-TeX-script-R {font-family: MJXc-TeX-script-R,MJXc-TeX-script-Rw}
+.MJXc-TeX-type-R {font-family: MJXc-TeX-type-R,MJXc-TeX-type-Rw}
+.MJXc-TeX-cal-R {font-family: MJXc-TeX-cal-R,MJXc-TeX-cal-Rw}
+.MJXc-TeX-main-B {font-family: MJXc-TeX-main-B,MJXc-TeX-main-Bx,MJXc-TeX-main-Bw}
+.MJXc-TeX-main-I {font-family: MJXc-TeX-main-I,MJXc-TeX-main-Ix,MJXc-TeX-main-Iw}
+.MJXc-TeX-main-R {font-family: MJXc-TeX-main-R,MJXc-TeX-main-Rw}
+.MJXc-TeX-math-I {font-family: MJXc-TeX-math-I,MJXc-TeX-math-Ix,MJXc-TeX-math-Iw}
+.MJXc-TeX-size1-R {font-family: MJXc-TeX-size1-R,MJXc-TeX-size1-Rw}
+.MJXc-TeX-size2-R {font-family: MJXc-TeX-size2-R,MJXc-TeX-size2-Rw}
+.MJXc-TeX-size3-R {font-family: MJXc-TeX-size3-R,MJXc-TeX-size3-Rw}
+.MJXc-TeX-size4-R {font-family: MJXc-TeX-size4-R,MJXc-TeX-size4-Rw}
+@font-face {font-family: MJXc-TeX-ams-R; src: local('MathJax_AMS'), local('MathJax_AMS-Regular')}
+@font-face {font-family: MJXc-TeX-ams-Rw; src /*1*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/eot/MathJax_AMS-Regular.eot'); src /*2*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_AMS-Regular.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_AMS-Regular.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-cal-B; src: local('MathJax_Caligraphic Bold'), local('MathJax_Caligraphic-Bold')}
+@font-face {font-family: MJXc-TeX-cal-Bx; src: local('MathJax_Caligraphic'); font-weight: bold}
+@font-face {font-family: MJXc-TeX-cal-Bw; src /*1*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/eot/MathJax_Caligraphic-Bold.eot'); src /*2*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Caligraphic-Bold.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Caligraphic-Bold.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-frak-R; src: local('MathJax_Fraktur'), local('MathJax_Fraktur-Regular')}
+@font-face {font-family: MJXc-TeX-frak-Rw; src /*1*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/eot/MathJax_Fraktur-Regular.eot'); src /*2*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Fraktur-Regular.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Fraktur-Regular.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-frak-B; src: local('MathJax_Fraktur Bold'), local('MathJax_Fraktur-Bold')}
+@font-face {font-family: MJXc-TeX-frak-Bx; src: local('MathJax_Fraktur'); font-weight: bold}
+@font-face {font-family: MJXc-TeX-frak-Bw; src /*1*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/eot/MathJax_Fraktur-Bold.eot'); src /*2*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Fraktur-Bold.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Fraktur-Bold.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-math-BI; src: local('MathJax_Math BoldItalic'), local('MathJax_Math-BoldItalic')}
+@font-face {font-family: MJXc-TeX-math-BIx; src: local('MathJax_Math'); font-weight: bold; font-style: italic}
+@font-face {font-family: MJXc-TeX-math-BIw; src /*1*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/eot/MathJax_Math-BoldItalic.eot'); src /*2*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Math-BoldItalic.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Math-BoldItalic.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-sans-R; src: local('MathJax_SansSerif'), local('MathJax_SansSerif-Regular')}
+@font-face {font-family: MJXc-TeX-sans-Rw; src /*1*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/eot/MathJax_SansSerif-Regular.eot'); src /*2*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_SansSerif-Regular.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_SansSerif-Regular.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-sans-B; src: local('MathJax_SansSerif Bold'), local('MathJax_SansSerif-Bold')}
+@font-face {font-family: MJXc-TeX-sans-Bx; src: local('MathJax_SansSerif'); font-weight: bold}
+@font-face {font-family: MJXc-TeX-sans-Bw; src /*1*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/eot/MathJax_SansSerif-Bold.eot'); src /*2*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_SansSerif-Bold.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_SansSerif-Bold.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-sans-I; src: local('MathJax_SansSerif Italic'), local('MathJax_SansSerif-Italic')}
+@font-face {font-family: MJXc-TeX-sans-Ix; src: local('MathJax_SansSerif'); font-style: italic}
+@font-face {font-family: MJXc-TeX-sans-Iw; src /*1*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/eot/MathJax_SansSerif-Italic.eot'); src /*2*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_SansSerif-Italic.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_SansSerif-Italic.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-script-R; src: local('MathJax_Script'), local('MathJax_Script-Regular')}
+@font-face {font-family: MJXc-TeX-script-Rw; src /*1*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/eot/MathJax_Script-Regular.eot'); src /*2*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Script-Regular.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Script-Regular.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-type-R; src: local('MathJax_Typewriter'), local('MathJax_Typewriter-Regular')}
+@font-face {font-family: MJXc-TeX-type-Rw; src /*1*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/eot/MathJax_Typewriter-Regular.eot'); src /*2*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Typewriter-Regular.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Typewriter-Regular.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-cal-R; src: local('MathJax_Caligraphic'), local('MathJax_Caligraphic-Regular')}
+@font-face {font-family: MJXc-TeX-cal-Rw; src /*1*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/eot/MathJax_Caligraphic-Regular.eot'); src /*2*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Caligraphic-Regular.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Caligraphic-Regular.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-main-B; src: local('MathJax_Main Bold'), local('MathJax_Main-Bold')}
+@font-face {font-family: MJXc-TeX-main-Bx; src: local('MathJax_Main'); font-weight: bold}
+@font-face {font-family: MJXc-TeX-main-Bw; src /*1*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/eot/MathJax_Main-Bold.eot'); src /*2*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Main-Bold.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Main-Bold.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-main-I; src: local('MathJax_Main Italic'), local('MathJax_Main-Italic')}
+@font-face {font-family: MJXc-TeX-main-Ix; src: local('MathJax_Main'); font-style: italic}
+@font-face {font-family: MJXc-TeX-main-Iw; src /*1*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/eot/MathJax_Main-Italic.eot'); src /*2*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Main-Italic.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Main-Italic.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-main-R; src: local('MathJax_Main'), local('MathJax_Main-Regular')}
+@font-face {font-family: MJXc-TeX-main-Rw; src /*1*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/eot/MathJax_Main-Regular.eot'); src /*2*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Main-Regular.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-math-I; src: local('MathJax_Math Italic'), local('MathJax_Math-Italic')}
+@font-face {font-family: MJXc-TeX-math-Ix; src: local('MathJax_Math'); font-style: italic}
+@font-face {font-family: MJXc-TeX-math-Iw; src /*1*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/eot/MathJax_Math-Italic.eot'); src /*2*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Math-Italic.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Math-Italic.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-size1-R; src: local('MathJax_Size1'), local('MathJax_Size1-Regular')}
+@font-face {font-family: MJXc-TeX-size1-Rw; src /*1*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/eot/MathJax_Size1-Regular.eot'); src /*2*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Size1-Regular.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Size1-Regular.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-size2-R; src: local('MathJax_Size2'), local('MathJax_Size2-Regular')}
+@font-face {font-family: MJXc-TeX-size2-Rw; src /*1*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/eot/MathJax_Size2-Regular.eot'); src /*2*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Size2-Regular.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Size2-Regular.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-size3-R; src: local('MathJax_Size3'), local('MathJax_Size3-Regular')}
+@font-face {font-family: MJXc-TeX-size3-Rw; src /*1*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/eot/MathJax_Size3-Regular.eot'); src /*2*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Size3-Regular.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Size3-Regular.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-size4-R; src: local('MathJax_Size4'), local('MathJax_Size4-Regular')}
+@font-face {font-family: MJXc-TeX-size4-Rw; src /*1*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/eot/MathJax_Size4-Regular.eot'); src /*2*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Size4-Regular.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Size4-Regular.otf') format('opentype')}
+</style></head>
+
+
+  <body class="theme-base-0h"><div id="MathJax_Message" style="display: none;"></div>
+
+    <div class="sidebar w3-hide-small" id="mySidebar">
+  <div class="container">
+    <button class="w3-button sidebar w3-text-white w3-hide-medium w3-hide-large w3-right" onclick="sidebar_close()">☰</button>
+    <div class="sidebar-about">
+      <div class="w3-text-white w3-center" style="font-size:20px;">
+         Rushabh Mehta
+      </div>
+      
+      <p class="lead" style="font-size:16px;font-style:italic;">The infinite! No other question has ever moved so profoundly the spirit of man.<br> - David Hilbert</p>
+      
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">About Me</a>
+      <a class="sidebar-nav-item" href="/research/">Research</a>
+      <!--<a class="sidebar-nav-item" href="/book/">Book</a>-->
+      <a class="sidebar-nav-item" href="/blog/">Blog</a>
+      <!--<a class="sidebar-nav-item" href="/coffee/">Coffee</a>-->
+      <a class="sidebar-nav-item active" href="/notes/">Notes</a>
+      <a class="sidebar-nav-item" href="/resources/">Resources</a>
+	    <a class="sidebar-nav-item" href="/contact/">Contact</a>
+      <!--<a class="sidebar-nav-item" href="/conjecture/">Conjectures</a>-->
+    </nav>
+  </div>
+
+  <div class="w3-bottom">
+    <p style="font-size:12px">© <script>document.write(new Date().getFullYear())</script> Rushabh Mehta</p>
+  </div>
+</div>
+
+<div class="sidebar w3-hide-medium w3-hide-large w3-right" id="mySmallSidebar">
+  <button class="w3-button sidebar w3-text-white" onclick="sidebar_open()">☰</button>
+</div>
+
+
+    <div class="content container">
+      <div style="display:none">
+<span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-1-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mtext mathcolor=&quot;red&quot;>\ie</mtext></mrow><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mtext mathcolor=&quot;red&quot;>\cf</mtext></mrow></math>" role="presentation" style="font-size: 123%; position: relative;"><span id="MJXc-Node-1" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-2" class="mjx-mrow"><span id="MJXc-Node-3" class="mjx-texatom"><span id="MJXc-Node-4" class="mjx-mrow"><span id="MJXc-Node-5" class="mjx-mtext" style="color: red;"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.491em; padding-bottom: 0.599em;">\ie</span></span></span></span><span id="MJXc-Node-6" class="mjx-texatom"><span id="MJXc-Node-7" class="mjx-mrow"><span id="MJXc-Node-8" class="mjx-mtext" style="color: red;"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.491em; padding-bottom: 0.599em;">\cf</span></span></span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow class="MJX-TeXAtom-ORD"><mtext mathcolor="red">\ie</mtext></mrow><mrow class="MJX-TeXAtom-ORD"><mtext mathcolor="red">\cf</mtext></mrow></math></span></span><script type="math/tex" id="MathJax-Element-1">
+    \newcommand{\undefined}{}
+    \newcommand{\hfill}{}
+    \newcommand{\qedhere}{\square}
+    \newcommand{\qed}{\square}
+    \newcommand{\ensuremath}[1]{#1}
+    \newcommand{\bit}{\{0,1\}}
+    \newcommand{\Bit}{\{-1,1\}}
+    \newcommand{\Stab}{\mathbf{Stab}}
+    \newcommand{\NS}{\mathbf{NS}}
+    \newcommand{\ba}{\mathbf{a}}
+    \newcommand{\bc}{\mathbf{c}}
+    \newcommand{\bd}{\mathbf{d}}
+    \newcommand{\be}{\mathbf{e}}
+    \newcommand{\bh}{\mathbf{h}}
+    \newcommand{\br}{\mathbf{r}}
+    \newcommand{\bs}{\mathbf{s}}
+    \newcommand{\bx}{\mathbf{x}}
+    \newcommand{\by}{\mathbf{y}}
+    \newcommand{\bz}{\mathbf{z}}
+    \newcommand{\Var}{\mathbf{Var}}
+    \newcommand{\dist}{\text{dist}}
+    \newcommand{\norm}[1]{\\|#1\\|}
+    \newcommand{\etal}
+		\newcommand{\ie} 
+		\newcommand{\eg} 
+		\newcommand{\cf}
+    \newcommand{\rank}{\text{rank}}
+    \newcommand{\tr}{\text{tr}}
+    \newcommand{\mor}{\text{Mor}}
+    \newcommand{\hom}{\text{Hom}}
+    \newcommand{\id}{\text{id}}
+    \newcommand{\obj}{\text{obj}}
+    \newcommand{\pr}{\text{pr}}
+    \newcommand{\ker}{\text{ker}}
+    \newcommand{\coker}{\text{coker}}
+    \newcommand{\im}{\text{im}}
+    \newcommand{\vol}{\text{vol}}
+    \newcommand{\disc}{\text{disc}}
+
+    \newcommand{\bbA}{\mathbb A}
+    \newcommand{\bbB}{\mathbb B}
+    \newcommand{\bbC}{\mathbb C}
+    \newcommand{\bbD}{\mathbb D}
+    \newcommand{\bbE}{\mathbb E}
+    \newcommand{\bbF}{\mathbb F}
+    \newcommand{\bbG}{\mathbb G}
+    \newcommand{\bbH}{\mathbb H}
+    \newcommand{\bbI}{\mathbb I}
+    \newcommand{\bbJ}{\mathbb J}
+    \newcommand{\bbK}{\mathbb K}
+    \newcommand{\bbL}{\mathbb L}
+    \newcommand{\bbM}{\mathbb M}
+    \newcommand{\bbN}{\mathbb N}
+    \newcommand{\bbO}{\mathbb O}
+    \newcommand{\bbP}{\mathbb P}
+    \newcommand{\bbQ}{\mathbb Q}
+    \newcommand{\bbR}{\mathbb R}
+    \newcommand{\bbS}{\mathbb S}
+    \newcommand{\bbT}{\mathbb T}
+    \newcommand{\bbU}{\mathbb U}
+    \newcommand{\bbV}{\mathbb V}
+    \newcommand{\bbW}{\mathbb W}
+    \newcommand{\bbX}{\mathbb X}
+    \newcommand{\bbY}{\mathbb Y}
+    \newcommand{\bbZ}{\mathbb Z}
+
+    \newcommand{\sA}{\mathscr A}
+    \newcommand{\sB}{\mathscr B}
+    \newcommand{\sC}{\mathscr C}
+    \newcommand{\sD}{\mathscr D}
+    \newcommand{\sE}{\mathscr E}
+    \newcommand{\sF}{\mathscr F}
+    \newcommand{\sG}{\mathscr G}
+    \newcommand{\sH}{\mathscr H}
+    \newcommand{\sI}{\mathscr I}
+    \newcommand{\sJ}{\mathscr J}
+    \newcommand{\sK}{\mathscr K}
+    \newcommand{\sL}{\mathscr L}
+    \newcommand{\sM}{\mathscr M}
+    \newcommand{\sN}{\mathscr N}
+    \newcommand{\sO}{\mathscr O}
+    \newcommand{\sP}{\mathscr P}
+    \newcommand{\sQ}{\mathscr Q}
+    \newcommand{\sR}{\mathscr R}
+    \newcommand{\sS}{\mathscr S}
+    \newcommand{\sT}{\mathscr T}
+    \newcommand{\sU}{\mathscr U}
+    \newcommand{\sV}{\mathscr V}
+    \newcommand{\sW}{\mathscr W}
+    \newcommand{\sX}{\mathscr X}
+    \newcommand{\sY}{\mathscr Y}
+    \newcommand{\sZ}{\mathscr Z}
+
+    \newcommand{\sfA}{\mathsf A}
+    \newcommand{\sfB}{\mathsf B}
+    \newcommand{\sfC}{\mathsf C}
+    \newcommand{\sfD}{\mathsf D}
+    \newcommand{\sfE}{\mathsf E}
+    \newcommand{\sfF}{\mathsf F}
+    \newcommand{\sfG}{\mathsf G}
+    \newcommand{\sfH}{\mathsf H}
+    \newcommand{\sfI}{\mathsf I}
+    \newcommand{\sfJ}{\mathsf J}
+    \newcommand{\sfK}{\mathsf K}
+    \newcommand{\sfL}{\mathsf L}
+    \newcommand{\sfM}{\mathsf M}
+    \newcommand{\sfN}{\mathsf N}
+    \newcommand{\sfO}{\mathsf O}
+    \newcommand{\sfP}{\mathsf P}
+    \newcommand{\sfQ}{\mathsf Q}
+    \newcommand{\sfR}{\mathsf R}
+    \newcommand{\sfS}{\mathsf S}
+    \newcommand{\sfT}{\mathsf T}
+    \newcommand{\sfU}{\mathsf U}
+    \newcommand{\sfV}{\mathsf V}
+    \newcommand{\sfW}{\mathsf W}
+    \newcommand{\sfX}{\mathsf X}
+    \newcommand{\sfY}{\mathsf Y}
+    \newcommand{\sfZ}{\mathsf Z}
+
+    \newcommand{\cA}{\mathcal A}
+    \newcommand{\cB}{\mathcal B}
+    \newcommand{\cC}{\mathcal C}
+    \newcommand{\cD}{\mathcal D}
+    \newcommand{\cE}{\mathcal E}
+    \newcommand{\cF}{\mathcal F}
+    \newcommand{\cG}{\mathcal G}
+    \newcommand{\cH}{\mathcal H}
+    \newcommand{\cI}{\mathcal I}
+    \newcommand{\cJ}{\mathcal J}
+    \newcommand{\cK}{\mathcal K}
+    \newcommand{\cL}{\mathcal L}
+    \newcommand{\cM}{\mathcal M}
+    \newcommand{\cN}{\mathcal N}
+    \newcommand{\cO}{\mathcal O}
+    \newcommand{\cP}{\mathcal P}
+    \newcommand{\cQ}{\mathcal Q}
+    \newcommand{\cR}{\mathcal R}
+    \newcommand{\cS}{\mathcal S}
+    \newcommand{\cT}{\mathcal T}
+    \newcommand{\cU}{\mathcal U}
+    \newcommand{\cV}{\mathcal V}
+    \newcommand{\cW}{\mathcal W}
+    \newcommand{\cX}{\mathcal X}
+    \newcommand{\cY}{\mathcal Y}
+    \newcommand{\cZ}{\mathcal Z}
+
+    \newcommand{\bfA}{\mathbf A}
+    \newcommand{\bfB}{\mathbf B}
+    \newcommand{\bfC}{\mathbf C}
+    \newcommand{\bfD}{\mathbf D}
+    \newcommand{\bfE}{\mathbf E}
+    \newcommand{\bfF}{\mathbf F}
+    \newcommand{\bfG}{\mathbf G}
+    \newcommand{\bfH}{\mathbf H}
+    \newcommand{\bfI}{\mathbf I}
+    \newcommand{\bfJ}{\mathbf J}
+    \newcommand{\bfK}{\mathbf K}
+    \newcommand{\bfL}{\mathbf L}
+    \newcommand{\bfM}{\mathbf M}
+    \newcommand{\bfN}{\mathbf N}
+    \newcommand{\bfO}{\mathbf O}
+    \newcommand{\bfP}{\mathbf P}
+    \newcommand{\bfQ}{\mathbf Q}
+    \newcommand{\bfR}{\mathbf R}
+    \newcommand{\bfS}{\mathbf S}
+    \newcommand{\bfT}{\mathbf T}
+    \newcommand{\bfU}{\mathbf U}
+    \newcommand{\bfV}{\mathbf V}
+    \newcommand{\bfW}{\mathbf W}
+    \newcommand{\bfX}{\mathbf X}
+    \newcommand{\bfY}{\mathbf Y}
+    \newcommand{\bfZ}{\mathbf Z}
+
+    \newcommand{\rmA}{\mathfrak A}
+    \newcommand{\rmB}{\mathfrak B}
+    \newcommand{\rmC}{\mathfrak C}
+    \newcommand{\rmD}{\mathfrak D}
+    \newcommand{\rmE}{\mathfrak E}
+    \newcommand{\rmF}{\mathfrak F}
+    \newcommand{\rmG}{\mathfrak G}
+    \newcommand{\rmH}{\mathfrak H}
+    \newcommand{\rmI}{\mathfrak I}
+    \newcommand{\rmJ}{\mathfrak J}
+    \newcommand{\rmK}{\mathfrak K}
+    \newcommand{\rmL}{\mathfrak L}
+    \newcommand{\rmM}{\mathfrak M}
+    \newcommand{\rmN}{\mathfrak N}
+    \newcommand{\rmO}{\mathfrak O}
+    \newcommand{\rmP}{\mathfrak P}
+    \newcommand{\rmQ}{\mathfrak Q}
+    \newcommand{\rmR}{\mathfrak R}
+    \newcommand{\rmS}{\mathfrak S}
+    \newcommand{\rmT}{\mathfrak T}
+    \newcommand{\rmU}{\mathfrak U}
+    \newcommand{\rmV}{\mathfrak V}
+    \newcommand{\rmW}{\mathfrak W}
+    \newcommand{\rmX}{\mathfrak X}
+    \newcommand{\rmY}{\mathfrak Y}
+    \newcommand{\rmZ}{\mathfrak Z}
+
+
+    \newcommand{\bb}{\mathbf{b}}
+    \newcommand{\bv}{\mathbf{v}}
+    \newcommand{\bw}{\mathbf{w}}
+    \newcommand{\bx}{\mathbf{x}}
+    \newcommand{\by}{\mathbf{y}}
+    \newcommand{\bz}{\mathbf{z}}
+
+    \newcommand{\paren}[1]{( #1 )}
+    \newcommand{\Paren}[1]{\left( #1 \right)}
+    \newcommand{\bigparen}[1]{\bigl( #1 \bigr)}
+    \newcommand{\Bigparen}[1]{\Bigl( #1 \Bigr)}
+    \newcommand{\biggparen}[1]{\biggl( #1 \biggr)}
+    \newcommand{\Biggparen}[1]{\Biggl( #1 \Biggr)}
+    \newcommand{\abs}[1]{\lvert #1 \rvert}
+    \newcommand{\Abs}[1]{\left\lvert #1 \right\rvert}
+    \newcommand{\bigabs}[1]{\bigl\lvert #1 \bigr\rvert}
+    \newcommand{\Bigabs}[1]{\Bigl\lvert #1 \Bigr\rvert}
+    \newcommand{\biggabs}[1]{\biggl\lvert #1 \biggr\rvert}
+    \newcommand{\Biggabs}[1]{\Biggl\lvert #1 \Biggr\rvert}
+    \newcommand{\card}[1]{\left| #1 \right|}
+    \newcommand{\Card}[1]{\left\lvert #1 \right\rvert}
+    \newcommand{\bigcard}[1]{\bigl\lvert #1 \bigr\rvert}
+    \newcommand{\Bigcard}[1]{\Bigl\lvert #1 \Bigr\rvert}
+    \newcommand{\biggcard}[1]{\biggl\lvert #1 \biggr\rvert}
+    \newcommand{\Biggcard}[1]{\Biggl\lvert #1 \Biggr\rvert}
+    \newcommand{\Norm}[1]{\left\| #1 \right\|}
+    \newcommand{\bignorm}[1]{\bigl\lVert #1 \bigr\rVert}
+    \newcommand{\Bignorm}[1]{\Bigl\lVert #1 \Bigr\rVert}
+    \newcommand{\biggnorm}[1]{\biggl\lVert #1 \biggr\rVert}
+    \newcommand{\Biggnorm}[1]{\Biggl\lVert #1 \Biggr\rVert}
+    \newcommand{\iprod}[1]{\langle #1 \rangle}
+    \newcommand{\Iprod}[1]{\left\langle #1 \right\rangle}
+    \newcommand{\bigiprod}[1]{\bigl\langle #1 \bigr\rangle}
+    \newcommand{\Bigiprod}[1]{\Bigl\langle #1 \Bigr\rangle}
+    \newcommand{\biggiprod}[1]{\biggl\langle #1 \biggr\rangle}
+    \newcommand{\Biggiprod}[1]{\Biggl\langle #1 \Biggr\rangle}
+    \newcommand{\set}[1]{\lbrace #1 \rbrace}
+    \newcommand{\Set}[1]{\left\lbrace #1 \right\rbrace}
+    \newcommand{\bigset}[1]{\bigl\lbrace #1 \bigr\rbrace}
+    \newcommand{\Bigset}[1]{\Bigl\lbrace #1 \Bigr\rbrace}
+    \newcommand{\biggset}[1]{\biggl\lbrace #1 \biggr\rbrace}
+    \newcommand{\Biggset}[1]{\Biggl\lbrace #1 \Biggr\rbrace}
+    \newcommand{\bracket}[1]{\lbrack #1 \rbrack}
+    \newcommand{\Bracket}[1]{\left\lbrack #1 \right\rbrack}
+    \newcommand{\bigbracket}[1]{\bigl\lbrack #1 \bigr\rbrack}
+    \newcommand{\Bigbracket}[1]{\Bigl\lbrack #1 \Bigr\rbrack}
+    \newcommand{\biggbracket}[1]{\biggl\lbrack #1 \biggr\rbrack}
+    \newcommand{\Biggbracket}[1]{\Biggl\lbrack #1 \Biggr\rbrack}
+    \newcommand{\ucorner}[1]{\ulcorner #1 \urcorner}
+    \newcommand{\Ucorner}[1]{\left\ulcorner #1 \right\urcorner}
+    \newcommand{\bigucorner}[1]{\bigl\ulcorner #1 \bigr\urcorner}
+    \newcommand{\Bigucorner}[1]{\Bigl\ulcorner #1 \Bigr\urcorner}
+    \newcommand{\biggucorner}[1]{\biggl\ulcorner #1 \biggr\urcorner}
+    \newcommand{\Biggucorner}[1]{\Biggl\ulcorner #1 \Biggr\urcorner}
+    \newcommand{\ceil}[1]{\lceil #1 \rceil}
+    \newcommand{\Ceil}[1]{\left\lceil #1 \right\rceil}
+    \newcommand{\bigceil}[1]{\bigl\lceil #1 \bigr\rceil}
+    \newcommand{\Bigceil}[1]{\Bigl\lceil #1 \Bigr\rceil}
+    \newcommand{\biggceil}[1]{\biggl\lceil #1 \biggr\rceil}
+    \newcommand{\Biggceil}[1]{\Biggl\lceil #1 \Biggr\rceil}
+    \newcommand{\floor}[1]{\lfloor #1 \rfloor}
+    \newcommand{\Floor}[1]{\left\lfloor #1 \right\rfloor}
+    \newcommand{\bigfloor}[1]{\bigl\lfloor #1 \bigr\rfloor}
+    \newcommand{\Bigfloor}[1]{\Bigl\lfloor #1 \Bigr\rfloor}
+    \newcommand{\biggfloor}[1]{\biggl\lfloor #1 \biggr\rfloor}
+    \newcommand{\Biggfloor}[1]{\Biggl\lfloor #1 \Biggr\rfloor}
+    \newcommand{\lcorner}[1]{\llcorner #1 \lrcorner}
+    \newcommand{\Lcorner}[1]{\left\llcorner #1 \right\lrcorner}
+    \newcommand{\biglcorner}[1]{\bigl\llcorner #1 \bigr\lrcorner}
+    \newcommand{\Biglcorner}[1]{\Bigl\llcorner #1 \Bigr\lrcorner}
+    \newcommand{\bigglcorner}[1]{\biggl\llcorner #1 \biggr\lrcorner}
+    \newcommand{\Bigglcorner}[1]{\Biggl\llcorner #1 \Biggr\lrcorner}
+
+    \newcommand{\e}{\varepsilon}
+    \newcommand{\eps}{\varepsilon}
+    \newcommand{\from}{\colon}
+    \newcommand{\super}[2]{#1^{(#2)}}
+    \newcommand{\varsuper}[2]{#1^{\scriptscriptstyle (#2)}}
+    \newcommand{\tensor}{\otimes}
+
+    \newcommand{\eset}{\emptyset}
+    \newcommand{\sse}{\subseteq}
+    \newcommand{\sst}{\substack}
+    \newcommand{\ot}{\otimes}
+
+    \newcommand{\Esst}[1]{\bbE_{\substack{#1}}}
+
+    \newcommand{\vbig}{\vphantom{\bigoplus}}
+
+    \newcommand{\seteq}{\mathrel{\mathop:}=}
+    \newcommand{\defeq}{\stackrel{\mathrm{def}}=}
+
+    \newcommand{\Mid}{\mathrel{}\middle|\mathrel{}}
+
+    \newcommand{\Ind}{\mathbf 1}
+
+    \newcommand{\bits}{\{0,1\}}
+    \newcommand{\sbits}{\{\pm 1\}}
+    \newcommand{\R}{\mathbb R}
+    \newcommand{\Rnn}{\R_{\ge 0}}
+    \newcommand{\N}{\mathbb N}
+    \newcommand{\Z}{\mathbb Z}
+    \newcommand{\Q}{\mathbb Q}
+    \newcommand{\C}{\mathbb C}
+    \newcommand{\A}{\mathbb A}
+    \newcommand{\Real}{\mathbb R}
+
+    \newcommand{\mper}{\,.}
+    \newcommand{\mcom}{\,,}
+
+
+    \DeclareMathOperator{\Id}{Id}
+ 
+    \DeclareMathOperator{\min}{min}
+    \DeclareMathOperator{\max}{max}
+    \DeclareMathOperator{\argmax}{arg\,max}
+    \DeclareMathOperator{\argmin}{arg\,min}
+ 
+    \DeclareMathOperator{\supp}{supp}
+    \DeclareMathOperator{\sign}{sign}
+    \DeclareMathOperator{\perm}{perm}
+   
+    \DeclareMathOperator{\Span}{Span}
+    \DeclareMathOperator{\Cone}{Cone}
+    \DeclareMathOperator{\junta}{junta}
+    \DeclareMathOperator{\NSS}{NSS}
+    \DeclareMathOperator{\SA}{SA}
+    \DeclareMathOperator{\SOS}{SOS}
+    \DeclareMathOperator{\Stab}{\mathbf Stab}
+    \DeclareMathOperator{\Det}{\textbf{Det}}
+    \DeclareMathOperator{\Perm}{\textbf{Perm}}
+    \DeclareMathOperator{\Sym}{\textbf{Sym}}
+    \DeclareMathOperator{\Pow}{\textbf{Pow}}
+    \DeclareMathOperator{\Gal}{\textbf{Gal}}
+    \DeclareMathOperator{\Aut}{\textbf{Aut}}
+
+    \newcommand{\iprod}[1]{\langle #1 \rangle}
+    \newcommand{\cE}{\mathcal{E}}
+    \newcommand{\E}{\mathbb{E}}
+    \newcommand{\pE}{\tilde{\mathbb{E}}}
+    \newcommand{\N}{\mathbb{N}}
+    \renewcommand{\P}{\mathcal{P}}
+    \notag
+</script>
+</div>
+<div style="display:none">
+<span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-2-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; />" role="presentation" style="font-size: 123%; position: relative;"><span id="MJXc-Node-9" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-10" class="mjx-mrow"></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"></math></span></span><script type="math/tex" id="MathJax-Element-2">
+
+  \newcommand{\xor}{\ensuremath{\oplus}}
+  \newcommand{\1}{\ensuremath{\mathrm{1}}}
+  \notag
+</script>
+</div>
+<div style="display:none">
+<span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-3-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; />" role="presentation" style="font-size: 123%; position: relative;"><span id="MJXc-Node-11" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-12" class="mjx-mrow"></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"></math></span></span><script type="math/tex" id="MathJax-Element-3">
+  \newcommand{\transpose}[1]{\ensuremath{#1{}^{\mkern-2mu\intercal}}}
+  \newcommand{\dyad}[1]{\ensuremath{#1#1{}^{\mkern-2mu\intercal}}}
+  \newcommand{\nchoose}[1]{\ensuremath}
+  \newcommand{\generated}[1]{\ensuremath{\langle #1 \rangle}}
+  \notag
+</script>
+</div>
+<div style="display:none">
+<span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-4-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><merror><mtext>\newcommand{\eqdef}{\mathbin{\stackrel{\rm&amp;#xA0;def}{=}}}&amp;#xA0;&amp;#xA0;\newcommand{\R}&amp;#xA0;%&amp;#xA0;real&amp;#xA0;numbers&amp;#xA0;&amp;#xA0;\newcommand{\N}}&amp;#xA0;%&amp;#xA0;natural&amp;#xA0;numbers&amp;#xA0;&amp;#xA0;\newcommand{\Z}&amp;#xA0;%&amp;#xA0;integers&amp;#xA0;&amp;#xA0;\newcommand{\F}&amp;#xA0;%&amp;#xA0;a&amp;#xA0;field&amp;#xA0;&amp;#xA0;\newcommand{\Q}&amp;#xA0;%&amp;#xA0;the&amp;#xA0;rationals&amp;#xA0;&amp;#xA0;\newcommand{\C}{\mathbb{C}}&amp;#xA0;%&amp;#xA0;the&amp;#xA0;complexes&amp;#xA0;&amp;#xA0;\newcommand{\poly}}&amp;#xA0;&amp;#xA0;\newcommand{\polylog}}&amp;#xA0;&amp;#xA0;\newcommand{\loglog}}}&amp;#xA0;&amp;#xA0;\newcommand{\zo}{\{0,1\}}&amp;#xA0;&amp;#xA0;\newcommand{\suchthat}&amp;#xA0;&amp;#xA0;\newcommand{\pr}[1]{\Pr\left[#1\right]}&amp;#xA0;&amp;#xA0;\newcommand{\deffont}{\em}&amp;#xA0;&amp;#xA0;\newcommand{\getsr}{\mathbin{\stackrel{\mbox{\tiny&amp;#xA0;R}}{\gets}}}&amp;#xA0;&amp;#xA0;\newcommand{\Exp}{\mathop{\mathrm&amp;#xA0;E}\displaylimits}&amp;#xA0;%&amp;#xA0;expectation&amp;#xA0;&amp;#xA0;\newcommand{\Var}{\mathop{\mathrm&amp;#xA0;Var}\displaylimits}&amp;#xA0;%&amp;#xA0;variance&amp;#xA0;&amp;#xA0;\newcommand{\xor}{\oplus}&amp;#xA0;&amp;#xA0;\newcommand{\GF}{\mathrm{GF}}&amp;#xA0;&amp;#xA0;\newcommand{\eps}{\varepsilon}&amp;#xA0;&amp;#xA0;\notag</mtext></merror></math>" role="presentation" style="font-size: 123%; position: relative;"><span id="MJXc-Node-13" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-14" class="mjx-mrow"><span class="mjx-noError" style="vertical-align: -12.15em;">\newcommand{\eqdef}{\mathbin{\stackrel{\rm&nbsp;def}{=}}}<br>&nbsp;&nbsp;\newcommand{\R}&nbsp;%&nbsp;real&nbsp;numbers<br>&nbsp;&nbsp;\newcommand{\N}}&nbsp;%&nbsp;natural&nbsp;numbers<br>&nbsp;&nbsp;\newcommand{\Z}&nbsp;%&nbsp;integers<br>&nbsp;&nbsp;\newcommand{\F}&nbsp;%&nbsp;a&nbsp;field<br>&nbsp;&nbsp;\newcommand{\Q}&nbsp;%&nbsp;the&nbsp;rationals<br>&nbsp;&nbsp;\newcommand{\C}{\mathbb{C}}&nbsp;%&nbsp;the&nbsp;complexes<br>&nbsp;&nbsp;\newcommand{\poly}}<br>&nbsp;&nbsp;\newcommand{\polylog}}<br>&nbsp;&nbsp;\newcommand{\loglog}}}<br>&nbsp;&nbsp;\newcommand{\zo}{\{0,1\}}<br>&nbsp;&nbsp;\newcommand{\suchthat}<br>&nbsp;&nbsp;\newcommand{\pr}[1]{\Pr\left[#1\right]}<br>&nbsp;&nbsp;\newcommand{\deffont}{\em}<br>&nbsp;&nbsp;\newcommand{\getsr}{\mathbin{\stackrel{\mbox{\tiny&nbsp;R}}{\gets}}}<br>&nbsp;&nbsp;\newcommand{\Exp}{\mathop{\mathrm&nbsp;E}\displaylimits}&nbsp;%&nbsp;expectation<br>&nbsp;&nbsp;\newcommand{\Var}{\mathop{\mathrm&nbsp;Var}\displaylimits}&nbsp;%&nbsp;variance<br>&nbsp;&nbsp;\newcommand{\xor}{\oplus}<br>&nbsp;&nbsp;\newcommand{\GF}{\mathrm{GF}}<br>&nbsp;&nbsp;\newcommand{\eps}{\varepsilon}<br>&nbsp;&nbsp;\notag</span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><merror><mtext>\newcommand{\eqdef}{\mathbin{\stackrel{\rm&nbsp;def}{=}}}&nbsp;&nbsp;\newcommand{\R}&nbsp;%&nbsp;real&nbsp;numbers&nbsp;&nbsp;\newcommand{\N}}&nbsp;%&nbsp;natural&nbsp;numbers&nbsp;&nbsp;\newcommand{\Z}&nbsp;%&nbsp;integers&nbsp;&nbsp;\newcommand{\F}&nbsp;%&nbsp;a&nbsp;field&nbsp;&nbsp;\newcommand{\Q}&nbsp;%&nbsp;the&nbsp;rationals&nbsp;&nbsp;\newcommand{\C}{\mathbb{C}}&nbsp;%&nbsp;the&nbsp;complexes&nbsp;&nbsp;\newcommand{\poly}}&nbsp;&nbsp;\newcommand{\polylog}}&nbsp;&nbsp;\newcommand{\loglog}}}&nbsp;&nbsp;\newcommand{\zo}{\{0,1\}}&nbsp;&nbsp;\newcommand{\suchthat}&nbsp;&nbsp;\newcommand{\pr}[1]{\Pr\left[#1\right]}&nbsp;&nbsp;\newcommand{\deffont}{\em}&nbsp;&nbsp;\newcommand{\getsr}{\mathbin{\stackrel{\mbox{\tiny&nbsp;R}}{\gets}}}&nbsp;&nbsp;\newcommand{\Exp}{\mathop{\mathrm&nbsp;E}\displaylimits}&nbsp;%&nbsp;expectation&nbsp;&nbsp;\newcommand{\Var}{\mathop{\mathrm&nbsp;Var}\displaylimits}&nbsp;%&nbsp;variance&nbsp;&nbsp;\newcommand{\xor}{\oplus}&nbsp;&nbsp;\newcommand{\GF}{\mathrm{GF}}&nbsp;&nbsp;\newcommand{\eps}{\varepsilon}&nbsp;&nbsp;\notag</mtext></merror></math></span></span><script type="math/tex" id="MathJax-Element-4">
+  \newcommand{\eqdef}{\mathbin{\stackrel{\rm def}{=}}}
+  \newcommand{\R} % real numbers
+  \newcommand{\N}} % natural numbers
+  \newcommand{\Z} % integers
+  \newcommand{\F} % a field
+  \newcommand{\Q} % the rationals
+  \newcommand{\C}{\mathbb{C}} % the complexes
+  \newcommand{\poly}}
+  \newcommand{\polylog}}
+  \newcommand{\loglog}}}
+  \newcommand{\zo}{\{0,1\}}
+  \newcommand{\suchthat}
+  \newcommand{\pr}[1]{\Pr\left[#1\right]}
+  \newcommand{\deffont}{\em}
+  \newcommand{\getsr}{\mathbin{\stackrel{\mbox{\tiny R}}{\gets}}}
+  \newcommand{\Exp}{\mathop{\mathrm E}\displaylimits} % expectation
+  \newcommand{\Var}{\mathop{\mathrm Var}\displaylimits} % variance
+  \newcommand{\xor}{\oplus}
+  \newcommand{\GF}{\mathrm{GF}}
+  \newcommand{\eps}{\varepsilon}
+  \notag
+</script>
+</div>
+<div style="display:none">
+<span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-5-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; />" role="presentation" style="font-size: 123%; position: relative;"><span id="MJXc-Node-15" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-16" class="mjx-mrow"></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"></math></span></span><script type="math/tex" id="MathJax-Element-5">
+  \newcommand{\class}[1]{\mathbf{#1}}
+  \newcommand{\coclass}[1]{\mathbf{co\mbox{-}#1}} % and their complements
+
+
+</script>
+</div>
+<div style="display:none">
+<span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-6-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mtext mathcolor=&quot;red&quot;>\no</mtext></mrow></math>" role="presentation" style="font-size: 123%; position: relative;"><span id="MJXc-Node-17" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-18" class="mjx-mrow"><span id="MJXc-Node-19" class="mjx-texatom"><span id="MJXc-Node-20" class="mjx-mrow"><span id="MJXc-Node-21" class="mjx-mtext" style="color: red;"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.491em; padding-bottom: 0.599em;">\no</span></span></span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow class="MJX-TeXAtom-ORD"><mtext mathcolor="red">\no</mtext></mrow></math></span></span><script type="math/tex" id="MathJax-Element-6">
+  \newcommand{\textprob}[1]{\text{#1}}
+  \newcommand{\mathprob}[1]{\textbf{#1}}
+  \newcommand{\Satisfiability}{\textprob{Satisfiability}}
+  \newcommand{\Mor}{\textprob{Mor}}
+  \newcommand{\Hom}{\textprob{Hom}}
+  \newcommand{\cok}{\textprob{cok}}
+  \newcommand{\ker}{\textprob{ker}}
+  \newcommand{\im}{\textprob{im}}
+  \newcommand{\coim}{\textprob{coim}}
+  \newcommand{\id}{\textprob{id}}
+  \newcommand{\LP}{\mathprob{LP}}
+  \newcommand{\Factor}{\textprob{Factoring}}
+  \newcommand{\CircVal}{\textprob{Circuit Value}}
+  \newcommand{\CVAL}{\mathprob{CVAL}}
+
+  \newcommand{\yes}
+  \newcommand{\no}
+</script>
+</div>
+
+      
+	   <div style="float:right"><a href="../SeriesofSinesandCosines/"><bf>Next: Series of Sines and Cosines</bf></a></div>
+<div><a href="../"><bf>Back to Chapter 1 - Fourier Series</bf></a></div>
+
+
+<div class="post">
+  <h1 class="post-title">Preliminaries</h1>
+
+  
+  <div class="w3-white w3-round-xlarge w3-tiny">
+    <div class="w3-container w3-blue w3-round-xlarge" style="width:100%">100%</div>
+  </div>
+  <br>
+  
+
+  <ul id="markdown-toc">
+    <li><a href='norm'>Normed Vector Spaces</a><ul><li><a href='#def'>Definition</a></li><li><a href='#funcspace'>Function Spaces</a></li><li><a href='#thm2'>\(L_p\) spaces</a><ul><li><a href='#lem1'>Hölder's Inequality</a></li><li><a href='#lem2'>Minkowski's Inequality</a></li></ul></li></ul></li><li><a href='#banach'>Banach Space</a><ul><li><a href='thm3'>Riesz-Fischer Theorem</a></li></ul></li><li><a href='#hilbert'>Hilbert Space</a><ul><li><a href='#innerprod'>Inner Product Space</a></li><li><a href='#l2'>\(L_2\) space is Hilbert</a></li></ul></li></ul>
+
+
+	<p>These preliminaries aren't in the text I'm referring to, but I've been somewhat frustrated with the lack of rigor in how the text treats functions and their properties, so I believe that this setup is important. If you think this is pedantic, feel free to skip this post.</p>
+    
+  <h2 id='norm'><i>Normed Vector Spaces</i></h2>
+  <p>Our goal is to find a general space that contains all of our functions of interest, while still being narrow enough to have interesting and useful properties. In mathematics, we have a large hierarchy of space structures, many of which are generalizations of others. In the diagram below, we have a layout of some common structures that \(\bbR^n\) belong to, with the arrow relationship indicating increasing generality.</p>
+  <p><a class="gallery img-center-short cbox-Element" href="/public/apple.jpeg"><img src="/public/apple.jpeg" width="100%"></a></p>
+  <p>This diagram is by no means complete. For example, we could add Riemannian manifolds in between \(\bbR^n\) and manifolds. Or perhaps Hausdorff spaces between manifolds and topological spaces. However, this diagram will be more than sufficient for our purposes. I'm assuming that the reader already has exposure to modules, vector spaces, measure spaces, and metric space.</p>
+  <p>Let's begin by defining normed vector spaces.</p>
+  <a id='def'></a><div class="definition" title="Normed Vector Space"> Given a real vector space \(X\) with a function \(\Norm{}:X\to\R\), we call \((X,\Norm{})\) a <strong>normed vector space</strong> if it satisfies the following two conditions.<ul><li>For any \(c\in\R\) and \(x\in X\), \(\Norm{cx}=\card c\Norm x\)</li><li>The function \(d(x,y)=\Norm{y-x}\) makes \(X\) into a metric space.</li></ul></div>
+  <p>If we want to avoid using metric spaces in our definition, we can use the following four requirements to characterize normed vector spaces.</p>
+  <ul>
+    <li>Non-negativity: \(\Norm x\geq0\) for all \(x\in X\)</li>
+    <li>Homogeneity: \(\card c\Norm x=\Norm{cx}\) for all \(c\in\R\), \(x\in X\)</li>
+    <li>Triangle Inequality: \(\Norm{x+y}\leq\Norm x+\Norm y\) for all \(x,y\in X\)</li>
+    <li>Distinguishability: \(\Norm x>0\) for all \(x\neq0\in X\).</li>
+  </ul>
+  <p>Unfortunately, there are many potential normed vector spaces that satisfy all of the requirements besides distinguishability. These occur so frequently that we give them a name: <strong>semi-normed spaces</strong>. Fortunately for us, there's a very convenient way of converting partially semi-normed spaces into normed vector spaces. I'll do this within the context of function spaces but it isn't too hard to see how this may generalize.</p>
+  <a id='funcspace'></a><div class="Theorem" title="Function Spaces"> Given a set \(X\), and a <a href='https://en.wikipedia.org/wiki/Partial_function' target='_blank'>partial function</a> \(S:\R^X\to\R\) (\(A^B\) is the set of functions \(B\to A\)) such that on the largest vector space on which \(S\) is defined, \(S\) is a semi-norm, there exists a normed vector space with \(S\) as a norm.
+<div class="proof">
+<p><a onclick="myCollapse('thm1')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="thm1-but"></i></a><br></p>
+<div id="thm1" class="w3-container w3-hide">
+<p>Call the largest vector space on which \(S\) is defined \(rmF^*\). Let \(rmF^*_0=S^{-1}(0)\cap\rmF^*\). I claim that \(rmF^*_0\) is a vector space.</p>
+  <ul>
+    <li>Given \(x,y\in\rmF^*_0\), \(x+y\in\rmF^*\), and \(0\leq S(x+y)\leq S(x)+S(y)=0\), so \(x+y\in S^{-1}(0)\). Thus, \(x+y\in\rmF^*_0\).</li>
+    <li>Given \(c\in\R\), \(cx\in\rmF^*\), and \(S(cx)=\card cS(x)=0\), so \(cx\in \rmF^*_0\)</li>
+  </ul>
+  <p>Let \(rmF=\rmF^*/\rmF^*_0\), the <a href='https://en.wikipedia.org/wiki/Quotient_module' target='_blank'>quotient vector space</a>. I claim that \(S\) is well defined on the equivalence classes of \(\rmF\). Given \(x,y\in\rmF^*\) such that \(y-x\in\rmF^*_0\) (and thus \(x-y\in\rmF^*_0\)), we have $$S(x)\leq S(y)+S(x-y)=S(y)$$$$S(y)\leq S(x)+S(y-x)=S(x)$$Thus, \(S\) is a seminorm on \(rmF\). Moreover, if \(S([f])=0\) (where \([f]\) is the equivalence class of \(f\)), then \([f]=[0]\), so \(S\) is distinguishable and thus a norm.
+</div>
+</div>
+  <p>Perhaps the most relevant example of the theorem above is \(L_p\) spaces.</p>
+  <a id='thm2'></a><div class="Theorem" title="\(L_p\) spaces"> Let \((X,\mu)\) be a measure space, and for \(p\in[1,\infty)\), let \(\Norm{}_p\) send a measurable function \(f\) to $$\left(\int|f(x)|^pd\mu\right)^{1/p}$$and let \(\Norm{}_\infty\) send \(f\) to $$\inf\{c\in\R\mid\mu(\{x\mid |f(x)|>c\})=0\}$$This partial seminorm induces a normed vector space akin to <a href='#funcspace'>theorem 1</a>.
+<div class="proof">
+<p><a onclick="myCollapse('thm2x')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="thm2x-but"></i></a><br></p>
+<div id="thm2x" class="w3-container w3-hide">
+<p>Before we begin the proof, observe that not all measurable functions are part of the domain of \(\Norm{}_p\). Some are sent to \(\infty\), which is ill-defined. We call those functions that the partial seminorm sends to a finite value <strong>p-integrable</strong>. Let \(rmF^*\) be the collection of \(p\) integrable functions.</p>
+  <p>First, we show that \(\Norm{}_p\) is a seminorm on \(\rmF^*\).</p>
+  <ul><li>Non-negativity: An integral of a non-negative function can never be negative by monotonicity of integration. A supremum is also non-negative.</li><li>Homogeneity: $$\left(\int|cf(x)|^pd\mu\right)^{1/p}=|c|\left(\int|f(x)|^pd\mu\right)^{1/p}$$$$\inf\{r\in\R\mid\mu(\{x\mid |cf(x)|>r\})=0\}=|c|\inf\{r\in\R\mid\mu(\{x\mid |f(x)|>r\})=0\}$$</li><li>Triangle Inequality: See <a href='#lem2'>lemma 2 for \(p\) finite. For \(p=\infty\), since for any \(x\), \(|f(x)+g(x)|\leq|f(x)|+|g(x)|\), we have $$\sup\limits_{x\in X}|f(x)+g(x)|\leq\sup\limits_{x\in X}|f(x)|+|g(x)|\leq\sup\limits_{x\in X}|f(x)|+\sup\limits_{x\in X}|g(x)|$$</a>.</li></ul>
+  <p>Homogeneity also implies that \(\rmF^*\) is closed under scalar multiplication, and the triangle inequality implies that \(\rmF^*\) is closed under addition. This shows that \(rmF^*\) is a vector space.</p>
+  Thus, we apply the results of <a href='#thm1'>theorem 1</a> to generate a natural normed vector space with \(\Norm{}_p\) as the norm. We call this space \(L_p(\mu)\), \(L_p(X)\), or sometimes just \(L_p\) if the context is clear. We call \(\Norm{}_p\) the \(p\)-norm.
+</div>
+</div>
+  <a id='lem1'></a><div class="lemma" title="Hölder's inequality"> Given \(f\in L_p(\mu)\) and \(g\in L_q(\mu)\), and \(p,q\in[1,\infty]\) such that \(\frac1p+\frac1q=1\), $$\Norm{fg}_1\leq\Norm f_p\Norm g_q$$As a trivial consequence of this, \(fg\in L_1(\mu)\).
+<div class="proof">
+<p><a onclick="myCollapse('lem1x')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="lem1x" class="w3-container w3-hide">
+<p>I first claim that for any \(u,v\), $$e^{u/p+v/q}\leq\frac{e^u}p+\frac{e^v}q$$If \(p=\infty\), then this is true trivially. If \(p,q<\infty\), then letting \(t=\frac1p\in[0,1]\), we have $$e^{tu+(1-t)v}\leq te^u+(1-t)e^v$$which is true since \(e^x\) is convex.</p>
+If \(\Norm f_p=0\), then \(f\) is zero almost everywhere and thus, \(\Norm{fg}_1=0\). Thus, we can assume \(\Norm f_p,\Norm g_q\neq0\). Let \(F=f\cdot\Norm f_p^{-1}\) and \(G=g\cdot\Norm g_q^{-1}\). I claim that $$|F(x)G(x)|\leq\frac1p|F(x)|^p+\frac1q|G(x)|^q$$If \(F(x)=0,\infty\), the inequality is obvious true. If both \(|F(x)|,|G(x)|\) are positive, then let \(u,v\) be such that \(e^{u/p}=|F(x)|\), \(e^{v/q}=|G(x)|\). The previous inequality gives us this inequality. Thus, by monotonicity of integration, $$\Norm{FG}_1=\int|F(x)G(x)|d\mu\leq\frac1p\int|F(x)|^pd\mu+\frac1q\int|G(x)|^qd\mu$$$$=\frac1p\Norm F_p^p+\frac1q\Norm G_q^q$$$$=\frac1p+\frac1q=1$$This finishes the proof.  
+</div>
+</div>
+  <a id='lem2'></a><div class="lemma" title="Minkowski's Inequality"> Given \(f,g\in L_p(\mu)\), \(\Norm{f+g}_p\leq\Norm f_p+\Norm g_p\).
+<div class="proof">
+<p><a onclick="myCollapse('lem2x')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="lem2x" class="w3-container w3-hide">
+<p>If \(p=\infty\), note that if $$r\geq\inf\{a\in\R\mid\mu(\{x\mid |f(x)|>a\})=0\}+\inf\{a\in\R\mid\mu(\{x\mid |f(x)|>a\})=0\}$$then for any \(x\) such that \(|f(x)+g(x)|>r\), $$|f(x)|>\inf\{a\in\R\mid\mu(\{x\mid |f(x)|>a\})=0\}\text{ or }|g(x)|\geq\inf\{a\in\R\mid\mu(\{x\mid |g(x)|>a\})=0\}$$In either case, set of such \(x\) is a subset of a measure zero set, and thus has measure \(0\). This completes the proof.</p>
+<p>If \(\Norm{f+g}_p=0\), this inequality is trivially true. So assume that \(\Norm{f+g}_p>0\). Since \(x^p\) is a convex function, we have \(\left(\frac{f+g}2\right)^p\leq\frac12(|f|^p+|g|^p)\). Integrating both sides tells us that \(\Norm_{f+g}_p^{p-1}\) is finite (the \(p-1\) will become obvious later). Call this quantity \(M\).</p>
+Thus, we have $$\Norm{f+g}_p^p=\int|f(x)+g(x)|^{p-1}\cdot|f(x)+g(x)|d\mu$$$$\leq\int|f(x)+g(x)|^{p-1}\cdot|f(x)|d\mu+\int|f(x)+g(x)|^{p-1}\cdot|g(x)|d\mu$$Applying <a href='#lem1'>lemma 1</a> to both integrals, with \(\frac1p+\frac{p-1}p=1\), gives us$$\left(\Norm f_p+\Norm g_p\right)\cdot\left(\int|f(x)+g(x)|^{(p-1)\cdot(p/(p-1))}d\mu\right)^{(p-1)/p$$$$=\left(\Norm f_p+\Norm g_p\right)\cdot M$$So our inequality is $$\Norm{f+g}_p^p\leq\left(\Norm f_p+\Norm g_p\right)\cdot M$$Since \(M\) is finite, we can divide both sides by \(M\) to get the desired result.
+</div>
+</div>
+  
+  <p style='font-style:normal;'>It's important to note that the elements of \(L_p\) spaces are not functions. They are equivalence classes of functions. That being said, we'll often refer to functions as elements of \(L_p\) space, implicitly referring to the equivalence class the function represents.</p>
+  <p style='font-style:normal;'>Here are some interesting examples of \(L_p\) spaces:</p>
+  <ul>
+    <li style='font-style:normal;'>If \(X\) is the set \(\{1,\ldots,n\}\) for some \(n\in\N\), and \(\mu\) is the <a href='https://en.wikipedia.org/wiki/Counting_measure' target='_blank'>counting measure</a> on \(X\), then observe that there is a vector space isomorphism between \(\R^n\) and the set of functions \(X\to\R\). Moreover, the \(L_p\) norm is distinguishable on \(\R^n\), meaning that the space \(L_p(\mu))\) is just \((\R^n,\Norm{}_p)\).</li>
+    <li style='font-style:normal;'>If \(X\) is \(\N\) and \(\mu\) is again the counting measure, then there are some functions \(X\to\R\) that are not \(p\)-integrable. For example, the function \(f(x)=x\) is not \(p\)-integrable for any \(p\in[1,\infty]\).</li>
+    <li style='font-style:normal;'>If \(X\) is a finitely measured subset of \(\R\), and \(\mu\) is the standard Lebesgue measure, then we have the following result: for all \(1\leq p< q\leq\infty\), \(L_q\subset L_p\). If \(q=\infty\), then for any \(f\in L_q\), there exists some \(M\in\R\) such that \(|f(x)|<M\) almost everywhere. Thus, $$\int|f|^pd\mu\leq\int M^pd\mu=|X|\cdot M^p$$Thus, \(f\in L_p\). If \(q<\infty\), then by <a href='#lem1'>lemma 1</a> applied to \(|f|^q=|f|^q\cdot 1\) with \(\frac qp+\frac{p-q}p=1\)$$\int|f|^qd\mu\leq\left(\int|f|^p\right)^{q/p}\left(\int 1^{p/(p-q)}d\mu\right)^{(p-q)/p}$$$$\int|f|^qd\mu\leq\Norm f_p^q$$To see that equality doesn't hold, consider \(X=[0,1]\), \(f(x)=x^{-1/q}\).</li>
+    <li style='font-style:normal;'>If \(X\) is an infinitely measured subset of \(\R\) and \(\mu\) is the standard Lebesgue measure, we can't say much at all. For example, if \(X=[0,\infty)\), then the example from the previous bullet shows \(L_p\not\subset L_q\), and the function \(f(x)=x^{-2/p}\) shows \(L_q\not\subset L_p\).</li>
+  </ul>
+  
+  <h2 id='banach'>Banach Spaces</h2>
+<p style='font-style:normal;'>Since normed vector spaces are also metric spaces, it seems natural to ask, are these metric spaces complete? Surprisingly, in the case of \(L_p\) spaces, the answer is yes!</p>
+
+  <a id='thm3'></a><div class="Theorem" title="Riesz Fischer"> \(L_p\) space is complete.
+<div class="proof">
+<p><a onclick="myCollapse('thm3x')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="thm3x-but"></i></a><br></p>
+<div id="thm3x" class="w3-container w3-hide">
+This proof requires tools outside the scope of the preliminaries. See <a href='https://math.stackexchange.com/questions/1788505/show-that-lp-p-is-a-banach-space' target='_blank'>this</a> for details.
+</div>
+</div>
+
+  <p style='font-style:normal;'>However, this is not true generally. But, we can endow the completion of a normed vector space with a normed vector space structure, meaning that every normed vector space is isometrically embedded in a complete normed vector space. The proof of this is on page 17 <a href='https://www.math.utah.edu/~tan/6710_FA/Chapter_2_Normed_Spaces' target='_blank'>here</a></p>
+  <p style='font-style:normal;'>Complete normed vector spaces are very useful, so much so that they have their own name: <strong>Banach spaces</strong>. The study of the properties of Banach spaces is better dealt with in a course on Functional Analysis, so I'll leave the discussion on these spaces here.</p>
+  <h2 id='hilbert'>Hilbert Spaces</h2>
+  
+  <p style='font-style:normal;'>Suppose we wanted a notion of an inner product in our normed vector space, i.e., a function that takes two vectors as input and outputs a scalar.</p>
+  <p style='font-style:normal;'>For starters, we'd want the inner product to be a <a href='https://en.wikipedia.org/wiki/Bilinear_map' target='_blank'>bilinear mapping</a>, meaning that it is linear on both inputs. And, we'd want the inner product of a vector with itself to be the square of the norm. This should make some intuitive sense when thinking about the dot product on real vector spaces, but you may ask why we'd want this condition in general. The answer, to be blunt, is just that these conditions are useful.</p>
+  <a id='innerprod'></a><div class="definition" title="Inner Product" style="font-style:normal;"> Given a normed vector space \(X,\Norm{}\), we say that \(\cdot:X\times X\to\R\) is an <strong>inner product</strong> on \(X\) iff it satisfies the following properties for all \(x,y,z\in X\), \(c\in\R\):<ul><li>Symmetry: \(x\cdot y=y\cdot x\)</li><li>Linearity: \((x+y)\cdot z=x\cdot z+y\cdot z\) and \(cx\cdot y=c(x\cdot y)\).</li><li>Norm: \(\Norm x^2=x\cdot x\)</li></ul>We call the triple \((X,\Norm{},\cdot)\) an <strong>inner product space</strong>.</div>
+  <p style="font-style:normal;"> A inner product space which is Banach is called a <strong>Hilbert Space</strong>. Which \(L_p\) spaces are Hilbert spaces?</p>
+  <p style="font-style:normal;">We might hope that all of them are. For \(\R^n\), this is true. But for more complicated choices of \(X\), there is exactly one \(\L_p\) Hilbert space. To see why, we'll use the following results, all proven <a href='https://www.math.ksu.edu/~nagy/real-an/4-06-dual-lp.pdf' target='_blank'>here</a>.</p>
+  <a id='thm4'></a><div class="theorem" title="Duality"> The dual of \(L_p\) (i.e., the vector space consisting of linear functionals from \(L_p\) to \(\R\)) is \(L_q\), where \(\frac1p+\frac1q=1\)</div>
+  <a id='thm5'></a><div class="theorem" title="Riesz Representation"> For any real Hilbert Space, the space is isomorphic to its dual.</div>
+  <a id='thm6'></a><div class="theorem" title="Uniqueness"> If \(p\neq q\), then \(L_p\not\cong L_q\)</div>
+  <div class="exercise" title=""> Show using the three results above that \(L_p\) is not Hilbert if \(p\neq2\).</div>
+  <p style='font-style:normal;'>So is \(L_2\) Hilbert?</p>
+  <a id='l2'></a><div class="theorem" title="\(L_2\) is Hilbert"> Given the inner product \(f\cdot g=\int|fg|d\mu\), \(L_2\) is a Hilbert Space.
+  <div class="proof">
+<p><a onclick="myCollapse('id')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="id-but"></i></a><br></p>
+<div id="id" class="w3-container w3-hide">
+<p>First, we show that the definition of the inner product is well defined. Observe that given \(f,g\in L_2\), \(\Norm f_2=\left(\int f^2d\mu\right)^{1/2}\) and similarly for \(g\). In other words, we can drop the absolute value bars. Thus, $$\Norm{f+g}_2^2=\int(f+g)^2d\mu=\int f^2d\mu+2\int fgd\mu+\int g^2d\mu$$In other words, we can define the inner product as $$f\cdot g=\frac12\left(\Norm{f+g}_2^2-\Norm f_2^2-\Norm g_2^2\right)$$This implies that the inner product is well defined.</p>
+  <p>Now to verify the properties of an inner product space.</p>
+  <ul><li>Symmetry: Obvious by the definition</li><li>Linearity: Implied by the linearity of integration</li><li>Norm: Obvious by the definition</li></ul>
+</div>
+</div>
+
+ This is what makes the \(L_2\) space so special. For our applications, we'll be mostly focusing on \(L_2([-\pi,\pi),\text{Lebesgue})\) and we'll apply many of the nice properties of the Hilbert space along the way.
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+<div style="float:right"><a href="#" style="font-style: normal;"><bf>Top</bf></a></div>
+    </div>
+
+
+<script>
+// collapse
+function myCollapse(id) {
+    var x = document.getElementById(id);
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+    id_but = id.concat("-but");
+    var y = document.getElementById(id_but);
+    if (y != null) {
+      if (y.className.indexOf("fa-chevron-circle-down") != -1) {
+        y.className = y.className.replace(" fa-chevron-circle-down", " fa-chevron-circle-up");
+      } else {
+        y.className = y.className.replace(" fa-chevron-circle-up", " fa-chevron-circle-down");
+      }
+    }
+}
+</script>
+
+<script>
+// colorbox
+ jQuery('a.gallery').colorbox();
+ $(".gallery").colorbox({
+  width: "60%"
+});
+</script><div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button type="button" id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div></div>
+
+<script>
+// sidebar collapse
+function sidebar_open() {
+  document.getElementById("mySidebar").classList.remove("w3-hide-small");
+  document.getElementById("mySmallSidebar").classList.add("w3-hide-small");
+}
+function sidebar_close() {
+  document.getElementById("mySidebar").classList.add("w3-hide-small");
+  document.getElementById("mySmallSidebar").classList.remove("w3-hide-small");
+}
+</script>
+
+
+
+</body></html>
