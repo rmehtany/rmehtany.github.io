@@ -735,59 +735,6 @@
   \newcommand{\im}{\textprob{im}}
   \newcommand{\coim}{\textprob{coim}}
   \newcommand{\id}{\textprob{id}}
-  \newcommand{\LP}{\mathprob{LP}}
-  \newcommand{\Factor}{\textprob{Factoring}}
-  \newcommand{\CircVal}{\textprob{Circuit Value}}
-  \newcommand{\CVAL}{\mathprob{CVAL}}
-  \newcommand{\CircSat}{\textprob{Circuit Satisfiability}}
-  \newcommand{\intp}{\int\limits_{-\pi}^\pi}
-  \newcommand{\CycleCovers}{\textprob{Cycle Covers}}
-  \newcommand{\MonCircVal}{\textprob{Monotone Circuit Value}}
-  \newcommand{\Reachability}{\textprob{Reachability}}
-  \newcommand{\Unreachability}{\textprob{Unreachability}}
-  \newcommand{\RCH}{\mathprob{RCH}}
-  \newcommand{\BddHalt}{\textprob{Bounded Halting}}
-  \newcommand{\BH}{\mathprob{BH}}
-  \newcommand{\DiscreteLog}{\textprob{Discrete Log}}
-  \newcommand{\REE}{\mathprob{REE}}
-  \newcommand{\QBF}{\mathprob{QBF}}
-  \newcommand{\MCSP}{\mathprob{MCSP}}
-  \newcommand{\GGEO}{\mathprob{GGEO}}
-  \newcommand{\CKTMIN}{\mathprob{CKT-MIN}}
-  \newcommand{\MINCKT}{\mathprob{MIN-CKT}}
-  \newcommand{\IdentityTest}{\textprob{Identity Testing}}
-  \newcommand{\Majority}{\textprob{Majority}}
-  \newcommand{\CountIndSets}{\textprob{\#Independent Sets}}
-  \newcommand{\Parity}{\textprob{Parity}}
-  \newcommand{\Clique}{\textprob{Clique}}
-  \newcommand{\CountCycles}{\textprob{#Cycles}}
-  \newcommand{\CountPerfMatchings}{\textprob{\#Perfect Matchings}}
-  \newcommand{\CountMatchings}{\textprob{\#Matchings}}
-  \newcommand{\CountMatch}{\mathprob{\#Matchings}}
-  \newcommand{\ECSAT}{\mathprob{E#SAT}}
-  \newcommand{\ShSAT}{\mathprob{#SAT}}
-  \newcommand{\ShTSAT}{\mathprob{#3SAT}}
-  \newcommand{\HamCycle}{\textprob{Hamiltonian Cycle}}
-  \newcommand{\Permanent}{\textprob{Permanent}}
-  \newcommand{\ModPermanent}{\textprob{Modular Permanent}}
-  \newcommand{\GraphNoniso}{\textprob{Graph Nonisomorphism}}
-  \newcommand{\GI}{\mathprob{GI}}
-  \newcommand{\GNI}{\mathprob{GNI}}
-  \newcommand{\GraphIso}{\textprob{Graph Isomorphism}}
-  \newcommand{\QuantBoolForm}{\textprob{Quantified Boolean
-      Formulae}}
-  \newcommand{\GenGeography}{\textprob{Generalized Geography}}
-  \newcommand{\MAXTSAT}{\mathprob{Max3SAT}}
-  \newcommand{\GapMaxTSAT}{\mathprob{GapMax3SAT}}
-  \newcommand{\ELIN}{\mathprob{E3LIN2}}
-  \newcommand{\CSP}{\mathprob{CSP}}
-  \newcommand{\Lin}{\mathprob{Lin}}
-
-  \newcommand{\ONE}{\mathbf{ONE}}
-  \newcommand{\ZERO}{\mathbf{ZERO}}
-
-  \newcommand{\yes}
-  \newcommand{\no}
 </script>
 </div>
 
@@ -813,8 +760,17 @@
   <p>In the previous posts, I used \(\cdot\) to refer to the inner product. Given that this is quite confusing as \(\cdot\) is also used for multiplication, I'm now going to use \(\iprod{f,g}\) to refer to the inner product of \(f,g\).</p>
   <h2 id='det'><i>Determining Coefficients of Fourier Series</i></h2>
   <p>Suppose I had a function \(f\) that can be written as a fourier series as in <a href='../SeriesofSinesandCosines/#eq1' target='_blank'>equation 1</a> (we still haven't figured out what conditions need to be imposed on \(f\) to ensure this, but we'll take care of that in due time). Then by <a href='../SeriesofSinesandCosines/#eq2' target='_blank'>equation 2</a>, <a id='eq10'></a>$$\iprod{f,1}=\iprod{c,1}=2\pi c$$$$c=\frac1{2\pi}\iprod{f,1}\tag{10}$$Similarly, by <a href='../SeriesofSinesandCosines/#thm1' target='_blank'>theorem 1</a>, <a id='eq11'></a>$$a_k=\frac1\pi\iprod{f,\sin kx}\tag{11}$$<a id='eq12'></a>$$b_k=\frac1\pi\iprod{f,\cos kx}\tag{12}$$</p>
-  <div class="remark" title="Fourier Coefficients" style="font-style:normal;"> There is a slight lack of symmetry between <a href='#eq10'>equation 10</a> and <a href='#eq11'>equations 11 and 12</a> because of the extra \(\frac12\) term. Thus, from now on, our standard form for a Fourier Series will be $$f(x)=\frac c2+\sum\limits_{k=1}^\infty(a_k\sin kx+b_k\cos kx)$$</div>
-  <div class="remark" title="Integrating an infinite sum" style="font-style:normal;"> In the derivations of </div>
+  <div class="remark" title="Fourier Coefficients" style="font-style:normal;"> There is a slight lack of symmetry between <a href='#eq10'>equation 10</a> and <a href='#eq11'>equations 11 and 12</a> because of the extra \(\frac12\) term. Thus, from now on, our standard form for a Fourier Series will be <a id='eq13'></a>$$f(x)=\frac c2+\sum\limits_{k=1}^\infty(a_k\sin kx+b_k\cos kx)\tag{13}$$</div>
+  <div class="remark" title="Integrating an infinite sum" style="font-style:normal;"> In the derivations of <a href='#eq10'>equations 10, 11, and 12</a>, we implictly used the fact $$\Iprod{\frac c2+\sum\limits_{k=1}^\infty(a_k\sin kx+b_k\cos kx),g}=cg+\sum\limits_{k=1}^\infty\iprod{a_k\sin kx+b_k\cos kx,g}$$for some function \(g\). In other words, we need to show that the inner product is linear over infinite sums as well. This requires <a href='https://en.wikipedia.org/wiki/Fubini%27s_theorem' target='_blank'>Fubini's Theorem</a> and <a href="https://en.wikipedia.org/wiki/Fubini%27s_theorem#Tonelli's_theorem_for_non-negative_measurable_function" target='_blank'>Tonelli&#x27s Theorem</a>. Note that for \(f\) defined in <a href='#eq13'>equation 13</a>$$\Iprod{f,g}=\frac{|c|}2\intp|g|dx+\intp\sum\limits_{k=1}^\infty(a_k\sin kx\cdot g+b_k\cos kx\cdot g)dx$$By Fubini's theorem, if $$\intp\sum\limits_{k=1}^\infty\Card{a_k\sin kx\cdot g+b_k\cos kx\cdot g}dx<\infty$$then we can move the summation outside the integral. By Tonelli&#x27s theorem, this is equivalent to $$\sum\limits_{k=1}^\infty\intp\Card{a_k\sin kx\cdot g+b_k\cos kx\cdot g}dx$$Assuming \(g\) is orthogonal to all but one of the terms of \(f\), this summation is finite, and thus Fubini&#x27s theorem implies that the procedure was well-defined.</div>
+  <div class="example" title="Finding Fourier Coefficients" style="font-style:normal;"> Consider the function \(f(x)=x\) on \([-\pi,\pi)\). $$\frac1\pi\iprod{x,1}=0$$$$\frac1\pi\iprod{x,\cos kx}=0$$$$\frac1\pi\iprod{x,\sin kx}=(-1)^{k+1}\cdot\frac2k$$Thus, the Fourier Series is $$2\sin x-sin 2x+\frac{2\sin 3x}3+\ldots$$So how well has the Fourier Series done on modeling \(f(x)=x\)? Well, because of the \(2\pi\) periodicity, we know that our Fourier Series will be poor outside of \([-\pi,\pi)\). Here is the first three terms of the series<p><a class="gallery img-center-short cbox-Element" href="/public/fourier1.png"><img src="/public/fourier1.png" width="100%"></a></p>The first 25 terms<p><a class="gallery img-center-short cbox-Element" href="/public/fourier2.png"><img src="/public/fourier2.png" width="100%"></a></p>And the first 100 terms<p><a class="gallery img-center-short cbox-Element" href="/public/fourier3.png"><img src="/public/fourier3.png" width="100%"></a></p>Outside of the funkiness at \(x=k\pi\), the series looks like it is converging well!</div>
+<a id='thm1'></a><div class="theorem" title="Bessel Inequality">
+<div class="proof">
+<p><a onclick="myCollapse('id')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="id-but"></i></a><br></p>
+<div id="id" class="w3-container w3-hide">
+
+</div>
+</div>
+  
   
 
   
