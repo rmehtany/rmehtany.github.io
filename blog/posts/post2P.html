@@ -202,5 +202,17 @@ https://templatemo.com/tm-553-xtra-blog
     </div>
     <script src="/blog/js/jquery.min.js"></script>
     <script src="/blog/js/templatemo-script.js"></script>
+<script>
+// sidebar collapse
+function sidebar_open() {
+  document.getElementById("mySidebar").classList.remove("w3-hide-small");
+  document.getElementById("mySmallSidebar").classList.add("w3-hide-small");
+}
+function sidebar_close() {
+  document.getElementById("mySidebar").classList.add("w3-hide-small");
+  document.getElementById("mySmallSidebar").classList.remove("w3-hide-small");
+}
+</script>
+
 </body>
 </html>
