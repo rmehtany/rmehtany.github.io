@@ -45,22 +45,17 @@
   <!-- MathJax local
   <script type="text/javascript" async src="/js/MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
   -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="/js/jquery.min.js"></script>
   <!--
   <script type="text/javascript" src="/js/turn/turn.min.js"></script>
   -->
 
   <!-- colorbox -->
   <script src="/js/jquery.colorbox-min.js"></script>
-  <script>
-    $(document).ready(function(){
-			$(".cooking").colorbox({rel:'cooking'});
-  	  $(".coffee").colorbox({rel:'coffee'});
-    });
-  </script>
+
 
   <!-- Add mermaid -->
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
   <script id="MathJax-script" async
           src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
   </script>
@@ -359,32 +354,9 @@
     <div class="content container">
       <div style="display:none">
 <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-1-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mtext mathcolor=&quot;red&quot;>\ie</mtext></mrow><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mtext mathcolor=&quot;red&quot;>\cf</mtext></mrow></math>" role="presentation" style="font-size: 123%; position: relative;"><span id="MJXc-Node-1" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-2" class="mjx-mrow"><span id="MJXc-Node-3" class="mjx-texatom"><span id="MJXc-Node-4" class="mjx-mrow"><span id="MJXc-Node-5" class="mjx-mtext" style="color: red;"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.491em; padding-bottom: 0.599em;">\ie</span></span></span></span><span id="MJXc-Node-6" class="mjx-texatom"><span id="MJXc-Node-7" class="mjx-mrow"><span id="MJXc-Node-8" class="mjx-mtext" style="color: red;"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.491em; padding-bottom: 0.599em;">\cf</span></span></span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow class="MJX-TeXAtom-ORD"><mtext mathcolor="red">\ie</mtext></mrow><mrow class="MJX-TeXAtom-ORD"><mtext mathcolor="red">\cf</mtext></mrow></math></span></span><script type="math/tex" id="MathJax-Element-1">
-    \newcommand{\undefined}{}
-    \newcommand{\hfill}{}
-    \newcommand{\qedhere}{\square}
-    \newcommand{\qed}{\square}
-    \newcommand{\ensuremath}[1]{#1}
-    \newcommand{\bit}{\{0,1\}}
-    \newcommand{\Bit}{\{-1,1\}}
-    \newcommand{\Stab}{\mathbf{Stab}}
-    \newcommand{\NS}{\mathbf{NS}}
-    \newcommand{\ba}{\mathbf{a}}
-    \newcommand{\bc}{\mathbf{c}}
-    \newcommand{\bd}{\mathbf{d}}
-    \newcommand{\be}{\mathbf{e}}
-    \newcommand{\bh}{\mathbf{h}}
-    \newcommand{\br}{\mathbf{r}}
-    \newcommand{\bs}{\mathbf{s}}
-    \newcommand{\bx}{\mathbf{x}}
-    \newcommand{\by}{\mathbf{y}}
-    \newcommand{\bz}{\mathbf{z}}
-    \newcommand{\Var}{\mathbf{Var}}
-    \newcommand{\dist}{\text{dist}}
+
     \newcommand{\norm}[1]{\\|#1\\|}
-    \newcommand{\etal}
-		\newcommand{\ie} 
-		\newcommand{\eg} 
-		\newcommand{\cf}
+
     \newcommand{\rank}{\text{rank}}
     \newcommand{\tr}{\text{tr}}
     \newcommand{\mor}{\text{Mor}}
@@ -452,32 +424,6 @@
     \newcommand{\cY}{\mathcal Y}
     \newcommand{\cZ}{\mathcal Z}
 
-    \newcommand{\bfA}{\mathbf A}
-    \newcommand{\bfB}{\mathbf B}
-    \newcommand{\bfC}{\mathbf C}
-    \newcommand{\bfD}{\mathbf D}
-    \newcommand{\bfE}{\mathbf E}
-    \newcommand{\bfF}{\mathbf F}
-    \newcommand{\bfG}{\mathbf G}
-    \newcommand{\bfH}{\mathbf H}
-    \newcommand{\bfI}{\mathbf I}
-    \newcommand{\bfJ}{\mathbf J}
-    \newcommand{\bfK}{\mathbf K}
-    \newcommand{\bfL}{\mathbf L}
-    \newcommand{\bfM}{\mathbf M}
-    \newcommand{\bfN}{\mathbf N}
-    \newcommand{\bfO}{\mathbf O}
-    \newcommand{\bfP}{\mathbf P}
-    \newcommand{\bfQ}{\mathbf Q}
-    \newcommand{\bfR}{\mathbf R}
-    \newcommand{\bfS}{\mathbf S}
-    \newcommand{\bfT}{\mathbf T}
-    \newcommand{\bfU}{\mathbf U}
-    \newcommand{\bfV}{\mathbf V}
-    \newcommand{\bfW}{\mathbf W}
-    \newcommand{\bfX}{\mathbf X}
-    \newcommand{\bfY}{\mathbf Y}
-    \newcommand{\bfZ}{\mathbf Z}
 
     \newcommand{\rmA}{\mathfrak A}
     \newcommand{\rmB}{\mathfrak B}
@@ -593,8 +539,7 @@
     \DeclareMathOperator{\cone}{cone}
   
     \DeclareMathOperator{\Tr}{Tr}
-    \DeclareMathOperator{\Inf}{Inf}
-    \DeclareMathOperator{\size}{size}
+
  
     \DeclareMathOperator{\min}{min}
     \DeclareMathOperator{\max}{max}
@@ -602,16 +547,11 @@
     \DeclareMathOperator{\argmin}{arg\,min}
   
     \DeclareMathOperator{\supp}{supp}
-    \DeclareMathOperator{\sign}{sign}
-    \DeclareMathOperator{\perm}{perm}
-    \DeclareMathOperator{\mspan}{span}
-    \DeclareMathOperator{\mrank}{rank}
+
     \DeclareMathOperator{\E}{\mathbb E}
     \DeclareMathOperator{\pE}{\tilde{\mathbb E}}
     \DeclareMathOperator{\Pr}{\mathbb P}
-    \DeclareMathOperator{\Span}{Span}
-    \DeclareMathOperator{\Cone}{Cone}
-    \DeclareMathOperator{\junta}{junta}
+
 
     \DeclareMathOperator{\Det}{\textbf{Det}}
     \DeclareMathOperator{\Perm}{\textbf{Perm}}
@@ -645,18 +585,7 @@
 <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-4-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><merror><mtext>\newcommand{\eqdef}{\mathbin{\stackrel{\rm&amp;#xA0;def}{=}}}&amp;#xA0;&amp;#xA0;\newcommand{\R}&amp;#xA0;%&amp;#xA0;real&amp;#xA0;numbers&amp;#xA0;&amp;#xA0;\newcommand{\N}}&amp;#xA0;%&amp;#xA0;natural&amp;#xA0;numbers&amp;#xA0;&amp;#xA0;\newcommand{\Z}&amp;#xA0;%&amp;#xA0;integers&amp;#xA0;&amp;#xA0;\newcommand{\F}&amp;#xA0;%&amp;#xA0;a&amp;#xA0;field&amp;#xA0;&amp;#xA0;\newcommand{\Q}&amp;#xA0;%&amp;#xA0;the&amp;#xA0;rationals&amp;#xA0;&amp;#xA0;\newcommand{\C}{\mathbb{C}}&amp;#xA0;%&amp;#xA0;the&amp;#xA0;complexes&amp;#xA0;&amp;#xA0;\newcommand{\poly}}&amp;#xA0;&amp;#xA0;\newcommand{\polylog}}&amp;#xA0;&amp;#xA0;\newcommand{\loglog}}}&amp;#xA0;&amp;#xA0;\newcommand{\zo}{\{0,1\}}&amp;#xA0;&amp;#xA0;\newcommand{\suchthat}&amp;#xA0;&amp;#xA0;\newcommand{\pr}[1]{\Pr\left[#1\right]}&amp;#xA0;&amp;#xA0;\newcommand{\deffont}{\em}&amp;#xA0;&amp;#xA0;\newcommand{\getsr}{\mathbin{\stackrel{\mbox{\tiny&amp;#xA0;R}}{\gets}}}&amp;#xA0;&amp;#xA0;\newcommand{\Exp}{\mathop{\mathrm&amp;#xA0;E}\displaylimits}&amp;#xA0;%&amp;#xA0;expectation&amp;#xA0;&amp;#xA0;\newcommand{\Var}{\mathop{\mathrm&amp;#xA0;Var}\displaylimits}&amp;#xA0;%&amp;#xA0;variance&amp;#xA0;&amp;#xA0;\newcommand{\xor}{\oplus}&amp;#xA0;&amp;#xA0;\newcommand{\GF}{\mathrm{GF}}&amp;#xA0;&amp;#xA0;\newcommand{\eps}{\varepsilon}&amp;#xA0;&amp;#xA0;\notag</mtext></merror></math>" role="presentation" style="font-size: 123%; position: relative;"><span id="MJXc-Node-13" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-14" class="mjx-mrow"><span class="mjx-noError" style="vertical-align: -12.15em;">\newcommand{\eqdef}{\mathbin{\stackrel{\rm&nbsp;def}{=}}}<br>&nbsp;&nbsp;\newcommand{\R}&nbsp;%&nbsp;real&nbsp;numbers<br>&nbsp;&nbsp;\newcommand{\N}}&nbsp;%&nbsp;natural&nbsp;numbers<br>&nbsp;&nbsp;\newcommand{\Z}&nbsp;%&nbsp;integers<br>&nbsp;&nbsp;\newcommand{\F}&nbsp;%&nbsp;a&nbsp;field<br>&nbsp;&nbsp;\newcommand{\Q}&nbsp;%&nbsp;the&nbsp;rationals<br>&nbsp;&nbsp;\newcommand{\C}{\mathbb{C}}&nbsp;%&nbsp;the&nbsp;complexes<br>&nbsp;&nbsp;\newcommand{\poly}}<br>&nbsp;&nbsp;\newcommand{\polylog}}<br>&nbsp;&nbsp;\newcommand{\loglog}}}<br>&nbsp;&nbsp;\newcommand{\zo}{\{0,1\}}<br>&nbsp;&nbsp;\newcommand{\suchthat}<br>&nbsp;&nbsp;\newcommand{\pr}[1]{\Pr\left[#1\right]}<br>&nbsp;&nbsp;\newcommand{\deffont}{\em}<br>&nbsp;&nbsp;\newcommand{\getsr}{\mathbin{\stackrel{\mbox{\tiny&nbsp;R}}{\gets}}}<br>&nbsp;&nbsp;\newcommand{\Exp}{\mathop{\mathrm&nbsp;E}\displaylimits}&nbsp;%&nbsp;expectation<br>&nbsp;&nbsp;\newcommand{\Var}{\mathop{\mathrm&nbsp;Var}\displaylimits}&nbsp;%&nbsp;variance<br>&nbsp;&nbsp;\newcommand{\xor}{\oplus}<br>&nbsp;&nbsp;\newcommand{\GF}{\mathrm{GF}}<br>&nbsp;&nbsp;\newcommand{\eps}{\varepsilon}<br>&nbsp;&nbsp;\notag</span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><merror><mtext>\newcommand{\eqdef}{\mathbin{\stackrel{\rm&nbsp;def}{=}}}&nbsp;&nbsp;\newcommand{\R}&nbsp;%&nbsp;real&nbsp;numbers&nbsp;&nbsp;\newcommand{\N}}&nbsp;%&nbsp;natural&nbsp;numbers&nbsp;&nbsp;\newcommand{\Z}&nbsp;%&nbsp;integers&nbsp;&nbsp;\newcommand{\F}&nbsp;%&nbsp;a&nbsp;field&nbsp;&nbsp;\newcommand{\Q}&nbsp;%&nbsp;the&nbsp;rationals&nbsp;&nbsp;\newcommand{\C}{\mathbb{C}}&nbsp;%&nbsp;the&nbsp;complexes&nbsp;&nbsp;\newcommand{\poly}}&nbsp;&nbsp;\newcommand{\polylog}}&nbsp;&nbsp;\newcommand{\loglog}}}&nbsp;&nbsp;\newcommand{\zo}{\{0,1\}}&nbsp;&nbsp;\newcommand{\suchthat}&nbsp;&nbsp;\newcommand{\pr}[1]{\Pr\left[#1\right]}&nbsp;&nbsp;\newcommand{\deffont}{\em}&nbsp;&nbsp;\newcommand{\getsr}{\mathbin{\stackrel{\mbox{\tiny&nbsp;R}}{\gets}}}&nbsp;&nbsp;\newcommand{\Exp}{\mathop{\mathrm&nbsp;E}\displaylimits}&nbsp;%&nbsp;expectation&nbsp;&nbsp;\newcommand{\Var}{\mathop{\mathrm&nbsp;Var}\displaylimits}&nbsp;%&nbsp;variance&nbsp;&nbsp;\newcommand{\xor}{\oplus}&nbsp;&nbsp;\newcommand{\GF}{\mathrm{GF}}&nbsp;&nbsp;\newcommand{\eps}{\varepsilon}&nbsp;&nbsp;\notag</mtext></merror></math></span></span><script type="math/tex" id="MathJax-Element-4">
   \newcommand{\eqdef}{\mathbin{\stackrel{\rm def}{=}}}
 
-  \newcommand{\C}{\mathbb{C}} % the complexes
 
-  
-  
-  \newcommand{\pr}[1]{\Pr\left[#1\right]}
-  \newcommand{\deffont}{\em}
-  \newcommand{\getsr}{\mathbin{\stackrel{\mbox{\tiny R}}{\gets}}}
-  \newcommand{\Exp}{\mathop{\mathrm E}\displaylimits} % expectation
-  \newcommand{\Var}{\mathop{\mathrm Var}\displaylimits} % variance
-  \newcommand{\xor}{\oplus}
-  \newcommand{\GF}{\mathrm{GF}}
-  \newcommand{\eps}{\varepsilon}
   \notag
 </script>
 </div>
@@ -684,8 +613,8 @@
 </div>
 
       
-	    <div style="float:right"><a href="../FourierCoefficients/"><bf>Next: Fourier Coefficients</bf></a></div>
-<div><a href="../Preliminaries/"><bf>Previous: Preliminaries</bf></a></div>
+	    <div style="float:right"><a href="../FourierCoefficients/"><bf>Next  |</bf></a></div>
+<div><a href="../Preliminaries/"><bf>|  Previous</bf></a></div>
 
 
 <div class="post">
