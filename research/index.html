@@ -29,7 +29,7 @@
   <!-- MathJax local
   <script type="text/javascript" async src="/js/MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
   -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="/js/jquery.min.js"></script>
   <!--
   <script type="text/javascript" src="/js/turn/turn.min.js"></script>
   -->
@@ -102,6 +102,9 @@
   </div>
 </div>
 
+<div class="sidebar w3-hide-medium w3-hide-large w3-right" id="mySmallSidebar">
+  <button class="w3-button sidebar w3-text-white" onclick="sidebar_open()">☰</button>
+</div>
 
 
     <div class="content container">
@@ -167,6 +170,17 @@ function myCollapse(id) {
         y.className = y.className.replace(" fa-chevron-circle-up", " fa-chevron-circle-down");
       }
     }
+}
+</script>
+<script>
+// sidebar collapse
+function sidebar_open() {
+  document.getElementById("mySidebar").classList.remove("w3-hide-small");
+  document.getElementById("mySmallSidebar").classList.add("w3-hide-small");
+}
+function sidebar_close() {
+  document.getElementById("mySidebar").classList.add("w3-hide-small");
+  document.getElementById("mySmallSidebar").classList.remove("w3-hide-small");
 }
 </script>
 
