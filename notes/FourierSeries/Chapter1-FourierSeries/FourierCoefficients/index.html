@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="/public/css/syntax.css">
   <link rel="stylesheet" href="/public/css/hyde.css">
   <link rel="stylesheet" href="/public/css/mystyle.css">
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
   <link rel="stylesheet" href="/public/css/theorem.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="/public/css/w3.css">
@@ -40,7 +40,7 @@
   </script>
   <script type="text/javascript" async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
   </script>
-  <script src="/jquery.js"></script>
+  <script src="/js/jquery.min.js"></script>
 
   <!-- colorbox -->
   <script src="/js/jquery.colorbox-min.js"></script>
@@ -52,7 +52,7 @@
   </script>
 
   <!-- Add mermaid -->
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
   <script id="MathJax-script" async
           src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
   </script>
@@ -419,33 +419,6 @@
     \newcommand{\cY}{\mathcal Y}
     \newcommand{\cZ}{\mathcal Z}
 
-    \newcommand{\bfA}{\mathbf A}
-    \newcommand{\bfB}{\mathbf B}
-    \newcommand{\bfC}{\mathbf C}
-    \newcommand{\bfD}{\mathbf D}
-    \newcommand{\bfE}{\mathbf E}
-    \newcommand{\bfF}{\mathbf F}
-    \newcommand{\bfG}{\mathbf G}
-    \newcommand{\bfH}{\mathbf H}
-    \newcommand{\bfI}{\mathbf I}
-    \newcommand{\bfJ}{\mathbf J}
-    \newcommand{\bfK}{\mathbf K}
-    \newcommand{\bfL}{\mathbf L}
-    \newcommand{\bfM}{\mathbf M}
-    \newcommand{\bfN}{\mathbf N}
-    \newcommand{\bfO}{\mathbf O}
-    \newcommand{\bfP}{\mathbf P}
-    \newcommand{\bfQ}{\mathbf Q}
-    \newcommand{\bfR}{\mathbf R}
-    \newcommand{\bfS}{\mathbf S}
-    \newcommand{\bfT}{\mathbf T}
-    \newcommand{\bfU}{\mathbf U}
-    \newcommand{\bfV}{\mathbf V}
-    \newcommand{\bfW}{\mathbf W}
-    \newcommand{\bfX}{\mathbf X}
-    \newcommand{\bfY}{\mathbf Y}
-    \newcommand{\bfZ}{\mathbf Z}
-
     \newcommand{\rmA}{\mathfrak A}
     \newcommand{\rmB}{\mathfrak B}
     \newcommand{\rmC}{\mathfrak C}
@@ -474,12 +447,7 @@
     \newcommand{\rmZ}{\mathfrak Z}
 
 
-    \newcommand{\bb}{\mathbf{b}}
-    \newcommand{\bv}{\mathbf{v}}
-    \newcommand{\bw}{\mathbf{w}}
-    \newcommand{\bx}{\mathbf{x}}
-    \newcommand{\by}{\mathbf{y}}
-    \newcommand{\bz}{\mathbf{z}}
+
 
     \newcommand{\paren}[1]{( #1 )}
     \newcommand{\Paren}[1]{\left( #1 \right)}
@@ -547,32 +515,19 @@
     \newcommand{\bigglcorner}[1]{\biggl\llcorner #1 \biggr\lrcorner}
     \newcommand{\Bigglcorner}[1]{\Biggl\llcorner #1 \Biggr\lrcorner}
 
-
-
-
-    \DeclareMathOperator{\Id}{Id}
-    \DeclareMathOperator{\cone}{cone}
-    \DeclareMathOperator{\vol}{vol}
-    \DeclareMathOperator{\val}{val}
-    \DeclareMathOperator{\Val}{Val}
-    \DeclareMathOperator{\LP}{LP}
-    \DeclareMathOperator{\SDP}{SDP}
     \DeclareMathOperator{\Tr}{Tr}
-    \DeclareMathOperator{\Inf}{Inf}
-    \DeclareMathOperator{\size}{size}
+
     \DeclareMathOperator{\min}{min}
     \DeclareMathOperator{\max}{max}
     \DeclareMathOperator{\argmax}{arg\,max}
     \DeclareMathOperator{\argmin}{arg\,min}
-    \DeclareMathOperator{\conv}{conv}
-    \DeclareMathOperator{\Conv}{Conv}
+
     \DeclareMathOperator{\supp}{supp}
     \DeclareMathOperator{\E}{\mathbb E}
     \DeclareMathOperator{\pE}{\tilde{\mathbb E}}
     \DeclareMathOperator{\Pr}{\mathbb P}
     \DeclareMathOperator{\Span}{Span}
-    \DeclareMathOperator{\Cone}{Cone}
-    \DeclareMathOperator{\Stab}{\mathbf Stab}
+
     \DeclareMathOperator{\Det}{\textbf{Det}}
     \DeclareMathOperator{\Perm}{\textbf{Perm}}
     \DeclareMathOperator{\Sym}{\textbf{Sym}}
@@ -580,12 +535,6 @@
     \DeclareMathOperator{\Gal}{\textbf{Gal}}
     \DeclareMathOperator{\Aut}{\textbf{Aut}}
 
-    \newcommand{\iprod}[1]{\langle #1 \rangle}
-    \newcommand{\cE}{\mathcal{E}}
-    \newcommand{\E}{\mathbb{E}}
-    \newcommand{\pE}{\tilde{\mathbb{E}}}
-    \newcommand{\N}{\mathbb{N}}
-    \renewcommand{\P}{\mathcal{P}}
     \notag
 </script>
 </div>
@@ -637,7 +586,7 @@
 
       
 	    <!--<div style="float:right"><a href="../SeriesofSinesandCosines/"><bf>Next: Series of Sines and Cosines</bf></a></div>-->
-<div><a href="../SeriesofSinesandCosines/"><bf>Previous: Series of Sines and Cosines</bf></a></div>
+<div><a href="../SeriesofSinesandCosines/"><bf>|  Previous</bf></a></div>
 
 
 <div class="post">
