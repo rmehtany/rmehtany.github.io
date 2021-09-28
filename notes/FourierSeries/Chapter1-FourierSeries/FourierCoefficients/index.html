@@ -580,7 +580,7 @@
 </div>
 
       
-	    <!--<div style="float:right"><a href="../SeriesofSinesandCosines/"><bf>Next: Series of Sines and Cosines</bf></a></div>-->
+	    <div style="float:right"><a href="../Convergence/"><bf>Next  |</bf></a></div>
 <div><a href="../SeriesofSinesandCosines/"><bf>|  Previous</bf></a></div>
 
 
@@ -604,15 +604,37 @@
   <div class="remark" title="Fourier Coefficients" style="font-style:normal;"> There is a slight lack of symmetry between <a href='#eq10'>equation 10</a> and <a href='#eq11'>equations 11 and 12</a> because of the extra \(\frac12\) term. Thus, from now on, our standard form for a Fourier Series will be <a id='eq13'></a>$$f(x)=\frac c2+\sum\limits_{k=1}^\infty(a_k\sin kx+b_k\cos kx)\tag{13}$$</div>
   <div class="remark" title="Integrating an infinite sum" style="font-style:normal;"> In the derivations of <a href='#eq10'>equations 10, 11, and 12</a>, we implictly used the fact $$\Iprod{\frac c2+\sum\limits_{k=1}^\infty(a_k\sin kx+b_k\cos kx),g}=cg+\sum\limits_{k=1}^\infty\iprod{a_k\sin kx+b_k\cos kx,g}$$for some function \(g\). In other words, we need to show that the inner product is linear over infinite sums as well. This requires <a href='https://en.wikipedia.org/wiki/Fubini%27s_theorem' target='_blank'>Fubini's Theorem</a> and <a href="https://en.wikipedia.org/wiki/Fubini%27s_theorem#Tonelli's_theorem_for_non-negative_measurable_function" target='_blank'>Tonelli&#x27s Theorem</a>. Note that for \(f\) defined in <a href='#eq13'>equation 13</a>$$\Iprod{f,g}=\frac{|c|}2\intp|g|dx+\intp\sum\limits_{k=1}^\infty(a_k\sin kx\cdot g+b_k\cos kx\cdot g)dx$$By Fubini's theorem, if $$\intp\sum\limits_{k=1}^\infty\Card{a_k\sin kx\cdot g+b_k\cos kx\cdot g}dx<\infty$$then we can move the summation outside the integral. By Tonelli&#x27s theorem, this is equivalent to $$\sum\limits_{k=1}^\infty\intp\Card{a_k\sin kx\cdot g+b_k\cos kx\cdot g}dx$$Assuming \(g\) is orthogonal to all but one of the terms of \(f\), this summation is finite, and thus Fubini&#x27s theorem implies that the procedure was well-defined.</div>
   <div class="example" title="Finding Fourier Coefficients" style="font-style:normal;"> Consider the function \(f(x)=x\) on \([-\pi,\pi)\). $$\frac1\pi\iprod{x,1}=0$$$$\frac1\pi\iprod{x,\cos kx}=0$$$$\frac1\pi\iprod{x,\sin kx}=(-1)^{k+1}\cdot\frac2k$$Thus, the Fourier Series is $$2\sin x-\sin 2x+\frac{2\sin 3x}3+\ldots$$So how well has the Fourier Series done on modeling \(f(x)=x\)? Well, because of the \(2\pi\) periodicity, we know that our Fourier Series will be poor outside of \([-\pi,\pi)\). Here is the first three terms of the series<p><a class="gallery img-center-short cbox-Element" href="/public/fourier1.png"><img src="/public/fourier1.png" width="100%"></a></p>The first 25 terms<p><a class="gallery img-center-short cbox-Element" href="/public/fourier2.png"><img src="/public/fourier2.png" width="100%"></a></p>And the first 100 terms<p><a class="gallery img-center-short cbox-Element" href="/public/fourier3.png"><img src="/public/fourier3.png" width="100%"></a></p>Outside of the funkiness at \(x=k\pi\), the series looks like it is converging well!</div>
-<a id='thm1'></a><div class="theorem" title="Bessel Inequality"> Let \(H\) be a hilbert space, and \(E=\{e_n\}_{n\in\bbN}\) a countable <strong>orthonormal set</strong> (i.e., pairwise orthogonal with all elements with norm \(1\)). Then for all \(h\in H\)$$\sum\limits_{k=1}^\infty\iprod{h,e_n}^2\leq\Norm{h}^2$$
+	  <h2 id='mag'><i>Convergence of twice continuously differentiable functions</i></h2>
+	  <p> How do we evaluate the inner products of \(f\) with our trigonometric functions? If we assume that \(f\in C^2\) (the set of functions which have continuous second derivative), then we can use integration by parts to rewrite <a href='#eq11'>equations 11-12</a> as follows:$$b_k=\frac1\pi\iprod{f,\cos kx}=\left[\frac1{k\pi}f(x)\sin kx\right]\Bigg\vert_{-\pi}^\pi-\frac1{k\pi}\iprod{f^\prime,\sin kx}$$$$=\left[\frac1{k\pi}f(x)\sin kx\right]\Bigg\vert_{-\pi}^\pi+\left[\frac1{k^2\pi}f^\prime(x)\cos kx\right]\Bigg\vert_{-\pi}^\pi-\frac1{k^2\pi}\iprod{f^{\prime\prime},\cos kx}$$Note that the non-integral terms are zero, leaving us with <a id='eq14'></a>$$b_k=\frac1{k^2\pi}\iprod{f^{\prime\prime},\cos kx}\tag{14}$$If \(\sup|f^{\prime\prime}|=M\), then we have $$b_k\leq\frac1{k^2\pi}\iprod{M,1}=\frac{2M}{k^2}$$A parallel argument shows that $$a_k\leq\frac{2M}{k^2}$$Thus, $$\sum\limits_{k=1}^\infty\left(|a_k\sin kx|+|b_k\cos kx|\right)\leq \sum\limits_{k=1}^\infty(|a_k|+|b_k|)\leq\frac{2M\pi^2}3$$with the last equality due to Tonelli. By <a href='../Preliminaries/#thm4' target='_blank'>the Preliminaries</a>, this implies that the <a href='#eq13'>fourier series</a> converges everywhere.</p>
+	  <p><strong>Note</strong>: This does not mean that it necessarily converges to the function that determined the coefficients of the fourier series. We'll prove that in the next post for a special category of function.</p>
+	  <a id='extend'></a><div class="exercise" title="Convergence of a.e. twice continuously differentiable functions"> Given a continuous function \(f\) which has a continuous second derivative everywhere except finitely many points, prove that the fourier series generated by \(f\) converges.
+		  <div class="hint">
+<p><a onclick="myCollapse('exer')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="exer-but"></i></a><br></p>
+<div id="exer" class="w3-container w3-hide">
+Partition the interval into segments with endpoints being points where the function isn't twice differentiable continuously. Apply integration by parts to each partition and see what happens.
+</div>
+</div>
+
+	  <h2 id='Riemann'>Riemann's Theorem</h2>
+	  <p style='font-style:normal;'>One of the key issues with the fourier series so far is that we have no guarantee about how well partial sums approximate the total summation, and how well the total summation approximates \(f\). The latter question is a bit tricky and will be dealt with later.</p>
+	  <p style='font-style:normal;'>However, we can show that the partial summations of the fourier series converge well to the total summation for arbitrary functions in \(L_2([-\pi,\pi))\). To see why, we have to invoke the fact that this space is a Hilbert space.</p>
+	  
+	  <a id='thm1'></a><div class="theorem" title="Bessel Inequality"> Let \(H\) be a hilbert space, and \(E=\{e_n\}_{n\in\bbN}\) a countable <strong>orthonormal set</strong> (i.e., pairwise orthogonal with all elements with norm \(1\)). Then for all \(h\in H\)$$\sum\limits_{k=1}^\infty\iprod{h,e_n}^2\leq\Norm{h}^2$$
 <div class="proof">
 <p><a onclick="myCollapse('id')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="id-but"></i></a><br></p>
 <div id="id" class="w3-container w3-hide">
 For some \(n\in\bbN\), we have $$\Norm{h-\sum\limits_{k=1}^n\iprod{h,e_k}e_k}=\Iprod{h-\sum\limits_{k=1}^n\iprod{h,e_k}e_k,h-\sum\limits_{k=1}^n\iprod{h,e_k}e_k}$$By linearity$$=\iprod{h,h}-2\Iprod{h,\sum\limits_{k=1}^n\iprod{h,e_k}e_k}+\Iprod{\sum\limits_{k=1}^n\iprod{h,e_k}e_k,\sum\limits_{k=1}^n\iprod{h,e_k}e_k}$$By orthogonality and linearity of inner product$$\|h\|^2-2\sum\limits_{k=1}^n\Iprod{h,\iprod{h,e_k}e_k}+\sum\limits_{k=1}^n\iprod{h,e_k}^2\cdot\|e_k\|$$Since \(\|e_k\|=1\) for all \(k\), and \(\iprod{h,\iprod{h,e_k}e_k}=\iprod{h,e_k}^2\)$$\|h\|^2-\sum\limits_{k=1}^n\iprod{h,e_k}^2$$This implies that $$\|h\|^2\geq\sum\limits_{k=1}^n\iprod{h,e_k}^2$$for all \(k\), and thus $$\|h\|^2\geq\sum\limits_{k=1}^\infty\iprod{h,e_k}^2$$
 </div>
 </div>
+	  <p style='font-style:normal;'>With Bessel's inequality, we can show the following.</p>
   
-  
+	  <a id='thm2'></a><div class="theorem" title="Riemann's theorem"> Given a function \(f\in L_2([-\pi,\pi))\) with Fourier series as given <a href='#eq13'>here</a>, $$\lim\limits_{n\to\infty}a_n=\lim\limits_{n\to\infty}b_n=0$$
+<div class="proof">
+<p><a onclick="myCollapse('thm2x')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="thm2x-but"></i></a><br></p>
+<div id="thm2x" class="w3-container w3-hide">
+Let $$E=\Set{\frac{\cos kx}\pi\mid k\in\bbN}\cup\Set{\frac{\sin kx}\pi\mid k\in\bbN}$$ Thus, \(E\) is a countably infinite orthonormal set, and \(a_k\Iprod{f,\frac{\sin kx}\pi}\), \(b_k\Iprod{f,\frac{\cos kx}\pi}\). By <a href='#thm1'>Bessel's inequality</a>$$\sum\limits_{k=1}^\infty a_k^2+b_k^2<\infty$$And thus, the desired result holds.
+	</div>
+</div>
 
   
 </div>
