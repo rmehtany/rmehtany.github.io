@@ -723,16 +723,25 @@ This proof requires tools outside the scope of the preliminaries. See <a href='h
 
   <p style='font-style:normal;'>However, this is not true generally. But, we can endow the completion of a normed vector space with a normed vector space structure, meaning that every normed vector space is isometrically embedded in a complete normed vector space. The proof of this is on page 17 <a href='https://www.math.utah.edu/~tan/6710_FA/Chapter_2_Normed_Spaces' target='_blank'>here</a></p>
   <p style='font-style:normal;'>Complete normed vector spaces are very useful, so much so that they have their own name: <strong>Banach spaces</strong>. The study of the properties of Banach spaces is better dealt with in a course on Functional Analysis, so I'll leave the discussion on these spaces here.</p>
-  <h2 id='hilbert'>Hilbert Spaces</h2>
+	<p style='font-style:normal;'>The following result will be one that we do use somewhat often.</p>
+	<a id='thm4'></a><div class="theorem" title="Absolute Convergence implies convergence"> Given a summation \(\sum\limits_{k=1}^\infty a_k\) for \(a_k\in B\), a banach space, if \(\sum\limits_{k=1}^\infty|a_k|\) converges, so does the initial summation.
+<div class="proof">
+<p><a onclick="myCollapse('thm3xx')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="thm3xx-but"></i></a><br></p>
+<div id="thm3xx" class="w3-container w3-hide">
+All we need to show is that the sequence of partial sums \(s_n=\sum\limits_{k=1}^na_k\) is Cauchy. Let \(\varepsilon>0\). Since the absolute sum converges, there exist some \(N\in\bbN\) such that for all \(i>j>N\), $$\varepsilon>\sum\limits_{k=1}^i|a_k|-\sum\limits_{k=1}^j|a_k|=\sum\limits_{k=j+1}^i|a_k|$$$$\geq\Card{\sum\limits_{k=j+1}^ia_k}=\Card{s_i-s_j}$$This implies that \(s_n\) is Cauchy, which proves the desired result.
+</div>
+</div>
+
+	<h2 id='hilbert'>Hilbert Spaces</h2>
   
   <p style='font-style:normal;'>Suppose we wanted a notion of an inner product in our normed vector space, i.e., a function that takes two vectors as input and outputs a scalar.</p>
   <p style='font-style:normal;'>For starters, we'd want the inner product to be a <a href='https://en.wikipedia.org/wiki/Bilinear_map' target='_blank'>bilinear mapping</a>, meaning that it is linear on both inputs. And, we'd want the inner product of a vector with itself to be the square of the norm. This should make some intuitive sense when thinking about the dot product on real vector spaces, but you may ask why we'd want this condition in general. The answer, to be blunt, is just that these conditions are useful.</p>
   <a id='innerprod'></a><div class="definition" title="Inner Product" style="font-style:normal;"> Given a normed vector space \(X,\Norm{}\), we say that \(\cdot:X\times X\to\bbR\) is an <strong>inner product</strong> on \(X\) iff it satisfies the following properties for all \(x,y,z\in X\), \(c\in\bbR\):<ul><li>Symmetry: \(x\cdot y=y\cdot x\)</li><li>Linearity: \((x+y)\cdot z=x\cdot z+y\cdot z\) and \(cx\cdot y=c(x\cdot y)\).</li><li>Norm: \(\Norm x^2=x\cdot x\)</li></ul>We call the triple \((X,\Norm{},\cdot)\) an <strong>inner product space</strong>.</div>
   <p style="font-style:normal;"> A inner product space which is Banach is called a <strong>Hilbert Space</strong>. Which \(L_p\) spaces are Hilbert spaces?</p>
   <p style="font-style:normal;">We might hope that all of them are. For \(\bbR^n\), this is true. But for more complicated choices of \(X\), there is exactly one \(L_p\) Hilbert space. To see why, we'll use the following results, all proven <a href='https://www.math.ksu.edu/~nagy/real-an/4-06-dual-lp.pdf' target='_blank'>here</a>.</p>
-  <a id='thm4'></a><div class="theorem" title="Duality"> The dual of \(L_p\) (i.e., the vector space consisting of linear functionals from \(L_p\) to \(\bbR\)) is \(L_q\), where \(\frac1p+\frac1q=1\)</div>
-  <a id='thm5'></a><div class="theorem" title="Riesz Representation"> For any real Hilbert Space, the space is isomorphic to its dual.</div>
-  <a id='thm6'></a><div class="theorem" title="Uniqueness"> If \(p\neq q\), then \(L_p\not\cong L_q\)</div>
+  <a id='thm5'></a><div class="theorem" title="Duality"> The dual of \(L_p\) (i.e., the vector space consisting of linear functionals from \(L_p\) to \(\bbR\)) is \(L_q\), where \(\frac1p+\frac1q=1\)</div>
+  <a id='thm6'></a><div class="theorem" title="Riesz Representation"> For any real Hilbert Space, the space is isomorphic to its dual.</div>
+  <a id='thm7'></a><div class="theorem" title="Uniqueness"> If \(p\neq q\), then \(L_p\not\cong L_q\)</div>
   <div class="exercise" title=""> Show using the three results above that \(L_p\) is not Hilbert if \(p\neq2\).</div>
   <a id='l2'></a><div class="theorem" title="2-norm is Hilbert"> Given the inner product \(f\cdot g=\int fgd\mu\), \(L_2\) is a Hilbert Space.
   <div class="proof">
