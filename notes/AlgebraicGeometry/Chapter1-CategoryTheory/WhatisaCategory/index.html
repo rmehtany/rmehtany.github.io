@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <title>
-    
+
       What is a Category?
-    
+
   </title>
 
   <!-- CSS -->
@@ -52,12 +52,7 @@
 
   <!-- colorbox -->
   <script src="/js/jquery.colorbox-min.js"></script>
-  <script>
-    $(document).ready(function(){
-			$(".cooking").colorbox({rel:'cooking'});
-  	  $(".coffee").colorbox({rel:'coffee'});
-    });
-  </script>
+
 
   <!-- Add mermaid -->
 
@@ -328,9 +323,9 @@
       <div class="w3-text-white w3-center" style="font-size:20px;">
          Rushabh Mehta
       </div>
-      
+
       <p class="lead" style="font-size:16px;font-style:italic;">There should be no such thing as boring mathematics<br> - Edgar Dijkstra</p>
-      
+
     </div>
 
     <nav class="sidebar-nav">
@@ -362,8 +357,8 @@
 
     \newcommand{\norm}[1]{\\|#1\\|}
     \newcommand{\etal}
-		\newcommand{\ie} 
-		\newcommand{\eg} 
+		\newcommand{\ie}
+		\newcommand{\eg}
 		\newcommand{\cf}
     \newcommand{\rank}{\text{rank}}
     \newcommand{\tr}{\text{tr}}
@@ -607,7 +602,7 @@
 </script>
 </div>
 
-      
+
 	    <div style="float:right"><a href="../WhybotherwithCategories/"><bf>Next  |</bf></a></div>
 <div><a href="../"><bf>Chapter 1</bf></a></div>
 
@@ -615,12 +610,12 @@
 <div class="post">
   <h1 class="post-title">What is a Category?</h1>
 
-  
+
   <div class="w3-white w3-round-xlarge w3-tiny">
     <div class="w3-container w3-blue w3-round-xlarge" style="width:100%">100%</div>
   </div>
   <br>
-  
+
 
   <ul id="markdown-toc">
   <li><a href="#definition" id="markdown-toc-definitions">Definition</a>
@@ -631,11 +626,11 @@
 
 <h2 id="definition">Definition</h2>
 
-<p>A <strong>category</strong> is a collection of <em>objects</em>, and for any two objects \(A,B\), a collection of <em>morphisms</em> between them. For a category \(\rmC\), its objects are referred by \(\obj(\rmC)\), although most of the time, \(\rmC\) also refers to the collection of objects of the category. The collection of morphisms from \(A\to B\) is named \(\Mor(A,B)\). Moreover, for any object \(A\in\rmC\), there is a distinguished member of \(\Mor(A,A)\), which we call \(\id_A\) or just \(\id\).</p>	
+<p>A <strong>category</strong> is a collection of <em>objects</em>, and for any two objects \(A,B\), a collection of <em>morphisms</em> between them. For a category \(\rmC\), its objects are referred by \(\obj(\rmC)\), although most of the time, \(\rmC\) also refers to the collection of objects of the category. The collection of morphisms from \(A\to B\) is named \(\Mor(A,B)\). Moreover, for any object \(A\in\rmC\), there is a distinguished member of \(\Mor(A,A)\), which we call \(\id_A\) or just \(\id\).</p>
 
 
 <h2 id="locally-small-categories">Locally Small Categories</h2>
-	
+
 	<p>In these notes, we only care about <strong>locally small categories</strong>, i.e., categories such that for any \(A,B\), \(\Mor(A,B)\) is a set.
 For any locally small category \(\mathfrak C\), for any \(A,B,C\in\mathfrak C\), there exists an associative map \(\circ:\Mor(B,C)\times\Mor(A,B)\to\Mor(A,C)\) (we write \(\circ(f,g)\) as \(f\circ g\)) such that for any \(f\in\Mor(A,B)\), \(\id_B\circ f=f\circ\id_A=f\). For some \(f\in\Mor(A,B)\), there exists \(g\in\Mor(B,A)\) such that \(f\circ g=\id_B\), \(g\circ f=\id_A\), we call \(f\) an <strong>isomorphism</strong>, and say that \(A,B\) are <strong>isomorphic objects</strong>.
 </p>
