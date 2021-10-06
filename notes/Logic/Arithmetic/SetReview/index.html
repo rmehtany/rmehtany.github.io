@@ -633,30 +633,30 @@
         <li><a href='#pairing'>Axiom of Pairing</a><ul><li><a href='#pair'>Proof</a></li></ul></li>
         <li><a href='#union'>Axiom of Union</a><ul><li><a href='#intersection'>Intersection</a></li><li><a href='#stuff'>Implications of the axioms so far</a><ul><li><a href='#lefty'>Injections and Surjections</a></li><li><a href='#csb'>Cantor-Schroeder-Bernstein</a></li></ul></li></ul></li>
         <li><a href='#regularity'>Axiom of Regularity</a></li>
-        <li><a href='#infinity'>Axiom of Infinity</a><ul><li><a href='#successor'>Successor Map is injective</a></li><li><a href='#wellprinciple'>Principle of Mathematical Induction</a></li><li><a href='#naturalorder'>Ordering the Natural Numbers</a></li><li><a href='#infiniteset'>Infinite sets</a><li></ul></li>
+        <li><a href='#infinity'>Axiom of Infinity</a><ul><li><a href='#successor'>Successor Map is injective</a></li><li><a href='#wellprinciple'>Principle of Mathematical Induction</a></li><li><a href='#naturalorder'>Ordering the Natural Numbers</a></li><li><a href='#infiniteset'>Infinite sets</a></li></ul></li>
         <li><a href='#choice'>Axiom of Choice</a></li>
 
 </ul>
 
-<p>This chapter is intended on making sure that everyone is on the same page regarding the fundamentals of set theory. This won't be a deep dive into the material: see <a href='HalmosSetTheory.pdf' target='_blank'>Halmos's Set Theory</a> for a more detailed treatment.</p>
-<p>That being said, it may be the case that all or most of the material here is obvious. In that case, feel free to skip ahead.</p>
+<p style='font-style:normal;'>This chapter is intended on making sure that everyone is on the same page regarding the fundamentals of set theory. This won't be a deep dive into the material: see <a href='HalmosSetTheory.pdf' target='_blank'>Halmos's Set Theory</a> for a more detailed treatment.</p>
+<p style='font-style:normal;'>That being said, it may be the case that all or most of the material here is obvious. In that case, feel free to skip ahead.</p>
 <h2 id='set'><i>What are sets?</i></h2>
-<p>Here's an informal definition:</p>
+<p style='font-style:normal;'>Here's an informal definition:</p>
 <blockquote class="w3-panel w3-leftbar w3-light-grey">A set is a collection of objects, which themselves are sets.</blockquote>
-<p>This is a simple idea: there's one kind of structure in the universe, and it consists of structures of the same kind. But this isn't a definition. You can't define sets in terms of sets. So what are they?</p>
-<p>Any attempt at formalizing a definition of sets will likely lead nowhere. What are objects? What are things? What does it mean for something to be a collection?</p>
-<p>Even more confusing is the fact that not all collections of sets we can imagine are sets, for reasons we'll see later in this post. Thus, we adopt an even more nebulous term: <strong>class</strong>. We call any "definable" collection of sets a class. What does definable mean? There's no good definition, other than "can be written down in some form". A great definition that is.</p>
-<p>At some level, the fundamental issue we are facing is that of existence. What does it mean for a set to <i>exist</i>? Does it exist in the same way a grape exists? How about dark matter? There aren't any satisfying resolutions to these questions, since they are more questions of philosophy than mathematics. The perspectives I outlined in the <a href='../Background/#Why' target='_blank'>background</a> may offer some comfort from these questions.</p>
-<p>However, to do any mathematics, we have to assume something, and for the purpose of this course, it makes sense to assume two things: 1. sets exist, and 2. deductive reasoning works (we'll talk more about the second later).</p>
+<p style='font-style:normal;'>This is a simple idea: there's one kind of structure in the universe, and it consists of structures of the same kind. But this isn't a definition. You can't define sets in terms of sets. So what are they?</p>
+<p style='font-style:normal;'>Any attempt at formalizing a definition of sets will likely lead nowhere. What are objects? What are things? What does it mean for something to be a collection?</p>
+<p style='font-style:normal;'>Even more confusing is the fact that not all collections of sets we can imagine are sets, for reasons we'll see later in this post. Thus, we adopt an even more nebulous term: <strong>class</strong>. We call any "definable" collection of sets a class. What does definable mean? There's no good definition, other than "can be written down in some form". A great definition that is.</p>
+<p style='font-style:normal;'>At some level, the fundamental issue we are facing is that of existence. What does it mean for a set to <i>exist</i>? Does it exist in the same way a grape exists? How about dark matter? There aren't any satisfying resolutions to these questions, since they are more questions of philosophy than mathematics. The perspectives I outlined in the <a href='../Background/#Why' target='_blank'>background</a> may offer some comfort from these questions.</p>
+<p style='font-style:normal;'>However, to do any mathematics, we have to assume something, and for the purpose of this course, it makes sense to assume two things: 1. sets exist, and 2. deductive reasoning works (we'll talk more about the second later).</p>
 
 
 <h2 id='prelim'><i>Preliminary notions of Logic</i></h2>
-<p>Before we dive into sets, we have to briefly cover some concepts we will cover in more detail in Chapters 2 and 3.</p>
-<h3 id='atom'>Sentences</h3>
-<p>There are plenty of statements whose truth value is known to us. For example: \(1=2\) is false, "pigs fly" is false, and the Jets will never win a super bowl is true (hehe). We call these kinds of statements <strong>atomic sentences</strong> if they can be expressed in our logical language. We call these sorts of sentences atomic as we can form more complicated ones from gluing together atomic sentences appropriately.</p>
-<p>Now that we have atomic sentences, we want to form more interesting sentences by gluing together atomic sentences. To do so, we use <strong>logical operands</strong>.</p>
-<a id='operands'></a><div class="Definition" title="Logical Operands">A \(n\)-ary <strong>logical operand</strong> is a map that assigns a true or false value to any collection of \(n\) true or false values. As a standard example, <strong>and</strong> is a binary (\(2\)-ary) operand as given \(A,\B\), \(A\text{ and }B\) is true iff \(A\) is true and \(B\) is true. \(n\)-ary operands are said to be of order \(n\)</div>
-<p>There are many logical operands, but the following are the most commonly used ones.</p>
+<p style='font-style:normal;'>Before we dive into sets, we have to briefly cover some concepts we will cover in more detail in Chapters 2 and 3.</p>
+<h3 style='font-style:normal;' id='atom'>Sentences</h3>
+<p style='font-style:normal;'>There are plenty of statements whose truth value is known to us. For example: \(1=2\) is false, "pigs fly" is false, and the Jets will never win a super bowl is true (hehe). We call these kinds of statements <strong>atomic sentences</strong> if they can be expressed in our logical language. We call these sorts of sentences atomic as we can form more complicated ones from gluing together atomic sentences appropriately.</p>
+<p style='font-style:normal;'>Now that we have atomic sentences, we want to form more interesting sentences by gluing together atomic sentences. To do so, we use <strong>logical operands</strong>.</p>
+<a id='operands'></a><div class="Definition" title="Logical Operands">A \(n\)-ary <strong>logical operand</strong> is a map that assigns a true or false value to any collection of \(n\) true or false values. As a standard example, <strong>and</strong> is a binary (\(2\)-ary) operand as given \(A,B\), \(A\text{ and }B\) is true iff \(A\) is true and \(B\) is true. \(n\)-ary operands are said to be of order \(n\)</div>
+<p style='font-style:normal;'>There are many logical operands, but the following are the most commonly used ones.</p>
 <table class="w3-table w3-striped w3-bordered">
   <tbody><tr>
     <th>Order</th>
@@ -710,17 +710,17 @@
         <td>Outputs true if second input is true whenever the first is.</td>
       </tr>
 </tbody></table>
-<p>A <strong>sentence</strong> is a logical operand with inputs as other sentences (potentially atomic).</p>
-<h3 id='formula'>Logical Formulas</h3>
-<p>Sentences are nice in the sense that they have a fixed truth value, but what if we wanted to replace the atomic formulas in a sentence with variables? In this case, the sentence becomes a function on the variables that outputs true or false depending on them.</p>
-<p>For example: If I had the sentence "Pigs can fly or \(1=1\)", I can replace "Pigs can fly" with \(X\) and \(1=1\) with \(Y\) and create the formula "\(X\) or \(Y\)". This by itself no longer has a truth value, but once I input in the truth values of \(X\) and \(Y\), then it does. We call our modified sentence a <strong>sentence map</strong> for this reason and denote it as \(S(X,Y)\).</p>
-<p>In this example, we call \(X\) and \(Y\) <strong>free variables</strong>, as their values are required as input. Now suppose I want to write the following statement as a sentence map: "For all even numbers \(x\), \(x=2\)". In this case, despite \(x\) being a variable, it is clearly not free.</p>
-<p>To account for this, we add a new tool to our toolkit: <strong>quantifiers</strong>. Quantifiers take a sentence map with \(n\) free variables, and output a sentence map with \(n-1\) free variables. There are two quantifiers we will use in this course.</p>
+<p style='font-style:normal;'>A <strong>sentence</strong> is a logical operand with inputs as other sentences (potentially atomic).</p>
+<h3 style='font-style:normal;' id='formula'>Logical Formulas</h3>
+<p style='font-style:normal;'>Sentences are nice in the sense that they have a fixed truth value, but what if we wanted to replace the atomic formulas in a sentence with variables? In this case, the sentence becomes a function on the variables that outputs true or false depending on them.</p>
+<p style='font-style:normal;'>For example: If I had the sentence "Pigs can fly or \(1=1\)", I can replace "Pigs can fly" with \(X\) and \(1=1\) with \(Y\) and create the formula "\(X\) or \(Y\)". This by itself no longer has a truth value, but once I input in the truth values of \(X\) and \(Y\), then it does. We call our modified sentence a <strong>sentence map</strong> for this reason and denote it as \(S(X,Y)\).</p>
+<p style='font-style:normal;'>In this example, we call \(X\) and \(Y\) <strong>free variables</strong>, as their values are required as input. Now suppose I want to write the following statement as a sentence map: "For all even numbers \(x\), \(x=2\)". In this case, despite \(x\) being a variable, it is clearly not free.</p>
+<p style='font-style:normal;'>To account for this, we add a new tool to our toolkit: <strong>quantifiers</strong>. Quantifiers take a sentence map with \(n\) free variables, and output a sentence map with \(n-1\) free variables. There are two quantifiers we will use in this course.</p>
 <ul>
   <li>\(\forall\) (For all): Given a sentence map \(S(x_1,x_2,\ldots,x_k)\) and some \(1\leq i\leq k\), $$\forall x_i S(x_1,\ldots,x_k)$$is a sentence map with \(n-1\) free variables \(x_1,\ldots,x_{i-1},x_{i+1},\ldots,x_k\) that evaluates to true iff (given values for the free variables) for all \(x_i\), \(S(x_1,\ldots,x_k)\) is true.</li>
   <li>\(\exists\) (There exists): Given a sentence map \(S(x_1,x_2,\ldots,x_k)\) and some \(1\leq i\leq k\), $$\exists x_i S(x_1,\ldots,x_k)$$is a sentence map with \(n-1\) free variables \(x_1,\ldots,x_{i-1},x_{i+1},\ldots,x_k\) that evaluates to true iff (given values for the free variables) there exists some \(x_i\) such that \(S(x_1,\ldots,x_k)\) is true.</li>
 </ul>
-<p>Quantifiers permit us to create far more complicated sentence maps. We call sentence maps that permit quantifiers and such that all variables take on sets as values <strong>logical formulas</strong>. Here are some examples.</p>
+<p style='font-style:normal;'>Quantifiers permit us to create far more complicated sentence maps. We call sentence maps that permit quantifiers and such that all variables take on sets as values <strong>logical formulas</strong>. Here are some examples.</p>
 <a id='examplles'></a><ul>
   <li>\(A\in B\): This is a logical formula with two free variables, \(A\) and \(B\), that evaluates to true if \(A\) is a element of \(B\). We sometimes use just \(\in\) to refer to this logical formula.</li>
   <li>\(\forall X,\;X\in A\to X\in B\): This is a logical formula of order \(2\), like the previous example. When it is true, we say that \(A\) is a subset of \(B\), and we sometimes notate this logical formula as \(A\subset B\).</li>
@@ -731,8 +731,8 @@
 
 
 <h2 id='ax'><i>ZFC</i></h2>
-<p>ZFC, which stands for Zermelo Fraenkel with Choice, named after mathematicians Ernst Zermelo, Abraham Fraenkel, and Johnny Choice (I know, I know, bad joke), is an axiomatic system (i.e., a system of rules) that govern the behavior of sets. Due to a bit of luck, and the relative well-behavior of this system, it has become the most popular axiomatic system for set theory, but certainly not the only one. In this course, we'll only concern ourselves with ZFC.</p>
-<p>So what are the axioms (i.e., rules) of set theory? While some are almost trivially obvious, others are a bit more complicated. Below is a table of their logical formulas, but you aren't expected to understand most of them immediately.</p>
+<p style='font-style:normal;'>ZFC, which stands for Zermelo Fraenkel with Choice, named after mathematicians Ernst Zermelo, Abraham Fraenkel, and Johnny Choice (I know, I know, bad joke), is an axiomatic system (i.e., a system of rules) that govern the behavior of sets. Due to a bit of luck, and the relative well-behavior of this system, it has become the most popular axiomatic system for set theory, but certainly not the only one. In this course, we'll only concern ourselves with ZFC.</p>
+<p style='font-style:normal;'>So what are the axioms (i.e., rules) of set theory? While some are almost trivially obvious, others are a bit more complicated. Below is a table of their logical formulas, but you aren't expected to understand most of them immediately.</p>
 
 <table class="w3-table w3-striped w3-bordered">
   <tbody><tr>
@@ -776,7 +776,7 @@
       </tr>
 </tbody></table>
 
-<p>There is another axiom schema and another axiom that do appear in some presentations of ZFC, but are implied by the axioms above. They are presented in the table below:</p>
+<p style='font-style:normal;'>There is another axiom schema and another axiom that do appear in some presentations of ZFC, but are implied by the axioms above. They are presented in the table below:</p>
 
 <table class="w3-table w3-striped w3-bordered">
   <tbody><tr>
@@ -793,105 +793,105 @@
         </tr>
 </tbody></table>
 
-<h3 id='extensionality'>Axiom of Extensionality</h3>
+<h3 style='font-style:normal;' id='extensionality'>Axiom of Extensionality</h3>
 
-<p>The axiom of extensionality tells us that if \(X\subset Y\) and \(Y\subset X\), then \(X\) and \(Y\) are the same set. This tells us that sets are defined by their elements. As a silly example, most humans share over \(99\%\) of their DNA, but you wouldn't say that they are \(99\%\) the same. But for sets, their defining quality is their elements. Nothing else.</p>
-<h3 id='nullset'>Axiom of Null Set</h3>
-<p>The Axiom of the Null Set tells us that there exists a set with no elements. We denote this set by \(\varnothing\). Without this axiom, not only would a few of the other axioms be ill-defined, but we wouldn't be able to know whether there even is a set in our system!</p>
-<h3 id='replacement'>Axiom schema of replacement</h3>
-<p>This isn't an axiom, but rather an (infinite) collection of axioms. For each set map \(S^*\), we have an axiom that says that for any set \(X\), there exists a set \(Y\) whose elements are precisely those of \(X\) mapped by the set map \(S^*\).</p>
-<p>As a silly example, let \(H\) be the set map that sends all sets to \(\varnothing\). Then, the axiom of replacement would generate the set \(\{\varnothing\}\) from any non-null set \(X\).</p>
-<p>As we'll see in later chapters, there is no axiomatization of ZFC with finitely many statements, so this axiom schema (or something similar) is necessary.</p>
-<h3 id='specification'>"Axiom" schema of specification</h3>
-<p>As mentioned above, these aren't axioms in our presentation (proof below), but they are hugely important both historically and mathematically. In earlier axiomatic systems for set theory, the axiom schema of specification was replaced by a slightly more general Axiom schema of comprehension, which had the following sentence for each logical formula \(\phi\) of order \(1\):$$\exists Y,\;\lnot(\exists Z,\;Z\in Y\veebar\phi(Z))$$Do you see the difference? Both axiom schemas essentially say that given a logical formula, there exists a set that contains all sets that satisfy the formula. But axiom schema of specification contains an additional constraint: it contains all of the sets satisfying the formula that belong to a particular set. In fact, without this additional constraint, the axiom schema of comprehension leads to a direct contradiction</p>
+<p style='font-style:normal;'>The axiom of extensionality tells us that if \(X\subset Y\) and \(Y\subset X\), then \(X\) and \(Y\) are the same set. This tells us that sets are defined by their elements. As a silly example, most humans share over \(99\%\) of their DNA, but you wouldn't say that they are \(99\%\) the same. But for sets, their defining quality is their elements. Nothing else.</p>
+<h3 style='font-style:normal;' id='nullset'>Axiom of Null Set</h3>
+<p style='font-style:normal;'>The Axiom of the Null Set tells us that there exists a set with no elements. We denote this set by \(\varnothing\). Without this axiom, not only would a few of the other axioms be ill-defined, but we wouldn't be able to know whether there even is a set in our system!</p>
+<h3 style='font-style:normal;' id='replacement'>Axiom schema of replacement</h3>
+<p style='font-style:normal;'>This isn't an axiom, but rather an (infinite) collection of axioms. For each set map \(S^*\), we have an axiom that says that for any set \(X\), there exists a set \(Y\) whose elements are precisely those of \(X\) mapped by the set map \(S^*\).</p>
+<p style='font-style:normal;'>As a silly example, let \(H\) be the set map that sends all sets to \(\varnothing\). Then, the axiom of replacement would generate the set \(\{\varnothing\}\) from any non-null set \(X\).</p>
+<p style='font-style:normal;'>As we'll see in later chapters, there is no axiomatization of ZFC with finitely many statements, so this axiom schema (or something similar) is necessary.</p>
+<h3 style='font-style:normal;' id='specification'>"Axiom" schema of specification</h3>
+<p style='font-style:normal;'>As mentioned above, these aren't axioms in our presentation (proof below), but they are hugely important both historically and mathematically. In earlier axiomatic systems for set theory, the axiom schema of specification was replaced by a slightly more general Axiom schema of comprehension, which had the following sentence for each logical formula \(\phi\) of order \(1\):$$\exists Y,\;\lnot(\exists Z,\;Z\in Y\veebar\phi(Z))$$Do you see the difference? Both axiom schemas essentially say that given a logical formula, there exists a set that contains all sets that satisfy the formula. But axiom schema of specification contains an additional constraint: it contains all of the sets satisfying the formula that belong to a particular set. In fact, without this additional constraint, the axiom schema of comprehension leads to a direct contradiction</p>
   <a id='russel'></a><div class="Theorem" title="Russel's Paradox"> The axiom schema of comprehension leads to a contradiction.
   <div class="proof">
-  <p><a onclick="myCollapse('russ')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="russ-but"></i></a><br></p>
+  <p style='font-style:normal;'><a onclick="myCollapse('russ')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="russ-but"></i></a><br></p>
   <div id="russ" class="w3-container w3-hide">
   Consider the order \(1\) logical formula \(X\notin X\). By the axiom schema of comprehension, there exists a set \(Y\) that consists of all sets satisfying this formula. If \(Y\in Y\), then \(Y\) doesn't satisfy the formula, so \(Y\notin Y\). If \(Y\notin Y\), then \(Y\) satisfies the formula, so \(Y\in Y\). This is a contradiction.
   </div>
   </div>
-<p>Obviously, these sorts of contradictions are no bueno. Ideally, we'd like to ensure that our system doesn't have any. We call such a system consistent, but ensuring that ZFC is consistent is surprisingly hard.</p>
-<p>As a useful application, given sets \(A,B\), consider the order \(1\) logical formula \(\lnot X\in B\). The axiom schema of specification thus implies that there exists a set of all the elements in \(A\) that are not in \(B\). Denote this set by \(A\setminus B\).
+<p style='font-style:normal;'>Obviously, these sorts of contradictions are no bueno. Ideally, we'd like to ensure that our system doesn't have any. We call such a system consistent, but ensuring that ZFC is consistent is surprisingly hard.</p>
+<p style='font-style:normal;'>As a useful application, given sets \(A,B\), consider the order \(1\) logical formula \(\lnot X\in B\). The axiom schema of specification thus implies that there exists a set of all the elements in \(A\) that are not in \(B\). Denote this set by \(A\setminus B\).
 <a id='specproof'></a><div class="Theorem" title="Axiom schema of specification"> The axiom schema of specification follows from ZFC
 <div class="proof">
-<p><a onclick="myCollapse('specc')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="specc-but"></i></a><br></p>
+<p style='font-style:normal;'><a onclick="myCollapse('specc')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="specc-but"></i></a><br></p>
 <div id="specc" class="w3-container w3-hide">
-Given a logical formula \(\phi\) of order \(1\), consider the set \(X\). If there are no elements of \(X\) that satisfy \(\phi\), then the resulting set is \(\varnothing\) by extensionality and null set, and thus specification holds. Otherwise, let \(E\in X\) such that \(\phi(E)\) is true. Consider the logical formula \((\phi(A)\wedge B=A)\vee(\lnot\phi(A)\wedge B=E)\). This is obviously a set map on \(A,B\). Let \(Y\) be the set generated by replacement on the set map and \(X\). I claim that this set is the desired set. For any \(Z\in X\), if \(\phi(Z)\), then the set map sends \(Z\to Z\), so \(Z\in Y\). And, for any \(Z\in Y\), either \(\phi(Z)\) or \(Z=E\), but \(\phi(E)\), and thus we are done.
+Given a logical formula \(\phi\) of order \(1\), consider the set \(X\). If there are no elements of \(X\) that satisfy \(\phi\), then the resulting set is \(\varnothing\) by extensionality and null set, and thus specification holds. Otherwise, let \(E\in X\) such that \(\phi(E)\) is true. Consider the logical formula \((\phi(A)\wedge B=A)\vee(\lnot\phi(A)\wedge B=E)\). This is obviously a set map on \(A,B\). Let \(Y\) be the set generated by replacement on the set map and \(X\). <br>I claim that this set is the desired set. For any \(Z\in X\), if \(\phi(Z)\), then the set map sends \(Z\to Z\), so \(Z\in Y\). And, for any \(Z\in Y\), either \(\phi(Z)\) or \(Z=E\), but \(\phi(E)\), and thus we are done.
 </div>
 </div>
-<p>Given an order \(1\) logical formula \(\phi\) and a set \(X\), we often notate the set generated by the axiom schema of specification on \(\phi\) applied to \(X\) by \(\{x\in X\mid\phi(x)\}\).
-<h3 id='power'>Axiom of Power Set</h3>
-<p>This axiom gives us our main way of constructing larger sets from smaller ones. The axiom tells us that for any set \(X\), there is a set \(Y\) that contains all of the subsets of \(X\). By the axiom schema of specification, this axiom implies that there is a set that consists only of the subsets of \(X\). We call this set the <strong>power set</strong> of \(X\), and denote it by \(\cP(X)\).</p>
-<h3 id='pairing'>Axiom of Pairing</h3>
-<p>Like the axiom schema of specification, this axiom is implied by the presentation of ZFC above, by the following proof</p>
+<p style='font-style:normal;'>Given an order \(1\) logical formula \(\phi\) and a set \(X\), we often notate the set generated by the axiom schema of specification on \(\phi\) applied to \(X\) by \(\{x\in X\mid\phi(x)\}\).
+<h3 style='font-style:normal;' id='power'>Axiom of Power Set</h3>
+<p style='font-style:normal;'>This axiom gives us our main way of constructing larger sets from smaller ones. The axiom tells us that for any set \(X\), there is a set \(Y\) that contains all of the subsets of \(X\). By the axiom schema of specification, this axiom implies that there is a set that consists only of the subsets of \(X\). We call this set the <strong>power set</strong> of \(X\), and denote it by \(\cP(X)\).</p>
+<h3 style='font-style:normal;' id='pairing'>Axiom of Pairing</h3>
+<p style='font-style:normal;'>Like the axiom schema of specification, this axiom is implied by the presentation of ZFC above, by the following proof</p>
 <a id='pair'></a><div class="exercise" title="Proving pairing"> For any sets \(A\), \(B\), there exists a set \(\{A,B\}\).
 <div class="proof">
-<p><a onclick="myCollapse('pear')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="pear-but"></i></a><br></p>
+<p style='font-style:normal;'><a onclick="myCollapse('pear')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="pear-but"></i></a><br></p>
 <div id="pear" class="w3-container w3-hide">
 Given \(A,B\) as sets, we can consider the set map which sends \(\varnothing\to A\), \(\{\varnothing\}\to B\), and all other sets to themselves. Then, applying the Axiom schema of replacement to the set \(\cP(\cP(\varnothing))=\{\varnothing,\{\varnothing\}\}\), we get \(\{A,B\}\) as a set. Note that if \(A=B\), we have \(\{A\}\) as a set.
 </div>
 </div>
-<h3 id='union'>Axiom of Union</h3>
-<p>The axiom of union is almost the opposite of the axiom of the power set: it gives us a way of "unpacking" sets by constructing a set of the elements of the elements. It implies that for any set \(X\), there exists a set \(Y\) that has every element of \(X\) as a subset. By the axiom schema of specification, we can let \(Y\) be the set of elements of elements of \(X\). We call \(Y\) the union of \(X\), and denote it by \(\bigcup X\). We call this construction the union because of the following result:</p>
+<h3 style='font-style:normal;' id='union'>Axiom of Union</h3>
+<p style='font-style:normal;'>The axiom of union is almost the opposite of the axiom of the power set: it gives us a way of "unpacking" sets by constructing a set of the elements of the elements. It implies that for any set \(X\), there exists a set \(Y\) that has every element of \(X\) as a subset. By the axiom schema of specification, we can let \(Y\) be the set of elements of elements of \(X\). We call \(Y\) the union of \(X\), and denote it by \(\bigcup X\). We call this construction the union because of the following result:</p>
 <div class="exercise" title="Union of two sets"> Given sets \(A,B\), there exists a set \(A\cup B\) whose elements are those either in \(A\) or in \(B\) (or both).
 <div class="proof">
-<p><a onclick="myCollapse('unionx')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="unionx-but"></i></a><br></p>
+<p style='font-style:normal;'><a onclick="myCollapse('unionx')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="unionx-but"></i></a><br></p>
 <div id="unionx" class="w3-container w3-hide">
 By pairing, there exists a set \(\{A,B\}\). Observe that \(\bigcup\{A,B\}\) is the set containing the elements of \(A\) and the elements of \(B\), which is just \(A\cup B\). Thus, the axiom of union and pairing together gives us our traditional notion of union.
 </div>
 </div>
-<p>As an application of the result above, we can construct a special set map, which we call the <strong>successor map</strong>. It sends a set \(x\) to \(x\cup\{x\}\). This is well defined since pairing tells us that \(\{x\}\) exists and union gives us the rest.</p>
-<p>Another application is intersection. Given set \(X\), we can define \(\cap X\) to be the set containing those elements that are members of every single element of \(X\). Does \(\cap X\) always exist? The answer is yes!</p>
-<a id='intersection'></a><div class="Theorem" title="Intersection"> \(\cap X\) exists for any set \(X\)
+<p style='font-style:normal;'>As an application of the result above, we can construct a special set map, which we call the <strong>successor map</strong>. It sends a set \(x\) to \(x\cup\{x\}\). This is well defined since pairing tells us that \(\{x\}\) exists and union gives us the rest.</p>
+<p style='font-style:normal;'>Another application is intersection. Given set \(X\), we can define \(\cap X\) to be the set containing those elements that are members of every single element of \(X\). Does \(\cap X\) always exist? The answer is yes!</p>
+<a id='intersection'></a><div class="Theorem" title="Intersection"> \(\;\cap X\) exists for any set \(X\)
 <div class="proof">
-<p><a onclick="myCollapse('interg')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="interg-but"></i></a><br></p>
+<p style='font-style:normal;'><a onclick="myCollapse('interg')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="interg-but"></i></a><br></p>
 <div id="interg" class="w3-container w3-hide">
-Let \(Z=\bigcup X\). Let \(\psi\) be the set map \(\psi(A)=Z\setminus A\). Let \(R\) be the set generated by replacement using this set map on \(X\). I claim that \(Z\setminus\bigcup R=\cap X\). If there exists some \(A\in X\) such that \(Y\notin A\), then \(Y\in\psi(A)\), so \(Y\in\bigcup R\). If \(Y\in\bigcup R\), then \(Y\in\phi(A)\) for some \(A\in X\), so \(Y\notin A\). This completes the proof.
+Let \(Z=\bigcup X\). Let \(\psi\) be the set map \(\psi(A)=Z\setminus A\). Let \(R\) be the set generated by replacement using this set map on \(X\). <br>I claim that \(Z\setminus\bigcup R=\cap X\). If there exists some \(A\in X\) such that \(Y\notin A\), then \(Y\in\psi(A)\), so \(Y\in\bigcup R\). If \(Y\in\bigcup R\), then \(Y\in\phi(A)\) for some \(A\in X\), so \(Y\notin A\). This completes the proof.
 </div>
 </div>
-<p>Via the same <a href='#union'>trick</a> that we used for the axiom of union, we can define the intersection of two sets \(A\cap B\) as well. Now that we have all of the basic axioms down, we can start to build some interesting structures.</p>
-<div class="Theorem" title="Kuratowski"> Given sets \(A,B,C,D\), if \(\{\{A\},\{A,B\}\}=\{\{C\},\{C,D\}\}\), then \(A=C\) and \(B=D\).
+<p style='font-style:normal;'>Via the same <a href='#union'>trick</a> that we used for the axiom of union, we can define the intersection of two sets \(A\cap B\) as well. Now that we have all of the basic axioms down, we can start to build some interesting structures.</p>
+<div class="Theorem" title="Kuratowski"> Given sets \(A,B,C,D\), if $$\{\{A\},\{A,B\}\}=\{\{C\},\{C,D\}\}$$then \(A=C\) and \(B=D\).
 <div class="proof">
-<p><a onclick="myCollapse('kura')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="kura-but"></i></a><br></p>
+<p style='font-style:normal;'><a onclick="myCollapse('kura')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="kura-but"></i></a><br></p>
 <div id="kura" class="w3-container w3-hide">
-Suppose \(A\neq C\). Then, \(\{A\}\neq\{C\}\) and \(\{A\}\neq\{C,D\}\) by extensionality, so \(\{A\}\notin\{\{C\},\{C,D\}\}\), a contradiction. Suppose \(A=C\) and \(B\neq D\) (thus, we can assume that \(C\neq D\) since if \(A=B\) and \(C=D\), this condition wouldn't hold). Then \(\{A,B\}\neq\{C\}\) and \(\{A,B\}\neq\{C,D\}\) since \(\{A,B\}\setminus\{A\}=\{B\}\) or \(\varnothing\), neither of which is equal to \(\{C,D\}\setminus\{A\}=\{D\}\).
+Suppose \(A\neq C\). Then, \(\{A\}\neq\{C\}\) and \(\{A\}\neq\{C,D\}\) by extensionality, so \(\{A\}\notin\{\{C\},\{C,D\}\}\), a contradiction. <br>Suppose \(A=C\) and \(B\neq D\) (thus, we can assume that \(C\neq D\) since if \(A=B\) and \(C=D\), this condition wouldn't hold). Then \(\{A,B\}\neq\{C\}\) and \(\{A,B\}\neq\{C,D\}\) since \(\{A,B\}\setminus\{A\}=\{B\}\) or \(\varnothing\), neither of which is equal to \(\{C,D\}\setminus\{A\}=\{D\}\).
 </div>
 </div>
-<p>The result above is useful, since it gives us a structure on which equality requires equality of each of the components in order. Thus, we call \(\{\{A\},\{A,B\}\}\) the <strong>ordered pair</strong> of \(A,B\), and notate it as \((A,B)\) (Note: \((A,B)=(B,A)\) only if \(A=B\)).</p>
+<p style='font-style:normal;'>The result above is useful, since it gives us a structure on which equality requires equality of each of the components in order. Thus, we call \(\{\{A\},\{A,B\}\}\) the <strong>ordered pair</strong> of \(A,B\), and notate it as \((A,B)\) (Note: \((A,B)=(B,A)\) only if \(A=B\)).</p>
 <a id='cartesian'></a><div class="Theorem" title="Cartesian Product"> Given sets \(A,B\), there exists a set \(A\times B\), called the cartesian product of \(A\) and \(B\), whose elements are ordered pairs \((C,D)\) for all \(C\in A\), \(D\in B\).
 <div class="proof">
-<p><a onclick="myCollapse('carto')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="carto-but"></i></a><br></p>
+<p style='font-style:normal;'><a onclick="myCollapse('carto')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="carto-but"></i></a><br></p>
 <div id="carto" class="w3-container w3-hide">
 Note that for any \(C\in A\), \(D\in B\), \(\{C\},\{C,D\}\subset A\cup B\), so \(\{\{C\},\{C,D\}\}\subset\cP(A\cup B)\) and thus, $$\{\{C\},\{C,D\}\}\in\cP(\cP(A\cup B))$$By the axiom schema of specification, we are done.
 </div>
 </div>
-<p>Now for a quick definition dump. These definitions should be familiar.</p>
+<p style='font-style:normal;'>Now for a quick definition dump. These definitions should be familiar.</p>
 <a id='stuff'></a>
 <div class="Definition" title="Relation">A relation on sets \(A,B\) is a subset of \(A\times B\).</div>
 <div class="Definition" title="Function">A function \(f:A\to B\) is a relation on \(A,B\) such that for every \(x\in A\), there is exactly one \(y\in B\) such that \((x,y)\in f\). We write this as \(f(x)=y\)</div>
-<div class="Definition" title="Partial Order">A partial order \(<\) on \(A\) is a relation on \(A,A\) with the following properties (we write \((x,y)\in <\) as \(x<y\)) for all \(x,y,z\in A\):<ul><li>Reflexivity:\(\lnot x<x\)</li><li>Anti-symmetry:\(x<y\to\lnot y<x\)</li><li>Transitivity:\(x<y\wedge y<z\to x<z\).</li></ul></div>
-<div class="Definition" title="Order">A partial order < on \(A\) is a total order if it satisfies the following property:<ul><li>Trichotomy:\(\lnot x<y\wedge\lnot y<x\to x=y\)</li></ul></div>
+<div class="Definition" title="Partial Order">A partial order \(<\) on \(A\) is a relation on \(A,A\) with the following properties (we write \((x,y)\in <\) as \(x\lt y\) for all \(x,y,z\in A\):<ul><li>Reflexivity:\(\lnot x\lt x\)</li><li>Anti-symmetry:\(x\lt y\to\lnot y\lt x\)</li><li>Transitivity:\(x\lt y\wedge y\lt z\to x\lt z\).</li></ul></div>
+<div class="Definition" title="Order">A partial order < on \(A\) is a total order if it satisfies the following property:<ul><li>Trichotomy:\(\lnot (x\lt y \vee y\lt x)\to x=y\)</li></ul></div>
 <div class="Definition" title="Injection">A function \(f:A\to B\) is an injection iff for all \(x,y\in A\), \(f(x)=f(y)\to x=y\).</div>
 <div class="Definition" title="Surjection">A function \(f:A\to B\) is a surjection iff for all \(b\in B\), there exists \(a\in A\) such that \(f(a)=b\).</div>
 <div class="Definition" title="Bijection">A function \(f:A\to B\) is a bijection iff it is a surjection and injection.</div>
-<div class="Definition" title="Image">Given a function \(f:A\to B\), the image of \(f\), written as \(f(A)\), is the set \(\{b\in B\mid\exists a\in A,\;f(a)=b\}\). By definition, all injections are bijectons on the image. (Prove this if it isn't obvious). More generally, we write \(f(C)=\{b\in B\mid \exists c\in C,\; f(c)=b\}\) for any \(C\subset A\).</div>
+<div class="Definition" title="Image">Given a function \(f:A\to B\), the image of \(f\), written as \(f(A)\), is the set \(\{b\in B\mid\exists a\in A,\;f(a)=b\}\). By definition, all injections are bijectons on the image. (Prove this if it isn't obvious). More generally, we write for any \(C\subset A\):$$f(C)=\{b\in B\mid \exists c\in C,\; f(c)=b\}$$</div>
 <div class="Definition" title="Pre-image">Given a function \(f:A\to B\), and \(C\subset B\), the preimage of \(C\) is the set \(f^{-1}(C)=\{a\in A\mid f(a)\in C\}\).</div>
-<div class="Definition" title="Equivalence Relation">An equivalence relation on \(A\) is a relation \(\sim\) on \(A,A\) with the properties (we write \((a,b)\in\sim\) as \(a\sim b\)) for all \(a,b,c\in A\):<ul><li>Reflexivity:\(a\sim a\)</li><li>Symmetry:\(a\sim b\to b\sim a\)</li><li>Transitivity:\(a\sim b\wedge b\sim c\to a\sim c\)</li></ul></div>
+<div class="Definition" title="Equivalence Relation">An equivalence relation on \(A\) is a relation \(\sim\) on \(A,A\) with the properties (we write \((a,b)\in\sim\) as \(a\sim b\)) for all \(a,b,c\in A\):<ul><li>Reflexivity: \(a\sim a\)</li><li>Symmetry: \(a\sim b\to b\sim a\)</li><li>Transitivity: \(a\sim b\wedge b\sim c\to a\sim c\)</li></ul></div>
 
-<p>Given functions \(f:A\to B\) and \(g:B\to C\), we can construct a function \(g\circ f:A\to C\) as follows: for all \(x\in A\), \(g\circ f(x)=g(f(x))\). We call this <strong>function composition</strong></p>
+<p style='font-style:normal;'>Given functions \(f:A\to B\) and \(g:B\to C\), we can construct a function \(g\circ f:A\to C\) as follows: for all \(x\in A\), \(g\circ f(x)=g(f(x))\). We call this <strong>function composition</strong></p>
 <div class="exercise" title="Composition"> Prove that the output of function composition is indeed a function</div>
-<p>Now for some assorted function results</p>
+<p style='font-style:normal;'>Now for some assorted function results</p>
 <div class="Theorem" title="Partition of Equivalence Relation"> Given an equivalence relation \(\sim\) on \(A\), there exists a set \(B\) with non-empty disjoint elements such that \(a\sim b\) iff there exists \(C\in B\) with \(a,b\in C\). Vice versa, for any set \(B\) with non-empty disjoint elements, there exists an equivalence relation \(\sim\) on the set \(bigcup B\) such that \(a\sim b\) iff there exists \(C\in B\) with \(a,b\in C\).
 <div class="proof">
-<p><a onclick="myCollapse('eqp')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="eqp-but"></i></a><br></p>
+<p style='font-style:normal;'><a onclick="myCollapse('eqp')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="eqp-but"></i></a><br></p>
 <div id="eqp" class="w3-container w3-hide">
 Given the equivalence relation \(\sim\) on \(A\), let E be the set map \(a\mapsto\{b\in A\mid a\sim b\}\) and \(B\) the set created by replacement using \(E\) and \(A\). Note that for all \(a\in A\), \(a\in E(a)\) by reflexivity, so the elements of \(B\) are non-empty. If \(a\sim b\), then \(a\in E(b)\) and \(b\in E(a)\) by symmetry, so \(E(a)=E(b)\) by transitivity. And if \(c\in E(a), E(b)\), then \(a\sim c\wedge c\sim b\), so \(a\sim b\). This shows that the elements are disjoint and satisfy the property.<br>Given \(B\), a set of non-empty disjoint sets, let \(\sim\) be the relation \(a\sim b\) iff there exists \(C\in B\), \(a,b\in C\). This satisfies the property by definition, so all we need to show is that the relation is an equivalence relation. Let \(x,y,z\in\bigcup B\)<ul><li>Reflexivity: there exists \(C\in B\) such that \(x\in C\), so \(x\sim x\).</li><li>Symmetry: If \(x,y\in C\), then \(y,x\in C\)</li><li>Transitivity: if \(a,b\in C\) and \(b,c\in D\), \(C=D\) since the elements of \(B\) are disjoint, so \(a,b,c\in C\).</li></ul>
 </div>
 </div>
 <div class="Theorem" title="Relation Sets"> Given sets \(A,B\), there exists a set that contains all relations on \(A,B\).
 <div class="proof">
-<p><a onclick="myCollapse('funcsoot')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="funcsoot-but"></i></a><br></p>
+<p style='font-style:normal;'><a onclick="myCollapse('funcsoot')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="funcsoot-but"></i></a><br></p>
 <div id="funcsoot" class="w3-container w3-hide">
 Relations are just subsets of \(A\times B\), so the set in question is \(\cP(A\times B)\). By the axiom schema of specification, this also implies:
 <ul>
@@ -904,7 +904,7 @@ Relations are just subsets of \(A\times B\), so the set in question is \(\cP(A\t
 </div>
 <a id='lefty'></a><div class="Theorem" title="Injections are left invertible"> Given an injection \(f:A\to B\) with \(A\neq\varnothing\), there exists a function \(g:B\to A\) such that \(g\circ f:A\to A\) is the identity function \(id(x)=x\).
 <div class="proof">
-<p><a onclick="myCollapse('inpo')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="inpo-but"></i></a><br></p>
+<p style='font-style:normal;'><a onclick="myCollapse('inpo')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="inpo-but"></i></a><br></p>
 <div id="inpo" class="w3-container w3-hide">
 Note that for any \(x\in f(A)\), \(f^{-1}(\{x\})=\{a\}\) for some \(a\) due to injectivity. Let \(e\in A\) (since \(A\neq\varnothing\)). So, letting $$g(x)=\begin{cases}\bigcup f^{-1}(\{x\})&x\in f(A)\\e&\text{otherwise}\end{cases}$$gives us the desired result.
 </div>
@@ -912,75 +912,75 @@ Note that for any \(x\in f(A)\), \(f^{-1}(\{x\})=\{a\}\) for some \(a\) due to i
 
 <div class="Theorem" title="Left/Right inverses are Injection/Surjections"> If \(f:A\to B\) and \(g:B\to A\) are functions such that \(g\circ f:A\to A\) is the identity function, then \(f\) is injective and \(g\) is surjective.
 <div class="proof">
-<p><a onclick="myCollapse('popp')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="popp-but"></i></a><br></p>
+<p style='font-style:normal;'><a onclick="myCollapse('popp')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="popp-but"></i></a><br></p>
 <div id="popp" class="w3-container w3-hide">
 Note that for any \(a\in A\), \(g(f(a))=a\), so \(g\) is surjective. And for any \(a,b\in A\), if \(f(a)=f(b)\), then \(g(f(a))=g(f(b))\), so \(a=b\). We call such an \(f\) a <strong>left inverse</strong> and such a \(g\) a <strong>right inverse</strong>.
 </div>
 </div>
 <div class="Theorem" title="Bijections have inverses"> If \(f:A\to B\) is a bijection, then the left inverse, \(f_1:B\to A\), equals the right inverse \(f_2:B\to A\). Thus, we call it the inverse.
 <div class="proof">
-<p><a onclick="myCollapse('ingolo')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="ingolo-but"></i></a><br></p>
+<p style='font-style:normal;'><a onclick="myCollapse('ingolo')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="ingolo-but"></i></a><br></p>
 <div id="ingolo" class="w3-container w3-hide">
 For every \(x\in B\), we have $$f_1(x)=f_1(f(f_2(x)))=f_2(x)$$
 </div>
 </div>
 <div class="Theorem" title="Composing Injections/Surjections"> The composition of injections is injective. The composition of surjections is surjective.
 <div class="proof">
-<p><a onclick="myCollapse('compo')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="compo-but"></i></a><br></p>
+<p style='font-style:normal;'><a onclick="myCollapse('compo')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="compo-but"></i></a><br></p>
 <div id="compo" class="w3-container w3-hide">
 Given \(f:A\to B\), \(g:B\to C\) injective, and \(x,y\in A\), if \(g(f(x))=g(f(y))\), by injectivity of \(f\), \(g(x)=g(y)\), and by injectivity of \(g\), \(x=y\). If \(f,g\) are surjective, then given \(c\in C\), there exists \(b\in B\) such that \(g(b)=c\) by surjectivity, and there exists \(a\in A\) such that \(f(a)=b\) by surjectivity. Thus, \(g\circ f(a)=c\).
 </div>
 </div>
 <a id='csb'></a><div class="Theorem" title="Cantor-Schroeder-Bernstein"> If \(f:A\to B\) and \(g:B\to A\) are both injections, there exists a bijection \(h:A\to B\)
 <div class="proof">
-<p><a onclick="myCollapse('csbx')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="csbx-but"></i></a><br></p>
+<p style='font-style:normal;'><a onclick="myCollapse('csbx')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="csbx-but"></i></a><br></p>
 <div id="csbx" class="w3-container w3-hide">
-We are interested in the following set map: $$F(X)=\begin{cases}\varnothing&X\notin\bbN\\g(B\setminus f(A))&X=\varnothing\\g\circ f(G(k))&X=S(k)\end{cases}$$Let \(Y^*\) be the set generated by this set map applied to \(\bbN\) via replacement, and let \(Y=\bigcup Y^*\). \(Y\), in other words, is the set of those elements of \(A\) that are of the form \(g\circ f\circ\ldots\circ f\circ g(z)\), where \(z\in B\setminus f(A)\). Observe that \(Y\subset g(B)\) by construction. I claim that the following map \(h:A\to B\) is well-defined and is a bijection$$h(x)=\begin{cases}f(x)&x\notin Y\\g_*(x)&x\in Y$$where \(g_*\) is the left inverse of \(g\). The map is well-defined since \(Y\subset g(B)\). <ul><li>Injectivity: Suppose \(x,y\in A\) such that \(h(x)=h(y)\). Note that \(x\in Y\) iff \(f_*(h(x))\in Y\) for all \(x\in A\) (\(f_*\) is the left inverse of \(f\)), so either \(x,y\in Y\) or neither are.<br> If \(x,y\in Y\), then letting \(x^*,y^*\in B\) such that \(g(x^*)=x\), \(g(y^*)=y\), we have $$h(x)=g_*(g(x^*))=x^*=y^*=g_*(g(y^*))=h(y)$$, and so \(g(x^*)=g(y^*)\) and thus \(x=y\).<br>If \(x,y\notin Y\), then injectivity is given by the injectivity of \(f\).</li><li>Surjectivity: Let \(y\in B\). If \(g(y)\in Y\), then \(h(g(y))=g_*(g(y))=y\), showing surjectivity. If \(g(y)\notin Y\), then \(y\notin B\setminus f(A)\) since \(g(B\setminus f(A))\subset Y\). Thus, \(y\in f(A)\), and so there exists some \(x\) such that \(f(x)=y\). Thus, \(h(x)=y\).</li></ul>
+We are interested in the following set map: $$F(X)=\begin{cases}\varnothing&X\notin\bbN\\g(B\setminus f(A))&X=\varnothing\\g\circ f(G(k))&X=S(k)\end{cases}$$Let \(Y^*\) be the set generated by this set map applied to \(\bbN\) via replacement, and let \(Y=\bigcup Y^*\). \(Y\), in other words, is the set of those elements of \(A\) that are of the form \(g\circ f\circ\ldots\circ f\circ g(z)\), where \(z\in B\setminus f(A)\). Observe that \(Y\subset g(B)\) by construction. I claim that the following map \(h:A\to B\) is well-defined and is a bijection$$h(x)=\begin{cases}f(x)&x\notin Y\\g_*(x)&x\in Y\end{cases}$$where \(g_*\) is the left inverse of \(g\). The map is well-defined since \(Y\subset g(B)\). <ul><li>Injectivity: Suppose \(x,y\in A\) such that \(h(x)=h(y)\). Note that \(x\in Y\) iff \(f_*(h(x))\in Y\) for all \(x\in A\) (\(f_*\) is the left inverse of \(f\)), so either \(x,y\in Y\) or neither are.<br> If \(x,y\in Y\), then letting \(x^*,y^*\in B\) such that \(g(x^*)=x\), \(g(y^*)=y\), we have $$h(x)=g_*(g(x^*))=x^*=y^*=g_*(g(y^*))=h(y)$$, and so \(g(x^*)=g(y^*)\) and thus \(x=y\).<br>If \(x,y\notin Y\), then injectivity is given by the injectivity of \(f\).</li><li>Surjectivity: Let \(y\in B\). If \(g(y)\in Y\), then \(h(g(y))=g_*(g(y))=y\), showing surjectivity. If \(g(y)\notin Y\), then \(y\notin B\setminus f(A)\) since \(g(B\setminus f(A))\subset Y\). Thus, \(y\in f(A)\), and so there exists some \(x\) such that \(f(x)=y\). Thus, \(h(x)=y\).</li></ul>
 </div>
 </div>
 
 
-<h3 id='regularity'>Axiom of Regularity</h3>
-<p>In my mind, this is perhaps the most mysterious of the axioms. Unlike the others, which gives ways to construct new sets, this axiom restricts the sets we can work with. So why do we need this?</p>
-<p>This is a great question, but not one we are ready to answer yet, so we'll have to wait until the next few posts to understand its role better. The main implication of this axiom we'll use will be in proving the <a href='#wellprinciple'>well ordering principle</a>.</p>
-<h3 id='infinity'>Axiom of Infinity</h3>
-<p>The axiom of infinity perhaps has the most variations between textbooks, but the core concept is the same. We pick a nice set map (in our case, the successor map), and use it to generate an infinite set by applying it arbitrarily many times.</p>
-<p>Barring the axiom of infinity, none of the axioms give us a way to construct an infinite set. This is where the axiom of infinity comes in. So how does the axiom of infinity imply that we have an infinite set?</p>
+<h3 style='font-style:normal;' id='regularity'>Axiom of Regularity</h3>
+<p style='font-style:normal;'>In my mind, this is perhaps the most mysterious of the axioms. Unlike the others, which gives ways to construct new sets, this axiom restricts the sets we can work with. So why do we need this?</p>
+<p style='font-style:normal;'>This is a great question, but not one we are ready to answer yet, so we'll have to wait until the next few posts to understand its role better. The main implication of this axiom we'll use will be in proving the <a href='#wellprinciple'>well ordering principle</a>.</p>
+<h3 style='font-style:normal;' id='infinity'>Axiom of Infinity</h3>
+<p style='font-style:normal;'>The axiom of infinity perhaps has the most variations between textbooks, but the core concept is the same. We pick a nice set map (in our case, the successor map), and use it to generate an infinite set by applying it arbitrarily many times.</p>
+<p style='font-style:normal;'>Barring the axiom of infinity, none of the axioms give us a way to construct an infinite set. This is where the axiom of infinity comes in. So how does the axiom of infinity imply that we have an infinite set?</p>
 <a id='successor'></a><div class="exercise" title="The successor map is injective">
 <div class="proof">
-<p><a onclick="myCollapse('injee')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="injee-but"></i></a><br></p>
+<p style='font-style:normal;'><a onclick="myCollapse('injee')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="injee-but"></i></a><br></p>
 <div id="injee" class="w3-container w3-hide">
 Suppose set \(x,y\) are not equal and \(S(x)=S(y)\) for the sake of contradiction. Then, \(x\in y\cup\{y\}\). Since \(x\neq y\), \(x\notin\{y\}\), and thus, \(x\in y\). By a parallel argument, \(y\in x\). This is a contradiction by the axiom of regularity applied to the set \(\{x,y\}\).
 </div>
 </div>
 <a id='nullsuccessor'></a><div class="exercise" title="Null set is not an image of the successor map"> For any set \(X\), \(S(X)\neq\varnothing\)
 <div class="proof">
-<p><a onclick="myCollapse('nulleeeee')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="nulleeeee-but"></i></a><br></p>
+<p style='font-style:normal;'><a onclick="myCollapse('nulleeeee')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="nulleeeee-but"></i></a><br></p>
 <div id="nulleeeee" class="w3-container w3-hide">
 \(\{X\}\subset S(X)\), which implies \(X\in S(X)\).
 </div>
 </div>
-<p>Before we use these results, we need to construct our infinite set of choice. Let \(I\) be the set generated by the Axiom of Infinity. Let $$C=\{J\in\cP(I)\mid \varnothing\in J\wedge (\forall Z,\;Z\in J\to S(Z)\in J)\}$$Clearly, \(I\in C\), so it isn't empty. Moreover, since \(\varnothing\in J\) for all \(J\in C\), \(\varnothing\in\cap C\). This implies that \(\cap C\in C\). </p>
-<p>We give \(\cap C\) a special name: \(\bbN\), or the natural numbers. We'll now invoke the axiom of regularity in proving one of the most important properties of \(\bbN\).</p>
-<a id='wellprinciple'></a><div class="Theorem" title="Principle of Mathematical Induction"> Given any order \(1\) logical formula \(\phi\), if \(\phi(\varempty)\) and for all \(X\in\bbN\), \(\phi(X)\to\phi(S(X))\), then for all \(X\in\bbN\), \(\phi(X)\).
+<p style='font-style:normal;'>Before we use these results, we need to construct our infinite set of choice. Let \(I\) be the set generated by the Axiom of Infinity. Let $$C=\{J\in\cP(I)\mid \varnothing\in J\wedge (\forall Z,\;Z\in J\to S(Z)\in J)\}$$Clearly, \(I\in C\), so it isn't empty. Moreover, since \(\varnothing\in J\) for all \(J\in C\), \(\varnothing\in\cap C\). This implies that \(\cap C\in C\). </p>
+<p style='font-style:normal;'>We give \(\cap C\) a special name: \(\bbN\), or the natural numbers. We'll now invoke the axiom of regularity in proving one of the most important properties of \(\bbN\).</p>
+<a id='wellprinciple'></a><div class="Theorem" title="Principle of Mathematical Induction"> Given any order \(1\) logical formula \(\phi\), if \(\phi(\varnothing)\) and for all \(X\in\bbN\), \(\phi(X)\to\phi(S(X))\), then for all \(X\in\bbN\), \(\phi(X)\).
 <div class="proof">
-<p><a onclick="myCollapse('llew')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="llew-but"></i></a><br></p>
+<p style='font-style:normal;'><a onclick="myCollapse('llew')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="llew-but"></i></a><br></p>
 <div id="llew" class="w3-container w3-hide">
 Suppose there exists a formula \(\phi\) for which the theorem is not true. Let \(Y=\{x\in\bbN\mid \phi(X)\}\). Note that there exists some element \(Z\in \bbN\setminus Y\) such that \(Z\cap\bbN=\varnothing\) by regularity. Thus, \(Z\neq S(A)\) for any \(A\in X\setminus Y\) since \(A\in S(A)\). If there doesn't exist an element \(B\in\bbN\) such that \(S(B)=Z\), then \(\bbN\setminus\{Z\}\in C\) (\(C\) is defined as in the construction of \(\bbN\)), which is a contradiction. Thus, there exists some \(B\in\bbN\setminus(\bbN\setminus Y)\) such that \(S(B)=Z\). Thus, \(B\in Y\), so \(\phi(B)\) is true, and thus, \(\phi(Z)=\phi(S(B))\) is also true, a contradiction.
 </div>
 </div>
-<p>Intuitively, the principle of mathematical induction should tell you that all elements of \(\bbN\) are finite, although we don't know what it means yet for a set to be finite. To make some of the notation less clunky, we define \(0\) as \(\varnothing\), \(1\) as \(S(0)\), \(2\) as \(S(1)\), etc. Now, our goal is to order the natural numbers.</p>
-<p>Let \(<\) be the relation \(\{(x,y)\in\bbN\times\bbN\mid x\subsetneq y\}\). I claim that this relation is an order on \(\bbN\).</p>
+<p style='font-style:normal;'>Intuitively, the principle of mathematical induction should tell you that all elements of \(\bbN\) are finite, although we don't know what it means yet for a set to be finite. To make some of the notation less clunky, we define \(0\) as \(\varnothing\), \(1\) as \(S(0)\), \(2\) as \(S(1)\), etc. Now, our goal is to order the natural numbers.</p>
+<p style='font-style:normal;'>Let \(<\) be the relation \(\{(x,y)\in\bbN\times\bbN\mid x\subsetneq y\}\). I claim that this relation is an order on \(\bbN\).</p>
 <a id='trichotomy'></a><div class="Theorem" title="Trichotomy of the natural numbers"> For all \(n,m\in\bbN\), \(n\subset m\veebar m\subsetneq n\).
 <div class="proof">
-<p><a onclick="myCollapse('tich')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="tich-but"></i></a><br></p>
+<p style='font-style:normal;'><a onclick="myCollapse('tich')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="tich-but"></i></a><br></p>
 <div id="tich" class="w3-container w3-hide">
 Proof by the principle of mathematical induction. Let \(\phi\) be the logical formula \(\forall m\in\bbN,\;n\subset m\veebar m\subsetneq n\). Note that \(\varnothing\) is a subset of all sets, and no set is the proper subset of it, so \(\phi(\varnothing)\) holds. Assume \(\phi(n)\) holds for some \(n\in\bbN\). Let \(m\in\bbN\) such that \(S(n)\subset m\). In this case, it is obvious that \(\lnot m\subsetneq S(n)\). Now, let \(m\in\bbN\) such that \(S(n)\not\subset m\). If \(m=\varnothing\), the claim is obvious. Otherwise, by our argument in the proof of <a href='#wellprinciple'>the principle of mathematical induction</a>, there exists \(k\in\bbN\) such that \(m=S(k)\). Thus, \(n\cup\{n\}\subset k\cup\{k\}\). But, if \(k\in n\), then \(\{k\}\in\{n\}\), so \(\{n\}\not\subset\{k\}\) by regularity and \(\{n\}\not\subset k\), a contradiction. Thus, \(\{k\}\cap n=\varnothing\), so \(n\subset k\), so \(k\subsetneq n\), and thus \(m\subsetneq S(n)\) as desired.
 </div>
 </div>
 <a id='naturalorder'></a><div class="Theorem" title="Natural numbers are ordered"> \(<\) is an order on \(\bbN\).
 <div class="proof">
-<p><a onclick="myCollapse('orda')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="orda-but"></i></a><br></p>
+<p style='font-style:normal;'><a onclick="myCollapse('orda')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="orda-but"></i></a><br></p>
 <div id="orda" class="w3-container w3-hide">
 <ul>
   <li>Reflexivity: \(n\subsetneq n\) is false by regularity on \(\{n\}\).</li>
@@ -992,26 +992,26 @@ Proof by the principle of mathematical induction. Let \(\phi\) be the logical fo
 </div>
 <a id='wellprinciple2'></a><div class="Theorem" title="Well Ordering Principle"> Any non-empty subset \(X\subset\bbN\) has a minimal element.
 <div class="proof">
-<p><a onclick="myCollapse('llew2')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="llew2-but"></i></a><br></p>
+<p style='font-style:normal;'><a onclick="myCollapse('llew2')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="llew2-but"></i></a><br></p>
 <div id="llew2" class="w3-container w3-hide">
-Let \(X\) be a non-empty subset. By regularity, there exists an element \(n\in X\) such that \(m\notin n\) for all \(m\in X\). If there exists some \(m\in X\) such that \(m<n\), then \(m\subsetneq n\). If \(S(m)\subset n\), then \(m\in n\), a contradiction. So, \(n\subsetneq m\cup\{m\}\). Since \(m\notin n\), \(n\subsetneq m\), which is a contradiction. Thus, we are done.
+Let \(X\) be a non-empty subset. By regularity, there exists an element \(n\in X\) such that \(m\not\in n\) for all \(m\in X\). If there exists some \(m\in X\) such that \(m\lt n\), then \(m\subsetneq n\). If \(S(m)\subset n\), then \(m\in n\), a contradiction. So, \(n\subsetneq m\cup\{m\}\). Since \(m\notin n\), \(n\subsetneq m\), which is a contradiction. Thus, we are done.
 </div>
 </div>
-<p>Now that we've established the basic properties of the naturals, we can begin to talk about what it means for a set to be infinite. In fact, our definition will be very simple.</p>
+<p style='font-style:normal;'>Now that we've established the basic properties of the naturals, we can begin to talk about what it means for a set to be infinite. In fact, our definition will be very simple.</p>
 
-<a id='infiniteset'></a><div class="Definition" title="Infinite set">A set \(X\) is infinite if there exists an injection \(f:\bbN\to X\)</div>
+<a id='infiniteset'></a><div class="Definition" title="Infinite set"> A set \(X\) is infinite if there exists an injection \(f:\bbN\to X\)</div>
 
-<p>In particular, this implies that \(\bbN\) is infinite. This makes a lot of sense, since an injection is a bijection with its image, a subset of the codomain \(B\). However, there's an alternate definition of infinite set that is also commonly used.</p>
+<p style='font-style:normal;'>In particular, this implies that \(\bbN\) is infinite. This makes a lot of sense, since an injection is a bijection with its image, a subset of the codomain \(B\). However, there's an alternate definition of infinite set that is also commonly used.</p>
 
-<div class="Definition" title="Dedekind-Infinite set">A set \(X\) is Dedekind-infinite if there exists a a proper subset \(Y\subsetneq X\) and an injection \(X\to Y\)</div>
+<div class="Definition" title="Dedekind-Infinite set"> A set \(X\) is Dedekind-infinite if there exists a a proper subset \(Y\subsetneq X\) and an injection \(X\to Y\)</div>
 
-<p>For those who have seen <a href='https://en.wikipedia.org/wiki/Hilbert%27s_paradox_of_the_Grand_Hotel' target='_blank'>Hilbert's Hotel</a> before, this definition should make sense. Infinite sets have proper subsets that are also infinite. Right?</p>
-<p>Well, not exactly. In the axiomatic system ZF (without choice), there are sets that are Dedekind-infinite but not infinite. However, in ZFC, these notions are equivalent, which is proved <a href='https://math.stackexchange.com/questions/911370/how-to-prove-that-a-set-is-infinite-iff-it-is-dedekind-infinite' target='_blank'>here</a>.</p>
+<p style='font-style:normal;'>For those who have seen <a href='https://en.wikipedia.org/wiki/Hilbert%27s_paradox_of_the_Grand_Hotel' target='_blank'>Hilbert's Hotel</a> before, this definition should make sense. Infinite sets have proper subsets that are also infinite. Right?</p>
+<p style='font-style:normal;'>Well, not exactly. In the axiomatic system ZF (without choice), there are sets that are Dedekind-infinite but not infinite. However, in ZFC, these notions are equivalent, which is proved <a href='https://math.stackexchange.com/questions/911370/how-to-prove-that-a-set-is-infinite-iff-it-is-dedekind-infinite' target='_blank'>here</a>.</p>
 
-<p>Ideally, we'd want to ensure that none of the naturals (the elements of \(\bbN\)) should be infinite. To prove that, we prove a few theorems.</p>
+<p style='font-style:normal;'>Ideally, we'd want to ensure that none of the naturals (the elements of \(\bbN\)) should be infinite. To prove that, we prove a few theorems.</p>
 <div class="Theorem" title="Naturals do not biject"> Given two naturals \(n,m\in\bbN\), if there exists a bijection \(f:n\to m\), then \(n=m\).
 <div class="proof">
-<p><a onclick="myCollapse('bijj')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="bijj-but"></i></a><br></p>
+<p style='font-style:normal;'><a onclick="myCollapse('bijj')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="bijj-but"></i></a><br></p>
 <div id="bijj" class="w3-container w3-hide">
 Proof by Induction on \(n\). If \(n=\varnothing\), it's obvious to see that there is a function \(m\to n\) iff \(m=\varnothing\), which implies the desired result. For the induction, assume that the existence of a bijection \(f:n\to m\) implies \(n=m\) for all \(m\). Suppose there is a bijection \(f:S(n)\to k\). \(k\neq\varnothing\) as we argued earlier, so there exists some \(m\) such that \(S(m)=k\). Let \(i\in\bbN\) be the element such that \(f(i)=m\). If \(i\neq n\), consider the following function \(g:n\to m\):$$g(x)=\begin{cases}f(x)&x\neq i\\f(n)&\text{otherwise}\end{cases}$$I claim this is a bijection:<ul><li>Injectivity: If \(g(a)=g(b)\) and \(a,b\neq i\), then \(a=b\) by injectivity of \(f\). Note that \(f(n)\neq g(a)\) for all \(a\neq i\) by construction, so this shows injectivity.</li><li>Surjectivity: For \(y\in m\), if \(y=f(n)\), then \(y=g(i)\). Otherwise, there exists \(a\in n\) such that \(g(a)=y\) by surjectivity of \(f\).</li></ul>If \(i=n\), let \(g:n\to m\) be \(f\), which is bijective since \(f\) is bijective. In any case, we have a bijection \(n\to m\), which by the inductive hypothesis implies that \(n=m\), which implies \(S(n)=S(m)\) as desired.
 </div>
@@ -1019,22 +1019,22 @@ Proof by Induction on \(n\). If \(n=\varnothing\), it's obvious to see that ther
 
 <div class="Theorem" title="Natural numbers are finite"> For any \(n\in\bbN\), there doesn't exist a injection \(f:\bbN\to n\).
 <div class="proof">
-<p><a onclick="myCollapse('finito')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="finito-but"></i></a><br></p>
+<p style='font-style:normal;'><a onclick="myCollapse('finito')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="finito-but"></i></a><br></p>
 <div id="finito" class="w3-container w3-hide">
 Suppose there were. Then, there is an injection \(g:\bbN\to S(n)\), which is defined identically to \(f\). Composing \(g\) with the identity map \(n\to\bbN\) gives us an injection \(n\to S(n)\), and composing \(f\) with the identity map \(S(n)\to\bbN\) gives us an injection \(S(n)\to n\). Cantor-Schroeder-Bernstein implies that there is a bijection \(n\to S(n)\), a contradiction.
 </div>
 </div>
 
 
-<h3 id='choice'>Axiom of Choice</h3>
-<p>This is perhaps the most infamous of the axioms of ZFC (so infamous that it has its own letter in the name!), but seems rather innocent. All it says is that given any set \(X\), either it has the empty set as an element, or, there is a function from the set \(X\) to \(\bigcup X\) that sends each set to an element within the set.</p>
-<p>The idea is that this function is making a choice for each set: which element am I going to map to? And while this may not seem too consequential, think about the axiom this way. Suppose I had a set of pairs of socks, and I need a choice function to pick one sock from each pair. I could write a rule, like, "always pick the left sock". But if I have a collection of sets, but each set has its own unique structure, there isn't any general rule I can point to in choosing an element from every single set. For an infinitely sized set, you'd need an infinite set of choices.</p>
-<p>The reason that it is infamous is because it is the only axiom that implies the existence of an object, without actually constructing it. For more details about the history of the axiom and its importance, see <a href='https://en.wikipedia.org/wiki/Axiom_of_choice' target='_blank'>this</a>.</p>
-<p>As our first application of the Axiom of Choice (outside of Dedekind-infiniteness), we'll prove the counterpart to <a href='#lefty'>the left inverse theorem</a>.</p>
+<h3 style='font-style:normal;' id='choice'>Axiom of Choice</h3>
+<p style='font-style:normal;'>This is perhaps the most infamous of the axioms of ZFC (so infamous that it has its own letter in the name!), but seems rather innocent. All it says is that given any set \(X\), either it has the empty set as an element, or, there is a function from the set \(X\) to \(\bigcup X\) that sends each set to an element within the set.</p>
+<p style='font-style:normal;'>The idea is that this function is making a choice for each set: which element am I going to map to? And while this may not seem too consequential, think about the axiom this way. Suppose I had a set of pairs of socks, and I need a choice function to pick one sock from each pair. I could write a rule, like, "always pick the left sock". But if I have a collection of sets, but each set has its own unique structure, there isn't any general rule I can point to in choosing an element from every single set. For an infinitely sized set, you'd need an infinite set of choices.</p>
+<p style='font-style:normal;'>The reason that it is infamous is because it is the only axiom that implies the existence of an object, without actually constructing it. For more details about the history of the axiom and its importance, see <a href='https://en.wikipedia.org/wiki/Axiom_of_choice' target='_blank'>this</a>.</p>
+<p style='font-style:normal;'>As our first application of the Axiom of Choice (outside of Dedekind-infiniteness), we'll prove the counterpart to <a href='#lefty'>the left inverse theorem</a>.</p>
 
 <div class="Theorem" title="Surjections have a right inverse"> Given a surjective function \(g:B\to A\), there exists a function \(f:A\to B\) such that \(g\circ f=id\).
 <div class="proof">
-<p><a onclick="myCollapse('surjjjj')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="surjjjj-but"></i></a><br></p>
+<p style='font-style:normal;'><a onclick="myCollapse('surjjjj')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="surjjjj-but"></i></a><br></p>
 <div id="surjjjj" class="w3-container w3-hide">
   Consider the set map that sends \(a\to g^{-1}(\{a\})\) for each \(a\in A\) and everything else to \(\varnothing\). Applying replacement to \(A\) with this set map gives us a set of preimages of each element in \(A\). By surjectivity, this set doesn't contain the empty set, and so, by the axiom of choice, there exists a choice function \(f:A\to B\) such that for all \(a\), \(f(a)\in g^{-1}(a)\). Thus, \(g(f(a))=a\), proving the desired result.
 </div>
