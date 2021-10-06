@@ -868,16 +868,16 @@ Note that for any \(C\in A\), \(D\in B\), \(\{C\},\{C,D\}\subset A\cup B\), so \
 </div>
 <p style='font-style:normal;'>Now for a quick definition dump. These definitions should be familiar.</p>
 <a id='stuff'></a>
-<div class="Definition" title="Relation">A relation on sets \(A,B\) is a subset of \(A\times B\).</div>
-<div class="Definition" title="Function">A function \(f:A\to B\) is a relation on \(A,B\) such that for every \(x\in A\), there is exactly one \(y\in B\) such that \((x,y)\in f\). We write this as \(f(x)=y\)</div>
-<div class="Definition" title="Partial Order">A partial order \(<\) on \(A\) is a relation on \(A,A\) with the following properties (we write \((x,y)\in <\) as \(x\lt y\) for all \(x,y,z\in A\):<ul><li>Reflexivity:\(\lnot x\lt x\)</li><li>Anti-symmetry:\(x\lt y\to\lnot y\lt x\)</li><li>Transitivity:\(x\lt y\wedge y\lt z\to x\lt z\).</li></ul></div>
-<div class="Definition" title="Order">A partial order < on \(A\) is a total order if it satisfies the following property:<ul><li>Trichotomy:\(\lnot (x\lt y \vee y\lt x)\to x=y\)</li></ul></div>
-<div class="Definition" title="Injection">A function \(f:A\to B\) is an injection iff for all \(x,y\in A\), \(f(x)=f(y)\to x=y\).</div>
-<div class="Definition" title="Surjection">A function \(f:A\to B\) is a surjection iff for all \(b\in B\), there exists \(a\in A\) such that \(f(a)=b\).</div>
-<div class="Definition" title="Bijection">A function \(f:A\to B\) is a bijection iff it is a surjection and injection.</div>
-<div class="Definition" title="Image">Given a function \(f:A\to B\), the image of \(f\), written as \(f(A)\), is the set \(\{b\in B\mid\exists a\in A,\;f(a)=b\}\). By definition, all injections are bijectons on the image. (Prove this if it isn't obvious). More generally, we write for any \(C\subset A\):$$f(C)=\{b\in B\mid \exists c\in C,\; f(c)=b\}$$</div>
-<div class="Definition" title="Pre-image">Given a function \(f:A\to B\), and \(C\subset B\), the preimage of \(C\) is the set \(f^{-1}(C)=\{a\in A\mid f(a)\in C\}\).</div>
-<div class="Definition" title="Equivalence Relation">An equivalence relation on \(A\) is a relation \(\sim\) on \(A,A\) with the properties (we write \((a,b)\in\sim\) as \(a\sim b\)) for all \(a,b,c\in A\):<ul><li>Reflexivity: \(a\sim a\)</li><li>Symmetry: \(a\sim b\to b\sim a\)</li><li>Transitivity: \(a\sim b\wedge b\sim c\to a\sim c\)</li></ul></div>
+<div class="Definition" title="Relation"> A relation on sets \(A,B\) is a subset of \(A\times B\).</div>
+<div class="Definition" title="Function"> A function \(f:A\to B\) is a relation on \(A,B\) such that for every \(x\in A\), there is exactly one \(y\in B\) such that \((x,y)\in f\). We write this as \(f(x)=y\)</div>
+<div class="Definition" title="Partial Order"> A partial order \(<\) on \(A\) is a relation on \(A,A\) with the following properties (we write \((x,y)\in <\) as \(x\lt y\) for all \(x,y,z\in A\):<ul><li>Reflexivity:\(\lnot x\lt x\)</li><li>Anti-symmetry:\(x\lt y\to\lnot y\lt x\)</li><li>Transitivity:\(x\lt y\wedge y\lt z\to x\lt z\).</li></ul></div>
+<div class="Definition" title="Order"> A partial order < on \(A\) is a total order if it satisfies the following property:<ul><li>Trichotomy:\(\lnot (x\lt y \vee y\lt x)\to x=y\)</li></ul></div>
+<div class="Definition" title="Injection"> A function \(f:A\to B\) is an injection iff for all \(x,y\in A\), \(f(x)=f(y)\to x=y\).</div>
+<div class="Definition" title="Surjection"> A function \(f:A\to B\) is a surjection iff for all \(b\in B\), there exists \(a\in A\) such that \(f(a)=b\).</div>
+<div class="Definition" title="Bijection"> A function \(f:A\to B\) is a bijection iff it is a surjection and injection.</div>
+<div class="Definition" title="Image"> Given a function \(f:A\to B\), the image of \(f\), written as \(f(A)\), is the set \(\{b\in B\mid\exists a\in A,\;f(a)=b\}\). By definition, all injections are bijectons on the image. (Prove this if it isn't obvious). More generally, we write for any \(C\subset A\):$$f(C)=\{b\in B\mid \exists c\in C,\; f(c)=b\}$$</div>
+<div class="Definition" title="Pre-image"> Given a function \(f:A\to B\), and \(C\subset B\), the preimage of \(C\) is the set \(f^{-1}(C)=\{a\in A\mid f(a)\in C\}\).</div>
+<div class="Definition" title="Equivalence Relation"> An equivalence relation on \(A\) is a relation \(\sim\) on \(A,A\) with the properties (we write \((a,b)\in\sim\) as \(a\sim b\)) for all \(a,b,c\in A\):<ul><li>Reflexivity: \(a\sim a\)</li><li>Symmetry: \(a\sim b\to b\sim a\)</li><li>Transitivity: \(a\sim b\wedge b\sim c\to a\sim c\)</li></ul></div>
 
 <p style='font-style:normal;'>Given functions \(f:A\to B\) and \(g:B\to C\), we can construct a function \(g\circ f:A\to C\) as follows: for all \(x\in A\), \(g\circ f(x)=g(f(x))\). We call this <strong>function composition</strong></p>
 <div class="exercise" title="Composition"> Prove that the output of function composition is indeed a function</div>
