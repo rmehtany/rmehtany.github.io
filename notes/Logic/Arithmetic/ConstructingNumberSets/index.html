@@ -17,7 +17,6 @@
   <link rel="stylesheet" href="/public/css/syntax.css">
   <link rel="stylesheet" href="/public/css/hyde.css">
   <link rel="stylesheet" href="/public/css/mystyle.css">
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
   <link rel="stylesheet" href="/public/css/theorem.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="/public/css/w3.css">
@@ -616,8 +615,44 @@
   <ul id="markdown-toc">
 </ul>
 
+<p>In this post, we'll continue our work on sets, focusing on building important number sets and endowing them with arithmetic properties.</p>
+<h2 id='binary'>Binary Operations</h2>
+<div class="Definition" title="Binary Operation">A binary operation on a set \(A\) is a function \(A\times A\to A\)</div>
+<p>The main binary operations we'll be concerned with are addition, subtraction, multiplication, division. Since binary operations have two inputs, we can write them in infix notation. For example, \(+(a,b)\) can be written more cleanly as \(a+b\).</p>
+<p>For a binary operation \(\star\) on \(A\), what sorts of properties could \(\star\) have? Here are a few:</p>
 
-
+<table class="w3-table w3-striped w3-bordered">
+  <tbody><tr>
+    <th>Name</th>
+    <th>Formula</th>
+    <th>Description</th>
+  </tr>
+      <tr>
+        <td>Commutativity</td>
+        <td>\(\forall a,b,\;a\star b=b\star a\)</td>
+        <td>Swapping inputs doesn't change the output.</td>
+      </tr>
+      <tr>
+        <td>Associativity</td>
+        <td>\(\forall a,b,c,\;(a\star b)\star c=a\star(b\star c)\)</td>
+        <td>Order of evaluating operations doesn't change output.</td>
+      </tr>
+      <tr>
+        <td>Identity</td>
+        <td>\(\exists e\forall a,\;a\star e=e\star a=a\)</td>
+        <td>There exists an identity element.</td>
+      </tr>
+      <tr>
+        <td>Invertibility</td>
+        <td>\(\forall a\exists b,\;a\star b=b\star a=e\)</td>
+        <td>There is an inverse for all elements.</td>
+      </tr>
+      <tr>
+        <td>Distributivity</td>
+        <td>\(\forall a,b,c,\;a\star(b+c)=a\star b+a\star c\)</td>
+        <td>The operation distributes over addition.</td>
+      </tr>
+</tbody></table>
 
 </div>
 	<script src="https://utteranc.es/client.js"
