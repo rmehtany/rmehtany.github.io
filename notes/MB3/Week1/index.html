@@ -8,7 +8,7 @@
 
   <title>
 
-      Notes - Rushabh Mehta
+      Week 1 Notes
 
   </title>
 
@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="/public/css/hyde.css">
   <link rel="stylesheet" href="/public/css/mystyle.css">
   <link rel="stylesheet" href="/public/css/theorem.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="/public/css/w3.css">
   <link rel="stylesheet" href="/public/css/color.css">
   <link rel="stylesheet" href="/public/css/colorbox.css">
@@ -43,20 +44,20 @@
   <!-- MathJax local
   <script type="text/javascript" async src="/js/MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
   -->
-  <script src="/jquery.js"></script>
+  <script src="/js/jquery.min.js"></script>
   <!--
   <script type="text/javascript" src="/js/turn/turn.min.js"></script>
   -->
 
   <!-- colorbox -->
   <script src="/js/jquery.colorbox-min.js"></script>
-  <script>
-    $(document).ready(function(){
-			$(".cooking").colorbox({rel:'cooking'});
-  	  $(".coffee").colorbox({rel:'coffee'});
-    });
-  </script>
 
+
+  <!-- Add mermaid -->
+
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
 
   <!-- Icons -->
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/harvardicon.png">
@@ -319,10 +320,10 @@
     <button class="w3-button sidebar w3-text-white w3-hide-medium w3-hide-large w3-right" onclick="sidebar_close()">☰</button>
     <div class="sidebar-about">
       <div class="w3-text-white w3-center" style="font-size:20px;">
-        Rushabh Mehta
+         Rushabh Mehta
       </div>
 
-      <p class="lead" style="font-size:16px;font-style:italic;">A set is a Many that allows itself to be thought of as a One.<br> - Georg Cantor</p>
+      <p class="lead" style="font-size:16px;font-style:italic;">An equation means nothing to me unless it expresses a thought of god.<br> - Srinivasa Ramanujan</p>
 
     </div>
 
@@ -334,10 +335,11 @@
       <!--<a class="sidebar-nav-item" href="/coffee/">Coffee</a>-->
       <a class="sidebar-nav-item active" href="/notes/">Notes</a>
       <a class="sidebar-nav-item" href="/resources/">Resources</a>
-	 <a class="sidebar-nav-item" href="/contact/">Contact</a>
+	    <a class="sidebar-nav-item" href="/contact/">Contact</a>
       <!--<a class="sidebar-nav-item" href="/conjecture/">Conjectures</a>-->
     </nav>
   </div>
+
   <div class="w3-bottom">
     <p style="font-size:12px">© <script>document.write(new Date().getFullYear())</script> Rushabh Mehta</p>
   </div>
@@ -352,6 +354,19 @@
       <div style="display:none">
 <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-1-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mtext mathcolor=&quot;red&quot;>\ie</mtext></mrow><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mtext mathcolor=&quot;red&quot;>\cf</mtext></mrow></math>" role="presentation" style="font-size: 123%; position: relative;"><span id="MJXc-Node-1" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-2" class="mjx-mrow"><span id="MJXc-Node-3" class="mjx-texatom"><span id="MJXc-Node-4" class="mjx-mrow"><span id="MJXc-Node-5" class="mjx-mtext" style="color: red;"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.491em; padding-bottom: 0.599em;">\ie</span></span></span></span><span id="MJXc-Node-6" class="mjx-texatom"><span id="MJXc-Node-7" class="mjx-mrow"><span id="MJXc-Node-8" class="mjx-mtext" style="color: red;"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.491em; padding-bottom: 0.599em;">\cf</span></span></span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow class="MJX-TeXAtom-ORD"><mtext mathcolor="red">\ie</mtext></mrow><mrow class="MJX-TeXAtom-ORD"><mtext mathcolor="red">\cf</mtext></mrow></math></span></span><script type="math/tex" id="MathJax-Element-1">
 
+    \newcommand{\norm}[1]{\\|#1\\|}
+    \newcommand{\rank}{\text{rank}}
+    \newcommand{\tr}{\text{tr}}
+    \newcommand{\mor}{\text{Mor}}
+    \newcommand{\hom}{\text{Hom}}
+    \newcommand{\id}{\text{id}}
+    \newcommand{\obj}{\text{obj}}
+    \newcommand{\pr}{\text{pr}}
+    \newcommand{\ker}{\text{ker}}
+    \newcommand{\coker}{\text{coker}}
+    \newcommand{\im}{\text{im}}
+    \newcommand{\vol}{\text{vol}}
+    \newcommand{\disc}{\text{disc}}
 
     \newcommand{\bbA}{\mathbb A}
     \newcommand{\bbB}{\mathbb B}
@@ -409,33 +424,33 @@
     \newcommand{\cZ}{\mathcal Z}
 
 
-    \newcommand{\rmA}{\mathrm A}
-    \newcommand{\rmB}{\mathrm B}
-    \newcommand{\rmC}{\mathrm C}
-    \newcommand{\rmD}{\mathrm D}
-    \newcommand{\rmE}{\mathrm E}
-    \newcommand{\rmF}{\mathrm F}
-    \newcommand{\rmG}{\mathrm G}
-    \newcommand{\rmH}{\mathrm H}
-    \newcommand{\rmI}{\mathrm I}
-    \newcommand{\rmJ}{\mathrm J}
-    \newcommand{\rmK}{\mathrm K}
-    \newcommand{\rmL}{\mathrm L}
-    \newcommand{\rmM}{\mathrm M}
-    \newcommand{\rmN}{\mathrm N}
-    \newcommand{\rmO}{\mathrm O}
-    \newcommand{\rmP}{\mathrm P}
-    \newcommand{\rmQ}{\mathrm Q}
-    \newcommand{\rmR}{\mathrm R}
-    \newcommand{\rmS}{\mathrm S}
-    \newcommand{\rmT}{\mathrm T}
-    \newcommand{\rmU}{\mathrm U}
-    \newcommand{\rmV}{\mathrm V}
-    \newcommand{\rmW}{\mathrm W}
-    \newcommand{\rmX}{\mathrm X}
-    \newcommand{\rmY}{\mathrm Y}
-    \newcommand{\rmZ}{\mathrm Z}
 
+    \newcommand{\rmA}{\mathfrak A}
+    \newcommand{\rmB}{\mathfrak B}
+    \newcommand{\rmC}{\mathfrak C}
+    \newcommand{\rmD}{\mathfrak D}
+    \newcommand{\rmE}{\mathfrak E}
+    \newcommand{\rmF}{\mathfrak F}
+    \newcommand{\rmG}{\mathfrak G}
+    \newcommand{\rmH}{\mathfrak H}
+    \newcommand{\rmI}{\mathfrak I}
+    \newcommand{\rmJ}{\mathfrak J}
+    \newcommand{\rmK}{\mathfrak K}
+    \newcommand{\rmL}{\mathfrak L}
+    \newcommand{\rmM}{\mathfrak M}
+    \newcommand{\rmN}{\mathfrak N}
+    \newcommand{\rmO}{\mathfrak O}
+    \newcommand{\rmP}{\mathfrak P}
+    \newcommand{\rmQ}{\mathfrak Q}
+    \newcommand{\rmR}{\mathfrak R}
+    \newcommand{\rmS}{\mathfrak S}
+    \newcommand{\rmT}{\mathfrak T}
+    \newcommand{\rmU}{\mathfrak U}
+    \newcommand{\rmV}{\mathfrak V}
+    \newcommand{\rmW}{\mathfrak W}
+    \newcommand{\rmX}{\mathfrak X}
+    \newcommand{\rmY}{\mathfrak Y}
+    \newcommand{\rmZ}{\mathfrak Z}
 
 
 
@@ -507,7 +522,23 @@
     \newcommand{\Bigglcorner}[1]{\Biggl\llcorner #1 \Biggr\lrcorner}
 
 
+    \newcommand{\Rnn}{\R_{\ge 0}}
 
+
+    \DeclareMathOperator{\Id}{Id}
+    \DeclareMathOperator{\cone}{cone}
+
+    \DeclareMathOperator{\Tr}{Tr}
+
+    \DeclareMathOperator{\min}{min}
+    \DeclareMathOperator{\max}{max}
+    \DeclareMathOperator{\argmax}{arg\,max}
+    \DeclareMathOperator{\argmin}{arg\,min}
+
+    \DeclareMathOperator{\E}{\mathbb E}
+    \DeclareMathOperator{\pE}{\tilde{\mathbb E}}
+    \DeclareMathOperator{\Pr}{\mathbb P}
+    \DeclareMathOperator{\Span}{Span}
 
     \DeclareMathOperator{\Det}{\textbf{Det}}
     \DeclareMathOperator{\Perm}{\textbf{Perm}}
@@ -516,20 +547,21 @@
     \DeclareMathOperator{\Gal}{\textbf{Gal}}
     \DeclareMathOperator{\Aut}{\textbf{Aut}}
 
-
     \notag
 </script>
 </div>
 <div style="display:none">
 <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-2-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; />" role="presentation" style="font-size: 123%; position: relative;"><span id="MJXc-Node-9" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-10" class="mjx-mrow"></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"></math></span></span><script type="math/tex" id="MathJax-Element-2">
+  \newcommand{\sleq}{\ensuremath{\preceq}}
 
-  \newcommand{\1}{\ensuremath{\mathrm{1}}}
   \notag
 </script>
 </div>
 <div style="display:none">
 <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-3-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; />" role="presentation" style="font-size: 123%; position: relative;"><span id="MJXc-Node-11" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-12" class="mjx-mrow"></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"></math></span></span><script type="math/tex" id="MathJax-Element-3">
-
+  \newcommand{\transpose}[1]{\ensuremath{#1{}^{\mkern-2mu\intercal}}}
+  \newcommand{\dyad}[1]{\ensuremath{#1#1{}^{\mkern-2mu\intercal}}}
+  \newcommand{\nchoose}[1]{\ensuremath}
   \newcommand{\generated}[1]{\ensuremath{\langle #1 \rangle}}
   \notag
 </script>
@@ -537,90 +569,148 @@
 <div style="display:none">
 <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-4-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><merror><mtext>\newcommand{\eqdef}{\mathbin{\stackrel{\rm&amp;#xA0;def}{=}}}&amp;#xA0;&amp;#xA0;\newcommand{\R}&amp;#xA0;%&amp;#xA0;real&amp;#xA0;numbers&amp;#xA0;&amp;#xA0;\newcommand{\N}}&amp;#xA0;%&amp;#xA0;natural&amp;#xA0;numbers&amp;#xA0;&amp;#xA0;\newcommand{\Z}&amp;#xA0;%&amp;#xA0;integers&amp;#xA0;&amp;#xA0;\newcommand{\F}&amp;#xA0;%&amp;#xA0;a&amp;#xA0;field&amp;#xA0;&amp;#xA0;\newcommand{\Q}&amp;#xA0;%&amp;#xA0;the&amp;#xA0;rationals&amp;#xA0;&amp;#xA0;\newcommand{\C}{\mathbb{C}}&amp;#xA0;%&amp;#xA0;the&amp;#xA0;complexes&amp;#xA0;&amp;#xA0;\newcommand{\poly}}&amp;#xA0;&amp;#xA0;\newcommand{\polylog}}&amp;#xA0;&amp;#xA0;\newcommand{\loglog}}}&amp;#xA0;&amp;#xA0;\newcommand{\zo}{\{0,1\}}&amp;#xA0;&amp;#xA0;\newcommand{\suchthat}&amp;#xA0;&amp;#xA0;\newcommand{\pr}[1]{\Pr\left[#1\right]}&amp;#xA0;&amp;#xA0;\newcommand{\deffont}{\em}&amp;#xA0;&amp;#xA0;\newcommand{\getsr}{\mathbin{\stackrel{\mbox{\tiny&amp;#xA0;R}}{\gets}}}&amp;#xA0;&amp;#xA0;\newcommand{\Exp}{\mathop{\mathrm&amp;#xA0;E}\displaylimits}&amp;#xA0;%&amp;#xA0;expectation&amp;#xA0;&amp;#xA0;\newcommand{\Var}{\mathop{\mathrm&amp;#xA0;Var}\displaylimits}&amp;#xA0;%&amp;#xA0;variance&amp;#xA0;&amp;#xA0;\newcommand{\xor}{\oplus}&amp;#xA0;&amp;#xA0;\newcommand{\GF}{\mathrm{GF}}&amp;#xA0;&amp;#xA0;\newcommand{\eps}{\varepsilon}&amp;#xA0;&amp;#xA0;\notag</mtext></merror></math>" role="presentation" style="font-size: 123%; position: relative;"><span id="MJXc-Node-13" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-14" class="mjx-mrow"><span class="mjx-noError" style="vertical-align: -12.15em;">\newcommand{\eqdef}{\mathbin{\stackrel{\rm&nbsp;def}{=}}}<br>&nbsp;&nbsp;\newcommand{\R}&nbsp;%&nbsp;real&nbsp;numbers<br>&nbsp;&nbsp;\newcommand{\N}}&nbsp;%&nbsp;natural&nbsp;numbers<br>&nbsp;&nbsp;\newcommand{\Z}&nbsp;%&nbsp;integers<br>&nbsp;&nbsp;\newcommand{\F}&nbsp;%&nbsp;a&nbsp;field<br>&nbsp;&nbsp;\newcommand{\Q}&nbsp;%&nbsp;the&nbsp;rationals<br>&nbsp;&nbsp;\newcommand{\C}{\mathbb{C}}&nbsp;%&nbsp;the&nbsp;complexes<br>&nbsp;&nbsp;\newcommand{\poly}}<br>&nbsp;&nbsp;\newcommand{\polylog}}<br>&nbsp;&nbsp;\newcommand{\loglog}}}<br>&nbsp;&nbsp;\newcommand{\zo}{\{0,1\}}<br>&nbsp;&nbsp;\newcommand{\suchthat}<br>&nbsp;&nbsp;\newcommand{\pr}[1]{\Pr\left[#1\right]}<br>&nbsp;&nbsp;\newcommand{\deffont}{\em}<br>&nbsp;&nbsp;\newcommand{\getsr}{\mathbin{\stackrel{\mbox{\tiny&nbsp;R}}{\gets}}}<br>&nbsp;&nbsp;\newcommand{\Exp}{\mathop{\mathrm&nbsp;E}\displaylimits}&nbsp;%&nbsp;expectation<br>&nbsp;&nbsp;\newcommand{\Var}{\mathop{\mathrm&nbsp;Var}\displaylimits}&nbsp;%&nbsp;variance<br>&nbsp;&nbsp;\newcommand{\xor}{\oplus}<br>&nbsp;&nbsp;\newcommand{\GF}{\mathrm{GF}}<br>&nbsp;&nbsp;\newcommand{\eps}{\varepsilon}<br>&nbsp;&nbsp;\notag</span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><merror><mtext>\newcommand{\eqdef}{\mathbin{\stackrel{\rm&nbsp;def}{=}}}&nbsp;&nbsp;\newcommand{\R}&nbsp;%&nbsp;real&nbsp;numbers&nbsp;&nbsp;\newcommand{\N}}&nbsp;%&nbsp;natural&nbsp;numbers&nbsp;&nbsp;\newcommand{\Z}&nbsp;%&nbsp;integers&nbsp;&nbsp;\newcommand{\F}&nbsp;%&nbsp;a&nbsp;field&nbsp;&nbsp;\newcommand{\Q}&nbsp;%&nbsp;the&nbsp;rationals&nbsp;&nbsp;\newcommand{\C}{\mathbb{C}}&nbsp;%&nbsp;the&nbsp;complexes&nbsp;&nbsp;\newcommand{\poly}}&nbsp;&nbsp;\newcommand{\polylog}}&nbsp;&nbsp;\newcommand{\loglog}}}&nbsp;&nbsp;\newcommand{\zo}{\{0,1\}}&nbsp;&nbsp;\newcommand{\suchthat}&nbsp;&nbsp;\newcommand{\pr}[1]{\Pr\left[#1\right]}&nbsp;&nbsp;\newcommand{\deffont}{\em}&nbsp;&nbsp;\newcommand{\getsr}{\mathbin{\stackrel{\mbox{\tiny&nbsp;R}}{\gets}}}&nbsp;&nbsp;\newcommand{\Exp}{\mathop{\mathrm&nbsp;E}\displaylimits}&nbsp;%&nbsp;expectation&nbsp;&nbsp;\newcommand{\Var}{\mathop{\mathrm&nbsp;Var}\displaylimits}&nbsp;%&nbsp;variance&nbsp;&nbsp;\newcommand{\xor}{\oplus}&nbsp;&nbsp;\newcommand{\GF}{\mathrm{GF}}&nbsp;&nbsp;\newcommand{\eps}{\varepsilon}&nbsp;&nbsp;\notag</mtext></merror></math></span></span><script type="math/tex" id="MathJax-Element-4">
 
-  \newcommand{\eps}{\varepsilon}
+  \newcommand{\C}{\mathbb{C}} % the complexes
+
+  \newcommand{\pr}[1]{\Pr\left[#1\right]}
+
   \notag
 </script>
 </div>
 <div style="display:none">
 <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-5-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; />" role="presentation" style="font-size: 123%; position: relative;"><span id="MJXc-Node-15" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-16" class="mjx-mrow"></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"></math></span></span><script type="math/tex" id="MathJax-Element-5">
 
-  \newcommand{\PCP}{\class{PCP}}
-  \newcommand{\kMIP}[1]{\class{#1\mbox{-}MIP}}
-  \newcommand{\MIP}{\class{MIP}}
 </script>
 </div>
 <div style="display:none">
 <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-6-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mtext mathcolor=&quot;red&quot;>\no</mtext></mrow></math>" role="presentation" style="font-size: 123%; position: relative;"><span id="MJXc-Node-17" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-18" class="mjx-mrow"><span id="MJXc-Node-19" class="mjx-texatom"><span id="MJXc-Node-20" class="mjx-mrow"><span id="MJXc-Node-21" class="mjx-mtext" style="color: red;"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.491em; padding-bottom: 0.599em;">\no</span></span></span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow class="MJX-TeXAtom-ORD"><mtext mathcolor="red">\no</mtext></mrow></math></span></span><script type="math/tex" id="MathJax-Element-6">
   \newcommand{\textprob}[1]{\text{#1}}
   \newcommand{\mathprob}[1]{\textbf{#1}}
+  \newcommand{\Satisfiability}{\textprob{Satisfiability}}
+  \newcommand{\Mor}{\textprob{Mor}}
+  \newcommand{\Hom}{\textprob{Hom}}
+  \newcommand{\cok}{\textprob{cok}}
+  \newcommand{\ker}{\textprob{ker}}
+  \newcommand{\im}{\textprob{im}}
+  \newcommand{\coim}{\textprob{coim}}
+  \newcommand{\id}{\textprob{id}}
 
-
-  \newcommand{\yes}
-  \newcommand{\no}
 </script>
 </div>
 
 
-      <h1 class="post-title" style='color:#019999;'>Notes</h1>
-
-<p> Here are some notes I've taken for subjects I've been interested in. Please feel free to contact me if you find errors! </p>
-
-
-<h2>Categories</h2>
+	    <div style="float:right"><a href="../Week2/"><bf>Next  |</bf></a></div>
+<div><a href="../"><bf>Back to MB3</bf></a></div>
 
 
-
-	<a class="title" href="AlgebraicGeometry/">Algebraic Geometry</a> <a onclick="myCollapse('Algebraic Geometry')"><i class="fa fa-chevron-circle-down fa-1" aria-hidden="true" id="Algebraic Geometry-but"></i></a>
-	<div id="Algebraic Geometry" class="w3-container w3-hide">
-  	<ul>
+<div class="post">
+  <h1 class="post-title">Week 1 Notes</h1>
 
 
-
-	        	<li><a href="AlgebraicGeometry/Chapter1-CategoryTheory/">Category Theory</a>
-
-						</li>
-      	    <li><a href="AlgebraicGeometry/Chapter2-Sheaves/">Sheaves</a>
-
-						</li>
+  <div class="w3-white w3-round-xlarge w3-tiny">
+    <div class="w3-container w3-blue w3-round-xlarge" style="width:100%">100%</div>
+  </div>
+  <br>
 
 
-	  </ul>
-	</div>
-	<br>
-		<a class="title" href="FourierSeries/">Fourier Series and Orthogonal Polynomials</a> <a onclick="myCollapse('FourierSeries')"><i class="fa fa-chevron-circle-down fa-1" aria-hidden="true" id="FourierSeries-but"></i></a>
-	<div id="FourierSeries" class="w3-container w3-hide">
-  	<ul>
+  <ul id="markdown-toc">
+    <li><a href='#dimensionalanalysis'>Dimensional Analysis</a><ul><li><a href='#quizdim'>Quiz</a></li></ul></li>
+    <li><a href='#pythagorean'>Pythagorean Triples</a></li>
+    <li><a href='#permutations'>Permutations and Combinations</a></li>
+</ul>
+
+<h2 id='dimensionalanalysis'>Dimensional Analysis</h2>
+<p>Our first topic for this class will be dimensional analysis. But what is dimensional analysis?</p>
+<p>Dimensional analysis is the study of units (for example, kilogram, meter, celsius) and the tracking of these units as we do calculations.</p>
+<p>As an example, we know that \(1\text{ inch }=2.54\text{ cm}\). So, if we want to convert \(6\) inches to centimeters, we can write the following: $$6\text{ in}\cdot\frac{2.54\text{ cm}}{1\text{ in}}=15.24\text{ cm}$$The idea here is to multiply by <strong>unit fractions</strong>, which are fractions that have value \(1\), since multiplying by \(1\) doesn't change the value.</p>
+<p>Similarly, if I wanted to convert \(24\) centimeters into inches, I could apply the same idea, with the equation $$24\text{ cm}\cdot\frac{1\text{ in}}{2.54\text{ cm}}\sim9.45\text{ in}$$The golden rule is this: if I want to cancel out a unit that is in the numerator, I need to multiply by a fraction with the unit in the denominator. If I want to cancel out a unit in the denominator, I need to multiply by a fraction in the numerator. Remembering this golden rule should make dimensional analysis pretty simple.</p>
+<h3 id='quizdim'>Quiz</h3>
+For the following problems, use the following table:
+<table class="w3-table w3-striped w3-bordered">
+  <tbody>
+      <tr><td>\(1\text{ mile}=5280\text{ ft}\)</td></tr>
+      <tr><td>\(1\text{ in}=2.54\text{ cm}\)</td></tr>
+      <tr><td>\(3\text{ feet}=1\text{ yard}\)</td></tr>
+      <tr><td>\(0.454\text{ kg}=1\text{ lb}\)</td></tr>
+      <tr><td>\(946\text{ ml}=1\text{ qt}\)</td></tr>
+      <tr><td>\(4\text{ qt}=1\text{ g}\)</td></tr>
+      <tr><td>\(12\text{ in}=1\text{ ft}\)</td></tr>
+      <tr><td>\(1\text{ min}=60\text{ sec}\)</td></tr>
+      <tr><td>\(1\text{ hr}=60\text{ min}\)</td></tr>
+      <tr><td>\(1\text{ day}=24\text{ hr}\)</td></tr>
+</tbody></table>
+
+<div class="exercise" title=""> Convert \(5400\) inches to miles</div>
+<div class="exercise" title=""> Convert \(16\) days to seconds</div>
+<div class="exercise" title=""> Convert \(54\) yards to cm</div>
+<div class="exercise" title=""> Convert \(36\) cm/sec to miles/hr (or mph)</div>
+<div class="exercise" title=""> Convert \(0.109\) kg/mL to lbs/g</div>
+<div class="exercise" title=""> Convert \(19\) inches to ft</div>
+<div class="exercise" title=""> Convert \(0.422\) kg/cm to lbs/ft</div>
+<div class="exercise" title=""> Convert \(32\) ft/sec to yards/min</div>
+
+<h2 id='area'>Circumference and area of the circle</h2>
+<p>The circle is one of the most fundamental geoemtrical objects we know, so finding the area and circumference of it is useful.</p>
+<p>How do we find the circumference? The circumference formula tells us that a circle with radius \(r\) has circumference $$C=2\pi\cdot r$$In fact, \(\pi\) is defined as \(\frac C{2r}\). But this formula only works if \(C\) is proportional to \(r\). For example, if my circle's radius doubles, does the circumference also double?</p>
+<p>The answer is yes! To see why, remember that polygons with a lot of sides look very similar to circles.</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/diagg1.png"><img src="/public/diagg1.png" width="100%"></a></p>
+<p>And when we double the side length of a regular polygon, the perimeter doubles too! And the circumference of the circle is very similar to the perimeter of the polygon with many sides.</p>
+<p>So why is the area of the circle \(\pi r^2\)? Here's a cute little gif that shows why.</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/PiR2.gif"><img src="/public/PiR2.gif" width="100%"></a></p>
+
+<h2 id='pythagorean'>Pythagorean Triples</h2>
+<p>Now, let's talk about Pythagorean triples! Pythagorean triples are \(3\) integers \(a,b,c\) such that \(a^2+b^2=c^2\).</p>
+<p>Pythagorean triples are special because they form right triangles! There exists a right triangle with legs \(a,b\) and hypotenuse \(c\).</p>
+<p>Another way of thinking about Pythagorean triples is using the distance formula. The distance of a point \((x,y)\) from the origin is \(\sqrt{x^2+y^2}\). If \((x,y)\) satisfy \(x^2+y^2=z^2\), then \(z\) is the distance of the point from the origin! So Pythagorean triples are also sets of integer points in the plane that are an integer distance away from the origin.</p>
+<p>But we can do something a bit more special with Pythagorean triples. Let's take the formula, and divide both sides by \(c^2\). We get $$\left(\frac ac\right)^2+\left(\frac bc\right)^2=1$$\(\frac ac,\frac bc\) are rational numbers, and \(\left(\frac ac,\frac bc\right)\) is on the unit circle.</p>
+<p>If you are following along, what we have just realized is that Pythagorean triples are just like rational points on the unit circle. Now how do we find rational points on the unit circle?</p>
+<p>Let \((p,q)\) be a rational point on the unit circle. Let's find the line that goes through the points \((p,q)\) and \((-1,0)\). This line is $$y=\frac{q+1}p(x+1)$$Note that this slope is rational! So, if we look at lines with rational slope going through \((-1,0)\), we will get our rational points on the unit circle.</p>
+<p>So let us do that. Given slope \(\frac nm\), the line with this slope going through point \((-1,0)\) is $$y=\frac nm(x+1)$$And, the equation of the unit circle is $$x^2+y^2=1$$Substituting, we get $$x^2+\left(\frac nm(x+1)\right)^2=1$$$$\left(1+\frac{n^2}{m^2}\right)\cdot x^2+\left(\frac{2n^2}{m^2}\right)\cdot x+\frac{n^2}{m^2}-1=0$$$$\frac{m^2+n^2}{m^2}\cdot x^2+\frac{2n^2}{m^2}\cdot x+\frac{n^2-m^2}{m^2}=0$$$$(m^2+n^2)\cdot x^2+2n^2\cdot x+n^2-m^2=0$$We apply the quadratic formula to get $$x=\frac{-2n^2+2\sqrt{n^4-(n^4-m^4)}}{2(m^2+n^2)}=\frac{m^2-n^2}{m^2+n^2}$$$$y=\frac{2mn}{m^2+n^2}$$Thus, \(m^2-n^2,2mn,m^2+n^2\) is a Pythagorean triple, and in fact, every primitive (meaning with \(\gcd\) \(1\)) Pythagorean triple will have this form.</p>
+<p>To see this concept in action, see the following <a href='https://www.desmos.com/calculator/msd7n9gbkm' target='_blank'>Desmos graph</a>. Set \(m,n\) to distinct integers and see how the corresponding right triangle looks!</p>
+
+<h2 id='permutations'>Permutations and Combinations</h2>
+<p>The last topic for this week are permutations and combinations. What is the difference between the two?</p>
+<p>In English, we use the word combination to mean a collection in which the order of things does not matter. For example:</p>
+<ul>
+  <li>"My fruit salad consists of apples, bananas, and grapes": We don't care what order you put the fruit into the fruit salad. As long as it is well-mixed, the order does not matter.</li>
+  <li>"The password is 54321": The value \(12345\) will not work as the password, even though it is just a rearrangement of the actual password. In this case, order of the digits matters.</li>
+</ul>
+<p>In mathematics, when we want to count the number of ways to do things where order does <i>not</i> matter, we use <strong>combinations</strong>. If order <i>does</i> matter, we use <strong>permutations</strong>.</p>
+<h3>Permutations</h3>
+<p>There are two types of permutations</p>
+<p>If I want to select \(k\) objects from \(n\) total objects, but I'm allowed to pick the same object multiple times, we call this permutation a <strong>permutation with replacement</strong>.</p>
+<div class="example" title="" style="font-style:normal;"> I have a random number generator that selects a random number from \(1\to 100\), inclusive. How many possibilities are there if I've selected \(4\) random numbers this way?</div>
+<p>To come up with a formula for problems like the Example above, observe that for each object, there are \(n\) choices. So, the number of ways to select \(k\) objects from \(n\) is just $$\underbrace{n\times\ldots\times n}_{k\text{ times}}=\color{green}{n^k}$$</p>
+<p>If I want to select \(k\) objects from \(n\) total objects, but I no longer can pick the same object twice, we call this permutation <strong>permutation without replacement</strong>.</p>
+<div class="example" title="" style="font-style:normal;"> In my closet, I have t-shirts, pants, and shoes. I have \(4\) of each, one blue, one green, one red, and one yellow. I want to pick an outfit with one t-shirt, one pant, and one pair of shoes, but I don't want any of my colors to match. How many ways can I pick my outfit?</div>
+<p>To solve the example above, we realize that we have \(4\) different choices for the t-shirt, and then \(3\) choices for the pant, since one color is already taken by the t-shirt, and then \(2\) choices for the shoes since \(2\) colors are already taken. So, the number of permutations is \(4\times 3\times 2\). In general, if we want to pick \(k\) objects from \(n\) objects without replacement, there are \(n\times(n-1)\times\ldots\times(n-k+1)\) ways to do that.</p>
+<p>That's an ugly formula. But, we can prettify it using factorials. For any number \(n\), the function \(n!\) gives us the product \(n\times(n-1)\times\ldots\times1\). So, our formula is $$_nP_k=\frac{n\times(n-1)\times\ldots\times1}{(n-k)\times(n-k-1)\times\ldots\times1}=\color{green}{\frac{n!}{(n-k)!}}$$</p>
+<h3>Combinations</h3>
+<p>Here too, there are two types of combinations.</p>
+<p>If I'm not allowed to select the same object more than once, we call the problem <strong>combinations without replacements</strong>.</p>
+<div class="example" title="" style="font-style:normal;"> I bought a lottery ticket! When the lucky numbers are called, they are drawn one at a time (without replacement), and then if I have the lucky numbers on my ticket (in any order), I win! How many possible winning tickets are there?</div>
+<p>Combinations without replacement are very similar to permutations without replacement, except that order matters for permutations. In particular, let's consider our lottery example again.</p>
+<div class="example" title="" style="font-style:normal;"> Suppose that \(3\) lucky numbers are drawn from a pool of \(16\). How many possible distinct winning tickets are there? Let's say for the sake of example that lucky numbers \(1,2,3\) are chosen. Then these are the possibilites:<br><ul><li>Permutations (Order matters): 123, 132, 213, 231, 312, 321</li><li>Combinations (Order doesn't matter): 123</li></ul>So, there are \(6\) times as many permutations as combinations.</div>
+
+<p> As we saw in the example, there are \(6\) times as many permutations as combinations, since for each potential combination, rearranging the combination gives us \(3!=6\) times as many permutations. In other words, to get the number of combinations without replacement, we divide \(_nP_k\) by \(k!\) to get $$_nC_k=\color{green}{\frac{n!}{k!(n-k)!}}$$</p>
+<p>If we are allowed to select the same object multiple times, we call the problem <strong>combinations with replacement</strong>. This is the trickiest case, and doesn't show up very often on tests. Still, it is fun to analyze.</p>
+<div class="example" title="" style="font-style:normal;"> I am at an ice cream shop, and I ordered the large ice cream cone, which comes with \(3\) scoops. There are \(5\) flavors (Apple, Blueberry, Cranberry, Dates, Elderberry). How many different possibilites for my cone are there?</div>
+<p>In this example, the order of the scoops doesn't matter, making it a combination, but I can also get the same flavor multiple times, which is why we need replacement.</p>
+<p>To come up with a formula, we use a technique called <a href='https://en.wikipedia.org/wiki/Stars_and_bars_(combinatorics)' target='_blank'>stars and bars</a>. For our example, stars and bars tells us that the answer is \(_3C_7\), and in general, we have $$_kC_{n+k-1}=\color{green}{\frac{(n+k-1)!}{k!(n-1)!}}$$</p>
+<p>In summary, we have the following table:</p>
 
 
+<table class="w3-table w3-striped w3-bordered">
+  <tbody>
+      <tr><td></td><td>With Replacement</td><td>Without Replacement</td></tr>
+      <tr><td>Permutations</td><td>\(n^k\)</td><td>\(\frac{n!}{(n-k)!}\)</td></tr>
+      <tr><td>Combinations</td><td>\(\frac{(n+k-1)!}{k!(n-1)!}\)</td><td>\(\frac{n!}{k!(n-k)!}\)</td></tr>
+</tbody></table>
 
-	        	<li><a href="FourierSeries/Chapter1-FourierSeries/">Fourier Series</a>
+</div>
 
-						</li>
+<div style="float:right"><a href="#"style="font-style: normal;"><bf>Top</bf></a></div>
+    </div>
 
-
-	  </ul>
-	</div>	<br>
-  <a class="title" href="Logic/">Introduction to Logic</a> <a onclick="myCollapse('Log')"><i class="fa fa-chevron-circle-down fa-1" aria-hidden="true" id="Log-but"></i></a>
-<div id="Log" class="w3-container w3-hide">
-  <ul>
-
-
-
-          <li><a href="Logic/Arithmetic/">Ordinal Arithmetic</a>
-
-          </li>
-          <li><a href="Logic/Propostional/">Propostional Logic</a>
-
-          </li>
-          <li><a href="Logic/FirstOrder/">First Order Logic</a>
-
-          </li>
-
-  </ul>
-</div>	<br> 	<a class="title" href="MB3/">NorthSouth MB3 Materials</a> <br>
-	<a class="title" href="PrivateNotes/">Private Notes (Password Required)</a>
-
-  <!-- Footer -->
 
 <script>
 // collapse
@@ -649,7 +739,7 @@ function myCollapse(id) {
  $(".gallery").colorbox({
   width: "60%"
 });
-</script>
+</script><div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button type="button" id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div></div>
 
 <script>
 // sidebar collapse
@@ -665,4 +755,4 @@ function sidebar_close() {
 
 
 
-<div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button type="button" id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div></div></body></html>
+</body></html>

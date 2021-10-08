@@ -33,7 +33,7 @@ nav li {
 
 /* before style */
 
-.problem:before, .open:before, .algorithm:before, .example:before, .theorem:before, .lemma:before, .corollary:before, .definition:before, .claim:before, .proof:before, .proofsketch:before, .proofflow:before, .proposition:before, .exercise:before, .conjecture:before, .figure:before, .heuristic:before, .remark:before, .note:before {
+.problem:before, .open:before, .algorithm:before, .example:before, .theorem:before, .lemma:before, .corollary:before, .definition:before, .claim:before, .proof:before,.solution:before, .proofsketch:before, .proofflow:before, .proposition:before, .exercise:before, .conjecture:before, .figure:before, .heuristic:before, .remark:before, .note:before {
     font-weight: bold;
     font-style: normal;
     font-size: 1rem;
@@ -95,6 +95,10 @@ nav li {
 
 .proof:before {
     content: "Proof. ";
+}
+
+.solution:before {
+    content: "Solution";
 }
 
 .proofsketch:before {
@@ -162,6 +166,10 @@ nav li {
     content: "Proof of " attr(title) ".";
 }
 
+.solution[title]:before {
+    content: "Solution of " attr(title) ".";
+}
+
 .proofsketch[title]:before {
     content: attr(title) ".";
 }
@@ -187,7 +195,7 @@ nav li {
 
 /* after content */
 
-.example p:last-child:after, .algorithm p:last-child:after, .claim p:last-child:after, .proof p:last-child:after, .proofsketch p:last-child:after, .proofflow p:last-child:after, .problem p:last-child:after, .open p:last-child:after, .proposition p:last-child:after, .definition p:last-child:after, .corollary p:last-child:after, .theorem p:last-child:after, .note p:last-child:after, .lemma p:last-child:after, .exercise p:last-child:after{
+.example p:last-child:after, .algorithm p:last-child:after, .claim p:last-child:after, .proof p:last-child:after, .solution p:last-child:after, .proofsketch p:last-child:after, .proofflow p:last-child:after, .problem p:last-child:after, .open p:last-child:after, .proposition p:last-child:after, .definition p:last-child:after, .corollary p:last-child:after, .theorem p:last-child:after, .note p:last-child:after, .lemma p:last-child:after, .exercise p:last-child:after{
     font-size: 1rem;
     float:right;
     margin-bottom: 25px;
@@ -197,7 +205,17 @@ nav li {
     content: "\25FC";
 }
 
+.solution p:last-child:after {
+    content: "\25FC";
+}
+
 .proof {
+  border-style:inset;
+  padding-left: 5px;
+  margin-bottom: 10px;
+}
+
+.solution {
   border-style:inset;
   padding-left: 5px;
   margin-bottom: 10px;
