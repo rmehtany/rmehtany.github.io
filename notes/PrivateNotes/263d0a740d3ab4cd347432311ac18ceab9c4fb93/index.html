@@ -8,7 +8,7 @@
 
   <title>
 
-      Week 1 Notes
+      Week 2 Notes
 
   </title>
 
@@ -323,7 +323,7 @@
          Rushabh Mehta
       </div>
 
-      <p class="lead" style="font-size:16px;font-style:italic;">An equation means nothing to me unless it expresses a thought of god.<br> - Srinivasa Ramanujan</p>
+      <p class="lead" style="font-size:16px;font-style:italic;">Discovery is a child’s privilege. A child who is not afraid to be wrong, to look silly, to not be serious, and to act differently from everyone else.<br> - Alexander Grothendieck</p>
 
     </div>
 
@@ -602,7 +602,7 @@
 
 
 <div class="post">
-  <h1 class="post-title">Week 1 Notes</h1>
+  <h1 class="post-title">Week 2 Notes</h1>
 
 
   <div class="w3-white w3-round-xlarge w3-tiny">
@@ -612,103 +612,113 @@
 
 
   <ul id="markdown-toc">
-    <li><a href='#dimensionalanalysis'>Dimensional Analysis</a><ul><li><a href='#quizdim'>Quiz</a></li></ul></li>
-    <li><a href='#area'>Area and Circumference of the Circle</a></li>
-    <li><a href='#pythagorean'>Pythagorean Triples</a></li>
-    <li><a href='#permutations'>Permutations and Combinations</a></li>
+<li><a href='#what'>What is Probability?</a></li>
+<li><a href='#law'>Law of Large Numbers</a></li>
+<li><a href='#independent'>Independent Events</a></li>
+<li><a href='#mutually'>Mutually Exclusive Events</a></li>
+<li><a href='#area'>Continuous Probability</a></li>
 </ul>
+<h2 id='What'>What is Probability?</h2>
+<p>This week's topic will be all about probability. Probability is one of the hardest subjects you'll encounter in competitions, not least because of how counterintuitive it can be. But what even is probability?</p>
+<p>We say that an <strong>event</strong> is an activity or process that involves chance. Probability, therefore, is the likelihood of an event having some outcome.</p>
+<p>For example, one event might be throwing a die. An outcome might be rolling an even number. The probability of this outcome is \(\frac36=\frac12\).</p>
+<p>We call the set of all possible outcomes the <strong>sample space</strong> of our event. Here are some examples of sample spaces:</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/samplespace.png"><img src="/public/samplespace.png" width="100%"></a></p>
+<p>For events with small sample spaces, we can draw a <strong>Venn Diagram</strong> to represent our problem. For example, if we take our die example from earlier:</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/Venn1.png"><img src="/public/Venn1.png" width="100%"></a></p>
+<p>Our sample space is the set \(\{1,2,3,4,5,6\}\) while our favorable outcome space is \(\{2,4,6\}\). Using these diagrams may seem silly, but they are actually quite helpful!</p>
+<p>Now how do we find the probability of our event having a favorable outcome? This is a tough question. However, it is not so tough when our sample space is <strong>uniform</strong>, meaning that every outcome in the sample space is equally likely! In this case, the probability of a favorable outcome occuring is: $$P(\text{favorable outcome})=\frac{\text{Number of favorable outcomes}}{\text{Total number of outcomes in sample space}}$$</p>
+<div class="exercise" title="Finding the Probability of outcomes"> Suppose I draw a random card from the top of a standard \(52\) card deck. What is the probability that <ul><li>The card drawn is a King</li><li>The card drawn is a club</li></ul>
+</div>
+<p><strong>Solution</strong>:<ul><li>There are \(52\) cards in our sample space. \(4\) cards are Kings. So, the answer is $$P(\text{King})=\frac4{52}=\frac1{13}$$</li><li>There are \(52\) cards in our sample space. \(13\) cards are clubs. So, the answer is $$P(\text{Club})=\frac{13}{52}=\frac14$$</li></ul></p>
 
-<h2 id='dimensionalanalysis'>Dimensional Analysis</h2>
-<p>Our first topic for this class will be dimensional analysis. But what is dimensional analysis?</p>
-<p>Dimensional analysis is the study of units (for example, kilogram, meter, celsius) and the tracking of these units as we do calculations.</p>
-<p>As an example, we know that \(1\text{ inch }=2.54\text{ cm}\). So, if we want to convert \(6\) inches to centimeters, we can write the following: $$6\text{ in}\cdot\frac{2.54\text{ cm}}{1\text{ in}}=15.24\text{ cm}$$The idea here is to multiply by <strong>unit fractions</strong>, which are fractions that have value \(1\), since multiplying by \(1\) doesn't change the value.</p>
-<p>Similarly, if I wanted to convert \(24\) centimeters into inches, I could apply the same idea, with the equation $$24\text{ cm}\cdot\frac{1\text{ in}}{2.54\text{ cm}}\sim9.45\text{ in}$$The golden rule is this: if I want to cancel out a unit that is in the numerator, I need to multiply by a fraction with the unit in the denominator. If I want to cancel out a unit in the denominator, I need to multiply by a fraction in the numerator. Remembering this golden rule should make dimensional analysis pretty simple.</p>
-<h3 id='quizdim'>Quiz</h3>
-For the following problems, use the following table:
-<table class="w3-table w3-striped w3-bordered">
-  <tbody>
-      <tr><td>\(1\text{ mile}=5280\text{ ft}\)</td></tr>
-      <tr><td>\(1\text{ in}=2.54\text{ cm}\)</td></tr>
-      <tr><td>\(3\text{ feet}=1\text{ yard}\)</td></tr>
-      <tr><td>\(0.454\text{ kg}=1\text{ lb}\)</td></tr>
-      <tr><td>\(946\text{ mL}=1\text{ qt}\)</td></tr>
-      <tr><td>\(4\text{ qt}=1\text{ g}\)</td></tr>
-      <tr><td>\(12\text{ in}=1\text{ ft}\)</td></tr>
-      <tr><td>\(1\text{ min}=60\text{ sec}\)</td></tr>
-      <tr><td>\(1\text{ hr}=60\text{ min}\)</td></tr>
-      <tr><td>\(1\text{ day}=24\text{ hr}\)</td></tr>
-</tbody></table>
 
-<div class="exercise" title=""> Convert \(5400\) inches to miles</div>
-<div class="exercise" title=""> Convert \(16\) days to seconds</div>
-<div class="exercise" title=""> Convert \(54\) yards to cm</div>
-<div class="exercise" title=""> Convert \(36\) cm/sec to miles/hr (or mph)</div>
-<div class="exercise" title=""> Convert \(0.109\) kg/mL to lbs/g</div>
-<div class="exercise" title=""> Convert \(19\) inches to ft</div>
-<div class="exercise" title=""> Convert \(0.422\) kg/cm to lbs/ft</div>
-<div class="exercise" title=""> Convert \(32\) ft/sec to yards/min</div>
-
-<h2 id='area'>Circumference and area of the circle</h2>
-<p>The circle is one of the most fundamental geoemtrical objects we know, so finding the area and circumference of it is useful.</p>
-<p>How do we find the circumference? The circumference formula tells us that a circle with radius \(r\) has circumference $$C=2\pi\cdot r$$In fact, \(\pi\) is defined as \(\frac C{2r}\). But this formula only works if \(C\) is proportional to \(r\). For example, if my circle's radius doubles, does the circumference also double?</p>
-<p>The answer is yes! To see why, remember that polygons with a lot of sides look very similar to circles.</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/diagg1.png"><img src="/public/diagg1.png" width="100%"></a></p>
-<p>And when we double the side length of a regular polygon, the perimeter doubles too! And the circumference of the circle is very similar to the perimeter of the polygon with many sides.</p>
-<p>So why is the area of the circle \(\pi r^2\)? Here's a cute little gif that shows why.</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/PiR2.gif"><img src="/public/PiR2.gif" width="100%"></a></p>
-
-<h2 id='pythagorean'>Pythagorean Triples</h2>
-<p>Now, let's talk about Pythagorean triples! Pythagorean triples are \(3\) integers \(a,b,c\) such that \(a^2+b^2=c^2\).</p>
-<p>Pythagorean triples are special because they form right triangles! There exists a right triangle with legs \(a,b\) and hypotenuse \(c\).</p>
-<p>Another way of thinking about Pythagorean triples is using the distance formula. The distance of a point \((x,y)\) from the origin is \(\sqrt{x^2+y^2}\). If \((x,y)\) satisfy \(x^2+y^2=z^2\), then \(z\) is the distance of the point from the origin! So Pythagorean triples are also sets of integer points in the plane that are an integer distance away from the origin.</p>
-<p>But we can do something a bit more special with Pythagorean triples. Let's take the formula, and divide both sides by \(c^2\). We get $$\left(\frac ac\right)^2+\left(\frac bc\right)^2=1$$\(\frac ac,\frac bc\) are rational numbers, and \(\left(\frac ac,\frac bc\right)\) is on the unit circle.</p>
-<p>If you are following along, what we have just realized is that Pythagorean triples are just like rational points on the unit circle. Now how do we find rational points on the unit circle?</p>
-<p>Let \((p,q)\) be a rational point on the unit circle. Let's find the line that goes through the points \((p,q)\) and \((-1,0)\). This line is $$y=\frac{q+1}p(x+1)$$Note that this slope is rational! So, if we look at lines with rational slope going through \((-1,0)\), we will get our rational points on the unit circle.</p>
-<p>So let us do that. Given slope \(\frac nm\), the line with this slope going through point \((-1,0)\) is $$y=\frac nm(x+1)$$And, the equation of the unit circle is $$x^2+y^2=1$$Substituting, we get $$x^2+\left(\frac nm(x+1)\right)^2=1$$$$\left(1+\frac{n^2}{m^2}\right)\cdot x^2+\left(\frac{2n^2}{m^2}\right)\cdot x+\frac{n^2}{m^2}-1=0$$$$\frac{m^2+n^2}{m^2}\cdot x^2+\frac{2n^2}{m^2}\cdot x+\frac{n^2-m^2}{m^2}=0$$$$(m^2+n^2)\cdot x^2+2n^2\cdot x+n^2-m^2=0$$We apply the quadratic formula to get $$x=\frac{-2n^2+2\sqrt{n^4-(n^4-m^4)}}{2(m^2+n^2)}=\frac{m^2-n^2}{m^2+n^2}$$$$y=\frac{2mn}{m^2+n^2}$$Thus, \(m^2-n^2,2mn,m^2+n^2\) is a Pythagorean triple, and in fact, every primitive (meaning with \(\gcd\) \(1\)) Pythagorean triple will have this form.</p>
-<p>To see this concept in action, see the following <a href='https://www.desmos.com/calculator/msd7n9gbkm' target='_blank'>Desmos graph</a>. Set \(m,n\) to distinct integers and see how the corresponding right triangle looks!</p>
-
-<h2 id='permutations'>Permutations and Combinations</h2>
-<p>The last topic for this week are permutations and combinations. What is the difference between the two?</p>
-<p>In English, we use the word combination to mean a collection in which the order of things does not matter. For example:</p>
+<p>As you see in the exercise above, when the sample space is uniform (all possibilities are equally likely), finding the probability is about counting the number of favorable outcomes. That also means that permutations and combinations are important in calculating probability.</p>
+<div class="exercise" title="Probabilities with Permutations/Combinations"> Your class has \(12\) girls and \(11\) boys. Your teacher selects \(4\) students uniformly to present their projects.<ul><li>What is the probability all \(4\) students are girls?</li><li>Suppose the teacher chose Andy, Ciara, Beth, and Eugene. The teacher also chose which order they'd present randomly. What is the probability that they will present in alphabetical order?</li></ul>
+</div>
+<p><strong>Solution</strong>: <ul>
+  <li>There are \(_{23}C_4\) ways to choose \(4\) students from the class. There are \(_{12}C_4\) ways of choosing \(4\) girls from the class. So, our answer is $$\frac{_{12}C_4}{_{23}C_4}=\frac{495}{8855}=\frac5{161}$$</li>
+  <li>There are \(_4P_4=4!\) ways to choose an ordering of \(4\) students to present. There is \(1\) way for that ordering to be alphabetical. So, our answer is $$\frac1{4!}=\frac1{24}$$</li>
+</ul></p>
+<h2 id='law'>Law of Large Numbers</h2>
+<p>In the summer of 1913 in the Casino de Monte-Carlo, hundreds of people were playing Roulette, a game in which one bets on whether the rotating ball will fall on a red or black spot. On average, it will land on a red spot \(50\%\) of the time. However, on this special day, the ball landed on a black spot \(26\) times in a row.</p>
+<p>This made newspaper headlines! One newspaper asked readers, if the roulette was spun again, which spot was the ball most likely to fall in? There were some competing theories:<ul><li>Some people were convinced that the roulette was rigged to fall on black more than \(50\%\) of the time, and hence, if the roulette was spun again, it would most likely fall on black.</li><li>Others were convinced that what they saw was an exceptional event, but to balance out the \(26\) black spots in a row, the next roulette roll would land on a red spot</li></ul></p>
+<p>So which of these arguments is right? Neither! As surprising as \(26\) rolls in the black is to us, it doesn't indicate that something is wrong with the machine. After all, every sequence of \(26\) rolls is equally likely. It also doesn't mean that the next roll will also be black. Here's a funny comic showing why this argument doesn't work.</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/gambler1.png"><img src="/public/gambler1.png" width="100%"></a></p>
+<p>As for the second argument, every roll is <strong>independent</strong>, meaning that each roll doesn't depend on what happened before it. It doesn't matter how many black rolls there were before, the probability of a red roll now is still \(50\%\). The universe doesn't "correct" for the past results.</p>
+<p>This second argument is sometimes called the "Law of small numbers" (in quotations since it is false), as it suggests that the universe will always try to balance out the number of reds and blacks rolled. Here's a comic that illustrates why this logic is wrong, too.</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/gambler2.webp"><img src="/public/gambler2.webp" width="100%"></a></p>
+<p>So if the "Law of small numbers" is false, then what is true? The <strong>Law of Large Numbers</strong> says that on average, if event \(X\) has probability \(p\) of occuring, the more times I do the experiment, the fraction \(\frac{\text{number of success}}{\text{number of experiments}}\) will be closer to \(p\).</p>
+<p><strong>Note</strong>: This is a very, very tricky concept. If this is new to you, I'd suggest re-reading this section, or reading about this topic somewhere else to become more familiar with the ideas here. I'll try to talk about this in class as well.</p>
+<h2 id='independent'>Independent Events</h2>
+<p>In the last section, we said that the rolls of the roulette are <strong>independent</strong>. What does this mean?</p>
+<div class="Definition" title="Independent Events">Given events \(A\), \(B\) in the same sample space, \(A\) and \(B\) are <strong>independent</strong> iff $$P(A\text{ and }B)=P(A)\cdot P(B)$$</div>
+<p>Let's look at some examples to understand this definition.</p>
 <ul>
-  <li>"My fruit salad consists of apples, bananas, and grapes": We don't care what order you put the fruit into the fruit salad. As long as it is well-mixed, the order does not matter.</li>
-  <li>"The password is 54321": The value \(12345\) will not work as the password, even though it is just a rearrangement of the actual password. In this case, order of the digits matters.</li>
+  <li>If I flip a coin two times, and \(A\) is the event of it landing on heads on the first flip, and \(B\) the event of it landing on heads on the second flip, \(P(A)=P(B)=0.5\), and \(P(A\text{ and }B)=0.25\). Thus, \(A,B\) are independent.</li>
+  <li>If I select a card out of a \(52\) card deck, and \(A\) is the event of the card being a King, and \(B\) is the event of it being a spade, then \(P(A)=\frac1{13}\), \(P(B)=\frac14\), and \(P(A\text{ and }B)=\frac1{52}\). Thus, \(A\) and \(B\) are independent.</li>
+  <li>Suppose I have a bag of marbles with \(2\) red marbles, and \(2\) blue marbles, and I select \(2\) marbles without replacement. If \(A\) is the event of the first marble being red, and \(B\) is the event of the second marble being blue, then \(P(A)=P(B)=0.5\), \(P(A\text{ and }B)=\frac13\), so \(A\) and \(B\) are <strong>dependent</strong>.</li>
 </ul>
-<p>In mathematics, when we want to count the number of ways to do things where order does <i>not</i> matter, we use <strong>combinations</strong>. If order <i>does</i> matter, we use <strong>permutations</strong>.</p>
-<h3>Permutations</h3>
-<p>There are two types of permutations</p>
-<p>If I want to select \(k\) objects from \(n\) total objects, but I'm allowed to pick the same object multiple times, we call this permutation a <strong>permutation with replacement</strong>.</p>
-<div class="example" title="" style="font-style:normal;"> I have a random number generator that selects a random number from \(1\to 100\), inclusive. How many possibilities are there if I've selected \(4\) random numbers this way?</div>
-<p>To come up with a formula for problems like the Example above, observe that for each object, there are \(n\) choices. So, the number of ways to select \(k\) objects from \(n\) is just $$\underbrace{n\times\ldots\times n}_{k\text{ times}}=\color{green}{n^k}$$</p>
-<p>If I want to select \(k\) objects from \(n\) total objects, but I no longer can pick the same object twice, we call this permutation <strong>permutation without replacement</strong>.</p>
-<div class="example" title="" style="font-style:normal;"> In my closet, I have t-shirts, pants, and shoes. I have \(4\) of each, one blue, one green, one red, and one yellow. I want to pick an outfit with one t-shirt, one pant, and one pair of shoes, but I don't want any of my colors to match. How many ways can I pick my outfit?</div>
-<p>To solve the example above, we realize that we have \(4\) different choices for the t-shirt, and then \(3\) choices for the pant, since one color is already taken by the t-shirt, and then \(2\) choices for the shoes since \(2\) colors are already taken. So, the number of permutations is \(4\times 3\times 2\). In general, if we want to pick \(k\) objects from \(n\) objects without replacement, there are \(n\times(n-1)\times\ldots\times(n-k+1)\) ways to do that.</p>
-<p>That's an ugly formula. But, we can prettify it using factorials. For any number \(n\), the function \(n!\) gives us the product \(n\times(n-1)\times\ldots\times1\). So, our formula is $$_nP_k=\frac{n\times(n-1)\times\ldots\times1}{(n-k)\times(n-k-1)\times\ldots\times1}=\color{green}{\frac{n!}{(n-k)!}}$$</p>
-<h3>Combinations</h3>
-<p>Here too, there are two types of combinations.</p>
-<p>If I'm not allowed to select the same object more than once, we call the problem <strong>combinations without replacements</strong>.</p>
-<div class="example" title="" style="font-style:normal;"> I bought a lottery ticket! When the lucky numbers are called, they are drawn one at a time (without replacement), and then if I have the lucky numbers on my ticket (in any order), I win! How many possible winning tickets are there?</div>
-<p>Combinations without replacement are very similar to permutations without replacement, except that order matters for permutations. In particular, let's consider our lottery example again.</p>
-<div class="example" title="" style="font-style:normal;"> Suppose that \(3\) lucky numbers are drawn from a pool of \(16\). How many possible distinct winning tickets are there? Let's say for the sake of example that lucky numbers \(1,2,3\) are chosen. Then these are the possibilites:<br><ul><li>Permutations (Order matters): 123, 132, 213, 231, 312, 321</li><li>Combinations (Order doesn't matter): 123</li></ul>So, there are \(6\) times as many permutations as combinations.</div>
 
-<p> As we saw in the example, there are \(6\) times as many permutations as combinations, since for each potential combination, rearranging the combination gives us \(3!=6\) times as many permutations. In other words, to get the number of combinations without replacement, we divide \(_nP_k\) by \(k!\) to get $$_nC_k=\color{green}{\frac{n!}{k!(n-k)!}}$$</p>
-<p>If we are allowed to select the same object multiple times, we call the problem <strong>combinations with replacement</strong>. This is the trickiest case, and doesn't show up very often on tests. Still, it is fun to analyze.</p>
-<div class="example" title="" style="font-style:normal;"> I am at an ice cream shop, and I ordered the large ice cream cone, which comes with \(3\) scoops. There are \(5\) flavors (Apple, Blueberry, Cranberry, Dates, Elderberry). How many different possibilites for my cone are there?</div>
-<p>In this example, the order of the scoops doesn't matter, making it a combination, but I can also get the same flavor multiple times, which is why we need replacement.</p>
-<p>To come up with a formula, we use a technique called <a href='https://en.wikipedia.org/wiki/Stars_and_bars_(combinatorics)' target='_blank'>stars and bars</a>. For our example, stars and bars tells us that the answer is \(_3C_7\), and in general, we have $$_kC_{n+k-1}=\color{green}{\frac{(n+k-1)!}{k!(n-1)!}}$$</p>
-<p>In summary, we have the following table:</p>
+<div class="exercise" title="Independent Events"> For each of the following pairs of events, determine whether the events are dependent or independent:<ul><li>I have a drawer with \(10\) white socks and \(10\) black socks. I select two socks from my drawer randomly. \(A\) is the event that my first sock is white. \(B\) is the event that both socks selected are of the same color.</li><li>I select a random letter from the alphabet. \(A\) is the event that it is a vowel (a,e,i,o,u). \(B\) is the event that it is a consonant (any letter that isn't a vowel).</li><li>You roll a die two times. \(A\) is the probability you get a \(5\) on your first roll. \(B\) is the probability you get an even number on your second roll.</li></ul></div>
 
+<p>As you saw from the examples and exercises above, not all events are independent. Dependent events tell you something about each other. For example, if I know that tomorrow, the temperature outside will be \(80^\circ\), I know that the probability of a snowstorm will be very low. We call this conditional probability.</p>
 
-<table class="w3-table w3-striped w3-bordered">
-  <tbody>
-      <tr><td></td><td>With Replacement</td><td>Without Replacement</td></tr>
-      <tr><td>Permutations</td><td>\(n^k\)</td><td>\(\frac{n!}{(n-k)!}\)</td></tr>
-      <tr><td>Combinations</td><td>\(\frac{(n+k-1)!}{k!(n-1)!}\)</td><td>\(\frac{n!}{k!(n-k)!}\)</td></tr>
-</tbody></table>
+<div class="Definition" title="Conditional Probability"> Given events \(A,B\), we define \(P(A\mid B)\), the probability of \(A\) given that we know \(B\) happens, as $$P(A\mid B)=\frac{P(A\text{ and }B)}{P(B)}$$</div>
+
+<p>In other words, when \(A,B\) are independent, \(P(A\mid B)=P(A)\). This makes sense, because \(B\) tells us nothing about \(A\).</p>
+
+<div class="Exercise" title="Conditional Probability"> Compute the following probabilities:<ul><li>\(P(B)=0.7,\;P(A\mid B)=0.3\), compute \(P(A\text{ and }B)\)</li><li>\(P(A)=0.9,\;P(B|A)=0.72\), compute \(P(A\text{ and }B)\)</li><li>\(P(A\text{ and }B)=0.15,\;P(B\mid A)=0.6\), compute \(P(A)\)</li></ul></div>
+
+<h2 id='mutually'>Mutually Exclusive Events</h2>
+
+<p>Sometimes, there are events that are mutually exclusive, meaning they can't both happen. For example, a coin flip can't be both heads and tails.</p>
+
+<div class="Definition" title="Mutually Exclusive Events"> Given events \(A,B\), they are <strong>mutually exclusive</strong> iff \(P(A\text{ and }B)=0\).</div>
+
+<p>We call events that are not mutually exclusive <strong>overlapping</strong>. Below are examples of mutually exclusive and overlapping events.</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/mut.png"><img src="/public/mut.png" width="100%"></a></p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/ove.png"><img src="/public/ove.png" width="100%"></a></p>
+
+<p>Let's take a closer look at the overlapping events. Our sample space is rolling a die. Event \(A\) is rolling an odd number, and event \(B\) is rolling a number \(\lt3\). What is the probability of at least one of \(A\) and \(B\) happening? We can see by inspection that it is \(\frac46\). But, \(P(A)+P(B)=\frac36+\frac26=\frac56\).</p>
+<p>What is going on here? The issue is, we are double counting the event of rolling \(1\). In general, we overcount the cases that both \(A\) and \(B\) occur. That gives us the very important formula $$P(A\text{ or }B)=P(A)+P(B)-P(A\text{ and }B)$$For mutually exclusive events, this becomes $$P(A\text{ or }B)=P(A)+P(B)$$</p>
+<div class="example" title="Probability of mutually exclusive events"> I have a bag with the following marbles: <table class="w3-table w3-striped w3-bordered">
+  <tbody><tr>
+    <th>Type</th>
+    <th>Number</th>
+  </tr>
+      <tr>
+        <td>Blue</td>
+        <td>12</td>
+      </tr>
+      <tr>
+        <td>Green</td>
+        <td>9</td>
+      </tr>
+      <tr>
+        <td>Red</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td>Yellow</td>
+        <td>4</td>
+      </tr>
+</tbody></table>I pick a random marble from the bag. What is the probability of the chosen marble being either red or yellow?<br><br>Since these events are mutually exclusive, we have $$P(\text{red or yellow})=P(\text{red})+P(\text{yellow})=\frac4{30}+\frac5{30}=0.3$$
+</div>
+
+<div class="exercise" title="Are these events overlapping?"> In each scenario, explain why the events are mutually exclusive or overlapping:<ul><li>You conduct a survey of pet ownership. Event \(A\): the respondent is a cat owner. Event \(B\): the respondent is a dog owner.</li><li>Event \(A\): Your best friend plays the clarinet. Event \(B\): Your friend hates playing musical instruments.</li></ul></div>
+
+<h2 id='area'>Continuous Probability</h2>
+
+<p>In all of our examples so far, our state spaces have been finite (for example, the \(6\) outcomes of the roll of a die.) Let's consider the following question: Suppose I pick a point in the unit circle. What is the probability that is at most \(0.5\) away from the center of the circle?</p>
+<p>To answer this, let's remember our formula for probability: $$P(\text{favorable outcome})=\frac{\text{Number of favorable outcomes}}{\text{Total number of outcomes in sample space}}$$The issue with this formula is that there are infintely many points in our circle. So, the fraction would become \(\frac\infty\infty\), which is silly!</p>
+<p>Instead, if we replace Number with Area, we get a formula we can work with: $$P(\text{favorable outcome})=\frac{\text{Area of region of favorable outcomes}}{\text{Area of sample space}}$$Using this new formula, we see that the region of points that are at most \(0.5\) away from the center is just the circle of radius \(0.5\) around the center, which has area \(\frac\pi4\). The unit circle has area \(\pi\), so our answer is $$\frac{\frac\pi4}\pi=\frac14$$</p>
+
+<div class="Exercise" title="Continuous Probability"> Let \(x,y\) be randomly chosen real numbers between \(0,1\). What is the probability that \(y-x>0.5\)?</div>
 
 </div>
 
-<div style="float:right"><a href="#"style="font-style: normal;"><bf>Top</bf></a></div>
+<div style="float:right"><a href="#" style="font-style: normal;"><bf>Top</bf></a></div>
     </div>
 
 

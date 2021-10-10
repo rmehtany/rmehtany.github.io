@@ -654,6 +654,132 @@
       </tr>
 </tbody></table>
 
+<h2 id='nat'>Natural Numbers</h2>
+<p>We've covered the development of the natural numbers and some of their basic properties in the previous post. In this post, we'll continue that development with the introduction of addition and multiplication.</p>
+<div class="Theorem" title="Adding Naturals">Consider the following two rules for addition on the naturals:<ul><li>\(0+x=x\) for all \(x\in\bbN\)</li><li>\(S(a)+b=S(a+b)\) for all \(a,b\in\bbN\)</li></ul>There exists a unique function \(+:\bbN\times\bbN\to\bbN\) satisfying these rules.
+<div class="proof">
+<p><a onclick="myCollapse('addnat')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></a><br></p>
+<div id="addnat" class="w3-container w3-hide">
+Let's first prove uniqueness. Suppose \(+_1\) and \(+_2\) are two binary operations that satisfy the two rules. Suppose there exists some \(a,b\) such that \(a+_1b\neq a+_2b\). By the well-ordering principle, let \(n\in\bbN\) be the smallest natural such that there exists \(b\in\bbN\) with \(n+_1b\neq n+_2b\).<br><br>\(n\neq0\) since \(0+_1b=b=0+_2b\) by the first rule. So, \(n=S(m)\) for some \(m\in\bbN\), and by minimality, \(m+_1S(b)=m+_2S(b)\). But, $$S(m)+_1b=S(m+_1b)=S(m+_2b)=S(m)+_2b$$This is a contradiction, proving uniqueness.<br><br>For existence, we'll construct a set similar to the construction of \(Y\) in <a href='../SetReview/#csb' target='_blank'>the Cantor-Schroeder-Bernstein theorem</a>. Let \(H_0\) be the set map that sends \(X\) to \(((0,X),X)\). Let \(X_0\) be the set given by replacement of \(\bbN\) by \(H_0\). Let \(H\) be the set map that sends sets of the form \(((X,Y),Z)\) for naturals \(X,Y,Z\) to \(((S(X),Y),S(Z))\) (and sends everything else to \(\varnothing\)). For each \(n\in\bbN\), let \(X_{S(n)}=H(X_n)\). By the principle of mathematical induction, \(X_n\) is defined for all \(n\in\bbN\). Thus, by replacement, there exists a set \(\{X_0,X_1,\ldots\}\). Let $$+=\bigcup\{X_0,X_1,\ldots\}$$Since each \(X_0\) is a binary relation on \(\bbN\times\bbN,\bbN\), so is \(+\). I claim that \(+\) is a binary operation that satisfies the two conditions.<ul><li>\(+\) is a binary operation: By the principle of mathematical induction, all elements of \(X_n\) are of the form \(((n,a),b)\) for naturals \(a,b\). Also by the principle of mathematical induction, for each \(n,m\in\bbN\), there is exactly one element in \(X_n\) of the form \(((a,m),b)\) for \(a,b\in\bbN\). These two statements combined give us the desired result.</li><li>\(0+n=n\) for all \(n\in\bbN\): \(((0,n),n)\in X_0\) for all \(n\in\bbN\), and \(X_0\subset +\).</li><li>\(S(a)+b=S(a+b)\) for all \(a,b\in\bbN\): \(((a,b),a+b)\in X_a\), so \(((S(a),b),S(a+b))\in X_{S(a)}\) and \(X_{S(a)}\subset +\).</li></ul>
+</div>
+</div>
+
+<p>This theorem implies that we can view the two rules \(0+x=x\) and \(S(a)+b=S(a+b)\) as fully characterizing addition on the natural numbers. This makes reasoning on them a bit more nice than actually dealing with the function itself (which as you saw in the proof, is quite messy).</p>
+<p>So what properties does addition have? For starters, \(1+k=S(k)\) for any natural \(k\), since $$1+k=S(0)+k=S(0+k)=S(k)$$More importantly,</p>
+<div class="Theorem" title="Additive Identity"> \(0\) is an identity element of \(\bbN\).
+<div class="proof">
+<p><a onclick="myCollapse('addiden')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></a><br></p>
+<div id="addiden" class="w3-container w3-hide">
+By rule \(1\), \(0+x=x\) for all \(x\in\bbN\). So all we need to show is that \(x+0=x\) for all \(x\in\bbN\). Assume this isn't the case, and let \(i\in\bbN\) by the smallest natural such that \(i+0\neq i\) by the well-ordering principle. \(i\neq0\) since \(0+0=0\) by rule \(1\). So, let \(k\in\bbN\) such that \(S(k)=i\). Then, \(k+0=k\), and $$S(k)+0=S(k+0)=S(k)$$This prove that \(0\) is an additive identity.
+</div>
+</div>
+
+<div class="Theorem" title="Addition is Associative"> For all \(a,b,c\in\bbN\), \(a+(b+c)=(a+b)+c\).
+<div class="proof">
+<p><a onclick="myCollapse('addass')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></a><br></p>
+<div id="addass" class="w3-container w3-hide">
+Proof by induction. If \(a=0\), then $$0+(b+c)=b+c=(0+b)+c$$If the statement holds for \(a\), then $$S(a)+(b+c)=S(a+(b+c))=S((a+b)+c)=S(a+b)+c=(S(a)+b)+c$$
+</div>
+</div>
+<p>Since addition is associative, we don't need to specify order of operations in a sequence of additions. I.e., we can just write \(a+b+c\).</p>
+
+<div class="Theorem" title="Addition is Commutative"> For all \(a,b\in\bbN\), \(a+b=b+a\).
+<div class="proof">
+<p><a onclick="myCollapse('addcom')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></a><br></p>
+<div id="addcom" class="w3-container w3-hide">
+Proof by induction on \(a\). If \(a=0\), the claim holds since \(0\) is the identity. If \(a=1\), observe that \(1+0=0+1\) and for any \(b\) such that \(1+b=b+1\), $$S(b)+1=1+b+1=1+1+b=1+S(b)$$So, by induction, the claim is true for \(a=1\). And if the claim is true for some \(a\), then $$S(a)+b=1+a+b=1+b+a=b+1+a=b+S(a)$$By induction, we are done.
+</div>
+</div>
+
+<div class="Theorem" title="Addition is injective"> For all \(a,b,c\in\bbN\), if \(a+c=b+c\), then \(a=b\)
+<div class="proof">
+<p><a onclick="myCollapse('addinj')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></a><br></p>
+<div id="addinj" class="w3-container w3-hide">
+Proof by induction on \(c\). $$a=a+0=b+0=b$$Assume that for all \(a,b\in\bbN\), \(a+c=b+c\) implies \(a+b\). Now, consider \(x,y\in\bbN\) such that \(x+S(c)=y+S(c)\). Thus, $$S(x+c)=x+S(c)=y+S(c)=S(y+c)$$Since \(S\) is injective, \(x+c=y+c\), so \(x=y\).
+</div>
+</div>
+
+<div class="Theorem" title="Addition respects the order"> For all \(a,b\in\bbN\), \(a+b\geq a\), and \(a+b=a\) iff \(b=0\).
+<div class="proof">
+<p><a onclick="myCollapse('addord')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></a><br></p>
+<div id="addord" class="w3-container w3-hide">
+First, we show \(a+b\geq a\) by induction on \(b\). We have \(a+0=a\geq a\), and if \(a+b\geq a\), then $$a+S(b)=S(a+b)>a+b\geq a$$
+</div>
+</div>
+
+<p>This theorem also implies that \(0\) is the only identity element and that \(a+b\geq\max(a,b)\) by commutativity. Now that we have the basic properties of addition established, we introduce multiplication.</p>
+
+<div class="Theorem" title="Multiplying Naturals">There exists a unique binary operation \(\cdot\) on the naturals with the following properties<ul><li>\(0\cdot b=0\) for all \(b\in\bbN\)</li><li>\(S(a)\cdot b=b+(a\cdot b)\)</li></ul>
+<div class="proof">
+<p><a onclick="myCollapse('multnats')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></a><br></p>
+<div id="multnats" class="w3-container w3-hide">
+First, we show uniqueness. Suppose \(\cdot_1,\cdot_2\) are two different binary operations that both satisfy the properties. By the well-ordering principle (WOP), there exists a smallest \(a\in\bbN\) such that there exists \(x\in\bbN\) with \(a\cdot_1x\neq a\cdot_2x\). \(a\neq0\) since rule \(1\) forces $$0\cdot_1x=0\cdot_2x=0$$So, there exists \(k\in\bbN\) such that \(S(k)=a\). Thus, $$S(k)\cdot_1b=b+(k\cdot_1b)=b+(k\cdot_2b)=S(k)\cdot_2b$$This proves uniqueness<br><br>For existence, let  $$X_0=\{((0,b),0)\mid b\in\bbN\}$$(this notation implies replacement is being used), and let $$X_{S(k)}=\{((S(k),b),b+x)\mid ((k,b),x)\in X_k\}$$Let \(\cdot=\bigcup\{X_n\mid n\in\bbN\}\). I claim that this is a binary operation satisfying the properties.<ul><li>\(\cdot\) is a binary operation: Same reasoning as in the corresponding proof for addition.</li><li>\(0\cdot b=0\): \(((0,b),0)\in X_0\subset\cdot\), which implies the property.</li><li>\(S(a)\cdot b=b+a\cdot b\): If \(((a,b),k)\in X_a\), then \(((S(a),b),b+k)\in X_{S(a)}\).</li></ul>
+</div>
+</div>
+<p>Not a particularly enlightening proof, but the consequence of it is important: the two rules provided fully characterize multiplication on the naturals, and we'll use them to prove all of the important properties of multiplication.</p>
+
+<div class="Theorem" title="Multiplicative Identity"> For all \(b\in\bbN\), $$0\cdot b=b\cdot 0=0$$$$1\cdot b=b\cdot 1=b$$
+<div class="proof">
+<p><a onclick="myCollapse('zeroann')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></a><br></p>
+<div id="zeroann" class="w3-container w3-hide">
+Suppose there exists some \(x\) such that \(x\cdot 0\neq0\). Let \(b\) be the smallest such natural. \(b\neq0\) since \(0\cdot0=0\). So, \(b=S(a)\) for some \(a\in\bbN\). And, $$S(a)\cdot0=0+a\cdot0=0$$<br><br>For the identity proof, $$1\cdot b=b+0\cdot b=b$$$$0\cdot 1=0$$$$S(b)\cdot 1=1+b\cdot 1=1+b=S(b)$$and thus we are done by induction.
+</div>
+</div>
+
+<div class="Theorem" title="Multiplication is Commutative"> For all \(a,b\), \(a\cdot b=b\cdot a\)
+<div class="proof">
+<p><a onclick="myCollapse('multcommy')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></a><br></p>
+<div id="multcommy" class="w3-container w3-hide">
+Proof by induction on \(a\). $$0\cdot b=b\cdot0=0$$$$S(a)\cdot b=b+a\cdot b=b+b\cdot a$$Suppose there exists some \(b\) for which \(b+b\cdot a\neq b\cdot S(a)\). Let \(b\) be minimal. \(b\neq0\) since \(0+0\cdot a=0\) and \(0\cdot S(a)=0\). And, if \(b=S(k)\), we have $$S(k)+S(k)\cdot a=1+k+a+k\cdot a=S(a)+k\cdot S(a)=S(k)\cdot S(a)$$Thus, \(b+b\cdot a=b\cdot S(a)\), and the proof is complete.
+</div>
+</div>
+
+
+<div class="Theorem" title="Multiplication is distributive"> For all \(a,b,c\), \(c\cdot(a+b)=c\cdot a+c\cdot b\)
+<div class="proof">
+<p><a onclick="myCollapse('multdist')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></a><br></p>
+<div id="multdist" class="w3-container w3-hide">
+Proof by induction on \(c\). $$0\cdot(a+b)=0=0\cdot a+0\cdot b$$$$S(c)\cdot(a+b)=a+b+c\cdot(a+b)=a+c\cdot a+b+c\cdot b=S(c)\cdot a+S(c)\cdot b$$
+</div>
+</div>
+
+<div class="Theorem" title="Multiplication is (almost) injective"> For all \(a,b,c\), either \(c=0\) or \(a\cdot c=b\cdot c\) implies \(a=b\)
+<div class="proof">
+<p><a onclick="myCollapse('multinj')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></a><br></p>
+<div id="multinj" class="w3-container w3-hide">
+Proof by induction on \(c\). If \(c=0\), it is trivially true. If \(c=1\), $$a=a\cdot1=b\cdot1=b$$Assume that for all \(a,b\in\bbN\), \(a\cdot c=b\cdot c\) implies \(a=b\). Let \(x,y\in\bbN\) such that \(x\cdot S(c)=y\cdot S(c)\). Then, $$x+x\cdot c=x\cdot S(c)=y\cdot S(c)=y+y\cdot c$$Thus, since addition is injective, \(x=y\).
+</div>
+</div>
+
+
+<div class="Theorem" title="Multiplication is associative"> For all \(a,b,c\in\bbN\), \(a\cdot(b\cdot c)=(a\cdot b)\cdot c\)
+<div class="proof">
+<p><a onclick="myCollapse('multass')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></a><br></p>
+<div id="multass" class="w3-container w3-hide">
+Proof by induction on \(a\). $$(0\cdot b)\cdot c=0\cdot c=0=0\cdot(b\cdot c)$$$$(S(a)\cdot b)\cdot c=(b+a\cdot b)\cdot c=b\cdot c+(a\cdot b)\cdot c=b\cdot c+a\cdot(b\cdot c)=S(a)\cdot(b\cdot c)$$
+</div>
+</div>
+
+<p>With these results, we now have addition and multiplication with the properties we are familiar with. The rest of the number systems we will build will build on this (and thus will be a bit less tedious).</p>
+
+<h2 id='int'>Integers</h2>
+
+<p>Now that we have the natural numbers, we can build the integers. The integers are special because they are the smallest group that extends the addition of the natural numbers. We'll understand more properly what this means in a technical sense, but for now, let's define what a group (and related algebraic structures) is!</p>
+
+<div class="definition" title="Group"> A <strong>group</strong> is a set \(S\) with a binary operation \(\cdot\) with the following properties:<ul><li>\(S\) has a \(\cdot\)-identity.</li><li>\(\cdot\) is associative.</li><li>\(S\) has inverses over \(\cdot\)</li></ul></div>
+
+<div class="definition" title="Ring"> A <strong>ring</strong> is a set \(S\) with two binary operations, \(+,\cdot\), with the following properties:<ul><li>\(S\) is a group under \(+\)</li><li>\(+\) is commutative</li><li>\(S\) has a \(\cdot\)-identity</li><li>\(\cdot\) is associative</li><li>\(\cdot\) is distributive</li></ul></div>
+
+<div class="definition" title="Field"> A field is a ring \(S,+,\cdot\) with the following properties: <ul><li>\(\cdot\) is commutative</li><li>\(S\) has inverses over \(\cdot\) for all elements besides the additive identity</li></ul></div>
+
+<p>The study of these structures and others are far too large of a task for this post: see a text on abstract algebra for a proper lesson. For now, we construct the integers.</p>
+
+
+<div class="definition" title="Integers"> Consider the equivalence relation on \(\bbN\times\bbN\) given by \((a,b)\sim(c,d)\) iff \(a+d=b+c\). This is an equivalence relation because <ul><li>Reflexivity:\((a,b)\sim(a,b)\) since \(a+b=b+a\)</li><li>Symmetry:\((a,b)\sim(c,d)\) implies \(a+d=b+c\), so \(c+b=d+a\) and thus \((c,d)\sim(a,b)\)</li><li>Transitivity:$$(a,b)\sim(c,d)\wedge(c,d)\sim(e,f)$$implies$$a+d=b+c\wedge c+f=d+e$$$$a+c+d+f=b+c+d+e$$By injectivity, \(a+f=b+e\) and thus \((a,b)\sim(e,f)\)</li></ul>Thus, we define \(\bbZ\) as the partition associated with \(\sim\), notated as \(\bbN\times\bbN/\sim\).</div>
+
+<p>The intuition behind the definition is as follows: we view \((a,b)\) as a nickname for \(a-b\). However, that's redundant, as \((1,0)\) and \((2,1)\) represent the same number. To rectify this, we make two pairs equivalent if \(a-b=c-d\), or simply in terms of addition, \(a+d=b+c\). We don't have negation yet, so everything must be phrased in terms of addition and multiplication.</p>
+
+<p>For some additional notation, we write \([(a,b)]\) to represent the element of \(\bbZ\) that contains \((a,b)\).</p>
 
 
 </div>
