@@ -8,7 +8,7 @@
 
   <title>
 
-      Week 1 Notes
+      Week 4 Notes
 
   </title>
 
@@ -323,7 +323,7 @@
          Rushabh Mehta
       </div>
 
-      <p class="lead" style="font-size:16px;font-style:italic;">An equation means nothing to me unless it expresses a thought of god.<br> - Srinivasa Ramanujan</p>
+      <p class="lead" style="font-size:16px;font-style:italic;">There is no Royal Road to Geometry.<br> - Euclid</p>
 
     </div>
 
@@ -602,7 +602,7 @@
 
 
 <div class="post">
-  <h1 class="post-title">Week 1 Notes</h1>
+  <h1 class="post-title">Week 4 Notes</h1>
 
 
   <div class="w3-white w3-round-xlarge w3-tiny">
@@ -612,99 +612,59 @@
 
 
   <ul id="markdown-toc">
-    <li><a href='#dimensionalanalysis'>Dimensional Analysis</a><ul><li><a href='#quizdim'>Quiz</a></li></ul></li>
-    <li><a href='#area'>Area and Circumference of the Circle</a></li>
-    <li><a href='#pythagorean'>Pythagorean Triples</a></li>
-    <li><a href='#permutations'>Permutations and Combinations</a></li>
+<li><a href='#similar'>Similar Triangles</a></li>
+<li><a href='#area'>Area of a Triangle</a></li>
+<li><a href='#isosceles'>Isosceles Triangles</a></li>
+<li><a href='#right'>Right Triangles</a></li>
+<li><a href='#equilateral'>Equilateral Triangles</a></li>
+<li><a href='#other'>Other properties of Triangles</a></li>
 </ul>
 
-<h2 id='dimensionalanalysis'>Dimensional Analysis</h2>
-<p>Our first topic for this class will be dimensional analysis. But what is dimensional analysis?</p>
-<p>Dimensional analysis is the study of units (for example, kilogram, meter, celsius) and the tracking of these units as we do calculations.</p>
-<p>As an example, we know that \(1\text{ inch }=2.54\text{ cm}\). So, if we want to convert \(6\) inches to centimeters, we can write the following: $$6\text{ in}\cdot\frac{2.54\text{ cm}}{1\text{ in}}=15.24\text{ cm}$$The idea here is to multiply by <strong>unit fractions</strong>, which are fractions that have value \(1\), since multiplying by \(1\) doesn't change the value.</p>
-<p>Similarly, if I wanted to convert \(24\) centimeters into inches, I could apply the same idea, with the equation $$24\text{ cm}\cdot\frac{1\text{ in}}{2.54\text{ cm}}\sim9.45\text{ in}$$The golden rule is this: if I want to cancel out a unit that is in the numerator, I need to multiply by a fraction with the unit in the denominator. If I want to cancel out a unit in the denominator, I need to multiply by a fraction in the numerator. Remembering this golden rule should make dimensional analysis pretty simple.</p>
-<h3 id='quizdim'>Quiz</h3>
-For the following problems, use the following table:
-<table class="w3-table w3-striped w3-bordered">
-  <tbody>
-      <tr><td>\(1\text{ mile}=5280\text{ ft}\)</td></tr>
-      <tr><td>\(1\text{ in}=2.54\text{ cm}\)</td></tr>
-      <tr><td>\(3\text{ feet}=1\text{ yard}\)</td></tr>
-      <tr><td>\(0.454\text{ kg}=1\text{ lb}\)</td></tr>
-      <tr><td>\(946\text{ mL}=1\text{ qt}\)</td></tr>
-      <tr><td>\(4\text{ qt}=1\text{ g}\)</td></tr>
-      <tr><td>\(12\text{ in}=1\text{ ft}\)</td></tr>
-      <tr><td>\(1\text{ min}=60\text{ sec}\)</td></tr>
-      <tr><td>\(1\text{ hr}=60\text{ min}\)</td></tr>
-      <tr><td>\(1\text{ day}=24\text{ hr}\)</td></tr>
-</tbody></table>
-
-<div class="exercise" title=""> Convert \(5400\) inches to miles</div>
-<div class="exercise" title=""> Convert \(16\) days to seconds</div>
-<div class="exercise" title=""> Convert \(54\) yards to cm</div>
-<div class="exercise" title=""> Convert \(36\) cm/sec to miles/hr (or mph)</div>
-<div class="exercise" title=""> Convert \(0.109\) kg/mL to lbs/g</div>
-<div class="exercise" title=""> Convert \(19\) inches to ft</div>
-<div class="exercise" title=""> Convert \(0.422\) kg/cm to lbs/ft</div>
-<div class="exercise" title=""> Convert \(32\) ft/sec to yards/min</div>
-
-<h2 id='area'>Circumference and area of the circle</h2>
-<p>The circle is one of the most fundamental geoemtrical objects we know, so finding the area and circumference of it is useful.</p>
-<p>How do we find the circumference? The circumference formula tells us that a circle with radius \(r\) has circumference $$C=2\pi\cdot r$$In fact, \(\pi\) is defined as \(\frac C{2r}\). But this formula only works if \(C\) is proportional to \(r\). For example, if my circle's radius doubles, does the circumference also double?</p>
-<p>The answer is yes! To see why, remember that polygons with a lot of sides look very similar to circles. In the diagram below, the polygons <strong>circumscribe</strong> the circle, or equivalently, the circle is <strong>inscribed</strong> in each of them.</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/diagg1.png"><img src="/public/diagg1.png" width="100%"></a></p>
-<p>And when we double the side length of a regular polygon, the perimeter doubles too! And the circumference of the circle is very similar to the perimeter of the polygon with many sides.</p>
-<p>So why is the area of the circle \(\pi r^2\)? Here's a cute little gif that shows why.</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/PiR2.gif"><img src="/public/PiR2.gif" width="100%"></a></p>
-
-<h2 id='pythagorean'>Pythagorean Triples</h2>
-<p>Now, let's talk about Pythagorean triples! Pythagorean triples are \(3\) integers \(a,b,c\) such that \(a^2+b^2=c^2\).</p>
-<p>Pythagorean triples are special because they form right triangles! There exists a right triangle with legs \(a,b\) and hypotenuse \(c\).</p>
-<p>Another way of thinking about Pythagorean triples is using the distance formula. The distance of a point \((x,y)\) from the origin is \(\sqrt{x^2+y^2}\). If \((x,y)\) satisfy \(x^2+y^2=z^2\), then \(z\) is the distance of the point from the origin! So Pythagorean triples are also sets of integer points in the plane that are an integer distance away from the origin.</p>
-<p>But we can do something a bit more special with Pythagorean triples. Let's take the formula, and divide both sides by \(c^2\). We get $$\left(\frac ac\right)^2+\left(\frac bc\right)^2=1$$\(\frac ac,\frac bc\) are rational numbers, and \(\left(\frac ac,\frac bc\right)\) is on the unit circle.</p>
-<p>If you are following along, what we have just realized is that Pythagorean triples are just like rational points on the unit circle. Now how do we find rational points on the unit circle?</p>
-<p>Let \((p,q)\) be a rational point on the unit circle. Let's find the line that goes through the points \((p,q)\) and \((-1,0)\). This line is $$y=\frac{q+1}p(x+1)$$Note that this slope is rational! So, if we look at lines with rational slope going through \((-1,0)\), we will get our rational points on the unit circle.</p>
-<p>So let us do that. Given slope \(\frac nm\), the line with this slope going through point \((-1,0)\) is $$y=\frac nm(x+1)$$And, the equation of the unit circle is $$x^2+y^2=1$$Substituting, we get $$x^2+\left(\frac nm(x+1)\right)^2=1$$$$\left(1+\frac{n^2}{m^2}\right)\cdot x^2+\left(\frac{2n^2}{m^2}\right)\cdot x+\frac{n^2}{m^2}-1=0$$$$\frac{m^2+n^2}{m^2}\cdot x^2+\frac{2n^2}{m^2}\cdot x+\frac{n^2-m^2}{m^2}=0$$$$(m^2+n^2)\cdot x^2+2n^2\cdot x+n^2-m^2=0$$We apply the quadratic formula to get $$x=\frac{-2n^2+2\sqrt{n^4-(n^4-m^4)}}{2(m^2+n^2)}=\frac{m^2-n^2}{m^2+n^2}$$$$y=\frac{2mn}{m^2+n^2}$$Thus, \(m^2-n^2,2mn,m^2+n^2\) is a Pythagorean triple, and in fact, every primitive (meaning with \(\gcd\) \(1\)) Pythagorean triple will have this form.</p>
-<p>To see this concept in action, see the following <a href='https://www.desmos.com/calculator/msd7n9gbkm' target='_blank'>Desmos graph</a>. Set \(m,n\) to distinct integers and see how the corresponding right triangle looks!</p>
-
-<h2 id='permutations'>Permutations and Combinations</h2>
-<p>The last topic for this week are permutations and combinations. What is the difference between the two?</p>
-<p>In English, we use the word combination to mean a collection in which the order of things does not matter. For example:</p>
+<p>This week's notes are all about triangles!</p>
+<h2 id='similar'>Similar Triangles</h2>
+<p>Two triangles are <strong>similar</strong> if the only difference between them is their size (and possible the need to turn/flip around). The triangles below are all similar</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/similar1.png"><img src="/public/similar1.png" width="100%"></a></p><br>
+<p>Similar triangles are very useful since all similar triangles have equal corresponding angles</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/similar2.png"><img src="/public/similar2.png" width="100%"></a></p><br>
+<p>And the ratio of their corresponding sides is the same for all sides</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/similar3.png"><img src="/public/similar3.png" width="100%"></a></p><br>
+<div class="exercise" title="Finding sides of similar triangles"> Given the following two similar triangles:<p><a class="gallery img-center-short cbox-Element" href="/public/similar4.gif"><img src="/public/similar4.gif" width="100%"></a></p>Find \(a,b\).</div>
+<br>
+<p><strong>Solution</strong>: Since \(8\) in \(\triangle R\) corresponds to \(6.4\) in \(\triangle S\), the ratio of corresponding sides is \(\frac{6.4}8=0.8\). So, \(a=0.8\cdot7=0.56\), \(b=0.8\cdot6=0.48\).</p>
+<p>Congruent triangles are similar triangles for which the ratio of corresponding sides is \(1\). How can we tell if two triangles are similar?</p>
 <ul>
-  <li>"My fruit salad consists of apples, bananas, and grapes": We don't care what order you put the fruit into the fruit salad. As long as it is well-mixed, the order does not matter.</li>
-  <li>"The password is 54321": The value \(12345\) will not work as the password, even though it is just a rearrangement of the actual password. In this case, order of the digits matters.</li>
+  <li>AA: If two of the angles of one triangle equal two of the angles of the other triangle, they are similar</li>
+  <li>SAS: If the ratios of two sides of one triangle with two sides of the other triangle are the same, and the angles between these two sides in the first triangle is the same as the corresponding angle in the other triangle, the triangles are similar.</li>
+  <li>SSS: If the ratios of all three sides with their corresponding sides is the same, the triangles are similar</li>
 </ul>
-<p>In mathematics, when we want to count the number of ways to do things where order does <i>not</i> matter, we use <strong>combinations</strong>. If order <i>does</i> matter, we use <strong>permutations</strong>.</p>
-<h3>Permutations</h3>
-<p>There are two types of permutations</p>
-<p>If I want to select \(k\) objects from \(n\) total objects, but I'm allowed to pick the same object multiple times, we call this permutation a <strong>permutation with replacement</strong>.</p>
-<div class="example" title="" style="font-style:normal;"> I have a random number generator that selects a random number from \(1\to 100\), inclusive. How many possibilities are there if I've selected \(4\) random numbers this way?</div>
-<p>To come up with a formula for problems like the Example above, observe that for each object, there are \(n\) choices. So, the number of ways to select \(k\) objects from \(n\) is just $$\underbrace{n\times\ldots\times n}_{k\text{ times}}=\color{green}{n^k}$$</p>
-<p>If I want to select \(k\) objects from \(n\) total objects, but I no longer can pick the same object twice, we call this permutation <strong>permutation without replacement</strong>.</p>
-<div class="example" title="" style="font-style:normal;"> In my closet, I have t-shirts, pants, and shoes. I have \(4\) of each, one blue, one green, one red, and one yellow. I want to pick an outfit with one t-shirt, one pant, and one pair of shoes, but I don't want any of my colors to match. How many ways can I pick my outfit?</div>
-<p>To solve the example above, we realize that we have \(4\) different choices for the t-shirt, and then \(3\) choices for the pant, since one color is already taken by the t-shirt, and then \(2\) choices for the shoes since \(2\) colors are already taken. So, the number of permutations is \(4\times 3\times 2\). In general, if we want to pick \(k\) objects from \(n\) objects without replacement, there are \(n\times(n-1)\times\ldots\times(n-k+1)\) ways to do that.</p>
-<p>That's an ugly formula. But, we can prettify it using factorials. For any number \(n\), the function \(n!\) gives us the product \(n\times(n-1)\times\ldots\times1\). So, our formula is $$_nP_k=\frac{n\times(n-1)\times\ldots\times1}{(n-k)\times(n-k-1)\times\ldots\times1}=\color{green}{\frac{n!}{(n-k)!}}$$</p>
-<h3>Combinations</h3>
-<p>Here too, there are two types of combinations.</p>
-<p>If I'm not allowed to select the same object more than once, we call the problem <strong>combinations without replacements</strong>.</p>
-<div class="example" title="" style="font-style:normal;"> I bought a lottery ticket! When the lucky numbers are called, they are drawn one at a time (without replacement), and then if I have the lucky numbers on my ticket (in any order), I win! How many possible winning tickets are there?</div>
-<p>Combinations without replacement are very similar to permutations without replacement, except that order matters for permutations. In particular, let's consider our lottery example again.</p>
-<div class="example" title="" style="font-style:normal;"> Suppose that \(3\) lucky numbers are drawn from a pool of \(16\). How many possible distinct winning tickets are there? Let's say for the sake of example that lucky numbers \(1,2,3\) are chosen. Then these are the possibilites:<br><ul><li>Permutations (Order matters): 123, 132, 213, 231, 312, 321</li><li>Combinations (Order doesn't matter): 123</li></ul>So, there are \(6\) times as many permutations as combinations.</div>
-
-<p> As we saw in the example, there are \(6\) times as many permutations as combinations, since for each potential combination, rearranging the combination gives us \(3!=6\) times as many permutations. In other words, to get the number of combinations without replacement, we divide \(_nP_k\) by \(k!\) to get $$_nC_k=\color{green}{\frac{n!}{k!(n-k)!}}$$</p>
-<p>If we are allowed to select the same object multiple times, we call the problem <strong>combinations with replacement</strong>. This is the trickiest case, and doesn't show up very often on tests. Still, it is fun to analyze.</p>
-<div class="example" title="" style="font-style:normal;"> I am at an ice cream shop, and I ordered the large ice cream cone, which comes with \(3\) scoops. There are \(5\) flavors (Apple, Blueberry, Cranberry, Dates, Elderberry). How many different possibilites for my cone are there?</div>
-<p>In this example, the order of the scoops doesn't matter, making it a combination, but I can also get the same flavor multiple times, which is why we need replacement.</p>
-<p>To come up with a formula, we use a technique called <a href='https://en.wikipedia.org/wiki/Stars_and_bars_(combinatorics)' target='_blank'>stars and bars</a>. For our example, stars and bars tells us that the answer is \(_3C_7\), and in general, we have $$_kC_{n+k-1}=\color{green}{\frac{(n+k-1)!}{k!(n-1)!}}$$</p>
-<p>In summary, we have the following table:</p>
-
-
-<table class="w3-table w3-striped w3-bordered">
-  <tbody>
-      <tr><td></td><td>With Replacement</td><td>Without Replacement</td></tr>
-      <tr><td>Permutations</td><td>\(n^k\)</td><td>\(\frac{n!}{(n-k)!}\)</td></tr>
-      <tr><td>Combinations</td><td>\(\frac{(n+k-1)!}{k!(n-1)!}\)</td><td>\(\frac{n!}{k!(n-k)!}\)</td></tr>
-</tbody></table>
+<p>This diagram summarizes the statements above.</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/similar5.ong.png"><img src="/public/similar5.ong.png" width="100%"></a></p><br>
+<p>To tell whether two triangles are congruent, we have similar conditions</p>
+<ul>
+  <li>AAS: If any two angles from the first triangle equal any two angles from the second triangle, and a side from the first triangle equals a corresponding side in the other triangle, the triangles are congruent.</li>
+  <li>SAS: If two sides from the first triangle are equal to two sides of the other triangle, and the angle between the sides is equal to the same angle in the other triangle, the triangles are congruent.</li>
+  <li>SSS: If all three sides are equal to the three sides of the other triangle, the triangles are congruent.</li>
+</ul>
+<p>The following diagram summarizes the statements above.</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/similar6.ong.webp"><img src="/public/similar6.ong.webp" width="100%"></a></p><br>
+<p><strong>Important</strong>: Given similar triangles \(A,B\) such that the ratio of sides is \(x\), the ratio of their perimeters is \(x\) and the ratio of their areas is \(x^2\).</p>
+<h2 id='area'>Area of a Triangle</h2>
+<p>Here are some useful area formulas for triangles:<ul><li>Given a triangle with base \(b\) and height \(h\), the area of the triangle is \(\frac12bh\).</li><li>For those of you who know trigonometry, the area of a triangle with sides \(a,b\) and angle \(c\) between them is \(\frac12ab\sin c\).</li><li>If you have a triangle with coordinates \((x_1,y_1)\), \((x_2,y_2)\), \((x_3,y_3)\), the area is given by $$\frac12\cdot\left\vert x_1y_2-x_2y_1+x_2y_3-x_3y_2+x_3y_1-x_1y_3\right\vert$$<li> triangle with sides \(a,b,c\) and semiperimeter \(s=\frac{a+b+c}2\) has area $$\sqrt{s\cdot(s-a)(s-b)(s-c)}$$</li></ul>In general, we'd like to avoid using the last formula (called <strong>Heron's Formula</strong>) unless absolutely necessary, since it is a pain to compute.</p>
+<h2 id='isosceles'>Isosceles Triangles</h2>
+<p>An isosceles triangle is a triangle with at least two sides equal.</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/isos1d.png"><img src="/public/isos1d.png" width="100%"></a></p><br>
+<p>One of the most important properties of an isosceles triangle is the <strong>Hinge property</strong>: the angles opposing the equal sides are also equal (which you can see in the diagram above).</p>
+<div class="exercise" title="Area of an isosceles triangle"> Show via Heron's Formula that if an isosceles triangle has side lengths \(a,b,b\), the area of the triangle is $$\frac a4\sqrt{4b^2-a^2}$$</div>
+<h2 id='right'>Right Triangles</h2>
+<p>A <strong>right triangle</strong> is any triangle with a \(90^\circ\) angle. You should already know plenty about right triangles (after all, all of our work with Pythagorean triples is about right triangles!).</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/right1d.gif"><img src="/public/right1d.gif" width="100%"></a></p><br>
+<p>As seen in the diagram above, there are a few special right triangles you might want to remember. The first is the isosceles right triangle, with its hypotenuse with length \(sqrt2\) times the length of both legs. The second is the \(30-60-90\) triangle, with side lengths \(x,\;\sqrt3x,\;2x\).</p>
+<p>Since each leg of the triangle is a height to the other leg, the product of the lengths of the legs of a right triangle is twice the area of the triangle. Moreover, the circumcircle of a right triangle has diameter equal to the hypotenuse of the triangle.</p>
+<h2 id='equilateral'>Equilateral Triangles</h2>
+<p>An equilateral triangle is a triangle with all equal sides (or equivalently, all angles equal to \(60^\circ\)). By definition, all equilateral triangles are similar. Using the area of an isosceles formula and setting \(a=b\), we get the area of the equilateral triangle to be \(\frac{a^2\sqrt3}4\).</p>
+<h2 id='other'>Other properties of triangles</h2>
+<p><ul>
+  <li>The inradius (radius of the inscribed circle) of a triangle with side lengths \(a,b,c\) and area \(K\) is $$\frac{2K}{a+b+c}$$</li><li>The sum of any two sides of a triangle is greater than the third side.</li></ul></p>
 
 </div>
 
