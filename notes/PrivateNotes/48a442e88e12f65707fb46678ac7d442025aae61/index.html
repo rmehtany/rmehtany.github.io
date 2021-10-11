@@ -8,7 +8,7 @@
 
   <title>
 
-      Week 2 Notes
+      Week 3 Notes
 
   </title>
 
@@ -323,7 +323,7 @@
          Rushabh Mehta
       </div>
 
-      <p class="lead" style="font-size:16px;font-style:italic;">Discovery is a child’s privilege. A child who is not afraid to be wrong, to look silly, to not be serious, and to act differently from everyone else.<br> - Alexander Grothendieck</p>
+      <p class="lead" style="font-size:16px;font-style:italic;">An author never does more damage to his readers than when he hides a difficulty.<br> - Evariste Galois</p>
 
     </div>
 
@@ -602,7 +602,7 @@
 
 
 <div class="post">
-  <h1 class="post-title">Week 2 Notes</h1>
+  <h1 class="post-title">Week 3 Notes</h1>
 
 
   <div class="w3-white w3-round-xlarge w3-tiny">
@@ -612,109 +612,211 @@
 
 
   <ul id="markdown-toc">
-<li><a href='#what'>What is Probability?</a></li>
-<li><a href='#law'>Law of Large Numbers</a></li>
-<li><a href='#independent'>Independent Events</a></li>
-<li><a href='#mutually'>Mutually Exclusive Events</a></li>
-<li><a href='#area'>Continuous Probability</a></li>
-</ul>
-<h2 id='What'>What is Probability?</h2>
-<p>This week's topic will be all about probability. Probability is one of the hardest subjects you'll encounter in competitions, not least because of how counterintuitive it can be. But what even is probability?</p>
-<p>We say that an <strong>event</strong> is an activity or process that involves chance. Probability, therefore, is the likelihood of an event having some outcome.</p>
-<p>For example, one event might be throwing a die. An outcome might be rolling an even number. The probability of this outcome is \(\frac36=\frac12\).</p>
-<p>We call the set of all possible outcomes the <strong>sample space</strong> of our event. Here are some examples of sample spaces:</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/samplespace.png"><img src="/public/samplespace.png" width="100%"></a></p>
-<p>For events with small sample spaces, we can draw a <strong>Venn Diagram</strong> to represent our problem. For example, if we take our die example from earlier:</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/Venn1.png"><img src="/public/Venn1.png" width="100%"></a></p>
-<p>Our sample space is the set \(\{1,2,3,4,5,6\}\) while our favorable outcome space is \(\{2,4,6\}\). Using these diagrams may seem silly, but they are actually quite helpful!</p>
-<p>Now how do we find the probability of our event having a favorable outcome? This is a tough question. However, it is not so tough when our sample space is <strong>uniform</strong>, meaning that every outcome in the sample space is equally likely! In this case, the probability of a favorable outcome occuring is: $$P(\text{favorable outcome})=\frac{\text{Number of favorable outcomes}}{\text{Total number of outcomes in sample space}}$$</p>
-<div class="exercise" title="Finding the Probability of outcomes"> Suppose I draw a random card from the top of a standard \(52\) card deck. What is the probability that <ul><li>The card drawn is a King</li><li>The card drawn is a club</li></ul>
-</div>
-<p><strong>Solution</strong>:<ul><li>There are \(52\) cards in our sample space. \(4\) cards are Kings. So, the answer is $$P(\text{King})=\frac4{52}=\frac1{13}$$</li><li>There are \(52\) cards in our sample space. \(13\) cards are clubs. So, the answer is $$P(\text{Club})=\frac{13}{52}=\frac14$$</li></ul></p>
-
-
-<p>As you see in the exercise above, when the sample space is uniform (all possibilities are equally likely), finding the probability is about counting the number of favorable outcomes. That also means that permutations and combinations are important in calculating probability.</p>
-<div class="exercise" title="Probabilities with Permutations/Combinations"> Your class has \(12\) girls and \(11\) boys. Your teacher selects \(4\) students uniformly to present their projects.<ul><li>What is the probability all \(4\) students are girls?</li><li>Suppose the teacher chose Andy, Ciara, Beth, and Eugene. The teacher also chose which order they'd present randomly. What is the probability that they will present in alphabetical order?</li></ul>
-</div>
-<p><strong>Solution</strong>: <ul>
-  <li>There are \(_{23}C_4\) ways to choose \(4\) students from the class. There are \(_{12}C_4\) ways of choosing \(4\) girls from the class. So, our answer is $$\frac{_{12}C_4}{_{23}C_4}=\frac{495}{8855}=\frac5{161}$$</li>
-  <li>There are \(_4P_4=4!\) ways to choose an ordering of \(4\) students to present. There is \(1\) way for that ordering to be alphabetical. So, our answer is $$\frac1{4!}=\frac1{24}$$</li>
-</ul></p>
-<h2 id='law'>Law of Large Numbers</h2>
-<p>In the summer of 1913 in the Casino de Monte-Carlo, hundreds of people were playing Roulette, a game in which one bets on whether the rotating ball will fall on a red or black spot. On average, it will land on a red spot \(50\%\) of the time. However, on this special day, the ball landed on a black spot \(26\) times in a row.</p>
-<p>This made newspaper headlines! One newspaper asked readers, if the roulette was spun again, which spot was the ball most likely to fall in? There were some competing theories:<ul><li>Some people were convinced that the roulette was rigged to fall on black more than \(50\%\) of the time, and hence, if the roulette was spun again, it would most likely fall on black.</li><li>Others were convinced that what they saw was an exceptional event, but to balance out the \(26\) black spots in a row, the next roulette roll would land on a red spot</li></ul></p>
-<p>So which of these arguments is right? Neither! As surprising as \(26\) rolls in the black is to us, it doesn't indicate that something is wrong with the machine. After all, every sequence of \(26\) rolls is equally likely. It also doesn't mean that the next roll will also be black. Here's a funny comic showing why this argument doesn't work.</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/gambler1.png"><img src="/public/gambler1.png" width="100%"></a></p>
-<p>As for the second argument, every roll is <strong>independent</strong>, meaning that each roll doesn't depend on what happened before it. It doesn't matter how many black rolls there were before, the probability of a red roll now is still \(50\%\). The universe doesn't "correct" for the past results.</p>
-<p>This second argument is sometimes called the "Law of small numbers" (in quotations since it is false), as it suggests that the universe will always try to balance out the number of reds and blacks rolled. Here's a comic that illustrates why this logic is wrong, too.</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/gambler2.webp"><img src="/public/gambler2.webp" width="100%"></a></p>
-<p>So if the "Law of small numbers" is false, then what is true? The <strong>Law of Large Numbers</strong> says that on average, if event \(X\) has probability \(p\) of occuring, the more times I do the experiment, the fraction \(\frac{\text{number of success}}{\text{number of experiments}}\) will be closer to \(p\).</p>
-<p><strong>Note</strong>: This is a very, very tricky concept. If this is new to you, I'd suggest re-reading this section, or reading about this topic somewhere else to become more familiar with the ideas here. I'll try to talk about this in class as well.</p>
-<h2 id='independent'>Independent Events</h2>
-<p>In the last section, we said that the rolls of the roulette are <strong>independent</strong>. What does this mean?</p>
-<div class="Definition" title="Independent Events">Given events \(A\), \(B\) in the same sample space, \(A\) and \(B\) are <strong>independent</strong> iff $$P(A\text{ and }B)=P(A)\cdot P(B)$$</div>
-<p>Let's look at some examples to understand this definition.</p>
-<ul>
-  <li>If I flip a coin two times, and \(A\) is the event of it landing on heads on the first flip, and \(B\) the event of it landing on heads on the second flip, \(P(A)=P(B)=0.5\), and \(P(A\text{ and }B)=0.25\). Thus, \(A,B\) are independent.</li>
-  <li>If I select a card out of a \(52\) card deck, and \(A\) is the event of the card being a King, and \(B\) is the event of it being a spade, then \(P(A)=\frac1{13}\), \(P(B)=\frac14\), and \(P(A\text{ and }B)=\frac1{52}\). Thus, \(A\) and \(B\) are independent.</li>
-  <li>Suppose I have a bag of marbles with \(2\) red marbles, and \(2\) blue marbles, and I select \(2\) marbles without replacement. If \(A\) is the event of the first marble being red, and \(B\) is the event of the second marble being blue, then \(P(A)=P(B)=0.5\), \(P(A\text{ and }B)=\frac13\), so \(A\) and \(B\) are <strong>dependent</strong>.</li>
+<li><a href='#binomial'>More about Combinations</a><ul><li><a href='#perspective1'>Perspective 1: Pascal's Triangle</a></li><li><a href='#perspective2'>Perspective 2: Binomial Distribution</a></li><li><a href='#perspective3'>Perspective 3: Polynomials</a></li></ul></li>
+<li><a href='#stat'>Introduction to Statistics</a><ul><li><a href='#central'>Measures of Centrality</a></li><li><a href='#variance'>Measures of Variability</a></li></ul></li>
 </ul>
 
-<div class="exercise" title="Independent Events"> For each of the following pairs of events, determine whether the events are dependent or independent:<ul><li>I have a drawer with \(10\) white socks and \(10\) black socks. I select two socks from my drawer randomly. \(A\) is the event that my first sock is white. \(B\) is the event that both socks selected are of the same color.</li><li>I select a random letter from the alphabet. \(A\) is the event that it is a vowel (a,e,i,o,u). \(B\) is the event that it is a consonant (any letter that isn't a vowel).</li><li>You roll a die two times. \(A\) is the probability you get a \(5\) on your first roll. \(B\) is the probability you get an even number on your second roll.</li></ul></div>
-
-<p>As you saw from the examples and exercises above, not all events are independent. Dependent events tell you something about each other. For example, if I know that tomorrow, the temperature outside will be \(80^\circ\), I know that the probability of a snowstorm will be very low. We call this conditional probability.</p>
-
-<div class="Definition" title="Conditional Probability"> Given events \(A,B\), we define \(P(A\mid B)\), the probability of \(A\) given that we know \(B\) happens, as $$P(A\mid B)=\frac{P(A\text{ and }B)}{P(B)}$$</div>
-
-<p>In other words, when \(A,B\) are independent, \(P(A\mid B)=P(A)\). This makes sense, because \(B\) tells us nothing about \(A\).</p>
-
-<div class="Exercise" title="Conditional Probability"> Compute the following probabilities:<ul><li>\(P(B)=0.7,\;P(A\mid B)=0.3\), compute \(P(A\text{ and }B)\)</li><li>\(P(A)=0.9,\;P(B|A)=0.72\), compute \(P(A\text{ and }B)\)</li><li>\(P(A\text{ and }B)=0.15,\;P(B\mid A)=0.6\), compute \(P(A)\)</li></ul></div>
-
-<h2 id='mutually'>Mutually Exclusive Events</h2>
-
-<p>Sometimes, there are events that are mutually exclusive, meaning they can't both happen. For example, a coin flip can't be both heads and tails.</p>
-
-<div class="Definition" title="Mutually Exclusive Events"> Given events \(A,B\), they are <strong>mutually exclusive</strong> iff \(P(A\text{ and }B)=0\).</div>
-
-<p>We call events that are not mutually exclusive <strong>overlapping</strong>. Below are examples of mutually exclusive and overlapping events.</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/mut.png"><img src="/public/mut.png" width="100%"></a></p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/ove.png"><img src="/public/ove.png" width="100%"></a></p>
-
-<p>Let's take a closer look at the overlapping events. Our sample space is rolling a die. Event \(A\) is rolling an odd number, and event \(B\) is rolling a number \(\lt3\). What is the probability of at least one of \(A\) and \(B\) happening? We can see by inspection that it is \(\frac46\). But, \(P(A)+P(B)=\frac36+\frac26=\frac56\).</p>
-<p>What is going on here? The issue is, we are double counting the event of rolling \(1\). In general, we overcount the cases that both \(A\) and \(B\) occur. That gives us the very important formula $$P(A\text{ or }B)=P(A)+P(B)-P(A\text{ and }B)$$For mutually exclusive events, this becomes $$P(A\text{ or }B)=P(A)+P(B)$$</p>
-<div class="example" title="Probability of mutually exclusive events"> I have a bag with the following marbles: <table class="w3-table w3-striped w3-bordered">
-  <tbody><tr>
-    <th>Type</th>
-    <th>Number</th>
-  </tr>
+<p>Before we start this week's notes, I want to introduce some notation you may not have seen before.</p>
+<p>Let's say I want to add all of the numbers from \(1\) to \(n\). I would write it like this: $$1+2+\ldots+n$$In mathematics, we don't like using \(\ldots\) since it can be unclear. Instead, we have a notation to represent this sort of sum. $$\sum\limits_{k=1}^nk=1+2+\ldots+n$$This diagram explains what the \(\Sigma\) notation means:</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/sumby1.png"><img src="/public/sumby1.png" width="100%"></a></p>
+<p>We can even do fancier things with \(\Sigma\). We can sum squared numbers:$$\sum\limits_{k=1}^4k^2=1^2+2^2+3^2+4^2=30$$We can add the first \(6\) odd numbers:$$\sum\limits_{k=1}^62k-1=36$$There are many things we can do with this notation. If you are still a bit confused, try using <a href='https://www.mathsisfun.com/numbers/sigma-calculator.html' target='_blank'>the Sigma Calculator</a> to play around with \(\Sigma\).</p>
+<h2 id='binomial'>More about Combinations</h2>
+<p>Our first topic for this week will be exploring combinations and their applications. From here on out, we'll adopt a new notation for combinations: we'll write \(n\choose k\) to represent \(_nC_k\).</p>
+<h3 id='perspective1'>Perspective 1: Pascal's Triangle</h3>
+<p> Suppose I have the following triangle:</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/triangle1.png"><img src="/public/triangle1.png" width="100%"></a></p>
+<p>I start at the top hexagon, and at each step, I can hop to the hexagon to my bottom right, or to my bottom left, as in the diagram below</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/triangle3.png"><img src="/public/triangle3.png" width="100%"></a></p>
+<p>Then, I repeat this process, hopping down the triangle at each step. Now suppose I pick some hexagon in my triangle</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/triangle4.png"><img src="/public/triangle4.png" width="100%"></a></p>
+<p>And I ask, how many ways are there for me to hop from the top hexagon to my chosen hexagon? Below is one possible way for me to hop from the top hexagon to the chosen hexagon:</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/triangle2.png"><img src="/public/triangle2.png" width="100%"></a></p>
+<p>To compute the number of ways, I make a few key observations:<ul><li>Every path from the top hexagon to the purple hexagon will take exactly \(7\) hops.</li><li>Every path from the top hexagon to the purple hexagon will take \(4\) hops to the bottom left.</li></ul>And most importantly, any path satisfying these two properties will take us to the purple hexagon!</p>
+<p>So how many paths satisfy these properties? Well, the idea is simple: we have \(7\) hops, and \(4\) of them must be to the left. So, we simply need to choose \(4\) of the \(7\) hops to be to the left, set the rest to be to the right, and we are golden. So, the answer is \({7\choose 4}=35\).</p>
+<p>We can generalize this logic to find the number of paths to any hexagon in our triangle. Here's a diagram showing how that's done:</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/triangle5.png"><img src="/public/triangle5.png" width="100%"></a></p>
+<a id='pascaltree'></a><p><a class="gallery img-center-short cbox-Element" href="/public/triangle7.png"><img src="/public/triangle7.png" width="100%"></a></p>
+<p>This triangle is known as <a href='https://en.wikipedia.org/wiki/Pascal%27s_triangle' target='_blank'>Pascal's triangle</a> and has many special properties. For starters, let's look back at the purple hexagon. Is there another way we can compute the number of paths to it?</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/triangle6.png"><img src="/public/triangle6.png" width="100%"></a></p>
+<p>Observe that every path to the purple hexagon must go through exactly one of the green hexagon and the red hexagon. In other words, the number of paths to the purple hexagon is the sum of the number of paths to the red and green hexagons. This gives us the following formula for any \(k\lt n\):$${n\choose k}+{n\choose k+1}={n+1\choose k+1}$$This is called <strong>Pascal's identity</strong>. If we apply Pascal's identity to the red hexagon, we get the following diagram:</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/triangle8.png"><img src="/public/triangle8.png" width="100%"></a></p>
+<p>If we keep replacing the red hexagons with Pascal's Identity, we eventually get this diagram:</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/triangle9.png"><img src="/public/triangle9.png" width="100%"></a></p>
+<p>This tells us that the sum of the paths to each of the green hexagons is the number of paths to the purple hexagon. In equation form, this is $$\sum\limits_{i=k}^n{i\choose k}={n+1\choose k+1}$$This formula is known as the <a href='https://en.wikipedia.org/wiki/Hockey-stick_identity' target='_blank'>Hockey Stick Identity</a>.</p>
+<h3 id='perspective2'>Perspective 2: Binomial Distribution</h3>
+<p>Suppose I have a <strong>biased coin</strong> (a coin that flips heads with probability \(p\) instead of \(0.5\), and tails with probability \(1-p\)), and I flip it \(3\) times. What is the probability of getting exactly \(2\) heads?</p>
+<p>There are three different ways this can happen: \(HHT\), \(HTH\), and \(THH\). Each of these ways are mutually exclusive, so we can consider them individually.<ul><li>:\(HHT\) - Since each flip is independent, the probability of getting this outcome is \(p\cdot p\cdot (1-p)\)</li><li>\(HTH\): the probability of this outcome is \(p\cdot(1-p)\cdot p\).</li><li>\(THH\): the probability of this outcome is \((1-p)\cdot p\cdot p\)</li></ul>In each case, the probability of the outcome is \(p^2\cdot(1-p)\). Is this a coincedence?</p>
+<p>The answer is no. In each of the three cases, there is one tails and two heads. So the probability of each occuring is the same. So the final formula is \(3\cdot p^2\cdot(1-p)\).</p>
+<p>So why were there \(3\) possibilities? Each possibility was given by placing the \(2\) heads in the sequence of \(3\) flips. There are \({3\choose 2}=3\) ways to do this.</p>
+<p>We can now generalize our problem. Suppose I flip my biased coin \(n\) times. What is the probability of getting exactly \(x\) heads? Well, for any one of the valid outcomes, the probability is \(p^x\cdot(1-p)^{n-x}\). And, there are \(n\choose x\) valid outcomes. So, the probability is $${n\choose x}p^k(1-p)^{n-x}$$This is known as the <strong>binomial distribution</strong>, and is useful in many probability problems. The following diagram summarizes our work so far:</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/binom1.gif"><img src="/public/binom1.gif" width="100%"></a></p>
+<div class="exercise" title="Binomial Distribution"> Marta makes \(90\%\) of her free throws. She attempts \(3\) free throws. What is the probability that she scores at least twice?</div>
+<p>So how is this related to Pascal's triangle?</p>
+<h3 id='perspective3'>Perspective 3: Polynomials</h3>
+<p>Consider the polynomial \((x+y)^n\). There are coefficients \(c_n,\ldots,c_0\) such that $$(x+y)^n=c_nx^n+c_{n-1}x^{n-1}y^1+\ldots+c_1x^1y^{n-1}+c_0y^n$$How do we find \(c_n,\ldots,c_0\)? Well, let's try some examples
+  <table class="w3-table w3-striped w3-bordered">
+    <tbody>
+        <tr>
+          <td>\((x+y)^0\)</td>
+          <td>\(1\)</td>
+        </tr>
+        <tr>
+          <td>\((x+y)^1\)</td>
+          <td>\(1x+1y\)</td>
+        </tr>
+        <tr>
+          <td>\((x+y)^2\)</td>
+          <td>\(1x^2+2xy+1y^2\)</td>
+        </tr>
+        <tr>
+          <td>\((x+y)^3\)</td>
+          <td>\(1x^3+3x^2y+3xy^2+1y^3\)</td>
+        </tr>
+        <tr>
+          <td>\((x+y)^4\)</td>
+          <td>\(1x^4+4x^3y+6x^2y^2+4xy^3+1y^4\)</td>
+        </tr>
+        <tr>
+          <td>\((x+y)^5\)</td>
+          <td>\(1x^5+5x^4y+10x^3y^2+10x^2y^3+5xy^4+1y^5\)</td>
+        </tr>
+        <tr>
+          <td>\((x+y)^6\)</td>
+          <td>\(1x^6+6x^5y+15x^4y^2+20x^3y^3+15x^2y^4+6xy^5+1y^6\)</td>
+        </tr>
+        <tr>
+          <td>\((x+y)^7\)</td>
+          <td>\(1x^7+7x^6y+21x^5y^2+35x^4y^3+35x^3y^4+21x^2y^5+7xy^6+1y^7\)</td>
+        </tr>
+  </tbody></table>
+<p>Does this look vaguely familiar? If not, click <a href='#pascaltree'>this</a>. The coefficients are just the elements of Pascal's tree!</p>
+<p>And this should make sense: the coefficient of \(x^ay^b\) should be \(a+b\choose a\) since we are choosing which \(a\) of the \(a+b\) \((x+y)\) terms we are choosing \(x\) from, and choosing \(y\) from the rest.</p>
+<p>Thus, we have the following theorem: $$(x+y)^n=\sum\limits_{k=0}^n{n\choose k}x^ky^{n-k}$$This is known as the <strong>binomial theorem</strong>. If we let \(x=p\) and \(y=1-p\), we get $$1^n=\sum\limits_{k=0}^n{n\choose k}p^k(1-p)^{n-k}$$The right hand side of this formula is the binomial probability of getting \(k\) heads from \(n\) tosses. That's pretty cool!</p>
+<p>Now, let \(x=y=1\). Then, we have $$2^n=\sum\limits_{k=0}^n{n\choose k}$$We can generate a lot of cool formulas by playing around with \(x,y\), but this should be enough for now.</p>
+<p><strong>Note</strong>: I don't want you to memorize these formulas. Rather, understand the three perspectives. Mathematicians view these three perspectives as three different ways of seeing the same thing, and you'll become very strong at probability problems if you're able to do the same thing!</p>
+<h2 id='stat'>Introduction to Statistics</h2>
+<p>Statistics is the study of data, and for this week, we'll look at some basic ways of understanding data.</p>
+<p>I'm doing a research project where I ask every student in my class their height. Here is the data I got (in inches)</p>
+<table class="w3-table w3-striped w3-bordered">
+  <tbody>
       <tr>
-        <td>Blue</td>
-        <td>12</td>
+        <td>\(60\)</td>
+        <td>\(60\)</td>
+        <td>\(62\)</td>
+        <td>\(63\)</td>
+        <td>\(64\)</td>
+        <td>\(64\)</td>
+        <td>\(64\)</td>
+        <td>\(66\)</td>
+        <td>\(66\)</td>
+        <td>\(67\)</td>
+        <td>\(68\)</td>
+        <td>\(69\)</td>
+        <td>\(72\)</td>
+        <td>\(73\)</td>
+        <td>\(80\)</td>
       </tr>
+</tbody></table>
+<p>What can I tell from this information?</p>
+<h3 id='central'>Measures of Centrality</h3>
+<p>The first thing I might want to know is, what is the middle of the data? There are a few different ways of measuring the "middle" of data.</p>
+<h4 style='color:#019999;'>Mean</h4>
+<p>The most obvious way of finding the middle is taking the average of the data, otherwise called the <strong>mean</strong> of the data. If I have \(n\) values of data, which I call \(x_1,\ldots, x_n\), the mean is defined as follows:$$\overline x=\frac1n\sum\limits_{k=1}^nx_k$$For our example, the mean is approximately \(66.53\).</p>
+<div class="exercise" title="Calculating the mean"> Find the mean of the following data: $$2,-1,0,2$$</div>
+<p>The mean is a nice statistic because it is easy to calculate, and tells us what the middle of the data looks like, but it has an issue. If I have some <strong>outliers</strong> in my data (numbers that are much larger/smaller than the rest of the numbers), they affect the mean a lot. In our example, the \(6'8"\) individual dragged the mean from \(65.57\) to \(66.53\), almost an entire inch!</p>
+<p>If we want a way of finding the middle that is less affected by outliers, we can use the next measure of centrality.</p>
+<h4 style='color:#019999;'>Median</h4>
+<a id='data1'></a><p>Suppose I surveyed employees at company Boogle about their salaries, and received the following data (in thousands of dollars):</p>
+<table class="w3-table w3-striped w3-bordered">
+  <tbody>
       <tr>
-        <td>Green</td>
-        <td>9</td>
+        <td>\(24\)</td>
+        <td>\(25\)</td>
+        <td>\(28\)</td>
+        <td>\(28\)</td>
+        <td>\(31\)</td>
+        <td>\(33\)</td>
+        <td>\(240\)</td>
       </tr>
+</tbody></table>
+<p>The mean of this data set is \($58,429\). This is silly, of course. This salary is much higher than all but one employee's income. Is this really the best measure of centrality?</p>
+<p>In this case, we want a measure of centrality which is affected less by outliers (like the \($240,000\) salary). The <strong>median</strong> works as follows:<ul><li>If there is an odd number of data points, pick the value right in the middle of the data set.</li><li>If there is an even number of data points, take the average of the two middle data points</li></ul>In this example, there is an odd number of data points, so we take the middle value as the median, which is \($28,000\).</p>
+
+<div class="Exercise" title="Calculating the median"> Compute the median of <ul><li>\(-1,4,6,10\)</li><li>\(-150,2,3,8,7\)</li></ul></div>
+<p><strong>Solution</strong>:<ul><li>5</li><li>3</li></ul></p>
+<h4 style='color:#019999;'>Mode</h4>
+<p>The median, too, has its flaws. Suppose I had some data on the weights of students in a class (in lbs):</p>
+<table class="w3-table w3-striped w3-bordered">
+  <tbody>
       <tr>
-        <td>Red</td>
-        <td>5</td>
+        <td>\(105\)</td>
+        <td>\(108\)</td>
+        <td>\(110\)</td>
+        <td>\(112\)</td>
+        <td>\(136\)</td>
+        <td>\(136\)</td>
+        <td>\(140\)</td>
+        <td>\(143\)</td>
       </tr>
+</tbody></table>
+<p>In this case, the median is \(124\) pounds. But, no student is near that weight. And that's probably because our data contains the weight of both boys and girls. A data set like this is called <strong>bimodal</strong>, since it looks like two datasets glued together. In this case, the median doesn't do a great job finding the center of the data. Can we do better?</p>
+<p>The <strong>mode</strong> of the data is the most common data point. In this example, since \(136\) appears twice, it is the most common data point, and thus is the mode. The mode works best when we have a lot of data, since there will be some repetition, and the mode will measure that well.</p>
+<p>In summary, we have seen three measures of centrality. Often, we compute all \(3\) of them, and compare their results to understand our data. For example, if the mean is much greater than the median, we say that the data is <strong>right-skewed</strong>, meaning that there is likely some outliers on the right side of the data. If the mean is much less than the median, we say that the data is <strong>left-skewed</strong>, meaning that there is likely some outliers on the left side.</p>
+<h3 id='variance'>Measures of Variability</h3>
+<p>We saw how to measure the middle of a data set. But how do we measure how spread out it is?</p>
+<div class="example" title="Centrality vs Variability"> I have two different datasets:<table class="w3-table w3-striped w3-bordered">
+  <tbody>
       <tr>
-        <td>Yellow</td>
-        <td>4</td>
+        <td>\(1\)</td>
+        <td>\(5\)</td>
+        <td>\(9\)</td>
+        <td>\(9\)</td>
+        <td>\(9\)</td>
+        <td>\(13\)</td>
+        <td>\(17\)</td>
       </tr>
-</tbody></table>I pick a random marble from the bag. What is the probability of the chosen marble being either red or yellow?<br><br>Since these events are mutually exclusive, we have $$P(\text{red or yellow})=P(\text{red})+P(\text{yellow})=\frac4{30}+\frac5{30}=0.3$$
-</div>
-
-<div class="exercise" title="Are these events overlapping?"> In each scenario, explain why the events are mutually exclusive or overlapping:<ul><li>You conduct a survey of pet ownership. Event \(A\): the respondent is a cat owner. Event \(B\): the respondent is a dog owner.</li><li>Event \(A\): Your best friend plays the clarinet. Event \(B\): Your friend hates playing musical instruments.</li></ul></div>
-
-<h2 id='area'>Continuous Probability</h2>
-
-<p>In all of our examples so far, our state spaces have been finite (for example, the \(6\) outcomes of the roll of a die.) Let's consider the following question: Suppose I pick a point in the unit circle. What is the probability that is at most \(0.5\) away from the center of the circle?</p>
-<p>To answer this, let's remember our formula for probability: $$P(\text{favorable outcome})=\frac{\text{Number of favorable outcomes}}{\text{Total number of outcomes in sample space}}$$The issue with this formula is that there are infintely many points in our circle. So, the fraction would become \(\frac\infty\infty\), which is silly!</p>
-<p>Instead, if we replace Number with Area, we get a formula we can work with: $$P(\text{favorable outcome})=\frac{\text{Area of region of favorable outcomes}}{\text{Area of sample space}}$$Using this new formula, we see that the region of points that are at most \(0.5\) away from the center is just the circle of radius \(0.5\) around the center, which has area \(\frac\pi4\). The unit circle has area \(\pi\), so our answer is $$\frac{\frac\pi4}\pi=\frac14$$</p>
-
-<div class="Exercise" title="Continuous Probability"> Let \(x,y\) be randomly chosen real numbers between \(0,1\). What is the probability that \(y-x>0.5\)?</div>
+</tbody></table><table class="w3-table w3-striped w3-bordered">
+  <tbody>
+      <tr>
+        <td>\(7\)</td>
+        <td>\(8\)</td>
+        <td>\(9\)</td>
+        <td>\(9\)</td>
+        <td>\(9\)</td>
+        <td>\(10\)</td>
+        <td>\(11\)</td>
+      </tr>
+</tbody></table>Both of these datasets have the same mean, median, and mode. But the first is more spread out than the second. How can we measure this?</div>
+<h4 style='color:#019999;'>Range</h4>
+<p>The range is very simple: it is the difference of the biggest value minus the smallest value. In the example above, the range of the first dataset is \(17-1=16\), and the range of the second data set is \(11-7=4\).</p>
+<p>The range has the same issues that the mean does: it is far too sensitive to outliers. For example, the range of <a href='#data1'>this dataset</a> is \($216,000\), which isn't a good measure of that data set. Can we do better?</p>
+<h4 style='color:#019999;'>Interquartile Range</h4>
+<p>The <strong>Interquartile</strong> range is a modification to the range which is a bit more resilient to outliers. Like the median, we have slightly different rules for calulating it if the data set has even or odd number of values<ul><li>If the data set has an even number of values, let \(Q_1\) be the median of the lower half of the data, and \(Q_3\) be the median of the upper half. The IQR is \(Q_3-Q_1\).</li><li>If the data set has an odd number of values, remove the median from the data set, and then calculate the interquartile range.</li></ul>The IQR is more resilient to outliers since it ignores the values of the bottom \(25\%\) and the top \(25\%\) of the data.</p>
+<p>The IQR also let's us compute outliers ourselves! We call the value \(Q_1-1.5\cdot\text{IQR}\) the <strong>lower whisker</strong> of the data set, and \(Q_3+1.5\cdot\text{IQR}\) the <strong>upper whisker</strong>. Any data not between the two whiskers is considered an outlier, and is thus removed from the data set.</p>
+<p>To represent the information presented by the median, IQR, and the whiskers, we can draw a <strong>box plot</strong>.</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/boxplot.png"><img src="/public/boxplot.png" width="100%"></a></p>
+<p>The minimum of the data is the smallest non-outlier data point, and the maximum of the data is the largest non-outlier data point.</p>
+<h4 style='color:#019999;'>Variance</h4>
+<p>Finding outliers with IQR sounds like a great idea! However, there is an issue. Why have we chosen \(1.5\)? The answer is rather unfortunate: it seems to work okay. When the IQR outlier rule was developed in the 1970s, it seemed to work well on the datasets of the time, but modern datasets have shown that the IQR rule can fail in a lot of cases. For this reason, most statisticians rely on variance for studying variability.</p>
+<div class="Definition" title="Variance"> Given a dataset \(x_1,\ldots,x_n\) with mean \(\overline x\), the <strong>variance</strong> \(\sigma^2\) of the dataset is the following value:$$\sigma^2=\frac1n\sum\limits_{k=1}^n(x_k-\overline x)^2$$</div>
+<p>The idea is that we are measuring how far from the mean each data point is, and averaging their squares. The <strong>standard deviation</strong> \(\sigma\) is defined as the square root of variance.</p>
+<p>The main issue with variance is that it is hard to compute by hand. However, here's a little shortcut to make it a bit easier to compute.$$\sigma^2=\frac1n\left(\sum\limits_{k=1}^nx_k^2-\left(\sum\limits_{k=1}^nx_k\right)^2\right)$$</p>
+<div class="exercise" title="Computing standard deviation"> My class has the following GPAs:<table class="w3-table w3-striped w3-bordered">
+  <tbody>
+      <tr>
+        <td>\(1.90\)</td>
+        <td>\(3.00\)</td>
+        <td>\(2.53\)</td>
+        <td>\(3.71\)</td>
+        <td>\(2.12\)</td>
+        <td>\(1.76\)</td>
+        <td>\(2.71\)</td>
+        <td>\(1.39\)</td>
+        <td>\(4.00\)</td>
+        <td>\(3.33\)</td>
+      </tr>
+</tbody></table>Compute the standard deviation.</div>
+<p><strong>Solution</strong>: $$\sum\limits_{k=1}^nx_k=26.45$$$$\sum\limits_{k=1}^nx_k^2=76.7321$$$$\sigma^2=\frac{76.7321-26.45^2}{10}=0.677185$$$$\sigma\sim0.8229125$$</p>
 
 </div>
 
