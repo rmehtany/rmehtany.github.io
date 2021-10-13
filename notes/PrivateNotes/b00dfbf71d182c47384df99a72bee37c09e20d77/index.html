@@ -613,14 +613,16 @@
 
   <ul id="markdown-toc">
 <li><a href='#similar'>Similar Triangles</a></li>
+<li><a href='#cevian'>Cevians</a></li>
 <li><a href='#area'>Area of a Triangle</a></li>
 <li><a href='#isosceles'>Isosceles Triangles</a></li>
 <li><a href='#right'>Right Triangles</a></li>
 <li><a href='#equilateral'>Equilateral Triangles</a></li>
 <li><a href='#other'>Other properties of Triangles</a></li>
+<li><a href='#challenge'>Challenge: Mass Points</a></li>
 </ul>
 
-<p>This week's notes are all about triangles!</p>
+<p>This week's notes are all about triangles! Unfortunately, there are a lot of formulas in these notes. I don't want you to be memorizing most of them, but hopefully they give you an idea as to what is possible with triangles. Once we learn some trigonometry in a few weeks, we can understand these formulas a bit better.</p>
 <h2 id='similar'>Similar Triangles</h2>
 <p>Two triangles are <strong>similar</strong> if the only difference between them is their size (and possible the need to turn/flip around). The triangles below are all similar</p>
 <p><a class="gallery img-center-short cbox-Element" href="/public/similar1.png"><img src="/public/similar1.png" width="100%"></a></p><br>
@@ -648,8 +650,33 @@
 <p>The following diagram summarizes the statements above.</p>
 <p><a class="gallery img-center-short cbox-Element" href="/public/similar6.ong.webp"><img src="/public/similar6.ong.webp" width="100%"></a></p><br>
 <p><strong>Important</strong>: Given similar triangles \(A,B\) such that the ratio of sides is \(x\), the ratio of their perimeters is \(x\) and the ratio of their areas is \(x^2\).</p>
+<h2 id='cevian'>Cevians</h2>
+<p>Many triangle problems you will encounter will deal with <strong>cevians</strong>. A cevian is a line segment starting at a vertex of a triangle, and ending at the opposite side. In the diagram below, \(\overline{AD}\) is a cevian of \(\triangle ABC\) with side lengths \(a,b,c\).</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/stewartstheorem.png"><img src="/public/stewartstheorem.png" width="100%"></a></p>
+<p>One of the most famous cevian formulas has the following mnemonic: "A man and his dad put a bomb in the sink."$$man+dad=bmb+cnc$$This formula, known as <strong>Stewart's Theorem</strong>, works with all cevians. However, there are three special types of cevians you should know how to work with.</p>
+<h4 style='color:#019999;'>Angle Bisector</h4>
+<p><a class="gallery img-center-short cbox-Element" href="/public/Anglebisector.png"><img src="/public/Anglebisector.png" width="100%"></a></p>
+<p>An <strong>angle bisector</strong> is a cevian that splits the angle in half. In the diagram above, we see that \(\angle BAD=\angle CAD\), meaning that the cevian is an angle bisector.</p>
+<div class="exercise" title="Bisected triangles are similar"> Show that in the diagram above, \(\triangle BAD\) is similar to \(\triangle CAD\). (<strong>Hint</strong>: How many degrees are there in a triangle? What is \(\angle BDA+\angle CDA\))</div>
+<p>This exercise implies that \(bm=cn\). In fact, if \(bm=cn\) for any cevian, the cevian is an angle bisector.</p>
+<div class="exercise" title="Stewart's Theorem Part 2"> Show via Stewart's Theorem that for an angle bisector \(\overline{AD}\), $$\overline{AD}^2=bc-mn$$</div>
+<p>Surprisingly, all \(3\) angle bisectors of a triangle intersect at a single point, which is called the <strong>incenter</strong> because it is the center of the inscribed circle of the triangle (see the next diagram).</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/anglebisectorr.png"><img src="/public/anglebisectorr.png" width="100%"></a></p>
+<h4 style='color:#019999;'>Median</h4>
+<p>The <strong>median</strong> is a cevian which intersects the midpoint of the opposing side to the vertex. In the cevian diagram above, the cevian is a median iff \(m=n\).</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/Median.png"><img src="/public/Median.png" width="100%"></a></p>
+<div class="exercise" title="Stewart's Theorem Part 3"> Using Stewart's Theorem, show that in the diagram above, $$2\overline{AM}^2=\overline{AB}^2+\overline{AC}^2-\overline{BC}^2$$</div>
+<p>Like the angle bisectors, the three medians also meet at a common point, called the <strong>centroid</strong>, as in the diagram below.</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/Median2.gif"><img src="/public/Median2.gif" width="100%"></a></p>
+<a id='see'></a><p>And, \(\overline{A_3G}=2\overline{GM_3}\). This relationship comes in handy in a lot of geometry problems.</p>
+<h4 style='color:#019999;'>Altitude</h4>
+<p>The <strong>altitude</strong> is a cevian which is perpendicular to the side of the triangle it intersects.</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/altitude.png"><img src="/public/altitude.png" width="100%"></a></p>
+<p>The most important thing to know about the altitude is the area formula (in the next section). However, altitudes also have special relationships with the <strong>circumcenter</strong> (center of the circumscribing circle) and incenter. Let \(R\) be the radius of the circumcircle and \(r\) the radius of the incircle.</p>
+<p>Like the other two special cevians, all altitudes intersect at one point, which we call the <strong>orthocenter</strong>. If the lengths of the altitudes are \(h_a,h_b,h_c\), then the following formulas are true:$$h_ah_bh_c=\frac{(abc)^2}{8R^3}$$$$\frac1{h_a}+\frac1{h_b}+\frac1{h_c}=\frac1r$$</p>
+
 <h2 id='area'>Area of a Triangle</h2>
-<p>Here are some useful area formulas for triangles:<ul><li>Given a triangle with base \(b\) and height \(h\), the area of the triangle is \(\frac12bh\).</li><li>For those of you who know trigonometry, the area of a triangle with sides \(a,b\) and angle \(c\) between them is \(\frac12ab\sin c\).</li><li>If you have a triangle with coordinates \((x_1,y_1)\), \((x_2,y_2)\), \((x_3,y_3)\), the area is given by $$\frac12\cdot\left\vert x_1y_2-x_2y_1+x_2y_3-x_3y_2+x_3y_1-x_1y_3\right\vert$$<li> triangle with sides \(a,b,c\) and semiperimeter \(s=\frac{a+b+c}2\) has area $$\sqrt{s\cdot(s-a)(s-b)(s-c)}$$</li></ul>In general, we'd like to avoid using the last formula (called <strong>Heron's Formula</strong>) unless absolutely necessary, since it is a pain to compute.</p>
+<p>Here are some useful area formulas for triangles:<ul><li>Given a triangle with side length \(b\) (which we call the base) and altitude \(h\) to the base (which we call the height), the area of the triangle is \(\frac12bh\).</li><li>For those of you who know trigonometry, the area of a triangle with sides \(a,b\) and angle \(c\) between them is \(\frac12ab\sin c\).</li><li>If you have a triangle with coordinates \((x_1,y_1)\), \((x_2,y_2)\), \((x_3,y_3)\), the area is given by $$\frac12\cdot\left\vert x_1y_2-x_2y_1+x_2y_3-x_3y_2+x_3y_1-x_1y_3\right\vert$$<li> triangle with sides \(a,b,c\) and semiperimeter \(s=\frac{a+b+c}2\) has area $$\sqrt{s\cdot(s-a)(s-b)(s-c)}$$</li><li>If \(m_1,m_2,m_3\) are the medians of the triangle, and \(s=\frac12(m_1+m_2+m_3)\), then the area is $$\sqrt{s\cdot(s-m_1)(s-m_2)(s-m_3)}$$</ul>In general, we'd like to avoid using the last two formulas (called <strong>Heron's Formulas</strong>) unless absolutely necessary, since they are a pain to compute.</p>
 <h2 id='isosceles'>Isosceles Triangles</h2>
 <p>An isosceles triangle is a triangle with at least two sides equal.</p>
 <p><a class="gallery img-center-short cbox-Element" href="/public/isos1d.png"><img src="/public/isos1d.png" width="100%"></a></p><br>
@@ -663,8 +690,30 @@
 <h2 id='equilateral'>Equilateral Triangles</h2>
 <p>An equilateral triangle is a triangle with all equal sides (or equivalently, all angles equal to \(60^\circ\)). By definition, all equilateral triangles are similar. Using the area of an isosceles formula and setting \(a=b\), we get the area of the equilateral triangle to be \(\frac{a^2\sqrt3}4\).</p>
 <h2 id='other'>Other properties of triangles</h2>
+<p>There are other types of triangles (<strong>obtuse</strong>, which has an angle with more than \(90^\circ\) degrees, <strong>acute</strong>, whose angles are all less than \(90^\circ\), and <strong>scalene</strong>, which has \(3\) unequal sides) but these triangles don't have many special formulas. Here are some general results about triangles that are useful!</p>
 <p><ul>
   <li>The inradius (radius of the inscribed circle) of a triangle with side lengths \(a,b,c\) and area \(K\) is $$\frac{2K}{a+b+c}$$</li><li>The sum of any two sides of a triangle is greater than the third side.</li></ul></p>
+
+<h2 id='challenge'>Challenge: Mass Points</h2>
+<p>Mass Points are a cute technique that allow us to solve cevian problems without having to do too much solving. To understand how they work, let's first understand torque.</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/masspoints.png"><img src="/public/masspoints.png" width="100%"></a></p>
+<p>Suppose I have a see-saw, and I want to balance an elephant and an ant on the see-saw. Our elephant weighs \(100kg\) (it's a baby elephant) and our ant weighs \(1\) gram. So how do we balance the two?</p>
+<p>A see-saw is balanced when the <strong>torque</strong> on both sides is \(0\). Torque is the distance from the balancing point (which we call the <strong>fulcrum</strong>) times the weight. So if the baby elephant is \(0.5m\) away from the fulcrum, then the ant must be \(\frac{100 kg\cdot0.5 m}{0.001kg}=50km\) away from the fulcrum for the see-saw to balance. That's a long see-saw!</p>
+<p>Mass Points is all about applying this concept to geometry, by assigning weights to points in our diagram to balance around certain points.</p>
+<p>To summarize, here are the properties of mass points</p>
+<ul>
+  <li>See-saw: For any line segment \(AEC\) with a fulcrum at \(E\), and \(m(X)\) referring to the mass at point \(X\),$$m(A)\cdot\overline{AE}=m(C)\cdot\overline{CE}$$This is just our see-saw example with the elephant and ant generalized.</li><li>$$m(E)=m(A)+m(C)$$To understand this rule, consider the diagram <p><a class="gallery img-center-short cbox-Element" href="/public/masapunto.png"><img src="/public/masapunto.png" width="100%"></a></p>If we choose the weights at points \(A,B,C\) well, the diagram will balance at point \(P\). We can view this diagram as a see-saw \(BPE\), with \(E\) itself being a see-saw \(AEC\), as in the following diagram:<p><a class="gallery img-center-short cbox-Element" href="/public/masapunto2.png"><img src="/public/masapunto2.png" width="100%"></a></p>Thus, we can replace the see-saw on the right with a weight whose value is the sum of the weights on the see-saw. This gives us the desired relation.</li></ul>
+<p>To test our understanding, let's solve some problems!</p>
+<div class="exercise" title="Applying Mass Points"> In the following diagram, \(CE=EA\) and \(3AF=FB\). Find \(\frac{CD}{DB}\)<p><a class="gallery img-center-short cbox-Element" href="/public/masapunto3.png"><img src="/public/masapunto3.png" width="100%"></a></p></div>
+<p><strong>Solution</strong>: Assume that the diagram balances on point \(P\). If \(m(A)=3\), then since \(CE=EA\), \(m(C)=3\). Since \(3AF=FB\), \(m(B)=1\). Since \(\frac{m(C)}{m(B)}=3\), \(\frac{CD}{DB}=\frac13\) by the see-saw rule.</p>
+<p>To test our understanding, let's solve some problems!</p>
+<div class="exercise" title="Applying Mass Points 2"> In \(\triangle ABC\), points \(D,E\) are on \(BC\) and \(AC\) respectively. If \(AD\) and \(BE\) intersect at point \(T\) such that \(\frac{AT}{TD}=3\), \(\frac{BT}{TE}=4\), then calculate \(\frac{CD}{DB}\)<p><a class="gallery img-center-short cbox-Element" href="/public/masapunto4.png"><img src="/public/masapunto4.png" width="100%"></a></p></div>
+<p><strong>Solution</strong>: Assume the diagram balances at \(T\), with weights at \(A,B,C\). Since \(\frac{AT}{TD}=3\), \(3m(A)=m(D)\). And, \(m(A)+m(D)=m(T)\). By the same logic, \(4m(B)=m(E)\) and \(m(B)+m(E)=m(T)\). So, we have \(4m(A)=5m(B)=m(T)\). Let \(m(T)=20\), so \(m(A)=5\), \(m(B)=4\). So, \(m(E)=16\), and by the second rule, \(m(E)=m(A)+m(C)\), so \(m(C)=11\). Thus, \(\frac{m(C)}{m(B)}=\frac{11}4\), meaning that \(\frac{CD}{DB}=\frac4{11}\).</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/masapunto5.png"><img src="/public/masapunto5.png" width="100%"></a></p>
+<p>Now that you've gotten a feel for how mass point can be used to solve problems, here are some exercises.</p>
+<div class="exercise" title="Medians"> <a href='#see'> Earlier, I claimed</a> that \(\frac{AG}{GM_3}=2\) where \(G\) is the centroid and \(M_3\) is the midpoint. Show that this is true via mass points</div>
+<div class="exercise" title="Applying Mass Points 3"> In \(\triangle ABC\), points \(D,E,F\) are on \(BC,AC,AB\) respectively. Let \(BD=DC\), \(3AE=EC\), and \(2AF=FB\). Point \(P\) is the intersection of \(EF\) and \(AD\). Compute \(\frac{AP}{PD}\).</div>
+
 
 </div>
 

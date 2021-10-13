@@ -616,6 +616,7 @@
     <li><a href='#area'>Area and Circumference of the Circle</a></li>
     <li><a href='#pythagorean'>Pythagorean Triples</a></li>
     <li><a href='#permutations'>Permutations and Combinations</a></li>
+    <li><a href='#challenge'>Challenge: Distinguishability</a></li>
 </ul>
 
 <h2 id='dimensionalanalysis'>Dimensional Analysis</h2>
@@ -705,6 +706,27 @@ For the following problems, use the following table:
       <tr><td>Permutations</td><td>\(n^k\)</td><td>\(\frac{n!}{(n-k)!}\)</td></tr>
       <tr><td>Combinations</td><td>\(\frac{(n+k-1)!}{k!(n-1)!}\)</td><td>\(\frac{n!}{k!(n-k)!}\)</td></tr>
 </tbody></table>
+
+<h2 id='challenge'>Distinguishability</h2>
+<p>Suppose I want to distribute \(n\) objects to \(k\) buckets. Simple, right? Well, not really. The answer depends on <strong>distinguishability</strong> of \(n\) and \(k\), or in other words, whether two objects are different or not.</p>
+<p>Example of distinguishable \(n\) to distinguishable \(k\): Suppose I want to give away my book collection to the class. Assuming that each book is different, \(n\) is distinguishable, and people are always distinguishable, so \(k\) is also distinguishable.</p>
+<div class="exercise" title="Distinguishability"> Come up with example scenarios for the other three cases: distinguishable to indistinguishable, indistinguishable to distinguishable, indistinguishable to indistinguishable.</div>
+<p>You'll see plenty of problems that will require figuring out which of these \(4\) cases you are in, and then solving accordingly. Here is a table of the formulas for the \(4\) different cases.</p>
+
+<table class="w3-table w3-striped w3-bordered">
+  <tbody>
+      <tr><td></td><td>Distinguishable \(n\)</td><td>Indistinguishable \(n\)</td></tr>
+      <tr><td>Distinguishable \(k\)</td><td>\(n^k\)</td><td>\(n+k-1\choose k-1\)</td></tr>
+      <tr><td>Indistinguishable \(k\)</td><td>No formula</td><td>No formula</td></tr>
+</tbody></table>
+
+<p>Unfortunately, two of the \(4\) cases do not have formulas in general. So if you run into either of these cases, you must solve with casework :(</p>
+
+<div class="exercise" title="Indistinguishable to indistinguishable"> How many ways are there to allocate \(5\) indistinguishable objects to \(3\) indistinguishable buckets?</div>
+<p><strong>Solution</strong>: 10</p>
+<div class="exercise" title="Distinguishable to indistinguishable"> How many ways are there to allocate \(5\) distinguishable objects to \(3\) indistinguishable buckets?</div>
+<p><strong>Solution</strong>: \(41\)</p>
+
 
 </div>
 

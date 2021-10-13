@@ -614,12 +614,10 @@
   <ul id="markdown-toc">
 <li><a href='#binomial'>More about Combinations</a><ul><li><a href='#perspective1'>Perspective 1: Pascal's Triangle</a></li><li><a href='#perspective2'>Perspective 2: Binomial Distribution</a></li><li><a href='#perspective3'>Perspective 3: Polynomials</a></li></ul></li>
 <li><a href='#stat'>Introduction to Statistics</a><ul><li><a href='#central'>Measures of Centrality</a></li><li><a href='#variance'>Measures of Variability</a></li></ul></li>
+<li><a href='#challenge'>Challenge: Chebyshev's Rule</a></li>
+
 </ul>
 
-<p>Before we start this week's notes, I want to introduce some notation you may not have seen before.</p>
-<p>Let's say I want to add all of the numbers from \(1\) to \(n\). I would write it like this: $$1+2+\ldots+n$$In mathematics, we don't like using \(\ldots\) since it can be unclear. Instead, we have a notation to represent this sort of sum. $$\sum\limits_{k=1}^nk=1+2+\ldots+n$$This diagram explains what the \(\Sigma\) notation means:</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/sumby1.png"><img src="/public/sumby1.png" width="100%"></a></p>
-<p>We can even do fancier things with \(\Sigma\). We can sum squared numbers:$$\sum\limits_{k=1}^4k^2=1^2+2^2+3^2+4^2=30$$We can add the first \(6\) odd numbers:$$\sum\limits_{k=1}^62k-1=36$$There are many things we can do with this notation. If you are still a bit confused, try using <a href='https://www.mathsisfun.com/numbers/sigma-calculator.html' target='_blank'>the Sigma Calculator</a> to play around with \(\Sigma\).</p>
 <h2 id='binomial'>More about Combinations</h2>
 <p>Our first topic for this week will be exploring combinations and their applications. From here on out, we'll adopt a new notation for combinations: we'll write \(n\choose k\) to represent \(_nC_k\).</p>
 <h3 id='perspective1'>Perspective 1: Pascal's Triangle</h3>
@@ -817,6 +815,16 @@
       </tr>
 </tbody></table>Compute the standard deviation.</div>
 <p><strong>Solution</strong>: $$\sum\limits_{k=1}^nx_k=26.45$$$$\sum\limits_{k=1}^nx_k^2=76.7321$$$$\sigma^2=\frac{76.7321-26.45^2}{10}=0.677185$$$$\sigma\sim0.8229125$$</p>
+
+<h2 id='challenge'>Challenge: Chebyshev's Rule</h2>
+<p>We commented earlier that using IQR to find outliers isn't the best idea. So how can we find outliers? We can use the standard deviation! Chebyshev's Rule says the following:</p>
+<blockquote class="w3-panel w3-leftbar w3-light-grey">At least \(1-\frac1{k^2}\) of the data of any data set is in between \(\bar x-k\sigma\) and \(\bar x+k\sigma\), where \(\sigma\) is the standard deviation and \(\bar x\) is the mean.</blockquote>
+<p>This means that at least \(88\%\) (and for nice datasets, much more) of the data lies between \(\bar x-3\sigma\) and \(\bar x+3\sigma\). Often, our outlier test is checking whether the data is within these limits.</p>
+<p>Chebyshev's rule is true thanks to <strong>Markov's inequality</strong>, which says that given a non-negative random variable (meaning that the state space contains no negative numbers) \(X\) and number \(a>0\), $$P(X\geq a)\leq\frac{E[X]}a$$</p>
+<div class="exercise" title="Chebyshev"> Show why Chebyshev's rule is true using Markov's inequality</div>
+<div class="exercise" title="Variance is linear"> Show that like expected value, for independent random variables \(X_1,\ldots,X_n\), the variance of \(X_1+\ldots+X_n\) is the sum of the variances of \(X_1,\ldots,X_n\).</div>
+<div class="exercise" title="Shortcut"> Show why the shortcut formula is true. More specifically, show that $$\sigma^2=E[X^2]-E[X]^2$$</div>
+
 
 </div>
 

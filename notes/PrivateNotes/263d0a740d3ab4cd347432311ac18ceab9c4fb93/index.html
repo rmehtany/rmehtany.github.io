@@ -617,7 +617,13 @@
 <li><a href='#independent'>Independent Events</a></li>
 <li><a href='#mutually'>Mutually Exclusive Events</a></li>
 <li><a href='#area'>Continuous Probability</a></li>
+<li><a href='#expected'>Challenge: Expected Value</a></li>
+
 </ul>
+<p>Before we start this week's notes, I want to introduce some notation you may not have seen before.</p>
+<p>Let's say I want to add all of the numbers from \(1\) to \(n\). I would write it like this: $$1+2+\ldots+n$$In mathematics, we don't like using \(\ldots\) since it can be unclear. Instead, we have a notation to represent this sort of sum. $$\sum\limits_{k=1}^nk=1+2+\ldots+n$$This diagram explains what the \(\Sigma\) notation means:</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/sumby1.png"><img src="/public/sumby1.png" width="100%"></a></p>
+<p>We can even do fancier things with \(\Sigma\). We can sum squared numbers:$$\sum\limits_{k=1}^4k^2=1^2+2^2+3^2+4^2=30$$We can add the first \(6\) odd numbers:$$\sum\limits_{k=1}^62k-1=36$$There are many things we can do with this notation. If you are still a bit confused, try using <a href='https://www.mathsisfun.com/numbers/sigma-calculator.html' target='_blank'>the Sigma Calculator</a> to play around with \(\Sigma\).</p>
 <h2 id='What'>What is Probability?</h2>
 <p>This week's topic will be all about probability. Probability is one of the hardest subjects you'll encounter in competitions, not least because of how counterintuitive it can be. But what even is probability?</p>
 <p>We say that an <strong>event</strong> is an activity or process that involves chance. Probability, therefore, is the likelihood of an event having some outcome.</p>
@@ -715,6 +721,20 @@
 <p>Instead, if we replace Number with Area, we get a formula we can work with: $$P(\text{favorable outcome})=\frac{\text{Area of region of favorable outcomes}}{\text{Area of sample space}}$$Using this new formula, we see that the region of points that are at most \(0.5\) away from the center is just the circle of radius \(0.5\) around the center, which has area \(\frac\pi4\). The unit circle has area \(\pi\), so our answer is $$\frac{\frac\pi4}\pi=\frac14$$</p>
 
 <div class="Exercise" title="Continuous Probability"> Let \(x,y\) be randomly chosen real numbers between \(0,1\). What is the probability that \(y-x>0.5\)?</div>
+
+<h2 id='expected'>Challenge: Expected Value</h2>
+<p>In the notes so far, we've discussed probability rather informally. Let's be a bit more precise.</p>
+<p>A <strong>random variable</strong> is just a quantity that varies randomly. For example, \(D_6\) is the random variable that represents the roll of one die. It takes values \(\{1,2,3,4,5,6\}\), each with probability \(\frac16\).</p>
+<p>Given a random variable, we might want to ask, what is the average value of the random variable? Well, that is simple to calculate. It is just $$E[R]=\sum\limits_{x\in S}x\cdot P(x)$$The idea behind this summation is as follows. We are taking a sum over all \(x\) in the state space \(S\), and for each \(x\), we are adding the term \(x\cdot P(x)\).</p>
+<p>As an example, $$E[D_6]=1\cdot\frac16+2\cdot\frac16+\ldots+6\cdot\frac16=3.5$$Expected value is a very useful concept because it is a linear function. If I have random variables \(X_1,\ldots,X_n\), then $$E[X_1+X_2+\ldots+X_n]=E[X_1]+E[X_2]+\ldots+E[X_n]$$Here are some exercises to test your understanding.</p>
+<div class="exercise" title="Name Tags"> There are \(n\) people in a room, and \(n\) name tags, each for one person. However, the name tags are handed out randomly so that each person gets one random tag. What is the expected value of the number of people who get their own tag?</div>
+<p><strong>Solution</strong>: \(1\)</p>
+<div class="exercise" title="Poking Babies"> \(2020\) babies sit in a circle, and each one either pokes the baby to its right, or to its left, with equal probability. What is the expected number of unpoked babies?</div>
+<p><strong>Solution</strong>: 505</p>
+<div class="exercise" title="Lining up students"> There are \(13\) girls and \(7\) boys in the class. They are randomly put into a line. What is the expected number of places where a girl and a boy are standing next to each other?</div>
+<p><strong>Solution</strong>: 9.1</p>
+<div class="exercise" title="Infinite expected value"> Can you come up with a random variable that has infinite expected value, but \(100\%\) probability of outputting \(0\)?</div>
+
 
 </div>
 
