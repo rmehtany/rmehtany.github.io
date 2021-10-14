@@ -740,8 +740,15 @@
 <p>The mean of this data set is \($58,429\). This is silly, of course. This salary is much higher than all but one employee's income. Is this really the best measure of centrality?</p>
 <p>In this case, we want a measure of centrality which is affected less by outliers (like the \($240,000\) salary). The <strong>median</strong> works as follows:<ul><li>If there is an odd number of data points, pick the value right in the middle of the data set.</li><li>If there is an even number of data points, take the average of the two middle data points</li></ul>In this example, there is an odd number of data points, so we take the middle value as the median, which is \($28,000\).</p>
 
-<div class="Exercise" title="Calculating the median"> Compute the median of <ul><li>\(-1,4,6,10\)</li><li>\(-150,2,3,8,7\)</li></ul></div>
-<p><strong>Solution</strong>:<ul><li>5</li><li>3</li></ul></p>
+<div class="Exercise" title="Calculating the median"> Compute the median of <ul><li>\(-1,4,6,10\)</li><li>\(-150,2,3,8,7\)</li></ul>
+  <div class="solution">
+<p><a onclick="myCollapse('ex1')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="ex1" class="w3-container w3-hide">
+<ul><li>5</li><li>3</li></ul>
+</div>
+</div>
+</div>
+
 <h4 style='color:#019999;'>Mode</h4>
 <p>The median, too, has its flaws. Suppose I had some data on the weights of students in a class (in lbs):</p>
 <table class="w3-table w3-striped w3-bordered">
@@ -813,8 +820,14 @@
         <td>\(4.00\)</td>
         <td>\(3.33\)</td>
       </tr>
-</tbody></table>Compute the standard deviation.</div>
-<p><strong>Solution</strong>: $$\sum\limits_{k=1}^nx_k=26.45$$$$\sum\limits_{k=1}^nx_k^2=76.7321$$$$\sigma^2=\frac{76.7321-26.45^2}{10}=0.677185$$$$\sigma\sim0.8229125$$</p>
+</tbody></table>Compute the standard deviation.<div class="solution">
+<p><a onclick="myCollapse('ex2')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="ex2" class="w3-container w3-hide">
+$$\sum\limits_{k=1}^nx_k=26.45$$$$\sum\limits_{k=1}^nx_k^2=76.7321$$$$\sigma^2=\frac{76.7321-26.45^2}{10}=0.677185$$$$\sigma\sim0.8229125$$
+</div>
+</div>
+</div>
+
 
 <h2 id='challenge'>Challenge: Chebyshev's Rule</h2>
 <p>We commented earlier that using IQR to find outliers isn't the best idea. So how can we find outliers? We can use the standard deviation! Chebyshev's Rule says the following:</p>

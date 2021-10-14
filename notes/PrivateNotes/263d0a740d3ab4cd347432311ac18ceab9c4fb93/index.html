@@ -635,17 +635,28 @@
 <p>Our sample space is the set \(\{1,2,3,4,5,6\}\) while our favorable outcome space is \(\{2,4,6\}\). Using these diagrams may seem silly, but they are actually quite helpful!</p>
 <p>Now how do we find the probability of our event having a favorable outcome? This is a tough question. However, it is not so tough when our sample space is <strong>uniform</strong>, meaning that every outcome in the sample space is equally likely! In this case, the probability of a favorable outcome occuring is: $$P(\text{favorable outcome})=\frac{\text{Number of favorable outcomes}}{\text{Total number of outcomes in sample space}}$$</p>
 <div class="exercise" title="Finding the Probability of outcomes"> Suppose I draw a random card from the top of a standard \(52\) card deck. What is the probability that <ul><li>The card drawn is a King</li><li>The card drawn is a club</li></ul>
-</div>
-<p><strong>Solution</strong>:<ul><li>There are \(52\) cards in our sample space. \(4\) cards are Kings. So, the answer is $$P(\text{King})=\frac4{52}=\frac1{13}$$</li><li>There are \(52\) cards in our sample space. \(13\) cards are clubs. So, the answer is $$P(\text{Club})=\frac{13}{52}=\frac14$$</li></ul></p>
+  <div class="solution">
+  <p><a onclick="myCollapse('ex1')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+  <div id="ex1" class="w3-container w3-hide">
+  <ul><li>There are \(52\) cards in our sample space. \(4\) cards are Kings. So, the answer is $$P(\text{King})=\frac4{52}=\frac1{13}$$</li><li>There are \(52\) cards in our sample space. \(13\) cards are clubs. So, the answer is $$P(\text{Club})=\frac{13}{52}=\frac14$$</li></ul>
+  </div>
+  </div>
+  </div>
 
 
 <p>As you see in the exercise above, when the sample space is uniform (all possibilities are equally likely), finding the probability is about counting the number of favorable outcomes. That also means that permutations and combinations are important in calculating probability.</p>
 <div class="exercise" title="Probabilities with Permutations/Combinations"> Your class has \(12\) girls and \(11\) boys. Your teacher selects \(4\) students uniformly to present their projects.<ul><li>What is the probability all \(4\) students are girls?</li><li>Suppose the teacher chose Andy, Ciara, Beth, and Eugene. The teacher also chose which order they'd present randomly. What is the probability that they will present in alphabetical order?</li></ul>
-</div>
-<p><strong>Solution</strong>: <ul>
-  <li>There are \(_{23}C_4\) ways to choose \(4\) students from the class. There are \(_{12}C_4\) ways of choosing \(4\) girls from the class. So, our answer is $$\frac{_{12}C_4}{_{23}C_4}=\frac{495}{8855}=\frac5{161}$$</li>
-  <li>There are \(_4P_4=4!\) ways to choose an ordering of \(4\) students to present. There is \(1\) way for that ordering to be alphabetical. So, our answer is $$\frac1{4!}=\frac1{24}$$</li>
-</ul></p>
+  <div class="solution">
+  <p><a onclick="myCollapse('ex2')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+  <div id="ex2" class="w3-container w3-hide">
+    <ul>
+      <li>There are \(_{23}C_4\) ways to choose \(4\) students from the class. There are \(_{12}C_4\) ways of choosing \(4\) girls from the class. So, our answer is $$\frac{_{12}C_4}{_{23}C_4}=\frac{495}{8855}=\frac5{161}$$</li>
+      <li>There are \(_4P_4=4!\) ways to choose an ordering of \(4\) students to present. There is \(1\) way for that ordering to be alphabetical. So, our answer is $$\frac1{4!}=\frac1{24}$$</li>
+    </ul>
+  </div>
+  </div>
+  </div>
+
 <h2 id='law'>Law of Large Numbers</h2>
 <p>In the summer of 1913 in the Casino de Monte-Carlo, hundreds of people were playing Roulette, a game in which one bets on whether the rotating ball will fall on a red or black spot. On average, it will land on a red spot \(50\%\) of the time. However, on this special day, the ball landed on a black spot \(26\) times in a row.</p>
 <p>This made newspaper headlines! One newspaper asked readers, if the roulette was spun again, which spot was the ball most likely to fall in? There were some competing theories:<ul><li>Some people were convinced that the roulette was rigged to fall on black more than \(50\%\) of the time, and hence, if the roulette was spun again, it would most likely fall on black.</li><li>Others were convinced that what they saw was an exceptional event, but to balance out the \(26\) black spots in a row, the next roulette roll would land on a red spot</li></ul></p>
@@ -727,12 +738,33 @@
 <p>A <strong>random variable</strong> is just a quantity that varies randomly. For example, \(D_6\) is the random variable that represents the roll of one die. It takes values \(\{1,2,3,4,5,6\}\), each with probability \(\frac16\).</p>
 <p>Given a random variable, we might want to ask, what is the average value of the random variable? Well, that is simple to calculate. It is just $$E[R]=\sum\limits_{x\in S}x\cdot P(x)$$The idea behind this summation is as follows. We are taking a sum over all \(x\) in the state space \(S\), and for each \(x\), we are adding the term \(x\cdot P(x)\).</p>
 <p>As an example, $$E[D_6]=1\cdot\frac16+2\cdot\frac16+\ldots+6\cdot\frac16=3.5$$Expected value is a very useful concept because it is a linear function. If I have random variables \(X_1,\ldots,X_n\), then $$E[X_1+X_2+\ldots+X_n]=E[X_1]+E[X_2]+\ldots+E[X_n]$$Here are some exercises to test your understanding.</p>
-<div class="exercise" title="Name Tags"> There are \(n\) people in a room, and \(n\) name tags, each for one person. However, the name tags are handed out randomly so that each person gets one random tag. What is the expected value of the number of people who get their own tag?</div>
-<p><strong>Solution</strong>: \(1\)</p>
-<div class="exercise" title="Poking Babies"> \(2020\) babies sit in a circle, and each one either pokes the baby to its right, or to its left, with equal probability. What is the expected number of unpoked babies?</div>
-<p><strong>Solution</strong>: 505</p>
-<div class="exercise" title="Lining up students"> There are \(13\) girls and \(7\) boys in the class. They are randomly put into a line. What is the expected number of places where a girl and a boy are standing next to each other?</div>
-<p><strong>Solution</strong>: 9.1</p>
+<div class="exercise" title="Name Tags"> There are \(n\) people in a room, and \(n\) name tags, each for one person. However, the name tags are handed out randomly so that each person gets one random tag. What is the expected value of the number of people who get their own tag?
+<div class="solution">
+<p><a onclick="myCollapse('ex3')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="ex3" class="w3-container w3-hide">
+\(1\)
+</div>
+</div>
+</div>
+
+<div class="exercise" title="Poking Babies"> \(2020\) babies sit in a circle, and each one either pokes the baby to its right, or to its left, with equal probability. What is the expected number of unpoked babies?
+  <div class="solution">
+  <p><a onclick="myCollapse('ex4')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+  <div id="ex4" class="w3-container w3-hide">
+  \(505\)
+  </div>
+  </div>
+  </div>
+
+<div class="exercise" title="Lining up students"> There are \(13\) girls and \(7\) boys in the class. They are randomly put into a line. What is the expected number of places where a girl and a boy are standing next to each other?
+  <div class="solution">
+  <p><a onclick="myCollapse('ex5')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+  <div id="ex5" class="w3-container w3-hide">
+  \(9.1\)
+  </div>
+  </div>
+  </div>
+
 <div class="exercise" title="Infinite expected value"> Can you come up with a random variable that has infinite expected value, but \(100\%\) probability of outputting \(0\)?</div>
 
 
