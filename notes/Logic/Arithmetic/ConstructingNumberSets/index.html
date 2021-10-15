@@ -793,7 +793,46 @@ Proof by induction on \(a\). $$(0\cdot b)\cdot c=0\cdot c=0=0\cdot(b\cdot c)$$$$
 
 <p>For some additional notation, we write \([(a,b)]\) to represent the element of \(\bbZ\) that contains \((a,b)\).</p>
 
-<div class="Theorem" title="Integer Addition"> Let \(+\) be the following binary operation on \(\bbZ\):$$[(a,b)]+[(c,d)]=[(a+c,b+d)]$$This operation is well-defined.
+<div class="Theorem" title="Unique Elements"> For any \(a,b,c\in\bbN\), if \([(a,c)]=[(b,c)]\) or \([(c,a)]=[(c,b)]\), then \(a=b\).
+<div class="proof">
+<p><a onclick="myCollapse('uniqueelem')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="uniqueelem" class="w3-container w3-hide">
+If \([(a,c)]=[(b,c)]\), then \(a+c=c+b\), which by addition being injective implies that \(a=b\). If \([(c,a)]=[(c,b)]\), then \(c+b=a+c\), which by addition being injective implies \(a=b\).
+</div>
+</div>
+</div>
+
+
+<p>This theorem implies that the function \(\bbN\to\bbZ\) given by \(x\mapsto[(x,0)]\) is injective. The function is known as the <strong>canonical embedding</strong> of the naturals into the integers. By canonical embedding, we mean that it is the standard choice of injection \(\bbN\to\bbZ\), so much so that we call \([(x,0)]\) just \(x\). Under this interpretation, \(\bbN\subset\bbZ\). Now, let's see that \(\bbN\neq\bbZ\)</p>
+
+<div class="Theorem" title="Negative Integers"> For all \(x\in\bbN\), \([(0,S(x))]\neq y\) for all \(y\in\bbN\).
+<div class="proof">
+<p><a onclick="myCollapse('neggintegers')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="neggintegers" class="w3-container w3-hide">
+Suppose there exists some \(y\in\bbN\) such that \([(y,0)]=[(0,S(x))]\). Then, \(y+S(x)=S(y+x)=0+0\), a contradiction.
+</div>
+</div>
+</div>
+
+<p>Integers of this form, which we will call negative numbers, have some nice properties with respect to addition.</p>
+
+<div class="Definition" title="Negation"> For any \([(a,b)]\in\bbZ\), we define \(-[(a,b)]\), the <strong>negation</strong> of \([(a,b)]\), as \([(b,a)]\). It is evident by definition that \(--[(a,b)]=[(a,b)]\), so the negation is its own inverse.</div>
+
+<p>This definition is well defined since for any \([(a,b)]=[(c,d)]\), \(a+d=b+c\), which implies \(b+c=a+d\) and thus \([(b,a)]=[(d,c)]\). I claim that all integers are in \(\bbN\), or are the negation of some non-zero natural number.</p>
+
+<div class="Theorem" title="Integer forms"> All integers \([(a,b)]\) are equal to \([(x,0)]\) or \([(0,x)]\) for some \(x\in\bbN\).
+<div class="proof">
+<p><a onclick="myCollapse('prooof')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="prooof" class="w3-container w3-hide">
+Let \(b\in\bbN\). Proof by induction on \(a\). If \(a=0\), then \([(0,b)]=[(0,b)]\). For the inductive case, there are two possibilities:<br><ul><li>There exists \(x\in\bbN\) such that \([(a,b)]=[(0,x)]\). If \(x=0\), then \(a=b\), so \(S(a)+0=b+1\) and thus \([(S(a),b)]=[(1,0)]\). If \(x=S(k)\) for some \(k\in\bbN\), then since \(a+S(k)=b\), \(S(a)+k=b\), so \([(S(a),b)]=[(0,k)]\).</li><li>There exists \(x\in\bbN\) such that \([(a,b)]=[(x,0)]\): Then \(a=b+x\), so \(S(a)=b+S(x)\). Thus, \([(S(a),b)]=[(S(x),0)]\).</li></ul>
+</div>
+</div>
+</div>
+
+<p>Thus, all integers are either \(0\), a non-zero natural number, or the negation of a non-zero natural number. We call non-zero natural numbers <strong>positive</strong> integers, negations of non-zero natural numbers <strong>negative</strong> integers.</p>
+<p>So, all integers can be written as \(k\) or \(-k\) for some \(k\in\bbN\) (with \(-0=0\) by definition.) Moreover, \(--k=k\) as we saw earlier. To see why this is useful, let's understand how addition is defined.</p>
+
+<div class="Definition" title="Integer Addition"> Let \(+\) be the following binary operation on \(\bbZ\):$$[(a,b)]+[(c,d)]=[(a+c,b+d)]$$This operation is well-defined.
 <div class="proof">
 <p><a onclick="myCollapse('intadd')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
 <div id="intadd" class="w3-container w3-hide">
@@ -802,7 +841,115 @@ By well defined, we mean that the definition of the function produces the same a
 </div>
 </div>
 
-<p>This definition of addition is a binary operation since it is well-defined by definition.</p>
+<p>This definition of addition is a binary operation since it is well-defined by definition. Now, we list a series of important properties of integers.</p>
+
+<div class="Definition" title="Subtraction"> \(\;\)<strong>Subtraction</strong> is the following binary operation: \([(a,b)]-[(c,d)]\) is the integer \([(a,b)]+(-[(c,d)])\). </div>
+
+<div class="Theorem" title="Additive Inverses"> \([(a,b)]-[(a,b)]=[(a,b)]+(-[(a,b)])=0\) for all \([(a,b)]\in\bbZ\). \(0\) is the identity element of \(\bbZ\) for addition, and there are no others.
+<div class="proof">
+<p><a onclick="myCollapse('addinvint')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="addinvint" class="w3-container w3-hide">
+$$[(a,b)]+(-[(a,b)])=[(a,b)]+[(b,a)]=[(a+b,a+b)]=[(0,0)]$$$$[(a,b)]+[(0,0)]=[(0,0)]+[(a,b)]=[(a,b)]$$$$([(a,b)]+[(c,d)])-[(a,b)]=[(c,d)]$$
+</div>
+</div>
+</div>
+
+
+<div class="Theorem" title="Ordering Integers"> Consider the relation on \(\bbZ\) given by \([(a,b)]\leq[(c,d)]\) iff \([(a,b)]-[(c,d)]\in\bbN\). This relation is an order on \(\bbZ\), and orders the naturals by the natural order.
+<div class="proof">
+<p><a onclick="myCollapse('oop')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="oop" class="w3-container w3-hide">
+Let's first show that this relation is an order.<br><ul><li>Reflexivity: \(\;[(a,b)]-[(a,b)]=[(a+b,a+b)]=0\)</li><li>Anti-symmetry: If \([(a,b)]-[(c,d)]=[(a+d,b+c)]=[(k,0)]\) and \([(c,d)]-[(a,b)]=[(c+b,d+a)]=[(x,0)]\) for \(x,k\in\bbN\), then $$[(x+k,0)]=[(x,0)]+[(k,0)]=[(a+d,b+c)]+[(c+b,a+d)]=[(0,0)]$$Thus, \(x+k=0\), which implies that \(x,k=0\).</li><li>Transitivity: If \([(a,b)]-[(c,d)]=[(x,0)]\) and \([(c,d)]-[(e,f)]=[(y,0)]\) for \(x,y\in\bbN\), then $$[(a,b)]-[(e,f)]=[(a+f,b+e)]=[(a+f+c+d,b+e+c+d)]$$$$=([(a,b)]-[(c,d)])+([(c,d)]-[(e,f)])=x+y\in\bbN$$</li></ul><br>To see that this order is the same as the natural numbers order when comparing natural numbers, let \(x,y\in\bbN\), I claim that \([(x,0)]\leq[(y,0)]\) iff \(x\leq y\). Observe that \([(y,0)]-[(x,0)]=[(y,x)]\). If there exists \(k\in\bbN\) such that \([(y,x)]=[(k,0)]\), then \(y=x+k\), which implies that \(y\geq x\). If there exists \(l\in\bbN\) such that \([(y,x)]=[(0,k)]\), then \(x=y+k\), which implies that \(x\geq y\).
+</div>
+</div>
+</div>
+
+<div class="Theorem" title="Addition is commutative"> For all \([(a,b)],\;[(c,d)]\in\bbZ\), $$[(a,b)]+[(c,d)]=[(c,d)]+[(a,b)]$$
+<div class="proof">
+<p><a onclick="myCollapse('addcommiet')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="addcommiet" class="w3-container w3-hide">
+$$[(a,b)]+[(c,d)]=[(a+c,b+d)]=[(c+a,d+b)]=[(c,d)]+[(a,b)]$$
+</div>
+</div>
+</div>
+
+<div class="Theorem" title="Addition is associative"> For all \([(a,b)],\;[(c,d)],\;[(e,f)]\in\bbZ\), $$[(a,b)]+([(c,d)]+[(e,f)])=([(a,b)]+[(c,d)])+[(e,f)]$$
+<div class="proof">
+<p><a onclick="myCollapse('addassoct')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="addassoct" class="w3-container w3-hide">
+$$[(a,b)]+([(c,d)]+[(e,f)])=[(a+(c+e),b+(d+f))]=[((a+c)+e,(b+d)+f)]=([(a,b)]+[(c,d)])+[(e,f)]$$
+</div>
+</div>
+</div>
+
+<div class="Theorem" title="Addition respects order"> If \([(a,b)]\leq[(c,d)]\) and \([(e,f)]\leq[(g,h)]\), $$[(a,b)]+[(e,f)]\leq[(c,d)]+[(g,h)]$$
+<div class="proof">
+<p><a onclick="myCollapse('addrespectorder')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="addrespectorder" class="w3-container w3-hide">
+$$[(c,d)]+[(g,h)]-[(a,b)]-[(e,f)]=[(c-a,d-b)]+[(g-e,h-f)]$$By the givens, \([(c-a,d-b)],[(g-e,h-f)]\in\bbN\), so $$[(c-a,d-b)]+[(g-e,h-f)]\in\bbN$$
+</div>
+</div>
+</div>
+
+<p>These properties establish all of the behavior we expect from integer addition. Now, we define multiplication.</p>
+
+<div class="Definition" title="Integer Multiplication"> Define \(\cdot\) be the binary operation on \(\bbZ\) that is defined by $$[(a,b)]\cdot[(c,d)]=[(a\cdot c+b\cdot d,b\cdot c+a\cdot d)]$$This operation is well-defined on \(\bbZ\).
+<div class="proof">
+<p><a onclick="myCollapse('intmultdef')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="intmultdef" class="w3-container w3-hide">
+Let \(a_1,a_2,b_1,b_2,c_1,c_2,d_1,d_2\in\bbN\) such that \([(a_1,b_1)]=[(a_2,b_2)]\) and \([(c_1,d_1)]=[(c_2,d_2)]\). Then \(a_1+b_2=a_2+b_1\) and \(c_1+d_2=d_1+c_2\). We want to show $$a_1\cdot c_1+b_1\cdot d_1+b_2\cdot c_2+a_2\cdot d_2=a_2\cdot c_2+b_2\cdot d_2+b_1\cdot c_1+a_1\cdot d_1$$Observe that $$a_1c_1+b_1d_1+b_2c_2+a_2d_2+(a_2c_1+b_2c_1+a_2d_1+b_2d_1)$$$$=(a_1+b_2)c_1+(a_2+b_1)d_1+a_2(c_1+d_2)+b_2(c_2+d_1)$$$$=(b_1+a_2)c_1+(b_2+a_1)d_1+a_2(c_2+d_1)+b_2(c_1+d_2)$$$$=a_2c_2+b_2d_2+b_1c_1+a_1d_1+(a_2c_1+b_2c_1+a_2d_1+b_2d_1)$$Since addition on the naturals is injective, we are done.
+</div>
+</div>
+</div>
+
+<p>The intuition behind this definition is that \((a-b)(c-d)=ac+bd-bc-ad\). Now, we prove the important properties about multiplication.</p>
+
+<div class="Theorem" title="Multiplication is commutative"> For all \([(a,b)],[(c,d)]\in\bbZ\), \([(a,b)]\cdot[(c,d)]=[(c,d)]\cdot[(a,b)]\)
+<div class="proof">
+<p><a onclick="myCollapse('multcommiett')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="multcommiett" class="w3-container w3-hide">
+$$[(a,b)]\cdot[(c,d)]=[(ac+bd,bc+ad)]=[(ca+db,cb+da)]=[(c,d)]\cdot[(a,b)]$$
+</div>
+</div>
+</div>
+
+<div class="Theorem" title="Multiplication is associative"> For all \([(a,b)],[(c,d)],[(e,f)]\in\bbZ\),$$[(a,b)]\cdot([(c,d)]\cdot[(e,f)])=([(a,b)]\cdot[(c,d)])\cdot[(e,f)]$$
+<div class="proof">
+<p><a onclick="myCollapse('mutltassocint')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="multassocint" class="w3-container w3-hide">
+$$[(a,b)]\cdot([(c,d)]\cdot[(e,f)])=[(ace+adf+bcf+bde,acf+ade+bce+bdf)]=([(a,b)]\cdot[(c,d)])\cdot[(e,f)]$$
+</div>
+</div>
+</div>
+
+<div class="Theorem" title="Multiplication is distributive"> For all \([(a,b)],[(c,d)],[(e,f)]\in\bbZ\),$$[(a,b)]\cdot([(c,d)]+[(e,f)])=[(a,b)]\cdot[(c,d)]+[(a,b)]\cdot[(e,f)]$$
+<div class="proof">
+<p><a onclick="myCollapse('multdistitn')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="multdistitn" class="w3-container w3-hide">
+$$[(a,b)]\cdot([(c,d)]+[(e,f)])=[(ac+ae+bd+bf,ad+af+bc+be)]$$$$=[(ac+bd,ad+bc)]+[(ae+bf,af+be)]$$$$=[(a,b)]\cdot[(c,d)]+[(a,b)]\cdot[(e,f)]$$
+</div>
+</div>
+</div>
+
+<div class="Theorem" title="Multiplicative Identity"> \(1\) is the only identity element of \(\cdot\)
+<div class="proof">
+<p><a onclick="myCollapse('multidenint')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="multidenint" class="w3-container w3-hide">
+First, for all \([(a,b)]\in\bbZ\), $$[(a,b)]\cdot[(1,0)]=[(a\cdot 1+b\cdot 0,a\cdot 0+b\cdot 1)]=[(a,b)]$$And, for all \([(c,d)]\), if \([(a,b)]=[(ac+bd,ad+bc)]\), then $$a+ad+bc=b+ac+bd$$$$a(d+1)+bc=ac+b(d+1)$$Letting \(a=0,b=1\), this becomes \(c=d+1\). Thus, \([(1,0)]=[(c,d)]\).
+</div>
+</div>
+</div>
+
+<div class="Theorem" title="Natural Multiplication in the Integers"> For any \(a,b\in\bbN\), \([(a,0)]\cdot[(b,0)]=[(a\cdot b,0)]\).
+<div class="proof">
+<p><a onclick="myCollapse('naturalmultinint')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="naturalmultinint" class="w3-container w3-hide">
+$$[(a,0)]\cdot[(b,0)]=[(ab+0\cdot0,a\cdot 0+b\cdot0)]=[(a\cdot b,0)]$$
+</div>
+</div>
+</div>
+
+<p>This shows all of the important properties of \(\bbZ\). In particular, we have established that \(\bbZ\) is a ring, \(\bbN\subset\bbZ\), and that the addition and multiplication of the naturals in the integers is the same as the one we defined for the naturals.</p>
 
 
 </div>

@@ -623,7 +623,15 @@
 <p>Before we start this week's notes, I want to introduce some notation you may not have seen before.</p>
 <p>Let's say I want to add all of the numbers from \(1\) to \(n\). I would write it like this: $$1+2+\ldots+n$$In mathematics, we don't like using \(\ldots\) since it can be unclear. Instead, we have a notation to represent this sort of sum. $$\sum\limits_{k=1}^nk=1+2+\ldots+n$$This diagram explains what the \(\Sigma\) notation means:</p>
 <p><a class="gallery img-center-short cbox-Element" href="/public/sumby1.png"><img src="/public/sumby1.png" width="100%"></a></p>
-<p>We can even do fancier things with \(\Sigma\). We can sum squared numbers:$$\sum\limits_{k=1}^4k^2=1^2+2^2+3^2+4^2=30$$We can add the first \(6\) odd numbers:$$\sum\limits_{k=1}^62k-1=36$$There are many things we can do with this notation. If you are still a bit confused, try using <a href='https://www.mathsisfun.com/numbers/sigma-calculator.html' target='_blank'>the Sigma Calculator</a> to play around with \(\Sigma\).</p>
+<p>We can even do fancier things with \(\Sigma\). We can sum squared numbers:$$\sum\limits_{k=1}^4k^2=1^2+2^2+3^2+4^2=30$$We can add the first \(6\) odd numbers:$$\sum\limits_{k=1}^62k-1=36$$There are many things we can do with this notation. If you are still a bit confused, try using <a href='https://www.mathsisfun.com/numbers/sigma-calculator.html' target='_blank'>the Sigma Calculator</a> to play around with \(\Sigma\). Here is a challenging exercise that really tests your understanding of the notation.</p>
+<div class="exercise" title="Summation"> Evaluate $$\sum\limits_{n_{2021}=0}^2\sum\limits_{n_{2020}=0}^{n_{2021}}\sum\limits_{n_{2019}=0}^{n_{2020}}\ldots\sum\limits_{n_1=0}^{n_2}1$$
+<div class="solution">
+<p><a onclick="myCollapse('problem1')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="problem1" class="w3-container w3-hide">
+Note that $$2\geq n_{2021}\geq n_{2020}\geq\ldots\geq n_1\geq0$$Since the innermost summand is \(1\), this nested summation is just ocunting how many choices of variables \(n_{2021},\ldots,n_1\) satisfy the above property. We can apply stars and bars to solve this problem.<br><br>Let there be \(2021\) stars, representing our \(2021\) variables. Let there be \(2\) bars. Given any sequence of these \(2023\) objects, we can set \(n_k\) for \(1\leq k\leq 2021\) to be the number of bars after the \(k\)th star in the sequence. I'll leave it to you to verify that this satisfies all of our conditions. So, the answer is just the number of ways to place \(2\) bars in the sequence of \(2023\) objects, which is just $${2023\choose 2}=\frac{2023\cdot2022}2=\color{red}{2045253}$$
+</div>
+</div>
+</div>
 <h2 id='What'>What is Probability?</h2>
 <p>This week's topic will be all about probability. Probability is one of the hardest subjects you'll encounter in competitions, not least because of how counterintuitive it can be. But what even is probability?</p>
 <p>We say that an <strong>event</strong> is an activity or process that involves chance. Probability, therefore, is the likelihood of an event having some outcome.</p>
