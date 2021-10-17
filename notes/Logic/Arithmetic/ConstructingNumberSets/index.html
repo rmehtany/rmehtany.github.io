@@ -859,7 +859,7 @@ $$[(a,b)]+(-[(a,b)])=[(a,b)]+[(b,a)]=[(a+b,a+b)]=[(0,0)]$$$$[(a,b)]+[(0,0)]=[(0,
 <div class="proof">
 <p><a onclick="myCollapse('oop')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
 <div id="oop" class="w3-container w3-hide">
-Let's first show that this relation is an order.<br><ul><li>Reflexivity: \(\;[(a,b)]-[(a,b)]=[(a+b,a+b)]=0\)</li><li>Anti-symmetry: If \([(a,b)]-[(c,d)]=[(a+d,b+c)]=[(k,0)]\) and \([(c,d)]-[(a,b)]=[(c+b,d+a)]=[(x,0)]\) for \(x,k\in\bbN\), then $$[(x+k,0)]=[(x,0)]+[(k,0)]=[(a+d,b+c)]+[(c+b,a+d)]=[(0,0)]$$Thus, \(x+k=0\), which implies that \(x,k=0\).</li><li>Transitivity: If \([(a,b)]-[(c,d)]=[(x,0)]\) and \([(c,d)]-[(e,f)]=[(y,0)]\) for \(x,y\in\bbN\), then $$[(a,b)]-[(e,f)]=[(a+f,b+e)]=[(a+f+c+d,b+e+c+d)]$$$$=([(a,b)]-[(c,d)])+([(c,d)]-[(e,f)])=x+y\in\bbN$$</li></ul><br>To see that this order is the same as the natural numbers order when comparing natural numbers, let \(x,y\in\bbN\), I claim that \([(x,0)]\leq[(y,0)]\) iff \(x\leq y\). Observe that \([(y,0)]-[(x,0)]=[(y,x)]\). If there exists \(k\in\bbN\) such that \([(y,x)]=[(k,0)]\), then \(y=x+k\), which implies that \(y\geq x\). If there exists \(l\in\bbN\) such that \([(y,x)]=[(0,k)]\), then \(x=y+k\), which implies that \(x\geq y\).
+Let's first show that this relation is an order.<br><ul><li>Reflexivity: \(\;[(a,b)]-[(a,b)]=[(a+b,a+b)]=0\)</li><li>Anti-symmetry: If \([(a,b)]-[(c,d)]=[(a+d,b+c)]=[(k,0)]\) and \([(c,d)]-[(a,b)]=[(c+b,d+a)]=[(x,0)]\) for \(x,k\in\bbN\), then $$[(x+k,0)]=[(x,0)]+[(k,0)]=[(a+d,b+c)]+[(c+b,a+d)]=[(0,0)]$$Thus, \(x+k=0\), which implies that \(x,k=0\).</li><li>Transitivity: If \([(a,b)]-[(c,d)]=[(x,0)]\) and \([(c,d)]-[(e,f)]=[(y,0)]\) for \(x,y\in\bbN\), then $$[(a,b)]-[(e,f)]=[(a+f,b+e)]=[(a+f+c+d,b+e+c+d)]$$$$=([(a,b)]-[(c,d)])+([(c,d)]-[(e,f)])=x+y\in\bbN$$</li><li>Trichotomy: By integer forms, \([(a,b)]-[(c,d)]=[(a-c,b-d)]\) is either of the form \([(x,0)]\) or \([(0,x)]\). In the first case, \([a,b]\geq[(c,d)]\) by definition. In the second, $$[(c,d)]-[(a,b)]=-([(a,b)]-[(c,d)])=-[(0,x)]=[(x,0)]$$And thus \([(c,d)]\geq[(a,b)]\)</ul><br>To see that this order is the same as the natural numbers order when comparing natural numbers, let \(x,y\in\bbN\), I claim that \([(x,0)]\leq[(y,0)]\) iff \(x\leq y\). Observe that \([(y,0)]-[(x,0)]=[(y,x)]\). If there exists \(k\in\bbN\) such that \([(y,x)]=[(k,0)]\), then \(y=x+k\), which implies that \(y\geq x\). If there exists \(l\in\bbN\) such that \([(y,x)]=[(0,k)]\), then \(x=y+k\), which implies that \(x\geq y\).
 </div>
 </div>
 </div>
@@ -950,6 +950,7 @@ $$[(a,0)]\cdot[(b,0)]=[(ab+0\cdot0,a\cdot 0+b\cdot0)]=[(a\cdot b,0)]$$
 </div>
 
 <p>This shows all of the important properties of \(\bbZ\). In particular, we have established that \(\bbZ\) is a ring, \(\bbN\subset\bbZ\), and that the addition and multiplication of the naturals in the integers is the same as the one we defined for the naturals.</p>
+
 
 
 </div>

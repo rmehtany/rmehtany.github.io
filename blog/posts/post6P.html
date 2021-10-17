@@ -44,7 +44,7 @@ https://templatemo.com/tm-553-xtra-blog
 
 <script>
     function startup() {
-	var post_id = 2;
+	var post_id = 6;
         var client = new XMLHttpRequest();
         client.open('GET', '/blog/puzzles/blogdata.txt');
         client.onload = function()
@@ -87,7 +87,7 @@ https://templatemo.com/tm-553-xtra-blog
         Rushabh Mehta
       </div>
 
-      <p class="lead" style="font-size:16px;font-style:italic;color:rgba(255,255,255,0.5)">Man can never eliminate the necessity of using his own intelligence, regardless of how cleverly he tries!<br> - Raymond Smullyan</p>
+      <p class="lead" style="font-size:16px;font-style:italic;color:rgba(255,255,255,0.5)">A puzzle with a solution is a game. A puzzle without a solution is a work of art.<br> - Marty Rubin</p>
 
     </div>
 
@@ -120,10 +120,8 @@ https://templatemo.com/tm-553-xtra-blog
                     <hr class="tm-hr-primary tm-mb-55">
 
 
-                  <div style='float:left;position:relative;'>
-		    <img src='/public/css_hack.webp' style='display:block;height:auto;width:100%;' alt=''/>
-                    <iframe src="https://www.desmos.com/calculator/y7ulhmr8ca?embed" style="width:100%;height:100%;left:0;top:0;position:absolute;border: 1px solid #10cccc" frameborder=0></iframe>
-		  </div>
+                    <!-- Video player 1422x800 -->
+                  <img src="/public/bar-graphpuzzle6.png" alt="Can you hit these riddles out of the park?" style='width:100%;height:auto;'>
                 </div>
             </div>
             <div class="row tm-row">
@@ -133,37 +131,19 @@ https://templatemo.com/tm-553-xtra-blog
                             <h2 class="pt-2 tm-color-primary tm-post-title" id='title'>TITLE TO BE FILLED</h2>
                             <p class="tm-mb-40" id='date'>DATE TO BE FILLED</p>
 
-
-
-
-                            <p>Last week, I was alerted to the existence of the <a href='https://fivethirtyeight.com/features/can-you-catch-the-cricket/' style='color:#0a37cc'>Riddler</a> column on 538. It was a lot of fun, so let's do it agian! I'm once again setting myself a time limit of an hour for both.</p>
-                            <p>Today, I'm working on the August 20th problems, which were published two days ago</p>
-                          <h2>Can you catch the Cricket?</h2>
-			  <blockquote class="w3-panel w3-leftbar w3-light-grey">
-			<p>Help, there’s a cricket on my floor! I want to trap it with a cup so that I can safely move it outside. But every time I get close, it hops exactly 1 foot in a random direction.</p><p>I take note of its starting position and come closer. Boom — it hops in a random direction. I get close again. Boom — it takes another hop in a random direction, independent of the direction of the first hop.</p><p>What is the <i>most probable</i> distance between the cricket’s current position after two random jumps and its starting position? (Note: This puzzle is not asking for the <i>expected distance</i>, but rather the <i>most probable</i> distance. In other words, if you consider the probability distribution over all possible distances, where is the peak of this distribution?)</p>
-			</blockquote>
-
-                          <p>Observe that the first jump's direction is irrelevant, since we can just rotate the problem. Thus, we can fix it onto a coordinate grid. Let the starting point of the cricket be at the origin on a coordinate plane, and the location of the cricket after the first jump be \((0,1)\). The possible locations of the cricket after the second jump and the resulting distance from the origin are plotted in <a href='#'>the animation</a> above.</p>
-                          <p>The distance from the origin, given an angle \(\theta\) of the new jump from the old jump's direction is given by \(\sqrt{(1+\sin\theta)^2+(\cos\theta)^2}=\sqrt{2+2\sin\theta}\). Note that this function on the domain \(\theta\in(0,2\pi)\) is smooth.</p>
-                          <p>The most probable point is that for which the distance from the origin changes the least with small shifts in \(\theta\). But that is just the derivative! Thus, a point with derivative \(0\) is more probable than a point with non-zero derivative. But there is exactly one point with derivative \(0\): the distance of \(2\) meters.</p>
-                          <p>This may seem counterintuitive: why is the maximum distance the most probable? But it's actually quite simple: the closer to the origin the cricket gets, the faster the distance changes with changes in the angle \(\theta\). So it is to be expected that the most likely point is the farthest one.</p>
-
-                          <h2>Riddler Classic</h2>
-                          <blockquote class="w3-panel w3-leftbar w3-light-grey"><p>When you roll a pair of fair dice, the most likely outcome is \(7\) (which occurs \(\frac16\) of the time) and the least likely outcomes are \(2\) and \(12\) (which each occur \(\frac1{36}\) of the time).</p><p>Annoyed by the variance of these probabilities, I set out to create a pair of “uniform dice.” These dice still have sides that are uniquely numbered from \(1\) to \(6\), and they are identical to each other. However, they are weighted so that their sum is more uniformly distributed between \(2\) and \(12\) than that of fair dice.</p><p>The variance of the \(11\) probabilities is the average value of the squared difference between each probability and the average probability (which is \(\frac1{11}\)). One way to make my dice as uniform as possible is to minimize this variance.</p><p>So how should I make my dice as uniform as possible? In other words, which specific weighting of the dice minimizes the variance among the \(11\) probabilities? That is, what should the probabilities be for rolling \(1\), \(2\), \(3\), \(4\), \(5\) or \(6\) with one of the dice?</p>
-                          </blockquote>
-                          <p>Let \(p_i\) be the probability of rolling \(i\) on a single die. After some fiddling, I found it was possible to get the variance under \(0.0013\), with $$p_1=p_6=0.25,p_2=p_5=0.16,p_3=p_4=0.09$$I found these values by observing that \(p_1,p_6\) should be the largest as they are involved in the most sums, and \(p_3,p_4\) the smallest by the same token.</p>
-                          <p>I have to confess that I cheated and spent another hour on the problem, and I really have no clue other than grinding it out on my laptop. I guess I'll wait till next week to see how it was done.</p>
-
-                          <h2>Conclusion</h2>
-
-                          <p>I wasn't able to solve the Riddler Classic this time, both due to a lack of time and the problem being somewhat challenging. I'm excited to see what's next!</p>
-
-
+				                  <p>Back from a hiatus due to personal issues, here's another <a href='https://fivethirtyeight.com/features/can-you-hit-these-riddles-out-of-the-park/' target='_blank'>Riddler</a> for you!</p>
+                          <h2>Can you bake the radish pie?</h2>
+				                  <blockquote class="w3-panel w3-leftbar w3-light-grey"><p>The American League Championship Series of Riddler League Baseball determines one of the teams that will compete in the Riddler World Series. This year’s teams — the Tampa Bay Lines and the Minnesota Twin Primes — are evenly matched. In other words, both teams are equally likely to win each game of the best-of-seven series.</p><p>On average, how many games will the series last? (Note that the series ends as soon as one team has won four games.)</p></blockquote>
+                          <p>This is a simple application of a binomial probability distribution. There are \(2\) ways for the series to end in \(4\) games, there are \(2\cdot{4\choose1}=8\) ways for the series to end in \(5\) games, there are \(2\cdot{5\choose2}=20\) ways for the series to end in \(6\) games, and \(2\cdot{6\choose3}=40\) ways for the series to end in \(7\) games. Thus, our expected value for the number of games is $$2\cdot2^{-4}\cdot 4+8\cdot2^{-5}\cdot5+20\cdot2^{-6}\cdot6+40\cdot2^{-7}\cdot7$$This evaluates to \(\color{red}{5.8125}\) games. The graph <a href='#'>above</a> shows a million series simulations and the number of games played. The average number of games played was \(5.811619\).</p>
+				                  			  <h2>Riddler Classic</h2>
+                                  <blockquote class='w3-panel w3-leftbar w3-light-grey'><p>Over in the National League Championship Series, the Washington Rationals and the St. Louis Ordinals (known as the “Ords” for short) are also evenly matched. Again, both teams are equally likely to win each game of the best-of-seven series.</p><p>You enter a competition in which you must predict the winner of each of the seven games before the series begins. If any or all of the fifth, sixth or seventh game are not played, you are not credited with predicting a winner.</p><p>You win the competition if you predict at least two games correctly. If you optimize your strategy for picking winners, what is the probability you will win the competition?</p><p>Extra credit: You enter a second competition in which you must pick the winner of the first game and then of each next game, knowing who won in all the previous games. Again, if you optimize your strategy, now what is the probability you will predict at least two games correctly?</p></blockquote>
+                          <p>Assume without loss of generality that all strategies must pick Ords for the seventh game (as it makes no difference strategically). We handle each series length separately.</p><ul><li> <strong>Case 4</strong>: In this case, one team sweeps the other. So you succeed as long as you have at least \(2\) of your first \(4\) choices as the winning team. If my first \(4\) choices have \(2\) Ords and \(2\) Rationals, I have a \(100\%\) chance of succeeding in this case. Otherwise, I have a \(50\%\) of suceeding.</li><li> <strong>Case 5</strong>: By the pigeonhole principle, we assume without loss of generality that we have predicted at least \(3\) ordinal wins. Now for some casework:<ul><li>If we predicted \(5\) ordinal wins, we have a \(50\%\) chance of winning.</li><li>If we predicted the first \(4\) games would be ordinal wins and the last rational, we have a \(100\%\) chance of winning.</li><li>If we predicted \(3\) of the first \(4\) games would be ordinal wins, we have a \(87.5\%\) of winning</li><li>If \(2\) of the first \(4\) games were predicted to be ordinal wins, then we have a \(75\%\) of winning</li></ul></li><li> <strong>Case 6</strong>: Again, without loss of generality, we can assume that Ordinals won exactly \(4/6\) of the games in the series, including the sixth game. If we bet \(2\) or less times on Rationals, we win \(100\%\) of the time. Likewise, if we bet the first \(5\) on Rationals, we win. Now for some casework:<ul><li>If we bet \(3\) out of the first \(5\) were rational wins, the probability of winning is \(1-\frac1{_5C_2}=90\%\).</li><li>If we bet \(2\) out of the first \(5\) were rational wins and the sixth game went to the rationals, the probability of winning is \(1-\frac{_3C_2}{_5C_2}=70\%\).</li><li>If we bet \(4\) of the first \(5\) games to be rational wins and the sixth to be an ordinal win, the probability of winning is \(100\%\).</li><li>If we bet \(4\) of the first \(5\) games to be rational wins and the sixth to be an rational win, the probability of winning is \(1-\frac{_2C_1}{_5C_2}=80\%\)</li></ul></li><li> <strong>Case 7</strong>: Again, we need to do some casework. Each case assumes the previous cases are false.<ul><li>If we bet \(3\) ordinal wins in the first \(6\) games, the probability of winning is \(1-\frac{_3C_3}{_6C_3}=95\%\).</li><li>If the ordinals win the series, the probability of winning is \(100\%\).</li><li>If we bet \(0,1,5,6\) games won by the rationals, the probability of winning is \(100\%\).</li><li>If we bet \(2,4\) games won by the rationals, the probability of winning is \(1-\frac{_3C_2}{_6C_3}=85\%\).</li></ul></li></ul>
+<p>After evaluating all of these possibilities, one finds that a strategy that maximizes the chance of winning, is betting on all Ordinal wins. In this case, we have a \(\color{red}{81.25\%}\) chance of winning. For the extra credit, observe that the best strategy is to always bet the winning team, since if the winning team loses, the series will go on longer. With this approach, the probability of winning is \(\color{red}{92.96875\%}\).</p>
                             <span class="d-block text-right tm-color-primary" id='tags'>TAGS TO BE PLACED HERE</span>
                         </div>
-			<script src="https://utteranc.es/client.js"
+			    <script src="https://utteranc.es/client.js"
         repo="rmehtany/comments"
-        issue-term="post1P"
+        issue-term="post6P"
         theme="github-light"
         crossorigin="anonymous"
         async>

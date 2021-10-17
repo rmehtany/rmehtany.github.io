@@ -15,13 +15,10 @@
   <link rel="stylesheet" href="/public/css/syntax.css">
   <link rel="stylesheet" href="/public/css/hyde.css">
   <link rel="stylesheet" href="/public/css/mystyle.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
-  <link rel="stylesheet" href="/public/css/theorem.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="/public/css/w3.css">
   <link rel="stylesheet" href="/public/css/color.css">
 <!--
-    
+
 TemplateMo 553 Xtra Blog
 https://templatemo.com/tm-553-xtra-blog
 -->
@@ -105,9 +102,9 @@ https://templatemo.com/tm-553-xtra-blog
       <div class="w3-text-white w3-center" style="font-size:20px;">
         Rushabh Mehta
       </div>
-      
+
       <p class="lead" style="font-size:16px;font-style:italic;color:rgba(255,255,255,0.5)">For every 0x5f375a86 we learn about, there are thousands we never see<br> - Randall Munroe (XKCD)</p>
-      
+
     </div>
 
     <nav class="sidebar-nav">
@@ -133,23 +130,23 @@ https://templatemo.com/tm-553-xtra-blog
 </div>
 
     <div class="container-fluid">
-        <main class="tm-main">     
+        <main class="tm-main">
             <div class="row tm-row">
                 <div class="col-12">
                     <hr class="tm-hr-primary tm-mb-55">
-			
-			
+
+
                     <!-- Video player 1422x800 -->
                   <img src="/public/maxresdefault.jpg" style='width:100%;height:auto;' style="border: 1px solid #10cccc" frameborder=0></img>
                 </div>
             </div>
             <div class="row tm-row">
                 <div class="col-lg-8 tm-post-col">
-                    <div class="tm-post-full">                    
+                    <div class="tm-post-full">
                         <div class="mb-4" style='color:black;'>
                             <h2 class="pt-2 tm-color-primary tm-post-title" id='title'>TITLE TO BE FILLED</h2>
                             <p class="tm-mb-40" id='date'>DATE TO BE FILLED</p>
-				
+
 				<p>A few days ago, I was reading <a href='https://fossbytes.com/github-copilot-generating-functional-api-keys/' target='_blank' style='color:#0a37cc'>this article</a>, which mentioned an infamous inverse square root algorithm from the video game <i>Quake III</i>. Now, I'm not very knowledgeable on video games, but besides the obvious application of the <a href='https://en.wikipedia.org/wiki/Newton%27s_method' target='_blank' style='color:#0a37cc'>Newton-Raphson method</a>, I couldn't figure out what exactly the code was doing, and so I had to dig deeper. This post is based on the math of <a href='http://www.lomont.org/papers/2003/InvSqrt.pdf' target='_blank' style='color:#0a37cc'>this paper</a>.</p>
 				<p>So what exactly is this code? Based on the name of the function, you might guess that it has something to do with square roots. In fact, it's a fast algorithm for approximating the inverse of a square root of a number. Why exactly would anyone care about this?</p>
 				<h2>History and Motivation</h2>
@@ -200,9 +197,9 @@ https://templatemo.com/tm-553-xtra-blog
 				<h2>Conclusion</h2>
 				<p>This algorithm might seem like black magic, but it really is a case of a good approximation, coming from the observation that the floating point representation of a number roughly behaves like the log of the number, and through a single iteration of Newton-Raphson.</p>
 				<p>Ironically, since the widespread publication of this algorithm, it has become outdated, since it isn't as fast as modern day algorithms. For starters, the casting calls from float to long to float cause a <a href='https://en.wikipedia.org/wiki/Load-Hit-Store' target='_blank' style='color:#0a37cc'>load-hit-store</a>, which slows down the algorithm. Modern day square root implementations are fast enough to outperform this function. Regardless, it's a cool bit of algorithm history, and shows that understanding bit arithmetic isn't just useful for low-level programmers!</p>
-				
+
                             <span class="d-block text-right tm-color-primary" id='tags'>TAGS TO BE PLACED HERE</span>
-                        </div> 
+                        </div>
 		    <script src="https://utteranc.es/client.js"
         repo="rmehtany/comments"
         issue-term="post2R"
@@ -244,7 +241,7 @@ https://templatemo.com/tm-553-xtra-blog
                                 <figcaption class="tm-color-primary" id='title3'>Nam lobortis nunc sed faucibus commodo</figcaption>
                             </figure>
                         </a>
-                    </div>                    
+                    </div>
                 </aside>
             </div>
         </main>
