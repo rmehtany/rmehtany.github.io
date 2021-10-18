@@ -931,6 +931,16 @@ $$[(a,b)]\cdot([(c,d)]+[(e,f)])=[(ac+ae+bd+bf,ad+af+bc+be)]$$$$=[(ac+bd,ad+bc)]+
 </div>
 </div>
 
+<div class="Theorem" title="Multiplication is (almost) injective"> Like with the naturals, if \([(e,f)]\neq0\) and \([(a,b)]\cdot[(e,f)]=[(c,d)]\cdot[(e,f)]\), then \([(a,b)]=[(c,d)]\).
+<div class="proof">
+<p><a onclick="myCollapse('idmultalmostinj')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="idmultalmostinj" class="w3-container w3-hide">
+By integer forms, there are two cases to consider:<br><ul><li>There exists \(x\in\bbN\), \([(e,f)]=[(S(x),0)]\): The given equality implies $$(a+d)\cdot S(x)=(b+c)\cdot S(x)$$Since multiplication is almost injective on the naturals, we have \(a+d=b+c\).</li><li>There exists \(x\in\bbN\), \([(e,f)]=[(0,S(x))]\): The given equality implies $$(b+c)\cdot S(x)=(a+d)\cdot S(x)$$Since multiplication is almost injective on the naturals, \(a+d=b+c\).</li></ul>
+</div>
+</div>
+</div>
+
+
 <div class="Theorem" title="Multiplicative Identity"> \(1\) is the only identity element of \(\cdot\)
 <div class="proof">
 <p><a onclick="myCollapse('multidenint')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
@@ -950,6 +960,63 @@ $$[(a,0)]\cdot[(b,0)]=[(ab+0\cdot0,a\cdot 0+b\cdot0)]=[(a\cdot b,0)]$$
 </div>
 
 <p>This shows all of the important properties of \(\bbZ\). In particular, we have established that \(\bbZ\) is a ring, \(\bbN\subset\bbZ\), and that the addition and multiplication of the naturals in the integers is the same as the one we defined for the naturals.</p>
+
+<h2 id='rational'>Rational Numbers</h2>
+<p>Integers introduced us to subtraction, which enabled us to create an infinite ring structure. The rationals will expand the integers to allow for division, and create a field structure. There are a lot of similarities between the constructions of the rationals and the integers.</p>
+
+<div class="definition" title="Rationals"> Consider the following equivalence relation on \(\bbZ\times\bbZ\setminus\{0\}\): \((a,b)\sim(c,d)\) iff \(ad=bc\). This is an equivalence relation because <ul><li>Reflexivity: \(ab=ba\) implies \((a,b)\sim(a,b)\)</li><li>Symmetry: \(ad=bc\) implies \(cb=da\)</li><li>Transitivity: \(ad=bc\) and \(cf=de\) are given. So, we have \(fad=fbc\), and thus \(fad=bde\). Since \(d\neq0\), by multiplication being almost injective, we have \(af=be\).</li></ul> We define \(\bbQ\) to be the partition associated with this equivalence relation.</div>
+
+<p>There's a key difference between how we define integers and rationals. For the integers, we defined the equivalence relation on \(\bbN\times\bbN\) since addition is injective. For the rationals, we defined the relation on \(\bbZ\times\bbZ\setminus\{0\}\) since multiplication is injective on non-zero values.</p>
+
+<p>The intuition on how to interpret \([(a,b)]\in\bbQ\) is very similar to that of the integers. In the integers, it was interpreted as \(a-b\) (although at that point, we hadn't defined subtraction yet). Here, we'll interpret it as \(a/b\) (again, this is not defined right now, but this is solely for your intuition about the coming definitions).</p>
+
+<div class="Theorem" title="Unique Elements 2"> For any \(a,b,c\in\bbZ\), if \(c\neq0\) and \([(a,c)]=[(b,c)]\), then \(a=b\).
+<div class="proof">
+<p><a onclick="myCollapse('uniqueelem2')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="uniqueelem2" class="w3-container w3-hide">
+Note that \([(a,c)]=[(b,c)]\) iff \(a\cdot c=c\cdot b\). Since \(c\neq0\), and multiplication is almost injective on the integers, \(a=b\).
+</div>
+</div>
+</div>
+
+<p>This in particular implies that the map \(\bbZ\to\bbQ\) defined by \(z\mapsto[(z,1)]\) is injective. We call this the canonical embedding of the integers into the rationals. Thus, we can call \([(z,1)]\) just \(z\), and with this interpretation, \(\bbZ\subset\bbQ\).</p>
+
+<div class="Definition" title="Rational Addition"> Let \(+\) be a binary operation on \(\bbQ\) defined by \([(a,b)]+[(c,d)]=[(ad+bc,bd)]\). This operation is well-defined on \(\bbQ\)
+<div class="proof">
+<p><a onclick="myCollapse('ratadda')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="ratadda" class="w3-container w3-hide">
+Let \([(a,b)],[(c,d)],[(a^*,b^*)],[(c^*,d^*)]\in\bbQ\). Since \(ab^*=a^*b\), \(cd^*=c^*d\), $$(ad+bc)b^*d^*=adb^*d^*+bcb^*d^*=a^*d^*bd+b^*c^*bd=(a^*d^*+b^*c^*)bd$$
+</div>
+</div>
+</div>
+
+<div class="Theorem" title="Addition is commutative"> For \([(a,b)],[(c,d)]\in\bbQ\), $$[(a,b)]+[(c,d)]=[(c,d)]+[(a,b)]$$
+<div class="proof">
+<p><a onclick="myCollapse('addcomrat')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="addcomrat" class="w3-container w3-hide">
+$$[(ad+bc,bd)]=[(cb+da,db)]$$
+</div>
+</div>
+</div>
+
+<div class="Theorem" title="Addition is associative"> \([(a,b)],[(c,d)],[(e,f)]\in\bbQ\),$$[(a,b)]+([(c,d)]+[(e,f)])=([(a,b)]+[(c,d)])+[(e,f)]$$
+<div class="proof">
+<p><a onclick="myCollapse('addassocrate')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="addassocrate" class="w3-container w3-hide">
+$$[(a,b)]+([(c,d)]+[(e,f)])=[(adf+bcf+bde,bdf)]=([(a,b)]+[(c,d)])+[(e,f)]$$
+</div>
+</div>
+</div>
+
+<div class="Theorem" title="Rational Addition preserves Integer Addition"> For \(a,b\in\bbZ\), \([(a,1)]+[(b,1)]=[(a+b,1)]\)
+<div class="proof">
+<p><a onclick="myCollapse('rataddint')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="rataddint" class="w3-container w3-hide">
+Given by plugging into the defintion of addition.
+</div>
+</div>
+</div>
+
 
 
 
