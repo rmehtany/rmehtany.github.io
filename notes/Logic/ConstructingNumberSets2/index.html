@@ -8,7 +8,7 @@
 
   <title>
 
-      Constructing Number Sets
+      Constructing Number Sets 2
 
   </title>
 
@@ -323,7 +323,7 @@
          Rushabh Mehta
       </div>
 
-      <p class="lead" style="font-size:16px;font-style:italic;">No one shall expel us from the paradise which Cantor has created for us.<br> - David Hilbert</p>
+      <p class="lead" style="font-size:16px;font-style:italic;">Later generations will view Set Theory as a disease from which one has recovered.<br> - Henri Poincare</p>
 
     </div>
 
@@ -598,12 +598,12 @@
 </div>
 
 
-	    <div style="float:right"><a href="../ConstructingNumberSets2/"><bf>Next  |</bf></a></div>
-<div><a href="../SetReview/"><bf>|  Previous</bf></a></div>
+	    <div style="float:right"><a href="../WellOrder/"><bf>Next  |</bf></a></div>
+<div><a href="../ConstructingNumberSets/"><bf>|  Previous</bf></a></div>
 
 
 <div class="post">
-  <h1 class="post-title">Constructing Number Sets</h1>
+  <h1 class="post-title">Constructing Number Sets 2</h1>
 
 
   <div class="w3-white w3-round-xlarge w3-tiny">
@@ -613,390 +613,479 @@
 
 
   <ul id="markdown-toc">
-    <li><a href='#binary'>Binary Operations</a></li>
-    <li><a href='#nat'>Natural Numbers</a></li>
-    <li><a href='#int'>Integers</a></li>
+    <li><a href='#rational'>Rational Numbers</a></li>
+    <li><a href='#real'>Real Numbers</a></li>
 </ul>
 
-<p>In this post, we'll continue our work on sets, focusing on building important number sets and endowing them with arithmetic properties.</p>
-<h2 id='binary'>Binary Operations</h2>
-<div class="Definition" title="Binary Operation">A binary operation on a set \(A\) is a function \(A\times A\to A\)</div>
-<p>The main binary operations we'll be concerned with are addition, subtraction, multiplication, division. Since binary operations have two inputs, we can write them in infix notation. For example, \(+(a,b)\) can be written more cleanly as \(a+b\).</p>
-<p>For a binary operation \(\star\) on \(A\), what sorts of properties could \(\star\) have? Here are a few:</p>
+<p>This is continuation of the last post, where we worked on building some important number sets and endowing them with properties.</p>
+<h2 id='rational'>Rational Numbers</h2>
+<p>Integers introduced us to subtraction, which enabled us to create an infinite ring structure. The rationals will expand the integers to allow for division, and create a field structure. There are a lot of similarities between the constructions of the rationals and the integers.</p>
 
-<table class="w3-table w3-striped w3-bordered">
-  <tbody><tr>
-    <th>Name</th>
-    <th>Formula</th>
-    <th>Description</th>
-  </tr>
-      <tr>
-        <td>Commutativity</td>
-        <td>\(\forall a,b,\;a\star b=b\star a\)</td>
-        <td>Swapping inputs doesn't change the output.</td>
-      </tr>
-      <tr>
-        <td>Associativity</td>
-        <td>\(\forall a,b,c,\;(a\star b)\star c=a\star(b\star c)\)</td>
-        <td>Order of evaluating operations doesn't change output.</td>
-      </tr>
-      <tr>
-        <td>Identity</td>
-        <td>\(\exists e\forall a,\;a\star e=e\star a=a\)</td>
-        <td>There exists an identity element.</td>
-      </tr>
-      <tr>
-        <td>Invertibility</td>
-        <td>\(\forall a\exists b,\;a\star b=b\star a=e\)</td>
-        <td>There is an inverse for all elements.</td>
-      </tr>
-      <tr>
-        <td>Distributivity</td>
-        <td>\(\forall a,b,c,\;a\star(b+c)=a\star b+a\star c\)</td>
-        <td>The operation distributes over addition.</td>
-      </tr>
-</tbody></table>
+<div class="definition" title="Rationals"> Consider the following equivalence relation on \(\bbZ\times\bbZ\setminus\{0\}\): \((a,b)\sim(c,d)\) iff \(ad=bc\). This is an equivalence relation because <ul><li>Reflexivity: \(ab=ba\) implies \((a,b)\sim(a,b)\)</li><li>Symmetry: \(ad=bc\) implies \(cb=da\)</li><li>Transitivity: \(ad=bc\) and \(cf=de\) are given. So, we have \(fad=fbc\), and thus \(fad=bde\). Since \(d\neq0\), by multiplication being almost injective, we have \(af=be\).</li></ul> We define \(\bbQ\) to be the partition associated with this equivalence relation.</div>
 
-<h2 id='nat'>Natural Numbers</h2>
-<p>We've covered the development of the natural numbers and some of their basic properties in the previous post. In this post, we'll continue that development with the introduction of addition and multiplication.</p>
-<div class="Theorem" title="Adding Naturals"> Consider the following two rules for addition on the naturals:<ul><li>\(0+x=x\) for all \(x\in\bbN\)</li><li>\(S(a)+b=S(a+b)\) for all \(a,b\in\bbN\)</li></ul>There exists a unique function \(+:\bbN\times\bbN\to\bbN\) satisfying these rules.
+<p>There's a key difference between how we define integers and rationals. For the integers, we defined the equivalence relation on \(\bbN\times\bbN\) since addition is injective. For the rationals, we defined the relation on \(\bbZ\times\bbZ\setminus\{0\}\) since multiplication is injective on non-zero values.</p>
+
+<p>The intuition on how to interpret \([(a,b)]\in\bbQ\) is very similar to that of the integers. In the integers, it was interpreted as \(a-b\) (although at that point, we hadn't defined subtraction yet). Here, we'll interpret it as \(a/b\) (again, this is not defined right now, but this is solely for your intuition about the coming definitions).</p>
+
+<div class="Theorem" title="Unique Elements 2"> For any \(a,b,c\in\bbZ\), if \(c\neq0\) and \([(a,c)]=[(b,c)]\), then \(a=b\).
 <div class="proof">
-<p><a onclick="myCollapse('addnat')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
-<div id="addnat" class="w3-container w3-hide">
-Let's first prove uniqueness. Suppose \(+_1\) and \(+_2\) are two binary operations that satisfy the two rules. Suppose there exists some \(a,b\) such that \(a+_1b\neq a+_2b\). By the well-ordering principle, let \(n\in\bbN\) be the smallest natural such that there exists \(b\in\bbN\) with \(n+_1b\neq n+_2b\).<br><br>\(n\neq0\) since \(0+_1b=b=0+_2b\) by the first rule. So, \(n=S(m)\) for some \(m\in\bbN\), and by minimality, \(m+_1S(b)=m+_2S(b)\). But, $$S(m)+_1b=S(m+_1b)=S(m+_2b)=S(m)+_2b$$This is a contradiction, proving uniqueness.<br><br>For existence, we'll construct a set similar to the construction of \(Y\) in <a href='../SetReview/#csb' target='_blank'>the Cantor-Schroeder-Bernstein theorem</a>. Let \(H_0\) be the set map that sends \(X\) to \(((0,X),X)\). Let \(X_0\) be the set given by replacement of \(\bbN\) by \(H_0\). Let \(H\) be the set map that sends sets of the form \(((X,Y),Z)\) for naturals \(X,Y,Z\) to \(((S(X),Y),S(Z))\) (and sends everything else to \(\varnothing\)). For each \(n\in\bbN\), let \(X_{S(n)}=H(X_n)\). By the principle of mathematical induction, \(X_n\) is defined for all \(n\in\bbN\). Thus, by replacement, there exists a set \(\{X_0,X_1,\ldots\}\). Let $$+=\bigcup\{X_0,X_1,\ldots\}$$Since each \(X_0\) is a binary relation on \(\bbN\times\bbN,\bbN\), so is \(+\). I claim that \(+\) is a binary operation that satisfies the two conditions.<br><ul><li>\(+\) is a binary operation: By the principle of mathematical induction, all elements of \(X_n\) are of the form \(((n,a),b)\) for naturals \(a,b\). Also by the principle of mathematical induction, for each \(n,m\in\bbN\), there is exactly one element in \(X_n\) of the form \(((a,m),b)\) for \(a,b\in\bbN\). These two statements combined give us the desired result.</li><br><li>\(0+n=n\) for all \(n\in\bbN\): \(((0,n),n)\in X_0\) for all \(n\in\bbN\), and \(X_0\subset +\).</li><br><li>\(S(a)+b=S(a+b)\) for all \(a,b\in\bbN\): \(((a,b),a+b)\in X_a\), so \(((S(a),b),S(a+b))\in X_{S(a)}\) and \(X_{S(a)}\subset +\).</li></ul>
+<p><a onclick="myCollapse('uniqueelem2')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="uniqueelem2" class="w3-container w3-hide">
+Note that \([(a,c)]=[(b,c)]\) iff \(a\cdot c=c\cdot b\). Since \(c\neq0\), and multiplication is almost injective on the integers, \(a=b\).
 </div>
 </div>
 </div>
 
-<p>This theorem implies that we can view the two rules \(0+x=x\) and \(S(a)+b=S(a+b)\) as fully characterizing addition on the natural numbers. This makes reasoning on them a bit more nice than actually dealing with the function itself (which as you saw in the proof, is quite messy).</p>
-<p>So what properties does addition have? For starters, \(1+k=S(k)\) for any natural \(k\), since $$1+k=S(0)+k=S(0+k)=S(k)$$More importantly,</p>
-<div class="Theorem" title="Additive Identity"> \(\;0\) is an identity element of \(\bbN\).
+<p>This in particular implies that the map \(\bbZ\to\bbQ\) defined by \(z\mapsto[(z,1)]\) is injective. We call this the canonical embedding of the integers into the rationals. Thus, we can call \([(z,1)]\) just \(z\), and with this interpretation, \(\bbZ\subset\bbQ\). As a lot of these proofs are very similar to those of the integers, I won't be providing too much commentary on them.</p>
+
+<div class="Definition" title="Rational Addition"> Let \(+\) be a binary operation on \(\bbQ\) defined by \([(a,b)]+[(c,d)]=[(ad+bc,bd)]\). This operation is well-defined on \(\bbQ\)
 <div class="proof">
-<p><a onclick="myCollapse('addiden')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
-<div id="addiden" class="w3-container w3-hide">
-By rule \(1\), \(0+x=x\) for all \(x\in\bbN\). So all we need to show is that \(x+0=x\) for all \(x\in\bbN\). Assume this isn't the case, and let \(i\in\bbN\) by the smallest natural such that \(i+0\neq i\) by the well-ordering principle. \(i\neq0\) since \(0+0=0\) by rule \(1\). So, let \(k\in\bbN\) such that \(S(k)=i\). Then, \(k+0=k\), and $$S(k)+0=S(k+0)=S(k)$$This prove that \(0\) is an additive identity.
+<p><a onclick="myCollapse('ratadda')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="ratadda" class="w3-container w3-hide">
+Let \([(a,b)],[(c,d)],[(a^*,b^*)],[(c^*,d^*)]\in\bbQ\). Since \(ab^*=a^*b\), \(cd^*=c^*d\), $$(ad+bc)b^*d^*=adb^*d^*+bcb^*d^*=a^*d^*bd+b^*c^*bd=(a^*d^*+b^*c^*)bd$$
 </div>
 </div>
 </div>
 
-<div class="Theorem" title="Addition is Associative"> For all \(a,b,c\in\bbN\), \(a+(b+c)=(a+b)+c\).
+<div class="Theorem" title="Addition is commutative"> For \([(a,b)],[(c,d)]\in\bbQ\), $$[(a,b)]+[(c,d)]=[(c,d)]+[(a,b)]$$
 <div class="proof">
-<p><a onclick="myCollapse('addass')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
-<div id="addass" class="w3-container w3-hide">
-Proof by induction. If \(a=0\), then $$0+(b+c)=b+c=(0+b)+c$$If the statement holds for \(a\), then $$S(a)+(b+c)=S(a+(b+c))=S((a+b)+c)=S(a+b)+c=(S(a)+b)+c$$
+<p><a onclick="myCollapse('addcomrat')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="addcomrat" class="w3-container w3-hide">
+$$[(ad+bc,bd)]=[(cb+da,db)]$$
 </div>
 </div>
 </div>
-<p>Since addition is associative, we don't need to specify order of operations in a sequence of additions. I.e., we can just write \(a+b+c\).</p>
 
-<div class="Theorem" title="Addition is Commutative"> For all \(a,b\in\bbN\), \(a+b=b+a\).
+<div class="Theorem" title="Addition is associative"> \([(a,b)],[(c,d)],[(e,f)]\in\bbQ\),$$[(a,b)]+([(c,d)]+[(e,f)])=([(a,b)]+[(c,d)])+[(e,f)]$$
 <div class="proof">
-<p><a onclick="myCollapse('addcom')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
-<div id="addcom" class="w3-container w3-hide">
-Proof by induction on \(a\). If \(a=0\), the claim holds since \(0\) is the identity. If \(a=1\), observe that \(1+0=0+1\) and for any \(b\) such that \(1+b=b+1\), $$S(b)+1=1+b+1=1+1+b=1+S(b)$$So, by induction, the claim is true for \(a=1\). And if the claim is true for some \(a\), then $$S(a)+b=1+a+b=1+b+a=b+1+a=b+S(a)$$By induction, we are done.
+<p><a onclick="myCollapse('addassocrate')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="addassocrate" class="w3-container w3-hide">
+$$[(a,b)]+([(c,d)]+[(e,f)])=[(adf+bcf+bde,bdf)]=([(a,b)]+[(c,d)])+[(e,f)]$$
 </div>
 </div>
 </div>
 
-<div class="Theorem" title="Addition is injective"> For all \(a,b,c\in\bbN\), if \(a+c=b+c\), then \(a=b\)
+<div class="Theorem" title="Rational Addition preserves Integer Addition"> For \(a,b\in\bbZ\), \([(a,1)]+[(b,1)]=[(a+b,1)]\)
 <div class="proof">
-<p><a onclick="myCollapse('addinj')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
-<div id="addinj" class="w3-container w3-hide">
-Proof by induction on \(c\). $$a=a+0=b+0=b$$Assume that for all \(a,b\in\bbN\), \(a+c=b+c\) implies \(a+b\). Now, consider \(x,y\in\bbN\) such that \(x+S(c)=y+S(c)\). Thus, $$S(x+c)=x+S(c)=y+S(c)=S(y+c)$$Since \(S\) is injective, \(x+c=y+c\), so \(x=y\).
+<p><a onclick="myCollapse('rataddint')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="rataddint" class="w3-container w3-hide">
+Given by plugging into the defintion of addition.
 </div>
 </div>
 </div>
 
-<div class="Theorem" title="Addition respects the order"> For all \(a,b\in\bbN\), \(a+b\geq a\), and \(a+b=a\) iff \(b=0\).
+<div class="Theorem" title="The zero equivalence class"> For all \([(a,b)]\), \([(a,b)]=0\) iff \(a=0\)
 <div class="proof">
-<p><a onclick="myCollapse('addord')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
-<div id="addord" class="w3-container w3-hide">
-First, we show \(a+b\geq a\) by induction on \(b\). We have \(a+0=a\geq a\), and if \(a+b\geq a\), then $$a+S(b)=S(a+b)>a+b\geq a$$
+<p><a onclick="myCollapse('zeroequivclass')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="zeroequivclass" class="w3-container w3-hide">
+If \(a=0\), then \(a\cdot 1=0\cdot b\), so \([(a,b)]=0\). If \([(a,b)]=0\), then \(a\cdot 1=b\cdot0\), so \(a=0\)
 </div>
 </div>
 </div>
 
-<p>This theorem also implies that \(0\) is the only identity element and that \(a+b\geq\max(a,b)\) by commutativity. Now that we have the basic properties of addition established, we introduce multiplication.</p>
 
-<div class="Theorem" title="Multiplying Naturals">There exists a unique binary operation \(\cdot\) on the naturals with the following properties<ul><li>\(0\cdot b=0\) for all \(b\in\bbN\)</li><li>\(S(a)\cdot b=b+(a\cdot b)\)</li></ul>
+<div class="Definition" title="Negation"> For \([(a,b)]\in\bbQ\), we define \(-[(a,b)]\) to be \([(-a,b)]\). In particular, \([(a,b)]+(-[(a,b)])=0\). We define subtraction as adding the negation, i.e., \([(a,b)]-[(c,d)]=[(a,b)]+(-[(c,d)])\)
 <div class="proof">
-<p><a onclick="myCollapse('multnats')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
-<div id="multnats" class="w3-container w3-hide">
-First, we show uniqueness. Suppose \(\cdot_1,\cdot_2\) are two different binary operations that both satisfy the properties. By the well-ordering principle (WOP), there exists a smallest \(a\in\bbN\) such that there exists \(x\in\bbN\) with \(a\cdot_1x\neq a\cdot_2x\). \(a\neq0\) since rule \(1\) forces $$0\cdot_1x=0\cdot_2x=0$$So, there exists \(k\in\bbN\) such that \(S(k)=a\). Thus, $$S(k)\cdot_1b=b+(k\cdot_1b)=b+(k\cdot_2b)=S(k)\cdot_2b$$This proves uniqueness<br><br>For existence, let  $$X_0=\{((0,b),0)\mid b\in\bbN\}$$(this notation implies replacement is being used), and let $$X_{S(k)}=\{((S(k),b),b+x)\mid ((k,b),x)\in X_k\}$$Let \(\cdot=\bigcup\{X_n\mid n\in\bbN\}\). I claim that this is a binary operation satisfying the properties.<ul><li>\(\cdot\) is a binary operation: Same reasoning as in the corresponding proof for addition.</li><li>\(0\cdot b=0\): \(((0,b),0)\in X_0\subset\cdot\), which implies the property.</li><li>\(S(a)\cdot b=b+a\cdot b\): If \(((a,b),k)\in X_a\), then \(((S(a),b),b+k)\in X_{S(a)}\).</li></ul>
+<p><a onclick="myCollapse('negationrational')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="negationrational" class="w3-container w3-hide">
+$$[(a,b)]+(-[(a,b)])=[(ab+(-ab),b\cdot b)]=[(0,b\cdot b)]=0$$
 </div>
 </div>
 </div>
-<p>Not a particularly enlightening proof, but the consequence of it is important: the two rules provided fully characterize multiplication on the naturals, and we'll use them to prove all of the important properties of multiplication.</p>
 
-<div class="Theorem" title="Multiplicative Identity"> For all \(b\in\bbN\), $$0\cdot b=b\cdot 0=0$$$$1\cdot b=b\cdot 1=b$$
+<div class="Theorem" title="Additive Identity"> \(0\) is the only identity element
 <div class="proof">
-<p><a onclick="myCollapse('zeroann')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
-<div id="zeroann" class="w3-container w3-hide">
-Suppose there exists some \(x\) such that \(x\cdot 0\neq0\). Let \(b\) be the smallest such natural. \(b\neq0\) since \(0\cdot0=0\). So, \(b=S(a)\) for some \(a\in\bbN\). And, $$S(a)\cdot0=0+a\cdot0=0$$<br><br>For the identity proof, $$1\cdot b=b+0\cdot b=b$$$$0\cdot 1=0$$$$S(b)\cdot 1=1+b\cdot 1=1+b=S(b)$$and thus we are done by induction.
+<p><a onclick="myCollapse('identtyrational')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="identtyrational" class="w3-container w3-hide">
+$$[(0,1)]+[(a,b)]=[(0\cdot b+1\cdot a,1\cdot b)]=[(a,b)]$$$$[(a,b)]+[(c,d)]=[(a,b)]\to bad+bbc=abd$$Since addition is injective in the integers (as it has inverses), and since \(b\neq0\), \(c=0\), so \([(c,d)]=0\).
 </div>
 </div>
 </div>
 
-<div class="Theorem" title="Multiplication is Commutative"> For all \(a,b\), \(a\cdot b=b\cdot a\)
+<div class="Definition" title="Ordering Rationals"> We call a rational number \([(a,b)]\) <strong>positive</strong> iff \(a\cdot b>0\). Likewise, we call a rational <strong>negative</strong> if \(a\cdot b\lt0\). It should be clear from the previous results that a rational number is exactly one of positive, negative, or zero. We say \([(a,b)]\geq[(c,d)]\) iff \([(a,b)]-[(c,d)]\) is not negative. This is a valid order definition.
 <div class="proof">
-<p><a onclick="myCollapse('multcommy')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
-<div id="multcommy" class="w3-container w3-hide">
-Proof by induction on \(a\). $$0\cdot b=b\cdot0=0$$$$S(a)\cdot b=b+a\cdot b=b+b\cdot a$$Suppose there exists some \(b\) for which \(b+b\cdot a\neq b\cdot S(a)\). Let \(b\) be minimal. \(b\neq0\) since \(0+0\cdot a=0\) and \(0\cdot S(a)=0\). And, if \(b=S(k)\), we have $$S(k)+S(k)\cdot a=1+k+a+k\cdot a=S(a)+k\cdot S(a)=S(k)\cdot S(a)$$Thus, \(b+b\cdot a=b\cdot S(a)\), and the proof is complete.
+<p><a onclick="myCollapse('orderrat')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="orderrat" class="w3-container w3-hide">
+<ul><li>Well-defined: Given \([(a,b)],[(c,d)],[(e,f)],[(g,h)]\in\bbQ\) such that \([(a,b)]=[(c,d)]\) and \([(e,f)]=[(g,h)]\), if \([(a,b)]\geq[(e,f)]\), then $$(af-be)bf\geq0$$Since \(ad=bc\) and \(eh=gf\), and as in the transitivity proof, we can assume \(b,d,f,h\in\bbN\setminus\{0\}\), we have $$afdh-bedh\geq0$$$$(bcfh-bdgf)dh\geq0$$$(ch-dg)dh$$$</li><li>Reflexivity: Since \([(a,b)]-[(a,b)]=0\) and \(0\) is not negative, \([(a,b)]\leq[(a,b)]\)</li><li>Anti-Symmetry: For \([(a,b)],[(c,d)]\in\bbQ\), if \((ad-bc)bd>0\), then \([(c,d)]-[(a,b)]=[(-(ad-bc),bd)]\), and thus \(-(ad+bc)bd\lt0\). So, \([(c,d)]<[(a,b)]\). If \((ad+bc)bd\lt0\), then \([(a,b)]<[(c,d)]\) by the same logic. So if neither are true, then \((ad-bc)bd=0\), and since \(bd\neq0\), \(ad-bc=0\), so \([(a,b)]=[(c,d)]\)</li><li>Transitivity: If \([(a,b)],[(c,d)],[(e,f)]\in\bbQ\), we can assume without loss of generality that \(b,d,f\in\bbN\setminus\{0\}\) since for all \([(x,y)]\in\bbQ\), \([(-x,-y)]=[(x,y)]\). Thus, if \((ad-bc)bd\geq0\) and \((cf-de)df\geq0\), we have \(ad-bc\geq0\) and \(cf-de\geq0\). So, \(fad-fbc+bcf-bde\geq0\), and thus \(fad-bde\geq0\). Since \(d>0\), \(af-be\geq0\).</li><li>Trichotomy: Given by the fact that all rationals are positive, negative, or zero, and the negation of a negative number is positive.</li></ul>
 </div>
 </div>
 </div>
 
-
-<div class="Theorem" title="Multiplication is distributive"> For all \(a,b,c\), \(c\cdot(a+b)=c\cdot a+c\cdot b\)
+<div class="Theorem" title="Rational Order respects Integer Order"> For integers \(a,b\in\bbZ\), \([(a,1)]\leq[(b,1)]\) iff \(a\leq b\). In particular, the naturals are the non-negative integers
 <div class="proof">
-<p><a onclick="myCollapse('multdist')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
-<div id="multdist" class="w3-container w3-hide">
-Proof by induction on \(c\). $$0\cdot(a+b)=0=0\cdot a+0\cdot b$$$$S(c)\cdot(a+b)=a+b+c\cdot(a+b)=a+c\cdot a+b+c\cdot b=S(c)\cdot a+S(c)\cdot b$$
+<p><a onclick="myCollapse('ratorderrespectsint')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="ratorderrespectsint" class="w3-container w3-hide">
+$$[(b,1)]-[(a,1)]=[(b-a,1)]$$So, \([(b,1)]\geq[(a,1)]\) iff \(b-a\geq0\).
 </div>
 </div>
 </div>
 
-<div class="Theorem" title="Multiplication is (almost) injective"> For all \(a,b,c\), either \(c=0\) or \(a\cdot c=b\cdot c\) implies \(a=b\)
+<div class="Theorem" title="Addition preserves order"> If \([(a,b)]\leq[(c,d)]\) and \([(e,f)]\leq[(g,h)]\), then $$[(a,b)]+[(e,f)]\leq[(c,d)]+[(g,h)]$$
 <div class="proof">
-<p><a onclick="myCollapse('multinj')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
-<div id="multinj" class="w3-container w3-hide">
-Proof by induction on \(c\). If \(c=0\), it is trivially true. If \(c=1\), $$a=a\cdot1=b\cdot1=b$$Assume that for all \(a,b\in\bbN\), \(a\cdot c=b\cdot c\) implies \(a=b\). Let \(x,y\in\bbN\) such that \(x\cdot S(c)=y\cdot S(c)\). Then, $$x+x\cdot c=x\cdot S(c)=y\cdot S(c)=y+y\cdot c$$Thus, since addition is injective, \(x=y\).
+<p><a onclick="myCollapse('addpreservers')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="addpreservers" class="w3-container w3-hide">
+$$[(c,d)]+[(g,h)]-([(a,b)]+[(e,f)])=([(c,d)]-[(a,b)])+([(g,h)]-[(e,f)])$$The right side is a sum of two non-negative rationals, so all we need to show is that for two non-negative rationals \([(v,w)],[(x,y)]\), \([(vy+xw,wy)]\) is non-negative. We can assume without loss of generality that \(w,y\geq0\), which implies \(v,x\geq0\), so the claim is true.
 </div>
 </div>
 </div>
 
-
-<div class="Theorem" title="Multiplication is associative"> For all \(a,b,c\in\bbN\), \(a\cdot(b\cdot c)=(a\cdot b)\cdot c\)
+<div class="Definition" title="Rational Multiplication"> Let \(\cdot\) be the binary operation on \(\bbQ\) which is defined by \([(a,b)]\cdot[(c,d)]=[(ac,bd)]\). It is well-defined on \(\bbQ\).
 <div class="proof">
-<p><a onclick="myCollapse('multass')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
-<div id="multass" class="w3-container w3-hide">
-Proof by induction on \(a\). $$(0\cdot b)\cdot c=0\cdot c=0=0\cdot(b\cdot c)$$$$(S(a)\cdot b)\cdot c=(b+a\cdot b)\cdot c=b\cdot c+(a\cdot b)\cdot c=b\cdot c+a\cdot(b\cdot c)=S(a)\cdot(b\cdot c)$$
+<p><a onclick="myCollapse('ratmultwho')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="ratmultwho" class="w3-container w3-hide">
+Let \([(a,b)],[(c,d)],([e,f]),[(g,h)]\in\bbQ\) with \([(a,b)]=[(c,d)]\), \([(e,f)]=[(g,h)]\). Then, we want to show \([(ae,bf)]=[(cg,dh)]\), or equivalently, \(aedh=bfcg\). But this is true since \(ad=bc\) and \(eh=fg\).
 </div>
 </div>
 </div>
 
-<p>With these results, we now have addition and multiplication with the properties we are familiar with. The rest of the number systems we will build will build on this (and thus will be a bit less tedious).</p>
-
-<h2 id='int'>Integers</h2>
-
-<p>Now that we have the natural numbers, we can build the integers. The integers are special because they are the smallest group that extends the addition of the natural numbers. We'll understand more properly what this means in a technical sense, but for now, let's define what a group (and related algebraic structures) is!</p>
-
-<div class="definition" title="Group"> A <strong>group</strong> is a set \(S\) with a binary operation \(\star\) with the following properties:<ul><li>\(S\) has a identity over \(\star\).</li><li>\(\star\) is associative.</li><li>\(S\) has inverses over \(\star\)</li></ul></div>
-
-<div class="definition" title="Ring"> A <strong>ring</strong> is a set \(S\) with two binary operations, \(+,\cdot\), with the following properties:<ul><li>\(S\) is a group under \(+\)</li><li>\(+\) is commutative</li><li>\(S\) has a identity element for \(\cdot\)</li><li>\(\cdot\) is associative</li><li>\(\cdot\) is distributive</li></ul></div>
-
-<div class="definition" title="Field"> A field is a ring \(S,+,\cdot\) with the following properties: <ul><li>\(\cdot\) is commutative</li><li>\(S\) has inverses over \(\cdot\) for all elements besides the additive identity</li></ul></div>
-
-<p>The study of these structures and others are far too large of a task for this post: see a text on abstract algebra for a proper lesson. For now, we construct the integers.</p>
-
-
-<div class="definition" title="Integers"> Consider the equivalence relation on \(\bbN\times\bbN\) given by \((a,b)\sim(c,d)\) iff \(a+d=b+c\). This is an equivalence relation because <br><ul><li>Reflexivity:\(\;(a,b)\sim(a,b)\) since \(a+b=b+a\)</li><li>Symmetry:\(\;(a,b)\sim(c,d)\) implies \(a+d=b+c\), so \(c+b=d+a\) and thus \((c,d)\sim(a,b)\)</li><li>Transitivity:$$(a,b)\sim(c,d)\wedge(c,d)\sim(e,f)$$implies$$a+d=b+c\wedge c+f=d+e$$$$a+c+d+f=b+c+d+e$$By injectivity, \(a+f=b+e\) and thus \((a,b)\sim(e,f)\)</li></ul>Thus, we define \(\bbZ\) as the partition associated with \(\sim\), notated as \(\bbN\times\bbN/\sim\).</div>
-
-<p>The intuition behind the definition is as follows: we view \((a,b)\) as a nickname for \(a-b\). However, that's redundant, as \((1,0)\) and \((2,1)\) represent the same number. To rectify this, we make two pairs equivalent if \(a-b=c-d\), or simply in terms of addition, \(a+d=b+c\). We don't have negation yet, so everything must be phrased in terms of addition and multiplication.</p>
-
-<p>For some additional notation, we write \([(a,b)]\) to represent the element of \(\bbZ\) that contains \((a,b)\).</p>
-
-<div class="Theorem" title="Unique Elements"> For any \(a,b,c\in\bbN\), if \([(a,c)]=[(b,c)]\) or \([(c,a)]=[(c,b)]\), then \(a=b\).
+<div class="Theorem" title="Multiplication is commutative"> For all \([(a,b)],[(c,d)]\), \([(a,b)]\cdot[(c,d)]=[(c,d)]\cdot[(a,b)]\)
 <div class="proof">
-<p><a onclick="myCollapse('uniqueelem')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
-<div id="uniqueelem" class="w3-container w3-hide">
-If \([(a,c)]=[(b,c)]\), then \(a+c=c+b\), which by addition being injective implies that \(a=b\). If \([(c,a)]=[(c,b)]\), then \(c+b=a+c\), which by addition being injective implies \(a=b\).
+<p><a onclick="myCollapse('multcommster')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="multcommster" class="w3-container w3-hide">
+$$[(a,b)]\cdot[(c,d)]=[(ac,bd)]=[(ca,db)]=[(c,d)]\cdot[(a,b)]$$
 </div>
 </div>
 </div>
 
-
-<p>This theorem implies that the function \(\bbN\to\bbZ\) given by \(x\mapsto[(x,0)]\) is injective. The function is known as the <strong>canonical embedding</strong> of the naturals into the integers. By canonical embedding, we mean that it is the standard choice of injection \(\bbN\to\bbZ\), so much so that we call \([(x,0)]\) just \(x\). Under this interpretation, \(\bbN\subset\bbZ\). Now, let's see that \(\bbN\neq\bbZ\)</p>
-
-<div class="Theorem" title="Negative Integers"> For all \(x\in\bbN\), \([(0,S(x))]\neq y\) for all \(y\in\bbN\).
+<div class="Theorem" title="Multiplication is associative"> For all \([(a,b)],[(c,d)],[(e,f)]\),$$[(a,b)]\cdot([(c,d)]\cdot[(e,f)])=([(a,b)]\cdot[(c,d)])\cdot[(e,f)]$$
 <div class="proof">
-<p><a onclick="myCollapse('neggintegers')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
-<div id="neggintegers" class="w3-container w3-hide">
-Suppose there exists some \(y\in\bbN\) such that \([(y,0)]=[(0,S(x))]\). Then, \(y+S(x)=S(y+x)=0+0\), a contradiction.
+<p><a onclick="myCollapse('multassocratt')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="multassocratt" class="w3-container w3-hide">
+$$[(a,b)]\cdot([(c,d)]\cdot[(e,f)])=[(a\cdot(c\cdot e),b\cdot(d\cdot f))]$$$$=[((a\cdot c)\cdot e,(b\cdot d)\cdot f)]=([(a,b)]\cdot[(c,d)])\cdot[(e,f)]$$
 </div>
 </div>
 </div>
 
-<p>Integers of this form, which we will call negative numbers, have some nice properties with respect to addition.</p>
-
-<div class="Definition" title="Negation"> For any \([(a,b)]\in\bbZ\), we define \(-[(a,b)]\), the <strong>negation</strong> of \([(a,b)]\), as \([(b,a)]\). It is evident by definition that \(--[(a,b)]=[(a,b)]\), so the negation is its own inverse.</div>
-
-<p>This definition is well defined since for any \([(a,b)]=[(c,d)]\), \(a+d=b+c\), which implies \(b+c=a+d\) and thus \([(b,a)]=[(d,c)]\). I claim that all integers are in \(\bbN\), or are the negation of some non-zero natural number.</p>
-
-<div class="Theorem" title="Integer forms"> All integers \([(a,b)]\) are equal to \([(x,0)]\) or \([(0,x)]\) for some \(x\in\bbN\).
+<div class="Theorem" title="Rational Multiplication respects Integer Multiplication"> For all \(a,b\in\bbZ\), \([(a,1)]\cdot[(b,1)]=[(ab,1)]\)
 <div class="proof">
-<p><a onclick="myCollapse('prooof')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
-<div id="prooof" class="w3-container w3-hide">
-Let \(b\in\bbN\). Proof by induction on \(a\). If \(a=0\), then \([(0,b)]=[(0,b)]\). For the inductive case, there are two possibilities:<br><ul><li>There exists \(x\in\bbN\) such that \([(a,b)]=[(0,x)]\). If \(x=0\), then \(a=b\), so \(S(a)+0=b+1\) and thus \([(S(a),b)]=[(1,0)]\). If \(x=S(k)\) for some \(k\in\bbN\), then since \(a+S(k)=b\), \(S(a)+k=b\), so \([(S(a),b)]=[(0,k)]\).</li><li>There exists \(x\in\bbN\) such that \([(a,b)]=[(x,0)]\): Then \(a=b+x\), so \(S(a)=b+S(x)\). Thus, \([(S(a),b)]=[(S(x),0)]\).</li></ul>
+<p><a onclick="myCollapse('ratmultintmult')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="ratmultintmult" class="w3-container w3-hide">
+Obvious by definition
 </div>
 </div>
 </div>
 
-<p>Thus, all integers are either \(0\), a non-zero natural number, or the negation of a non-zero natural number. We call non-zero natural numbers <strong>positive</strong> integers, negations of non-zero natural numbers <strong>negative</strong> integers.</p>
-<p>So, all integers can be written as \(k\) or \(-k\) for some \(k\in\bbN\) (with \(-0=0\) by definition.) Moreover, \(--k=k\) as we saw earlier. To see why this is useful, let's understand how addition is defined.</p>
-
-<div class="Definition" title="Integer Addition"> Let \(+\) be the following binary operation on \(\bbZ\):$$[(a,b)]+[(c,d)]=[(a+c,b+d)]$$This operation is well-defined.
+<div class="Theorem" title="Multiplication is Distributive"> For all \([(a,b)],[(c,d)],[(e,f)]\),$$[(a,b)]\cdot([(c,d)]+[(e,f)])=[(a,b)]\cdot[(c,d)]+[(a,b)]\cdot[(e,f)]$$
 <div class="proof">
-<p><a onclick="myCollapse('intadd')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
-<div id="intadd" class="w3-container w3-hide">
-By well defined, we mean that the definition of the function produces the same answer regardless of which \((a,b)\) and \((c,d)\) we choose to represent their class. More precisely, we want to show that if \([(a_1,b_1)]=[(a_2,b_2)]\) and \([(c_1,d_1)]=[(c_2,d_2)]\), then $$[(a_1+c_1,b_1+d_1)]=[(a_2+c_2,b_2+d_2)]$$This is true iff $$a_1+c_1+b_2+d_2=a_2+c_2+b_1+d_1$$But, our givens imply that \(a_1+b_2=a_2+b_1\) and \(c_1+d_2=d_1+c_2\), so we are done.
+<p><a onclick="myCollapse('ratdistm')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="ratdistm" class="w3-container w3-hide">
+$$[(a,b)]\cdot([(c,d)]+[(e,f)])=[(a,b)]\cdot[(cf+de,df)]=[(acf+ade,bdf)]$$$$[(a,b)]\cdot[(c,d)]+[(a,b)]\cdot[(e,f)]=[(ac,bd)]+[(ae,bf)]=[(acbf+bdae,bdbf)]$$And, $$(acbf+bdae)\cdot(bdf)=(acf+ade)\cdot(bbdf)$$implying that these rational numbers are equal.
 </div>
 </div>
 </div>
 
-<p>This definition of addition is a binary operation since it is well-defined by definition. Now, we list a series of important properties of integers.</p>
 
-<div class="Definition" title="Subtraction"> \(\;\)<strong>Subtraction</strong> is the following binary operation: \([(a,b)]-[(c,d)]\) is the integer \([(a,b)]+(-[(c,d)])\). </div>
-
-<div class="Theorem" title="Additive Inverses"> \([(a,b)]-[(a,b)]=[(a,b)]+(-[(a,b)])=0\) for all \([(a,b)]\in\bbZ\). \(0\) is the identity element of \(\bbZ\) for addition, and there are no others.
+<div class="Theorem" title="Annihilator"> For all \([(a,b)]\in\bbQ\), \([(a,b)]\cdot 0=0\).
 <div class="proof">
-<p><a onclick="myCollapse('addinvint')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
-<div id="addinvint" class="w3-container w3-hide">
-$$[(a,b)]+(-[(a,b)])=[(a,b)]+[(b,a)]=[(a+b,a+b)]=[(0,0)]$$$$[(a,b)]+[(0,0)]=[(0,0)]+[(a,b)]=[(a,b)]$$$$([(a,b)]+[(c,d)])-[(a,b)]=[(c,d)]$$
+<p><a onclick="myCollapse('annihilatorq')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="annihilatorq" class="w3-container w3-hide">
+$$[(a,b)]\cdot[(0,1)]=[(0,b)]=0$$
 </div>
 </div>
 </div>
 
-
-<div class="Theorem" title="Ordering Integers"> Consider the relation on \(\bbZ\) given by \([(a,b)]\leq[(c,d)]\) iff \([(a,b)]-[(c,d)]\in\bbN\). This relation is an order on \(\bbZ\), and orders the naturals by the natural order.
+<div class="Theorem" title="Multiplicative Identity"> For all \([(a,b)]\in\bbQ\), \([(a,b)]\cdot1=[(a,b)]\)
 <div class="proof">
-<p><a onclick="myCollapse('oop')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
-<div id="oop" class="w3-container w3-hide">
-Let's first show that this relation is an order.<br><ul><li>Reflexivity: \(\;[(a,b)]-[(a,b)]=[(a+b,a+b)]=0\)</li><li>Anti-symmetry: If \([(a,b)]-[(c,d)]=[(a+d,b+c)]=[(k,0)]\) and \([(c,d)]-[(a,b)]=[(c+b,d+a)]=[(x,0)]\) for \(x,k\in\bbN\), then $$[(x+k,0)]=[(x,0)]+[(k,0)]=[(a+d,b+c)]+[(c+b,a+d)]=[(0,0)]$$Thus, \(x+k=0\), which implies that \(x,k=0\).</li><li>Transitivity: If \([(a,b)]-[(c,d)]=[(x,0)]\) and \([(c,d)]-[(e,f)]=[(y,0)]\) for \(x,y\in\bbN\), then $$[(a,b)]-[(e,f)]=[(a+f,b+e)]=[(a+f+c+d,b+e+c+d)]$$$$=([(a,b)]-[(c,d)])+([(c,d)]-[(e,f)])=x+y\in\bbN$$</li><li>Trichotomy: By integer forms, \([(a,b)]-[(c,d)]=[(a-c,b-d)]\) is either of the form \([(x,0)]\) or \([(0,x)]\). In the first case, \([a,b]\geq[(c,d)]\) by definition. In the second, $$[(c,d)]-[(a,b)]=-([(a,b)]-[(c,d)])=-[(0,x)]=[(x,0)]$$And thus \([(c,d)]\geq[(a,b)]\)</ul><br>To see that this order is the same as the natural numbers order when comparing natural numbers, let \(x,y\in\bbN\), I claim that \([(x,0)]\leq[(y,0)]\) iff \(x\leq y\). Observe that \([(y,0)]-[(x,0)]=[(y,x)]\). If there exists \(k\in\bbN\) such that \([(y,x)]=[(k,0)]\), then \(y=x+k\), which implies that \(y\geq x\). If there exists \(l\in\bbN\) such that \([(y,x)]=[(0,k)]\), then \(x=y+k\), which implies that \(x\geq y\).
+<p><a onclick="myCollapse('multidenratty')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="multidenratty" class="w3-container w3-hide">
+Given by definition
 </div>
 </div>
 </div>
 
-<div class="Theorem" title="Integer Ordering respects Natural order"> For any \(a,b\in\bbN\), \(a\leq b\) iff \([(a,0)]\leq[(b,0)]\).
+<div class="Theorem" title="Multiplicative Inverses"> All non-zero rationals have multiplicative inverses. We denote the inverse of \([(a,b)]\) by \([(a,b)]^{-1}\)
 <div class="proof">
-<p><a onclick="myCollapse('natorderintorder')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
-<div id="natorderintorder" class="w3-container w3-hide">
-If \([(a,0)]\leq[(b,0)]\), then \([(b,a)]=[(x,0)]\) for some \(x\in\bbN\). Thus, \(b=a+x\). Since addition respects order on the naturals, \(a\leq b\). A symmetric argument shows that if \([(a,0)]\geq[(b,0)]\), \(a\geq b\). By antisymmetry, we are done.
+<p><a onclick="myCollapse('multinverrat')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="multinverrat" class="w3-container w3-hide">
+We already showed that \(0\) doesn't have an inverse. For all other elements \([(a,b)]\), \(a\neq0\) as shown earlier. Thus, \([(b,a)]\in\bbQ\), and $$[(a,b)]\cdot[(b,a)]=[(ab,ab)]$$And, \([(ab,ab)]=[(1,1)]=1\).
 </div>
 </div>
 </div>
 
-<div class="Theorem" title="Addition is commutative"> For all \([(a,b)],\;[(c,d)]\in\bbZ\), $$[(a,b)]+[(c,d)]=[(c,d)]+[(a,b)]$$
+<div class="Definition" title="Division"> Given rational \([(a,b)]\) and non-zero rational \([(c,d)]\), we define division as follows: $$\frac{[(a,b)]}{[(c,d)]}=[(a,b)]\cdot[(c,d)]^{-1}$$</div>
+
+
+<div class="Theorem" title="Positive multiplication preserves order"> If \([(a,b)]\leq[(c,d)]\) and \([(e,f)]\geq0\), $$[(a,b)]\cdot[(e,f)]\leq[(c,d)]\cdot[(e,f)]$$And, if \([(e,f)]\leq0\), $$[(a,b)]\cdot[(e,f)]\geq[(c,d)]\cdot[(e,f)]$$
 <div class="proof">
-<p><a onclick="myCollapse('addcommiet')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
-<div id="addcommiet" class="w3-container w3-hide">
-$$[(a,b)]+[(c,d)]=[(a+c,b+d)]=[(c+a,d+b)]=[(c,d)]+[(a,b)]$$
+<p><a onclick="myCollapse('posmultpreserves')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="posmultpreserves" class="w3-container w3-hide">
+$$[(c,d)]\cdot[(e,f)]-[(a,b)]\cdot[(e,f)]=[(ecb-eda,bdf)]$$Observe that $$(ecb-eda)bdf=(cb-da)ebdf$$Observe that \((cb-da)bd\geq0\) by the given, so \((cb-da)ebdf\geq0\) iff \(ef\geq0\), or \([(e,f)]\geq0\).
 </div>
 </div>
 </div>
 
-<div class="Theorem" title="Addition is associative"> For all \([(a,b)],\;[(c,d)],\;[(e,f)]\in\bbZ\), $$[(a,b)]+([(c,d)]+[(e,f)])=([(a,b)]+[(c,d)])+[(e,f)]$$
+<div class="Theorem" title="Rationals are dense"> For all \([(a,b)],[(c,d)]\) such that \([(a,b)]<[(c,d)]\), there exists \([(e,f)]\) such that $$[(a,b)]<[(e,f)]<[(c,d)]$$
 <div class="proof">
-<p><a onclick="myCollapse('addassoct')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
-<div id="addassoct" class="w3-container w3-hide">
-$$[(a,b)]+([(c,d)]+[(e,f)])=[(a+(c+e),b+(d+f))]=[((a+c)+e,(b+d)+f)]=([(a,b)]+[(c,d)])+[(e,f)]$$
+<p><a onclick="myCollapse('ratdense')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="ratdense" class="w3-container w3-hide">
+Let \(e=ad+bc\), \(f=2bd\). Then $$2\cdot([(e,f)]-[(a,b)])=2\cdot([(bad+bbc-2bad,2bbd)])=[(bc-ad,bd)]$$Which is equal to \([(c,d)]-[(a,b)]\). Since positive multiplication preserves order, \([(e,f)]-[(a,b)]>0\). Likewise, $$2([(c,d)]-[(e,f)])=[(4cbd-2dad-2dbc,2dbd)]=[(bc-ad,bd)]$$
 </div>
 </div>
 </div>
 
-<div class="Theorem" title="Addition respects order"> If \([(a,b)]\leq[(c,d)]\) and \([(e,f)]\leq[(g,h)]\), $$[(a,b)]+[(e,f)]\leq[(c,d)]+[(g,h)]$$
+<p>In summary, the rationals are an ordered field containing the integers and respecting their operations.</p>
+
+<h2 id='real'>Real Numbers</h2>
+
+<p>Finally, we arrive at the real numbers. The jump from the rationals to the reals is more complicated than any of the previous constructions (barring perhaps the natural numbers), since as we will see in future posts, the real numbers are a larger space than any of the previous sets.</p>
+<p>We'll define the reals numbers <strong>axiomatically</strong> for a few reasons. 1. It'll motivate some of the logical discussions we will have later in the course. 2. It is far more convenient to work with than a constructive approach. 3. It shows the naturality of the definition of the reals.</p>
+<div class="Definition" title="Upper Bound"> In any ordered set \(P\) with \(S\subset P\), \(x\) is an <strong>upper bound</strong> of \(S\) iff for all \(y\in S\), \(y\leq x\). \(z\) is a <strong>least upper bound</strong> of \(S\) iff for all upper bounds \(x\) of \(S\), \(z\leq x\).</div>
+<div class="Definition" title="Real Numbers"> The Real Numbers \(\bbR\) are a set that satisfy the following properties.<ul><li>\(\bbQ\subset\bbR\)</li><li>\(\bbR\) is an ordered field, with its order, addition, and multiplication structures the same as the rational ones on the rationals.</li><li>For all \(x,y,z\in\bbR\), <ul><li>\(x\geq y\) implies \(x+z\geq y+z\)</li><li>\(x,y\geq0\) implies \(xy\geq0\)</li></ul></li><li>For all \(S\subset\bbR\), if there exists an upper bound \(X\), there exists a least upper bound \(x\).</li></ul></div>
+
+<p>This definition, if you haven't seen it before, should confuse you. First, how do we know such a set exists? What if there are multiple sets that satisfy the conditions? Are they both the real numbers?</p>
+<p>This is where the notion of an <strong>isomorphism</strong> becomes useful. Loosely speaking, an isomorphism is a bijection between sets that respects their structure. In this case, if spaces \((X,\lt_X,+_X,\cdot_X),\;(Y,\lt_Y,+_Y,\cdot_Y)\) both satisfy the conditions, an isomorphism would be a bijection \(f:X\to Y\) such that for all \(x,y\in X\), <ul><li>\(\;f(x)+_Yf(y)=f(x+_Xy)\)</li><li>\(\;f(x)\cdot_Yf(y)=f(x\cdot_Xy)\)</li><li>\(\;x\lt_Xy\) iff \(f(x)\lt_Yf(y)\)</li></ul>For a more formal treatment of isomorphism, check out my notes on <a href='/notes/AlgebraicGeometry/Chapter1-CategoryTheory/' target='_blank'>Category Theory</a>.</p>
+<p>The beauty of isomorphisms is that spaces with isomorphisms between them, which we call <strong>isomorphic</strong> spaces, can be considered to be the same set, as the structures behave identically, with the only difference between the spaces being the names assigned to each element. Think of this the same way as we identified \(n\) with \([(n,0)]\) in the integers, and \(z\) with \([(z,1)]\) in the rationals. It is an easy exercise to show that composing isomorphisms gives us an isomorphism.</p>
+<p>So here's the claim: there exists a set that satisfies the definition of the real numbers, and any two sets that satisfy the conditions are isomorphic. We'll show this by constructing one example of a set that satisfies these conditions and then constructing an isomorphism to any other set satisfying the conditions. With both of these results, we can, without any reservation, refer to the real numbers as a space.</p>
+
+<p>First, let's construct an example of a set that satisfies the conditions.</p>
+
+<div class="Definition" title="Dedekind Cuts"> A <strong>Dedekind Cut</strong> is a set \(S\subsetneq\bbQ\) that satisfies the following conditions.<ul><li>\(S\neq\varnothing\)</li><li>For all \(x\in S\) and \(y\in\bbQ\), if \(y\leq x\), \(y\in S\).</li><li>For all \(x\in S\), there exists \(y\in S\) such that \(x\lt y\).</li></ul>Let \(D\) be the set of all Dedekind cuts.</div>
+
+<p>A cut should be thought of as the set of all rationals less than the number the cut is representing.</p>
+
+<div class="Theorem" title="Rational Cuts"> For all \(q\in\bbQ\), the set \(q^*=\{r\in\bbQ\mid r\lt q\}\) is a dedekind cut. And, if \(q\neq r\), \(q^*\neq r^*\).
 <div class="proof">
-<p><a onclick="myCollapse('addrespectorder')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
-<div id="addrespectorder" class="w3-container w3-hide">
-$$[(c,d)]+[(g,h)]-[(a,b)]-[(e,f)]=[(c-a,d-b)]+[(g-e,h-f)]$$By the givens, \([(c-a,d-b)],[(g-e,h-f)]\in\bbN\), so $$[(c-a,d-b)]+[(g-e,h-f)]\in\bbN$$
+<p><a onclick="myCollapse('rationalcut')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="rationalcut" class="w3-container w3-hide">
+<ul><li>\(q\notin q^*\), so \(q^*\neq\bbQ\)</li><li>For all \(q\in\bbQ\), \(q-1\lt q\), so \(q-1\in q^*\)</li><li>For \(x,y,q\in\bbQ\), if \(y\in q^*\), \(y\lt q\), and if \(x\lt y\), \(x\lt q^*\) by transitivity, so \(x\in q^*\).</li><li>For \(x,q\in\bbQ\), if \(x\in q^*\), \(x\lt q\), so by density of rationals, there exists \(y\in\bbQ\) such that \(x\lt y\lt q\), so \(y\in q^*\).</li></ul>By Trichotomy, if \(q\neq r\), either \(q\lt r\) (and thus, \(q\in r^*\)), or \(r\lt q\) (and thus \(r\in q^*\)). Since \(q\notin q^*\) for any \(q\in\bbQ\), this implies that all dedekind cuts are distinct.
 </div>
 </div>
 </div>
 
-<p>These properties establish all of the behavior we expect from integer addition. Now, we define multiplication.</p>
+<p>This is useful since we can define an injection \(f:\bbQ\to D\) that sends \(q\mapsto q^*\). As we've done a few times now, we can now identify \(q\) with \(q^*\), so that \(\bbQ\subset D\).</p>
 
-<div class="Definition" title="Integer Multiplication"> Define \(\cdot\) be the binary operation on \(\bbZ\) that is defined by $$[(a,b)]\cdot[(c,d)]=[(a\cdot c+b\cdot d,b\cdot c+a\cdot d)]$$This operation is well-defined on \(\bbZ\).
+<div class="Definition" title="Addition"> Consider the binary operation \(+\) on \(D\) that is defined by \(A+B=\{a+b\mid a\in A,\;b\in B\}\). This operation is well-defined and is the same as rational addition on the rationals.
 <div class="proof">
-<p><a onclick="myCollapse('intmultdef')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
-<div id="intmultdef" class="w3-container w3-hide">
-Let \(a_1,a_2,b_1,b_2,c_1,c_2,d_1,d_2\in\bbN\) such that \([(a_1,b_1)]=[(a_2,b_2)]\) and \([(c_1,d_1)]=[(c_2,d_2)]\). Then \(a_1+b_2=a_2+b_1\) and \(c_1+d_2=d_1+c_2\). We want to show $$a_1\cdot c_1+b_1\cdot d_1+b_2\cdot c_2+a_2\cdot d_2=a_2\cdot c_2+b_2\cdot d_2+b_1\cdot c_1+a_1\cdot d_1$$Observe that $$a_1c_1+b_1d_1+b_2c_2+a_2d_2+(a_2c_1+b_2c_1+a_2d_1+b_2d_1)$$$$=(a_1+b_2)c_1+(a_2+b_1)d_1+a_2(c_1+d_2)+b_2(c_2+d_1)$$$$=(b_1+a_2)c_1+(b_2+a_1)d_1+a_2(c_2+d_1)+b_2(c_1+d_2)$$$$=a_2c_2+b_2d_2+b_1c_1+a_1d_1+(a_2c_1+b_2c_1+a_2d_1+b_2d_1)$$Since addition on the naturals is injective, we are done.
+<p><a onclick="myCollapse('addrealsde')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="addrealsde" class="w3-container w3-hide">
+To show that it is well defined, we need to show that for all \(A,B\in D\), \(A+B\in D\). <ul><li>There exists \(x\in\bbQ\setminus A\), \(y\in \bbQ\setminus B\). Thus, \(x\) is an upper bound for \(A\) (otherwise, \(x\in A\)), and likewise, \(y\) is an upper bound for \(B\). Thus, for any \(c\in A\) and \(d\in B\), \(c\lt x\) and \(d\lt y\), so \(c+d\lt x+y\). Thus, \(x+y\notin A+B\).</li><li>There exists some \(x\in A\) and \(y\in B\), so \(x+y\in A+B\)</li><li>If \(a\in A\), \(b\in B\), and \(y\lt a+b\), then \(y-a\lt b\) and thus \(y-a\in B\). So, \(a+(y-a)\in A+B\), implying \(y\in A+B\).</li><li>If \(a\in A\), \(b\in B\), there exists \(c\in A\), \(d\in B\) such that \(a\lt c\) and \(b\lt d\), and thus \(a+b\lt c+d\), \(c+d\in A+B\)</li></ul>This shows that the operation is well-defined. To see that it is identical to rational addition on the rationals, see that for \(A,B\in\bbQ\), if \(c\in A^*\) and \(d\in B^*\), then \(c\lt A\), \(d\lt B\), which implies \(c+d\lt A+B\), \(c+d\in (A+B)^*\). On the flipside, if \(q\in (A+B)^*\), then \(q\lt A+B\).
 </div>
 </div>
 </div>
 
-<p>The intuition behind this definition is that \((a-b)(c-d)=ac+bd-bc-ad\). Now, we prove the important properties about multiplication.</p>
+<p>Commutativity and associativity of this definition are given just by the commutativity and associativity of addition in the rationals. This also implies that no non-zero element is an identity element.</p>
 
-<div class="Theorem" title="Multiplication is commutative"> For all \([(a,b)],[(c,d)]\in\bbZ\), \([(a,b)]\cdot[(c,d)]=[(c,d)]\cdot[(a,b)]\)
+<div class="Theorem" title="Additive Identity"> For all \(A\in D\), \(0+A=A\). Moreover, no other element is an identity element.
 <div class="proof">
-<p><a onclick="myCollapse('multcommiett')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
-<div id="multcommiett" class="w3-container w3-hide">
-$$[(a,b)]\cdot[(c,d)]=[(ac+bd,bc+ad)]=[(ca+db,cb+da)]=[(c,d)]\cdot[(a,b)]$$
+<p><a onclick="myCollapse('addidenreals')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="addidenreals" class="w3-container w3-hide">
+If \(a\in A\), there exists \(b\in A\) such that \(b>a\). Thus, \(a-b\lt0\), and thus, \(a-b\in 0\). So, \((a-b)+b\in 0+A\). If \(x+y\in 0+A\), then since \(x\lt 0\), \(x+y\lt y\), so \(x+y\in A\). To see that no other element can be an identity, note that for any two identity elements \(e_1,e_2\), \(e_1+e_2=e_1=e_2\).
 </div>
 </div>
 </div>
 
-<div class="Theorem" title="Multiplication is associative"> For all \([(a,b)],[(c,d)],[(e,f)]\in\bbZ\),$$[(a,b)]\cdot([(c,d)]\cdot[(e,f)])=([(a,b)]\cdot[(c,d)])\cdot[(e,f)]$$
+<div class="Definition" title="Additive Inverse"> For any \(A\in D\), let \(-A\) be defined as follows: $$-A=\begin{cases}(-q)^*&\exists q\in\bbQ,\;A=q^*\\\bbQ\setminus\{-a\mid a\in A\}&\text{otherwise}\end{cases}$$For all \(A\), \(-A\in D\), and \(A+(-A)=0\).
 <div class="proof">
-<p><a onclick="myCollapse('mutltassocint')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
-<div id="multassocint" class="w3-container w3-hide">
-$$[(a,b)]\cdot([(c,d)]\cdot[(e,f)])=[(ace+adf+bcf+bde,acf+ade+bce+bdf)]=([(a,b)]\cdot[(c,d)])\cdot[(e,f)]$$
+<p><a onclick="myCollapse('addinvreal')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="addinvreal" class="w3-container w3-hide">
+If \(A=q^*\) for some \(q\in\bbQ\), this is obvious. So assume not. First, let's show that \(-A\) is a cut. <ul><li>There exists \(a\in A\), so \(-a\notin -A\), so \(-A\neq\bbQ\)</li><li>There exists \(b\notin A\), so \(-b\in -A\).</li><li>If \(x\in -A\), if \(y\lt x\), then \(-y\gt-x\). If \(-y\in A\), then \(-x\in A\), a contradiction. Thus, \(-y\notin A\), and \(-y\in -A\)</li><li>If \(x\in -A\) is such that there is no \(y\in -A\) with \(y\gt x\), then \(-x\notin A\) but for all \(y\lt -x\), \(y\in A\). I claim that \(A=(-x)^*\). We already showed that \((-x)^*\subset A\). And, if there exists \(z\in A\) such that \(z\geq -x\), then \(-x\in A\), a contradiction. So, \(A=(-x)^*\). However, we assumed that this wasn't the case, so this is a contradiction.</li></ul>This proves that \(-A\) is a cut. Now we prove \(A+(-A)=0\)<ul><li>For any \(x\in0\), \(-x\gt0\). I claim that there exists some \(a\in A\) such that \(a-x\notin A\). Suppose not. Since \(A\) is non-empty, there exists \(b\in A\). Let \(k\in\bbN\) be the smallest natural for which \(b+k\cdot(-x)\notin A\). \(k\neq0\) by the given, so \(k-1\) is natural, and thus \(b+(k-1)\cdot(-x)\in A\). But, by our assumption, this implies \(b+k\cdot(-x)\in A\), a contradiction. Thus, \(b+k\cdot(-x)\in A\) for all \(k\in\bbN\). Next, for any \(q\in\bbQ\), either \(q\leq b\), in which case \(q\in A\), or \(z=\frac{q-b}{-x}\) is positive since the numerator and denominator are. Thus, \(z=[(v,w)]\), where \(v,w\) are positive naturals. Thus, \((v+1)\gt z\). So, we have $$b+(v+1)\cdot(-x)\gt b+z\cdot(-x)=q$$Since \(b+(v+1)\cdot(-x)\in A\), \(q\in A\). This implies \(A=\bbQ\), a contradiction. Thus, there exists some \(a\in A\) such that \(a+(-x)\notin A\). So, \(x-a\in -A\), so \((x-a)+a=x\in (-A)+A\). <br><br>For the other side, note that if \(a\in A\), \(b\in -A\) such that \(a+b=0\), then \(b=-a\), and thus \(b\notin -A\), a contradiction. If \(a+b\gt0\), then \(b\gt-a\), so \(-a\in -A\), a contradiction. This completes the proof.
 </div>
 </div>
 </div>
 
-<div class="Theorem" title="Multiplication is distributive"> For all \([(a,b)],[(c,d)],[(e,f)]\in\bbZ\),$$[(a,b)]\cdot([(c,d)]+[(e,f)])=[(a,b)]\cdot[(c,d)]+[(a,b)]\cdot[(e,f)]$$
+<div class="Definition" title="Subtraction"> We define \(A-B\) as \(A+(-B)\).</div>
+
+<p>Now we introduce order, which is surprisingly easy to define.</p>
+
+<div class="Definition" title="Ordering Reals"> We define the order relation on the reals as follows: \(A\leq B\) iff \(A\subset B\). This is an order, and it is identical to the rational order on the rationals.
 <div class="proof">
-<p><a onclick="myCollapse('multdistitn')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
-<div id="multdistitn" class="w3-container w3-hide">
-$$[(a,b)]\cdot([(c,d)]+[(e,f)])=[(ac+ae+bd+bf,ad+af+bc+be)]$$$$=[(ac+bd,ad+bc)]+[(ae+bf,af+be)]$$$$=[(a,b)]\cdot[(c,d)]+[(a,b)]\cdot[(e,f)]$$
+<p><a onclick="myCollapse('orderreals')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="orderreals" class="w3-container w3-hide">
+<ul><li>Reflexivity: Obvious</li><li>Anti-Symmetry: Obvious</li><li>Transitivity: Obvious</li><li>Trichotomy: If there exists \(x\in A\) such that \(x\notin B\), then \(x\) is an upper bound for \(B\) (if not, \(x\in B\)). This implies that for any \(y\in B\), \(y\lt x\), so \(y\in A\). Thus \(B\subset A\).</li></ul>To show that this order is the same as the rational order, note that if \(p \leq q\) in the rationals, then for any \(r\in q^*\), \(r\lt p\leq q\), so \(r\in q^*\). So, \(p^*\leq q^*\).
 </div>
 </div>
 </div>
 
-<div class="Theorem" title="Multiplication is (almost) injective"> Like with the naturals, if \([(e,f)]\neq0\) and \([(a,b)]\cdot[(e,f)]=[(c,d)]\cdot[(e,f)]\), then \([(a,b)]=[(c,d)]\).
+<p>We say a number is positive if it is greater than zero, and negative if it is less than zero.</p>
+
+<div class="Theorem" title="Negating Reals"> If \(x\lt 0\), then \(-x\gt0\), and vice versa.
 <div class="proof">
-<p><a onclick="myCollapse('idmultalmostinj')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
-<div id="idmultalmostinj" class="w3-container w3-hide">
-By integer forms, there are two cases to consider:<br><ul><li>There exists \(x\in\bbN\), \([(e,f)]=[(S(x),0)]\): The given equality implies $$(a+d)\cdot S(x)=(b+c)\cdot S(x)$$Since multiplication is almost injective on the naturals, we have \(a+d=b+c\).</li><li>There exists \(x\in\bbN\), \([(e,f)]=[(0,S(x))]\): The given equality implies $$(b+c)\cdot S(x)=(a+d)\cdot S(x)$$Since multiplication is almost injective on the naturals, \(a+d=b+c\).</li></ul>
+<p><a onclick="myCollapse('negatingreals')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="negatingreals" class="w3-container w3-hide">
+If \(x\lt0\), there exists some \(y\in\bbQ\) such that \(y\in0\), \(y\notin x\). Thus, \(y\lt0\), so \(-y\gt0\). \(-y\in -x\) since \(--y=y\), and thus, \(0\in x\). This implies \(0\lt -x\). The remainder of the proof is the same, left as an exercise.
 </div>
 </div>
 </div>
 
-
-<div class="Theorem" title="Multiplicative Identity"> \(1\) is the only identity element of \(\cdot\)
+<div class="Theorem" title="Addition preserves Order"> If \(x\geq y\), then for any \(z\), \(x+z\geq y+z\)
 <div class="proof">
-<p><a onclick="myCollapse('multidenint')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
-<div id="multidenint" class="w3-container w3-hide">
-First, for all \([(a,b)]\in\bbZ\), $$[(a,b)]\cdot[(1,0)]=[(a\cdot 1+b\cdot 0,a\cdot 0+b\cdot 1)]=[(a,b)]$$And, for all \([(c,d)]\), if \([(a,b)]=[(ac+bd,ad+bc)]\), then $$a+ad+bc=b+ac+bd$$$$a(d+1)+bc=ac+b(d+1)$$Letting \(a=0,b=1\), this becomes \(c=d+1\). Thus, \([(1,0)]=[(c,d)]\).
+<p><a onclick="myCollapse('addpresreals')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="addpresreals" class="w3-container w3-hide">
+If \(x\geq y\), then for any \(q\in y+z\), there exists \(a\in y\), \(b\in z\) such that \(a+b=q\). But, \(a\in x\), so this implies \(q=a+b\in x+z\).
 </div>
 </div>
 </div>
 
-<div class="Theorem" title="Natural Multiplication in the Integers"> For any \(a,b\in\bbN\), \([(a,0)]\cdot[(b,0)]=[(a\cdot b,0)]\).
+<p>Now, we prove the completeness of the reals, via the least upper bound property.</p>
+
+<div class="Theorem" title="Closure under Unions"> Given a non-empty set \(S\subset D\), \(\bigcup S=\bbQ\) or \(\bigcup S\in D\).
 <div class="proof">
-<p><a onclick="myCollapse('naturalmultinint')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
-<div id="naturalmultinint" class="w3-container w3-hide">
-$$[(a,0)]\cdot[(b,0)]=[(ab+0\cdot0,a\cdot 0+b\cdot0)]=[(a\cdot b,0)]$$
+<p><a onclick="myCollapse('closureunderuin')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="closureunderuin" class="w3-container w3-hide">
+<ul><li>If \(\bigcup S=\bbQ\), we are done.</li><li>Since there exists \(X\in S\subset D\), and \(X\neq\varnothing\), \(X\subset\bigcup S\neq\varnothing\)</li><li>If \(x\in\bigcup S\), there exists \(X\in S\) such that \(x\in X\). Thus, for any \(y\lt x\), \(y\in X\), so \(y\in\bigcup S\).</li><li>If \(x\in\bigcup S\), \(x\in X\) as in the previous bullet, so there exists \(y\in X\) such that \(y\gt x\), and thus \(y\in\bigcup S\).</li></ul>
 </div>
 </div>
 </div>
 
-<div class="Theorem" title="Integers are an integral domain"> For any \([(a,b)],[(c,d)]\in\bbZ\), if \([(a,b)]\cdot[(c,d)]=0\), then \([(a,b)]=0\) or \([(c,d)]=0\).
+<div class="Theorem" title="Least Upper Bound"> Given a non-empty set \(S\subset D\), if there exists an upper bound \(Y\in D\) for \(S\), there exists a least upper bound \(X\in D\) for \(S\).
 <div class="proof">
-<p><a onclick="myCollapse('integralityyyy')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
-<div id="integralityyyy" class="w3-container w3-hide">
-If the given equality holds, we have \(ac+bd=ad+bc\). If \([(c,d)]\neq0\), \(c\neq d\). Without loss of generality, \(c\lt d\), so since integer order is the same as the natural order, there exists \(x\in\bbN\) such that \(c+S(x)=d\). So, $$ac+bc+b\cdot S(x)=ac+bc+a\cdot S(x)$$By injectivity of addition and multiplication almost being injective, we have \(a=b\) and thus \([(a,b)]=0\).
+<p><a onclick="myCollapse('lublub')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="lublub" class="w3-container w3-hide">
+I claim that \(X=\bigcup S\). Note that \(Y\) is not in any of the elements of \(S\), so \(Y\notin X\), and thus, \(X\neq\bbQ\). By the previous theorem, \(X\) is a cut. It is an upper bound for \(S\) since if \(X\in Z\) for any \(Z\in S\), then \(X\in\bigcup S\), and thus \(X\in X\), which is false by the axiom of regularity. And, for any \(Z\in D\), if \(Z\lt X\), there exists \(a\in X\) such that \(a\notin Z\). Thus, there exists \(A\in S\) such that \(a\in A\), which implies that \(Z\lt A\), meaning that \(Z\) is not an upper bound of \(S\). Thus, \(X\) is the least upper bound of \(S\).
 </div>
 </div>
 </div>
 
-<div class="Theorem" title="Multiplication by positive integers preserves order"> If \(x\in\bbN\) and \([(a,b)]\geq[(c,d)]\), \(x\cdot[(a,b)]\geq x\cdot[(c,d)]\). The converse is also true when \(x\neq0\).
+<div class="Theorem" title="Greatest Lower Bound"> Given a non-empty set \(S\subset D\), if there exists a lower bound \(Y\in D\) for \(S\), there exists a greatest lower bound \(X\in D\) for \(S\).
 <div class="proof">
-<p><a onclick="myCollapse('noop')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
-<div id="noop" class="w3-container w3-hide">
-Since \(x\cdot[(y,z)]=[(yx,zx)]\), we want to show that given \([(a-c,b-d)]=k\) for some \(k\in\bbN\), \([(xa-xc,xb-xd)]\) is also natural. But, we know $$[(xa-xc,xb-xd)]=[(x(a-c),x(b-d))]=x\cdot[(a-c,b-d)]=x\cdot k$$And since the product of natural numbers is natural, we are done. For the converse, if \(x\cdot[(a-c,b-d)]\in\bbN\), observe that if \([(a-c,b-d)]=[(0,S(k))]\) for some \(k\in\bbN\), then \(x\cdot[(0,S(k))]=[(0,x\cdot S(k))]\). Since \(\bbZ\) is an integral domain, \(x\cdot S(k)\neq0\), and thus, \([(0,x\cdot S(k))]\lt0\), a contradiction. Thus, \([(a-c,b-d)]\geq0\) and we are done.
+<p><a onclick="myCollapse('glbglb')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="glbglb" class="w3-container w3-hide">
+Consider \(\{-s\mid s\in S\}\) and apply the Least Upper Bound Theorem.
 </div>
 </div>
 </div>
 
 
-<p>This shows all of the important properties of \(\bbZ\). In particular, we have established that \(\bbZ\) is a ring, \(\bbN\subset\bbZ\), and that the addition and multiplication of the naturals in the integers is the same as the one we defined for the naturals.</p>
+
+<p>Now we define multiplication.</p>
+
+<div class="Definition" title="Real Multiplication"> For \(x,y\in D\), $$x\cdot y=\begin{cases}0\cup\{p\cdot q\mid p\in x,\;q\in y,\;p,q\geq0\}&x,y\geq0\\-((-x)\cdot y)&x\lt0\leq y\\-(x\cdot(-y))&y\lt0\leq x\\(-x)\cdot(-y)&\text{otherwise}\end{cases}$$This definition produces cuts and behaves identically to rational multiplication on the rationals.
+<div class="proof">
+<p><a onclick="myCollapse('realmultwhoo')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="realmultwhoo" class="w3-container w3-hide">
+First, we show that this operation always produces cuts: let \(D\ni x,y\geq0\). If \(x=0\) or \(y=0\), then the product is just \(0\) by definition, which is a cut. Assume \(x,y\gt0\)<ul><li>If \(0\lt r\lt p\) and \(0\lt s\lt q\), \(r\cdot s\lt p\cdot q\), so for some \(p\notin x\), \(q\notin y\), \(p\cdot q\notin x\cdot y\).</li><li>\(-1\in x\cdot y\)</li><li>If \(z\in x\cdot y\) and if \(v\lt z\), if \(v\lt 0\), then \(v\in x\cdot y\) trivially. Otherwise, there exists \(a\in x\), \(b\in y\) such that \(a\cdot b=z\) with \(a,b\gt0\). Note that \(\frac vz\lt1\), so \(\frac{av}z\lt a\), meaning that \(\frac{av}z\in x\). Thus, we have \(v=\frac{av}z\cdot b\in x\cdot y\)</li><li>If \(z\in x\cdot y\), since \(x,y\gt 0\), there exists \(r\in x\), \(s\in y\) such that \(r,s\gt0\), so \(r\cdot s\gt0\). Thus, if \(z\leq 0\), \(z\lt r\cdot s\). If \(z\gt 0\), there exists \(a\in x\), \(b\in y\) such that \(a\cdot b=z\). Since \(x,y\) are cuts, there exists \(\overline{a}\in x\), \(\overline{b}\in y\) such that \(\overline{a}\gt a\), \(\overline{b}\gt b\). Thus, \(x\cdot y\ni \overline{a}\cdot\overline{b}\gt a\cdot b=z\).</li></ul> If for all \(p,q\in\bbQ\) such that \(p,q\geq0\), \(p^*\cdot q^*=(pq)^*\), it is obvious that the real definition of multiplication is identical to the rational definition for all rationals. Note first that since \(p\cdot q\geq0\), \(0\subset(pq)^*\) and by definition, \(0\subset p^*\cdot q^*\). So, if \(0\lt r\lt pq\), by density of the rationals, there exists \(s\in\bbQ\) such that \(r\lt s\lt pq\). Thus, \(\frac rs\lt1\), so \(\frac{pr}s\in p^*\). Likewise, \(\frac s{pq}\lt 1\), so \(\frac sp\in q^*\). Thus, we have $$r=\frac{pr}s\cdot\frac sp\in p^*\cdot q^*$$So, \((pq)^*\subset p^*\cdot q^*\). And, if there exists \(0\lt a\lt p\), \(0\lt b\lt q\) then \(ab\lt pq\), so \(ab\in(pq)^*\). Thus, \(p^*\cdot q^*\subset(pq)^*\).
+</div>
+</div>
+</div>
+
+<p>By definition, we have \(x,y\geq0\) implies \(xy\geq0\) since \(0\subset xy\). Some important results for multiplication.</p>
+
+<div class="Theorem" title="Multiplication is Commutative"> Given \(x,y\in D\), \(x\cdot y=y\cdot x\)
+<div class="proof">
+<p><a onclick="myCollapse('multcomreall')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="multcomreall" class="w3-container w3-hide">
+First assume \(x,y\geq0\). If \(r\in x\cdot y\), then either \(r\lt 0\) or there exists \(a\in x\), \(b\in y\) such that \(r=a\cdot b\). In the first case, \(r\in y\cdot x\) since \(0\subset y\cdot x\). In the second case, \(r=a\cdot b=b\cdot a\), implying \(r\in y\cdot x\). Since \(x,y\) arbitrary, we are done with this case.<br><br>If \(x,y\lt0\), $$x\cdot y=(-x)\cdot(-y)=(-y)\cdot(-x)=y\cdot x$$If \(x\lt 0\leq y\), $$x\cdot y=-((-x)\cdot y)=-(y\cdot(-x))=y\cdot x$$The final case is parallel.
+</div>
+</div>
+</div>
+
+<div class="Theorem" title="Multiplication is associative"> Given \(x,y,z\in D\), \(x\cdot (y\cdot z)=(x\cdot y)\cdot z\).
+<div class="proof">
+<p><a onclick="myCollapse('multassocrealll')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="multassocrealll" class="w3-container w3-hide">
+Assume first that \(x,y,z\geq0\). If \(r\in x\cdot(y\cdot z)\), either \(r\lt0\), in which case \(r\in(x\cdot y)\cdot z\), or there exists \(a\in x,y\in b,z\in c\) such that $$r=a\cdot(b\cdot c)=(a\cdot b)\cdot c\in(x\cdot y)\cdot z$$To handle the general case, we need casework:<ul><li>\(x\lt0\), \(y,z\geq0\): $$x\cdot(y\cdot z)=-((-x)\cdot(y\cdot z))=-(((-x)\cdot y)\cdot z)=(-((-x)\cdot y)\cdot z)=(x\cdot y)\cdot z$$</li><li>\(x,y\lt0\leq z\): $$x\cdot(y\cdot z)=-((-x)\cdot-((-y)\cdot z))=(-(x\cdot(-y))\cdot z)=(x\cdot y)\cdot z$$</li><li>\(x,y,z\lt0\):$$x\cdot(y\cdot z)=-((-x)\cdot((-y)\cdot(-z)))=-((x\cdot y)\cdot(-z))=(x\cdot y)\cdot z$$</li></ul>The rest of the cases are equivalent to one of the cases above.
+</div>
+</div>
+</div>
+
+<div class="Theorem" title="Multiplicative Identity"> \(1\) is the sole multiplicative identity of \(D\)
+<div class="proof">
+<p><a onclick="myCollapse('multidenreal')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="multidenreal" class="w3-container w3-hide">
+For \(x\in D\), let \(y\in x\). There exists \(z\neq0\in x\) such that \(y\lt z\lt x\). Thus, \(\frac yz\lt 1\). Thus, \(y=z\cdot\frac yz\in x\cdot 1\). And, if \(a\cdot b\in x\cdot 1\), with \(a\lt x\), \(b\lt 1\), then \(a\cdot b\lt a\), so \(a\cdot b\in x\). This proves that \(x\cdot 1=x\).<br><br>To show that this is a unique identity, note that for any two identities \(e_1,e_2\), \(e_1\cdot e_2=e_1=e_2\).
+</div>
+</div>
+</div>
+
+<div class="Theorem" title="Multiplication is Distributive"> Given \(a,b,c\in D\), \(a\cdot(b+c)=a\cdot b+a\cdot c\).
+<div class="proof">
+<p><a onclick="myCollapse('multdistreal')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="multdistreal" class="w3-container w3-hide">
+Assume first that \(a\geq0\), \(b+c\geq0\). Let \(x\in a\cdot(b+c)\). There are two cases<ul><li>\(x\lt0\): Let \(y\in0\) such that \(y\notin x\). If \(y^*=x\), then replace \(y\) with \(\frac y2\), as \(y\lt\frac y2\lt0\). Thus, \(x\lt y^*\lt0\). Thus, \(y^*\in a\cdot b\) and \(x-y^*\in a\cdot c\), so \(x=y^*+(x-y^*)\in a\cdot b+a\cdot c\)</li><li>There exists \(0\leq i\in a\), \(j\in b\), \(k\in c\) such that \(x=i\cdot(j+k)=i\cdot j+i\cdot k\). If \(j\leq0\), then \(i\cdot j\leq0\), so \(i\cdot j\in a\cdot b\). If \(i=0\), then the relation is obvious. And, if \(0\lt i\in a\), \(0\lt j\in b\), then \(i\cdot j\in a\cdot b\). Parallel logic shows \(i\cdot k\in a\cdot c\), proving the desired relation.</li></ul> To finish, we need to do casework. <ul><li>\(a\lt0\), \(b+c\geq0\): Thus, $$a\cdot(b+c)=-((-a)\cdot(b+c))=-(-(a\cdot b)-(a\cdot c))=a\cdot b+a\cdot c$$</li>\(a\gt0\), \(b+c\lt0\)$$a\cdot(b+c)=-(a\cdot(-b-c))=-(-a\cdot b-a\cdot c)=a\cdot b+a\cdot c$$</li><li>\(a\lt0\), \(b+c\lt0\):$$a\cdot(b+c)=(-a)\cdot(-b-c)=a\cdot b+a\cdot c$$</li></ul>
+</div>
+</div>
+</div>
+
+<div class="Theorem" title="Rationals are dense"> For any \(x,y\in D\) such that \(x\lt y\), there exists \(q\in\bbQ\) such that \(x\lt q^*\lt y\).
+<div class="proof">
+<p><a onclick="myCollapse('ratdensew')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="ratdensew" class="w3-container w3-hide">
+Since \(x\lt y\), there exists \(r\in y\) such that \(r\notin x\). By cut properties, there exists \(q\in y\) such that \(r\lt q\). Thus, we have \(x\leq r^*\lt q^*\lt y\).
+</div>
+</div>
+</div>
+
+<div class="Theorem" title="Integral Domain"> For all \(x,y\in D\), if \(x\cdot y=0\), \(x=0\) or \(y=0\).
+<div class="proof">
+<p><a onclick="myCollapse('realintegraldomain')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="realintegraldomain" class="w3-container w3-hide">
+Suppose there exists \(x,y\) such that the theorem is false. Then, \(x\cdot(-y)=-(x\cdot y)=0\) and \((-x)\cdot y=-(x\cdot y)\), so we can assume \(x,y\gt0\) without loss of generality. Thus, there exists \(p\in x\) and \(q\in y\) such that \(p,q\gt0\). But, \(p\cdot q\gt0\) since the rationals are an integral domain, and \(p\cdot q\in x\cdot y\). Thus, \(x\cdot y\neq0\).
+</div>
+</div>
+</div>
+
+
+<div class="Theorem" title="Multiplicative Inverses"> For any \(x\neq0\), there exists \(y\) such that \(x\cdot y=1\). We call \(y\) \(x^{-1}\), or the <strong>reciprocal</strong> of \(x\).
+<div class="proof">
+<p><a onclick="myCollapse('multinverreal')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="multinverreal" class="w3-container w3-hide">
+Let \(x\gt0\). Let \(S\) be the set of cuts \(y\) such that \(x\cdot y\leq1\). \(0\in S\), so \(S\) is non-empty. And, since \(x\gt0\), there exists \(q\in x\) such that \(q\gt0\). Note that for any \(A\in D\) with \(A\geq(q^{-1})^*\), \(x\cdot A\geq x\cdot(q^{-1})^*\ni 1\), so \(A\notin S\). Thus, \((q^{-1})^*\) is an upper bound for \(S\). By the least upper bound property, there exists a cut \(Y\) that is the least upper bound of \(S\). I claim that \(x\cdot Y=1\). <ul><li>If \(x\cdot Y\lt0\), then \(Y\lt0\), and thus \(Y\) is not an upper bound since \(0\in S\)</li><li>If \(0\leq x\cdot Y\lt 1\), by density of the rationals, there exists \(r\in\bbQ\) such that \(x\cdot Y\lt r^*\lt 1\). By density again, there exists a rational \(s\) such that \(r\lt s\lt1\). <br>Thus, \(\frac sr-1\gt0\) and \(\left(\frac sr-1\right)Y\gt0\) since \(D\) is an integral domain and \(x,y\geq0\) implies \(x\cdot y\geq0\). So, \(\frac srY\gt Y\), and \(\frac sr(r-x\cdot Y)\gt0\)$$x\cdot \frac srY\lt x\cdot \frac srY+\frac sr(r-x\cdot Y)=\frac sr(x\cdot Y+r-x\cdot Y)=s<1$$This implies that \(\frac srY\in S\), but \(\frac srY\gt Y\) as we showed, contradicting the fact that \(Y\) is an upper bound.</li><li>If \(x\cdot Y\gt1\), by density of the rationals, there exists \(r,s\in\bbQ\) such that \(1\lt s^*\lt r^*\lt x\cdot Y\). Thus, \(\frac sr-1\lt0\), and thus \(\left(\frac sr-1\right)Y\lt0\). This implies \(\frac srY\lt Y\). Moreover, $$x\cdot \frac srY=\frac sr(x\cdot Y)\gt s\gt1$$This implies that \(\frac srY\) is an upper bound for \(S\), contradicting the least upper bound nature of \(Y\). <br><br>So, \(x\cdot Y=1\). If \(x\lt0\), let \(Y\) be such that \((-x)\cdot Y=1\). Thus, $$x\cdot (-Y)=-(x\cdot Y)=(-x)\cdot Y=1$$This completes the proof.
+</div>
+</div>
+</div>
+
+<div class="Definition" title="Division"> We define division as follows: For \(x,y\in D\), \(\frac xy\) = \(x\cdot y^{-1}\)</div>
+
+<p>These rather tedious proofs show that \(D\) satisfies all of the conditions of the real numbers. Now, we show that any other set that does so is isomorphic to \(D\).</p>
+
+<div class="Theorem" title="Archimedean Property"> For any space \(X,\lt_X,+_X,\cdot_X\) satisfying the real conditions, for all \(x\in X\), there exists some \(n\in\bbN\) such that \(x\lt_Xn\).
+<div class="proof">
+<p><a onclick="myCollapse('archim')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="archim" class="w3-container w3-hide">
+Suppose there exists some \(x\) such that \(x\geq_X n\) for all \(n\in\bbN\). Then, \(x\) is an upper bound of \(\bbN\). Let \(y\) be the least upper bound. Thus, there exists some \(m\in\bbN\) such that \(m\gt y-1\). This implies \(m+1\gt y\), a contradiction.
+</div>
+</div>
+</div>
+
+<div class="Theorem" title="Rationals are dense (V2)"> In any space \(X,\lt_X,+_X,\cdot_X\) with the real conditions, for any \(x\lt_Xy\), there exists \(q\in\bbQ\) such that \(x\lt_Xq\lt_Xy\).
+<div class="proof">
+<p><a onclick="myCollapse('densev2')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="densev2" class="w3-container w3-hide">
+If \(x\lt0\lt y\), the claim is obvious (\(0\in\bbQ\)). If \(x\lt y\leq0\), apply this theorem on \(0\leq (-y)\lt (-x)\) to get \(0\leq(-y)\lt q\lt(-x)\). Thus, \(x\lt-q\lt y\leq0\). So, if we show this theorem for \(0\leq x\lt y\), we have shown the result for all \(x,y\).<br><br>By the archimedean property, let \(n\in\bbN\) be such that \(n\gt_X2(y-x)^{-1}\gt0\). Thus, \(ny-nx\gt(y-x)\cdot2(y-x)^{-1}=2\). By the well-ordering principle, let \(m\in\bbN\) be the least natural greater than \(ny-1\) (which exists thanks to the archimedean principle). Clearly, \(m\lt ny\), since if not, \(m-1\gt ny-1\), contradicting the minimality of \(m\). And, $$m\gt ny-1\gt ny-(ny-nx)=nx$$So, \(nx\lt m\lt ny\). Since \(n\gt0\), we have \(x\lt \frac mn\lt y\) as desired.
+</div>
+</div>
+</div>
+
+<div class="Theorem" title="Uniqueness of Reals"> Any space \((X,\lt_X,+_X,\cdot_X)\) that satisfy the real conditions is isomorphic to \((D,\lt,+,\cdot)\).
+<div class="proof">
+<p><a onclick="myCollapse('uniquenessofreals')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="uniquenessofreals" class="w3-container w3-hide">
+I claim that the map \(f:X\to D\) defined by \(A\mapsto\{q\in\bbQ\mid q\lt_X A\}\) is an isomorphism.
+<ul>
+  <li>Well-defined: We need to show that the output of this function is always a cut. By the archimedean property, let \(n_A\in\bbN\) be such that \(n_A\gt_X A\) for all \(A\in X\) <ul><li>The archimedean property implies that \(n_A\in\bbQ\setminus f(A)\).</li><li> \(n_{-A}\gt_X-A\), so \(-n_{-A}\lt_XA\), so \(-n_{-A}\in f(A)\).</li><li>If \(q\in f(A)\) and \(r\lt_X q\), then \(r\lt_X q\lt_X A\), so \(r\in f(A)\)</li><li>If \(q\in f(A)\), then \(q\lt_X f(A)\), so by the density of the rationals, there exists \(r\in\bbQ\) with \(q\lt_X r\lt_X A\), so \(r\in f(A)\)</li></ul></li>
+  <li>Injective: For any \(A,B\in X\) with \(A\lt_XB\), by the density of the rationals, there exists \(q\in\bbQ\) with \(A\lt_X q\lt_XB\), so \(q\in f(B)\), \(q\notin f(A)\)</li>
+  <li>Surjective: For any cut \(S\in D\), observe that \(S\subset X\) has an upper bound in \(\bbQ\) (if not, all elements of \(\bbQ\) would be in \(S\), a contradiction). \(S\) is also non-empty, so \(S\) has a least upper bound \(Y\) in \(X\). I claim that \(f(Y)=S\). <ul><li>If \(q\in S\), then by cut properties, there exists \(r\in S\) such that \(q\lt r\). Since \(Y\) is an upper bound of \(S\), \(q\lt_Xr\leq_XY\), so \(q\in f(Y)\)</li><li>If \(q\in f(Y)\), then \(q\lt_X Y\). If there is no rational \(r\in S\) such that \(q\lt_X r\), then \(q\) is an upper bound of \(S\), contradicting the minimality of \(Y\). Thus, there exists such a \(r\in S\), and since \(S\) is a cut, \(q\in S\)</li></ul></li>
+  <li>\(\;x\leq_Xy\) implies \(f(x)\leq f(y)\): If \(q\in f(y)\), then \(q\lt_Xx\), so \(q\lt_Xy\), and thus \(q\in f(y)\)</li>
+  <li>\(\;f(x+_Xy)=f(x)+f(y)\): If \(q\in f(x+_Xy)\), then \(q\lt_Xx+_Xy\). By density of the rationals, there exists \(r\in\bbQ\) such that \(q-y\lt_Xr\lt_Xx\) since \(x-(q-y)=x+y-q\gt_X0\). Thus, \(q-r\lt_X q-(q-y)=y\), so \(q=r+(q-r)\in f(x)+f(y)\). If \(q\in f(x)+f(y)\), there exists \(\bbQ\ni a\lt_Xx\), \(\bbQ\ni b\lt_Xy\) such that \(q=a+b\). But, \(q=a+b\lt_Xx+y\) by order properties.</li>
+  <li>\(\;f(x\cdot_Xy)=f(x)f(y)\): Assume first that \(x,y\geq0\). If \(x=y=0\), then the claim is obvious. If \(q\in f(x\cdot_Xy)\), then \(q\lt x\cdot_Xy\). If \(q\leq_X0\), then \(q\in f(x)f(y)\) by definition. If \(q\gt0\), then \(x,y\gt0\). <br><br>In this case, \(x\cdot_Xy\gt_Xq\) implies \(x\gt_X\frac qy\). Thus, by density of rationals, let \(r\in\bbQ\) such that \(\frac qy\lt_Xr\lt_Xx\). Thus, \(\frac qr\lt_Xq\cdot\left(\frac qy\right)^{-1}=y\). So, \(q=r\cdot_X\frac qr\in f(x)f(y)\). If \(q\in f(x)f(y)\), there exists \(0\lt_Xr\lt_Xx\) and \(0\lt_Xs\lt_Xy\) such that \(q=rs\). By order properties, \(rs\lt_Xx\cdot_Xy\), implying that \(q\in f(x\cdot_Xy)\).<br><br> If \(x\lt0\leq y\), then $$f(x\cdot_Xy)=-f(-x\cdot_Xy)=-f(-x)f(y)=f(x)f(y)$$If \(y\lt0\leq x\), then$$f(x\cdot_Xy)=-f(x\cdot_X(-y))=-f(x)f(-y)=f(x)f(y)$$If \(x,y\lt0\), $$f(x\cdot_Xy)=f(-x\cdot_X-y)=f(-x)f(-y)=f(x)f(y)$$</li>
+</ul>
+</div>
+</div>
+</div>
+
+<p>These proofs show that our characterization of the real numbers via axioms is well-defined, since there is a space that satisfies the axioms, and any two spaces that do so are equivalent in a very strong sense. So why bother with other constructions of the real numbers? The answer is simple: perspective. Alternate constructions of the real numbers will emphasize different properties of them, and make proving certain theorems easier. For example, the following construction of the reals allows for a far easier definition of order, addition, and multiplication. These exercises are not too difficult (much less difficult than the proofs above) and will give you some intuition on how the reals work.</p>
+
+<div class="Definition" title="Distance"> Given two rationals \(a,b\), the distance \(d(a,b)\) between the two rationals is defined as the larger of \(a-b\) and \(b-a\).</div>
+<br>
+<div class="Definition" title="Cauchy"> Given an infinite sequence of rationals \(q_0,q_1,q_2,\ldots\), we call the sequence <strong>Cauchy</strong> if for all rationals \(r\gt0\), there exists a natural \(n\in\bbN\) such that for all \(\bbN\ni i,j\geq n\), \(d(q_i,q_j)\lt r\). In other words, a Cauchy sequence is one in which all of the terms progressively get closer together.</div>
+<br>
+<div class="exercise" title="Cauchy equivalence"> Let \(X\) be the space of all Cauchy sequences. Let sequences \(q_0,q_1\ldots\) and \(r_0,r_1,\ldots\) be equivalent iff \(q_0,r_0,q_1,r_1,\ldots\) is Cauchy. Prove that this is an equivalence relation on \(X\). Define \(\bbR\) as the partition associated with this equivalence relation.</div>
+<br>
+<div class="exercise" title="Embedding Rationals"> Let the sequence \([q,q,q,\ldots]\) be identified with \(q\) so that \(\bbQ\subset\bbR\). Show that no two such sequences are in the same equivalence class.</div>
+<br>
+<div class="exercise" title="Order"> Given \([q_0,\ldots],[r_0,\ldots]\in\bbR\), let \([r_0,\ldots]\gt[q_0,\ldots]\) if \(r_i-q_i\gt0\) for all but finitely many \(i\). Show that this is an order relation on \(\bbR\), and that it is identical to the rational order on the rationals.</div>
+<br>
+<div class="exercise" title="Addition"> Given \([q_0,\ldots],[r_0,\ldots]\in\bbR\), let $$[q_0,\ldots]+[r_0,\ldots]=[q_0+r_0,q_1+r_1,\ldots]$$Show that this definition has all of the properties of addition in the real conditions.</div>
+<br>
+<div class="exercise" title="Multiplication"> Given \([q_0,\ldots],[r_0,\ldots]\in\bbR\), let $$[q_0,\ldots]\cdot[r_0,\ldots]=[q_0r_0,q_1r_1,\ldots]$$Show that this definition has all of the properties of multiplication in the real conditions</div>
+<br>
+<div class="exercise" title="Real Numbers"> Show that \(\bbR\) satisfies all of the remaining real conditions</div>
 
 
 </div>
 	<script src="https://utteranc.es/client.js"
         repo="rmehtany/comments"
-        issue-term="ConstructingNumberSets"
+        issue-term="ConstructingNumberSets2"
         theme="github-light"
         crossorigin="anonymous"
         async>
