@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <title>
-    
+
       Solving Basic Problems
-    
+
   </title>
 
   <!-- CSS -->
@@ -55,7 +55,7 @@
 
 
   <!-- Add mermaid -->
- 
+
   <script id="MathJax-script" async
           src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
   </script>
@@ -323,9 +323,9 @@
       <div class="w3-text-white w3-center" style="font-size:20px;">
          Rushabh Mehta
       </div>
-      
+
       <p class="lead" style="font-size:16px;font-style:italic;">Mathematics compares the most diverse phenomena and discovers the secret analogies that unite them.<br> - Joseph Fourier</p>
-      
+
     </div>
 
     <nav class="sidebar-nav">
@@ -353,9 +353,9 @@
     <div class="content container">
       <div style="display:none">
 <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-1-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mtext mathcolor=&quot;red&quot;>\ie</mtext></mrow><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mtext mathcolor=&quot;red&quot;>\cf</mtext></mrow></math>" role="presentation" style="font-size: 123%; position: relative;"><span id="MJXc-Node-1" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-2" class="mjx-mrow"><span id="MJXc-Node-3" class="mjx-texatom"><span id="MJXc-Node-4" class="mjx-mrow"><span id="MJXc-Node-5" class="mjx-mtext" style="color: red;"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.491em; padding-bottom: 0.599em;">\ie</span></span></span></span><span id="MJXc-Node-6" class="mjx-texatom"><span id="MJXc-Node-7" class="mjx-mrow"><span id="MJXc-Node-8" class="mjx-mtext" style="color: red;"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.491em; padding-bottom: 0.599em;">\cf</span></span></span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow class="MJX-TeXAtom-ORD"><mtext mathcolor="red">\ie</mtext></mrow><mrow class="MJX-TeXAtom-ORD"><mtext mathcolor="red">\cf</mtext></mrow></math></span></span><script type="math/tex" id="MathJax-Element-1">
-  
+
     \newcommand{\norm}[1]{\\|#1\\|}
-   
+
     \newcommand{\tr}{\text{tr}}
     \newcommand{\mor}{\text{Mor}}
     \newcommand{\hom}{\text{Hom}}
@@ -422,7 +422,7 @@
     \newcommand{\cY}{\mathcal Y}
     \newcommand{\cZ}{\mathcal Z}
 
- 
+
 
     \newcommand{\rmA}{\mathfrak A}
     \newcommand{\rmB}{\mathfrak B}
@@ -521,26 +521,26 @@
     \newcommand{\bigglcorner}[1]{\biggl\llcorner #1 \biggr\lrcorner}
     \newcommand{\Bigglcorner}[1]{\Biggl\llcorner #1 \Biggr\lrcorner}
 
- 
-    \newcommand{\Rnn}{\R_{\ge 0}}
+
+    \newcommand{\Rnn}{\bbR_{\ge 0}}
 
 
 
 
 
     \DeclareMathOperator{\Tr}{Tr}
-  
+
     \DeclareMathOperator{\min}{min}
     \DeclareMathOperator{\max}{max}
     \DeclareMathOperator{\argmax}{arg\,max}
     \DeclareMathOperator{\argmin}{arg\,min}
-  
+
     \DeclareMathOperator{\E}{\mathbb E}
     \DeclareMathOperator{\pE}{\tilde{\mathbb E}}
     \DeclareMathOperator{\Pr}{\mathbb P}
     \DeclareMathOperator{\Span}{Span}
     \DeclareMathOperator{\Cone}{Cone}
-   
+
     \DeclareMathOperator{\Det}{\textbf{Det}}
     \DeclareMathOperator{\Perm}{\textbf{Perm}}
     \DeclareMathOperator{\Sym}{\textbf{Sym}}
@@ -592,11 +592,11 @@
   \newcommand{\im}{\textprob{im }}
   \newcommand{\coim}{\textprob{coim }}
   \newcommand{\id}{\textprob{id}}
-  
+
 </script>
 </div>
 
-      
+
 	   <div style="float:right"><a href="../ReformulationsofBasicProblems/"><bf>Next  |</bf></a></div>
 <div><a href="../TheBasicProblem/"><bf>|  Previous</bf></a></div>
 
@@ -604,12 +604,12 @@
 <div class="post">
   <h1 class="post-title">Solving Basic Problems</h1>
 
-  
+
   <div class="w3-white w3-round-xlarge w3-tiny">
     <div class="w3-container w3-blue w3-round-xlarge" style="width:100%">100%</div>
   </div>
   <br>
-  
+
 
   <ul id="markdown-toc">
   <li><a href="#dynam" id="markdown-toc-dynam">The Dynamic Programming Algorithm</a>
@@ -620,7 +620,7 @@
   </li>
 </ul>
 <p>Now that we have set up the general framework of problems of interest, let's think about how to solve them. We begin with a standard example:</p>
-	
+
 <a id='ex1'></a><div class="Example" title="Maximal Path"> Given a directed tree with non-negative weighted nodes, find the path from root to leaf which maximizes the path sum of weights.<p><a class="gallery img-center-short cboxElement" href="/public/tree.png"><img src="/public/tree.png" width="100%"></a></p>
 <div class="proof">
   <p><a onclick="myCollapse('max-set')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="max-set-but"></i></a><br></p>
@@ -637,16 +637,16 @@ for <var>node</var> in <code>reverse_topological_sort</code> <var>T</var>
 	<var>node</var>.path = <var>max_child</var>.path + [<var>node</var>]
 Output: <var>root</var>.path
 </pre>
-	  This algorithm is an example of <strong>backwards recursion</strong>. The idea is that at any particular node, we can treat it as the root node, find the optimal path from that node onwards, and treat the maximum sum as the weight of the node. Thus, we can recurse backwards until we reach the root node. Amazingly, this algorithm only involves a maximum of two calls to any particular node's weights (an update and a read), vs the brute force method might call a particular node an arbitrarily large number of times.	  
+	  This algorithm is an example of <strong>backwards recursion</strong>. The idea is that at any particular node, we can treat it as the root node, find the optimal path from that node onwards, and treat the maximum sum as the weight of the node. Thus, we can recurse backwards until we reach the root node. Amazingly, this algorithm only involves a maximum of two calls to any particular node's weights (an update and a read), vs the brute force method might call a particular node an arbitrarily large number of times.
   </div>
 </div>
 
 <p style='font-style:normal;'>This is a classic algorithm which appears in most algorithm textbooks, but can be generalized into an algorithm for solving general basic problems.</p>
- 
+
 	<h2 id='dynam'><i>The Dynamic Programming Algorithm</i></h2>
 
 <p style='font-style:normal;'>In the <a href='#ex1'>example</a> above, we saw how solving the path problem backwards helped avoid the computational complexity of the brute force approach. Let's generalize our intuition for why that process worked.</p>
-	
+
 <a id='optimal'></a><div class="Theorem" title="Principle of Optimality"> Let \(\pi^*:\set{\mu_0,\ldots,\mu_{n-1}}\) be an optimal policy for the basic problem, and let \(x_i\) be a state that appears with non-zero probability at time \(i\) in the Markov Chain induced by the policy. Consider the problem of minimizing the "cost-to-go" from time \(i\) to time \(n\)$$E\Set{g_n(x_n)+\sum\limits_{k=i}^{n-1}g_k(x_k,\mu_k(x_k),w_k)}$$The truncated policy \(\set{\mu_i,\ldots,\mu_{n-1}}\) is optimal for this subproblem.
 <div class="proof">
   <p><a onclick="myCollapse('optimal-set')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="optimal-set-but"></i></a><br></p>
@@ -656,7 +656,7 @@ Output: <var>root</var>.path
 </div>
 
 <p style='font-style:normal;'>This result is useful since it now allows us to define the solution to the basic problem generally</p>
-	
+
 <a id='dynamic'></a><div class="Theorem" title="The Dynamic Programming Algorithm"> For each time \(k\in[n+1]\), define a <strong>maximal-reward</strong> function \(V_k:S_k\to\Rnn\) defined by \(V_n(x)=g_n(x)\) and:$$V_k(x)=\max\limits_{a\in C_k(x)}E\Bracket{g_k(x,a,P_k(\cdot\mid x,a))+V_{k+1}(P_k(\cdot\mid x,a))}$$(To ensure the definition above is well-defined, we need to define \(V_k\) over probability distributions. We do so as follows: \(V_k(P)=\sum V_k(y)\cdot P(x_k=y)\)). Thus, the optimal policy is defined by:$$\mu_k(x)=\operatorname{argmax}\limits_{a\in C_k(x_k)}E\Bracket{g_k(x,a,P_k(\cdot\mid x,a))+V_{k+1}(P_k(\cdot\mid x,a))}$$
 <div class="proof">
   <p><a onclick="myCollapse('theorem-set')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="theorem-set-but"></i></a><br></p>
@@ -666,12 +666,12 @@ Output: <var>root</var>.path
 </div>
 
 <p style='font-style:normal;'>Notice that \(V_k\) is the direct analog of weight in the <a href='#ex1'>example</a> and \(\mu_k\) the direct analog of path. We often call the set of \(V_k\)s the <strong>Bellman surface</strong> of the basic problem</p>
-	
+
 <p style='font-style:normal;'>To see the computational complexity of the dynamic programming algorithm, note that we have to compute all \(V_k\)s, and then \(n\) more expected value computations to generate the optimal policy. Assuming there are \(n\) time steps, no more than \(m\) valid states at any time, and no more than \(c\) valid actions at any time, the maximal number of \(V_k\) terms to be computed is \(n\cdot m\cdot c\).</p>
 <p style='font-style:normal;'>Thus, an upper bound for the computational complexity of the algorithm is compute \(nmc+n\) expected values. This is linear in state space size, action space size, and time.</p>
 <p style='font-style:normal;'>The beauty of this algorithm is that most additional complexities (time delays, partial information, etc) can be easily dealt with by expanding the state space. However, in practice, this can lead to enormous state spaces which aren't great to work with. We'll talk about how to deal with that in the next post.</p>
 
-	
+
 </div>
 
 <div style="float:right"><a href="#" style="font-style: normal;"><bf>Top</bf></a></div>
