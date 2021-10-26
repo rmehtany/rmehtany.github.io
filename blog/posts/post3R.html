@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Blog - Rushabh Mehta</title>
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet"> <!-- https://fonts.google.com/ -->
+    <link href="/blog/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/blog/css/templatemo-xtra-blog.css" rel="stylesheet">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="/public/css/mystyle.css">
+  <link rel="stylesheet" href="/public/css/w3.css">
+  <link rel="stylesheet" href="/public/css/color.css">
+<!--
+
+TemplateMo 553 Xtra Blog
+https://templatemo.com/tm-553-xtra-blog
+-->
+    <script src="/blog/js/jquery.min.js"></script>
+    <script src="/blog/js/templatemo-script.js"></script>
+    <script src="/blog/js/jquery_ui.js"></script>
+    <script type="text/javascript" async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/x-mathjax-config;executed=true">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      displayMath: [ ['$$','$$'] ],
+      processEscapes: true,
+    }
+  });
+  </script>
+
+<script>
+    function startup() {
+	var post_id = 3;
+        var client = new XMLHttpRequest();
+        client.open('GET', '/blog/reviews/blogdata.txt');
+        client.onload = function()
+        {
+            if(client.responseText != '')
+            {
+                var txt = client.responseText.split('\n');
+		var num = txt.length-1;
+		var im = "image";
+		var tit = "title";
+		var fig = "#fig";
+		var rel = "related";
+		var data = txt[num-post_id].split('|');
+		document.getElementById("title").innerHTML = data[2];
+		document.getElementById("tags").innerHTML = data[4];
+		document.getElementById("date").innerHTML = data[5];
+		if (num < 5) {
+		    var i = 1;
+		    $("#fig1").hide();
+		    $("#fig2").hide();
+		    $("#fig3").hide();
+		    for (let j = 0; j < num; j++) {
+		        if (num-post_id != j) {
+			    data = txt[j].split('|');
+			    document.getElementById(rel.concat(i.toString())).setAttribute('href',data[0]);
+			    document.getElementById(im.concat(i.toString())).setAttribute('src',data[1]);
+			    document.getElementById(tit.concat(i.toString())).innerHTML = data[2];
+			    $(fig.concat(i.toString())).show();
+			    i++;
+			}
+		    }
+		} else {
+		    var bucket = [];
+		    for (var i=0;i<num;i++) {
+			if (i != num - post_id) {
+    			bucket.push(i);}
+		    }
+		    for (var j=1;j<4;j++) {
+			data = txt[bucket.splice(Math.floor(Math.random()*bucket.length), 1)[0]].split('|');
+			document.getElementById(rel.concat(j.toString())).setAttribute('href',data[0]);
+			document.getElementById(im.concat(j.toString())).setAttribute('src',data[1]);
+			document.getElementById(tit.concat(j.toString())).innerHTML = data[2];
+		    }
+		}
+            }
+        }
+	client.send();
+    }
+    window.addEventListener('load',startup);
+</script>
+</head>
+<body class="theme-base-0h">    <div class="sidebar w3-hide-small" id="mySidebar">
+  <div class="container">
+    <button class="w3-button sidebar w3-text-white w3-hide-medium w3-hide-large w3-right" onclick="sidebar_close()">☰</button>
+    <div class="sidebar-about">
+      <div class="w3-text-white w3-center" style="font-size:20px;">
+        Rushabh Mehta
+      </div>
+
+      <p class="lead" style="font-size:16px;font-style:italic;color:rgba(255,255,255,0.5)">"Soul" will prove to be of historical interest because it's the most unapologetically Black Pixar project yet released.<br> - Matt Zoller Seitz</p>
+
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">About Me</a>
+      <a class="sidebar-nav-item" href="/research/">Research</a>
+      <!--<a class="sidebar-nav-item" href="/book/">Book</a>-->
+      <a class="sidebar-nav-item active" href="/blog/">Blog</a>
+      <!--<a class="sidebar-nav-item" href="/coffee/">Coffee</a>-->
+      <a class="sidebar-nav-item" href="/notes/">Notes</a>
+      <a class="sidebar-nav-item" href="/resources/">Resources</a>
+	    <a class="sidebar-nav-item" href="/contact/">Contact</a>
+      <!--<a class="sidebar-nav-item" href="/conjecture/">Conjectures</a>-->
+    </nav>
+  </div>
+
+    <div class="w3-bottom">
+    <p style="font-size:12px;color:rgba(255,255,255,0.5);">© <script>document.write(new Date().getFullYear())</script> Rushabh Mehta</p>
+  </div>
+</div>
+
+<div class="sidebar w3-hide-medium w3-hide-large w3-right" id="mySmallSidebar">
+  <button class="w3-button sidebar w3-text-white" onclick="sidebar_open()">☰</button>
+</div>
+
+    <div class="container-fluid">
+        <main class="tm-main">
+            <div class="row tm-row">
+                <div class="col-12">
+                    <hr class="tm-hr-primary tm-mb-55">
+
+
+                    <!-- Video player 1422x800 -->
+                  <img src="/public/soul1.jpeg" style='width:100%;height:auto;' style="border: 1px solid #10cccc" frameborder=0></img>
+                </div>
+            </div>
+            <div class="row tm-row">
+                <div class="col-lg-8 tm-post-col">
+                    <div class="tm-post-full">
+                        <div class="mb-4" style='color:black;'>
+                            <h2 class="pt-2 tm-color-primary tm-post-title" id='title'>TITLE TO BE FILLED</h2>
+                            <p class="tm-mb-40" id='date'>DATE TO BE FILLED</p>
+
+                            <p>A few weeks ago, I took some time off to watch Disney's latest original addition to Disney +: Soul. Initially, I was drawn to watching the movie as I thought it would be a telling of the long and rich history of the jazz and African American traditions in an animated format. While <i>Soul</i> certainly did have plenty of references to these themes, with the main character, Joe, being an aspiring pianist trying to make it onto the jazz scene, the movie focused much more on the ideas of ambition, purpose, and the "zone".</p>
+                            <p>The zone is an idea that almost all of us are familiar with. Bob Dylan described the making of "Like a rolling stone" as 20 pages of vomit, even as it regularly gets labelled his best song. Michael Phelps told reporters after his 23rd olympic medal, "to be honest, I just turn my brain off".</p>
+                            <p>Soul hilariously portrays the zone as a dimension unto itself, as in the image above. As Joe navigates this new world, he sees musicians, cyclists, scholars, and more, all focused on their craft to the point of being in a trance. But what really is the zone?</p>
+                            <p>I still vividly remember watching the semifinal of the 2011 US Open between Roger Federer and Novak Djokovic. Federer, who by that point was widely regarded as one of the greatest players to grace the game, if not the greatest, had two match points against Djokovic, a young superstar in the making who had already won two slams that year. It seemed inevitable that Federer would put an end to Djokovic's fantastic year with the next service. As Federer strolls up to the baseline, the crowd begins cheering him on loudly. The camera briefly focuses on Novak, who begins nodding his head while grimacing, as if in acceptance of his fate. Federer serves fast and deep to Djokovic's right. Seconds later, he found himself stranded, uncomprehending, in mid-court. Djokovic had returned his serve with a loose-limbed forehand of such lethal precision that Federer couldn’t get near it. The nonchalance of Djokovic's stroke thrilled the crowd. John McEnroe called it “one of the all-time great shots”.</p>
+                            <p>Djokovic won the game, set, match and tournament. At his press conference, Federer was a study in quiet fury. It was tough, he said, to lose because of a “lucky shot”. Some players do that, he continued: “Down 5-2 in the third, they just start slapping shots … How can you play a shot like that on match point?” Asked the same question, Djokovic smiled. “Yeah, I tend to do that on match points. It kinda works.”</p>
+                            <p>Federer’s inability to win Grand Slams in the last two years hasn’t been due to physical decline so much as a new mental frailty that emerges at crucial moments. In the jargon of sport, he has been “choking”.</p><p> When a footballer misses a penalty or a golfer fluffs a putt, it is because they have become self-conscious. By over-thinking, they lose the fluid physical grace required to succeed. Perhaps Federer was so upset because, deep down, he recognised that his opponent had tapped into a resource that he, an all-time great, is finding harder to reach: unthinking.</p>
+                            <p>One of Freud's more lasting contributions to the field of psychology was his ideas about the conscious and unconscious mind. Much of our behaviour is driven by the unconscious mind, using deceptively sophisticated rules-of-thumb, or “heuristics”. A robot programmed to chase and catch a ball would need to compute a series of complex differential equations to track the ball’s trajectory. But baseball players do so by instinctively following simple rules: run in the right general direction, and adjust your speed to keep a constant angle between eye and ball.</p>
+                            <p>Researchers from Columbia Business School, New York, conducted an experiment in which people were asked to predict outcomes across a range of fields, from politics to the weather to the winner of “American Idol”. They found that those who placed high trust in their feelings made better predictions than those who didn’t. The result only applied, however, when the participants had some prior knowledge.</p>
+                            <p>This last point is vital. Unthinking is not the same as ignorance; you can’t unthink if you haven’t already thought. Djokovic was able to pull off his wonder shot because he had played a thousand variations on it in previous matches and practice; Dylan’s lyrical outpourings drew on his immersion in folk songs, French poetry and American legends. The unconscious minds of great artists and sportsmen are like dense rainforests, which send up spores of inspiration.</p>
+                            <p>The higher the stakes, the more overthinking is a problem. Ed Smith, a cricketer and author of “Luck”, uses the analogy of walking along a sidewalk: easy enough, but what if there was a hundred-foot drop to the street—every step would be a trial. In high-performance fields it’s the older and more successful performers who are most prone to choke, because expectation is piled upon them. An opera singer launching into an aria at La Scala cannot afford to think how her technique might be improved. When Federer plays a match point these days, he may feel as if he’s standing on the cliff edge of his reputation.</p>
+                            <p>This is the danger of unchecked expectations: they encourage this sort of overthinking and lead to unrealistic standards for living life. Joe realizes this after he falls to his "death", entering "The Great Beyond", where he meets 22, a blase cynic who rejected mentorship from the likes of Carl Jung and Abraham Lincoln. While trying to help 22 find motivation to live life, Joe reexamines his years on earth as a genial but meek teacher and finds them wanting. He didn't make as many friends as he should have and was consumed by fears that he traded his childhood dream of becoming a working jazz artist for a more ordinary life. He worried that the expectations he had set in his childhood of being a jazz superstar had made miserable.</p>
+                            <p>Joe essentially is experiencing a mid-life crisis, as he evaluates whether he spent his youth the way he should have. And while the film's message could be summed up as, "Don't get so hung up on ambition that you forget to stop and smell the flowers," Joe does get a chance to make amends and live his dream.</p>
+                            <p>Joe nails an audition for Dorothea William's jazz concerto, and is re-energized by the goal of putting on the performance of his life. But, throughout this process, he constantly wonders about whether or not he's good enough for the opportunities he's been afforded.</p>
+                            <p>Pixar's handling of "Impostor Syndrome", the feeling of not being worthy of the environment one finds themself in, in this film is better than how it's handled it before (for example, Woody in Toy Story clearly suffers from Impostor Syndrome, and is made the butt of the joke for it). Pixar seems to suggest both that Impostor Syndrome is both completely normal, yet also an affliction worth taking seriously.</p>
+                            <p>These messages are quite timely, as our understanding of the effects of impostor syndrome has improved dramatically in recent years. Professor Claude Steele of Stanford, studies the effects of impostor syndrome on academic tests. He set a group of students consisting of African-Americans and Caucasians a test, telling them it would measure intellectual ability. The African-Americans performed worse than the Caucasians. Steele then gave a separate group the same test, telling them it was just a preparatory drill. The gulf narrowed sharply. The “achievement gap” in US education has complex causes, but one may be that bright African-American students are more likely to feel they are representing their ethnic group, which leads them to feel the effects of the impostor syndrome.</p>
+                            <p>Despite feeling like rather minor Pixar overall, "Soul" will prove to be of historical interest because, despite the transformation issue, and when it isn't getting wrapped up in goofy afterlife shenanigans, it's the most unapologetically Black Pixar project yet released. In a flashback, Joe's dad, who introduced him to jazz, describes the music as one of the greatest African-American contributions to world culture. There are many other touches in the film that testify to the story's anchoring in an experience beyond the white, middle-class suburban norms that Pixar embraces by default.</p>
+                            <p>This distinction gives weight to lines that might not have registered in a Pixar film with white protagonists, such as 22's quip, "You can't crush a soul here. That's what life on earth is for."</p>
+
+
+                            <span class="d-block text-right tm-color-primary" id='tags'>TAGS TO BE PLACED HERE</span>
+                        </div>
+		    <script src="https://utteranc.es/client.js"
+        repo="rmehtany/comments"
+        issue-term="post3R"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+                    </div>
+                </div>
+                <aside class="col-lg-4 tm-aside-col">
+                    <div class="tm-post-sidebar">
+                        <hr class="mb-3 tm-hr-primary">
+                        <h2 class="mb-4 tm-post-title tm-color-primary">Categories</h2>
+                        <ul class="tm-mb-75 pl-5 tm-category-list">
+                            <li><a href="/blog/food/" class="tm-color-primary">Food</a></li>
+                            <li><a href="/blog/puzzles/" class="tm-color-primary">Puzzles</a></li>
+                            <li><a href="/blog/travel/" class="tm-color-primary">Travel</a></li>
+                            <li><a href="/blog/sports/" class="tm-color-primary">Sports</a></li>
+                            <li><a href="/blog/reviews/" class="tm-color-primary">Reviews</a></li>
+                            <li><a href="/blog/other/" class="tm-color-primary">Other</a></li>
+                        </ul>
+                        <hr class="mb-3 tm-hr-primary">
+                        <h2 class="tm-mb-40 tm-post-title tm-color-primary">Related Posts</h2>
+                        <a href="#" class="d-block tm-mb-40" id='related1'>
+                            <figure id='fig1'>
+                                <img src="/blog/img/img-02.jpg" alt="Image" class="mb-3 img-fluid" id='image1'>
+                                <figcaption class="tm-color-primary" id='title1'>Duis mollis diam nec ex viverra scelerisque a sit</figcaption>
+                            </figure>
+                        </a>
+                        <a href="#" class="d-block tm-mb-40" id='related2'>
+                            <figure id='fig2'>
+                                <img src="/blog/img/img-05.jpg" alt="Image" class="mb-3 img-fluid" id='image2'>
+                                <figcaption class="tm-color-primary" id='title2'>Integer quis lectus eget justo ullamcorper ullamcorper</figcaption>
+                            </figure>
+                        </a>
+                        <a href="#" class="d-block tm-mb-40" id='related3'>
+                            <figure id='fig3'>
+                                <img src="/blog/img/img-06.jpg" alt="Image" class="mb-3 img-fluid" id='image3'>
+                                <figcaption class="tm-color-primary" id='title3'>Nam lobortis nunc sed faucibus commodo</figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                </aside>
+            </div>
+        </main>
+    </div>
+    <script src="/blog/js/jquery.min.js"></script>
+    <script src="/blog/js/templatemo-script.js"></script>
+<script>
+// sidebar collapse
+function sidebar_open() {
+  document.getElementById("mySidebar").classList.remove("w3-hide-small");
+  document.getElementById("mySmallSidebar").classList.add("w3-hide-small");
+}
+function sidebar_close() {
+  document.getElementById("mySidebar").classList.add("w3-hide-small");
+  document.getElementById("mySmallSidebar").classList.remove("w3-hide-small");
+}
+</script>
+
+</body>
+</html>
