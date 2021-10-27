@@ -649,7 +649,7 @@
 <p>We can now generalize our problem. Suppose I flip my biased coin \(n\) times. What is the probability of getting exactly \(x\) heads? Well, for any one of the valid outcomes, the probability is \(p^x\cdot(1-p)^{n-x}\). And, there are \(n\choose x\) valid outcomes. So, the probability is $${n\choose x}p^k(1-p)^{n-x}$$This is known as the <strong>binomial distribution</strong>, and is useful in many probability problems. The following diagram summarizes our work so far:</p>
 <p><a class="gallery img-center-short cbox-Element" href="/public/binom1.gif"><img src="/public/binom1.gif" width="100%"></a></p>
 <div class="exercise" title="Binomial Distribution"> Marta makes \(90\%\) of her free throws. She attempts \(3\) free throws. What is the probability that she scores at least twice?</div>
-<p>So how is this related to Pascal's triangle?</p>
+<br><p>So how is this related to Pascal's triangle?</p>
 <h3 id='perspective3'>Perspective 3: Polynomials</h3>
 <p>Consider the polynomial \((x+y)^n\). There are coefficients \(c_n,\ldots,c_0\) such that $$(x+y)^n=c_nx^n+c_{n-1}x^{n-1}y^1+\ldots+c_1x^1y^{n-1}+c_0y^n$$How do we find \(c_n,\ldots,c_0\)? Well, let's try some examples
   <table class="w3-table w3-striped w3-bordered">
@@ -835,8 +835,8 @@ $$\sum\limits_{k=1}^nx_k=26.45$$$$\sum\limits_{k=1}^nx_k^2=76.7321$$$$\sigma^2=\
 <p>This means that at least \(88\%\) (and for nice datasets, much more) of the data lies between \(\bar x-3\sigma\) and \(\bar x+3\sigma\). Often, our outlier test is checking whether the data is within these limits.</p>
 <p>Chebyshev's rule is true thanks to <strong>Markov's inequality</strong>, which says that given a non-negative random variable (meaning that the state space contains no negative numbers) \(X\) and number \(a>0\), $$P(X\geq a)\leq\frac{E[X]}a$$</p>
 <div class="exercise" title="Chebyshev"> Show why Chebyshev's rule is true using Markov's inequality</div>
-<div class="exercise" title="Variance is linear"> Show that like expected value, for independent random variables \(X_1,\ldots,X_n\), the variance of \(X_1+\ldots+X_n\) is the sum of the variances of \(X_1,\ldots,X_n\).</div>
-<div class="exercise" title="Shortcut"> Show why the shortcut formula is true. More specifically, show that $$\sigma^2=E[X^2]-E[X]^2$$</div>
+<br><div class="exercise" title="Variance is linear"> Show that like expected value, for independent random variables \(X_1,\ldots,X_n\), the variance of \(X_1+\ldots+X_n\) is the sum of the variances of \(X_1,\ldots,X_n\).</div>
+<br><div class="exercise" title="Shortcut"> Show why the shortcut formula is true. More specifically, show that $$\sigma^2=E[X^2]-E[X]^2$$</div>
 
 
 </div>
