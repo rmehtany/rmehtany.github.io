@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Blog - Rushabh Mehta</title>
+    <link href="/blog/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/blog/css/templatemo-xtra-blog.css" rel="stylesheet">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/blog/css/recipe.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="/public/css/mystyle.css">
+  <link rel="stylesheet" href="/public/css/w3.css">
+  <link rel="stylesheet" href="/public/css/color.css">
+<!--
+
+TemplateMo 553 Xtra Blog
+https://templatemo.com/tm-553-xtra-blog
+-->
+    <script src="/blog/js/jquery.min.js"></script>
+    <script src="/blog/js/templatemo-script.js"></script>
+    <script src="/blog/js/jquery_ui.js"></script>
+
+<script>
+    function startup() {
+	document.getElementById("toggle").onclick = function() {
+            if (document.getElementById("container").classList.contains("closed")) {
+                document.getElementById("container").classList.remove("closed");
+            } else {
+                document.getElementById("container").classList.add("closed");
+            }
+        }
+	var post_id = 2;
+        var client = new XMLHttpRequest();
+        client.open('GET', '/blog/food/blogdata.txt');
+        client.onload = function()
+        {
+            if(client.responseText != '')
+            {
+                var txt = client.responseText.split('\n');
+		var num = txt.length-1;
+		var im = "image";
+		var tit = "title";
+		var fig = "#fig";
+		var rel = "related";
+		var data = txt[num-post_id].split('|');
+		document.getElementById("title").innerHTML = data[2];
+		document.getElementById("tags").innerHTML = data[4];
+		document.getElementById("date").innerHTML = data[5];
+		if (num < 5) {
+		    var i = 1;
+		    $("#fig1").hide();
+		    $("#fig2").hide();
+		    $("#fig3").hide();
+		    for (let j = 0; j < num; j++) {
+		        if (num-post_id != j) {
+			    data = txt[j].split('|');
+			    document.getElementById(rel.concat(i.toString())).setAttribute('href',data[0]);
+			    document.getElementById(im.concat(i.toString())).setAttribute('src',data[1]);
+			    document.getElementById(tit.concat(i.toString())).innerHTML = data[2];
+			    $(fig.concat(i.toString())).show();
+			    i++;
+			}
+		    }
+		} else {
+		    var bucket = [];
+		    for (var i=0;i<num;i++) {
+			if (i != num - post_id) {
+    			bucket.push(i);}
+		    }
+		    for (var j=1;j<4;j++) {
+			data = txt[bucket.splice(Math.floor(Math.random()*bucket.length), 1)[0]].split('|');
+			document.getElementById(rel.concat(j.toString())).setAttribute('href',data[0]);
+			document.getElementById(im.concat(j.toString())).setAttribute('src',data[1]);
+			document.getElementById(tit.concat(j.toString())).innerHTML = data[2];
+		    }
+		}
+            }
+        }
+	client.send();
+    }
+    window.addEventListener('load',startup);
+</script>
+</head>
+<body class="theme-base-0h">    <div class="sidebar w3-hide-small" id="mySidebar">
+  <div class="container">
+    <button class="w3-button sidebar w3-text-white w3-hide-medium w3-hide-large w3-right" onclick="sidebar_close()">☰</button>
+    <div class="sidebar-about">
+      <div class="w3-text-white w3-center" style="font-size:20px;">
+        Rushabh Mehta
+      </div>
+
+      <p class="lead" style="font-size:16px;font-style:italic;color:rgba(255,255,255,0.5)">The perfect borscht is what life should be but never is.<br> - Aleksander Hemon</p>
+
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">About Me</a>
+      <a class="sidebar-nav-item" href="/research/">Research</a>
+      <!--<a class="sidebar-nav-item" href="/book/">Book</a>-->
+      <a class="sidebar-nav-item active" href="/blog/">Blog</a>
+      <!--<a class="sidebar-nav-item" href="/coffee/">Coffee</a>-->
+      <a class="sidebar-nav-item" href="/notes/">Notes</a>
+      <a class="sidebar-nav-item" href="/resources/">Resources</a>
+	    <a class="sidebar-nav-item" href="/contact/">Contact</a>
+      <!--<a class="sidebar-nav-item" href="/conjecture/">Conjectures</a>-->
+    </nav>
+  </div>
+
+    <div class="w3-bottom">
+    <p style="font-size:12px;color:rgba(255,255,255,0.5);">© <script>document.write(new Date().getFullYear())</script> Rushabh Mehta</p>
+  </div>
+</div>
+
+<div class="sidebar w3-hide-medium w3-hide-large w3-right" id="mySmallSidebar">
+  <button class="w3-button sidebar w3-text-white" onclick="sidebar_open()">☰</button>
+</div>
+
+    <div class="container-fluid">
+        <main class="tm-main">
+            <div class="row tm-row">
+                <div class="col-12">
+                    <hr class="tm-hr-primary tm-mb-55">
+
+
+		<img src="/public/borschtnoodlespot.jpg" alt="Borscht Noodles" style='width:100%;height:auto;'>
+                </div>
+            </div>
+            <div class="row tm-row">
+                <div class="col-lg-8 tm-post-col">
+                    <div class="tm-post-full">
+                        <div class="mb-4">
+                            <h2 class="pt-2 tm-color-primary tm-post-title" id='title'>TITLE TO BE FILLED</h2>
+                            <p class="tm-mb-40" id='date'>DATE TO BE FILLED</p>
+				    <div class="closed" id="container">
+    <header id="toggle">
+        <div class="header" style="background-image:url(https://raw.githubusercontent.com/rmehtany/comments/main/borschtnoodlebowl.jpg);"></div>
+        <div class="title">Borscht Noodles (serves 3-5 people)</div>
+    </header>
+    <article>
+        <ul class="ingredients">
+            <li>
+                <div class="amount">2 cups</div>
+                <div class="ingredient">Vegetable Stock</div>
+            </li>
+            <li>
+                <div class="amount">1/8 cup</div>
+                <div class="ingredient">Frying Oil</div>
+            </li>
+            <li>
+                <div class="amount">1</div>
+                <div class="ingredient">medium red onion</div>
+            </li>
+            <li>
+                <div class="amount">4</div>
+                <div class="ingredient">cloves of garlic</div>
+            </li>
+            <li>
+                <div class="amount">1 cup</div>
+                <div class="ingredient">red cabbage</div>
+            </li>
+            <li>
+                <div class="amount">1</div>
+                <div class="ingredient">large beet (or 2 medium beets)</div>
+            </li>
+            <li>
+                <div class="amount">2</div>
+                <div class="ingredient">medium carrots</div>
+            </li>
+            <li>
+                <div class="amount">Handful</div>
+                <div class="ingredient">Fresh herbs of your choice</div>
+            </li>
+            <li>
+                <div class="amount">1 tbsp</div>
+                <div class="ingredient">Allspice powder</div>
+            </li>
+            <li>
+                <div class="amount">1/2 tbsp</div>
+                <div class="ingredient">Cayenne Pepper</div>
+            </li>
+            <li>
+                <div class="amount">To taste</div>
+                <div class="ingredient">Salt, Pepper, Apple Cider Vinegar</div>
+            </li>
+            <li>
+                <div class="amount">1/8 cup</div>
+                <div class="ingredient">Pickled Red Onions (Optional)</div>
+            </li>
+        </ul>
+        <div class="preperation">
+	    <div>Finely chop your onion and garlic, and saute them on medium heat with your frying oil of choice for around a minute.</div>
+            <div>Julienne your beet and slice your carrots, and toss them in the pot to caramelize. Cook this mixture while stirring occasionally for around 5-10 minutes.</div>
+            <div>Add in your allspice powder and cayenne pepper into the pot and incorporate.</div>
+            <div>While your beets and carrots are cooking, place a small pot on a separate burner with around 2 cups of stock, finely chopped herbs, and your dried noodles.</div>
+            <div>Cook this mixture on medium heat until the noodles are around 2 minutes away from being fully cooked (slightly more raw than al dente). Turn off the heat at this point.</div>
+	    <div>Once your beet/carrot mixture has caramelized, pour in the stock/noodles mixture from the other pot into this pot and continue cooking.</div>
+      <div>Julienne your cabbage and roughly dice your tomatoes, and add to the pot. Cook until soup starts to thicken.</div>
+      <div>Add salt, pepper, and apple cider vinegar to taste. Serve immediately, and top with pickled onions and/or herbs</div>
+        </div>
+    </article>
+
+				</div>	<br>
+				<p>Eastern Europeans, you may want to close your eyes. This recipe is as inauthentic as they come, but I find myself craving for it anytime I'm looking for a warm ramen-like noodle bowl and have a bunch of fresh veg in my fridge.</p>
+        <p>I first tried this dish at a pho shop near my university, and had to make it at home. It essentially is a Borscht soup in pho form. Enjoy!</p>
+        <p>Side note: I am very poor at food photography, but I assure you that the result really looks a lot better than the photos do. There's no food coloring either!</p>
+
+				<h3>Recipe</h3>
+        <p>1. Finely chop your onion and garlic, and saute on medium heat. Any oil that doesn't burn at high heat should do (canola oil, refined olive oil, sesame oil are all fine).</p>
+        <p><a class="gallery img-center-short cbox-Element" href="/public/oniongarlic.jpg"><img src="/public/oniongarlic.jpg" width="100%"></a></p>
+        <p>2. Julienne your beet and slice your carrots. Keep the pieces small since carrots and beets take a while to cook.</p>
+        <p><a class="gallery img-center-short cbox-Element" href="/public/cutbeetcarr.jpg"><img src="/public/cutbeetcarr.jpg" width="100%"></a></p>
+        <p>3. Toss the beets, carrots, cayenne pepper, and allspice powder in the pot and cook till caramelized (~5-10 minutes). If you don't have allspice powder, cardamom, nutmeg, cloves, or cinammon can serve as substitutes.</p>
+        <p><a class="gallery img-center-short cbox-Element" href="/public/ongabeetcarr.jpg"><img src="/public/ongabeetcarr.jpg" width="100%"></a></p>
+        <p>4. While your beets and carrots are cooking, place a small pot on a separate burner with around 2 cups of stock, finely chopped herbs, and your dried noodles.</p>
+        <p><a class="gallery img-center-short cbox-Element" href="/public/stocknoodles.jpg"><img src="/public/stocknoodles.jpg" width="100%"></a></p>
+        <p>5. Cook this mixture on medium heat until the noodles are around 2 minutes away from being fully cooked (slightly more raw than al dente). Turn off the heat at this point.</p>
+        <p>6. Once your beet/carrot mixture has caramelized, julienne your cabbage and roughly dice your tomatoes, and add to the pot.</p>
+        <p><a class="gallery img-center-short cbox-Element" href="/public/cutcabbonion.jpg"><img src="/public/cutcabbonion.jpg" width="100%"></a></p>
+        <p>7. Add in the noodles and stock mixture into the pot, and add salt, pepper, and apple cider vinegar to taste</p>
+        <p><a class="gallery img-center-short cbox-Element" href="/public/borschtnoodlespot.jpg"><img src="/public/borschtnoodlespot.jpg" width="100%"></a></p>
+        <p>8. Turn off the heat once the soup starts to thicken. Serve immediately, and add pickled onions and/or herbs to top.</p>
+        <p><a class="gallery img-center-short cbox-Element" href="/public/borschtnoodlebowl.jpg"><img src="/public/borschtnoodlebowl.jpg" width="100%"></a></p>
+
+        <p>For the pickled onions, I'm using YouTuber Ethan Chlebowski's recipe. Julienne red onions, and place them in a mason jar till filled. On a saucepan, bring a mixture of one part apple cider vinegar, one part white vinegar, and two parts water to a boil, and add 2 tablespoons of sugar and a teaspoon of salt to incorporate. If you don't like your onions sour, you might want to add more sugar. Once boiling, turn off the heat and immediately pour over the onions and close the jar. Once at room temperature, place the jar in the fridge and wait for around 24 hours. The result is super tasty, neon pink onions you'll want to put on everything.</p>
+        <p><a class="gallery img-center-short cbox-Element" href="/public/pickledonions.jpg"><img src="/public/pickledonions.jpg" width="100%"></a></p>
+
+
+                            <span class="d-block text-right tm-color-primary" id='tags'>TAGS TO BE PLACED HERE</span>
+                        </div>
+			<script src="https://utteranc.es/client.js"
+        repo="rmehtany/comments"
+        issue-term="post2F"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+                    </div>
+                </div>
+                <aside class="col-lg-4 tm-aside-col">
+                    <div class="tm-post-sidebar">
+                        <hr class="mb-3 tm-hr-primary">
+                        <h2 class="mb-4 tm-post-title tm-color-primary">Categories</h2>
+                        <ul class="tm-mb-75 pl-5 tm-category-list">
+                            <li><a href="/blog/food/" class="tm-color-primary">Food</a></li>
+                            <li><a href="/blog/puzzles/" class="tm-color-primary">Puzzles</a></li>
+                            <li><a href="/blog/travel/" class="tm-color-primary">Travel</a></li>
+                            <li><a href="/blog/sports/" class="tm-color-primary">Sports</a></li>
+                            <li><a href="/blog/reviews/" class="tm-color-primary">Reviews</a></li>
+                            <li><a href="/blog/other/" class="tm-color-primary">Other</a></li>
+                        </ul>
+                        <hr class="mb-3 tm-hr-primary">
+                        <h2 class="tm-mb-40 tm-post-title tm-color-primary">Related Posts</h2>
+                        <a href="#" class="d-block tm-mb-40" id='related1'>
+                            <figure id='fig1'>
+                                <img src="/blog/img/img-02.jpg" alt="Image" class="mb-3 img-fluid" id='image1'>
+                                <figcaption class="tm-color-primary" id='title1'>Duis mollis diam nec ex viverra scelerisque a sit</figcaption>
+                            </figure>
+                        </a>
+                        <a href="#" class="d-block tm-mb-40" id='related2'>
+                            <figure id='fig2'>
+                                <img src="/blog/img/img-05.jpg" alt="Image" class="mb-3 img-fluid" id='image2'>
+                                <figcaption class="tm-color-primary" id='title2'>Integer quis lectus eget justo ullamcorper ullamcorper</figcaption>
+                            </figure>
+                        </a>
+                        <a href="#" class="d-block tm-mb-40" id='related3'>
+                            <figure id='fig3'>
+                                <img src="/blog/img/img-06.jpg" alt="Image" class="mb-3 img-fluid" id='image3'>
+                                <figcaption class="tm-color-primary" id='title3'>Nam lobortis nunc sed faucibus commodo</figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                </aside>
+            </div>
+        </main>
+    </div>
+    <script src="/blog/js/jquery.min.js"></script>
+    <script src="/blog/js/templatemo-script.js"></script>
+<script>
+// sidebar collapse
+function sidebar_open() {
+  document.getElementById("mySidebar").classList.remove("w3-hide-small");
+  document.getElementById("mySmallSidebar").classList.add("w3-hide-small");
+}
+function sidebar_close() {
+  document.getElementById("mySidebar").classList.add("w3-hide-small");
+  document.getElementById("mySmallSidebar").classList.remove("w3-hide-small");
+}
+</script>
+
+</body>
+</html>
