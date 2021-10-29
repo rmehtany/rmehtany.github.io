@@ -59,7 +59,6 @@ https://templatemo.com/tm-553-xtra-blog
 		var rel = "related";
 		var data = txt[num-post_id].split('|');
 		document.getElementById("title").innerHTML = data[2];
-		document.getElementById("tags").innerHTML = data[4];
 		document.getElementById("date").innerHTML = data[5];
 		var bucket = [];
 		for (var i=0;i<num;i++) {
@@ -139,7 +138,7 @@ https://templatemo.com/tm-553-xtra-blog
 														<p>Let's rate the players from \(1\to16\), depending on how risk-taking they are. If \(1\) is alive, they will always jump first onto the next pair before anyone else does. If \(1\) is dead, \(2\) will jump first, etc. This obviously has no effect on the game, but simplifies our calculations.</p><p>Let \(k\) be the lowest remaining player (i.e., the risk-taker) at pair \(j\). Thus, there are \(16-k+1\) players remaining before the jump to pair \(j+1\). At pair \(j+1\), there is a \(0.5\) chance of losing player \(k\), leaving us with \(16-k\) players. There is a \(0.5\) chance of not losing any players, leaving us with \(16-k+1\) players. So, on average, we lose \(0.5\) players each pair, regardless of how many players are left. So, each pair can be viewed as an independent event.</p>
 														<p>With this knowledge, the problem is simple. The expected value of the the number of players lost is the sum of the expected values of the number of players lost at each pair. This is just \(18\cdot0.5=9\). So, we expect to lose \(9\) players, and thus we expect to have \(7\) players survive.</p>
 
-				                  <span class="d-block text-right tm-color-primary" id='tags'>TAGS TO BE PLACED HERE</span>
+				                  <span class="d-block text-right tm-color-primary" id='tags'><a href='/blog/puzzles/'>Category: Puzzles</a></span>
                         </div>
 			    <script src="https://utteranc.es/client.js"
         repo="rmehtany/comments"

@@ -58,8 +58,7 @@ https://templatemo.com/tm-553-xtra-blog
 		var rel = "related";
 		var data = txt[num-post_id].split('|');
 		document.getElementById("title").innerHTML = data[2];
-		document.getElementById("tags").innerHTML = data[4];
-		document.getElementById("date").innerHTML = data[5];
+		document.getElementById("date").innerHTML = data[4];
 		if (num < 5) {
 		    var i = 1;
 		    $("#fig1").hide();
@@ -198,7 +197,7 @@ https://templatemo.com/tm-553-xtra-blog
 				<p>This algorithm might seem like black magic, but it really is a case of a good approximation, coming from the observation that the floating point representation of a number roughly behaves like the log of the number, and through a single iteration of Newton-Raphson.</p>
 				<p>Ironically, since the widespread publication of this algorithm, it has become outdated, since it isn't as fast as modern day algorithms. For starters, the casting calls from float to long to float cause a <a href='https://en.wikipedia.org/wiki/Load-Hit-Store' target='_blank' style='color:#0a37cc'>load-hit-store</a>, which slows down the algorithm. Modern day square root implementations are fast enough to outperform this function. Regardless, it's a cool bit of algorithm history, and shows that understanding bit arithmetic isn't just useful for low-level programmers!</p>
 
-                            <span class="d-block text-right tm-color-primary" id='tags'>TAGS TO BE PLACED HERE</span>
+                            <span class="d-block text-right tm-color-primary" id='tags'><a href='/blog/reviews/'>Category: Reviews</a></span>
                         </div>
 		    <script src="https://utteranc.es/client.js"
         repo="rmehtany/comments"
