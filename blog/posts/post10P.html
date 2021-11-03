@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Blog - Rushabh Mehta</title>
+    <link href="/blog/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/blog/css/templatemo-xtra-blog.css" rel="stylesheet">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="/public/css/mystyle.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/public/css/w3.css">
+  <link rel="stylesheet" href="/public/css/color.css">
+<!--
+
+TemplateMo 553 Xtra Blog
+https://templatemo.com/tm-553-xtra-blog
+-->
+    <script src="/blog/js/jquery.min.js"></script>
+    <script src="/blog/js/templatemo-script.js"></script>
+    <script src="/blog/js/jquery_ui.js"></script>
+    <script type="text/javascript" async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/x-mathjax-config;executed=true">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      displayMath: [ ['$$','$$'] ],
+      processEscapes: true,
+    }
+  });
+  </script>
+
+<script>
+    function startup() {
+	var post_id = 10;
+        var client = new XMLHttpRequest();
+        client.open('GET', '/blog/puzzles/blogdata.txt');
+        client.onload = function()
+        {
+            if(client.responseText != '')
+            {
+                var txt = client.responseText.split('\n');
+		var num = txt.length-1;
+		var im = "image";
+		var tit = "title";
+		var fig = "#fig";
+		var rel = "related";
+		var data = txt[num-post_id].split('|');
+		document.getElementById("title").innerHTML = data[2];
+		document.getElementById("date").innerHTML = data[4];
+		var bucket = [];
+		for (var i=0;i<num;i++) {
+		    if (i != num - post_id) {
+    		        bucket.push(i);}
+		}
+		for (var j=1;j<4;j++) {
+		    data = txt[bucket.splice(Math.floor(Math.random()*bucket.length), 1)[0]].split('|');
+		    document.getElementById(rel.concat(j.toString())).setAttribute('href',data[0]);
+		    document.getElementById(im.concat(j.toString())).setAttribute('src',data[1]);
+		    document.getElementById(tit.concat(j.toString())).innerHTML = data[2];
+		}
+            }
+        }
+	client.send();
+    }
+    window.addEventListener('load',startup);
+</script>
+</head>
+<body class="theme-base-0h">    <div class="sidebar w3-hide-small" id="mySidebar">
+  <div class="container">
+    <button class="w3-button sidebar w3-text-white w3-hide-medium w3-hide-large w3-right" onclick="sidebar_close()">☰</button>
+    <div class="sidebar-about">
+      <div class="w3-text-white w3-center" style="font-size:20px;">
+        Rushabh Mehta
+      </div>
+
+      <p class="lead" style="font-size:16px;font-style:italic;color:rgba(255,255,255,0.5)">Heuristics are algorithms in clown suits. Less predictable, more fun, and no money back guarantee.<br> - Steve McConnell</p>
+
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">About Me</a>
+      <a class="sidebar-nav-item" href="/research/">Research</a>
+      <!--<a class="sidebar-nav-item" href="/book/">Book</a>-->
+      <a class="sidebar-nav-item active" href="/blog/">Blog</a>
+      <!--<a class="sidebar-nav-item" href="/coffee/">Coffee</a>-->
+      <a class="sidebar-nav-item" href="/notes/">Notes</a>
+      <a class="sidebar-nav-item" href="/resources/">Resources</a>
+	    <a class="sidebar-nav-item" href="/contact/">Contact</a>
+      <!--<a class="sidebar-nav-item" href="/conjecture/">Conjectures</a>-->
+    </nav>
+  </div>
+
+    <div class="w3-bottom">
+    <p style="font-size:12px;color:rgba(255,255,255,0.5);">© <script>document.write(new Date().getFullYear())</script> Rushabh Mehta</p>
+  </div>
+</div>
+
+<div class="sidebar w3-hide-medium w3-hide-large w3-right" id="mySmallSidebar">
+  <button class="w3-button sidebar w3-text-white" onclick="sidebar_open()">☰</button>
+</div>
+
+    <div class="container-fluid">
+        <main class="tm-main">
+            <div class="row tm-row">
+                <div class="col-12">
+                    <hr class="tm-hr-primary tm-mb-55">
+
+
+                    <!-- Video player 1422x800 -->
+                    <img src="/public/post10P.png" alt="Give and Take" style='width:100%;height:auto;'>
+
+			</div>
+		</div>
+            <div class="row tm-row">
+                <div class="col-lg-8 tm-post-col">
+                    <div class="tm-post-full">
+                        <div class="mb-4">
+                            <h2 class="pt-2 tm-color-primary tm-post-title" id='title'>TITLE TO BE FILLED</h2>
+                            <p class="tm-mb-40" id='date'>DATE TO BE FILLED</p>
+
+                            <p>After the <a href='post8P.html' style='color:#0a37cc'>last Project Euler post</a>, I wanted to see if I could be one of the first 100 solvers of a Project Euler Problem. So when <a href='https://projecteuler.net/problem=770' style='color:#0a37cc' target='_blank'>Problem 770</a> was released on Halloween, I couldn't help but rush to be one of the first solvers. Luckily for me, I ended up being one of the first 25 solvers of the problem! Let's discuss the ideas behind Problem 770 and another recent Project Euler problem. As always, I won't fully solve the problem, so that all of you can enjoy the process of solving it too.</p>
+                            <h2><a href='https://projecteuler.net/problem=770' target='_blank' style='color:#0a37cc'>Delphi Flip</a></h2>
+                            <blockquote class="w3-panel w3-leftbar w3-light-grey"><p>
+A and B play a game. A has originally \(1\) gram of gold and B has an unlimited amount.
+Each round goes as follows:
+</p>
+
+<p>1. A chooses and displays, \(x\), a nonnegative real number no larger than the amount of gold that A has.</p>
+<p>
+2. Either B chooses to TAKE. Then A gives B \(x\) grams of gold. Or B chooses to GIVE. Then B gives A \(x\) grams of gold.</p>
+<p>
+3. B TAKEs \(n\) times and GIVEs \(n\) times after which the game finishes.</p>
+<p>
+Define \(g(X)\) to be the smallest value of \(n\) so that A can guarantee to have at least \(X\) grams of gold at the end of the game. You are given \(g(1.7) = 10\).
+</p>
+<p>
+Find \(g(1.9999)\).
+</p></blockquote>
+<p>Let \(h(a,b)\) be the maximum amount of gold A can guarantee in a game with \(b\) TAKEs and \(a\) GIVEs. Thus, the problem can be rephrased as finding the smallest \(n\) for which \(h(n,n)>X\).</p>
+<p>Observe that \(h(0,b)=1\), since A will just set \(x=0\) in each round and lose nothing. Likewise, \(h(a,0)=2^a\), since A will bet all of its gold each round to double it.</p>
+<p>Now how do we compute \(h(a,b)\) in general? Assuming that \(a,b\neq0\), consider the first round. Note that the smaller \(x\) is, the larger \(h(a,b)\) is assuming that B TAKEs on the first round. Likewise, the larger \(x\) is, the larger \(h(a,b)\) is assuming that B GIVEs on the first round.</p>
+<p>Thus, to maximize the gold received, A must ensure that the gold output that is received would be the same regardless of whether B TAKEs or GIVEs. In other words, $$(1+x)\cdot h(a-1,b)=(1-x)\cdot h(a,b-1)$$Rearranging, we have $$x=\frac{h(a,b-1)-h(a-1,b)}{h(a,b-1)+h(a-1,b)}$$Plugging that into the first equation, we have $$h(a,b)=(1+x)\cdot h(a-1,b)=\frac{2h(a-1,b)h(a,b-1)}{h(a-1,b)+h(a,b-1)}$$This gives us a recursion that theoretically solves our problem.</p>
+<p>Using this recursion, I've plotted a graph of \(n\) by \(h(n,n)\) <a href='#' style='color:#0a37cc'>above</a>. As you can see, \(\lim\limits_{n\to\infty}h(n,n)=2\). However, if you try to compute \(h(n,n)\) for large values of \(n\) this way, you won't be able to solve the problem, even on a very fast computer. My computer took around 2 hours to compute \(h(10000,10000)\sim1.9974\), even with optimizations that sacrificed accuracy, not to mention around 50 MB of storage. So a recursive approach won't work.</p>
+<p>Instead, we have to find a closed form for \(h(n,n)\). I won't spoil how to do this, as this is the meat of the problem, but I'll provide the following hint: Can you find some function \(g(a,b)=f(h(a,b))\) such that expressing \(g(a,b)\) in terms of \(g(a-1,b)\) and \(g(a,b-1)\) is much simpler than the recursion above? Will that help you find a general form?</p>
+<h2><a href='https://projecteuler.net/problem=751' target='_blank' style='color:#0a37cc'>Concatenation Coincidence</a></h2>
+<blockquote class="w3-panel w3-leftbar w3-light-grey"><p>A non-decreasing sequence of integers \(a_n\) can be generated from any positive real value \(\theta\) by the following procedure:
+\begin{align}
+\begin{split}
+b_1 &amp;= \theta \\
+b_n &amp;= \left\lfloor b_{n-1} \right\rfloor \left(b_{n-1} - \left\lfloor b_{n-1} \right\rfloor + 1\right)~~~\forall ~ n \geq 2 \\
+a_n &amp;= \left\lfloor b_{n} \right\rfloor
+\end{split}
+\end{align}
+Where \(\left\lfloor . \right\rfloor\) is the floor function.</p>
+
+<p>For example, \(\theta=2.956938891377988...\) generates the Fibonacci sequence: \(2, 3, 5, 8, 13, 21, 34, 55, 89, ...\)</p>
+
+<p>The <i>concatenation</i> of a sequence of positive integers \(a_n\) is a real value denoted \(\tau\) constructed by concatenating the elements of the sequence after the decimal point, starting at \(a_1\): \(a_1.a_2a_3a_4...\)</p>
+
+<p>For example, the Fibonacci sequence constructed from \(\theta=2.956938891377988...\) yields the concatenation $$\tau=2.3581321345589...$$Clearly, \(\tau \neq \theta\) for this value of \(\theta\).</p>
+
+<p>Find the only value of \(\theta\) for which the generated sequence starts at \(a_1=2\) and the concatenation of the generated sequence equals the original value: \(\tau = \theta\). Give your answer rounded to 24 places after the decimal point.</p></blockquote>
+
+<p>In my opinion, this problem is rather trivial to solve (each digit is determined by the previous, a simple Python script will give you the answer). Rather, I'm more interested in the generalization, dealing with different values of \(a_1\).</p>
+<p>First and foremost, not every choice of \(a_1\) leads to a solution. For example, \(a_1=3\) has no solutions (if you've solved the problem, the same script can prove this to be true with a slight modification).</p>
+<p>\(a_1=1\) unsurprisingly leads to the solution \(1.1111\ldots\). \(a_1=4\) has two solutions, as if we directly apply the solution to \(a_1=2\) here, we'll get stuck at \(a_3\) as there are two possibilities for it, both of which lead to valid solutions.</p>
+<p>I've been playing around with these solutions for a few hours now, and I still haven't found any pattern governing the number of solutions based on \(a_1=5\). If somebody knows a better way to understand these solutions, feel free to enlighten me in the comments.</p>
+
+                         <span class="d-block text-right tm-color-primary" id='tags'><a href='/blog/puzzles/'>Category: Puzzles</a></span>
+                        </div>
+			    <script src="https://utteranc.es/client.js"
+        repo="rmehtany/comments"
+        issue-term="post10P"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+                    </div>
+                </div>
+                <aside class="col-lg-4 tm-aside-col">
+                    <div class="tm-post-sidebar">
+                        <hr class="mb-3 tm-hr-primary">
+                        <h2 class="mb-4 tm-post-title tm-color-primary">Categories</h2>
+                        <ul class="tm-mb-75 pl-5 tm-category-list">
+                            <li><a href="/blog/food/" class="tm-color-primary">Food</a></li>
+                            <li><a href="/blog/puzzles/" class="tm-color-primary">Puzzles</a></li>
+                            <li><a href="/blog/travel/" class="tm-color-primary">Travel</a></li>
+                            <li><a href="/blog/sports/" class="tm-color-primary">Sports</a></li>
+                            <li><a href="/blog/reviews/" class="tm-color-primary">Reviews</a></li>
+                            <li><a href="/blog/other/" class="tm-color-primary">Other</a></li>
+                        </ul>
+                        <hr class="mb-3 tm-hr-primary">
+                        <h2 class="tm-mb-40 tm-post-title tm-color-primary">Related Posts</h2>
+                        <a href="#" class="d-block tm-mb-40" id='related1'>
+                            <figure id='fig1'>
+                                <img src="/blog/img/img-02.jpg" alt="Image" class="mb-3 img-fluid" id='image1'>
+                                <figcaption class="tm-color-primary" id='title1'>Duis mollis diam nec ex viverra scelerisque a sit</figcaption>
+                            </figure>
+                        </a>
+                        <a href="#" class="d-block tm-mb-40" id='related2'>
+                            <figure id='fig2'>
+                                <img src="/blog/img/img-05.jpg" alt="Image" class="mb-3 img-fluid" id='image2'>
+                                <figcaption class="tm-color-primary" id='title2'>Integer quis lectus eget justo ullamcorper ullamcorper</figcaption>
+                            </figure>
+                        </a>
+                        <a href="#" class="d-block tm-mb-40" id='related3'>
+                            <figure id='fig3'>
+                                <img src="/blog/img/img-06.jpg" alt="Image" class="mb-3 img-fluid" id='image3'>
+                                <figcaption class="tm-color-primary" id='title3'>Nam lobortis nunc sed faucibus commodo</figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                </aside>
+            </div>
+        </main>
+    </div>
+    <script src="/blog/js/jquery.min.js"></script>
+    <script src="/blog/js/templatemo-script.js"></script>
+<script>
+// sidebar collapse
+function sidebar_open() {
+  document.getElementById("mySidebar").classList.remove("w3-hide-small");
+  document.getElementById("mySmallSidebar").classList.add("w3-hide-small");
+}
+function sidebar_close() {
+  document.getElementById("mySidebar").classList.add("w3-hide-small");
+  document.getElementById("mySmallSidebar").classList.remove("w3-hide-small");
+}
+</script>
+
+</body>
+</html>
