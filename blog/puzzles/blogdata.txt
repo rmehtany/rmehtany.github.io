@@ -1,3 +1,4 @@
+../posts/post11P.html|/public/puzzler.gif|Solving "The Riddler": November 5th, 2021|In this post, I attempt to solve the <a href='https://fivethirtyeight.com/features/how-many-friends-are-on-the-riddler-social-network/' target='_blank'>Riddler</a> puzzles of the week.|<a href='/blog/2021/'>November 8, 2021</a>
 ../posts/post10P.html|/public/projecteuler.png|Solving Project Euler Problems, Part 2|Solving recent Project Euler Problems|<a href='/blog/2021/'>November 2, 2021</a>
 ../posts/post9P.html|/public/puzzler.gif|Solving "The Riddler": October 29th, 2021|In this post, I attempt to solve the <a href='https://fivethirtyeight.com/features/can-you-survive-squid-game-riddler/' target='_blank'>Riddler</a> puzzles of the week.|<a href='/blog/2021/'>November 1, 2021</a>
 ../posts/post8P.html|/public/projecteuler.png|Solving Project Euler Problems, Part 1|Solving recent Project Euler Problems|<a href='/blog/2021/'>October 26, 2021</a>
