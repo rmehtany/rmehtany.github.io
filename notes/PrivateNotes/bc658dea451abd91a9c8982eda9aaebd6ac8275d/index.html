@@ -8,7 +8,7 @@
 
   <title>
 
-      Week 6 Notes
+      Week 8 Notes
 
   </title>
 
@@ -323,7 +323,7 @@
          Rushabh Mehta
       </div>
 
-      <p class="lead" style="font-size:16px;font-style:italic;">To whose who ask what the infinitely small quantity in mathematics is, we answer that is actually zero.<br> - Leonhard Euler</p>
+      <p class="lead" style="font-size:16px;font-style:italic;">We should thank the Chinese for their wonderful remainder theorem.<br> - Glenn Stevens</p>
 
     </div>
 
@@ -602,7 +602,7 @@
 
 
 <div class="post">
-  <h1 class="post-title">Week 6 Notes</h1>
+  <h1 class="post-title">Week 8 Notes</h1>
 
 
   <div class="w3-white w3-round-xlarge w3-tiny">
@@ -612,116 +612,145 @@
 
 
   <ul id="markdown-toc">
-<li><a href='#sec1'>Volume and Surface Area of 3D Shapes</a><ul><li><a href='#pris'>Prisms</a></li><li><a href='#pyra'>Pyramids</a></li><li><a href='#sphe'>Sphere</a></li></ul></li>
-<li><a href='#chal'>Challenge: Why do we need Calculus?</a><ul><li><a href='#met'>Method of Exhaustion</a></li><li><a href='#eq'>Equidecomposability</a></li><li><a href='#into'>Into the Third Dimension</a></li><li><a href='#story'>Story Time!</a></li><li><a href='#end'>Banach-Tarski</a></li></ul></li>
+    <li><a href='#mod'>Modular Arithmetic</a></li>
+    <li><a href='#add'>Addition</a></li>
+    <li><a href='#mult'>Multiplication</a></li>
+    <li><a href='#div'>Division</a></li>
+    <li><a href='#chinese'>Chinese Remainder Theorem</a></li>
+    <li><a href='#challenge'>Challenge: Totient Theorem</a></li>
 </ul>
 
-<p>This week's class is all about volume. Your handout contains a list of common formulas for the volumes of important three-dimensional shapes. Why do these formulas work? How can we derive these formulas ourselves?</p>
-<p>The answer to these questions is unfortunate: these formulas must be derived via calculus.</p>
-<p>This Week's "Challenge" section won't be difficult, but will rather paint a more general picture of the historical context of how we arrived upon our current understanding of area and volume.</p>
-<h2 id='sec1'>Volume and Surface Area of 3D Shapes</h2>
-<h3 id='pris'>Prisms</h3>
-<p>We begin our exploration of 3D shapes with prisms. What are prisms?</p>
-<p>A prism is a 3D shape formed by taking a 2D shape, and "pushing" it in the third dimension to make a three-dimensional shape. The following image consists of plenty of examples of prisms.</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/prisms.png"><img src="/public/prisms.png" width="100%"></a></p>
-<p>In the image above, you see prisms formed by "pushing" a square, a rectangle, an acute triangle, a right triangle, a circle, and a trapezoid. How do we find the surface area and volume of the prisms?</p>
-<div class="Definition" title="Volume of a Prism"> The volume of a prism is the product of the area of the shape we are pushing, which we call the <strong>base</strong>, and the length we pushed it, which we call the <strong>height</strong>.</div>
-<div class="Example" title="Volume of a Cylinder"> Given a cylinder with a circle of radius \(r\) as a base, and a height of \(h\), the volume is \(Bh\). \(B\), the area of the base, is \(\pi r^2\). So, the volume of the cylinder is \(\pi r^2h\).</div>
-<div class="Definition" title="Surface area of a Prism"> The surface area of a prism is twice the area of the base, plus the height times the perimeter of the base. If \(B\) is the area of the base, \(h\) the height, and \(P\) the perimeter of the base, we have $$2B+hP$$</div>
-<div class="Example" title="Surface Area of a Cylinder"> The perimeter of a circle is \(2\pi r\). So, the surface area is \(2\pi r^2+2\pi rh=2\pi r\cdot(r+h)\)</div>
-<p>The definition of the volume of the prism should be pretty self-explanatory. The surface area might be a bit more mysterious. But it too makes sense.</p>
-<p>The surface of a prism has three components: the base, the copy of the base which is \(h\) away from the original base, and the side of the prism. It's pretty clear that the surface area of the first two parts is \(2B\).</p>
-<p>For the side of the prism, imagine unwrapping the side into a rectangle, as in the following gif.</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/unwrapcylinder.gif"><img src="/public/unwrapcylinder.gif" width="100%"></a></p>
-<p>The height of the rectangle is just the height of the prism. But what is the width of the rectangle? If you watch closely, you'll see that it is just the perimeter of the base.</p>
-<p>With this intuition, you shouldn't need to memorize the formulas of surface area and volume of any prism, but instead calculate them on the fly.</p>
-<h3 id='pyra'>Pyramids</h3>
-<p>The next important class of 3D shapes is Pyramids! What are Pyramids?</p>
-<p>A pyramid is a 3D shape formed by taking a 2D shape, and "pushing" it in the third dimension to make a three-dimensional shape. However, unlike prisms, while we push the shape, we also shrink the shape until it is a point at the end of the process.</p>
-<p>The following diagram consists of 4 pyramids, formed by a hexagon, a circle, a triangle, and a square.</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/pyramids.png"><img src="/public/pyramids.png" width="100%"></a></p>
-<p>These pyramids are known as hexagonal pyramids, cones, tetraherdons, and square pyramids, respectively. How do you find the volume and surface area of a pyramid?</p>
-<div class="Definition" title="Volume of a Pyramid"> The volume of a Pyramid with base \(B\) and height \(h\) is \(\frac13Bh\).</div>
-<div class="Example" title="Volume of a Cone"> Given a cone with a circle of radius \(r\) as the base, and height \(h\), the volume of the cone is \(\frac13Bh=\frac13\pi r^2h\).</div>
-<p>This volume formula should seem mysterious. Where is the \(\frac13\) coming from?</p>
-<p>In the case of the right triangular pyramid, there is a nice visual proof of the \(\frac13\) term, which is given by the following gif.</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/volumeonethird.gif"><img src="/public/volumeonethird.gif" width="100%"></a></p>
-<p>As you can see from the gif, exactly \(3\) copies of this pyramid comprise a rectangular prism with the same base and height as the pyramid. If you can't see it, do the following: click on the gif to expand it. Place a piece of paper between the two cubes so that each of your eyes can only see one cube. Try to cross your eyes so that it looks like one cube. You will "see" the cube and the three embedded pyramids as if they were 3D.</p>
-<p>How do we generalize this to all pyramids? We use <a href='#cava'> Cavalieri's Principle</a>. Given any other pyramid, for example a cone, we create a right triangular pyramid with the same height as the other pyramid, and such that the base of the right triangular pyramid has the same area as the other pyramid's base. Here is a diagram where we do this for a cone.</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/cacacaca.png"><img src="/public/cacacaca.png" width="100%"></a></p>
-<p>Now for any height \(a\lt h\) as in the diagram, we take a cross section of the other pyramid and the right triangular pyramid. By similarity and the bases having the same area, the two cross sections must have the same area! Thus, the right triangular pyramid and the other pyramid have the same volume by Cavalieri's Principle.</p>
-<p>If that confused you, don't worry! We'll talk more about what Cavalieri's principle is and how to think about it later. But for now, this proves the formula for the volume of the pyramid.</p>
-<p>Now what about the surface area of a pyramid?</p>
-<p>Unfortunately, there is no general formula for this. When the base is a polygon, we can add up the areas of all of the faces of the pyramid to get the surface area. For the cone, the following formula (which I will not prove) gives us the surface area.</p>
-<div class="Definition" title="Surface Area of a Cone"> Given a cone with base a circle of radius \(r\) and height \(h\), the surface area of the cone is $$\pi r(r+\sqrt{r^2+h^2})$$</div>
-<p>This formula is not too important (I haven't seen many questions about the surface area of a cone on any math competitions), but it is one that has to be memorized, until you learn calculus :(.</p>
-<h3 id='sphe'>Sphere</h3>
-<p>The final important 3D shape is the sphere. How do we compute the volume and surface area of a sphere? We can again apply Cavalieri's Principle!</p>
-<p>Consider the following diagram.</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/volumesphere.png"><img src="/public/volumesphere.png" width="100%"></a></p>
-<p>On the right, you have a sphere with radius \(r\). On the left, you have a cylinder with radius \(r\) and height \(2r\), but with two cones removed from it. Both cones have radius \(r\) and height \(r\).</p>
-<p>The volume of the object on the left is something we can calculate with our knowledge so far. The volume of the cylinder is \(\pi r^2\cdot 2r=2\pi r^3\). The volume of either cone is \(\frac13\pi r^2\cdot r=\frac13\pi r^3\). Thus, the volume of the object on the left is $$2\pi r^3-2\cdot\frac13\pi r^3=\frac43\pi r^3$$</p>
-<p>Now we apply Cavalieri's principle. Let's say we pick a cross section of both the object on the left and the sphere \(a\) below the midpoint of the height, as in the diagram below.</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/volumesphere.jpg"><img src="/public/volumesphere.jpg" width="100%"></a></p>
-<p>On the left, our cross section is a ring, with outer radius equal to \(r\) (since the radius of the cylinder is \(r\)) and the inner radius equal to \(a\), since the small green triangle on the left is similar to the triangle with \(r\) height and \(r\) length. On the right, the cross section is a circle. Note that in the green triangle on the right, the hypotenuse is the radius of the sphere, which is \(r\). The height is \(a\). Thus, the length (which is the radius of the cross section) is \(\sqrt{r^2-a^2}\) by the Pythagorean Theorem. We draw these cross sections in the following diagram.</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/crosssectionvolproof.png"><img src="/public/crosssectionvolproof.png" width="100%"></a></p>
-<p>The area of the ring on the left is \(\pi r^2-\pi a^2=\pi(r^2-a^2)\). The volume of the circle on the right is \(\pi\left(\sqrt{r^2-a^2}\right)^2=\pi(r^2-a^2)\). Thus, by Cavalieri's Principle, the objects have the same volume since their cross sections have the same area. So, the volume of the sphere is \(\frac43\pi r^3\).</p>
-<p>Now how about the surface area? <a href='https://www.youtube.com/watch?v=GNcFjFmqEc8' target='_blank'>3Blue1Brown</a> does a far better job explaining how to understand the surface area of the sphere than I ever could. The conclusion is the following:</p>
-<div class="Definition" title="Surface Area of the Sphere"> A sphere with radius \(r\) has surface area \(4\pi r^2\)</div>
-<h2 id='chal'>Challenge: Why do we need Calculus?</h2>
-<p>In our discussions about the area of 2D shapes, we've never needed to invoke any ideas of Calculus, but in the section above, we've used Cavalieri's principle, and in the 3Blue1Brown video, the method of exhaustion to find the surface area and volume of important 3D shapes.</p>
-<p>These ideas are precursors to the development of calculus, and were later replaced by more general Calculus concepts (Fubini's Theorem and Volume Integrals). But why are these concepts necessary to find volumes of these objects? Is standard geometry not enough?</p>
-<p>To answer these questions, we need to take a dive through history.</p>
-<h3 id='met'>Method of Exhaustion</h3>
-<p>Do you remember this image from the first lecture notes?</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/diagg1.png"><img src="/public/diagg1.png" width="100%"></a></p>
-<p>This technique of using polygons to approximate a shape, in this case a circle, is known as the <strong>method of exhaustion</strong>. It was a well-known technique in Ancient Greece for finding the perimeter and area of shapes like ellipses, circles, and other objects using polygons.</p>
-<a id='cava'></a><p>The most famous of the methods by exhaustion was called Cavalieri's principle, named after a monk from the 16th century, despite being used by Greek mathematicians much earlier. It says the following:</p>
-<div class="Proposition" title="Cavalieri's Principle"> Given two shapes with the same vertical height, if each horizontal cross section of both shapes has the same length/area, then the shapes have the same area/volume.</div>
-<p>This principle, like the other method of exhaustion, should make sense to you. <a href='https://www.khanacademy.org/math/geometry/hs-geo-solids/xff63fac4:hs-geo-cavalieri-s-principle/a/cavalieri-s-principle-in-3d' target='_blank'>Khan Academy</a> has a nice demonstration of the principle.</p>
-<p>One of the earliest documents that we have that mentions the methods of exhaustion is Book XII of Euclid's <i>Elements</i>. Euclid, widely regarded as the father of geometry, dedicates almost the entirety of this book to discussing this technique and all of the things it can do.</p>
-<p>Through this book, we can see that Euclid deeply distrusted the method of exhaustion since he was not convinced that the mathematics behind it worked (in fact, he had good reason to doubt it: until the invention of calculus nearly 2000 years later, no mathematician had found a way to explain why it works.)</p>
-<p>He also felt that more standard, non-Calculus techniques were sufficient for dealing with shapes with flat sides, like polygons. So how exactly did Euclid deal with area without the method of exhaustion?</p>
-<h3 id='eq'>Equidecomposability</h3>
-<p>Euclid preferred thinking about area through the notion of <strong>equidecomposability</strong>. Here's how it works.</p>
-<p>Given any two shapes, they have the same area if I can break one of the shapes into finitely many pieces, rearrange the pieces, and form the other shape. If we can do this process for any two shapes, we call them <strong>scissors-congruent</strong>. Some examples of scissors-congruent shapes are below.</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/scissorscongruent.png"><img src="/public/scissorscongruent.png" width="100%"></a></p>
-<p>This idea makes a lot of sense, because if two shapes are made of the same pieces, they have the same area, right?</p>
-<p>Euclid believed that this was self-evident. In <i>Elements</i>, he says that it is obvious that any two scissors-congruent shapes have the same area.</p>
-<p>He also believed that any two polygons with the same area are scissors-congruent.</p>
-<p>Are these ideas true? The answer is yes!</p>
-<div class="Theorem" title="Bolyai-Gerwein"> Given any two polygons with the same area, there exists a way to break the first polygon into smaller polygons, rearrange them, and put them back together to make the second polygon.</div>
-<div class="Theorem" title="von Neumann"> Given any two shapes in the plane, if I can break one of them into pieces, rearrange them to make the second shape, then the shapes have the same area.</div>
-<p>These theorems were proved over 2400 years after Euclid! The Bolyai-Gerwein Theorem was proved in 1833 and von Neumann proved his theorem in 1929.</p>
-<p>The Bolyai-Gerwein theorem's proof is possible for you to learn yourself! See <a href='https://www.math.csi.cuny.edu/~abhijit/talks/scissors_slides.pdf' target='_blank'>this slideshow</a> for an easy explanation.</p>
-<p>What's important here is that Euclid's intuition was right: any two scissors-congruent shapes have the same area, and any two polygons that have the same area are scissors-congruent. This means that we don't need calculus when dealing with areas of polygons. Yay!</p>
-<h3 id='into'>Into the third dimension!</h3>
-<p>Euclid's books didn't just talk about perimeter and area, but also surface area and volume! He was of the firm opinion that the methods of exhaustion aren't necessary for dealing with polyhedra, the 3D equivalent of polygons.</p>
-<div class="Definition" title="Polyhedron"> A <strong>polyhedron</strong> is a 3D shape with polygons for faces. Some examples of polyhedra are below.</div>
-<p><a class="gallery img-center-short cbox-Element" href="/public/polyhedra.png"><img src="/public/polyhedra.png" width="100%"></a></p>
-<p>Euclid claimed the following:</p>
+<p>This week's notes are about one of the most important topics in all of mathematics. It really is worth taking the time to understand it well.</p>
+
+<h2 id='mod'>Modular Arithmetic</h2>
+<p>Consider a standard clock, but with the \(12\) replaced by a \(0\).</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/clockmod12.png"><img src="/public/clockmod12.png" width="100%"></a></p>
+<p>What time will the clock point to in \(1\) hour? How about \(2\) hours?</p>
+<p>Starting at noon, we can see that the hour hand will point to $$1,2,3,4,5,6,7,8,9,10,11,0,1,2,3,4,5,6,7,8,9,10,11,0,\ldots$$in order. If we went backwards in time, the hour hand would go $$11,10,9,8,7,6,5,4,3,2,1,0,11,\ldots$$</p>
+<p>This is the way we count in mod \(12\). When we add \(n\), an integer, to \(k\), a number on our clock, we forward time (or go back in time if \(n\) is negative) by \(n\) hours, and see what number the clock will point to if it started at \(k\).</p>
+<p>As you might guess, adding \(n+12\) to the clock is the same as adding \(n\) to the clock, since the clock doesn't measure how many rotations it has undergone. Because of this, we say that \(n+12\equiv n\bmod{12}\), or in English, \(n+12\) is equivalent to \(n\) modulo \(12\). All this says is that if I move time ahead by \(n\), it is the same as moving the clock ahead by \(n+12\).</p>
+<p>So when are two integers equivalent? They are equivalent when their difference is a multiple of \(12\), since the hour hand points to the same number. In fact, this is how we will define mod.</p>
+<div class="Definition" title="Mod" style="font-style:italic;"> Given some integer \(n\gt1\), which we call the <strong>modulus</strong>, and integers \(a,b\), we say that \(a\) is equivalent to \(b\) mod \(n\), or \(a\equiv b\bmod n\), iff \(a-b\) is a multiple of \(n\).</div>
+<p>So by this definition, \(-13\equiv-1\equiv11\equiv23\bmod{12}\). Now, it is the case that every integer \(x\) is equivalent to exactly one non-negative integer \(r\) which is less than the modulus \(n\). We call \(r\) the <strong>remainder</strong> when \(x\) is divided by \(n\). \(r\) is also called the <strong>residue</strong> of \(x\) (with \(n\) implicit from the context). In the case of mod \(12\), there are \(12\) possible remainders: \(0,1,\ldots,11\).</p>
+<div class="Exercise" title="Basic Mods"> Given \(x\) and \(n\), find the remainder of \(x\) when divided by \(n\). <ul><li>\(x=12,\;n=5\)</li><li>\(x=3,\;n=25\)</li><li>\(x=-4,\;n=3\)</li></ul>
+  <div class="solution">
+  <p><a onclick="myCollapse('ex1')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+  <div id="ex1" class="w3-container w3-hide">
+  <ul><li>2</li><li>3</li><li>2</li></ul>
+  </div>
+  </div>
+</div>
+<p>Note that two numbers are equivalent exactly when their remainders are the same. Are you getting the hang of mods yet? Here are some (obvious) properties of equivalence (sometimes also called <strong>congruence</strong>)</p>
 <ul>
-  <li>Given any two 3D shapes, if they are scissors-congruent, they have the same volume.</li>
-  <li>Any two polyhedra with the same volume are scissors-congruent.</li>
+  <li>\(a\equiv a\bmod n\) since \(a-a=0\) and \(0\) is a multiple of all integers.</li>
+  <li>If \(a\equiv b\bmod n\), then \(a-b=kn\) for some integer \(k\), so \(b-a=(-k)n\), implying that \(b\equiv a\bmod n\).</li>
+  <li>If \(a\equiv b\bmod n\) and \(b\equiv c\bmod n\), then there are integers \(j,k\) such that \(a-b=jn\), \(b-c=kn\). So, \(a-c=a-b+b-c=(j+k)n\). Thus, \(a\equiv c\bmod n\).</li>
 </ul>
-<p>If his claims are true, that would be perfect! We wouldn't need to use calculus to find the volume of any of our shapes (other than the sphere). We could just cut our shapes into pieces, rearrange them into a cube, and prove the volume formulas since we know the volume of a cube.</p>
-<p>So are they true?</p>
-<h3 id='story'>Story Time!</h3>
-<p>In 1842, Christian Ludwig Gerling sent a letter to Gauss, excitedly sharing the progress that he and his mentor, Farkas Bolyai, had made on the 3-dimensional version of the Bolyai-Gerwein problem. In this letter, Gerling showed that a mirror-image of a polyhedron is scissors-congruent to the polyhedron.</p>
-<p>In 1844, Gauss responded to the letter, expressing dissatisfaction that the volumes of certain polyhedron, including the tetrahedron, still depended on the method of exhaustion/Cavalieri's Principle, rather than the purely geometric idea of scissors-congruence.</p>
-<p>In the 1890's, David Hilbert, scouring a library of mathematics, comes upon this correspondence between Gauss and Gerling, finds the ideas interesting, and notes down the 3D Bolyai-Gerwein problem as an interesting problem.</p>
-<p>Hilbert, unlike Gauss, was much more negative on the subject. While Gauss believed that it was the limitations of mathematicians that was the reason for them not finding a way to deal with volume without calculus, Hilbert was convinced of the necessity of calculus. He believed that there were two different tetrahedrons with the same volume but that were not scissors-congruent.</p>
-<p>Hilbert, in 1900, then went on to publish a list of 28 challenging math problems, which he announced to be the most important math problems that still were unresolved. The third problem was the question "does there exist two tetrahedrons with the same volume but not scissors-congruent"?</p>
-<p>Within 6 months of Hilbert publishing his list, his student, Max Dehn, showed that there in fact do exist two tetrahedron that have the same volume but are not scissors-congruent. This, of course, upset many mathematicians.</p>
-<p>However, other proofs of the third problem were found to be published far earlier than Dehn's proof.</p>
-<p>For example, mathematician Wlayslaw Kretkowski had held a contest for 500 francs (around $10,000) for the solution to the same problem in 1884: 16 years earlier than Hilbert! The award was won by Ludwik Birkemajer, who published a 40 page solution, which predates Dehn's solution by around 15 years.</p>
-<p>Unfortunately, Dehn still gets the credit for solving the problem. The world is unfair :(</p>
-<h3 id='end'>Banach-Tarski</h3>
-<p>While many mathematicians were upset by Dehn's result, they still held onto the belief that Euclid's first claim was true: any two scissors-congruent shapes have the same volume.</p>
-<p>I mean, of course it is true! If I have a bowling ball, and I cut it into pieces, and rearrange these pieces, I can't just get two bowling balls of the same size, right?</p>
-<p>Banach and Tarski disagreed. Their proof in 1924 showed a result which should blow your mind: it is possible to cut a sphere into pieces, rearrange them, and put them together to get two spheres, each with the same volume of the first. That's right, by moving some pieces around, we can double the volume of the sphere.</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/tjpl2r02n1e21.jpeg"><img src="/public/tjpl2r02n1e21.jpeg" width="100%"></a></p>
-<p>This result threw away all hope that mathematicians had for equidecomposability as an approach to handling volume. Volume is too weird for geometry, it seems. Calculus it is!</p>
+<h2 id='add'>Addition</h2>
+<p>Part of what makes modular arithmetic so useful is that it behaves really well with addition. In particular, we have the following result:</p>
+<div class="Theorem" title="Modular Addition"> Given \(n\gt1\) as the modulus, and integers \(a,b,c,d\) with \(a\equiv c\bmod n\) and \(b\equiv d\bmod n\), then $$a+b\equiv c+d\bmod n$$
+<div class="proof">
+<p><a onclick="myCollapse('ex2')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="ex2" class="w3-container w3-hide">
+Since \(a\equiv c\bmod n\) and \(b\equiv d\bmod n\), there exists integers \(j,k\) such that \(a-c=kn\), \(b-d=jn\). So, \(a+b-c-d=(k+j)n\), and thus \(a+b\equiv c+d\bmod n\).
+</div>
+</div>
+</div>
+<div class="remark" title="Find the last k digits"> Suppose I had a problem that said, here's some complicated expression, find the last \(n\) digits of it. This is equivalent to saying, find the remainder when the complicated expression is divided by \(10^n\). Or in other words, find the complicated expression mod \(10^n\).</div>
+<br><div class="Example" title="Find the units digit"> Compute the units digit of $$5811+23424+22+555$$How would you solve this problem? One approach might be to just add the numbers up: that seems rather painful, though. Instead, we observe that finding the units digit is just finding the sum \(\bmod{10}\). We know that \(5811\equiv1\bmod{10}\), \(23424\equiv4\bmod{10}\), \(22\equiv2\bmod{10}\), and \(555\equiv5\bmod{10}\). So, $$5811+23424+22+555\equiv1+4+2+5\equiv2\bmod{10}$$This gives us our answer.</div><br>
+<div class="Example" title="Divisibility Check"> Is \(124+55+3211+332\) a multiple of \(3\)? To solve this, we consider the numbers mod \(3\). We get $$124+55+3211+332\equiv1+1+1+2\equiv2\bmod3$$Since a number is a multiple of \(3\) if and only if it is equivalent to \(0\) mod \(3\), this sum is not a multiple of \(3\).</div><br>
+<p>Mods also work well with subtraction, as we show in the next theorem.</p>
+<div class="Theorem" title="Modular Subtraction"> For some modulus \(n\), and integers \(a,b,c,d\) such that \(a\equiv c\), \(b\equiv d\), we have $$a-b\equiv c-d\bmod n$$
+<div class="proof">
+<p><a onclick="myCollapse('ex3')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="ex3" class="w3-container w3-hide">
+Since \(a\equiv c\) and \(b\equiv d\), there exists integers \(j,k\) such that \(a-c=jn\), \(b-d=kn\). So, $$(j-k)n=(a-c)-(b-d)=(a-b)-(c-d)$$Thus, \(a-b\equiv c-d\bmod n\).
+</div>
+</div>
+</div>
+<p>So, when we have equivalences, we can add and subtract to either side without worry.</p>
+<h2 id='mult'>Multiplication</h2>
+<p>We just learned that mods are well-behaved with addition and subtraction. What about multiplication?</p>
+<p>The answer is still yes! This is what truly lends power to modular arithmetic, but we'll see that with some examples.</p>
+<div class="Theorem" title="Modular Multiplication"> For some modulus \(n\), and integers \(a,b,c,d\) such that \(a\equiv c\), \(b\equiv d\), we have $$a\cdot b\equiv c\cdot d\bmod n$$
+<div class="proof">
+<p><a onclick="myCollapse('ex4')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="ex4" class="w3-container w3-hide">
+Since \(a\equiv c\) and \(b\equiv d\), there exists integers \(j,k\) such that \(a-c=jn\), \(b-d=kn\). So, we have \(ab-cb=bjn\) and \(cb-cd=ckn\). Thus, $$bjn+ckn=(ab-cb)+(cb-cd)=ab-cd$$But, \(bjn+ckn=n(bj+ck)\), so \(ad\equiv cd\bmod n\).
+</div>
+</div>
+</div>
+<div class="Example" title="Using modular multiplication"> Find the remainder when the following product is divided by \(3\): $$124\cdot134\cdot23\cdot49\cdot235\cdot13$$To solve this, we simply replace each number by its residue. $$1\cdot2\cdot2\cdot1\cdot1\cdot1\equiv4\equiv1\bmod3$$So the remainder is \(1\).</div>
+<p>Since exponentiation is repeated multiplication, it too is preserved by mods. In particular, if \(a\equiv b\bmod n\), then for any non-negative integer \(k\), \(a^k\equiv b^k\bmod n\). This is a very important observation in a common class of problems, an example of which is presented below.</p>
+<div class="Example" title="Modular Exponentiation"> What are the last two digits of \(7^{2021}\)? Well, \(7^2\equiv49\bmod{100}\), \(7^3\equiv 43\bmod{100}\), and \(7^4\equiv1\bmod{100}\). Aha! $$7^{2021}=7\cdot7^{2020}=7\cdot(7^4)^{505}$$$$\equiv7\cdot1^{505}\equiv7\bmod{100}$$So, the last two digits are \(07\).</div>
+<p>These sorts of "find the remainder when \(a^b\) is divided by \(c\)" problems show up all the time on competitions. In the Challenge Section, I'll present a foolproof way to solving these problems.</p>
+<h2 id='div'>Division</h2>
+<p>Suppose I know that \(ka\equiv kb\bmod n\). Do I know that \(a\equiv b\bmod n\)? On a cursory glance, you might say, of course! Just divide both sides by \(k\).</p>
+<p>The issue here is that I don't know what it means to divide by \(k\)! What is \(3\) divided by \(5\)? \(0.6\)? But \(0.6\) is not a valid value in our mod system.</p>
+<p>So what does it mean to divide by \(k\)? Well, it means to multiply by \(\frac1k\). \(\frac1k\) is the number such that \(k\cdot\frac1k=1\).</p>
+<p>Our question becomes, how do we know such a \(\frac1k\) exists? The answer is, it doesn't always exist. However, if \(\gcd(k,n)=1\), it does exist. This is summarized in the hugely important lemma below.</p>
+<div class="Theorem" title="Bezout's Lemma">For any non-zero \(k\) and modulus \(n\), there exists integer \(q\) such that \(qk\equiv\gcd(k,n)\).
+<div class="proof">
+<p><a onclick="myCollapse('ex5')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="ex5" class="w3-container w3-hide">
+If such a \(q\) existed, by modulus properties, there'd exist an integer \(r\) such that \(qk+rn=\gcd(k,n)\). Thus, we seek to show that such a \(q,r\) exist.<br><br>Let \(k_1=\frac k{\gcd(k,n)}\) and \(n_1=\frac n{\gcd(k,n)}\). So, \(\gcd(n_1,k_1)=1\). Now suppose there exists integers \(0\leq a\lt b\lt k_1\) such that \(n_1a\equiv n_1b\bmod{k_1}\). Then, \(n_1(b-a)\) is a multiple of \(k_1\).<br><br> Since \(\gcd(n_1,k_1)=1\), this means that \(b-a\) is a multiple of \(k_1\). Since \(b-a\) is positive, this means that \(b-a\geq k_1\), a contradiction since \(b-a\lt b\lt k_1\).<br><br>So, we know that every \(n_1r\) for \(0\leq r\lt k_1\) has a different remainder mod \(k_1\). By the pigeonhole principle, since there are only \(k_1\) possible remainders, there must be some \(r\) for which \(n_1r\equiv1\bmod{k_1}\). That implies that there exists integer \(q\) such that \(rn_1+qk_1=1\).
+</div>
+</div>
+</div>
+<p>If this proof was too complicated, don't worry. You won't need it for any competitions. But, for those of you who understood the proof, you'll notice that this lemma gives us no way of finding \(\frac1k\) when \(\gcd(k,n)=1\). So how do we find \(\frac1k\)?</p>
+<p>The "easiest" way to find \(\frac1k\) is to use the <a href = 'https://brilliant.org/wiki/extended-euclidean-algorithm/' target='_blank'>Extended Euclidean Algorithm</a>, although in most cases, trial and error can be faster than this algorithm.</p>
+<p>Thus, we have the following conclusion: if \(ka\equiv kb\bmod n\) and \(\gcd(k,n)=1\), then \(a\equiv b\bmod n\). In essence, this is a limited form of division.</p>
+<div class="Example" title="Division is dangerous"> \(\;ka\equiv kb\) does not always imply \(a\equiv b\), even if \(k\neq0\). For example, if \(n=25\), \(k=5\), then \(5\cdot 5\equiv0\) and \(5\cdot10\equiv0\), but \(5\neq10\).</div>
+<h2 id='chinese'>Chinese Remainder Theorem</h2>
+<p>One of the most important implications of Bezout's Lemma is the Chinese Remainder Theorem. Since it is a large theorem, we will show it in parts. Assume that \(m_1,\ldots,m_r\) are moduli such that for any \(1\leq i\lt j\leq r\), \(\gcd(m_i,m_j)=1\) (we call these numbers <strong>pairwise relatively prime</strong>). Let \(a_1,\ldots, a_r\) be integers.</p>
+<div class="Theorem" title="Uniqueness"> Suppose integers \(c,d\) satisfy the modulo equivalences $$x\equiv a_1\bmod{m_1}$$$$\vdots$$$$x\equiv a_r\bmod{m_r}$$Then, \(c\equiv d\bmod{m_1\cdot\ldots\cdot m_r}\)
+<div class="proof">
+<p><a onclick="myCollapse('ex6')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="ex6" class="w3-container w3-hide">
+Since \(c\equiv d\bmod{m_i}\) for each \(i\), \(c-d\) is a multiple of \(m_i\) for each \(i\). Since the moduli are all pairwise relatively prime, this implies that \(c-d\) is a multiple of \(m_1\cdot\ldots\cdot m_r\), so $$c\equiv d\bmod{m_1\cdot\ldots\cdot m_r}$$
+</div>
+</div>
+</div>
+<p>This shows that mod \(M=m_1\cdot\ldots\cdot m_r\), there is at most one solution to the system of modulo equivalences. Now, we will show that there is a solution.</p>
+<div class="Theorem" title="Weakened CRT"> There exists an integer \(x\) such that \(x\equiv a\bmod n\), \(x\equiv b\bmod m\) for moduli \(n,m\) with \(\gcd(n,m)=1\), and integers \(a,b\).
+<div class="proof">
+<p><a onclick="myCollapse('ex7')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="ex7" class="w3-container w3-hide">
+By Bezout's Lemma, there exists integers \(j,k\) such that \(jn-km=1\). Let \(x=a+(b-a)jn\). So, \(x\equiv a\bmod n\) trivially, and since \((b-a)jn=b-a+(b-a)km\), $$a+(b-a)jn\equiv a+b-a+(b-a)km\equiv b\bmod m$$
+</div>
+</div>
+</div>
+
+<div class="Theorem" title="Existence"> There exists an integer \(y\) such that \(x\equiv a_i\bmod{m_i}\) for each \(1\leq i\leq r\).
+<div class="proof">
+<p><a onclick="myCollapse('ex8')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="ex8" class="w3-container w3-hide">
+We prove the claim by induction on \(r\). For our base case, the Weakened CRT Theorem showed that this is the case when \(r\leq 2\). <br><br>For the inductive case, suppose that \(x\) is an integer that satisfies \(x\equiv a_i\bmod{m_i}\) for each \(1\leq i\lt r\). By weakened CRT, there exists an integer \(y\) such that \(y\equiv x\bmod{m_1\cdot\ldots\cdot m_{r-1}}\) and \(y\equiv a_r\bmod{m_r}\). I claim that for all \(1\leq i\lt r\), \(y\equiv a_i\bmod m_i\).<br><br>Since \(y\equiv x\bmod{m_1\cdot\ldots\cdot m_{r-1}}\), \(y-x\) is a multiple of this modulus, and thus, \(y-x\) is a multiple of \(m_i\). So, \(y\equiv x\equiv a_i\bmod{m_i}\). This completes the proof.
+</div>
+</div>
+</div>
+<p>To summarize, this is the full statement of the Chinese Remainder Theorem.</p>
+<div class="Theorem" title="Chinese Remainder Theorem"> There exists a unique \(0\leq x\lt M\) such that for each \(1\leq i\leq r\), \(x\equiv a_i\bmod{m_i}\).</div>
+<p>How do you find this \(x\)? Well, if we follow the proof, we need apply Bezout's Theorem \(r-1\) times, and thus do the Extended Euclidean Algorithm \(r-1\) times. If \(r\) is small or the moduli are small, this is reasonable to do. Otherwise, guess and check is your friend.</p>
+<div class="Example" title="Applying CRT"> Find an integer \(x\) that satisfies $$2x\equiv 5\bmod7$$$$3x\equiv4\bmod8$$Note that \(\frac12\) in \(\bmod7\) is \(4\), and \(\frac13\) in \(\bmod8\) is \(3\). So we have $$x\equiv10\equiv3\bmod7$$$$x\equiv12\equiv4\bmod8$$Thankfully, we don't need to apply the Extended Euclidean Algorithm here, since we can see that \(8-7=1\). So by CRT, \(x=3+(-7)=-4\) is a solution. The remainder when \(-4\) is divided by \(7\cdot8=56\) is \(52\), so that is our final answer.</div>
+
+<h2 id='challenge'>Challenge: Totient Theorem</h2>
+<p>One of Leonhard Euler's many lasting contributions to mathematics is his <strong>Totient Function</strong>. It is defined as follows for positive integer \(n\): $$\varphi(n)=\text{Number of positive integers } m\lt n\text{ such that }\gcd(m,n)=1$$</p>
+<p>For example, \(\varphi(4)=2\), since \(1,3\) are the two numbers below \(4\) relatively prime with \(4\).</p>
+<p>How do we compute this for large inputs? We can use the Chinese Remainder Theorem!</p>
+<div class="Exercise" title="Totient is multiplicative"> Given \(m,n\) positive integers such that \(\gcd(m,n)=1\), show that \(\varphi(m)\cdot\varphi(n)=\varphi(mn)\) via the Chinese Remainder Theorem.</div>
+<br><p>Thus, for a positive integer \(n\), we can prime factorize it as \(p_1^{e_1}\cdot\ldots\cdot p_k^{e_k}\). So, we have $$\varphi(n)=\prod\limits_{i=1}^k\varphi(p_i^{e_i})$$Note that $$\varphi(p_i^{e_i})=p_i^{e_i}\cdot\left(1-\frac1{p_i}\right)$$Since there are \(p_i^{e_i-1}\) positive integers below \(p_i^{e_i}\) that have \(p_i\) as a factor.</p>
+<p>So, our final formula for the Totient Functions is $$\varphi(n)=n\cdot\prod\limits_{i=1}^k\left(1-\frac1{p_i}\right)$$</p>
+<p>Now why do we care about the Totient Function? Well, I promised you earlier that I'd provide a foolproof way of finding multiplicative inverses and solving the problems of the form "what is the remainder when \(a^b\) is divided by \(c\)". The approach depends on the following theorem.</p>
+<div class="Theorem" title="Euler's Totient Theorem"> For all moduli \(n\) and any integer \(a\), if \(\gcd(a,n)=1\), \(a^{\varphi(n)}\equiv1\bmod n\).</div>
+<p>This is a truly beautiful result. It tells us that \(\frac1a=a^{\varphi(n)-1}\). In the case that \(n\) is prime, we have the following result as a direct implication.</p>
+<div class="Exercise" title="Fermat's Little Theorem"> Prove using Euler's Totient Theorem that for any prime \(p\) and any integer \(a\), \(a^p\equiv a\bmod p\).</div>
+<p>To find the remainder of \(a^b\) when divided by \(n\), assuming \(\gcd(a,n)=1\), we note that \(a^{\varphi(n)}\equiv1\bmod n\), so if \(c\) is the remainder of \(b\) when divided by \(\varphi(n)\), then \(a^b\equiv a^c\bmod n\). This will simplify the problem to one we can handle.</p>
+<p>For a final interesting result that follows from the Totient Theorem, consider the following exercise.</p>
+<div class="Exercise" title="Chicken McNugget Theorem"> Prove using the Euler Totient Theorem that the greatest integer that can't be written as \(am+bn\) for some non-negative integers \(a,b\) is \(mn-m-n\).</div>
+<br>
+<p>For some context about the name of the last theorem, McDonald's sold its nuggets in boxes of \(9\) and \(20\). So people wondered, what is the largest amount of nuggets that is impossible to get. This sort of problem does occasionally appear on MathCounts.</p>
+
 
 </div>
 

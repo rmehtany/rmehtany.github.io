@@ -610,14 +610,42 @@
   </div>
   <br>
 
+<ul>
+  <li><a href='#seq'>Sequences</a><ul><li><a href='arith'>Arithmetic Sequences</a></li><li><a href='#geo'>Geometric Sequences</a></li></ul></li>
+</ul>
 
-<p>This week is Countdown week, so no notes for this week!</p>
+<p>This week is Countdown week, so the notes are going to be super short!</p>
 <p><a class="gallery img-center-short cbox-Element" href="/public/itschristmas.png"><img src="/public/itschristmas.png" width="100%"></a></p>
 <p>Before you enjoy yourself too much, take some time to review the material from the first 4 weeks (it's a lot!) since this week's class will have \(80\) problems.</p>
 <p>The problems will be easier than normal, but you'll have to be quick on your feet. Be there or be square!</p>
 <p>You might want to read <a href='https://www.mathopenref.com/polygonconvex.html' target='_blank'>this definition</a> before class.</p>
 
 <p> <strong>P.S.</strong> I'm starting a discord server (click <a href='https://discord.gg/dBKCbYb6' target='_blank'>here</a> to join) for you guys to have a place to ask me questions, or just work together on homework, lecture notes, etc. Or just talk about whatever.</p>
+
+<h2 id ='seq'>Sequences</h2>
+<p>What is a sequence? Well, it is just an infinite list of numbers. That's it, really. There are two special types of sequences we care about, however.</p>
+<h3 id='arith'>Arithmetic Sequence</h3>
+<div class="Definition" title="Arithmetic Sequence" style="font-style:italic;"> An <strong>arithmetic sequence</strong> is a sequence in which consecutive elements have constant difference. More precisely, given a sequence \(a_1,a_2,\ldots\), if $$a_2-a_1=a_3-a_2=\ldots$$we would call \(a_1,\ldots\) an arithmetic sequence.</div>
+<div class="Exercise" title="Arithmetic Sequences"> Show that if \(a_1,\ldots\) is an arithmetic sequence, $$a_n=a_1+(n-1)\cdot(a_2-a_1)$$</div>
+<div class="Exercise" title="Arithmetic Sequences"> Show that if \(a_1,\ldots\) is an arithmetic sequence, $$\sum\limits_{i=1}^na_i=na_1+\frac{n\cdot(n-1)}2\cdot(a_2-a_1)$$</div>
+<h3 id='geo'>Geometric Sequence</h3>
+<div class="Definition" title="Geometric Sequence" style="font-style:italic;"> An <strong>geometric sequence</strong> is a sequence in which consecutive elements have constant ratios. More precisely, given a sequence \(a_1,a_2,\ldots\), if $$\frac{a_2}{a_1}=\frac{a_3}{a_2}=\ldots$$we would call \(a_1,\ldots\) an geometric sequence.</div>
+<div class="Exercise" title="Geometric Sequences"> Show that if \(a_1,\ldots\) is an geometric sequence, $$a_n=a_1\cdot\left(\frac{a_2}{a_1}\right)^{n-1}$$</div>
+<div class="Theorem" title="Finite sums of geometric sequences"> If \(r\neq1\), $$\sum\limits_{i=0}^{n-1}ar^i=a\cdot\frac{r^n-1}{r-1}$$If \(r=1\), the sequence is an arithmetic sequence.
+<div class="proof">
+<p><a onclick="myCollapse('id')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="id" class="w3-container w3-hide">
+Assume \(r\neq1\). Then $$(a+ar+\ldots+ar^{n-1})\cdot(r-1)=a\cdot(1+r+\ldots+r^{n-1})\cdot(r-1)$$$$=a\cdot(r^n-1)$$
+</div>
+</div>
+</div>
+<p>Unlike arithmetic sequences, there are many interesting geometric sequences that we can sum. Suppose I have a geometric sequence \(a_1,\ldots\), with \(r=\frac{a_2}{a_1}\).</p>
+<p>If \(|r|\geq1\), then it is clear that unless \(a_1=0\), \(\sum\limits_{i=1}^\infty a_i\) is \(\pm\infty\), or just not defined.</p>
+<p>But, if \(r\lt1\), \(\sum\limits_{i=0}^\infty ar^i\) has a finite value. Here's how we can find it.</p>
+<p>Let \(S=\sum\limits_{i=0}^\infty ar^i\). So, $$S=a+ar+\ldots$$$$rS=ar+ar^2+\ldots$$$$a+rS=a+ar+\ldots=S$$$$a+rS=S$$$$S=\frac a{1-r}$$</p>
+<p>As an example of geometric series, suppose we wanted to compute the sum of all of the divisors of \(n\). We'd first prime factorize \(n\) as \(p_1^{e_1}p_2^{e_2}\ldots p_k^{e_k}\). Then, we observe that all divisors of \(n\) are of the form \(p_1^{a_1}\cdot\ldots\cdot p_k^{a_k}\), where \(a_i\leq e_i\) for each \(i\). Thus, the sum of divisors of \(n\) is $$(1+p_1+\ldots+p_1^{e_1})\cdot\ldots\cdot(1+p_k+\ldots+p_k^{e_k})$$However, each term is a geometric series, so we can replace each term by \(\frac{p_i^{e_i+1}-1}{p_i-1}\). Thus, our formula becomes $$\prod\limits_{i=1}^k\frac{p_k^{e_k+1}-1}{p_k-1}$$ (Side Note: \(\prod\) is similar to \(\sum\), except it is for products rather than sums.)</p>
+
+
 
 </div>
 

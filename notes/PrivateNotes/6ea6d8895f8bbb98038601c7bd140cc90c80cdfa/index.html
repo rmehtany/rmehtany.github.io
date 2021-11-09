@@ -8,7 +8,7 @@
 
   <title>
 
-      Week 6 Notes
+      Week 7 Notes
 
   </title>
 
@@ -323,7 +323,7 @@
          Rushabh Mehta
       </div>
 
-      <p class="lead" style="font-size:16px;font-style:italic;">To whose who ask what the infinitely small quantity in mathematics is, we answer that is actually zero.<br> - Leonhard Euler</p>
+      <p class="lead" style="font-size:16px;font-style:italic;">Trigonometry is a sine of the times.<br> - Unknown</p>
 
     </div>
 
@@ -602,7 +602,7 @@
 
 
 <div class="post">
-  <h1 class="post-title">Week 6 Notes</h1>
+  <h1 class="post-title">Week 7 Notes</h1>
 
 
   <div class="w3-white w3-round-xlarge w3-tiny">
@@ -612,117 +612,119 @@
 
 
   <ul id="markdown-toc">
-<li><a href='#sec1'>Volume and Surface Area of 3D Shapes</a><ul><li><a href='#pris'>Prisms</a></li><li><a href='#pyra'>Pyramids</a></li><li><a href='#sphe'>Sphere</a></li></ul></li>
-<li><a href='#chal'>Challenge: Why do we need Calculus?</a><ul><li><a href='#met'>Method of Exhaustion</a></li><li><a href='#eq'>Equidecomposability</a></li><li><a href='#into'>Into the Third Dimension</a></li><li><a href='#story'>Story Time!</a></li><li><a href='#end'>Banach-Tarski</a></li></ul></li>
+<li><a href='#right'>Trigonometric Functions</a></li>
+<li><a href='#obs'>Basic Observations</a></li>
+<li><a href='#ext'>Extending the domain</a></li>
+<li><a href='#law'>Trigonometric Laws</a></li>
+<li><a href='#spe'>Special Right Triangles</a></li>
+<li><a href='#challenge'>Challenge: Euler's Formula</a></li>
 </ul>
 
-<p>This week's class is all about volume. Your handout contains a list of common formulas for the volumes of important three-dimensional shapes. Why do these formulas work? How can we derive these formulas ourselves?</p>
-<p>The answer to these questions is unfortunate: these formulas must be derived via calculus.</p>
-<p>This Week's "Challenge" section won't be difficult, but will rather paint a more general picture of the historical context of how we arrived upon our current understanding of area and volume.</p>
-<h2 id='sec1'>Volume and Surface Area of 3D Shapes</h2>
-<h3 id='pris'>Prisms</h3>
-<p>We begin our exploration of 3D shapes with prisms. What are prisms?</p>
-<p>A prism is a 3D shape formed by taking a 2D shape, and "pushing" it in the third dimension to make a three-dimensional shape. The following image consists of plenty of examples of prisms.</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/prisms.png"><img src="/public/prisms.png" width="100%"></a></p>
-<p>In the image above, you see prisms formed by "pushing" a square, a rectangle, an acute triangle, a right triangle, a circle, and a trapezoid. How do we find the surface area and volume of the prisms?</p>
-<div class="Definition" title="Volume of a Prism"> The volume of a prism is the product of the area of the shape we are pushing, which we call the <strong>base</strong>, and the length we pushed it, which we call the <strong>height</strong>.</div>
-<div class="Example" title="Volume of a Cylinder"> Given a cylinder with a circle of radius \(r\) as a base, and a height of \(h\), the volume is \(Bh\). \(B\), the area of the base, is \(\pi r^2\). So, the volume of the cylinder is \(\pi r^2h\).</div>
-<div class="Definition" title="Surface area of a Prism"> The surface area of a prism is twice the area of the base, plus the height times the perimeter of the base. If \(B\) is the area of the base, \(h\) the height, and \(P\) the perimeter of the base, we have $$2B+hP$$</div>
-<div class="Example" title="Surface Area of a Cylinder"> The perimeter of a circle is \(2\pi r\). So, the surface area is \(2\pi r^2+2\pi rh=2\pi r\cdot(r+h)\)</div>
-<p>The definition of the volume of the prism should be pretty self-explanatory. The surface area might be a bit more mysterious. But it too makes sense.</p>
-<p>The surface of a prism has three components: the base, the copy of the base which is \(h\) away from the original base, and the side of the prism. It's pretty clear that the surface area of the first two parts is \(2B\).</p>
-<p>For the side of the prism, imagine unwrapping the side into a rectangle, as in the following gif.</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/unwrapcylinder.gif"><img src="/public/unwrapcylinder.gif" width="100%"></a></p>
-<p>The height of the rectangle is just the height of the prism. But what is the width of the rectangle? If you watch closely, you'll see that it is just the perimeter of the base.</p>
-<p>With this intuition, you shouldn't need to memorize the formulas of surface area and volume of any prism, but instead calculate them on the fly.</p>
-<h3 id='pyra'>Pyramids</h3>
-<p>The next important class of 3D shapes is Pyramids! What are Pyramids?</p>
-<p>A pyramid is a 3D shape formed by taking a 2D shape, and "pushing" it in the third dimension to make a three-dimensional shape. However, unlike prisms, while we push the shape, we also shrink the shape until it is a point at the end of the process.</p>
-<p>The following diagram consists of 4 pyramids, formed by a hexagon, a circle, a triangle, and a square.</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/pyramids.png"><img src="/public/pyramids.png" width="100%"></a></p>
-<p>These pyramids are known as hexagonal pyramids, cones, tetraherdons, and square pyramids, respectively. How do you find the volume and surface area of a pyramid?</p>
-<div class="Definition" title="Volume of a Pyramid"> The volume of a Pyramid with base \(B\) and height \(h\) is \(\frac13Bh\).</div>
-<div class="Example" title="Volume of a Cone"> Given a cone with a circle of radius \(r\) as the base, and height \(h\), the volume of the cone is \(\frac13Bh=\frac13\pi r^2h\).</div>
-<p>This volume formula should seem mysterious. Where is the \(\frac13\) coming from?</p>
-<p>In the case of the right triangular pyramid, there is a nice visual proof of the \(\frac13\) term, which is given by the following gif.</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/volumeonethird.gif"><img src="/public/volumeonethird.gif" width="100%"></a></p>
-<p>As you can see from the gif, exactly \(3\) copies of this pyramid comprise a rectangular prism with the same base and height as the pyramid. If you can't see it, do the following: click on the gif to expand it. Place a piece of paper between the two cubes so that each of your eyes can only see one cube. Try to cross your eyes so that it looks like one cube. You will "see" the cube and the three embedded pyramids as if they were 3D.</p>
-<p>How do we generalize this to all pyramids? We use <a href='#cava'> Cavalieri's Principle</a>. Given any other pyramid, for example a cone, we create a right triangular pyramid with the same height as the other pyramid, and such that the base of the right triangular pyramid has the same area as the other pyramid's base. Here is a diagram where we do this for a cone.</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/cacacaca.png"><img src="/public/cacacaca.png" width="100%"></a></p>
-<p>Now for any height \(a\lt h\) as in the diagram, we take a cross section of the other pyramid and the right triangular pyramid. By similarity and the bases having the same area, the two cross sections must have the same area! Thus, the right triangular pyramid and the other pyramid have the same volume by Cavalieri's Principle.</p>
-<p>If that confused you, don't worry! We'll talk more about what Cavalieri's principle is and how to think about it later. But for now, this proves the formula for the volume of the pyramid.</p>
-<p>Now what about the surface area of a pyramid?</p>
-<p>Unfortunately, there is no general formula for this. When the base is a polygon, we can add up the areas of all of the faces of the pyramid to get the surface area. For the cone, the following formula (which I will not prove) gives us the surface area.</p>
-<div class="Definition" title="Surface Area of a Cone"> Given a cone with base a circle of radius \(r\) and height \(h\), the surface area of the cone is $$\pi r(r+\sqrt{r^2+h^2})$$</div>
-<p>This formula is not too important (I haven't seen many questions about the surface area of a cone on any math competitions), but it is one that has to be memorized, until you learn calculus :(.</p>
-<h3 id='sphe'>Sphere</h3>
-<p>The final important 3D shape is the sphere. How do we compute the volume and surface area of a sphere? We can again apply Cavalieri's Principle!</p>
-<p>Consider the following diagram.</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/volumesphere.png"><img src="/public/volumesphere.png" width="100%"></a></p>
-<p>On the right, you have a sphere with radius \(r\). On the left, you have a cylinder with radius \(r\) and height \(2r\), but with two cones removed from it. Both cones have radius \(r\) and height \(r\).</p>
-<p>The volume of the object on the left is something we can calculate with our knowledge so far. The volume of the cylinder is \(\pi r^2\cdot 2r=2\pi r^3\). The volume of either cone is \(\frac13\pi r^2\cdot r=\frac13\pi r^3\). Thus, the volume of the object on the left is $$2\pi r^3-2\cdot\frac13\pi r^3=\frac43\pi r^3$$</p>
-<p>Now we apply Cavalieri's principle. Let's say we pick a cross section of both the object on the left and the sphere \(a\) below the midpoint of the height, as in the diagram below.</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/volumesphere.jpg"><img src="/public/volumesphere.jpg" width="100%"></a></p>
-<p>On the left, our cross section is a ring, with outer radius equal to \(r\) (since the radius of the cylinder is \(r\)) and the inner radius equal to \(a\), since the small green triangle on the left is similar to the triangle with \(r\) height and \(r\) length. On the right, the cross section is a circle. Note that in the green triangle on the right, the hypotenuse is the radius of the sphere, which is \(r\). The height is \(a\). Thus, the length (which is the radius of the cross section) is \(\sqrt{r^2-a^2}\) by the Pythagorean Theorem. We draw these cross sections in the following diagram.</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/crosssectionvolproof.png"><img src="/public/crosssectionvolproof.png" width="100%"></a></p>
-<p>The area of the ring on the left is \(\pi r^2-\pi a^2=\pi(r^2-a^2)\). The volume of the circle on the right is \(\pi\left(\sqrt{r^2-a^2}\right)^2=\pi(r^2-a^2)\). Thus, by Cavalieri's Principle, the objects have the same volume since their cross sections have the same area. So, the volume of the sphere is \(\frac43\pi r^3\).</p>
-<p>Now how about the surface area? <a href='https://www.youtube.com/watch?v=GNcFjFmqEc8' target='_blank'>3Blue1Brown</a> does a far better job explaining how to understand the surface area of the sphere than I ever could. The conclusion is the following:</p>
-<div class="Definition" title="Surface Area of the Sphere"> A sphere with radius \(r\) has surface area \(4\pi r^2\)</div>
-<h2 id='chal'>Challenge: Why do we need Calculus?</h2>
-<p>In our discussions about the area of 2D shapes, we've never needed to invoke any ideas of Calculus, but in the section above, we've used Cavalieri's principle, and in the 3Blue1Brown video, the method of exhaustion to find the surface area and volume of important 3D shapes.</p>
-<p>These ideas are precursors to the development of calculus, and were later replaced by more general Calculus concepts (Fubini's Theorem and Volume Integrals). But why are these concepts necessary to find volumes of these objects? Is standard geometry not enough?</p>
-<p>To answer these questions, we need to take a dive through history.</p>
-<h3 id='met'>Method of Exhaustion</h3>
-<p>Do you remember this image from the first lecture notes?</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/diagg1.png"><img src="/public/diagg1.png" width="100%"></a></p>
-<p>This technique of using polygons to approximate a shape, in this case a circle, is known as the <strong>method of exhaustion</strong>. It was a well-known technique in Ancient Greece for finding the perimeter and area of shapes like ellipses, circles, and other objects using polygons.</p>
-<a id='cava'></a><p>The most famous of the methods by exhaustion was called Cavalieri's principle, named after a monk from the 16th century, despite being used by Greek mathematicians much earlier. It says the following:</p>
-<div class="Proposition" title="Cavalieri's Principle"> Given two shapes with the same vertical height, if each horizontal cross section of both shapes has the same length/area, then the shapes have the same area/volume.</div>
-<p>This principle, like the other method of exhaustion, should make sense to you. <a href='https://www.khanacademy.org/math/geometry/hs-geo-solids/xff63fac4:hs-geo-cavalieri-s-principle/a/cavalieri-s-principle-in-3d' target='_blank'>Khan Academy</a> has a nice demonstration of the principle.</p>
-<p>One of the earliest documents that we have that mentions the methods of exhaustion is Book XII of Euclid's <i>Elements</i>. Euclid, widely regarded as the father of geometry, dedicates almost the entirety of this book to discussing this technique and all of the things it can do.</p>
-<p>Through this book, we can see that Euclid deeply distrusted the method of exhaustion since he was not convinced that the mathematics behind it worked (in fact, he had good reason to doubt it: until the invention of calculus nearly 2000 years later, no mathematician had found a way to explain why it works.)</p>
-<p>He also felt that more standard, non-Calculus techniques were sufficient for dealing with shapes with flat sides, like polygons. So how exactly did Euclid deal with area without the method of exhaustion?</p>
-<h3 id='eq'>Equidecomposability</h3>
-<p>Euclid preferred thinking about area through the notion of <strong>equidecomposability</strong>. Here's how it works.</p>
-<p>Given any two shapes, they have the same area if I can break one of the shapes into finitely many pieces, rearrange the pieces, and form the other shape. If we can do this process for any two shapes, we call them <strong>scissors-congruent</strong>. Some examples of scissors-congruent shapes are below.</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/scissorscongruent.png"><img src="/public/scissorscongruent.png" width="100%"></a></p>
-<p>This idea makes a lot of sense, because if two shapes are made of the same pieces, they have the same area, right?</p>
-<p>Euclid believed that this was self-evident. In <i>Elements</i>, he says that it is obvious that any two scissors-congruent shapes have the same area.</p>
-<p>He also believed that any two polygons with the same area are scissors-congruent.</p>
-<p>Are these ideas true? The answer is yes!</p>
-<div class="Theorem" title="Bolyai-Gerwein"> Given any two polygons with the same area, there exists a way to break the first polygon into smaller polygons, rearrange them, and put them back together to make the second polygon.</div>
-<div class="Theorem" title="von Neumann"> Given any two shapes in the plane, if I can break one of them into pieces, rearrange them to make the second shape, then the shapes have the same area.</div>
-<p>These theorems were proved over 2400 years after Euclid! The Bolyai-Gerwein Theorem was proved in 1833 and von Neumann proved his theorem in 1929.</p>
-<p>The Bolyai-Gerwein theorem's proof is possible for you to learn yourself! See <a href='https://www.math.csi.cuny.edu/~abhijit/talks/scissors_slides.pdf' target='_blank'>this slideshow</a> for an easy explanation.</p>
-<p>What's important here is that Euclid's intuition was right: any two scissors-congruent shapes have the same area, and any two polygons that have the same area are scissors-congruent. This means that we don't need calculus when dealing with areas of polygons. Yay!</p>
-<h3 id='into'>Into the third dimension!</h3>
-<p>Euclid's books didn't just talk about perimeter and area, but also surface area and volume! He was of the firm opinion that the methods of exhaustion aren't necessary for dealing with polyhedra, the 3D equivalent of polygons.</p>
-<div class="Definition" title="Polyhedron"> A <strong>polyhedron</strong> is a 3D shape with polygons for faces. Some examples of polyhedra are below.</div>
-<p><a class="gallery img-center-short cbox-Element" href="/public/polyhedra.png"><img src="/public/polyhedra.png" width="100%"></a></p>
-<p>Euclid claimed the following:</p>
-<ul>
-  <li>Given any two 3D shapes, if they are scissors-congruent, they have the same volume.</li>
-  <li>Any two polyhedra with the same volume are scissors-congruent.</li>
-</ul>
-<p>If his claims are true, that would be perfect! We wouldn't need to use calculus to find the volume of any of our shapes (other than the sphere). We could just cut our shapes into pieces, rearrange them into a cube, and prove the volume formulas since we know the volume of a cube.</p>
-<p>So are they true?</p>
-<h3 id='story'>Story Time!</h3>
-<p>In 1842, Christian Ludwig Gerling sent a letter to Gauss, excitedly sharing the progress that he and his mentor, Farkas Bolyai, had made on the 3-dimensional version of the Bolyai-Gerwein problem. In this letter, Gerling showed that a mirror-image of a polyhedron is scissors-congruent to the polyhedron.</p>
-<p>In 1844, Gauss responded to the letter, expressing dissatisfaction that the volumes of certain polyhedron, including the tetrahedron, still depended on the method of exhaustion/Cavalieri's Principle, rather than the purely geometric idea of scissors-congruence.</p>
-<p>In the 1890's, David Hilbert, scouring a library of mathematics, comes upon this correspondence between Gauss and Gerling, finds the ideas interesting, and notes down the 3D Bolyai-Gerwein problem as an interesting problem.</p>
-<p>Hilbert, unlike Gauss, was much more negative on the subject. While Gauss believed that it was the limitations of mathematicians that was the reason for them not finding a way to deal with volume without calculus, Hilbert was convinced of the necessity of calculus. He believed that there were two different tetrahedrons with the same volume but that were not scissors-congruent.</p>
-<p>Hilbert, in 1900, then went on to publish a list of 28 challenging math problems, which he announced to be the most important math problems that still were unresolved. The third problem was the question "does there exist two tetrahedrons with the same volume but not scissors-congruent"?</p>
-<p>Within 6 months of Hilbert publishing his list, his student, Max Dehn, showed that there in fact do exist two tetrahedron that have the same volume but are not scissors-congruent. This, of course, upset many mathematicians.</p>
-<p>However, other proofs of the third problem were found to be published far earlier than Dehn's proof.</p>
-<p>For example, mathematician Wlayslaw Kretkowski had held a contest for 500 francs (around $10,000) for the solution to the same problem in 1884: 16 years earlier than Hilbert! The award was won by Ludwik Birkemajer, who published a 40 page solution, which predates Dehn's solution by around 15 years.</p>
-<p>Unfortunately, Dehn still gets the credit for solving the problem. The world is unfair :(</p>
-<h3 id='end'>Banach-Tarski</h3>
-<p>While many mathematicians were upset by Dehn's result, they still held onto the belief that Euclid's first claim was true: any two scissors-congruent shapes have the same volume.</p>
-<p>I mean, of course it is true! If I have a bowling ball, and I cut it into pieces, and rearrange these pieces, I can't just get two bowling balls of the same size, right?</p>
-<p>Banach and Tarski disagreed. Their proof in 1924 showed a result which should blow your mind: it is possible to cut a sphere into pieces, rearrange them, and put them together to get two spheres, each with the same volume of the first. That's right, by moving some pieces around, we can double the volume of the sphere.</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/tjpl2r02n1e21.jpeg"><img src="/public/tjpl2r02n1e21.jpeg" width="100%"></a></p>
-<p>This result threw away all hope that mathematicians had for equidecomposability as an approach to handling volume. Volume is too weird for geometry, it seems. Calculus it is!</p>
+<p>This week, we'll be learning about Trigonometry! Of course, trigonometry is a vast subject that you will spend nearly a year studying in high school, but we'll try to cover some of the more important results in these notes.</p>
+<p>Make sure you have read Week 4's notes before reading these notes.</p>
+<div class="Definition" title="Opposite Side" style="font-style:italic;"> Given a triangle, any of the three angles in the triangle touch \(2\) of the \(3\) sides. We call the third side the side <strong>opposite</strong> to the angle.</div>
+<h2 id='right'>Trigonometric Functions</h2>
+<p>Consider the following right triangles:</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/sinedemonstration.png"><img src="/public/sinedemonstration.png" width="100%"></a></p>
+<p>Both right triangles share an angle \(\alpha\). Since they both also have a right angle, they are similar by \(AA\). Thus, the ratios of their sides are equal.</p>
+<p>In particular, we have \(\frac{ED}{EA}=\frac{BF}{AF}\). \(ED\) and \(BF\) are the opposite sides to \(\alpha\) for their respective triangles, and \(EA\) and \(AF\) are the hypotenuses for the respective triangles.</p>
+<p>So as long as the angle is fixed (in this case, \(\alpha\)), the ratio of the opposite side to hypotenuse is the same. This is such an important quantity that we give it a name.</p>
+<div class="Definition" title="Sine" style="font-style:italic;"> For any angle \(0\lt\alpha\lt\frac\pi2\), draw a right triangle with \(\alpha\) as one of the angles. We define the <strong>sine</strong> of \(\alpha\), written as \(\sin\alpha\), as the ratio \(\frac{opp}{hyp}\), where \(opp\) is the side opposite to the angle \(\alpha\), and \(hyp\) is the hypotenuse.</div>
+<p>From our reasoning earlier, the choice of triangle doesn't matter in calculating the sine. This makes it a very versatile function.</p>
+<div class="remark" title="Etymology of Sine"> The earliest mentions of the sine function were from the Gupta dynasty in India, with astronomers like Aryabhatta using it to model the trajectories of celestial objects. It was named "jya-ardha" in Sanskrit, meaning "half-chord".This was transliterated as "jiba" in Arabic, but since vowels are often dropped in Arabic, it was often written as "jb". When Arabic texts were translated to Latin in the 12th century, the Gerard of Cremona thought that "jb" stood for "jaib", meaning bosom in Arabic, and chose the most similar word for bosom in Latin: "sinus". Later, this was transliterated into English, giving us "sine".</div>
+<br><div class="Definition" title="Adjacent Side" style="font-style:italic;"> Given a right triangle, and an acute (\(\lt\frac\pi2\)) angle \(\alpha\) in the triangle, the side which is not opposite to \(\alpha\) and not the hypotenuse is called the side <strong>adjacent</strong> to \(\alpha\).</div>
+<p>Since the triangles in the diagram above are similar, we also know that \(\frac{AD}{AE}=\frac{AB}{AF}\). \(AD\) and \(AB\) are the adjacent sides to \(\alpha\) of their respective triangles, and \(AE,AF\) are the hypotenuses. This again means that the ratio \(\frac{adj}{hyp}\) is independent of the triangle we choose, and only dependent on the value of \(\alpha\). That leads us to the next definition.</p>
+<div class="Definition" title="Cosine" style="font-style:italic;"> For any angle \(0\lt\alpha\lt\frac\pi2\), draw a right triangle with \(\alpha\) as one of the angles. We define the <strong>cosine</strong> of \(\alpha\), written as \(\cos\alpha\), as the ratio \(\frac{adj}{hyp}\), where \(adj\) is the adjacent side to \(\alpha\).</div>
+<p>We now define \(4\) more trigonometric functions which we will use regularly.</p>
+<table class="w3-table w3-striped w3-bordered">
+  <tbody><tr>
+    <th>Name</th>
+    <th>Notation</th>
+    <th>Definition</th>
+  </tr>
 
+  <tr>
+    <td>Tangent</td>
+    <td>\(\tan\alpha\)</td>
+    <td>\(\frac{\sin\alpha}{\cos\alpha}=\frac{opp}{adj}\)</td>
+  </tr>
+  <tr>
+    <td>Cotangent</td>
+    <td>\(\cot\alpha\)</td>
+    <td>\(\frac{\cos\alpha}{\sin\alpha}=\frac{adj}{opp}\)</td>
+  </tr>
+  <tr>
+    <td>Cosecant</td>
+    <td>\(\csc\alpha\)</td>
+    <td>\(\frac1{\sin\alpha}=\frac{hyp}{opp}\)</td>
+  </tr>
+  <tr>
+    <td>Secant</td>
+    <td>\(\sec\alpha\)</td>
+    <td>\(\frac1{\cos\alpha}=\frac{hyp}{adj}\)</td>
+  </tr>
+
+</tbody></table>
+<h2 id='obs'>Basic Observations</h2>
+<p>Now that we have our trigonometric functions, let's make some basic observations.</p>
+<p>In our right triangle diagram, observe that the side opposite to \(\alpha\) is adjacent to \(\frac\pi2-\alpha\), and the side adjacent to \(\alpha\) is opposite to \(\frac\pi2-\alpha\). Thus, we have $$\sin\alpha=\cos\left(\frac\pi2-\alpha\right)$$$$\cos\alpha=\sin\left(\frac\pi2-\alpha\right)$$That's certainly a useful observation.</p>
+<p>Now given some \(\alpha\), consider \(\sin(\alpha)^2+\cos(\alpha)^2\) (which we write as \(\sin^2\alpha+\cos^2\alpha\)). This equals $$\left(\frac{opp}{hyp}\right)^2+\left(\frac{adj}{hyp}\right)^2=\frac{opp^2+adj^2}{hyp^2}$$But now we use the Pythagorean Theorem! \(opp^2+adj^2=hyp^2\), so $$\sin^2\alpha+\cos^2\alpha=1$$Surprised? Well, what if I told you we actually did this already, in the first week! Don't believe me?</p>
+<p>In the first week, we observed that given a Pythagorean triple \(a^2+b^2=c^2\), we could rewrite it as \(\left(\frac ac\right)^2+\left(\frac bc\right)^2=1\). Viewing \(a\) as \(adj\), \(b\) as \(opp\), and \(c\) as \(hyp\) gives us \(\sin^2\alpha+\cos^2\alpha=1\). But this insight is far deeper than you might imagine.</p>
+<h2 id='ext'>Extending the domain</h2>
+<p>In Week 1, we noticed that \(\left(\frac ac,\frac bc\right)\) can be viewed as a point on the unit circle. With our rewrite, \((\cos\alpha,\sin\alpha)\) can be viewed as a point on the unit circle. As a demonstration of this principle, click on <a href='https://www.desmos.com/calculator/6hzwz03yuy' target='_blank'>this Desmos graph</a> to see the green point \((\cos\alpha,\sin\alpha)\) as \(\alpha\) varies from \(0\) to \(\frac\pi2\).</p>
+<p>Note that the slope of the hypotenuse is \(\frac{\sin\alpha-0}{\cos\alpha-0}=\tan\alpha\), the hypotenuse has length \(1\), and the angle formed by the \(x\)-axis and the hypotenuse is \(\alpha\)! This suggests that we may want to redefine \(\sin\) and \(cos\) as follows:</p>
+<div class="Definition" title="Sine and Cosine" style="font-style:italic;"> Given a real number \(\theta\), draw a line segment starting at the origin of length \(1\) such that the angle formed by the positive \(x\) axis and this segment is \(\theta\) (going counter-clockwise). We define \(\sin\theta\) to be the \(y\)-coordinate of the other endpoint of this segment, and \(\cos\theta\) to be the \(x\)-coordinate of the other endpoint.</div>
+<p><a class="gallery img-center-short cbox-Element" href="/public/FUN1.gif"><img src="/public/FUN1.gif" width="100%"></a></p>
+<div class="Exercise" title="Consistency of definition"> Check to see that these two definitions of \(\sin\) and \(\cos\) are identical.</div>
+<br><p>The beauty of this new definition is that \(\sin\) and \(\cos\) are now defined for all real numbers, rather than just for \(0\lt\alpha\lt\frac\pi2\). \(\tan\) and \(\sec\) are defined whenever \(\cos\alpha\neq0\), and \(\cot\) and \(\csc\) are defined whenever \(\sin\alpha\neq0\).</p>
+<p>If you are still confused by the new definition, see <a href='https://www.desmos.com/calculator/l8emijnzis' target='_blank'>this Desmos graph</a> and watch the relationship between \(\alpha\), the right triangle, and the values of \(\cos\alpha,\sin\alpha\).</p>
+<a id='new'></a><div class="Exercise" title="New Relationships"> With our new definition, prove the following relations for any \(\alpha\): $$\sin(\pi-\alpha)=\sin\alpha,\;\sin(\pi+\alpha)=-\sin(\alpha)$$$$\cos(\pi-\alpha)=-\cos\alpha,\;\cos(\pi+\alpha)=\cos\alpha$$$$\sin(2\pi+\alpha)=\sin\alpha,\;\cos(2\pi+\alpha)=\cos\alpha$$$$\sin(-\alpha)=-\sin\alpha,\;\cos(-\alpha)=\cos\alpha$$</div>
+<div class="exercise" title="Computing Trig Functions"> Compute \(\sin\alpha,\cos\alpha\) for the following values of \(\alpha\):<ul><li>\(\alpha=0\)</li><li>\(\alpha=\frac\pi2\)</li><li>\(\alpha=\pi\)</li><li>\(\alpha=\frac{3\pi}2\)</li></ul>
+<div class="solution">
+<p><a onclick="myCollapse('ex1')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="ex1" class="w3-container w3-hide">
+<ul><li>\(\sin\alpha=0,\cos\alpha=1\)</li><li>\(\sin\alpha=1,\cos\alpha=0\)</li><li>\(\sin\alpha=0,\cos\alpha=-1\)</li><li>\(\sin\alpha=-1,\cos\alpha=0\)</li></ul>
+</div>
+</div>
+</div>
+<h2 id='law'>Trigonometric Laws</h2>
+<p>Consider an arbitrary \(\triangle ABC\), and draw an altitude \(h\) from \(B\) to \(AC\).</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/fig1hoohoo.gif"><img src="/public/fig1hoohoo.gif" width="100%"></a></p>
+<p>Call \(\angle BCA\) \(\gamma\). Thus, \(\frac ha=\sin\gamma\), so \(a\sin\gamma =h\). Since \(h\) is an altitude, \(\frac12 bh\) is the area. Substituting in our new formula for \(h\), we have $$\text{Area}=\frac12ab\sin \gamma$$This is a very useful formula. Observe, though, that the choice of \(a,b,c\) doesn't really matter. From Week 4, we have \(\frac{abc}{4R}\) as a formula for the area of a triangle as well. If we call \(\angle BAC\) \(\alpha\) and \(\angle CBA\) \(\beta\), we have $$\frac{abc}{4R}=\frac12ab\sin\gamma=\frac12ac\sin\beta=\frac12bc\sin\alpha$$Dividing all of the equations by \(\frac12abc\) gives us $$\frac1{2R}=\frac{\sin\gamma}c=\frac{\sin\beta}b=\frac{\sin\alpha}a$$This is known as the <strong>Law of Sines</strong>, as it tells us that the ratio between the sine of an angle and the side opposite to it is constant for any triangle (and only dependent on the circumradius, oddly enough).</p>
+<p>Now, observe that \(\cos\gamma = \frac{CD}a\), so \(a\cos\gamma = CD\). Thus, \(b-a\cos\gamma=DA\). But, by the Pythagorean theorem, $$DA^2+h^2=c^2$$Substituting our values for \(h\) and \(DA\) into this formula gives us $$a^2\sin^2\gamma+b^2-2ab\cos\gamma+a^2\cos^2\gamma=c^2$$Since \(\sin^2\gamma+\cos^2\gamma=1\), we have $$a^2+b^2-2ab\cos\gamma=c^2$$This equation is called the <strong>Law of Cosines</strong>, and is also very useful.</p>
+<h2 id='spe'>Special Right Triangles</h2>
+<p>In Week 4, we discussed \(2\) special right triangles</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/right1d.gif"><img src="/public/right1d.gif" width="100%"></a></p>
+<p>We can use these special triangles to figure out values of \(\sin\) and \(\cos\) for certain angles.</p>
+<p>Note that $$\sin30^\circ=\sin\frac\pi6=\cos\frac\pi3=\frac12$$since the side opposite to \(30^\circ\) in the \(30-60-90\) triangle is \(1\) and the hypotenuse is \(2\).</p>
+<p>Likewise, $$\sin60^\circ=\sin\frac\pi3=\cos\frac\pi6=\frac{\sqrt3}2$$</p>
+<p>And, using the isosceles right triangle, we have $$\sin45^\circ=\sin\frac\pi4=\cos\frac\pi4=\frac1{\sqrt2}$$</p>
+<p>We can use the relations in <a href='#new'>New Relationships</a> to generate the following diagram:</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/zaunitocirclo.jpeg"><img src="/public/zaunitocirclo.jpeg" width="100%"></a></p>
+<p>You shouldn't memorize most of the material in this week's notes: rather, you should understand the process by which it is derived, and be confident in your ability to figure out similar problems on the fly.</p>
+<div class="Exercise" title="Equilateral Triangle"> Remember that an equilateral triangle has three angles, all with measure \(\frac\pi3\). Use the area formulas above to derive the area of an equilateral triangle.</div>
+<h2 id='challenge'>Challenge: Euler's Formula</h2>
+<p>This section will assume a basic understanding of complex numbers. If you haven't seen them before, I'd suggest just glancing through the conclusions of this section, and ignoring Euler's Formula and the derivations</p>
+<p>In the previous sections, we viewed \((\cos\theta,\sin\theta)\) as a point on the unit circle in the plane. What if we replaced the plane with the complex numbers? In this case, the \(x\)-axis becomes the real numbers, and the \(y\)-axis the imaginary numbers. In this case, \((\cos\theta,\sin\theta)\) would become \(\cos\theta+i\sin\theta\).</p>
+<p>What makes this such a powerful way of representing trigonometric functions is Euler's Formula, widely regarded by mathematicians as one of the most beautiful, if not the most beautiful, formula in all of mathematics.$$e^{i\theta}=\cos\theta+i\sin\theta$$If you don't really understand the formula, or don't get the hype yet, don't worry. We'll work through some of the more basic implications of this formula, although a full study of this formula would take years.</p>
+<h3>Polar Form</h3>
+<p>Suppose I have the complex number \(a+bi\). Then, the distance of this complex number from the origin, known as the <strong>magnitude</strong> of the complex number, is \(\sqrt{a^2+b^2}\). Call this value \(r\). So, we have \(a^2+b^2=r^2\).</p>
+<p>As we did above, we divide both sides by \(r^2\). We get $$\left(\frac ar\right)^2+\left(\frac br\right)^2=1$$Thus, we have a right triangle, with \(\frac ar\) as the horizontal leg of the right triangle, \(\frac br\) as the vertical leg of the right triangle, and \(1\) as the hypotenuse. Let \(\alpha\) be the angle of this triangle.</p>
+<p>So, \(\cos\alpha=\frac ar\), \(\sin\alpha =\frac br\), so \(r\cos\alpha + ri\sin\alpha=a+bi\). Thus, we can write $$a+bi=re^{i\alpha}$$This way of writing complex numbers is called <strong>polar form</strong>, since instead of writing the horizontal and vertical components of the complex number, we write the magnitude (how far it is from the origin) and the angle (the angle the line segment from the origin to the number makes with the positive \(x\)-axis).</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/scoopdiwoopy.png"><img src="/public/scoopdiwoopy.png" width="100%"></a></p>
+<p>Now, you may be wondering, why would you bother to do this? The answer is simple: multiplication. Suppose I wanted to multiply complex numbers \(a+bi,\;c+di\). Pretty painful, isn't it? Instead, what if I wanted to multiply \(re^{i\theta}\) with \(se^{i\alpha}\). Easy! We have $$re^{i\theta}\cdot se^{i\alpha}=rs\cdot e^{i(\theta+\alpha)}$$since \(e^a\cdot e^b=e^{a+b}\). This is great, since it tells us that the product of two complex numbers is the complex number with magnitude equal to the product of the magnitudes of the numbers we multiply, and angle equal to the sum of the angles of the numbers we multiply. Cool, huh?</p>
+<h3>De Moivre's Theorem</h3>
+<p>Euler's Formula also allows us to compute \(\cos\) and \(\sin\) for some trickier angles.</p>
+<p>From Euler's Formula and <a href='#new'>the new relationships</a>, it should be obvious that $$\cos\theta=\frac{e^{i\theta}+e^{-i\theta}}2,\;\sin\theta=\frac{e^{i\theta}-e^{-i\theta}}{2i}$$But there's a more subtle takeaway from the formula. If \(\mathcal{Re}(a+bi)=a\) and \(\mathcal{Im}(a+bi)=b\) for all complex numbers \(a+bi\), then $$\cos\theta=\mathcal{Re}(e^{i\theta}),\;\sin\theta=\mathcal{Im}(e^{i\theta})$$</p>
+<div class="Example" title="Sine/Cosine of Sum"> We know that $$\cos(\alpha+\beta)+i\sin(\alpha+\beta)=e^{i(\alpha+\beta)}$$$$=e^{i\alpha}\cdot e^{i\beta}=(cos\alpha+i\sin\alpha)(\cos\beta+i\sin\beta)$$$$=\cos\alpha\cos\beta-\sin\alpha\sin\beta+i(\sin\alpha\cos\beta+\cos\alpha\sin\beta)$$Thus, we have $$\cos(\alpha+\beta)=\cos\alpha\cos\beta-\sin\alpha\sin\beta$$$$\sin(\alpha+\beta)=\sin\alpha\cos\beta+\cos\alpha\sin\beta$$</div>
+<p>Without Euler's Formula, deriving the formulas in the example above would have been much, much more difficult. Let's derive some more formulas!</p>
+<div class="Exercise" title="Sine/Cosine of Difference"> Use a similar technique to the previous example to find \(\cos(\alpha-\beta)\) and \(\sin(\alpha-\beta)\).</div>
+<div class="Example" title="Sine/Cosine of Multiple"> We know that $$\cos(3\alpha+3\beta)+i\sin(3\alpha+3\beta)=e^{3i\alpha}$$$$=(e^{i\alpha})^3=(\cos\alpha+i\sin\alpha)^3$$$$=\cos^3\alpha-3\sin^2\alpha\cos\alpha+i(3\sin\alpha\cos^2\alpha-\sin^3\alpha)$$So, $$\cos(3\alpha)=\cos^3\alpha-3\sin^2\alpha\cos\alpha$$$$\sin(3\alpha)=3\sin\alpha\cos^2\alpha-\sin^3\alpha$$</div>
+<p>From this example, we can see that $$\cos(n\alpha)+i\sin(n\alpha)=e^{ni\alpha}=(e^{i\alpha})^n=(\cos\alpha+i\sin\alpha)^n$$This formula is known as <strong>De Moivre's Theorem</strong>, and is really hard to memorize, but is very easy to remember if we know Euler's Formula.</p>
+<div class="Exercise" title="Double Angle Formulas"> Using a similar technique to the example above, show that $$\cos(2\alpha)=\cos^2\alpha-\sin^2\alpha$$$$\sin(2\alpha)=2\sin\alpha\cos\alpha$$</div>
+<div class="Example" title="Product of Cosines"> Observe that $$\cos\alpha\cos\beta=\frac{e^{i\alpha}+e^{-i\alpha}}2\cdot\frac{e^{i\beta}+e^{-i\beta}}2$$$$=\frac12\cdot\left(\frac{e^{i(\alpha+\beta)}+e^{i(-\alpha-\beta)}+e^{i(\alpha-\beta)}+e^{i(\beta-\alpha)}}2\right)$$$$=\frac12\left(\cos(\alpha+\beta)+\cos(\alpha-\beta)\right)$$</div>
+<div class="Exercise" title="Product of Trig Functions"> Use the technique from the above example to show that $$\sin\alpha\sin\beta=\frac12\left(\cos(\alpha-\beta)-\cos(\alpha+\beta)\right)$$$$\sin\alpha\cos\beta=\frac12\left(\sin(\alpha+\beta)+\sin(\alpha-\beta)\right)$$</div>
+<p>There are so many more formulas that we can derive by playing around with Euler's Formula. What's amazing about it is that all of these formulas are somehow buried in a simple, one-line formula. Now that's a powerful formula.</p>
 </div>
 
 <div style="float:right"><a href="#" style="font-style: normal;"><bf>Top</bf></a></div>
