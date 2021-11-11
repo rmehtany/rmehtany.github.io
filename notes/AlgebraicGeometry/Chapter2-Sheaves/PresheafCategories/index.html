@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <title>
-    
+
      (Pre)sheaf Categories
-    
+
   </title>
 
   <!-- CSS -->
@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="/public/css/syntax.css">
   <link rel="stylesheet" href="/public/css/hyde.css">
   <link rel="stylesheet" href="/public/css/mystyle.css">
-  
+
   <link rel="stylesheet" href="/public/css/theorem.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="/public/css/w3.css">
@@ -323,9 +323,9 @@
       <div class="w3-text-white w3-center" style="font-size:20px;">
          Rushabh Mehta
       </div>
-      
+
       <p class="lead" style="font-size:16px;font-style:italic;">Certainly the best times were when I was alone with mathematics, free of ambition and pretense, and indifferent to the world.<br> - Robert Langlands</p>
-      
+
     </div>
 
     <nav class="sidebar-nav">
@@ -524,7 +524,7 @@
 
 
     \DeclareMathOperator{\Tr}{Tr}
- 
+
 
     \DeclareMathOperator{\min}{min}
     \DeclareMathOperator{\max}{max}
@@ -548,7 +548,7 @@
 </div>
 <div style="display:none">
 <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-2-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; />" role="presentation" style="font-size: 123%; position: relative;"><span id="MJXc-Node-9" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-10" class="mjx-mrow"></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"></math></span></span><script type="math/tex" id="MathJax-Element-2">
- 
+
   \newcommand{\1}{\ensuremath{\mathrm{1}}}
   \notag
 </script>
@@ -591,44 +591,44 @@
 </script>
 </div>
 
-      
+
 	   <!--<div style="float:right"><a href="../PresheavesandSheaves/"><bf>Next  |</bf></a></div>-->
 <div><a href="../PresheavesandSheaves/"><bf>|  Previous</bf></a></div>
 
 <div class="post">
   <h1 class="post-title">(Pre)sheaf Categories</h1>
 
-  
+
   <div class="w3-white w3-round-xlarge w3-tiny">
     <div class="w3-container w3-blue w3-round-xlarge" style="width:20%">20%</div>
   </div>
   <br>
-  
+
 
   <ul id="markdown-toc">
   <li><a href="#morphisms" id="markdown-toc-morphisms">Morphisms of (pre)sheaves</a>
   </li>
 </ul>
-  <p>It should be obvious to any readers (Does anyone read these notes? Hello!) that categorical objects are meaningful only through the morphisms between them. In this post, we’ll establish morphisms of (pre)sheaves, establish that they generate abelian categories, and then study the kernels and cokernels of the category.</p>
+  <p>It should be obvious to any readers that categorical objects are meaningful only through the morphisms between them. In this post, we’ll establish morphisms of (pre)sheaves, establish that they generate abelian categories, and then study the kernels and cokernels of the category.</p>
   <h2 id='morphisms'><i>Morphisms of (pre)sheaves</i></h2>
   <div class="Definition" title="Morphism of a (pre)sheaf"> Given presheaves \(\rmF\rightharpoondown X\), \(\rmG\rightharpoondown X\), a <strong>morphism of presheaves</strong>, indicated by \(\phi:\rmF\to\rmG\), is a collection of maps \(\phi(U):\rmF(U)\to\rmG(U)\) for all \(U\) in the base of the topology, such that it respects restriction. In other words, for \(V\subset U\) in the base, $$\phi(U)\circ R_{U,V}=R_{U,V}\circ\phi(V)$$</div>
-  <div class="Exercise" title="Presheaf Category" style="font-style:normal;"> Prove that the morphism definition above makes the collection of presheaves into a category.</div>
-  <p>The above definition defines presheaf morphisms, but sheaf morphisms are defined identically (in categorical terms, we say that the category of sheaves is a <strong>full subcategory</strong> of the category of presheaves. Can you define the term full subcategory?)</p>
-  <div class="Example" title="The forgetful morphism" style="font-style:normal;"> Given presheaves \(\rmF,\rmG\) such that for every \(U\), \(\rmF(U)\subset\rmG(U)\) and \(R_{U,V}\) restricted to \(\rmF\) is the restriction map for \(\rmF\), we  call \(\rmF\) a <strong>sub-(pre)sheaf</strong> of \(\rmG\). There's a natural presheaf morphism from \(\rmF\to\rmG\) given by inclusion. We call this morphism the <strong>forgetful morphism</strong><br>As an example, given \(\rmF\) the sheaf of differentiable functions on \(\bbR\), and \(\rmG\) the sheaf of continuous functions, the forgetful morphism "forgets" the differentiable nature of the functions in \(\rmF\).</div>
-  <p>From now on, we let \(\textbf{Set}_X\) represent the category of set sheaves on \(X\), \(\textit{Ab}_X\) the category of abelian group sheaves on \(X\), etc. Let \(\textbf{Set}^{pre}_X\) be the category of set presheaves on \(X\), and likewise for other presheaf categories. Since <a href='../PresheavesandSheaves/#lem1'>we can interpret presheaves as contravariant functors</a>, presheaf morphisms can be viewed as natural transformations (verify this!)</p>
+  <div class="Exercise" title="Presheaf Category"> Prove that the morphism definition above makes the collection of presheaves into a category.</div>
+  <br><p>The above definition defines presheaf morphisms, but sheaf morphisms are defined identically (in categorical terms, we say that the category of sheaves is a <strong>full subcategory</strong> of the category of presheaves. Can you define the term full subcategory?)</p>
+  <div class="Example" title="The forgetful morphism"> Given presheaves \(\rmF,\rmG\) such that for every \(U\), \(\rmF(U)\subset\rmG(U)\) and \(R_{U,V}\) restricted to \(\rmF\) is the restriction map for \(\rmF\), we  call \(\rmF\) a <strong>sub-(pre)sheaf</strong> of \(\rmG\). There's a natural presheaf morphism from \(\rmF\to\rmG\) given by inclusion. We call this morphism the <strong>forgetful morphism</strong>. As an example, given \(\rmF\) the sheaf of differentiable functions on \(\bbR\), and \(\rmG\) the sheaf of continuous functions, the forgetful morphism "forgets" the differentiable nature of the functions in \(\rmF\).</div>
+  <br><p>From now on, we let \(\textbf{Set}_X\) represent the category of set sheaves on \(X\), \(\textit{Ab}_X\) the category of abelian group sheaves on \(X\), etc. Let \(\textbf{Set}^{pre}_X\) be the category of set presheaves on \(X\), and likewise for other presheaf categories. Since <a href='../PresheavesandSheaves/#lem1'>we can interpret presheaves as contravariant functors</a>, presheaf morphisms can be viewed as natural transformations (verify this!)</p>
   <p>You might expect that a morphism on presheaves induces a morphism on stalks. And you'd be right. For any point \(p\in X\), let \(H^\rmF_p\) be defined as it is <a href='../PresheavesandSheaves/#stalk'>here</a> (in the link, the \(\rmF\) is omitted since there was only one presheaf in question) for presheaf \(\rmF\rightharpoondown X\). Let \(\phi:\rmF\to\rmG\) be a morphism of presheaves over \(X\). For some \(p\in X\), letting \(B_p\) be defined as in <a href='../PresheavesandSheaves/#stalk'>here</a>, we let \(f(U):\rmF(U)\to\rmF_p\) and \(g(U):\rmG(U)\to\rmG_p\) be the canonical embeddings defining the stalks for each \(U\in B_p\).</p>
   <p>Now how do we generate a canonical morphism between the stalks? Well, for each \(U\in B_p\), we have the morphism \(g(U)\circ\phi(U):\rmF(U)\to\rmG_p\). By the colimit properties of \(\rmF_p\), there exists a unique morphism \(\phi^*(p):\rmF_p\to\rmG_p\) such that for all \(U\), \(g(U)\circ\phi(U)=\phi^*(p)\circ f(U)\).</p>
   <a id='hom'></a><p>Interestingly, the set of all morphisms can itself be interpreted as a sheaf structure.</p>
-  <div class="Definition" title="Sheaf Hom"> Let \(\rmF,\rmG\rightharpoondown X\) be presheaves. For each \(U\), let $$\mathcal{Hom}(\rmF,\rmG)(U):=\Mor(\rmF\vert_U,\rmG\vert_U$$We call \(\mathcal{Hom}(\rmF,\rmG)\) the <strong>sheaf Hom</strong> of \(\rmF,\rmG\).
+  <div class="Definition" title="Sheaf Hom"> Let \(\rmF,\rmG\rightharpoondown X\) be presheaves. For each \(U\), let $$\mathcal{Hom}(\rmF,\rmG)(U):=\Mor(\rmF\vert_U,\rmG\vert_U)$$We call \(\mathcal{Hom}(\rmF,\rmG)\) the <strong>sheaf Hom</strong> of \(\rmF,\rmG\).
   </div>
-  <div class="remark" title="Hom vs Mor" style="font-style:normal;"> Since we aren't working in an additive category (necessarily), the term sheaf Hom should really be sheaf Mor. However, for historical reasons, the terminology remains.</div>	
-	<p>It should be obvious to see that as a functor, the sheaf Hom is covariant on its second input and contravariant on its first. To show that the sheaf Hom can be viewed as a sheaf itself, we need a small lemma.</p>
+  <div class="remark" title="Hom vs Mor"> Since we aren't working in an additive category (necessarily), the term sheaf Hom should really be sheaf Mor. However, for historical reasons, the terminology remains.</div>
+	<br><p>It should be obvious to see that as a functor, the sheaf Hom is covariant on its second input and contravariant on its first. To show that the sheaf Hom can be viewed as a sheaf itself, we need a small lemma.</p>
 	<a id='lem1'></a>
-<div class="Lemma" title="The covariant sheaf Hom functor commutes with limits"> In this lemma, we'll assume that \(\mathcal{Hom}(\rmF,\rmG)\) is a presheaf, although that will be proven in the next theorem. Given a small category \(J\), presheaves \(rmF,\rmG\rightharpoondown X\), and a functor \(H:J\to\rmF\)
+<div class="Lemma" title="The covariant sheaf Hom functor commutes with limits"> In this lemma, we'll assume that \(\mathcal{Hom}(\rmF,\rmG)\) is a presheaf, although that will be proven in the next theorem. Given a small category \(J\), presheaves \(\rmF,\rmG\rightharpoondown X\), and a functor \(H:J\to\rmF\)
 <div class="proof">
-<p><a onclick="myCollapse('sheaf hom')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="sheaf hom-but"></i></a><br></p>
-<div id="sheaf hom" class="w3-container w3-hide">
-  
+<p><a onclick="myCollapse('testingg')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="testingg-but"></i></a><br></p>
+<div id="testingg" class="w3-container w3-hide">
+</div>
 </div>
 </div>
 
