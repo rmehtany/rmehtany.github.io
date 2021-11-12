@@ -611,7 +611,7 @@
   <br>
 
 <ul>
-  <li><a href='#seq'>Sequences</a><ul><li><a href='#arith'>Arithmetic Sequences</a></li><li><a href='#geo'>Geometric Sequences</a></li></ul></li>
+  <li><a href='#seq'>Sequences</a><ul><li><a href='#arith'>Arithmetic Sequences</a></li><li><a href='#geo'>Geometric Sequences</a></li></ul></li><li><a href='#challenge'>Challenge: Euler Product</a></li>
 </ul>
 
 <p>This week is Countdown week, so the notes are going to be super short!</p>
@@ -639,12 +639,17 @@ Assume \(r\neq1\). Then $$(a+ar+\ldots+ar^{n-1})\cdot(r-1)=a\cdot(1+r+\ldots+r^{
 </div>
 </div>
 </div>
-<p>Unlike arithmetic sequences, there are many interesting geometric sequences that we can sum. Suppose I have a geometric sequence \(a_1,\ldots\), with \(r=\frac{a_2}{a_1}\).</p>
+<p>Unlike arithmetic sequences, which we can only take finite sums of, we can consider infinite sums of geometric sequences. Suppose I have a geometric sequence \(a_1,\ldots\), with \(r=\frac{a_2}{a_1}\).</p>
 <p>If \(|r|\geq1\), then it is clear that unless \(a_1=0\), \(\sum\limits_{i=1}^\infty a_i\) is \(\pm\infty\), or just not defined.</p>
-<p>But, if \(r\lt1\), \(\sum\limits_{i=0}^\infty ar^i\) has a finite value. Here's how we can find it.</p>
+<p>But, if \(|r|\lt1\), \(\sum\limits_{i=0}^\infty ar^i\) has a finite value. Here's how we can find it.</p>
 <p>Let \(S=\sum\limits_{i=0}^\infty ar^i\). So, $$S=a+ar+\ldots$$$$rS=ar+ar^2+\ldots$$$$a+rS=a+ar+\ldots=S$$$$a+rS=S$$$$S=\frac a{1-r}$$</p>
 <p>As an example of geometric series, suppose we wanted to compute the sum of all of the divisors of \(n\). We'd first prime factorize \(n\) as \(p_1^{e_1}p_2^{e_2}\ldots p_k^{e_k}\). Then, we observe that all divisors of \(n\) are of the form \(p_1^{a_1}\cdot\ldots\cdot p_k^{a_k}\), where \(a_i\leq e_i\) for each \(i\). Thus, the sum of divisors of \(n\) is $$(1+p_1+\ldots+p_1^{e_1})\cdot\ldots\cdot(1+p_k+\ldots+p_k^{e_k})$$However, each term is a geometric series, so we can replace each term by \(\frac{p_i^{e_i+1}-1}{p_i-1}\). Thus, our formula becomes $$\prod\limits_{i=1}^k\frac{p_k^{e_k+1}-1}{p_k-1}$$ (Side Note: \(\prod\) is similar to \(\sum\), except it is for products rather than sums.)</p>
-
+<h2 id='challenge'>Challenge: Euler Product</h2>
+<p>In the previous section, we observed that summing a geometric sequence when the ratio \(r\) is not in the range \((-1,1)\) leads to an undefined summation. When this happens, we say that the sum <strong>diverges</strong>. In this section, we'll show that the sum of reciprocals of primes diverges.</p>
+<p>One of the most beautiful results of the theory of sequences is the following fact: $$\sum\limits_{n=1}^\infty\frac1n=1+\frac12+\frac13+\ldots=\infty$$This sequence, which is known as the <strong>harmonic series</strong>, diverges. To see why, note that $$1+\underbrace{\frac12}_{\geq\frac12}+\underbrace{\frac13+\frac14}_{\geq\frac12}+\underbrace{\frac15+\frac16+\frac17+\frac18}_{\geq\frac12}$$In other words, $$\sum\limits_{n=1}^\infty\frac1n\geq1+\sum\limits_{n=1}^\infty\frac12=\infty$$</p>
+<p>Euler noticed that the harmonic series can be written as a product as follows, which is now called the <strong>Euler Product</strong>: $$\sum\limits_{n=1}^\infty\frac1n=\prod\limits_{p\text{ prime}}\left(1+\frac1p+\frac1{p^2}+\ldots\right)$$(Side Note: The notation \(p\text{ prime}\) means evaluate the expression for each prime \(p\), and multiply them all together). As an example, \(\prod\limits_{p\text{ prime}}p=2\cdot3\cdot5\cdot\ldots\))</p>
+<p>This product should be confusing to you. Why should I expect that equality to be true? Well, here is the really cool observation: every number \(n\) can be uniquely factorized as a product of prime powers. So, if \(n=p_1^{e_1}p_2^{e_2}\ldots p_k^{e_k}\), then $$\frac1n=\frac1{p_1^{e_1}}\cdot\frac1{p_2^{e_2}}\cdot\ldots\cdot\frac1{p_k^{e_k}}$$The right hand side of the equation above appears as a term in the Euler Product exactly once. This explains the rather mysterious, but in my opinion, beautiful equality.</p>
+<p>Now, we can make this equality even more beautiful by realizing that $$1+\frac1p+\frac1{p^2}+\ldots=\frac1{1-p^{-1}}$$So, we can rewrite Euler's Product as $$\sum\limits_{n=1}^\infty\frac1n=\prod\limits_{p\text{ prime}}\frac1{1-p^{-1}}=\prod\limits_{p\text{ prime}}\frac p{p-1}$$</p>
 
 
 </div>
