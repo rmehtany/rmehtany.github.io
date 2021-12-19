@@ -612,12 +612,217 @@
 
 
   <ul id="markdown-toc">
-<li><a href='#l'>Linear Equations</a></li>
+<li><a href='#d'>Deductive Reasoning</a></li>
+<li><a href='#t'>Truth Tables</a></li>
+<li><a href='#i'>Logical Identities</a></li>
+<li><a href='#q'>Quantifiers</a></li>
 </ul>
-<p>WORK IN PROGRESS: DON'T READ YET</p>
-<p>In Week 1, I mentioned that generating functionology is sort of a boogeyman: a field that can be equally gross and beautiful. In this week's notes, we'll go over some advanced counting techniques using generating functionology, which will help you handle recurrences, sequences, and counting problems.</p>
-<h2 id='l'>Linear Equations</h2>
-<p>Recurrence Relations
+<p>The examples in these notes have been developed by Daniel Velleman in his book <i>How to Prove it</i></p>
+<h2 id='d'>Deductive Reasoning</h2>
+<p>By this point, you've seen many proofs in this class, but what really is a proof? Intuitively, we think of proofs as a series of logical arguments. And by logical, we usually mean deductive reasoning.</p>
+<p>Before explaining what deductive reasoning is, let's begin with a few examples.</p>
+<div class="Example" title="Deductive Reasoning"><ol><li>It will either rain or snow tomorrow<br>It's too warm to snow tomorrow<br>Therefore, it will rain tomorrow</li><li>I don't work on Sundays<br>Today is Sunday<br>Therefore, I don't work today</li><li>I will go to work today or tomorrow<br>I am not going to work today<br>I will go to work tomorrow</li></ol> </div>
+<p>Each line in the examples above are called <strong>statements</strong>. Statements (for the most part) are either true or false. In the above examples, we took two statements as truth, and deduced a final statement as a consequence of the first two. We call the first two statements <strong>premises</strong> and the final statement a <strong>conclusion</strong>.</p>
+<div class="remark" title="Paradoxes"> Not every statement can be neatly resolved to be either true or false. For example, the statement "I will go work tomorrow" is contingent on my behavior tomorrow, which is still indeterminate (although most likely, it is true). There are also statements whose truth values are undefined. We call these statements <strong>paradoxes</strong>. Perhaps the most famous example of a paradoxical statement is "This statement is false". An important part of early 1900s mathematics was involved with setting up a rigorous definition of statements to avoid such indeterminate and undefined cases.</div>
+<br><p>Which of the examples are most similar? On a cursory glance, you may think examples 2 and 3 are the most similar, as they both deal with going to work. But, in terms of the type of argument used, examples 1 and 3 are most similar. To see why, let's simplify the statements using variables.</p>
+<p>Let \(R\) be the statement "It will rain tomorrow", \(S\) the statement "It will snow tomorrow", \(P\) the statement "I work today", \(Q\) the statement "I will work tomorrow", \(T\) the statement "I don't work on Sundays", and \(U\) the statement "Today is Sunday".</p>
+<p>Thus, our examples are rewritten as follows:<ul><li>\(R\) or \(S\)<br>not \(S\)<br>Therefore, \(R\)</li><li>\(T\)<br>\(U\)<br>Therefore, not \(P\)</li><li>\(P\) or \(Q\)<br>not \(P\)<br>Therefore, \(Q\)</li></ul></p>
+<p>Once we've rewritten our examples with variables, the similarity between examples 1 and 3 becomes more clear. We know that at least one of two events will happens, and we know that a particular one doesn't happen, so the other must happen.</p>
+<p>Using variables instead of english is advantageous because it allows us to see patterns that may be obscured by english, and it reduces the amount of characters needed to express an idea.</p>
+<p>In fact, we can condense these statements even further, by establishing notation for or, not, and the other logical connectives.</p>
+<table class="w3-table w3-striped w3-bordered">
+  <tbody><tr>
+    <th>Name</th>
+    <th>Symbol</th>
+  </tr>
+      <tr>
+        <td>or</td>
+        <td>\(\vee\)</td>
+      </tr>
+      <tr>
+        <td>and</td>
+        <td>\(\wedge\)</td>
+      </tr>
+      <tr>
+        <td>not</td>
+        <td>\(\lnot\)</td>
+      </tr>
+      <tr>
+        <td>therefore</td>
+        <td>\(\therefore\)</td>
+      </tr>
+</tbody></table>
+<p>With these symbols, our third example becomes:</p>
+<p>\(P\vee Q\)<br>\(\lnot P\)<br>\(\therefore Q\)</p>
+
+<div class="remark" title="The dangers of logical notation"> As wonderful as the above examples are, trying to convert all english to variables and mathematical operations is not a great idea. For example, which of the following is easier to understand? $$x_1\leq1\wedge x_2\leq1\wedge x_3\leq1$$$$\therefore\sum\limits_{i=1}^3x_i\leq3$$or "The sum of three numbers, each not greater than one, is not greater than three." To me, the latter is easier to digest. As with most things, there is a balance to be struck, and you'll get a feel for this balance with time.</div><br>
+
+<div class="Exercise" title="Deductive Reasoning"> Why is the following deductive reasoning invalid?<br>Either the cook or the maid has a child.<br>Either the doctor or the cook has a child<br>Therefore, either the doctor or the maid has a child.</div>
+<br>
+<div class="remark" title="Inclusive and Exclusive or"> One of the most common mistakes in logic involves the use of or. In mathematics, \(P\vee Q\) means that at least one of \(P\) and \(Q\) is true. In particular, both can be true. This is called the <strong>inclusive or</strong>. In English, we also use the <strong>exclusive or</strong>, which is denoted by xor. \(P\) xor \(Q\) is true when exactly one of \(P\) and \(Q\) is true. We won't worry about xor in this class.</div>
+<h2 id='t'>Truth Tables</h2>
+<p>In the previous section, we converted our arguments to logical notation. But how do we check whether our arguments are correct or not? We use truth tables.</p>
+<p>We want to make sure that regardless of whether each individual variable is true or not, the argument still holds. To do that, we make a <strong>truth table</strong>.</p>
+<br><div class="Example" title="Truth Table"> Let's take the aforementioned example 3, and verify that it works via a truth table. There are \(2^2=4\) possibilities: <ul><li>\(P\) and \(Q\) are true</li><li>\(P\) is true but \(Q\) isn't.</li><li>\(Q\) is true but \(P\) isn't.</li><li>Neither \(P\) nor \(Q\) are true</li></ul>For each of these cases, we evaluate the argument.
+  <table class="w3-table w3-striped w3-bordered">
+    <tbody><tr>
+      <th>\(P\)</th>
+      <th>\(Q\)</th>
+      <th>\(P\vee Q\)</th>
+      <th>\(\lnot P\)</th>
+    </tr>
+        <tr>
+          <td>T</td><td>T</td><td>T</td><td>F</td>
+        </tr>
+        <tr>
+          <td>T</td><td>F</td><td>T</td><td>F</td>
+        </tr>
+        <tr>
+          <td>F</td><td>T</td><td>T</td><td>T</td>
+        </tr>
+        <tr>
+          <td>F</td><td>F</td><td>F</td><td>T</td>
+        </tr>
+  </tbody></table>
+  Notice that \(P\vee Q\) and \(\lnot P\) are both true only when \(P\) is false and \(Q\) is true as per the table above. Thus, \(Q\) is true is a valid conclusion from the two premises.
+</div>
+<br>
+<p>The technique above of using a truth table to verify an argument is very useful. To summarize, this is how to make and use a truth table.<ol><li>Given premises and a conclusion with \(n\) variables, make a table with \(2^n\) rows, each corresponding to the different permutations of true and false for the variables.</li><li>Add columns for each of the premises and conclusion, and evaluate their truth value accordingly.</li><li>Check to see whether there is a row where all of the premises are true and the conclusion is false.</li></ol>
+<p>If such a row exists, the argument is wrong. If it doesn't, the argument holds.</p>
+
+<div class="Exercise" title="Truth Tables"> Write the truth table for the statement \(\lnot(P\wedge Q)\vee\lnot R\). When is this statement false?
+<div class="Solution">
+<p><a onclick="myCollapse('ex1')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="ex1" class="w3-container w3-hide">
+  <table class="w3-table w3-striped w3-bordered">
+    <tbody><tr>
+      <th>\(P\)</th>
+      <th>\(Q\)</th>
+      <th>\(R\)</th>
+      <th>\(\lnot(P\wedge Q)\)</th>
+      <th>\(\lnot R\)</th>
+      <th>\(\lnot(P\wedge Q)\vee\lnot R\)</th>
+    </tr>
+        <tr>
+          <td>T</td><td>T</td><td>T</td><td>F</td><td>F</td><td>F</td>
+        </tr>
+        <tr>
+          <td>T</td><td>T</td><td>F</td><td>F</td><td>T</td><td>T</td>
+        </tr>
+        <tr>
+          <td>T</td><td>F</td><td>T</td><td>T</td><td>F</td><td>T</td>
+        </tr>
+        <tr>
+          <td>T</td><td>F</td><td>F</td><td>T</td><td>T</td><td>T</td>
+        </tr>
+        <tr>
+          <td>F</td><td>T</td><td>T</td><td>T</td><td>F</td><td>T</td>
+        </tr>
+        <tr>
+          <td>F</td><td>T</td><td>F</td><td>T</td><td>T</td><td>T</td>
+        </tr>
+        <tr>
+          <td>F</td><td>F</td><td>T</td><td>T</td><td>F</td><td>T</td>
+        </tr>
+        <tr>
+          <td>F</td><td>F</td><td>F</td><td>T</td><td>T</td><td>T</td>
+        </tr>
+  </tbody></table>This statement is false only when \(P\), \(Q\), \(R\) are all false.
+</div>
+</div>
+</div>
+
+<div class="Exercise" title="Truth Tables 2"> Using truth tables, check whether the following deduction is valid:<br>Either John is stupid, or John isn't stupid but just is lazy.<br>John is stupid.<br>John isn't lazy
+<div class="solution">
+<p><a onclick="myCollapse('ex2')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="ex2" class="w3-container w3-hide">
+Let \(S\) be the statement "John is stupid" and \(L\) the statement "John is lazy". So, the argument is \(S\vee(\lnot S\wedge L),\;S,\;\therefore\lnot L\).
+<table class="w3-table w3-striped w3-bordered">
+  <tbody><tr>
+    <th>\(S\)</th>
+    <th>\(L\)</th>
+    <th>\(\lnot S\vee L\)</th>
+    <th>\(S\vee(\lnot S\vee L)\)</th>
+    <th>\(\lnot L\)</th>
+  </tr>
+      <tr>
+        <td>T</td><td>T</td><td>T</td><td>T</td><td>F</td>
+      </tr>
+      <tr>
+        <td>T</td><td>F</td><td>F</td><td>T</td><td>T</td>
+      </tr>
+      <tr>
+        <td>F</td><td>T</td><td>T</td><td>T</td><td>F</td>
+      </tr>
+      <tr>
+        <td>F</td><td>F</td><td>T</td><td>T</td><td>T</td>
+      </tr>
+</tbody></table>Note that in row \(1\), \(S\) is true, and so is \(S\vee(\lnot S\vee L)\), but \(\lnot L\) is false, showing that this argument is invalid.
+</div>
+</div>
+</div>
+
+<h2 id='i'>Logical Identities</h2>
+<p>While truth tables are an effective method of evaluating whether a logical argument is valid, it can get messy quite quickly. An statement with \(5\) variables will require \(32\) rows of a truth table.</p>
+<p>Thus, we often employ <strong>logical identities</strong> to simplify otherwise complicated arguments into simpler ones. Here's a table of the identities you may want to remember.</p>
+<table class="w3-table w3-striped w3-bordered">
+  <tbody><tr>
+    <th>Identity</th>
+    <th>Statement</th>
+    <th>Simplification</th>
+  </tr>
+      <tr>
+        <td rowspan="2">Commutativity</td><td>\(P\vee Q\)</td><td>\(Q\vee P\)</td>
+      </tr>
+      <tr>
+        <td>\(P\wedge Q\)</td><td>\(Q\wedge P\)</td>
+      </tr>
+      <tr>
+        <td rowspan="2">Associativity</td><td>\(P\vee (Q\vee R)\)</td><td>\((P\vee Q)\vee R\)</td>
+      </tr>
+      <tr>
+        <td>\(P\wedge (Q\wedge R)\)</td><td>\((P\wedge Q)\wedge R\)</td>
+      </tr>
+      <tr>
+        <td rowspan="2">Idempotent</td><td>\(P\vee P\)</td><td>\(P\)</td>
+      </tr>
+      <tr>
+        <td>\(P\wedge P\)</td><td>\(P\)</td>
+      </tr>
+      <tr>
+        <td rowspan="2">Distributive</td><td>\(P\vee (Q\wedge R)\)</td><td>\((P\vee Q)\wedge(P\vee R)\)</td>
+      </tr>
+      <tr>
+        <td>\(P\wedge (Q\vee R)\)</td><td>\((P\wedge Q)\vee (P\wedge R)\)</td>
+      </tr>
+      <tr>
+        <td rowspan="2">Absorption</td><td>\(P\vee (P\wedge Q)\)</td><td>\(P\)</td>
+      </tr>
+      <tr>
+        <td>\(P\wedge(P\vee Q)\)</td><td>\(P\)</td>
+      </tr>
+      <tr>
+        <td rowspan="2">De Morgan</td><td>\(\lnot(P\vee Q)\)</td><td>\(\lnot P\wedge\lnot Q\)</td>
+      </tr>
+      <tr>
+        <td>\(\lnot(P\wedge Q)\)</td><td>\(\lnot P\vee\lnot Q\)</td>
+      </tr>
+      <tr>
+        <td>Double Negation</td><td>\(\lnot\lnot P\)</td><td>\(P\)</td>
+      </tr>
+</tbody></table>
+<h2 id='q'>Challenge: Quantifiers</h2>
+<p>Sometimes, we run into <strong>formulas</strong>, which are statements, but with certain variables. Given a choice of value for those variables, the statement becomes one whose truth value we can evaluate.</p>
+<p>Here's a silly example: consider the formula "\(x\) is an even number". The truth value of this formula depends on the value of \(x\). If \(x=0\), it is false. If \(x=1\), it is true. If \(x\) is a person, it is false.</p>
+<p>We often write formulas as \(P(x)\), where \(x\) is the variable in the formula. Formulas can have multiple variables, in which case we'd write \(P(x_1,\ldots,x_n)\).</p>
+<p>How do we turn formulas into statements? We use <strong>quantifiers</strong>.</p>
+<div class="example" title="Universal Quantifier"> Consider the following statement: $$\forall x\in\mathbb Z,\;\frac x2\in\mathbb Z$$\(\mathbb Z\) represents the set of integers. So what does this statement mean? The symbol \(\forall\) means "for all". In other words, the statement is true only if for every integer \(x\), \(\frac x2\) is an integer. This statement is untrue, because \(1\) is an integer and \(\frac12\) is not an integer.</div>
+<br><p>As you can see in the example above, the \(forall\) symbol allows us to pick a domain of values for a variable, and ask the question, "for every \(x\) in our domain, is the resulting statement true?".</p>
+<p>Similarly, we have another quantifier.</p>
+<div class="example" title="Existential Quantifier"> Consider the following statement: $$\exists x\in\mathbb Z,\;\frac x2\in\mathbb Z$$What does this statement mean? The symbol \(\exists\) means "There exists". In other words, the statement is true only if there exists an integer \(x\) such that \(\frac x2\) is an integer. This statement is true, because \(2\) is an integer and \(\frac22=1\), an integer.</div>
+<p>The example above introduces the other common quantifier, known as the <strong>Existential Quantifier</strong>. These two quantifiers are widespread throughout mathematics.</p>
+
+<div class="Exercise" title="Negating Quantifiers">Prove that for any formula \(P(x)\), the following are equivalent statements:$$\lnot\forall x,P(x)\text{ and }\exists x\lnot P(x)$$$$\lnot\exists x,P(x)\text{ and }\forall x\lnot P(x)$$</div>
 
 </div>
 
