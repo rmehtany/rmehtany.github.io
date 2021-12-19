@@ -613,11 +613,133 @@
 
   <ul id="markdown-toc">
 <li><a href='#l'>Linear Equations</a></li>
+<li><a href='#p'>Polynomials</a></li>
+<li><a href='#r'>Challenge: Polynomial Rings</a></li>
 </ul>
-<p>WORK IN PROGRESS: DON'T READ YET</p>
-<p>In Week 1, I mentioned that generating functionology is sort of a boogeyman: a field that can be equally gross and beautiful. In this week's notes, we'll go over some advanced counting techniques using generating functionology, which will help you handle recurrences, sequences, and counting problems.</p>
 <h2 id='l'>Linear Equations</h2>
-<p>Recurrence Relations
+<p>A linear equation is an equation where all of the variables are to the first power.</p>
+<h3>Single Variable Linear Equations</h3>
+<p>The simplest type of linear equation is one with a single variable. Here's an example: $$2x+5=4x+2$$How do you solve these?<ul><li>Move all of the \(x\) terms to the left side.</li><li>Move all of the constant terms to the right side.</li><li>Divide both sides by the coefficient of the \(x\) term.</li></ul></p>
+<p>Applying this procedure to the example above gives us $$2x-4x+5=2$$$$-2x=2-5$$$$-2x=-3$$$$x=1.5$$</p>
+<p>This method of solving a linear equation is called <strong>isolation</strong>, as we are isolating the \(x\) variable on the left and putting everything else on the right. This method will be useful in the next section as well.</p>
+<h3>Multivariate Linear Equations</h3>
+<p>Now, suppose we have a linear equation with multiple variables$$4x+5y=10$$How do we solve this? Well, we can't, as there are multiple solutions. Whenever we have \(n\) equations and \(m\) variables, with \(m>n\), we can't solve the system of equations.</p>
+<p>However, we can apply our isolation trick. Let's isolate \(x\) as per our method above. $$4x=10x-5y$$$$x=2.5-1.25y$$</p>
+<p>This allows us to calculate the corresponding \(x\) value for any \(y\) value.</p>
+<p>Now suppose we have two equations: $$4x+5y=10$$$$6x+5y=60$$How do we solve here?</p>
+<h3>Solving systems with substitution</h3>
+<p>Let's isolate \(x\) in the first equation to get $$x=2.5-1.25y$$Now, we have a formula for \(x\) in terms of \(y\). We can replace \(x\) in the second equation with \(2.5-1.25y\).</p>
+<p>$$6(2.5-1.25y)+5y=60$$$$15-7.5y+5y=60$$$$-2.5y=45$$$$y=-18$$Now we know the value for \(y\), so we can substitute it in to compute \(x\)$$4x+5(-18)=10$$$$4x=100$$$$x=25$$</p>
+<p>This method of solving linear equations is called <strong>substitution</strong>. To review, here's how it works: <ul><li>Given \(n\) equations with \(m\lt n\) variables, take the equation with the least unique variables, and isolate one of them</li><li>Substitute the right hand side of the equation for the variable in all other equations.</li><li>Now you have \(n-1\) eqations with \(m-1\lt n-1\) variables. Repeat the above steps until you reach \(1\) variable.</li><li>Solve for the remaining variable</li><li>Go backwards and calculate each of the variables from the previous.</li></ul></p>
+<p>Let's do an example to show how it works</p>
+<div class="Example" title="Substitution"> Consider the following system: $$2x+y+z=5$$$$x+3y+4z=12$$$$5x+10y+z=15$$All of them have the same number of variables, so we pick the first equation, and isolate \(y\) to get \(y=5-2x-z\). Now, we substitute the right side into the other two equations to get $$x+3(5-2x-z)+4z=12$$$$5x+10(5-2x-z)+z=15$$Simplifying, we get $$-5x+z=-3$$$$-15x-9z=-35$$Now, we isolate \(z\) in the first equation to get \(z=5x-3\), and substitute it into our remaining equation. $$-15x-9(5x-3)=-35$$$$-60x=-62$$Thus, \(x=\frac{31}{30}\). Now, we go back one step to the equation \(z=5x-3\) to get \(z=\frac{13}6\). Finally, we go back to the first isolation \(y=5-2x-z\) to get \(y=\frac52\).</div>
+<br><p>The great part about substitution is that if the system has an answer, substitution will give it to you. The bad part is that it can take a very long time, especially for larger systems. Thus, we use a different technique to simplify systems a bit quicker.</p>
+<h3>Solving systems with Elimination</h3>
+<p>Let's revist the system we just solved: $$2x+y+z=5$$$$x+3y+4z=12$$$$5x+10y+z=15$$Our goal is to get rid of a variable to simplify the solving. Here's how we can do that.</p>
+<p>Suppose in equation \(a\), the coefficient of variable \(x\) is \(c\), and in equation \(b\), the coefficient is \(d\). Then, multiply \(a\) by \(d\) and \(b\) by \(-c\) and add the two equations together. The \(x\) terms will cancel out.</p>
+<p>Let's apply this to the first two equations. Multiplying the second equation by \(-2\) gives us \(-2x-6y-8z=-24\). Adding it to the first equation gives us \(-5y-7z=-19\).</p>
+<div class="Exercise" title="Elimination"> Solve the system above by applying elimination to equations two and three to get rid of \(x\), and then use substitution to finish the system.</div>
+<p>Elimination is in general a faster method for simplifying systems of equations, although choosing the equations that minimize the multiplication will help you solve equations much faster.</p>
+<p>Occasionally, you may see some patterns that make solving even faster.</p>
+<div class="Example" title="Special Systems"> Consider the following system: $$2x+y+z=15$$$$x+2y+z=16$$$$x+y+2z=17$$If I add all \(3\) equations together, I get \(4(x+y+z)=48\), and thus \(x+y+z=12\). Subtracting this from each of the equations gives us \(x=3\), \(y=4\), \(z=5\).</div>
+<h2 id='p'>Polynomials</h2>
+<p>Linear equations are nice and simple because they only involve variables to the first power. Polynomials, on the other hand, can have variables to any power. In these notes, we'll only deal with polynomials in a single variable. In other words, our polynomials will look like this:$$p(x)=a_nx^n+a_{n-1}x^{n-1}+\ldots+a_0$$</p>
+<h3>Polynomial Division</h3>
+<p>Like numbers, we can divide polynomials. Here's an example.</p>
+<div class="Example" title="Polynomial Division"> Suppose I wanted to divide \(x^3-2x^2-4\) by \(x-3\). We can essentially follow the same process as long division. First, multiply \(x-3\) by \(x^2\) to match the \(x^3\) term.
+  \begin{array}{l}
+   \phantom{x-3  ) }x^3\\
+  x-3\ \overline{)\ x^3 - 2x^2 + 0x - 4}\\
+  \phantom{x-3}\underline{- x^3 + 3x^2}
+  \end{array} Now, we subtract the result of the multiplication to get
+  \begin{array}{l}
+\phantom{x-3  ) } x^2 + x\\
+x-3\ \overline{)\ x^3 - 2x^2 + 0x - 4}\\
+\phantom{x-3  ) } \underline{-x^3 + 3x^2}\\
+\phantom{x-3  ) + 0x^3} x^2 + 0x -4
+\end{array}As indicated on top, we now multiply \(x-3\) by \(x\) to match the \(x^2\) term.
+\begin{array}{l}
+\phantom{x-3  ) } x^2 + x\\
+x-3\ \overline{)\ x^3 - 2x^2 + 0x - 4}\\
+\phantom{x-3  ) } \underline{-x^3 + 3x^2}\\
+\phantom{x-3  ) + 0x^3} x^2 + 0x -4\\
+\phantom{x-3  ) + 0} \underline{-x^2 + 3x\phantom{-44}}\\
+\end{array}Now, we multiply \(x-3\) by \(3\) to cancel the \(3x\) term.
+\begin{array}{l}
+\phantom{x-3  ) } x^2 + x + 3\\
+x-3\ \overline{)\ x^3 - 2x^2 + 0x - 4}\\
+\phantom{x-3  ) } \underline{-x^3 + 3x^2}\\
+\phantom{x-3  ) + 0x^3} x^2 + 0x -4\\
+\phantom{x-3  ) + 0} \underline{-x^2 + 3x\phantom{-44}}\\
+\phantom{x-3  ) + 0x^3 + x}3x-4\\
+\phantom{x-3  ) + 0x^3 +}\underline{-3x+12}\\
+\phantom{x-3  ) + 0x^3 + x + x^2}8
+\end{array}
+So, the result of our division is \(x^3-2x^2-4\) divided by \(x-3\) is \(x^2+x+3\) with a remainder of \(8\).
+</div>
+<p>The example above should be quite familiar to you, as it is essentially the same process as long division for integers.</p>
+<div class="remark" title="Degree"> When we deal with polynomials, we define their <strong>degree</strong> as follows. The \(0\) polynomial has degree \(-1\), any non-zero constant has degree \(0\), and any other polynomial has degree equal to the power of its highest term. In other words, linear polynomials have degree \(1\), quadratics have degree \(2\), etc.</div>
+<br><p>Notice that the degree of the remainder in the example above (\(8\)) is less than the divisor (\(x-3\)). This isn't a coincidence. The same way that the remainder of the division \(n/k\) is less than \(k\) (assuming \(k>0\)), the degree of the remainder when dividing by polynomials is less than the degree of the divisor.</p>
+<p>More importantly, given polynomials \(p\) and \(d\), with \(q\) the quotient when \(p\) is divided by \(d\), and \(r\) the remainder polynomial, we have the following equation:$$p=q\cdot d+r$$In the example above, we have $$x^3-2x^2-4=(x^2+x+3)(x-3)+8$$This is called <strong>quotient form</strong>.</p>
+<h3>Polynomial Roots</h3>
+<p>Given a polynomial \(p(x)\), a <strong>root</strong> \(y\) of \(p\) is a number such that \(p(y)=0\). How many roots does \(p\) have? How can we find them?</p>
+<div class="Theorem" title="Quotient form of a root"> Given a polynomial \(p(x)\), if \(y\) is a root of \(p\), then \(x-y\) is a factor of \(p\)
+  <div class="proof">
+  <p><a onclick="myCollapse('thm1')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+  <div id="thm1" class="w3-container w3-hide">
+    Let \(q(x)\) be the quotient and \(r(x)\) the remainder when \(p\) is divided by \(x-y\). If \(r=0\), then \(x-y\) is a factor of \(p\) as desired. If \(r\neq0\), then since the degree of \(r\) is less than the degree of \(x-y\), which is \(1\), \(r\) is a non-zero real number. So, $$p(y)=q(y)(x-y)+r$$$$0=q(y)(y-y)+r$$$$r=0$$Thus, \(x-y\) is a divisor of \(p\).
+  </div>
+  </div>
+</div>
+<div class="Theorem" title="Number of Roots of a Polynomial"> Given a non-zero polynomial \(p\) with degree \(n\geq0\), \(p\) has at most \(n\) roots.
+<div class="proof">
+<p><a onclick="myCollapse('thm2')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="thm2" class="w3-container w3-hide">
+  Clearly, for any \(y\neq0\), if \(p(x)=y\), then \(p\) has no roots. So, degree \(0\) polynomials have \(0\) roots. <br><br>And for any degree \(n\) polynomial \(p\), if \(y\) is a root of \(p\), then \(p(x)=q(x)\cdot(x-y)\). \(q(x)\) has degree at most \(n-1\), so it has at most \(n-1\) roots. So, \(p\) has all of \(q\)'s roots and \(y\), so it has at most \(n\) roots.
+</div>
+</div>
+</div>
+<p>The above two results tell us that if \(p\) is a degree \(n\geq0\) polynomial with roots \(x_1,\ldots,x_n\), then there exists a real number \(a\neq0\) such that $$p(x)=a\cdot\prod\limits_{i=1}^n(x-x_i)$$We call this the <strong>factorization</strong> of \(p\).</p>
+<h3>Quadratic Polynomials</h3>
+<p>Quadratic Polynomials are polynomials of degree \(2\). In other words, they are of the form \(ax^2+bx+c\). We can find the roots as follows.</p>
+<div class="Example" title="Completing the Square"> We want to find the roots of \(ax^2+bx+c\) where \(a\neq0\). Thus, we have the equation $$ax^2+bx+c=0$$Dividing both sides by \(a\) and subtracting \(\frac ca+\left(\frac b{2a}\right)^2\) from both sides gives us $$x^2+\frac bax+\left(\frac b{2a}\right)^2=\left(\frac b{2a}\right)^2-\frac ca$$Notice that \(\left(x+\frac b{2a}\right)^2=x^2+\frac ba+\left(\frac b{2a}\right)^2\), so $$\left(x+\frac b{2a}\right)^2=\left(\frac b{2a}\right)^2-\frac ca$$Square rooting both sides gives us $$x+\frac b{2a}=\pm\sqrt{\left(\frac b{2a}\right)^2-\frac ca}$$Multiplying both sides by \(2a\) and subtracting \(b\) from both sides gives us $$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$$This formula is known as the <strong>quadratic formula</strong>.</div>
+<div class="Exercise" title="Factorization Check"> Check that our theorems above are correct by showing that $$ax^2+bx+c=a\left(x+\frac{b+\sqrt{b^2-4ac}}{2a}\right)\left(x+\frac{b-\sqrt{b^2-4ac}}{2a}\right)$$</div>
+<p>This formula gives us a way of finding the factorization of any quadratic. Similarly, there are formulas for finding the factorization of cubics (degree 3) and quartics (degree 4) called <strong>Cardano's Formulas</strong>, but these formulas are tedious, and not worth remembering.</p>
+<div class="remark" title="Abel-Ruffini"> You may be wondering whether there is a formula for quintic (degree 5) polynomials and above. The answer is no, if we are only allowed to use simple formulas, and the proof of this fact is one you'll learn in an Algebra class in a few years.</div>
+<h3>Vieta's Formulas</h3>
+<p>As noted in the previous section, finding roots of quadratic polynomials is already hard, but the higher the degree is, the harder it gets. So are there ways of interacting with roots without directly calculating them? The answer is yes!</p>
+<h4>Elementary Symmetric Polynomials</h4>
+<p>Given a polynomial \(p\) with degree \(n\) and \(n\) roots \(x_1,\ldots,x_n\), the <strong>elementary symmetric polynomials</strong> are the following polynomials:$$S_1=x_1+x_2+\ldots+x_n$$$$S_2=x_1x_2+x_1x_3+\ldots+x_2x_3+\ldots+x_{n-1}x_n$$$$\vdots$$$$S_n=x_1x_2\ldots x_n$$In other words, the \(i\)th elementary symmetric polynomial is the polynomial that sums all the possible products of \(i\) of the \(n\) roots.</p>
+<p>Any symmetric polynomial \(q(x_1,\ldots,x_n)\) (symmetric meaning that the order of inputs doesn't matter) can be written in terms of elementary symmetric polynomials. Here are some examples for \(n=2\):$$x_1^2+x_2^2=(x_1+x_2)^2-2x_1x_2=S_1^2-2S_2$$$$x_1^3+x_2^3=S_1^3-3S_1S_2$$</p>
+<p>Why are these polynomials useful?</p>
+<div class="Theorem" title="Vieta's Formulas"> Given \(p(x)=a_nx^n+a_{n-1}x^{n-1}+\ldots+a_0\) with roots \(x_1,\ldots,x_n\), $$(-1)^n\frac{a_0}{a_n}=S_1$$$$(-1)^{n-1}\frac{a_1}{a_n}=S_2$$And in general, $$(-1)^{n-k}\frac{a_k}{a_n}=S_{k+1}$$</div>
+<p>In other words, just by looking at a polynomial, you know the values of all of the elementary symmetric polynomials on the roots!</p>
+<div class="Example" title="Quadratic Vieta's"> Given a quadratic \(ax^2+bx+c\), the roots \(r_1,r_2\) satisfy \(r_1+r_2=-\frac ba\) and \(r_1r_2=\frac ca\) by Vieta's formulas</div>
+<div class="Exercise" title="Using Vieta's Formulas"> Given the quadratic \(ax^2+bx+c\) has roots \(r_1,r_2\), compute \(r_1^3+r_2^3\) in terms of \(a,b,c\).</div>
+<br><p>Vieta's formulas imply another very useful theorem.</p>
+<div class="Theorem" title="Rational Root Theorem - RRT"> Given any polynomial \(a_nx^n+\ldots+a_0\) where \(a_0,\ldots,a_n\) are all integers, if \(\frac pq\) (in reduced form) is a root of this polynomial, then \(p\) is a divisor of \(a_0\) and \(q\) a divisor of \(a_n\).</div>
+<div class="Exercise" title="Using RRT"> Show using RRT that \(x^2+x+1\) has no rational roots.</div>
+<h2 id='r'>Challenge: Polynomial Rings</h2>
+<p>In the previous section, we noted the similarity between long division in the integers and in the set of polynomials. And, we also defined what it means to compute the remainder when one polynomial is divided by the other. Using these ideas, we can define mods for polynomials.</p>
+<p>But before that, a bit of notation. \(\mathbb N\) is the set of natural numbers, \(\mathbb Z\) is the set of integers, \(\mathbb Q\) the set of rational numbers, and \(\mathbb R\) the set of real numbers.</p>
+<p>Given a set \(S\), the notation \(S[x]\) refers to the set of polynomials where the coefficients belong to \(S\) and the variable is \(x\).</p>
+<h3>Defining mods</h3>
+<p>In Week 8, we consider the integers \(\mathbb Z\) mod some natural number \(n\). When we want to write the integers modulo \(n\), we write \(\mathbb Z/(n)\). Essentially, we are dividing the integers into \(n\) pieces, hence the notation.</p>
+<p>We'll use similar notation for polynomials. Given some modulus \(r(x)\), we say that \(p(x)\equiv q(x)\bmod r(x)\) if \(p(x)-q(x)\) is a multiple of \(r(x)\), or equivalently, if \(p(x)\) and \(q(x)\) have the same remainder when divided by \(r(x)\).</p>
+<p>We'll write this set as \(\mathbb R[x]/(r(x))\), which means the set of polynomials with real coefficients, modulo \(r(x)\).</p>
+<h3>Building interesting mod sets</h3>
+<p>Let's think about the natural numbers for a moment. The polynomial \(x+1\) is an element of the set \(\mathbb N[x]\), but it has no roots in the natural numbers. In fact, it's only root is in the integers, notably \(-1\). Because of this, we expand the space of natural numbers to include the integers.</p>
+<p>Similarly, the polynomial \(qx+p\) is an element of the set \(\mathbb Z[x]\), but unless \(q\) is a divisor of \(p\), it has no roots in the integers. For example \(2x-1\) has no roots in the integers. So, we are motivated to expand the space of integers to the rational numbers.</p>
+<p>In both of these examples, we found polynomials that didn't have roots, and then added new numbers to ensure that the polynomials have roots. But why are we allowed to do this?</p>
+<p>It's all thanks to mods! Let me show you why.</p>
+<p>Let's take our example from earlier. \(2x-1\) is a integer polynomial, but it has no roots in the integers. How do we create a root? Simple. Consider the space \(\mathbb Z[x]/(2x-1)\). In this space, we have all of our integers, but \(x\) is defined so that \(2x-1\equiv0\). In other words, \(x\equiv\frac12\)!</p>
+<p>So, \(\mathbb Z[x]/(2x-1)\) is the space we get when we take the integers, and add \(\frac12\) (and all of its integer multiples). We can do the same thing with \(3x-1,\;5x-1\), etc, to add all of the fractions to \(\mathbb Z\). Doing this for all the possible denominators creates the rational numbers.</p>
+<p>That's cool! But we can actually go even further. In \(\mathbb R[i]\), there are several polynomials without real roots. For example, \(i^2+1\).</p>
+<p>So let's apply our technique again! Let's consider the space \(\mathbb R[i]/(i^2+1)\). This space has all of the real numbers, but it also has a number \(i\), with the property that \(i^2+1\equiv0\), or in other words, \(i^2\equiv-1\).</p>
+<p>Ring a bell yet? These are the complex numbers! In fact, this is how they are defined. The complex numbers are just a mod set.</p>
+<p>Now you may be wondering, can we go even further? Can we find more polynomials with no roots in the complex numbers, and add them in to make an even bigger space? The answer is no.</p>
+<p>The complex numbers are special because they have a property called <strong>algebraic closure</strong>. In other words, every polynomial has a root. So, our fun little game ends with the complex numbers.</p>
+
 
 </div>
 
