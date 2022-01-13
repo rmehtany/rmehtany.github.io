@@ -612,12 +612,194 @@
 
 
   <ul id="markdown-toc">
-<li><a href='#r'>Recurrence Relations</a></li>
+<li><a href='#r'>Recurrence Relations</a><ul><li><a href='#c'>Characteristic Polynomial</a></li><li><a href='#t'>Non-linear recurrences</a></li></ul></li>
+<li><a href='#m'>Induction</a></li>
+<li><a href='#p'>Pigeonhole Principle</a></li>
+<li><a href='#chal'>Challenge: Model Theory</a></li>
 </ul>
-<p>WORK IN PROGRESS: DON'T READ YET</p>
-<p>In Week 1, I mentioned that generating functionology is sort of a boogeyman: a field that can be equally gross and beautiful. In this week's notes, we'll go over some advanced counting techniques using generating functionology, which will help you handle recurrences, sequences, and counting problems.</p>
+<p>In weeks 1-3, we studied permutations, combinations, and the many things one can do with them. In this week's notes, we'll be going over some more advanced topics in combinatorics that certainly are useful, but show up less frequently.</p>
 <h2 id='r'>Recurrence Relations</h2>
-<p>Recurrence Relations are relations on a sequence</p>
+<p>Recurrence Relations are relationships between elements of a sequence. As a common example, consider the recurrence relation for the Fibonacci numbers.$$f_{n+1}=f_n+f_{n-1}$$</p>
+<p>The Fibonacci numbers are defined by the recurrence relation above, and the following values: \(f_0=0\), \(f_1=1\). We call these starting values the <strong>initial conditions</strong> of the recurrence.</p>
+<div class="exercise" title="Finding Fibonacci Numbers"> Can you list out the first \(5\) Fibonacci numbers?</div><br>
+<p>The Fibonacci recurrence is a special type of recurrence relation known as a <strong>linear recurrence</strong>, which is of the following form: $$a_n=c_1a_{n-1}+c_2a_{n-2}+\ldots+c_ka_{n-k}$$These recurrences are called linear for the same reason linear polynomials are called linear: all of the terms have degree \(1\). Note that for the recurrence above, we need \(k\) initial conditions in order to determine the sequence. Can you see why?</p>
+<p>We care a lot about linear recurrences since we have a great way of solving them.</p>
+<h3 id='c'>Characteristic Polynomial</h3>
+<p>Let's take our general linear recurrence from before.</p>
+$$a_n=c_1a_{n-1}+c_2a_{n-2}+\ldots+c_ka_{n-k}$$
+<p>For those of you who know linear algebra, you'll know that the dimension of the space of solutions to this recurrence is at most \(k\) (as \(k\) initial conditions determines the sequence). So, we simply need to find \(k\) independent solutions to this recurrence, and thus all other solutions can be written in terms of these \(k\) base solutions.</p>
+<p>But how do we find the \(k\) base solutions? We guess that the sequence is a geometric sequence. In other words, we guess that \(a_n=x^n\) for some \(x\neq0\). Plugging this guess in, we get $$x^n-c_1x^{n-1}-c_2x^{n-2}+\ldots+c_kx^{n-k}=0$$Since \(x\neq0\), we can divide both sides by \(x^{n-k}\) to get $$x^k-c_1x^{k-1}-\ldots-c_k=0$$</p>
+<p>This is a degree \(k\) polynomial! We call this polynomial the <strong>characteristic polynomial</strong> of the linear recurrence. Thus, there are \(k\) roots, which we call \(x_1,\ldots x_k\). And, \(a_n=x_i^n\) is a valid solution to our recurrence for each \(1\leq i\leq k\). That means that every solution is of the form $$a_n=b_1x_1^n+b_2x_2^2+\ldots+b_kx_k^n$$for constants \(b_1,\ldots,b_k\).</p>
+<p>We call the equation above the <strong>general form</strong> of the solution to the linear recurrence. To find the specific values of \(b_1,\ldots,b_k\) for our recurrence, we plug in our initial conditions, and we get a system of \(k\) equations and \(k\) variables, which we can solve. Let's do an example to show how this is done.</p>
+<div class="Example" title="Solving the Fibonacci Recurrence"> The fibonacci recurrence is \(f_n=f_{n-1}+f_{n-2}\). With our guess of \(f_n=x^n\), we have $$x^n-x^{n-1}-x^{n-2}=0$$Dividing by \(x^{n-2}\), we have $$x^2-x-1=0$$Using the quadratic formula, we get $$x=\frac{1\pm\sqrt5}2$$So, the general form of the solution to the Fibonacci recurrence is $$f_n=b_1\left(\frac{1+\sqrt5}2\right)^n+b_2\left(\frac{1-\sqrt5}2\right)^n$$To find the values of \(b_1,b_2\), we plug in our initial conditions of \(f_0=0,f_1=1\). $$0=b_1\left(\frac{1+\sqrt5}2\right)^0+b_2\left(\frac{1-\sqrt5}2\right)^0$$$$1=b_1\left(\frac{1+\sqrt5}2\right)^1+b_2\left(\frac{1-\sqrt5}2\right)^1$$Solving this linear system gives us \(b_1=\frac1{\sqrt5}\), \(b_2=-\frac1{\sqrt5}\). So, the formula for the Fibonacci Numbers is $$f_n=\frac1{\sqrt5}\cdot\left(\left(\frac{1+\sqrt5}2\right)^n-\left(\frac{1-\sqrt5}2\right)^n\right)$$</div>
+<p>So that gives us a way to solve for any solution to a linear recurrence, right? Well, not so fast. What if the polynomial has <strong>multiple roots</strong>? In other words, what if it has a root multiple times?</p>
+<p>In that case, we have the following theorem.</p>
+<div class="Theorem" title="Multiple Roots"> If the characteristic polynomial of a recurrence \(a_n\) has the root \(r\) \(l\) times, then all of the following are solutions to the recurrence$$a_n=r^n,\;nr^n,\;n^2r^n,\ldots,\;n^{l-1}r^n$$</div>
+<p>This solves our problem, since it guarantees that we will have \(k\) solutions to our recurrence. Here is an example of a multiple-root recurrence.</p>
+<div class="Example" title="Finding a multi-root recurrence"> Let's say we want to find the general form for the recurrence \(a_n=7a_{n-1}^2-16a_{n-2}+12a_{n-3}\). By our technique, we find the characteristic polynomial to be $$x^3-7x^2+16x-12=(x-3)(x-2)^2$$So, the general form of the solution to the recurrence is $$a_n=b_13^n+b_22^n+b_3n2^n$$</div>
+<br>
+<div class="Exercise" title="Find the recurrence"> For some real numbers \(a,x,y\), let \(s_n=ax^n+by^n\). Suppose \(s_1=3\), \(s_2=7\), \(s_3=16\), \(s_4=42\). Find \(s_5\).
+<div class="solution">
+<p><a onclick="myCollapse('ex1')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="ex1" class="w3-container w3-hide">
+As you might expect, \(s_n\) can be written as a linear recurrence. To find out how, let's try to write \(s_n\) in terms of other \(s\) terms. Start with \(s_{n-1}=ax^{n-1}+by^{n-1}\), and multiply it by \(x+y\) to get $$(x+y)s_{n-1}=ax^n+by^n+ax^{n-1}y+by^{n-1}x$$$$=s_n+xys_{n-2}$$Rewriting this gives us $$s_n-(x+y)s_{n-1}+xys_{n-2}=0$$Plugging in our known values gives us the equations $$16=7(x+y)-3xy,\;42=16(x+y)-7xy$$Treating \(x+y\) and \(xy\) as our variables, this is a linear system, so we get $$x+y=-14,\;xy=-38$$So, $$s_5=-14s_4+38s_3=20$$
+</div>
+</div>
+</div>
+<h3 id='t'>Non-linear recurrences</h3>
+<p>What do we do if the recurrence is not linear? We expand out a few terms and hope we can see a pattern. Let's do an example.</p>
+<div class="Example" title="non-linear recurrence"> Suppose \(a_0=0\) and \(a_n=2a_{n-1}+1\). Find a formula for \(a_n\). This may seem linear, but linear recurrences don't have constant terms like \(1\). So what do we do?<br><br>Let's try to expand the recurrence a bit to see if we see a pattern.$$a_n=2a_{n-1}+1=2(2a_{n-2}+1)+1=4a_{n-2}+2+1$$$$=8a_{n-3}+4+2+1$$Can you see a pattern yet? Let's use the pattern to fully expand the recurrence$$a_n=2^na_0+2^{n-1}+\ldots+1=\sum\limits_{i=0}^{n-1}2^i=2^n-1$$</div>
+<p>There are no general rules for solving all recurrences, so if you see a non-linear recurrence on a contest, you can be sure that there's some nice pattern waiting for you if you expand it.</p>
+<h2 id='m'>Induction</h2>
+<p>The <strong>principle of mathematical induction</strong>, otherwise known as just induction or PMI, is confusing for how simple it is.</p>
+<p>Before explaining what PMI is, let's do an example.</p>
+<div class="Theorem" title="Summing odd naturals"> For any positive natural number \(n\),$$S_n=\sum\limits_{i=1}^n(2i-1)=1+3+\ldots+2n-1=n^2$$
+  <div class="proof">
+  <p><a onclick="myCollapse('thm1')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+  <div id="thm1" class="w3-container w3-hide">
+    <ul><li><strong>Base Case:</strong> If \(n=1\), \(S_n=1\), and \(1^2=1\), so \(S_1=1^2\).</li><li><strong>Inductive Case:</strong> Suppose \(S_{n-1}=\sum\limits_{i=1}^{n-1}2n-1=(n-1)^2\). Then, $$S_n=\sum\limits_{i=1}^n2n-1=2n-1+S_{n-1}=2n-1+n^2-2n+1=n^2$$</li></ul>
+  </div>
+  </div>
+</div>
+<p>How does the above proof work? It works as follows:</p>
+<ol><li>The base case tells us \(S_1=1^2\).</li><li>Then, since \(2-1=1\), the inductive case tells us that \(S_2=2^2\).</li><li>Since \(3-1=2\), the inductive case tells us that \(S_3=3^2\)</li></ol>
+<p>Do you see the pattern here? The idea behind induction is like that of dominoes. If I line them up really nicely so that each domino will knock over the next (the inductive case), then we only need to knock over the first domino (the base case) for all of the dominoes to fall.</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/dominoes.gif"><img src="/public/dominoes.gif" width="100%"></a></p>
+<p>Induction allows us to prove a lot of interesting results. Here are a few more examples of useful induction proofs to give you a flavor of what they look like.</p>
+<div class="Theorem" title="Summing consecutive cubes"> For any natural number \(n\),$$(1+2+\ldots+n)^2=1^3+2^3+\ldots+n^3$$
+  <div class="proof">
+  <p><a onclick="myCollapse('thm2')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+  <div id="thm2" class="w3-container w3-hide">
+    <ul><li><strong>Base Case:</strong> If \(n=0\), both sides of the equation are \(0\), and thus equal.</li><li><strong>Inductive Case:</strong> Suppose \((1+2+\ldots+n-1)^2=1^3+2^3+\ldots+(n-1)^3\). Then, $$(1+2+\ldots+n)^2=(1+2+\ldots+n-1)^2+2n(1+2+\ldots+n-1)+n^2$$$$=(1^3+\ldots+(n-1)^3)+2n\cdot\frac{n(n-1)}2+n^2$$$$=(1^3+\ldots+(n-1)^3)+n^3-n^2+n^2=1^3+\ldots+n^3$$</li></ul>
+  </div>
+  </div>
+</div>
+<div class="Theorem" title="Divisible Polynomials"> For all natural numbers \(n\), \(x^{2n+1}+y^{2n+1}\) has \(x+y\) as a factor.
+<div class="proof">
+<p><a onclick="myCollapse('thm3')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="thm3" class="w3-container w3-hide">
+  <ul><li><strong>Base Case:</strong> When \(n=0\), \(x^{2n+1}+y^{2n+1}=x+y\), so \(x+y\) obviously has \(x+y\) as a factor.</li><li><strong>Inductive Case:</strong> Suppose \(x^{2n-1}+y^{2n-1}\) has \(x+y\) as a factor. Then, by modular arithmetic, $$x^{2n-1}+y^{2n-1}\equiv0\bmod{x+y}$$By mod properties, $$x^{2n-1}\equiv-y^{2n-1}\bmod{x+y}$$Since \(x^2-y^2=(x+y)(x-y)\), \(x^2-y^2\equiv0\bmod{x+y}\), so by mod properties, $$x^{2n-1}\cdot x^2\equiv-y^{2n-1}\cdot y^2\bmod{x+y}$$$$x^{2n+1}+y^{2n+1}\equiv0\bmod{x+y}$$</li></ul>
+</div>
+</div>
+</div>
+<p>There are many variants of induction. The most useful variant is called <strong>Strong Induction</strong>. In this variant, we prove the following steps for our property \(P\).</p>
+<ul><li> <strong>Inductive Case:</strong> We show that for any natural number \(n\), if for all natural numbers \(m\) such that \(m\lt n\), property \(P\) is true, then property \(P\) is true for \(n\) as well.</li></ul>
+<p>Interestingly, for strong induction, you don't need a base case (why?). It is called strong, since instead of assuming that the property is true just for the natural number just below \(n\), we assume it is true for all natural numbers below \(n\). This can be useful in some induction proofs, like the following.</p>
+<div class="Theorem" title="Products of Primes"> All natural numbers \(\gt1\) can be written as a product of one or more primes.
+<div class="proof">
+<p><a onclick="myCollapse('thm4')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="thm4" class="w3-container w3-hide">
+  <ul><li><strong>Inductive Case:</strong> Given \(n\gt1\), suppose that every natural number \(m\) with \(1\lt m\lt n\) can be written as a product of primes. There are two possibilities.<ol><li>There exists a natural number \(a\) such that \(1\lt a\lt n\) and \(a\) is a factor of \(n\). In this case, \(b=\frac na\) is also a natural number. Since \(a\gt1\), \(b\lt n\), and since \(a\lt n\), \(b\gt1\). So, both \(a\) and \(b\) can be written as a product of primes. So \(n\) can be written as the product of \(a\)'s primes times the product of \(b\)'s primes.</li><li>If Case 1 is not true, then by the definition of prime numbers, \(n\) is prime, and thus is a product of prime numbers.</li></ol></ul>
+</div>
+</div>
+</div>
+<p>This proof would have been near impossible to do with just vanilla induction, but strong induction is good enough to prove the result. Here are some exercises to test your understanding.</p>
+<div class="Exercise" title="De Moivre's"> Prove the follow equation is true for all natural numbers \(n\) <strong>without</strong> Euler's Formula$$(\cos\theta+i\sin\theta)^n=\cos n\theta+i\sin n\theta$$<strong>Hint:</strong> remember the formulas for \(\cos(a+b)\) and \(\sin(a+b)\).</div><br>
+<div class="Exercise" title="Fibonacci"> Prove that the following statements hold for all natural numbers \(n\)$$f_{n+1}\lt\left(\frac74\right)^n$$$$f_{2n+2}\text{ is a multiple of }f_{n+1}$$$$\gcd(f_{n+2},f_{n+1})=1$$</div><br>
+<div class="Exercise" title="Binomial"> Prove the Binomial Theorem from Week 3 for all natural numbers \(n\)$$(x+y)^n=\sum\limits_{k=0}^n{n\choose k}x^ky^{n-k}$$</div><br>
+<h2 id='p'>Pigeonhole Principle</h2>
+<p>The pigeonhole principle is another example of an idea that's very simple, but can be used in very interesting ways.</p>
+<p>Imagine that there are 10 pigeons, and 9 pigeonholes (areas for pigeons to roam). If each pigeon needs to go into a hole, then clearly at least one hole has more than one pigeon.</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/pigeonhole.png"><img src="/public/pigeonhole.png" width="100%"></a></p>
+<p>This argument generalizes as follows. If I have \(n\) pigeons, and \(k\) holes, then there is a hole with at least \(\left\lfloor\frac nk\right\rfloor\) pigeons (\(\lfloor\rfloor\) is the <strong>floor function</strong>, which returns the largest integer less than the input). Let's take a look at some examples of this principle in use.</p>
+<p>We first used the principle in Week 8, in the proof of Bezout's Lemma. For those of you who didn't know this principle before this week, I'd suggest revisiting those notes to understand that proof. Here's a more fun application of the principle:</p>
+
+<div class="Example" title="Californian hair count"> The census estimates that there are more than 30 million people in California who are not bald. And, every human has at most 1 million hairs on their head. By the pigeonhole principle, there are at least \(30\) Californians who are not bald and have the same number of hairs on their head.</div>
+<p>Weird, huh? Let's look at some non-trivial applications.</p>
+<div class="Exercise" title="Subset sums"> Given any \(10\) integers in the range \([1,100]\), there exists two different non-empty subsets of the \(10\) integers with the same sum.
+  <div class="solution">
+  <p><a onclick="myCollapse('ex3')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+  <div id="ex3" class="w3-container w3-hide">
+    Given any subset of the \(10\) integers, the maximum sum of that subset is \(10\cdot100=1000\), and the minimum is \(1\cdot1=1\). So, there are \(1000\) possibilities for the sum. And, there are \(2^{10}-1=1023\) possible subsets of the \(10\) integers. Since \(1023\gt1000\), there exists two different non-empty subsets with the same sum!
+  </div>
+  </div>
+</div>
+<div class="Exercise" title="Polyhedra"> Every polyhedron has at least two faces with the same number of edges.
+<div class="Solution">
+<p><a onclick="myCollapse('ex4')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="ex4" class="w3-container w3-hide">
+  Let \(N\) be the maximum number of edges a face on our polyhedron has. Then, the face with \(N\) edges is adjacent to \(N\) faces, and the number of edges they have can range from \(3\) to \(N\). Since there are at least \(N+1\) faces and \(N-2\) possible number of edges, by the pigeonhole principle, at least two faces have the same number of edges.
+</div>
+</div>
+</div>
+<div class="Exercise" title="Fibonacci Multiples"> For any positive natural number \(n\), there exists a positive Fibonacci number \(f_k\) such that \(n\) is a factor of \(f_k\).
+<div class="Solution">
+<p><a onclick="myCollapse('ex5')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="ex5" class="w3-container w3-hide">
+For each natural number \(k\), consider the pair \((f_k\bmod n,f_{k+1}\bmod n)\). There are infinitely many such pairs (since there are infinitely many natural numbers), but only \(n^2\) possible values for the pairs (since there are \(n\) possible remainders \(\bmod n\)). So, there exists naturals \(i,j\) such that \(f_i\equiv f_j\bmod n\) and \(f_{i+1}\equiv f_{j+1}\bmod n\). Thus, $$f_{i-1}\equiv f_{i+1}-f_i\equiv f_{j+1}-f_j\equiv f_{j-1}\bmod n$$By induction (Exercise for the reader: set up the induction properly), for all \(k\leq i,j\), \(f_{i-k}\equiv f_{j-k}\bmod n\). Letting \(k=\min(i,j)\), we have \(f_{|j-i|}\equiv0\bmod n\). Thus, \(f_{|j-i|}\) is positive and a multiple of \(n\).
+</div>
+</div>
+</div>
+<h2 id='chal'>Challenge: Model Theory</h2>
+<p>This section is quite pedantic, so I'd suggest skipping it unless you are interested in understanding the logical underpinnings of induction. All visuals in this section are thanks to Eliezer Yudkowsky, and his blog "Highly Advanced Epistemology 101 for Beginners".</p>
+<h4>Counting</h4>
+<p>The ability to count is one of the first skills we look for young children to grasp, but it often is forgotten how difficult a task this is.</p>
+<p>Zvonkin points to the following example. Let's step into the child's shoes and learn how to count, but in Japanese.</p>
+<p><i>ichi, ni, san, shi, go, roku, shichi, hachi, kyu, ju</i></p>
+<p>First, you have to memorize these names. It is not easy! Once you've done this, now you have to learn to count backwards. <i>ju, kyu, hachi,...</i> Once you have done this, try to do some basic arithmetic. What is <i>ichi</i> plus <i>roku</i>? <i>Hachi</i> divided by <i>shi</i>?</p>
+<p>Over time, though, we begin to forget how difficult the task of counting is. It is <i>natural</i>, we think. Why is \(1+1=2\)? What else would it be? After all, if I put one apple and another apple together, of course I get two apples!</p>
+<p>But we, as logicians, shouldn't be satisfied by this non-answer. After all, logic is the study of conclusions following from statements. From what statement does \(1+1=2\) follow?</p>
+<p>But even an answer to this question wouldn't feel particularly satisfactory. I could say, \(1+1=2\) due to the rules of arithmetic, made precise by the logicians before me. But \(1+1=2\) doesn't feel that way.</p>
+<p>Figuring out facts about the natural numbers doesn't feel like we are deducing conclusions from assumptions. It feels like we are <i>discovering</i> these numbers, and we have invented rules to describe them. The natural numbers, in some fashion, are baked into the universe. So what are they? Are numbers real? Inventions? Logical? Physical?</p>
+<div class="remark" title="Meditation"> These questions may seem silly, and in some sense, they are. But there is a legitimate philosophical question buried here. Is the act of recognizing that \(1\) apple and \(1\) apple form \(2\) apples different than \(1+1=2\)? If so, what would explain the uncanny ability of the equation \(1+1=2\) to describe real life? And if they are the same, then what exactly is arithmetic?</div>
+<h4>Models</h4>
+<p>In logic, we view the notion of \(1\) apple and \(1\) apple forming \(2\) apples to be a <strong>model</strong>, a representation of a rule. \(1+1=2\) is a rule which informs us about how objects behave, and the apples are a representation of it.</p>
+<p>But this, too, isn't the full picture, since the natural numbers themselves are a model. But of what?</p>
+<p>To answer this question, let's play a little game. Suppose I am a logician from another land, one where the ideas of the natural numbers aren't known. How exactly would you explain to me what they are?</p>
+<p>You could try showing me the apples, but that'd be of little use. As with the children learning to count, what gives meaning to the abstraction of apples combining to arithmetic is the idea that addition generalizes, and applies to all objects, not just apples.</p>
+<p>You may also try to get me to look at my fingers (if I have them), and teach me to count this way. But this would be a bit like teaching you the words <i>ichi, ni, san, ...</i> I would immediately understand that these words serve a function for you, but have little perspective as to what function.</p>
+<p>The best approach would be to set up rules. We'd hope to develop rules so that any model of these rules must behave intuitively like the natural numbers do. So where do we start?</p>
+<p>Perhaps we'd start with \(0\). You might inform the logician, there exists a special natural number, and we call it zero.</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/1.jpeg"><img src="/public/1.jpeg" width="100%"></a></p>
+<p>Next, we'd introduce the idea of a <strong>successor</strong>. For us normal folk, the successor of a natural number is just the number \(+1\), but since we haven't even gotten around to addition yet, we'll use this idea instead. To represent the successor of a number \(n\), we will write \(Sn\).</p>
+<p>This is all of the notation we need to write our rules. The first rule, simple as it sounds, is just "0 is a natural number".</p>
+<p>The second rule, as you may guess, is "every natural number has a successor". You may think these two rules are sufficient, but our alien friend presents us a model of our rules which puts that belief into question.</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/2.jpeg"><img src="/public/2.jpeg" width="100%"></a></p>
+<p>In our friend's model, \(1\) is the successor of \(0\), and \(0\) is the successor of \(1\). That, of course, isn't a model we want to allow, so we introduce a new rule: "No natural number has \(0\) as a successor". But this, too, isn't good enough. Our alien friend presents a revised model.</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/3.jpeg"><img src="/public/3.jpeg" width="100%"></a></p>
+<p>In this model, no number has \(0\) as a successor, but that doesn't prevent the looping behavior we'd like to avoid. So what rule can we introduce to avoid it?</p>
+<p>The rule we are looking for is <strong>injectivity</strong>. In other words, if for any two natural numbers \(x,y\), if \(Sx=Sy\), then \(x=y\). This ensures that \(Sx\) maps to new numbers, avoiding the loop. Right? Well, kind of.</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/4.jpeg"><img src="/public/4.jpeg" width="100%"></a></p>
+<p>Our friend presents a revised model which fits with our new rule set. In this model, we do get the infinite chain behavior we expect from the naturals, but we also have a secondary chain, which is undesirable. So how do we fix this? We can modify our second rule to be: "0 is the only natural number which is not the successor of any natural".</p>
+<p>But even this isn't sufficient. Our alien friend presents yet another model of the natural numbers that looks nothing like what we think of the natural numbers.</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/5.jpeg"><img src="/public/5.jpeg" width="100%"></a></p>
+<p>Clearly, in the model above, there is a \(0\) element, it is the only element without a successor, and successorship is injective.</p>
+<p>At this point, you are frustrated. No matter what rules you try, you aren't able to prevent our alien friend from coming up with a model of the rules different from your intuition of the numbers. So what is going on?</p>
+<h4>Logical Order</h4>
+<p>Let's attempt to write up the rules we've come up with so far. Our logical language has two symbols: \(0\) and \(S\), with symbols like \(1,2,\ldots\) as notation for \(S0,SS0,\ldots\).</p>
+<p>Our first rule is that there exists a \(0\) element. We write that as follows: $$\exists x\in\mathbb N,\;x=0$$</p>
+<p>Our second rule is that \(0\) is the only element that isn't the successor of any element. This is a bit messy to write out, but it would look like this: $$\left(\forall x\in\mathbb N,\;Sx\neq0\right)\wedge\left(\forall x\neq0\in\mathbb N\;\exists y\in\mathbb N,\;x=Sy\right)$$</p>
+<p>Our third rule is injectivity. We'd write it as follows:$$\forall x,y\in\mathbb N,\;Sx=Sy\to x=y$$As a brief side note, the symbol \(\to\) represents "implies". In other words, \(A\to B\) is true if it is not true that \(A\) is true and \(B\) is false.</p>
+<p>So why have we written these rules in logical notation? Well, so we can distinguish the different <strong>orders</strong> of logic. Any logical statement that doesn't use quantifiers is considered to be part of <strong>propositional logic</strong>, otherwise known as \(0\)th order logic.</p>
+<p>First order logic contains all of \(0\)th order logic, but also allows for quantifiers over the model. In our case, we are modelling the natural numbers, so we can quantify over them using \(\forall\) and \(\exists\).</p>
+<p>As you can tell, all three of our rules have been written in first order logic. Are there any other forms of logic?</p>
+<p>The answer is yes!</p>
+<p>What if we wanted to quantify not over the natural numbers, but over first order formulas! We can do this, and we call this sort of logic <strong>second order logic</strong>. If you are confused, let's do an example.</p>
+<div class="Example" title="Induction"> Earlier in these notes, we "defined" induction. Let's write induction logically now. The idea is that for any property \(P(x)\), if \(P(0)\) is true, and if \(P(x)\) implies \(P(x+1)\) for any natural number \(x\), then \(P(x)\) is true for all natural \(x\).<br><br>To write this in logical notation, we need to know what exactly \(P\) is. In fact, \(P\) is just a single-variable first-order logical formula! So we can write as follows: $$\forall\text{ first order formulas }P(x)\left(P(0)\wedge\forall n\in\mathbb N,\;P(x)\to P(x+1)\right)\to\forall n\in\mathbb N,\;P(n)$$This second order statement is the principle of mathematical induction.</div>
+<p>You can start to guess at what third order, fourth order, and even \(n\)th order logic looks like.</p>
+<h4>Induction</h4>
+<p>Let's return to our game with our newly discovered second order logic. How do we rule out our alien friend's model of the natural numbers? Intuitively, we want to say that all of the natural numbers should be "connected" to \(0\), or in other words, if I add one to \(0\) sufficiently many times, I should be able to reach any natural number.</p>
+<p>But we already have found a way of saying this! The final rule that we need is induction! Why does induction do the job?</p>
+<p>For any non-natural number, we can find some property \(P\) that satisfies the natural numbers, but doesn't satisfy the non-natural number, which we call <strong>non-standard</strong> numbers.</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/6.jpeg"><img src="/public/6.jpeg" width="100%"></a></p>
+<p>A property which does this for the \(3\) element loop \(A-B-C\) is the following:</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/7.jpeg"><img src="/public/7.jpeg" width="100%"></a></p>
+<p>That's awesome! So our final ruleset is as follows:<ul><li>\(\exists x\in\mathbb N,\;x=0\)</li><li>\(\left(\forall x\in\mathbb N,\;Sx\neq0\right)\wedge\left(\forall x\neq0\in\mathbb N\;\exists y\in\mathbb N,\;x=Sy\right)\)</li><li>\(\forall x,y\in\mathbb N,\;Sx=Sy\to x=y\)</li><li>\(\forall\text{ first order formulas }P(x)\left(P(0)\wedge\forall n\in\mathbb N,\;P(x)\to P(x+1)\right)\to\forall n\in\mathbb N,\;P(n)\)</li></ul></p>
+<p>So to answer our initial question, these \(4\) rules are the rules whose model is the natural numbers we are used to.</p>
+<div class="Exercise" title="Infinite Chain"> Can you come with a property \(P\) that the natural numbers satisfy but the infinite chain in the last alien diagram doesn't?</div>
+<h4>Consistency</h4>
+<p>Before we celebrate too much, there are still some considerations to be had. First, how do we know that there isn't some other weird model that our alien friend can think of that violates our rule set? Perhaps more troublingly, what if these rules are contradictory?</p>
+<p>Some of our concerns can be resolved by the following theorem.</p>
+<div class="Theorem" title="Gödel's Completeness Theorem"> For any set of rules in first order logic, they are consistent if and only if there is a model for them.</div>
+<p>This is great, since we have a model for our rules! This means that our rules are consistent! Well, almost. We'll only really described our models with nice pictures. To really establish the existence of a model, we'd have to build the natural numbers from scratch, which requires set theory (and we won't touch that for now).</p>
+<p>An alternate approach is to drop the \(4\)th rule of the natural numbers. With this, we can apply the above theorem to generate ourselves a model! Will it be a model of the natural numbers as we know them? Not necessarily: there might be non-standard numbers in there. But, there are ways of dealing with these numbers.</p>
+<h4>Non-Standard Models</h4>
+<p>For now, we'll resort to the second approach, since set theory is a no-go (for now). So how do we know that there even exists non-standard models? We invoke the next theorem.</p>
+<div class="Theorem" title="Compactness Theorem"> Given any infinite set of first order rules, if any finite subset of those rules has a model, the entire set of rules has a model.</div>
+<p>We'll use it as follows. We'll take our \(3\) natural number rules, and add a new symbol \(\infty\). And, we add the following rules: $$\infty\gt0$$$$\infty\gt1$$$$\vdots$$</p>
+<p>For any finite subset of these rules, we have finitely many of these \(\infty\gt k\) rules. Call them \(\infty\gt k_1\), \(\infty\gt k_2\), ..., \(\infty\gt k_n\). Let \(x = \max(k_1,\ldots,k_n)+1\). So, \(x\gt k_1\), \(x\gt k_2\), etc, and thus the natural numbers satisfies this rule set!</p>
+<p>By the compactness theorem, there exists a number \(\infty\) that is bigger than any natural number in a valid model of the natural numbers. This tells us that there are non-standard models.</p>
+<p>This is only the tip of the iceberg: much of logic is playing around with fun non-standard models to prove interesting things!</p>
 
 </div>
 
