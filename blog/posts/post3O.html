@@ -155,6 +155,7 @@
                             <p>I'm only going to post some of the medium and hard problems since most of the easy ones are trivial.</p>
 <h4><a href='https://leetcode.com/problems/product-of-array-except-self/' style='color:#0a37cc' target='_blank'>Product of Array Except Self</a>
 <pre class='prettyprint' style="font-size: 15px">
+from itertools import accumulate
 def productExceptSelf(self, nums: List[int]) -> List[int]:
     output = list(accumulate([1]+nums[:-1],lambda x,y:x*y))
     accumulate_right = nums[-1]
@@ -180,6 +181,144 @@ def maxProduct(self, nums: List[int]) -> int:
             curr_max = max(n,curr_min*n)
             curr_min = min(n,curr_max*n)
     return max(max_,curr_max)
+</pre>
+<h4><a href='https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/' style='color:#0a37cc' target='_blank'>Find Minimum in Rotated Sorted Array</a>
+<pre class='prettyprint' style="font-size: 15px">
+def findMin(self, nums: List[int]) -> int:
+    lo = 0
+    hi = len(nums)
+    if nums[hi-1]>=nums[lo]:
+        return nums[lo]
+    while True:
+        mid = (lo + hi)//2
+        if nums[mid] > nums[hi-1]:
+            lo = mid + 1
+        elif nums[mid-1] > nums[mid]:
+            return nums[mid]
+        else:
+            hi = mid
+</pre>
+<h4><a href='https://leetcode.com/problems/search-in-rotated-sorted-array/' style='color:#0a37cc' target='_blank'>Search in Rotated Sorted Array</a>
+<pre class='prettyprint' style="font-size: 15px">
+def search(self, nums: List[int], target: int) -> int:
+    lo = 0
+    hi = len(nums)
+    while hi > lo:
+        mid = (lo+hi)//2
+        if nums[mid] == target:
+            return mid
+        if nums[mid] > target:
+            if nums[mid] <= nums[hi-1]:
+                hi = mid
+            else:
+                lo = mid + 1
+        else:
+            if nums[mid] >= nums[lo]:
+                lo = mid + 1
+            else:
+                hi = mid
+    return -1
+</pre>
+<h4><a href='https://leetcode.com/problems/3sum/' style='color:#0a37cc' target='_blank'>3 Sum</a>
+<pre class='prettyprint' style="font-size: 15px">
+def threeSum(self, nums: List[int]) -> List[List[int]]:
+    target = -10**5-1
+    nums.sort()
+    output = []
+    length = len(nums)
+    i = 0
+    while True:
+        while length > i and target == -nums[i]:
+            i += 1
+        if i == length:
+            return output
+        target = -nums[i]
+        l = i + 1
+        h = length - 1
+        while h > l:
+            if nums[l]+nums[h] == target:
+                output.append([nums[i],nums[l],nums[h]])
+                old_l = l
+                while h > l and nums[old_l] == nums[l]:
+                    l += 1
+                old_h = h
+                while h > l and nums[old_h] == nums[h]:
+                    h -= 1
+            elif target > nums[l]+nums[h]:
+                old_l = l
+                while h > l and nums[old_l] == nums[l]:
+                    l += 1
+            else:
+                old_h = h
+                while h > l and nums[old_h] == nums[h]:
+                    h -= 1
+</pre>
+<h4><a href='https://leetcode.com/problems/counting-bits/' style='color:#0a37cc' target='_blank'>Counting Bits</a>
+<pre class='prettyprint' style="font-size: 15px">
+def countBits(self, n: int) -> List[int]:
+    l = [0]
+    for i in range(1,n+1):
+        l.append(l[i>>1]+i%2)
+    return l
+</pre>
+<h4><a href='https://leetcode.com/problems/coin-change/' style='color:#0a37cc' target='_blank'>Coin Change</a>
+<pre class='prettyprint' style="font-size: 15px">
+def coinChange(self, coins: List[int], amount: int) -> int:
+    dp = [0]
+    for i in range(1,amount+1):
+        dp.append(min((dp[i-c]+1 for c in coins if i>=c),default=amount+1))
+    return dp[-1] if dp[-1]<=amount else -1
+</pre>
+<h4><a href='https://leetcode.com/problems/longest-increasing-subsequence/' style='color:#0a37cc' target='_blank'>Longest Increasing Subsequence</a>
+<pre class='prettyprint' style="font-size: 15px">
+def lengthOfLIS(self, nums: List[int]) -> int:
+    l = []
+    for n in nums:
+        k = bisect(l,n)
+        if k and n == l[k-1]:
+            continue
+        if len(l) > k:
+            l[k] = n
+            continue
+        l.append(n)
+    return len(l)
+</pre>
+<h4><a href='https://leetcode.com/problems/longest-common-subsequence/' style='color:#0a37cc' target='_blank'>Longest Common Subsequence</a>
+<pre class='prettyprint' style="font-size: 15px">
+def longestCommonSubsequence(self, text1: str, text2: str) -> int:
+    n,m = len(text1),len(text2)
+    l = [[0]*(n+1) for _ in range(2)]
+    for i in range(m):
+        for j in range(1,n+1):
+            if text2[i] == text1[j-1]:
+                l[i%2][j] = l[1-i%2][j-1] + 1
+            else:
+                l[i%2][j] = max(l[1-i%2][j],l[i%2][j-1])
+    return l[1-m%2][n]
+</pre>
+<h4><a href='https://leetcode.com/problems/merge-k-sorted-lists/' style='color:#0a37cc' target='_blank'>Merge k sorted lists</a>
+<pre class='prettyprint' style="font-size: 15px">
+def output_val(l):
+    try:
+        return l[1].val
+    except:
+        return 10001
+def mergeKLists(self, lists: List[ListNode]) -> ListNode:
+    if not lists:
+        return None
+    start = min(enumerate(lists),key=output_val)
+    if not start[1]:
+        return None
+    prev = start
+    lists[prev[0]] = prev[1].next
+    curr = min(enumerate(lists),key=output_val)
+    while curr[1]:
+        prev[1].next = curr[1]
+        prev = curr
+        lists[prev[0]] = prev[1].next
+        curr = min(enumerate(lists),key=output_val)
+    prev[1].next = None
+    return start[1]
 </pre>
                             <span class="d-block text-right tm-color-primary" id='tags'><a href='/blog/other/'>Category: Other</a></span>
                         </div>
