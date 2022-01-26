@@ -41,58 +41,42 @@ https://templatemo.com/tm-553-xtra-blog
   });
   </script>
 
-<script>
-    function startup() {
-	var post_id = 2;
-        var client = new XMLHttpRequest();
-        client.open('GET', '/blog/reviews/blogdata.txt');
-        client.onload = function()
-        {
-            if(client.responseText != '')
-            {
-                var txt = client.responseText.split('\n');
-		var num = txt.length-1;
-		var im = "image";
-		var tit = "title";
-		var fig = "#fig";
-		var rel = "related";
-		var data = txt[num-post_id].split('|');
-		document.getElementById("title").innerHTML = data[2];
-		document.getElementById("date").innerHTML = data[4];
-		if (num < 5) {
-		    var i = 1;
-		    $("#fig1").hide();
-		    $("#fig2").hide();
-		    $("#fig3").hide();
-		    for (let j = 0; j < num; j++) {
-		        if (num-post_id != j) {
-			    data = txt[j].split('|');
-			    document.getElementById(rel.concat(i.toString())).setAttribute('href',data[0]);
-			    document.getElementById(im.concat(i.toString())).setAttribute('src',data[1]);
-			    document.getElementById(tit.concat(i.toString())).innerHTML = data[2];
-			    $(fig.concat(i.toString())).show();
-			    i++;
+	<script>
+	    function startup() {
+		var post_id = 4;
+	        var client = new XMLHttpRequest();
+	        client.open('GET', '/blog/reviews/blogdata.txt');
+	        client.onload = function()
+	        {
+	            if(client.responseText != '')
+	            {
+	                var txt = client.responseText.split('\n');
+			var num = txt.length-1;
+			var im = "image";
+			var tit = "title";
+			var fig = "#fig";
+			var rel = "related";
+			var data = txt[num-post_id].split('|');
+			document.getElementById("title").innerHTML = data[2];
+			document.getElementById("date").innerHTML = data[4];
+
+			    var bucket = [];
+			    for (var i=0;i<num;i++) {
+				if (i != num - post_id) {
+	    			bucket.push(i);}
+			    }
+			    for (var j=1;j<4;j++) {
+				data = txt[bucket.splice(Math.floor(Math.random()*bucket.length), 1)[0]].split('|');
+				document.getElementById(rel.concat(j.toString())).setAttribute('href',data[0]);
+				document.getElementById(im.concat(j.toString())).setAttribute('src',data[1]);
+				document.getElementById(tit.concat(j.toString())).innerHTML = data[2];
+			    }
 			}
-		    }
-		} else {
-		    var bucket = [];
-		    for (var i=0;i<num;i++) {
-			if (i != num - post_id) {
-    			bucket.push(i);}
-		    }
-		    for (var j=1;j<4;j++) {
-			data = txt[bucket.splice(Math.floor(Math.random()*bucket.length), 1)[0]].split('|');
-			document.getElementById(rel.concat(j.toString())).setAttribute('href',data[0]);
-			document.getElementById(im.concat(j.toString())).setAttribute('src',data[1]);
-			document.getElementById(tit.concat(j.toString())).innerHTML = data[2];
-		    }
-		}
-            }
-        }
-	client.send();
-    }
-    window.addEventListener('load',startup);
-</script>
+	        }
+		client.send();
+	    }
+	    window.addEventListener('load',startup);
+	</script>
 </head>
 <body class="theme-base-0h">    <div class="sidebar w3-hide-small" id="mySidebar">
   <div class="container">
