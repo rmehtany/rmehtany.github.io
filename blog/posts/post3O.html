@@ -320,6 +320,20 @@ def mergeKLists(self, lists: List[ListNode]) -> ListNode:
     prev[1].next = None
     return start[1]
 </pre>
+<h4><a href='https://leetcode.com/problems/set-matrix-zeroes/' style='color:#0a37cc' target='_blank'>Set Matrix Zeroes</a>
+<pre class='prettyprint' style="font-size: 15px">
+def setZeroes(self, matrix: List[List[int]]) -> None:
+    m = len(matrix); n = len(matrix[0])
+    zero_rows = set(i for i in range(m) if not all(matrix[i]))
+    for j, col in enumerate(zip(*matrix)):
+        if not all(col):
+            for i in range(m):
+                matrix[i][j] = 0
+    if zero_rows:
+        l = [0]*n
+        for i in zero_rows:
+            matrix[i]=l
+</pre>
                             <span class="d-block text-right tm-color-primary" id='tags'><a href='/blog/other/' style='font-size: 17px;font-weight:normal'>Category: Other</a></span>
                         </div>
 		    <script src="https://utteranc.es/client.js"

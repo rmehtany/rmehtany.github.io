@@ -1,1 +1,2 @@
+../posts/post4R.html|/public/priya.jpeg|Reviewing "On The Job"|Apologizing to Priya Krishna and digesting my internalized racism|<a href='blog/reviews/'>Reviews</a>|<a href='/blog/2022/'>January 25, 2022</a>
 ../posts/post3O.html|/public/leetcode.png|I finally did it...|Becoming an algorithm monkey for 15 days|<a href='/blog/other/'>Other</a>|<a href='/blog/2022/'>January 18, 2022</a>

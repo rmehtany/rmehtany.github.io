@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Blog - Rushabh Mehta</title>
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet"> <!-- https://fonts.google.com/ -->
+    <link href="/blog/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/blog/css/templatemo-xtra-blog.css" rel="stylesheet">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="/public/css/mystyle.css">
+  <link rel="stylesheet" href="/public/css/w3.css">
+  <link rel="stylesheet" href="/public/css/color.css">
+<!--
+
+TemplateMo 553 Xtra Blog
+https://templatemo.com/tm-553-xtra-blog
+-->
+    <script src="/blog/js/jquery.min.js"></script>
+    <script src="/blog/js/templatemo-script.js"></script>
+    <script src="/blog/js/jquery_ui.js"></script>
+    <script type="text/javascript" async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/x-mathjax-config;executed=true">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      displayMath: [ ['$$','$$'] ],
+      processEscapes: true,
+    }
+  });
+  </script>
+
+<script>
+    function startup() {
+	var post_id = 4;
+        var client = new XMLHttpRequest();
+        client.open('GET', '/blog/reviews/blogdata.txt');
+        client.onload = function()
+        {
+            if(client.responseText != '')
+            {
+                var txt = client.responseText.split('\n');
+		var num = txt.length-1;
+		var im = "image";
+		var tit = "title";
+		var fig = "#fig";
+		var rel = "related";
+		var data = txt[num-post_id].split('|');
+		document.getElementById("title").innerHTML = data[2];
+		document.getElementById("date").innerHTML = data[4];
+		if (num < 5) {
+		    var i = 1;
+		    $("#fig1").hide();
+		    $("#fig2").hide();
+		    $("#fig3").hide();
+		    for (let j = 0; j < num; j++) {
+		        if (num-post_id != j) {
+			    data = txt[j].split('|');
+			    document.getElementById(rel.concat(i.toString())).setAttribute('href',data[0]);
+			    document.getElementById(im.concat(i.toString())).setAttribute('src',data[1]);
+			    document.getElementById(tit.concat(i.toString())).innerHTML = data[2];
+			    $(fig.concat(i.toString())).show();
+			    i++;
+			}
+		    }
+		} else {
+		    var bucket = [];
+		    for (var i=0;i<num;i++) {
+			if (i != num - post_id) {
+    			bucket.push(i);}
+		    }
+		    for (var j=1;j<4;j++) {
+			data = txt[bucket.splice(Math.floor(Math.random()*bucket.length), 1)[0]].split('|');
+			document.getElementById(rel.concat(j.toString())).setAttribute('href',data[0]);
+			document.getElementById(im.concat(j.toString())).setAttribute('src',data[1]);
+			document.getElementById(tit.concat(j.toString())).innerHTML = data[2];
+		    }
+		}
+            }
+        }
+	client.send();
+    }
+    window.addEventListener('load',startup);
+</script>
+</head>
+<body class="theme-base-0h">    <div class="sidebar w3-hide-small" id="mySidebar">
+  <div class="container">
+    <button class="w3-button sidebar w3-text-white w3-hide-medium w3-hide-large w3-right" onclick="sidebar_close()">☰</button>
+    <div class="sidebar-about">
+      <div class="w3-text-white w3-center" style="font-size:20px;">
+        Rushabh Mehta
+      </div>
+
+      <p class="lead" style="font-size:16px;font-style:italic;color:rgba(255,255,255,0.5)">The very serious function of racism is distraction.<br> - Toni Morrison</p>
+
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">About Me</a>
+      <a class="sidebar-nav-item" href="/research/">Research</a>
+      <!--<a class="sidebar-nav-item" href="/book/">Book</a>-->
+      <a class="sidebar-nav-item active" href="/blog/">Blog</a>
+      <!--<a class="sidebar-nav-item" href="/coffee/">Coffee</a>-->
+      <a class="sidebar-nav-item" href="/notes/">Notes</a>
+      <a class="sidebar-nav-item" href="/resources/">Resources</a>
+	    <a class="sidebar-nav-item" href="/contact/">Contact</a>
+      <!--<a class="sidebar-nav-item" href="/conjecture/">Conjectures</a>-->
+    </nav>
+  </div>
+
+    <div class="w3-bottom">
+    <p style="font-size:12px;color:rgba(255,255,255,0.5);">© <script>document.write(new Date().getFullYear())</script> Rushabh Mehta</p>
+  </div>
+</div>
+
+<div class="sidebar w3-hide-medium w3-hide-large w3-right" id="mySmallSidebar">
+  <button class="w3-button sidebar w3-text-white" onclick="sidebar_open()">☰</button>
+</div>
+
+    <div class="container-fluid">
+        <main class="tm-main">
+            <div class="row tm-row">
+                <div class="col-12">
+                    <hr class="tm-hr-primary tm-mb-55">
+                    <div style='float:left;position:relative;'>
+                    <img src='/public/css_hack.webp' style='display:block;height:auto;width:100%;' alt=''/>
+                      <iframe src='https://www.youtube.com/watch?v=1oxeunIEJWM' style="width:100%;height:100%;left:0;top:0;position:absolute;border: 1px solid #10cccc" frameborder=0></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="row tm-row">
+                <div class="col-lg-8 tm-post-col">
+                    <div class="tm-post-full">
+                        <div class="mb-4" style='color:black;'>
+                            <h2 class="pt-2 tm-color-primary tm-post-title" id='title'>TITLE TO BE FILLED</h2>
+                            <p class="tm-mb-40" id='date'>DATE TO BE FILLED</p>
+
+				                       <p>I hate watching Indian content creators. Seriously. Be it Hasan Minhaj, Padma Lakshmi, or Lilly Singh, I just find all of them cringy. I even hate when Western content creators reference India in any fashion. The Beatles sampled the sitar? Ugh. Rachel Ray is learning how to make curry? No thank you.</p>
+                               <p>That's why when I saw Priya Krishna's new series <i>On the Job</i>, an exposition on the lifeblood of the food scene in New York, I expected to hate it. It's just going to be as cringe as the rest, right? Spoiler alert: not only did I love the video, but I was crying by the end. Why?</p>
+                               <p>It took me a while to figure out what I disliked about celebrities like Hasan and Lilly. Some of them do deserve the eyeroll (looking at you Lilly: can we stop trying to be the next Indian Amy Schumer?) but for the most part, people like Hasan and Padma do seriously good work in telling stories and conveying messages to broad audiences, in a way that generalizes to most humans. I'd love to find a reason to hate on Hasan, but he's genuinely very funny. Sure, he isn't Jon Stewart, but there aren't that many people who are.</p>
+                               <p>So what was the source of my dislike? After thinking for a bit, I've narrowed the possibilities down to the following.</p>
+                               <h3>Internalized Racism</h3>
+                               <p>Ever since I was in preschool, I was in white-majority schools. In my kindergarten class, I was the only non-white kid in the entire room. I switched schools in third grade as my parents moved, but the situation was the same: for the entirety of my first 8 years of schooling, I was one of at most 2-3 non-white students in my classes.</p>
+                               <p>As a kid, I didn't have any issues with this. After all, kids don't really see color in that way, and I saw the other kids as what they were: kids. But that didn't last forever. Be it comments on my bagged lunch (stay away from me with that smelly food!), ostracization from social groups, and a general cultural disconnect, I began to see color, and in particular, how other perceived me.</p>
+                               <p>In response, I tried my hardest to fit in. I didn't know anything about American music, so after I got an iPod in middle school, I'd load it with all the songs I remembered my classmates talking about, and listen to them over and over again until I could recite them by memory. As I wasn't allowed to play violent video games, I'd watch videos online of others playing them, just to make sure I knew the lingo in case someone asked. I memorized the names of baseball players and football players alike, in the hopes of putting up a pretense of caring about the sport.</p>
+                               <p>While I did all of this, I started developing my distaste towards anything Indian. My first memory of seeing an Indian person in a Western movie was an Indiana Jones film, in which the protagonist visited a fake jungle in India, and had to defeat a caricatured Indian snake charmer. Between that and the constant reminders of the devastating levels of poverty in India, I began to use disassociation as a coping mechanism.</p>
+                               <p>Slumdog Millionaire won an Oscar? It's a trash movie, chosen just for representation. Jai Paul released a super popular album? It's just a ripoff of other indie tunes.</p>
+                               <p>And so when I entered university and started to see Indian culture celebrated by Western audiences as "ethnic" rather than "bad", I was angry. Why do Americans decide when it's cool to be Indian? Why do white folk get to decide what parts of my culture are in vogue and which parts are backwards? It just wasn't fair. My reactions toward Hasan and the like shouldn't have been directed at them, but rather the forces that made me feel like their authenticity was a bad thing.</p>
+                               <p>At the same time, it wasn't as if my coping mechanism was always a bad thing. Slumdog Millionaire genuinely is a terrible reflection of Indian society, which emphasizes stereotype and trauma porn in an attempt to appeal to the Western viewer. If India was as represented by Western filmography, I think my distaste for it would be fully justified.</p>
+                               <p>But, it also meant that I dismissed authentic presentations of what it meant to be Indian. Many years later, Jai Paul's early records are some of my favorite Indian-inspired tunes I've heard.</p>
+                               <h3>Tokenization</h3>
+                               <p>I used to really enjoy watching Bon Apetit, the YouTube channel whose main content was the Test Kitchen. The Test Kitchen produced shows like <i>Gourmet Makes</i>, where Claire Saffitz tried to replicate snack foods, and <i>It's Alive</i>, where Brad Leone explored the world of exotic cuisines. Interspersed in these series are an array of guest stars, including Priya Krishna, who was the Indian food expert, Sohla El-Waylly, the experienced chef Claire and Brad often asked for help, among many others. Most of these guest stars were non-white, and were of various ethnicities, including African, Asian, Hispanic, etc. What made the Test Kitchen so appealing as a show was the fact that we could relish in the parasocial relationships we form with the chefs in front of us, and despite the various races of the guest stars, all of the members of the cast seemed to be on great terms.</p>
+                               <p>Especially during the pandemic, I found Bon Apetit to be a great way for me to learn about cuisines I wanted to learn about, and also relax from the stressful parts of life.</p>
+                               <p>But there was always something fundamentally uncomfortable with the channel for me. For starters, the fascination over Claire and Brad felt almost cult-like. Once you start watching Test Kitchen videos, it's not long before you start getting recommended fan compilations with titles like "I'd die for Claire Saffitz from the Bon Apetit Test Kitchen" or "Can't live without more Brad Leone in my life". Both of them are fine cooks, yes, but nothing about them stood out to me. There are better chefs in the kitchen (Rick, Sohla), they consistently show a lack of understanding of food culture outside of American food, and the compilations literally just feature them doing normal human things. What is there to idolize about that?</p>
+                               <p>I also developed an irrational hatred towards Priya. Priya, to me, was the embodiement of everything I hated about Indian-Americans. Can't have a single conversation about anything without bringing up India, can't cook anything but Indian food, and never explored anything outside her comfort zone. What's the point of keeping a chef like that?</p>
+                               <p>But after Sohla, Priya, Rick, and many of the other non-white chefs revealed the litany of microaggressions and injustices they underwent as part of the kitchen, including working for no pay, abuse from the management, and more, my perspective entirely flipped.</p>
+                               <p>Priya wasn't just bringing up India every conversation because she felt like it: rather, she was only allowed in videos in which she was told to bring up India. She clearly wanted to experiment with new foods, but management wouldn't put her on film for anything but teaching Brad how to cook Indian food.</p>
+                               <p>Sohla never had her own show, not because she was less skilled than Claire and Brad, but rather because she was not white. Rick wasn't allowed to showcase anything but Mexican food for obvious reasons. The list goes on and on (if you are interested in seeing the entire list of corporate failures on racism and sexism in the BA office, see <a href='https://www.vox.com/the-goods/21287732/bon-appetit-sohla-adam-rapoport-resigned-duckor-food-racism' style='color:#0a37cc'>this article</a>. It's a lot.)</p>
+                               <p>This is just one example of tokenization, and it's a big part of why cultures get pigeonholed into stereotypes. Companies hire non-white individuals for the sake of diversity, and then treat these individuals as representatives of their entire race/sex. Priya isn't just an Indian-American interested in cooking: she's an expert on all things India. And this way of perceiving minorities is toxic, not just because it places undue pressure on the individual to "be a good employee" and represent their demographic well, but it enables white folk to engage in cultural appropriation. If Rick watches Claire appropriate menudo, that's clearly okay since Rick clearly represents the Mexican community.</p>
+                               <p>And in this sense, a lot of my frustrations toward celebs like Padma, Hasan, and Lily come from the fact that they are tokens for the Indian community, and how they act has an immediate impact on how the West perceives India.</p>
+                              <p>When Lilly Singh had Jessica Alba on her show, Jessica confessed that her children like tying their towels on their heads, and it embarrases her because she's concerned that's it's stereotypical of Indians. Lilly immediately interjects, "it's okay, it's just like my Punjabi friends, that's totally chill." This obviously lead to a lot of uproar, but in an ideal world, it shouldn't. Lilly's opinions on whether or not kids can pretend to wear turbans shouldn't matter to anyone, but they do matter, since her voice is viewed as that of all of Indian-Americans.</p>
+                              <h3>On the Job</h3>
+                              <p>Priya's most recent episode highlights Rahim Mohamed, a bodega manager in Brooklyn who became Tik Tok famous for his wacky sandwich ideas. Throughout the episode, we get to see how big of an impact Rahim has on the local community, especially in these pandemic times. Rahim balances his newfound Tik Tok celebhood with making sure that his community eats well, including the various homeless folk who live on the nearby streets.</p>
+                              <p>Like any good interviewer, Priya doesn't overpower Rahim, but guides him in a way that weaves a compelling narrative. And that made for an excellent watch, both for learning a few new cooking tricks, and for seeing the impact of local businesses on their communities.</p>
+                              <p>So when I finished the episode, I just sat at my laptop in shock, and for some reason, started crying. I don't fully understand why, but there was something so cathartic about viewing purely positive representation of one's culture. I like to think that this was my little "Black Panther" moment, a chance to feel pride in my community.</p>
+                              <h3>Culture through suffrage</h3>
+                              <p>One of my all time favorite food videos is Alvin Zhou's <a href='https://www.youtube.com/watch?v=29ZP8ADQJ1Y' style='color:#0a37cc'>Day In The Life Of An Indian Master Chef</a>. Alvin heads to Dhamaka, a new Indian restaurant in New York City and explores some of the common stereotypes about Indian food, and breaking them. Now, anytime you find any video on the internet which even remotely shows anything Indian in a positive light, you can bet that the comment section is absolutely flooded with Indian users gleefully expressing thanks for sharing in their culture. But what brings about this behavior. What drives the cultural homogeneity that leads Indians all across the globe to comment on a NYC restaurant?</p>
+                              <p>I have a pet theory about this, although I'm sure it's been discussed plenty of times before: culture comes from collective suffering. When a group of people suffer through something together, that forms a culture that binds those people together.</p>
+                              <p>It's the reason that we have a notion of black pride, but not white pride. It's the reason that fraternities haze their freshmen. It's the reason women bond with women far more closely than men do together.</p>
+                              <p>One of the biggest lessons growing up has taught me is that these feelings I've experienced are by no means unique. Watch any video on capoeira, and the comment section will be flooded by overly enthusiastic Brazilians sharing their opinions on how to perfect the art form. Watch a video on Djokovic, and you'll find plenty of Serbians taking pride in his accomplishments and listing him among names like Tesla and Popa.</p>
+                              <p>I can only hope that one day, I can be just as proud of my culture as they are of theirs.</p>
+
+                            <span class="d-block text-right tm-color-primary" id='tags'><a href='/blog/reviews/'>Category: Reviews</a></span>
+                        </div>
+		    <script src="https://utteranc.es/client.js"
+        repo="rmehtany/comments"
+        issue-term="post4R"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+                    </div>
+                </div>
+                <aside class="col-lg-4 tm-aside-col">
+                    <div class="tm-post-sidebar">
+                        <hr class="mb-3 tm-hr-primary">
+                        <h2 class="mb-4 tm-post-title tm-color-primary">Categories</h2>
+                        <ul class="tm-mb-75 pl-5 tm-category-list">
+                            <li><a href="/blog/food/" class="tm-color-primary">Food</a></li>
+                            <li><a href="/blog/puzzles/" class="tm-color-primary">Puzzles</a></li>
+                            <li><a href="/blog/travel/" class="tm-color-primary">Travel</a></li>
+                            <li><a href="/blog/sports/" class="tm-color-primary">Sports</a></li>
+                            <li><a href="/blog/reviews/" class="tm-color-primary">Reviews</a></li>
+                            <li><a href="/blog/other/" class="tm-color-primary">Other</a></li>
+                        </ul>
+                        <hr class="mb-3 tm-hr-primary">
+                        <h2 class="tm-mb-40 tm-post-title tm-color-primary">Related Posts</h2>
+                        <a href="#" class="d-block tm-mb-40" id='related1'>
+                            <figure id='fig1'>
+                                <img src="/blog/img/img-02.jpg" alt="Image" class="mb-3 img-fluid" id='image1'>
+                                <figcaption class="tm-color-primary" id='title1'>Duis mollis diam nec ex viverra scelerisque a sit</figcaption>
+                            </figure>
+                        </a>
+                        <a href="#" class="d-block tm-mb-40" id='related2'>
+                            <figure id='fig2'>
+                                <img src="/blog/img/img-05.jpg" alt="Image" class="mb-3 img-fluid" id='image2'>
+                                <figcaption class="tm-color-primary" id='title2'>Integer quis lectus eget justo ullamcorper ullamcorper</figcaption>
+                            </figure>
+                        </a>
+                        <a href="#" class="d-block tm-mb-40" id='related3'>
+                            <figure id='fig3'>
+                                <img src="/blog/img/img-06.jpg" alt="Image" class="mb-3 img-fluid" id='image3'>
+                                <figcaption class="tm-color-primary" id='title3'>Nam lobortis nunc sed faucibus commodo</figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                </aside>
+            </div>
+        </main>
+    </div>
+    <script src="/blog/js/jquery.min.js"></script>
+    <script src="/blog/js/templatemo-script.js"></script>
+<script>
+// sidebar collapse
+function sidebar_open() {
+  document.getElementById("mySidebar").classList.remove("w3-hide-small");
+  document.getElementById("mySmallSidebar").classList.add("w3-hide-small");
+}
+function sidebar_close() {
+  document.getElementById("mySidebar").classList.add("w3-hide-small");
+  document.getElementById("mySmallSidebar").classList.remove("w3-hide-small");
+}
+</script>
+
+</body>
+</html>
