@@ -629,7 +629,25 @@
 <p>In other words, our formula for the line segment is the following: $$\{(a_2t+a_1(1-t),b_2t+b_1(1-t))\mid 0\leq t\leq 1\}$$</p>
 <p>What about the line through the two points? The formula is quite similar:$$\{(a_2t+a_1(1-t),b_2t+b_1(1-t))\mid -\infty\lt t\lt\infty\}$$This is called the <strong>parameterization</strong> of a line.</p>
 <h3 id='e'>Equations of conics</h3>
-<p>Parameterizations
+<p>What about other shapes? How do we come up with equations for them? For polygons, we can treat the shapes as a collection of line segments. But curved surfaces are a bit more complicated.</p>
+<p>Luckily for us, there's an important class of curved shapes that have quadratic formulas.</p>
+<div class="Definition" title="Conic"> A conic is the set of points \((x,y)\) satisfying the following equation $$Ax^2+Bxy+Cy^2+Dx+Ey+F=0$$for some coefficients \(A,B,C,D,E\).</div>
+<p>In other words, conics are the graphs of arbitrary quadratic polynomials. But what do they look like?</p>
+<h3 id='d'>The Double Cone</h3>
+<p>The double cone is a geometric shape, composed of two infinitely tall cones that share the same vertex. It looks something like this:</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/DoubleCone.png"><img src="/public/DoubleCone.png" width="100%"></a></p>
+<p>Although not pictured here, both cones go off to infinity. The double cone is quite important, since the set of shapes formed by intersecting a plane with the double cone are the conics. Here are some examples:</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/TypesOfConicSections.jpg"><img src="/public/TypesOfConicSections.jpg" width="100%"></a></p>
+<p>The pictured conics are <ol><li>Circle</li><li>Ellipse</li><li>Parabola</li><li>Hyperbola</li></ol></p>
+<p>The circle is a type of ellipse, so really, there are only \(3\) types of conics in the picture above.</p>
+<h3 id='t'>Types of Conics</h3>
+<div class="Definition" title="Ellipse"> Given two points \(F_1,F_2\) in a plane, the <strong>ellipse</strong> of diameter \(D\) focused on the two points is the set of points \(X\) such that \(\overline{XF_1}+\overline{XF_2}=D\).</div>
+<p>Some examples of ellipses with the same diameter are as follows:</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/Ellipse-var.webp"><img src="/public/Ellipse-var.webp" width="100%"></a></p>
+<p>Note that when \(F_1=F_2\), we get a circle centered at the focus points. It goes without saying that the diameter must be bigger than \(\overline{F_1F_2}\) for there to be an ellipse (what happens when \(D=\overline{F_1F_2}\)?)</p>
+<p>So what is the formula of an ellipse? If \(F_1\) and \(F_2\) are both on the \(x\)-axis (or in other words, the ellipse is horizontal), and the midpoint of \(\overline{F_1F_2}\) is the origin (or in other words, the ellipse is centered at the origin), then the formula for the ellipse is $$\frac{4x^2}{D^2}+\frac{4y^2}{D^2-\overline{F_1F_2}^2}=1$$Replacing \(\frac 4{D^2}\) with \(A\) and \(\frac4{D^2-\overline{F_1F_2}^2}\) with \(C\) gives us $$Ax^2+Cy^2=1$$where \(A,C\geq0\). This is the general form of the horizontal ellipse.</p>
+<div class="Definition" title="Parabola"> </div>
+
 </div>
 
 <div style="float:right"><a href="#" style="font-style: normal;"><bf>Top</bf></a></div>
