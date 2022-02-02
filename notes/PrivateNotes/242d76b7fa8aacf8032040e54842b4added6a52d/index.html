@@ -8,7 +8,7 @@
 
   <title>
 
-      Week 13 Notes
+      Week 14 Notes
 
   </title>
 
@@ -323,7 +323,7 @@
          Rushabh Mehta
       </div>
 
-      <p class="lead" style="font-size:16px;font-style:italic;">Geometry is not true, it is advantageous.<br> - Henri Poincare</p>
+      <p class="lead" style="font-size:16px;font-style:italic;">Algebra as far as the quadratic equation and the use of logarithms are often of value in ordinary cases: but all beyond these is a delicious luxury indeed.<br> - Thomas Jefferson</p>
 
     </div>
 
@@ -602,7 +602,7 @@
 
 
 <div class="post">
-  <h1 class="post-title">Week 13 Notes</h1>
+  <h1 class="post-title">Week 14 Notes</h1>
 
 
   <div class="w3-white w3-round-xlarge w3-tiny">
@@ -612,244 +612,7 @@
 
 
   <ul id="markdown-toc">
-    <li><a href='#c'>Coordinate Geometry</a><ul><li><a href='#p'>Parameterizing Lines</a></li><li><a href='#e'>Equations of Conics</a></li><li><a href='#d'>The Double Cone</a></li><li><a href='#t'>Types of Conics</a></li>
-      <li><a href='#puntos'>Dealing with Points</a></li><li><a href='#s'>Conclusion</a></li></ul></li>
-    <li><a href='#circle'>Circle Geometry</a><ul><li><a href='#secants'>Secant Theorems</a></li><li><a href='#cyclic'>Cyclic Quadrilaterals</a></li></ul></li>
-    <li><a href='#projective'>Projective Geometry</a></li>
-    </ul>
-<p>This week, we'll again be focusing on geometry.</p>
-<h2 id='c'>Coordinate Geometry</h2>
-<p>In coordinate geometry, we add a <strong>coordinate grid</strong> to our geometric objects. For two-dimensional objects like circles and squares, the coordinate grid is the familiar \(x-y\) plane.</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/coordinateplane.png"><img src="/public/coordinateplane.png" width="100%"></a></p>
-<p>In a coordinate grid, there are two axes: the horizontal \(x\)-axis and the vertical \(y\)-axis. Both axes are real number lines, and any point in the grid is denoted by the corresponding points on the \(x\) and \(y\) axes. For example, the point \(A\) in the diagram above, if moved downwards towards the \(x\) axis, will meet the axis at value \(20\), and if moved leftwards toward the \(y\)-axis, will meet the axis at the value \(15\). So, the point is written as \((20,15)\).</p>
-<p>The process of associating each point in the grid with \((x,y)\) coordinates is called the <strong>cartesian coordinate system</strong>. We've already seen alternate coordinate systems, like polar coordinates, in previous weeks. For now, we'll exclusively use the Cartesian system.</p>
-<p>The origin is the point \((0,0)\). The beauty of coordinate grids is that given a geometric object, we can place the origin of the coordinate grid on the object wherever we like. We'll see examples of how that is useful soon.</p>
-<h3 id='p'>Parameterizing Lines</h3>
-<p>Once we pick a coordinate system, we want to express our geometric objects as equations. Let's start by parameterizing line segments.</p>
-<p>Given points \((a_1,b_1)\) and \((a_2,b_2)\), how do we write an equation to represent the line segment between the points?</p>
-<p>We can think about it like a travelling problem: Suppose you are at your friend's house at point \((a_1,b_1)\), and you walk in a straight line starting at time \(t=0\) to your house at point \((a_2,b_2)\). Suppose you reach your house at time \(t=1\). At what point are you located at time \(0\leq t\leq 1\)?</p>
-<p>The answer is the following: $$(a_2t+a_1(1-t),b_2t+b_1(1-t))$$As an example, if \((a_1,b_1)=(5,2)\) and \((a_2,b_2)=(2,5)\), the following Desmos plot will show your walking path between the two houses.</p>
-<p align='center'><iframe src="https://www.desmos.com/calculator/2jkvctriru?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe></p>
-<p>In other words, our formula for the line segment is the following: $$\{(a_2t+a_1(1-t),b_2t+b_1(1-t))\mid 0\leq t\leq 1\}$$</p>
-<p>What about the line through the two points? The formula is quite similar:$$\{(a_2t+a_1(1-t),b_2t+b_1(1-t))\mid -\infty\lt t\lt\infty\}$$This is called the <strong>parameterization</strong> of a line.</p>
-<h3 id='e'>Equations of conics</h3>
-<p>What about other shapes? How do we come up with equations for them? For polygons, we can treat the shapes as a collection of line segments. But curved surfaces are a bit more complicated.</p>
-<p>Luckily for us, there's an important class of curved shapes that have quadratic formulas.</p>
-<div class="Definition" title="Conic"> A conic is the set of points \((x,y)\) satisfying the following equation $$Ax^2+Bxy+Cy^2+Dx+Ey+F=0$$for some coefficients \(A,B,C,D,E\).</div>
-<p>In other words, conics are the graphs of arbitrary quadratic polynomials. But what do they look like?</p>
-<h3 id='d'>The Double Cone</h3>
-<p>The double cone is a geometric shape, composed of two infinitely tall cones that share the same vertex. It looks something like this:</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/DoubleCone.png"><img src="/public/DoubleCone.png" width="100%"></a></p>
-<p>Although not pictured here, both cones go off to infinity. The double cone is quite important, since the set of shapes formed by intersecting a plane with the double cone are the conics. Here are some examples:</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/TypesOfConicSections.jpg"><img src="/public/TypesOfConicSections.jpg" width="100%"></a></p>
-<p>The pictured conics are <ol><li>Circle</li><li>Ellipse</li><li>Parabola</li><li>Hyperbola</li></ol></p>
-<p>The circle is a type of ellipse, so really, there are only \(3\) types of conics in the picture above.</p>
-<h3 id='t'>Types of Conics</h3>
-<div class="Definition" title="Ellipse"> Given two points \(F_1,F_2\) in a plane, the <strong>ellipse</strong> of diameter \(D\) focused on the two points is the set of points \(X\) such that \(\overline{XF_1}+\overline{XF_2}=D\).</div>
-<p>Some examples of ellipses with the same diameter are as follows:</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/Ellipse-var.webp"><img src="/public/Ellipse-var.webp" width="100%"></a></p>
-<p>Note that when \(F_1=F_2\), we get a circle centered at the focus points. It goes without saying that the diameter must be bigger than \(\overline{F_1F_2}\) for there to be an ellipse (what happens when \(D=\overline{F_1F_2}\)?)</p>
-<p>So what is the formula of an ellipse? If \(F_1\) and \(F_2\) are both on the \(x\)-axis (or in other words, the ellipse is horizontal), and the midpoint of \(\overline{F_1F_2}\) is the origin (or in other words, the ellipse is centered at the origin), then the formula for the ellipse is $$\frac{4x^2}{D^2}+\frac{4y^2}{D^2-\overline{F_1F_2}^2}=1$$Replacing \(\frac 4{D^2}\) with \(A\) and \(\frac4{D^2-\overline{F_1F_2}^2}\) with \(C\) gives us $$Ax^2+Cy^2=1$$where \(A,C\geq0\). This is the general form of the horizontal ellipse. The general form of the equation of an ellipse can be found <a href='https://www.maa.org/external_archive/joma/Volume8/Kalman/General.html' target='_blank'>here</a>.</p>
-<div class="Definition" title="Parabola"> Given a focus point \((x_f,y_f)\) and a line not containing the point \(ax+by+c=0\), a <strong>parabola</strong> focused on \((x_f,y_f)\) around the directrix \(ax+by+c=0\) is defined as the set of points \((x,y)\) such that the distance from the point \((x,y)\) to the directrix is identical to the distance from the point to the focus.</div>
-<p>You are likely unfamiliar with this definition of a parabola, but you can easily see why it is identical to the one you are familiar with.</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/Parts_of_Parabola.webp"><img src="/public/Parts_of_Parabola.webp" width="100%"></a></p>
-<p>The pink lines are equal in length, showing that the distance to the focus and directrix are the same. So how do we find the formula of the parabola? We simply use the distance formula to find the distance to the focus, and then realize that the shortest distance between a line and a point is the line segment from the point perpendicular to the line. With this knowledge, we get the following formula for the parabola:</p>
-<p>$$\frac{(ax+by+c)^2}{a^2+b^2}=(x-x_f)^2+(y-y_f)^2$$This formula is probably not that familiar, but let's set \(a=0\). Then, we get $$y^2+\frac cby+\frac{c^2}{b^2}=x^2-2xx_f+x_f^2+y^2-2yy_f+y_f^2$$$$y=\frac{b^2x^2-2b^2xx_f+b^2x_f^2+b^2y_f^2-c^2}{2b^2y_f+bc}$$Letting \(A=\frac{b^2}{2b^2y_f+bc}\), \(B=-2x_fA\), \(C=\frac{b^2x_f^2+b^2y_f^2-c^2}{2b^2y_f+bc}\), we get $$y=Ax^2+Bx+C$$Whenever the directrix is parallel to the \(x\)-axis, the formula for the parabola is the one we know well.</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/Parabel-abc.webp"><img src="/public/Parabel-abc.webp" width="100%"></a></p>
-<div class="Definition" title="Hyperbola"> Given two points \(F_1,F_2\) in a plane, the <strong>hyperbola</strong> of diameter \(D\) focused on the two points is the set of points \(X\) such that \(|\overline{XF_1}-\overline{XF_2}|=D\).</div>
-<p>Hyperbolas looks like two swooshes on the same graph. The following graph plots the following hyperbolas: \(xy=1,\;xy=4,\;xy=9\).</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/Hyperbeln-gs-3.webp"><img src="/public/Hyperbeln-gs-3.webp" width="100%"></a></p>
-<p>The horizontal hyperbola (the hyperbola with the \(x,y\)-axes as the lines of symmetry) has the following standard equation: $$Ax^2-Cy^2=1$$where \(A,C\geq0\).</p>
-
-<div class="exercise" title="Degenerate Conics"> The \(3\) types of conics mentioned above are called <strong>non-degenerate conics</strong>, but there are other types of conics. What are the other possible intersections between a plane and the double cone?
-<div class="Solution">
-<p><a onclick="myCollapse('ex1')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
-<div id="ex1" class="w3-container w3-hide">
-<p><a class="gallery img-center-short cbox-Element" href="/public/degenerateconics.jpeg"><img src="/public/degenerateconics.jpeg" width="100%"></a></p>
-</div>
-</div>
-</div>
-
-<p>Degenerate conics are called degenerate since their shapes don't have any curves. So given a quadratic equation \(Ax^2+Bxy+Cy^2+Dx+Ey+F=0\), how can we tell if it is an ellipse, a hyperbola, or parabola, assuming it isn't degenerate? We use the <strong>discriminant</strong>. In the quadratic equation, we use the discriminant \(b^2-4ac\) to determine whether there are \(2\) real roots, \(1\) real root, or no real roots. For conics, we have the following result: <ul><li>\(B^2-4AC>0\) implies the conic is a hyperbola</li><li>\(B^2-4AC=0\) implies the conic is a parabola.</li><li>\(B^2-4AC\lt0\) implies the conic is an ellipse</li></ul></p>
-<h3 id='puntos'>Dealing with Points</h3>
-<p>In Coordinate Geometry, we often have a collection of points, and want to either find the area of the polygon with the points as vertices, or find a polynomial that goes through the points. Luckily for us, there are ways to do both.</p>
-<div class="Theorem" title="Shoelace"> Suppose that our points are \((a_1,b_1),\;(a_2,b_2)\), ..., \((a_n,b_n)\). The area of the polygon with these points as consecutive vertices is $$A=\frac12|a_1b_2+a_2b_3+\ldots+a_{n-1}b_n+a_nb_1-b_1a_2-b_2a_3+\ldots-b_na_1|$$</div>
-<p>The shoelace theorem is named as such because the pattern of the products look like shoelaces.</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/shoelaces.png"><img src="/public/shoelaces.png" width="100%"></a></p>
-<div class="Theorem" title="Lagrange Interpolation"> Given points \((a_1,b_1),\;(a_2,b_2)\), ..., \((a_n,b_n)\) such that all of the \(a_i\) are distinct, there exists a unique polynomial \(p\) with degree \(\lt n\) such that \(p(a_i)=b_i\) for each \(1\leq i\leq n\).
-<div class="proof">
-<p><a onclick="myCollapse('thm1')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
-<div id="thm1" class="w3-container w3-hide">
-  <strong>Existence</strong>: We first want to find \(p\). For each \(1\leq i\leq n\), let \(g_i\) be the polynomial$$g_i(x)=(x-a_1)(x-a_2)\ldots(x-a_{i-1})(x-a_{i+1})\ldots(x-a_n)$$In other words, \(g_i\) is the product of all terms \(x-a_j\) except \(x-a_i\). Because of this \(g_i(a_j)=0\) for all \(1\leq j\leq n\) except \(i\). Let \(S_i=\frac{b_i}{g_i(a_i)}\cdot g_i\). Since \(S_i\) is a constant times \(g_i\), and \(g_i\) has degree \(n-1\), \(S_i\) has degree \(n-1\) and<ul><li>\(S_i(a_j)=0\) whenever \(i\neq j\)</li><li>\(S_i(a_i)=b_i\)</li></ul>Finally, let \(p(x)=\sum\limits_{i=1}^nS_i(x)\). Thus, $$p(a_j)=\sum\limits_{i=0}^nS_i(a_j)=0+0+\ldots+0+S_i(a_i)+0+\ldots+0=b_i$$And, since each \(S_i\) has degree \(n-1\), \(p\) has degree less than \(n\).<br><br>
-  <strong>Uniqueness</strong>: Now, we want to show that there is only one \(p\) that satisfies the desired property. Let \(f,g\) both have degree \(\lt n\) and satisfy \(f(a_i)=g(a_i)=b_i\) for all \(i\). Thus, \(a_i\) is a root of \(f-g\) for each \(i\). Thus, \((x-a_1)(x-a_2)\ldots(x-a_n)\) must be a factor of \(f-g\). Since this product has degree \(n\), which is higher than the degree of \(f-g\), \(f-g\) must be \(0\), and thus, \(f=g\).
-</div>
-</div>
-</div>
-<h3 id='s'>Conclusion</h3>
-<p>Coordinate Geometry is an alternate approach to geometry that focuses on establishing a coordinate system, and exploiting that coordinate system to find quantities that would be hard to find otherwise. The study of conics isn't all that important for competition math, but is hugely important for computation coordinate geometry, since computers use conics all the time to compute the trajectories of geometric objects. Here are an exercise that shows the difference in approach between coordinate geometry and standard geometry. Feel free to use whichever is more convenient.</p>
-<div class="Exercise" title="AMC 10B #19"> Rectange \(ABCD\) has \(\overline{AB}=5\) and \(\overline{BC}=4\). \(E\) lies on \(\overline{AB}\) such that \(\overline{EB}=1\), \(G\) lies on \(\overline{BC}\) such that \(\overline{CG}=1\), and \(F\) lies on \(\overline{CD}\) such that \(\overline{DF}=1\). In the diagram below, what is \(\frac{PQ}{EF}\)?<p><a class="gallery img-center-short cbox-Element" href="/public/amc10b19.png"><img src="/public/amc10b19.png" width="100%"></a></p>
-<div class="solution">
-<p><a onclick="myCollapse('ex2')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
-<div id="ex2" class="w3-container w3-hide">
-  <strong>Solution 1 (Coordinate Geometry):</strong> Let \(D\) be the origin. We want to find the equations of the lines \(AG,AC,EF\). By the given information, their slopes are \(-\frac35,\;-\frac45,\;2\) respectively. Using the point-slope formula, we can find their equations to be <ul><li>\(AG:\;-\frac35x+4\)</li><li>\(AC:\;-\frac45x+4\)</li><li>\(EF:\;2x-4\)</li></ul> Since \(P\) is the intersection of lines \(AC\) and \(EF\), and \(Q\) the intersection of lines \(AG\) and \(EF\), we can find the points to be \(P=\left(\frac{20}7,\frac{12}7\right)\) and \(Q=\left(\frac{40}{13},\frac{28}{13}\right)\). We already know that \(E=(4,4)\) and \(F=(2,0)\). So, we find the answer using the distance formula to be \(\frac{10}{91}\).<br><br><br>
-  <strong>Solution 2 (Standard Geometry):</strong> Let \(H\) be the intersection between lines \(AG\) and \(CD\)<p><a class="gallery img-center-short cbox-Element" href="/public/amc10b19b.png"><img src="/public/amc10b19b.png" width="100%"></a></p>Let \(x=\overline{HC}\). Thus, \(\triangle HGC\sim\triangle HDA\), so $$\frac{HC}{CG}=\frac{HD}{AD}\to\frac x1=\frac{x+5}4\to x=\frac53$$Next, observe that \(\triangle AEQ\sim\triangle HFQ\) and \(\triangle AEP\sim\triangle CFP\). Thus, $$\frac{AE}{HF}=\frac{EQ}{QF}\to \frac{4}{3+\frac53}=\frac67=\frac{EQ}{QF}$$So, \(\frac{EQ}{EF}=\frac6{13}\) and $$\frac{AE}{CF}=\frac{EP}{FP}\to\frac43=\frac{EP}{FP}$$Thus \(\frac{FP}{EF}=\frac37\). Finally, this implies \(\frac{PQ}{EF}=1-\frac6{13}-\frac37=\frac{10}{91}\).
-</div>
-</div>
-</div>
-<p>In general, the strategy for coordinate geometry is to come up with equations for all of the important shapes (lines and curves), and then use algebra to find their points of intersection. For the remainder of these notes, we'll be focusing on the most special of conics: circles.</p>
-<h2 id='circle'>Circle Geometry</h2>
-<p>Let's begin our discussion of circles with some definitions.</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/secantdiameter.png"><img src="/public/secantdiameter.png" width="100%"></a></p>
-<ul><li>A <strong>secant</strong> is a line that intersects a circle at \(2\) points. A <strong>tangent</strong> is a line (segment) that intersects a circle at one point and doesn't intersect the interior of the circle.</li><li>A <strong>chord</strong> is the line segment consisting of the points of a secant inside in the circle</li><li>A <strong>diameter</strong> is the longest chord, and goes through the center of the circle. A <strong>radius</strong> is one half of a diameter.</li></ul>
-<p>We often talk about the <strong>angle subtended by a chord</strong>. By this, we mean the angle formed by the endpoints of the chord and the center of the circle, as in the following diagram:</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/subtendedbychord.png"><img src="/public/subtendedbychord.png" width="100%"></a></p>
-<p>In the diagram above, the chord \(AB\) is subtended by \(\angle AOB\). We also say that the measure of arc \(AB\), the part of the circumference of the circle between \(A\) and \(B\), is \(\angle AOB\).</p>
-<p>If we are using radians, there is a nice formula relating the length of an arc and its measure: \(s=r\theta\). \(s\) is the length of the arc, \(r\) is the radius, and \(\theta\) is the measure of the arc in radians.</p>
-<p>Chords of the same length have the same measure. To see why, consider the following diagram:</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/D2g9.png"><img src="/public/D2g9.png" width="100%"></a></p>
-<p>By SSS, both triangles are congruent, and thus the angles \(\angle AOB\) and \(\angle POQ\) are congruent.</p>
-<p>An <strong>interior angle</strong> \(\angle APB\) is an angle with \(A,P,B\) all points on the circle. For any interior angle \(\angle APB\), the measure of the arc \(AB\) is twice \(\angle APB\), as in the following diagrams:</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/centralinternal.png"><img src="/public/centralinternal.png" width="100%"></a></p>
-<p>In each of the three cases above, \(\angle AOB=2\angle APB\). In particular, when \(\angle AOB\) is \(180^\circ\), i.e., it is a straight line, \(\angle APB\) is a right angle. So, for any right triangle, the hypotenuse will be the diameter of the circumscribing circle. The proof of this fact relies on the following diagram.</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/InscribedAngle_1ChordDiam.webp"><img src="/public/InscribedAngle_1ChordDiam.webp" width="100%"></a></p>
-<p>Since \(\triangle AVO\) is isosceles, \(\angle AVO=\angle VAO\), and thus \(\angle AOB=\angle AVO+\angle VAO\), so \(\angle AOB=2\angle AVO\).</p>
-<h3 id='secants'>Secant Theorems</h3>
-<p>There are many special relationships between secants and angles. The simplest one is that tangents are always perpendicular to the radius at the intersection point.</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/tangent.png"><img src="/public/tangent.png" width="100%"></a></p>
-<p>There are three interesting types of secant diagrams we'll look at, as shown below. \(O\) stands for the center of the circle.</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/Pop.png"><img src="/public/Pop.png" width="100%"></a></p>
-<div class="Theorem" title="Secant Angles"> In diagram \(1\), \(\angle AEB=\frac{\angle AOB+\angle DOC}2\). In diagram \(2\), \(\angle BAC=\angle DAC\). In diagram \(3\), \(\angle ACE=\frac{\angle AOE-\angle BOD}2\).
-<div class="proof">
-<p><a onclick="myCollapse('thm3')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
-<div id="thm3" class="w3-container w3-hide">
-<strong>Diagram 1</strong>: Since \(E\) is on \(AC\), \(\angle ACB=\angle ECB\). By the interior angle theorem, \(\angle ECB=\angle ACB=\frac12\angle AOB\). Likewise, \(\angle EBC=\angle DBC=\frac12\angle DOC\). And, \(\angle AEB=\angle ECB+\angle EBC\).<br><br><br>
-<strong>Diagram 2</strong>: Note that triangles \(\triangle ACO\), \(\triangle ADO\), and \(\triangle CDO\) are all isosceles. So, let \(\angle ACO=\angle CAO=\alpha\), \(\angle DCO=\angle CDO=\beta\), \(\angle ADO=\angle DAO=\gamma\). Since triangles have \(180^\circ\), we have $$2\alpha+2\beta+2\gamma=180^\circ\to\alpha=90^\circ-\beta-\gamma$$Since \(\angle ADC=\angle ADO+\angle CDO\), \(\angle ADC=\beta+\gamma\). So, \(\angle CAO+\angle ADC=90^\circ\). Since tangents are perpendicular to radii, \(\angle CAO+\angle BAC=90^\circ\). Thus, \(\angle BAC=\angle ADC\).<br><br><br>
-<strong>Diagram 3</strong>: Since \(\angle ACE +\angle BED=\angle ABE\), \(\angle ABE=\frac12\angle AOE\), and \(\angle BED=\frac12\angle BOD\), the desired claim is true.
-</div>
-</div>
-</div>
-
-<p>Hopefully you should be able to see that these three statements are really all the same statement, just in different forms. With this theorem in hand, we can prove one of the most important theorems in circle geometry.</p>
-
-<div class="Theorem" title="Power of a Point"> Given a circle and a point, there exists a constant \(C\) such that for any line through the point that intersects the circle, the distance between the first intersection and the point, times the distance between the second intersection and the point equals \(C\). We call \(C\) the <strong>power of the point</strong>. In particular, in the secant diagrams above: <ol><li>There are two chords that intersect inside the circle. Thus, \(AE\cdot EC=DE\cdot EB\).</li><li>There is a secant and tangent eminating from a point outside the circle. Thus, \(AB\cdot AB=BC\cdot BD\).</li><li>There are two secants that intersect at a point outside the circle. Thus, \(AC\cdot BC=EC\cdot DC\).</li></ol>
-<div class="proof">
-<p><a onclick="myCollapse('thm2')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
-<div id="thm2" class="w3-container w3-hide">
-<strong>Diagram 1</strong>: As we proved in the Secant Angles Theorem via looking at the subtended arc, \(\angle ECB=\angle EDA\) and \(\angle EAD=\angle EBC\). Thus, \(\triangle AED\sim\triangle BEC\). So, \(\frac{EC}{ED}=\frac{AE}{BE}\). Multiplying by \(ED\cdot BE\) gives us the desired result.<br><br><br>
-<strong>Diagram 2</strong>: Since \(\angle ABC=\angle ABD\) and \(angle BAC=\angle ADC\) via the Secant Angles Theorem, \(\triangle ABD\sim\triangle ABC\). So, \(\frac{AB}{AD}=\frac{BC}{AB}\). Multiplying by \(AD\cdot AB\) gives us the desired relation.<br><br><br>
-<strong>Diagram 3</strong>: Draw a tangent from point \(C\) to the circle, and apply the result from Diagram \(2\) to both secants. This completes the proof.
-</div>
-</div>
-</div>
-
-<div class="exercise" title="Power of a Point"> Show that the power of point \(P\) is the square of the length of the tangent from \(P\) to the circle if \(P\) is outside the circle, and \(R^2-\overline{PO}^2\) otherwise, where \(R\) is the radius and \(O\) is the center of the circle.</div>
-
-<h3 id='cyclic'>Cyclic Quadrilaterals</h3>
-<p>Any quadrilateral whose vertices are on a circle is called a <strong>cyclic quadrilateral</strong>. Cyclic quadrilaterals are defined by the following theorem.</p>
-
-<div class="Theorem" title="Cyclic Quadrilaterals"> A quadrilateral \(ABCD\) is a cyclic quadrilateral if and only if \(\angle ABC+\angle CDA=180^\circ\).
-<div class="proof">
-<p><a onclick="myCollapse('thm8')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
-<div id="thm8" class="w3-container w3-hide">
-  If \(ABCD\) is a cyclic quadrilateral, then if the circle has center \(O\), \(\angle AOC+\angle COA=360^\circ\), so \(\angle ABC+\angle CDA=180^\circ\) by the interior angle theorem.<br><br><br>
-  If \(\angle ABC+\angle CDA=180^\circ\), then consider the circumcircle of \(\triangle ABC\). Call the center \(O\) and radius \(r\). There are \(3\) cases<ol><li>\(D\) is inside the circle: Let \(E\) be the other intersection of \(AD\) with the circle, and let \(F\) be the other intersection of \(CD\) with the circle. Then, by the Secant Angles Theorem, $$\angle CDA=\frac{\angle COA+\angle EOF}2=\angle BFE+\angle AFC$$So, $$\angle CDA+\angle ABC=\angle BFE+\angle AFC+\angle ABC=\angle BFE+180^\circ$$This is a contradiction.</li><li>If \(D\) is outside the circle, then define \(E,F\) identically to the first part. Thus, $$\angle CDA=\frac{\angle AOC-\angle EOF}2=\angle AFC-\angle BFE$$So, $$\angle CDA+\angle ABC=\angle AFC-\angle BFE+\angle ABC=180^\circ-\angle BFE$$a contradiction.</li><li>\(D\) is on the circle: This is the only possibility, finishing the theorem.</li></ul>
-</div>
-</div>
-</div>
-
-<p>Now that we have a way to check if a quadrilateral is cyclic, we can introduce two useful theorem involving cyclic quadrilaterals.</p>
-
-<div class="Theorem" title="Ptolemy"> Given cyclic quadrilateral \(ABCD\), the following equation is true: $$\overline{AB}\cdot\overline{CD}+\overline{BC}\cdot\overline{DA}=\overline{AC}\cdot\overline{BD}$$</div>
-
-<div class="Theorem" title="Brahmagupta"> Given a cyclic quadrilateral with side lengths \(a,b,c,d\), if we let \(s=\frac{a+b+c+d}2\), the area of the quadrilateral is $$A=\sqrt{(s-a)(s-b)(s-c)(s-d)}$$</div>
-
-<h2 id='projective'>Challenge: Projective Geometry</h2>
-<p>Projective Geometry is a very important concept, but likely one you haven't seen in mathematics. In fact, the first place most people see it is in art class, not in math class. But what is it?</p>
-<h3>History of Projective Thinking</h3>
-<p>One of the first historical records involving projective thinking was that of Italian artist Filippo Brunelleschi. Brunelleschi demonstrated the geometrical method of perspective by painting the outlines of various Florentine buildings onto a mirror. Soon after, nearly every artist in Florence and in Italy used geometrical perspective in their paintings, notably Masolino da Panicale and Donatello. Not only was perspective a way of showing depth, it was also a new method of composing a painting. Paintings began to show a single, unified scene, rather than a combination of several.</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/Berrrrr.jpeg"><img src="/public/Berrrrr.jpeg" width="100%"></a></p>
-<p>As shown by the quick proliferation of accurate perspective paintings in Florence, Brunelleschi likely understood (with help from his friend the mathematician Toscanelli), but did not publish, the mathematics behind perspective. Decades later, his friend Leon Battista Alberti wrote <i>De pictura</i> in 1435, a treatise on proper methods of showing distance in painting based on Euclidean (standard) geometry. However, these ideas remained the work of artists for around 100 years, when the architect Gerard Desargues rediscovered the notion of "points at infinity". Desargues advanced Brunelleschi's work by establishing the mathematics of not just lines and distance, but also that of conics, in paintings with vanishing points. Blaise Pascal, finding the writings of Desargues, was so inspired that he came up with the now famous <i>Pascal's Theorem</i>.</p>
-<p>Unfortunately, just a few years later, Rene Descartes published a breakthrough work introducing cartesian coordinates, and work on projective geometry was mostly abandoned.</p>
-<p>It was only in 1822, when mathematician Jean-Victor Poncelet published a foundational treatise on projective geometry, that interest in projective geometry reemerged.</p>
-<p>Since then, it has revolutionized the foundations of algebraic geometry, influencing the works of Riemann, Dirac, Einstein, Bohr, etc.</p>
-<h3>Perspective</h3>
-<p>Draw a picture of a large, flat plain with a pair of railroad tracks running through it. It looks something like the picture below. When we draw a perspective picture like this, the parallel train tracks appear to actually meet at the horizon. Let’s change the rules of geometry a little so that this actually happens.</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/DAFD434A-0F34-46DD-B00DA93BA02E0E27_source.jpeg"><img src="/public/DAFD434A-0F34-46DD-B00DA93BA02E0E27_source.jpeg" width="100%"></a></p>
-<p>So, we define the projective plane initially as just the ordinary Real plane. But, like in our railroad, we want our parallel lines to eventually meet. So to our real plane, we add points, one for each set of parallel lines in the plane. We call these points the <i>points at infinity</i>. Thus, any two parallel lines intersect at the point at infinity corresponding to their slope.</p>
-<p>We also add a line at infinity. It just passes through all of the points at infinity.</p>
-<p>So, a normal line and the line at infinity intersect at the point at infinity corresponding to the slope of the normal line. So, every pair of distinct lines intersect at a single point.</p>
-<p>And, every pair of distinct points has a single line passing through them. There's a notion of <i>duality</i> here: every two points determines a line, and every two lines determines a point. This is a key property of projective geometry.</p>
-<p>If you can't visualize what this space looks like, don't worry! For now, as long as you can appreciate the duality of points and lines in projective space, you are on your way to understanding it.</p>
-<h3>The projective plane</h3>
-<p>Now that we have some intuition as to what the projective plane should look like, let's try to develop a formal notion of a projective point (more commonly known as a <strong>homogenous coordinate</strong>).</p>
-<div class="Definition" title="Homogenous Coordinate"> Let \((x,y)\) be a point in the real plane. If there are real numbers \(a,b,c\) such that \(x=\frac ac\) and \(y=\frac bc\), we call \([a;b;c]\) <strong>homogenous coordinates</strong> for point \((x,y)\).</div>
-<p>Note that if we are given homogenous coordinates \([a;b;c]\), we can find the corresponding cartesian point by division as \(\left(\frac ac,\frac bc\right)\). But, the other way around isn't possible. Given a cartesian point \((x,y)\), there are multiple homogenous points corresponding to that cartesian point. For example, corresponding to \((1,1)\) are homogenous coordinates \([1;1;1]\), \([2;2;2]\), \([-5;-5;-5]\), etc.</p>
-<div class="remark" title="Division by Zero"> What if \(c=0\) in the above example? For now, we'll define \(\frac x0\) for any \(x\) to be \(\infty\). In the world of projective geometry, \(\infty=-\infty\), so we don't need to worry about sign.</div><br>
-<div class="Exercise" title="Homogenous Coordinates"> Describe all of the homogenous coordinates corresponding to the cartesian coordinates \((1,-1)\). Is there a pattern here?</div>
-<p>That isn't great. Ideally, we'd want there to be exactly one homogenous coordinate for each cartesian coordinate. So how can we modify our space of homogenous coordinates to have this property?</p>
-<p>The answer is simple: mods! We already used mods to a similar effect when constructing polynomial rings (see the Challenge Section on Week 11). Here, we observe the following phenomenon. If \((x,y)\) has homogenous representations \([a;b;c]\) and \([d;e;f]\), then \(\frac ac=\frac df\) and \(\frac bc=\frac ef\). If \(\lambda = \frac cf\), then $$[a;b;c]=[\lambda d;\lambda e;\lambda f]$$In other words, any two homogenous coordinates with the same cartesian coordinate representation are multiples of each other!</p>
-<p>So, we set the following equivalence. \([a;b;c]\equiv[d;e;f]\) if there exists a number \(\lambda\) such that \(a=\lambda d\), \(b=\lambda e\), \(c=\lambda f\).</p>
-<p>There is one issue with this construction: every homogenous coordinate has infinitely many equivalent homogenous coordinates, except for \([0;0;0]\). Thus, we disallow this as a homogenous coordinate. Why we do this will become obvious in a moment.</p>
-<p>Now, we are ready to define the projective plane.</p>
-<div class="Definition" title="Projective Plane"> The projective plane \(\mathbb RP^2\) is defined as the set of homogenous coordinates \([a;b;c]\) with at least one of \(a,b,c\) nonzero under the equivalence \([a;b;c]\equiv[\lambda a;\lambda b;\lambda c]\) for all nonzero \(\lambda\).</div>
-<p>This is probably still very confusing. What is the difference between this and the normal cartesian coordinate system. How does this relate to the "points at infinity" that we talked about earlier? What does this space even look like? We'll answer all of these questions next.</p>
-<h3>Visualizing Projective Space</h3>
-<p>If we were to draw projective space, we might draw something like this:</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/projectiveplanepicture.gif"><img src="/public/projectiveplanepicture.gif" width="100%"></a></p>
-<p>Inside the squiggly dotted line lies the real plane \(\mathbb R^2\). On the border of the real plane, we have the points at infinity, which we call \(d_\infty\). Each one corresponds to a possible direction of line, since any two parallel lines head in the same direction (however, each direction and the direction in the exact opposite direction have the same point at infinity: thus, \(d_\infty=d_{-\infty}\)). So the circle labeled \(r\) is really the "line at infinity" which goes through all of the points at infinity.</p>
-<p>This visual should bother you. What does it mean for there to be a boundary on the plane. Doesn't the plane go off to infinity? There isn't any border! However, we are just building our intuition before we see the actual picture.</p>
-<p>Let's go back to our construction of the projective plane via homogenous coordinates. What does the set of homogenous points that are equivalent to a points \([a;b;c]\) look like if we plotted them on a graph?</p>
-<p>If you haven't seen linear algebra before, try drawing a 3D diagram, or perhaps using WolframAlpha to draw one for you. Once you do so, you'll see that the set is just the points on the line that goes through the origin \((0,0,0)\) and \((a,b,c)\)! In other words, the projective plane is the set of lines in 3D space that go through the origin.</p>
-<p>But how can we rectify this perspective with the ones we've discussed earlier? That's where <strong>projection</strong> (and hence the name projective plane) comes into play. In our 3D space, draw the plane \(w=1\) as in the diagram below. Then, each point \(P\) in the plane \(w=1\) corresponds to the line \(PO\) in projective space (where \(O\) is the origin). And, the points at infinity are represented by the lines parallel to the plane \(w=1\).</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/projectivetransformations.gif"><img src="/public/projectivetransformations.gif" width="100%"></a></p>
-<p>If this image still isn't clear, here's another way to see it. Add to the picture above the unit sphere in 3D space. Every line through the origin intersects this sphere at exactly two points. In fact, since the lines goes through the center of the sphere, projective space can be viewed as the space of diameters of the unit sphere.</p>
-<p>Diameters are often identified by their endpoints. So what if we associate points in projective space with points on the sphere? Would that work? Almost. For any point \([x;y;z]\) on the unit sphere, the homogenous point \([-x;-y;-z]\) is also on the unit sphere and is equivalent to \([x;y;z]\). So we can define projective space in a new way.</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/antipodal.jpeg"><img src="/public/antipodal.jpeg" width="100%"></a></p>
-<div class="Definition" title="Projective Plane"> The projective plane \(\mathbb RP^2\) is defined as the set of points \((x,y,z)\) on the unit sphere under the equivalence \((x,y,z)\equiv(-x,-y,-z)\) for all points.</div>
-<p>In other words, the projective plane can be viewed as half of the sphere, since we are removing half of the points.</p>
-<div class="Exercise" title="Spherical Projection"> What are the differences between a hemisphere (half a sphere) and the projective plane?</div>
-<br><p>Our new diagram is as follows: point \(P\) in the cartesian plane is represented by the line \(PO\), which is also represented by points \(P_1,P_2\) in the unit sphere.</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/stereographicprojection.jpg"><img src="/public/stereographicprojection.jpg" width="100%"></a></p>
-<p>We now have \(5\) ways of thinking about the projective plane. <ol><li>The cartesian plane with points at infinity and a line at infinity added in.</li><li>The set of homogenous coordinates under an equivalence relation.</li><li>The set of lines through the origin in 3D space.</li><li>The projections of the origin onto a plane \(w=1\).</li><li>The set of points on the unit sphere under an equivalence relation.</li></ol></p>
-<p>The more of these ways of thinking you master, the better your understanding of the projective plane will be.</p>
-<div class="Exercise" title="Points at infinity"> Where are the points at infinity and the line at infinity in each of the \(5\) approaches above?
-<div class="Solution">
-<p><a onclick="myCollapse('exx')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
-<div id="exx" class="w3-container w3-hide">
-  <ol><li>On the border of the cartesian plane</li><li>The points at infinity are the points \([a;b;0]\), and the line at infinity is the set of points at infinity</li><li>The points at infinity are the lines parallel to the \(x-y\) plane, and the line at infinity is just the \(x-y\) plane.</li><li>The points at infinity are the projections that don't meet the plane \(w=1\), and the line at infinity is the set of these points.</li><li>The points at infinity are the points on the unit sphere in the \(x-y\) plane, and the line at infinity is the unit circle in the \(x-y\) plane.</li></ol>
-</div>
-</div>
-</div>
-
-<p>Solving the above exercise should test your understanding of the projective plane. Now, let's do some things with it!</p>
-<h3>Homogenous Polynomials</h3>
-<p>The projective plane is very useful because any two points determine a line, and any two lines determine a point. This symmetry leads to a cleaner way to handle line and conics than in Coordinate Geometry.</p>
-<p>Suppose we take the standard formula for a line in the cartesian plane: \(ax+by+c=0\). If we replace \((x,y)\) with \([X;Y;Z]\), we get the formula $$a\frac XZ+b\frac YZ+c=0$$Multiplying by \(Z\), we get $$aX+bY+cZ=0$$This is called a <strong>homogenous</strong> polynomial, since all of the terms have the same degree (\(1\)).</p>
-<p>We can similarly homogenize a quadratic polynomial. \(ax^2+bxy+cy^2+dx+ey+f=0\) becomes $$aX^2+bXY+cY^2+dXZ+eYZ+fZ^2=0$$ As we can see, homogenizing a line gives us a plane in 3D space, as in the following diagram:</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/projectivetransformations.gif"><img src="/public/projectivetransformations.gif" width="100%"></a></p>
-<p>Now why would we want to homogenize polynomials? One of the great benefits is the following theorem:</p>
-<div class="Theorem" title="Projective Conics"> Given any non-degenerate conic \(ax^2+bxy+cy^2+dx+ey+f=0\), the homogenization of the conic is isomorphic to a circle.</div>
-<p>Let's understand what this theorem means. It say, if we move any conic from the real plane to the projective plane, it becomes isomorphic to a circle. By isomorphic, we roughly mean, we can stretch or compress one shape to form the other (for example, a circle is isomorphic to an ellipse, since we can stretch the circle out. The circle is not isomorphic to a parabola, since the parabola has an open end.)</p>
-<p>This is not an obvious theorem! In the real plane, ellipses, parabolas, and hyperbolas are all non-isomorphic (you can't transform any one of them into any other of them.) However, in the projective plane, they are all really just the same shape.</p>
-<p>To see why this is the case, let's imagine the image of these conics on the sphere (our 4th way of imagining the projective plane.)</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/projectivelinear.png"><img src="/public/projectivelinear.png" width="100%"></a></p>
-<p>As the diagram above shows, a line through the origin in the cartesian plane is a great circle on the sphere. What about our conics?</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/conicalpr.png"><img src="/public/conicalpr.png" width="100%"></a></p>
-<p>In the diagram above, \(l_\infty\) represents the line at infinity. If a circle on our sphere doesn't touch the line at infinity, as in the first example, the projection onto the real plane of the circle will be an ellipse, as in the following picture.</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/compass4c.gif"><img src="/public/compass4c.gif" width="100%"></a></p>
-<p>If we are in the second case, in which the circle touches the line at infinity at one point (as a tangent), the projection will be a parabola. And in the third case, where the line at infinity is a secant to the circle, the projection of the circle will be a hyperbola.</p>
-<div class="remark" title="Discriminant"> In the quadratic equation, if \(b^2-4ac>0\), there are two roots. If \(b^2-4ac=0\), there is one root, and if \(b^2-4ac\lt0\), there are zero roots. Similarly, if \(B^2-4AC>0\), our projection is a hyperbola, and the circle projecting it intersects the line at infinity at two points. If \(B^2-4AC=0\), our projection is a parabola, and the circle projecting it intersects the line at infinity at one point. If \(B^2-4AC\lt0\), our projection is an ellipse, and the circle projecting it intersects the line at infinity at zero points. The quantity \(b^2-4ac\) is called the <strong>discriminant</strong>, and shows up all over mathematics.</div>
-<br><p>Another way of thinking about the differences between these \(3\) conics is as follows. In the projective space, the two "U"s in the hyperbola are glued together on each of their strands at the two points at infinity which they intersect at. The parabola's two strands intersect at one point at infinity. Thus, you can begin to imagine both of these shapes as very stretched out ellipses.</p>
-
-<div class="Exercise" title="Finding intersections at infinity"> For the following conics, find the points at infinity that they intersect<ul><li>\(x^2=1\)</li><li>\(x^2-y^2=1\)</li></ul>
-<div class="Solution">
-<p><a onclick="myCollapse('exy')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
-<div id="exy" class="w3-container w3-hide">
-  <ul><li>\([0;1;0]\)</li><li>\([1;1;0],\;[1;-1;0]\)</li></ul>
-</div>
-</div>
-</div>
-
+  </ul>
 
 </div>
 
