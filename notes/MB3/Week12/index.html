@@ -647,7 +647,7 @@ As you might expect, \(s_n\) can be written as a linear recurrence. To find out 
 </div>
 </div>
 <div class="Exercise" title="Random Walk"> Suppose you are located at point \(k\) on the real number line, where \(k\) is a positive integer less than \(N\). Every minute, you flip a coin, and if it is heads, you move right by \(1\) unit, and otherwise, you move left by \(1\) unit. The game stops when you either reach \(0\) or \(N\). What is the probability you reach \(N\), instead of \(0\)?
-<div class="proof">
+<div class="Solution">
 <p><a onclick="myCollapse('exx')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
 <div id="exx" class="w3-container w3-hide">
 Let \(P_i\) for each \(0\leq i\leq N\) represent the probability of hitting \(N\) instead of \(0\) if you start at position \(i\). Thus, \(P_0=0\), \(P_N=1\). And, our recurrence is $$P_i=\frac12P_{i+1}+\frac12P_{i-1}$$Thus, the characteristic equation for this recurrence is \(\lambda^2-2\lambda+1\), which has \(1\) as a double root. So, the general form for the solution is \(P_i=A+Bi\). Plugging in \(P_0=0\) gives us \(A=0\), and \(P_N=1\) gives us \(B=\frac1N\). Thus, our solution is $$P_k=\frac kN$$
