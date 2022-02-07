@@ -745,6 +745,15 @@ We prove the claim by induction on \(r\). For our base case, the Weakened CRT Th
 <div class="Theorem" title="Euler's Totient Theorem"> For all moduli \(n\) and any integer \(a\), if \(\gcd(a,n)=1\), \(a^{\varphi(n)}\equiv1\bmod n\).</div>
 <p>This is a truly beautiful result. It tells us that \(\frac1a=a^{\varphi(n)-1}\). In the case that \(n\) is prime, we have the following result as a direct implication.</p>
 <div class="Exercise" title="Fermat's Little Theorem"> Prove using Euler's Totient Theorem that for any prime \(p\) and any integer \(a\), \(a^p\equiv a\bmod p\).</div>
+<div class="Exercise" title="Repeating decimals"> What is the period of digits in the decimal expansion of \(\frac17\)?
+<div class="Solution">
+<p><a onclick="myCollapse('asda')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="asda" class="w3-container w3-hide">
+  The <strong>period</strong> of a decimal expansion is the number of digits that needs to appear before the decimal pattern starts looping. For example, the period of \(\frac1{11}\) in base \(10\) is \(2\) since the decimal is \(0.090909\ldots\). In base \(10\), the period of \(\frac1{12}\) is \(1\) since the decimal is \(0.08333\ldots\).<br><br><br>
+  In base \(b\), the period of \(\frac pq\) (in simplest form) is the smallest positive integer \(k\) such that there exists a natural number \(n\) with $$b^n\equiv b^{n+k}\bmod q$$\(n\) represents the number of digits before the decimal starts repeating, and \(k\) is the period.<br><br><br>In our problem, we know by Fermat's Little Theorem that \(10^6\equiv10^0\bmod7\), so the period is \(6\).
+</div>
+</div>
+</div>
 <p>To find the remainder of \(a^b\) when divided by \(n\), assuming \(\gcd(a,n)=1\), we note that \(a^{\varphi(n)}\equiv1\bmod n\), so if \(c\) is the remainder of \(b\) when divided by \(\varphi(n)\), then \(a^b\equiv a^c\bmod n\). This will simplify the problem to one we can handle.</p>
 <p>For a final interesting result that follows from the Totient Theorem, consider the following exercise.</p>
 <div class="Exercise" title="Chicken McNugget Theorem"> Prove using the Euler Totient Theorem that the greatest integer that can't be written as \(am+bn\) for some non-negative integers \(a,b\) is \(mn-m-n\).</div>

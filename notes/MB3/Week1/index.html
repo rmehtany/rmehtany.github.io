@@ -613,6 +613,7 @@
 
   <ul id="markdown-toc">
     <li><a href='#dimensionalanalysis'>Dimensional Analysis</a><ul><li><a href='#quizdim'>Quiz</a></li></ul></li>
+    <li><a href='#base'>Number Bases</a></li>
     <li><a href='#area'>Area and Circumference of the Circle</a></li>
     <li><a href='#pythagorean'>Pythagorean Triples</a></li>
     <li><a href='#permutations'>Permutations and Combinations</a></li>
@@ -648,6 +649,16 @@ For the following problems, use the following table:
 <div class="exercise" title=""> Convert \(19\) inches to ft</div>
 <div class="exercise" title=""> Convert \(0.422\) kg/cm to lbs/ft</div>
 <div class="exercise" title=""> Convert \(32\) ft/sec to yards/min</div>
+<h2 id='base'>Number Bases</h2>
+<p>Our next topic is number bases. When I write the number \(245\), how do I understand what this number is?</p>
+<p>We can separate it into digits. \(245=200+40+5\). Another way of writing this is$$245=2\cdot10^2+4\cdot10^1+5\cdot10^0$$What if we replaced \(10\) in the equation above by some other number \(b\)?</p>
+<p>We call this <strong>numbers base</strong> \(b\). To write a number in base \(b\), we put a subscript \(b\) after the number to remind ourselves that this number is not in our normal way of writing it.</p>
+<div class="Example" title="Base 6"> The number \(245_6\) is written in base \(6\). What number is it in our normal decimal notation? Well, $$245_6=2\cdot6^2+4\cdot6^1+5\cdot6^0=101$$</div>
+<p>When we write number base \(b\), we use digits \(0,1,\ldots,b-1\). But what if \(b\gt10\). What digits do we use for numbers like \(10\) and \(11\)? Mathematicians usually use letters of the alphabet. \(A\) represents \(10\), \(B\) represents \(11\), and so on.</p>
+<div class="Example" title="Base 16"> The number \(AF1_{16}\) is written in base \(16\), known as <strong>hexadecimal</strong>. Its value is $$10\cdot16^2+15\cdot16+1=2801$$</div>
+<p>The most common base we use outside of our normal base \(10\) is base \(2\), which we call <strong>binary</strong>. It is very useful since we only need \(2\) digits: \(0\) and \(1\).</p>
+<p>So how do we convert numbers in our normal base \(10\) to other bases? We use the <strong>greedy algorithm</strong>.</p>
+<div class="Example" title="Greedy Algorithm"> Let's write \(100\) in base \(4\). First, we find the largest power of \(4\) \(\leq100\). This happens to be \(4^3=64\). So, our number will have \(3+1=4\) digits. In the first slot, we find the digit by dividing \(100\) by \(4^3\). We get \(1\) with a remainder of \(36\). So, the first digit is \(1\). Next, we get the second digit by dividing the remainder by \(4^2\). \(36\) divided by \(4^2\) is \(2\), with a remainder of \(4\). So, the second digit is \(2\). Next, we divide the remainder by \(4^1\). \(4\) divided by \(4^1\) is \(1\), with a remainder of \(0\). The last digit is just the final remainder. So, our answer is $$100=1210_4$$</div>
 
 <h2 id='area'>Circumference and area of the circle</h2>
 <p>The circle is one of the most fundamental geoemtrical objects we know, so finding the area and circumference of it is useful.</p>
