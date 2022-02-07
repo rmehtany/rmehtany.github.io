@@ -8,7 +8,7 @@
 
   <title>
 
-      Rushabh Mehta - MB3
+      Week 15 Notes
 
   </title>
 
@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="/public/css/hyde.css">
   <link rel="stylesheet" href="/public/css/mystyle.css">
   <link rel="stylesheet" href="/public/css/theorem.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="/public/css/w3.css">
   <link rel="stylesheet" href="/public/css/color.css">
   <link rel="stylesheet" href="/public/css/colorbox.css">
@@ -52,15 +53,15 @@
   <script src="/js/jquery.colorbox-min.js"></script>
 
 
+  <!-- Add mermaid -->
 
-
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
 
   <!-- Icons -->
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/harvardicon.png">
   <link rel="shortcut icon" href="/public/harvardicon.png">
-
-  <!-- RSS -->
-  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
 
   <!-- tooltip -->
   <style>
@@ -319,10 +320,10 @@
     <button class="w3-button sidebar w3-text-white w3-hide-medium w3-hide-large w3-right" onclick="sidebar_close()">☰</button>
     <div class="sidebar-about">
       <div class="w3-text-white w3-center" style="font-size:20px;">
-        Rushabh Mehta
+         Rushabh Mehta
       </div>
 
-      <p class="lead" style="font-size:16px;font-style:italic;">An investment in knowledge pays the best interest.<br> - Benjamin Franklin</p>
+      <p class="lead" style="font-size:16px;font-style:italic;">Mathematics is the poetry of logical ideas.<br> - Albert Einstein</p>
 
     </div>
 
@@ -338,7 +339,8 @@
       <!--<a class="sidebar-nav-item" href="/conjecture/">Conjectures</a>-->
     </nav>
   </div>
-    <div class="w3-bottom">
+
+  <div class="w3-bottom">
     <p style="font-size:12px">© <script>document.write(new Date().getFullYear())</script> Rushabh Mehta</p>
   </div>
 </div>
@@ -352,7 +354,199 @@
       <div style="display:none">
 <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-1-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mtext mathcolor=&quot;red&quot;>\ie</mtext></mrow><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mtext mathcolor=&quot;red&quot;>\cf</mtext></mrow></math>" role="presentation" style="font-size: 123%; position: relative;"><span id="MJXc-Node-1" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-2" class="mjx-mrow"><span id="MJXc-Node-3" class="mjx-texatom"><span id="MJXc-Node-4" class="mjx-mrow"><span id="MJXc-Node-5" class="mjx-mtext" style="color: red;"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.491em; padding-bottom: 0.599em;">\ie</span></span></span></span><span id="MJXc-Node-6" class="mjx-texatom"><span id="MJXc-Node-7" class="mjx-mrow"><span id="MJXc-Node-8" class="mjx-mtext" style="color: red;"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.491em; padding-bottom: 0.599em;">\cf</span></span></span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow class="MJX-TeXAtom-ORD"><mtext mathcolor="red">\ie</mtext></mrow><mrow class="MJX-TeXAtom-ORD"><mtext mathcolor="red">\cf</mtext></mrow></math></span></span><script type="math/tex" id="MathJax-Element-1">
 
-    \renewcommand{\P}{\mathcal{P}}
+    \newcommand{\norm}[1]{\\|#1\\|}
+    \newcommand{\rank}{\text{rank}}
+    \newcommand{\tr}{\text{tr}}
+    \newcommand{\mor}{\text{Mor}}
+    \newcommand{\hom}{\text{Hom}}
+    \newcommand{\id}{\text{id}}
+    \newcommand{\obj}{\text{obj}}
+    \newcommand{\pr}{\text{pr}}
+    \newcommand{\ker}{\text{ker}}
+    \newcommand{\coker}{\text{coker}}
+    \newcommand{\im}{\text{im}}
+    \newcommand{\vol}{\text{vol}}
+    \newcommand{\disc}{\text{disc}}
+
+    \newcommand{\bbA}{\mathbb A}
+    \newcommand{\bbB}{\mathbb B}
+    \newcommand{\bbC}{\mathbb C}
+    \newcommand{\bbD}{\mathbb D}
+    \newcommand{\bbE}{\mathbb E}
+    \newcommand{\bbF}{\mathbb F}
+    \newcommand{\bbG}{\mathbb G}
+    \newcommand{\bbH}{\mathbb H}
+    \newcommand{\bbI}{\mathbb I}
+    \newcommand{\bbJ}{\mathbb J}
+    \newcommand{\bbK}{\mathbb K}
+    \newcommand{\bbL}{\mathbb L}
+    \newcommand{\bbM}{\mathbb M}
+    \newcommand{\bbN}{\mathbb N}
+    \newcommand{\bbO}{\mathbb O}
+    \newcommand{\bbP}{\mathbb P}
+    \newcommand{\bbQ}{\mathbb Q}
+    \newcommand{\bbR}{\mathbb R}
+    \newcommand{\bbS}{\mathbb S}
+    \newcommand{\bbT}{\mathbb T}
+    \newcommand{\bbU}{\mathbb U}
+    \newcommand{\bbV}{\mathbb V}
+    \newcommand{\bbW}{\mathbb W}
+    \newcommand{\bbX}{\mathbb X}
+    \newcommand{\bbY}{\mathbb Y}
+    \newcommand{\bbZ}{\mathbb Z}
+
+
+    \newcommand{\cA}{\mathcal A}
+    \newcommand{\cB}{\mathcal B}
+    \newcommand{\cC}{\mathcal C}
+    \newcommand{\cD}{\mathcal D}
+    \newcommand{\cE}{\mathcal E}
+    \newcommand{\cF}{\mathcal F}
+    \newcommand{\cG}{\mathcal G}
+    \newcommand{\cH}{\mathcal H}
+    \newcommand{\cI}{\mathcal I}
+    \newcommand{\cJ}{\mathcal J}
+    \newcommand{\cK}{\mathcal K}
+    \newcommand{\cL}{\mathcal L}
+    \newcommand{\cM}{\mathcal M}
+    \newcommand{\cN}{\mathcal N}
+    \newcommand{\cO}{\mathcal O}
+    \newcommand{\cP}{\mathcal P}
+    \newcommand{\cQ}{\mathcal Q}
+    \newcommand{\cR}{\mathcal R}
+    \newcommand{\cS}{\mathcal S}
+    \newcommand{\cT}{\mathcal T}
+    \newcommand{\cU}{\mathcal U}
+    \newcommand{\cV}{\mathcal V}
+    \newcommand{\cW}{\mathcal W}
+    \newcommand{\cX}{\mathcal X}
+    \newcommand{\cY}{\mathcal Y}
+    \newcommand{\cZ}{\mathcal Z}
+
+
+
+    \newcommand{\rmA}{\mathfrak A}
+    \newcommand{\rmB}{\mathfrak B}
+    \newcommand{\rmC}{\mathfrak C}
+    \newcommand{\rmD}{\mathfrak D}
+    \newcommand{\rmE}{\mathfrak E}
+    \newcommand{\rmF}{\mathfrak F}
+    \newcommand{\rmG}{\mathfrak G}
+    \newcommand{\rmH}{\mathfrak H}
+    \newcommand{\rmI}{\mathfrak I}
+    \newcommand{\rmJ}{\mathfrak J}
+    \newcommand{\rmK}{\mathfrak K}
+    \newcommand{\rmL}{\mathfrak L}
+    \newcommand{\rmM}{\mathfrak M}
+    \newcommand{\rmN}{\mathfrak N}
+    \newcommand{\rmO}{\mathfrak O}
+    \newcommand{\rmP}{\mathfrak P}
+    \newcommand{\rmQ}{\mathfrak Q}
+    \newcommand{\rmR}{\mathfrak R}
+    \newcommand{\rmS}{\mathfrak S}
+    \newcommand{\rmT}{\mathfrak T}
+    \newcommand{\rmU}{\mathfrak U}
+    \newcommand{\rmV}{\mathfrak V}
+    \newcommand{\rmW}{\mathfrak W}
+    \newcommand{\rmX}{\mathfrak X}
+    \newcommand{\rmY}{\mathfrak Y}
+    \newcommand{\rmZ}{\mathfrak Z}
+
+
+
+    \newcommand{\paren}[1]{( #1 )}
+    \newcommand{\Paren}[1]{\left( #1 \right)}
+    \newcommand{\bigparen}[1]{\bigl( #1 \bigr)}
+    \newcommand{\Bigparen}[1]{\Bigl( #1 \Bigr)}
+    \newcommand{\biggparen}[1]{\biggl( #1 \biggr)}
+    \newcommand{\Biggparen}[1]{\Biggl( #1 \Biggr)}
+    \newcommand{\abs}[1]{\lvert #1 \rvert}
+    \newcommand{\Abs}[1]{\left\lvert #1 \right\rvert}
+    \newcommand{\bigabs}[1]{\bigl\lvert #1 \bigr\rvert}
+    \newcommand{\Bigabs}[1]{\Bigl\lvert #1 \Bigr\rvert}
+    \newcommand{\biggabs}[1]{\biggl\lvert #1 \biggr\rvert}
+    \newcommand{\Biggabs}[1]{\Biggl\lvert #1 \Biggr\rvert}
+    \newcommand{\card}[1]{\left| #1 \right|}
+    \newcommand{\Card}[1]{\left\lvert #1 \right\rvert}
+    \newcommand{\bigcard}[1]{\bigl\lvert #1 \bigr\rvert}
+    \newcommand{\Bigcard}[1]{\Bigl\lvert #1 \Bigr\rvert}
+    \newcommand{\biggcard}[1]{\biggl\lvert #1 \biggr\rvert}
+    \newcommand{\Biggcard}[1]{\Biggl\lvert #1 \Biggr\rvert}
+    \newcommand{\norm}[1]{\lVert #1 \rVert}
+    \newcommand{\Norm}[1]{\left\lVert #1 \right\rVert}
+    \newcommand{\bignorm}[1]{\bigl\lVert #1 \bigr\rVert}
+    \newcommand{\Bignorm}[1]{\Bigl\lVert #1 \Bigr\rVert}
+    \newcommand{\biggnorm}[1]{\biggl\lVert #1 \biggr\rVert}
+    \newcommand{\Biggnorm}[1]{\Biggl\lVert #1 \Biggr\rVert}
+    \newcommand{\iprod}[1]{\langle #1 \rangle}
+    \newcommand{\Iprod}[1]{\left\langle #1 \right\rangle}
+    \newcommand{\bigiprod}[1]{\bigl\langle #1 \bigr\rangle}
+    \newcommand{\Bigiprod}[1]{\Bigl\langle #1 \Bigr\rangle}
+    \newcommand{\biggiprod}[1]{\biggl\langle #1 \biggr\rangle}
+    \newcommand{\Biggiprod}[1]{\Biggl\langle #1 \Biggr\rangle}
+    \newcommand{\set}[1]{\lbrace #1 \rbrace}
+    \newcommand{\Set}[1]{\left\lbrace #1 \right\rbrace}
+    \newcommand{\bigset}[1]{\bigl\lbrace #1 \bigr\rbrace}
+    \newcommand{\Bigset}[1]{\Bigl\lbrace #1 \Bigr\rbrace}
+    \newcommand{\biggset}[1]{\biggl\lbrace #1 \biggr\rbrace}
+    \newcommand{\Biggset}[1]{\Biggl\lbrace #1 \Biggr\rbrace}
+    \newcommand{\bracket}[1]{\lbrack #1 \rbrack}
+    \newcommand{\Bracket}[1]{\left\lbrack #1 \right\rbrack}
+    \newcommand{\bigbracket}[1]{\bigl\lbrack #1 \bigr\rbrack}
+    \newcommand{\Bigbracket}[1]{\Bigl\lbrack #1 \Bigr\rbrack}
+    \newcommand{\biggbracket}[1]{\biggl\lbrack #1 \biggr\rbrack}
+    \newcommand{\Biggbracket}[1]{\Biggl\lbrack #1 \Biggr\rbrack}
+    \newcommand{\ucorner}[1]{\ulcorner #1 \urcorner}
+    \newcommand{\Ucorner}[1]{\left\ulcorner #1 \right\urcorner}
+    \newcommand{\bigucorner}[1]{\bigl\ulcorner #1 \bigr\urcorner}
+    \newcommand{\Bigucorner}[1]{\Bigl\ulcorner #1 \Bigr\urcorner}
+    \newcommand{\biggucorner}[1]{\biggl\ulcorner #1 \biggr\urcorner}
+    \newcommand{\Biggucorner}[1]{\Biggl\ulcorner #1 \Biggr\urcorner}
+    \newcommand{\ceil}[1]{\lceil #1 \rceil}
+    \newcommand{\Ceil}[1]{\left\lceil #1 \right\rceil}
+    \newcommand{\bigceil}[1]{\bigl\lceil #1 \bigr\rceil}
+    \newcommand{\Bigceil}[1]{\Bigl\lceil #1 \Bigr\rceil}
+    \newcommand{\biggceil}[1]{\biggl\lceil #1 \biggr\rceil}
+    \newcommand{\Biggceil}[1]{\Biggl\lceil #1 \Biggr\rceil}
+    \newcommand{\floor}[1]{\lfloor #1 \rfloor}
+    \newcommand{\Floor}[1]{\left\lfloor #1 \right\rfloor}
+    \newcommand{\bigfloor}[1]{\bigl\lfloor #1 \bigr\rfloor}
+    \newcommand{\Bigfloor}[1]{\Bigl\lfloor #1 \Bigr\rfloor}
+    \newcommand{\biggfloor}[1]{\biggl\lfloor #1 \biggr\rfloor}
+    \newcommand{\Biggfloor}[1]{\Biggl\lfloor #1 \Biggr\rfloor}
+    \newcommand{\lcorner}[1]{\llcorner #1 \lrcorner}
+    \newcommand{\Lcorner}[1]{\left\llcorner #1 \right\lrcorner}
+    \newcommand{\biglcorner}[1]{\bigl\llcorner #1 \bigr\lrcorner}
+    \newcommand{\Biglcorner}[1]{\Bigl\llcorner #1 \Bigr\lrcorner}
+    \newcommand{\bigglcorner}[1]{\biggl\llcorner #1 \biggr\lrcorner}
+    \newcommand{\Bigglcorner}[1]{\Biggl\llcorner #1 \Biggr\lrcorner}
+
+
+    \newcommand{\Rnn}{\R_{\ge 0}}
+
+
+    \DeclareMathOperator{\Id}{Id}
+    \DeclareMathOperator{\cone}{cone}
+
+    \DeclareMathOperator{\Tr}{Tr}
+
+    \DeclareMathOperator{\min}{min}
+    \DeclareMathOperator{\max}{max}
+    \DeclareMathOperator{\argmax}{arg\,max}
+    \DeclareMathOperator{\argmin}{arg\,min}
+
+    \DeclareMathOperator{\E}{\mathbb E}
+    \DeclareMathOperator{\pE}{\tilde{\mathbb E}}
+    \DeclareMathOperator{\Pr}{\mathbb P}
+    \DeclareMathOperator{\Span}{Span}
+
+    \DeclareMathOperator{\Det}{\textbf{Det}}
+    \DeclareMathOperator{\Perm}{\textbf{Perm}}
+    \DeclareMathOperator{\Sym}{\textbf{Sym}}
+    \DeclareMathOperator{\Pow}{\textbf{Pow}}
+    \DeclareMathOperator{\Gal}{\textbf{Gal}}
+    \DeclareMathOperator{\Aut}{\textbf{Aut}}
+
     \notag
 </script>
 </div>
@@ -366,98 +560,232 @@
 <div style="display:none">
 <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-3-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; />" role="presentation" style="font-size: 123%; position: relative;"><span id="MJXc-Node-11" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-12" class="mjx-mrow"></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"></math></span></span><script type="math/tex" id="MathJax-Element-3">
   \newcommand{\transpose}[1]{\ensuremath{#1{}^{\mkern-2mu\intercal}}}
-
+  \newcommand{\dyad}[1]{\ensuremath{#1#1{}^{\mkern-2mu\intercal}}}
+  \newcommand{\nchoose}[1]{\ensuremath}
+  \newcommand{\generated}[1]{\ensuremath{\langle #1 \rangle}}
   \notag
 </script>
 </div>
 <div style="display:none">
 <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-4-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><merror><mtext>\newcommand{\eqdef}{\mathbin{\stackrel{\rm&amp;#xA0;def}{=}}}&amp;#xA0;&amp;#xA0;\newcommand{\R}&amp;#xA0;%&amp;#xA0;real&amp;#xA0;numbers&amp;#xA0;&amp;#xA0;\newcommand{\N}}&amp;#xA0;%&amp;#xA0;natural&amp;#xA0;numbers&amp;#xA0;&amp;#xA0;\newcommand{\Z}&amp;#xA0;%&amp;#xA0;integers&amp;#xA0;&amp;#xA0;\newcommand{\F}&amp;#xA0;%&amp;#xA0;a&amp;#xA0;field&amp;#xA0;&amp;#xA0;\newcommand{\Q}&amp;#xA0;%&amp;#xA0;the&amp;#xA0;rationals&amp;#xA0;&amp;#xA0;\newcommand{\C}{\mathbb{C}}&amp;#xA0;%&amp;#xA0;the&amp;#xA0;complexes&amp;#xA0;&amp;#xA0;\newcommand{\poly}}&amp;#xA0;&amp;#xA0;\newcommand{\polylog}}&amp;#xA0;&amp;#xA0;\newcommand{\loglog}}}&amp;#xA0;&amp;#xA0;\newcommand{\zo}{\{0,1\}}&amp;#xA0;&amp;#xA0;\newcommand{\suchthat}&amp;#xA0;&amp;#xA0;\newcommand{\pr}[1]{\Pr\left[#1\right]}&amp;#xA0;&amp;#xA0;\newcommand{\deffont}{\em}&amp;#xA0;&amp;#xA0;\newcommand{\getsr}{\mathbin{\stackrel{\mbox{\tiny&amp;#xA0;R}}{\gets}}}&amp;#xA0;&amp;#xA0;\newcommand{\Exp}{\mathop{\mathrm&amp;#xA0;E}\displaylimits}&amp;#xA0;%&amp;#xA0;expectation&amp;#xA0;&amp;#xA0;\newcommand{\Var}{\mathop{\mathrm&amp;#xA0;Var}\displaylimits}&amp;#xA0;%&amp;#xA0;variance&amp;#xA0;&amp;#xA0;\newcommand{\xor}{\oplus}&amp;#xA0;&amp;#xA0;\newcommand{\GF}{\mathrm{GF}}&amp;#xA0;&amp;#xA0;\newcommand{\eps}{\varepsilon}&amp;#xA0;&amp;#xA0;\notag</mtext></merror></math>" role="presentation" style="font-size: 123%; position: relative;"><span id="MJXc-Node-13" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-14" class="mjx-mrow"><span class="mjx-noError" style="vertical-align: -12.15em;">\newcommand{\eqdef}{\mathbin{\stackrel{\rm&nbsp;def}{=}}}<br>&nbsp;&nbsp;\newcommand{\R}&nbsp;%&nbsp;real&nbsp;numbers<br>&nbsp;&nbsp;\newcommand{\N}}&nbsp;%&nbsp;natural&nbsp;numbers<br>&nbsp;&nbsp;\newcommand{\Z}&nbsp;%&nbsp;integers<br>&nbsp;&nbsp;\newcommand{\F}&nbsp;%&nbsp;a&nbsp;field<br>&nbsp;&nbsp;\newcommand{\Q}&nbsp;%&nbsp;the&nbsp;rationals<br>&nbsp;&nbsp;\newcommand{\C}{\mathbb{C}}&nbsp;%&nbsp;the&nbsp;complexes<br>&nbsp;&nbsp;\newcommand{\poly}}<br>&nbsp;&nbsp;\newcommand{\polylog}}<br>&nbsp;&nbsp;\newcommand{\loglog}}}<br>&nbsp;&nbsp;\newcommand{\zo}{\{0,1\}}<br>&nbsp;&nbsp;\newcommand{\suchthat}<br>&nbsp;&nbsp;\newcommand{\pr}[1]{\Pr\left[#1\right]}<br>&nbsp;&nbsp;\newcommand{\deffont}{\em}<br>&nbsp;&nbsp;\newcommand{\getsr}{\mathbin{\stackrel{\mbox{\tiny&nbsp;R}}{\gets}}}<br>&nbsp;&nbsp;\newcommand{\Exp}{\mathop{\mathrm&nbsp;E}\displaylimits}&nbsp;%&nbsp;expectation<br>&nbsp;&nbsp;\newcommand{\Var}{\mathop{\mathrm&nbsp;Var}\displaylimits}&nbsp;%&nbsp;variance<br>&nbsp;&nbsp;\newcommand{\xor}{\oplus}<br>&nbsp;&nbsp;\newcommand{\GF}{\mathrm{GF}}<br>&nbsp;&nbsp;\newcommand{\eps}{\varepsilon}<br>&nbsp;&nbsp;\notag</span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><merror><mtext>\newcommand{\eqdef}{\mathbin{\stackrel{\rm&nbsp;def}{=}}}&nbsp;&nbsp;\newcommand{\R}&nbsp;%&nbsp;real&nbsp;numbers&nbsp;&nbsp;\newcommand{\N}}&nbsp;%&nbsp;natural&nbsp;numbers&nbsp;&nbsp;\newcommand{\Z}&nbsp;%&nbsp;integers&nbsp;&nbsp;\newcommand{\F}&nbsp;%&nbsp;a&nbsp;field&nbsp;&nbsp;\newcommand{\Q}&nbsp;%&nbsp;the&nbsp;rationals&nbsp;&nbsp;\newcommand{\C}{\mathbb{C}}&nbsp;%&nbsp;the&nbsp;complexes&nbsp;&nbsp;\newcommand{\poly}}&nbsp;&nbsp;\newcommand{\polylog}}&nbsp;&nbsp;\newcommand{\loglog}}}&nbsp;&nbsp;\newcommand{\zo}{\{0,1\}}&nbsp;&nbsp;\newcommand{\suchthat}&nbsp;&nbsp;\newcommand{\pr}[1]{\Pr\left[#1\right]}&nbsp;&nbsp;\newcommand{\deffont}{\em}&nbsp;&nbsp;\newcommand{\getsr}{\mathbin{\stackrel{\mbox{\tiny&nbsp;R}}{\gets}}}&nbsp;&nbsp;\newcommand{\Exp}{\mathop{\mathrm&nbsp;E}\displaylimits}&nbsp;%&nbsp;expectation&nbsp;&nbsp;\newcommand{\Var}{\mathop{\mathrm&nbsp;Var}\displaylimits}&nbsp;%&nbsp;variance&nbsp;&nbsp;\newcommand{\xor}{\oplus}&nbsp;&nbsp;\newcommand{\GF}{\mathrm{GF}}&nbsp;&nbsp;\newcommand{\eps}{\varepsilon}&nbsp;&nbsp;\notag</mtext></merror></math></span></span><script type="math/tex" id="MathJax-Element-4">
-  \newcommand{\eqdef}{\mathbin{\stackrel{\rm def}{=}}}
 
-  \newcommand{\eps}{\varepsilon}
+  \newcommand{\C}{\mathbb{C}} % the complexes
+
+  \newcommand{\pr}[1]{\Pr\left[#1\right]}
+
   \notag
 </script>
 </div>
 <div style="display:none">
 <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-5-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; />" role="presentation" style="font-size: 123%; position: relative;"><span id="MJXc-Node-15" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-16" class="mjx-mrow"></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"></math></span></span><script type="math/tex" id="MathJax-Element-5">
-  \newcommand{\class}[1]{\mathbf{#1}}
 
 </script>
 </div>
 <div style="display:none">
 <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-6-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mtext mathcolor=&quot;red&quot;>\no</mtext></mrow></math>" role="presentation" style="font-size: 123%; position: relative;"><span id="MJXc-Node-17" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-18" class="mjx-mrow"><span id="MJXc-Node-19" class="mjx-texatom"><span id="MJXc-Node-20" class="mjx-mrow"><span id="MJXc-Node-21" class="mjx-mtext" style="color: red;"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.491em; padding-bottom: 0.599em;">\no</span></span></span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow class="MJX-TeXAtom-ORD"><mtext mathcolor="red">\no</mtext></mrow></math></span></span><script type="math/tex" id="MathJax-Element-6">
   \newcommand{\textprob}[1]{\text{#1}}
+  \newcommand{\mathprob}[1]{\textbf{#1}}
+  \newcommand{\Satisfiability}{\textprob{Satisfiability}}
+  \newcommand{\Mor}{\textprob{Mor}}
+  \newcommand{\Hom}{\textprob{Hom}}
+  \newcommand{\cok}{\textprob{cok}}
+  \newcommand{\ker}{\textprob{ker}}
+  \newcommand{\im}{\textprob{im}}
+  \newcommand{\coim}{\textprob{coim}}
+  \newcommand{\id}{\textprob{id}}
 
 </script>
 </div>
 
 
-      <a href="../"><bf>Back to notes</bf></a>
+<div><a href="/notes/MB3/"><bf>Back to MB3</bf></a></div>
+
 
 <div class="post">
-  <h1 class="post-title">MB3 Class Materials</h1>
+  <h1 class="post-title">Week 15 Notes</h1>
 
-  <!-- Notes list -->
 
-  <table class="w3-table w3-striped w3-bordered">
-    <tbody><tr>
-      <th>Week</th>
-    </tr>
+  <div class="w3-white w3-round-xlarge w3-tiny">
+    <div class="w3-container w3-blue w3-round-xlarge" style="width:100%">100%</div>
+  </div>
+  <br>
 
-        <tr>
-          <td><a href="Week1/">Week 1</a></td>
-        </tr>
-        <tr>
-          <td><a href="Week2/">Week 2</a></td>
-        </tr>
-        <tr>
-          <td><a href="Week3/">Week 3</a></td>
-        </tr>
-        <tr>
-          <td><a href="Week4/">Week 4</a></td>
-        </tr>
-        <tr>
-          <td><a href="Week5/">Week 5</a></td>
-        </tr>
-        <tr>
-          <td><a href="Week6/">Week 6</a></td>
-        </tr>
-        <tr>
-          <td><a href="Week7/">Week 7</a></td>
-        </tr>
-        <tr>
-          <td><a href="Week8/">Week 8</a></td>
-        </tr>
-        <tr>
-          <td><a href="Week9/">Week 9</a></td>
-        </tr>
-        <tr>
-          <td><a href="Week10/">Week 10</a></td>
-        </tr>
-        <tr>
-          <td><a href="Week11/">Week 11</a></td>
-        </tr>
-        <tr>
-          <td><a href="Week12/">Week 12</a></td>
-        </tr>
-        <tr>
-          <td><a href="Week13/">Week 13</a></td>
-        </tr>
-        <tr>
-          <td><a href="Week14/">Week 14</a></td>
-        </tr>
-        <tr>
-          <td><a href="Week15/">Week 15</a></td>
-        </tr>
-  </tbody></table>
-<p>These notes are meant for my class teaching Advanced Mathcounts (MB3) through NorthSouth.org. Please do not redistribute without my permission. Licensed under MIT Open License.</p>
+
+  <ul id="markdown-toc">
+    <li><a href='#r'>Resources</a><ul><li><a href='#p'>Programs</a></li><li><a href='#l'>Learning</a></li><li><a href='#c'>Computing</a></li></ul></li>
+    <li><a href='#ch'>Challenge: The Final Test</a></li>
+  </ul>
+
+<p>Congratulations on reaching the end of the course! Hopefully you've learned a lot during these \(15\) weeks. Now, it's time for you to apply your newfound knowledge.</p>
+<h2 id='r'>Resources</h2>
+<p>Here are some great resources to continue your math journey.</p>
+<h4 id='p'>Programs</h4>
+There are a lot of great programs you can enroll in to continue participating in mathematics.
+<ul>
+  <li><a href='https://www.ideamath.education/landing/programs/summer-program' target='_blank'>Idea Camp</a></li>
+  <li><a href='https://www.mathcamp.org/' target='_blank'>Canada/USA Mathcamp</a></li>
+  <li><a href='https://www.cmu.edu/pre-college/academic-programs/sams.html#eligibility' target='_blank'>Summer Academy for Mathematics and Sciences</a></li>
+  <li><a href='https://alphastar.academy/summer-math/' target='_blank'>Alphastar Summer Math Camp</a></li>
+  <li><a href='https://www.awesomemath.org/summer-program/overview/program-information/' target='_blank'>Awesomemath</a></li>
+  <li><a href='http://www.mathily.org/' target='_blank'>MathIly</a></li>
+  <li><a href='https://hcssim.org/' target='_blank'>HCSSiM</a></li>
+  <li><a href='https://sites.lsa.umich.edu/mmss/'>Michigan Math and Science Scholars</a></li>
+  <li><a href='https://promys.org/' target='_blank'>PROMYS</a></li>
+  <li><a href='https://www.txstate.edu/mathworks/camps/Summer-Math-Camps-Information/hsmc.html'> target='_blank'>MathWorks</a></li>
+  <li><a href='https://proveitmath.org/' target='_blank'>Prove It!</a></li>
+  <li><a href='https://www.mathpath.org/' target='_blank'>MathPath</a></li>
+</ul>
+<h4 id='l'>Learning</h4>
+The internet is a deluge of information, and it's often hard to know where the best place to learn is. These are the sources I used most when needing to learn a subject.
+<ul>
+ <li><a href='https://artofproblemsolving.com/' target='_blank'>AOPS</a>: The Art of Problem Solving is the premier curriculum for learning mathematics up to the collegiate level.</li>
+ <li><a href='https://realnotcomplex.com/' target='_blank'>Real Not Complex</a>: RNC aggregates great textbooks and lectures for almost all undergraduate and graduate level mathematics disciplines. It's a fantastic resource for anyone looking to learn a subject deeply.</li>
+ <li><a href='https://www.pdfdrive.com/' target='_blank'>PDF Drive</a>: A great resource for finding textbooks and other papers that are otherwise expensive or hard to access.</li>
+ <li><a href='https://math.stackexchange.com/questions/' target='_blank'>Math Stack Exchange</a>: This site has a very healthy population of mathematics enthusiasts as regular visitors, and is of immense value to anyone needing some assistance with a problem.</li>
+ <li><a href='https://www.gutenberg.org/' target='_blank'>Project Gutenberg</a>: This site has over 60,000 free ebooks, which mostly are digital versions of old books that are otherwise hard to access.</li>
+ <li>YouTube: Unsurprisingly, there's a ton of great content on YouTube for learning math. I'm not going to do justice to all of the great channels out there, but here are some of my favorite smaller channels:
+   <ul>
+     <li><a href='https://www.youtube.com/playlist?list=PLkyBCj4JhHt9G55u1vgx_DF0C7DXVsBS8' target='_blank'>Eugene Khutoryansky</a></li>
+     <li><a href='https://www.youtube.com/channel/UCm5mt-A4w61lknZ9lCsZtBw' target='_blank'>Steve Brunton</a></li>
+     <li><a href='https://www.youtube.com/channel/UCQwRDS6_J4OY4FohFvee5PQ' target='_blank'>Timothy Gowers</a></li>
+     <li><a href='https://www.youtube.com/channel/UCy3u23mZE4TyW88yr6JLx9A' target='_blank'>AGITOC</a></li>
+     <li><a href='https://www.youtube.com/user/thetrevtutor' target='_blank'>The Trev Tutor</a></li>
+   </ul>
+ </li>
+</ul>
+<h4 id='c'>Computing</h4>
+Need to use some computer assistance to solve problems? The internet is brimming with online tools that can help.
+<ul>
+  <li><a href='https://www.wolframalpha.com/' target='_blank'>Wolfram Alpha</a>: The name synonymous with mathematical computing online. Surprisingly, I didn't use it all that much for my computing tasks.</li>
+  <li><a href='https://sagecell.sagemath.org/' target='_blank'>Sage Cell</a>: An online computing platform for SageMath. A fantastic alternative to WolframAlpha/Mathematica</li>
+  <li><a href='https://www.math3d.org/' target='_blank'>Math3d</a>: A website that allows you to graph functions a la Desmos in higher dimensions, producing Blender quality animations</li>
+  <li><a href='https://tio.run/#' target='_blank'>TIO</a>: An online compiler for 680+ languages. It's not great for programming projects, as there is no autocompletion, but for small shareable programs, it's quite useful</li>
+  <li><a href='https://www.geogebra.org/calculator' target='_blank'>GeoGebra</a>: A graphing tool similar to Desmos, but is far more versatile.</li>
+</ul>
+<h2 id='ch'>Challenge: The Final Test</h2>
+<p>Here is a collection of \(14\) very challenging problems, each from each week of the course, to test how well you got the material. These problems should take you a decent amount of time, but solving them shows mastery over the material.</p>
+<div class="Exercise" title="Week 1"> Given \(a+b+c=100\) with integers \(a,b,c\) satisfying \(0\lt a\lt b\lt c\), how many solutions are there to the equation?
+<div class="Solution">
+<p><a onclick="myCollapse('week1')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="week1" class="w3-container w3-hide">
+Let \(w=a-1\), \(x=b-1-a\), \(y=c-1-b\), \(z=97-c\). Thus, \(w+x+y+z=100\), and \(w,x,y,z\) are all natural numbers. The number of ways of picking \(w,x,y,z\), which is equivalent to the answer we are looking for, can be computing via stars and bars to be \(103\choose3\).
+</div>
+</div>
+</div><br>
+<div class="Exercise" title="Week 2"> On a train station, there are two intersecting lines: local trains and express trains. Local trains come every \(5\) minutes, starting at noon. Express trains come every \(6\) minutes, also starting at noon. John shows up to the train station at some random point during the day. What is the expected value of the amount of time he'll wait before a train shows up?
+<div class="Solution">
+<p><a onclick="myCollapse('week2')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="week2" class="w3-container w3-hide">
+Every \(30\) minutes, both local and express trains come at the same time. So, let's draw a \(30\) minute timeline and the times at which trains show up.<p><a class="gallery img-center-short cbox-Element" href="/public/week215.png"><img src="/public/week215.png" width="100%"></a></p>
+We consider the expected value of the amount of time John waits if he shows up between each pair of consecutive trains. If John shows up between \(0\) and \(5\) minutes with probability \(\frac5{30}\), the expected wait time is \(\frac{0+5}2=2.5\) minutes. We can do a similar calculation for each of the time gaps in the diagram above, which is written underneath the timeline. So, the expected value is $$\frac1{30}(5\cdot2.5+1\cdot0.5+4\cdot2+2\cdot1+3\cdot1.5+3\cdot1.5+2\cdot1+4\cdot2+1\cdot0.5+5\cdot2.5)$$Simplified, that becomes \(\frac{11}6\) minutes.
+</div>
+</div>
+</div><br>
+<div class="Exercise" title="Week 3"> Consider all \(1000\) element subsets of \(\{1,2,\ldots,2022\}\). From each, choose the least element. What is the mean of all of the least elements?
+<div class="Solution">
+<p><a onclick="myCollapse('week3')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="week3" class="w3-container w3-hide">
+There are \(2022\choose1000\) total \(1000\) element subsets. And, there are \(2022-k\choose999\) subsets of \(1000\) elements with least element \(k\) (since all of the remaining elements must be picked from the set \(\{k+1,\ldots,2022\}\)). Thus, our mean is $$\frac{1\cdot{2021\choose999}+2\cdot{2020\choose999}+\ldots+1023\cdot{999\choose999}}{2022\choose1000}$$Applying the Hockey Stick Identity \(1023\) times to the numerator, we get $$\frac{{2023\choose1000}+{2022\choose1000}+\ldots+{1000\choose1000}}{2022\choose1000}$$Applying the Hockey Stick Identity again, we have $$\frac{2023\choose1001}{2022\choose1000}=\frac{2023}{1001}=\frac{289}{143}$$
+</div>
+</div>
+</div><br>
+<div class="Exercise" title="Week 4"> Given the following diagram, in which lines \(\overline{EB}\) and \(\overline{AC}\) intersect at point \(H\), and \(ABCD\) is a rectangle, find \(x\)<br><br><p><a class="gallery img-center-short cbox-Element" href="/public/week715.png"><img src="/public/week715.png" width="100%"></a></p>
+<div class="Solution">
+<p><a onclick="myCollapse('week4')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="week4" class="w3-container w3-hide">
+Since \(\angle FED=\angle ABF\) since \(\overline{AB}\) is parallel to \(\overline{CD}\), \(\triangle FED\sim\triangle EBC\). Let \(b=\overline{BC}\) and \(f=\overline{FD}\). By similarity, we have $$\frac fb=\frac5{9+x}\to 9f+fx=5b$$Since \(\angle DAC=\angle ACB\) as \(\overline{AD}\) and \(\overline{BC}\) are parallel, we have \(\triangle AFH\sim\triangle HBC\). By similarity, $$\frac{b-f}4=\frac bx\to bx-fx=4b$$Substituting \(f=\frac{bx-4b}x\) into the first equation gives us $$5b=9b\cdot\frac{x-4}x+bx-4b$$Multiplying by \(\frac bx\) gives us $$\begin{aligned}5x&=9(x-4)+x^2-4x\\0&=x^2-36\\6&=x\end{aligned}$$
+</div>
+</div>
+</div><br>
+<div class="Exercise" title="Week 5">\(\;a_n\) and \(b_n\) are arithmetic sequences. Let \(S_n=\sum\limits_{i=1}^na_n\) and \(T_n=\sum\limits_{i=1}^nb_n\). If \(\frac{S_n}{T_n}=\frac{3n+1}{5n+3}\), what is \(\frac{a_5}{b_5}\)?
+<div class="Solution">
+<p><a onclick="myCollapse('week5')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="week5" class="w3-container w3-hide">
+  Since \(a_5\) is the average of the terms \(a_1,\ldots,a_9\) and similarly for \(b_5\), $$\frac{3\cdot9+1}{5\cdot9+3}=\frac{S_9}{T_9}=\frac{9a_5}{9b_5}=\frac{a_5}{b_5}$$Thus, the answer is \(\frac7{12}\).
+</div>
+</div>
+</div><br>
+<div class="Exercise" title="Week 6"> In the unit cube below, \(M\) is the midpoint of \(\overline{AB}\) and \(N\) the midpoint of \(\overline{GC}\). The plane going through points \(D,B,C\) cuts the cube into two shapes. What is the volume of the smaller piece?<br><br><p><a class="gallery img-center-short cbox-Element" href="/public/week615.png"><img src="/public/week615.png" width="100%"></a></p><strong>Hint</strong>: \(\triangle NDC\sim\triangle MBP\), where \(P\) is the intersection of the plane and \(\overline{BF}\).
+<div class="Solution">
+<p><a onclick="myCollapse('week6')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="week6" class="w3-container w3-hide">
+The trick is to realize that the smaller shape is just a pyramid (more precisely, a tetrahedron) with its top cut off, as in the following diagram.<br><p><a class="gallery img-center-short cbox-Element" href="/public/week6152.png"><img src="/public/week6152.png" width="100%"></a></p>
+As hinted, \(\triangle NDC\sim\triangle MBP\) since \(P\) is determined by the plane through \(D,M,N\). So, since \(MB=\frac12\) and \(DC=1\), \(\frac{NC}{PB}=\frac12\), so \(PB=\frac14\). That means that \(B\) is the midpoint of \(TC\), implying that \(TB=1\).<br><br><br>
+Finally, the area of \(\triangle NDC\) is \(\frac14\), so the volume of the whole pyramid \(TNDC\) is \(\frac14\cdot2\cdot\frac13=\frac16\). The area of the smaller pyramid \(TMBP\) is \(\frac1{16}\cdot1\cdot\frac13=\frac1{48}\), since the ratio of areas of similar triangles is the square of the ratio of the sides. So, our answer is \(\frac16-\frac1{48}=\frac7{48}\).
+</div>
+</div>
+</div><br>
+<div class="Exercise" title="Week 7"> In the following diagram, \(a,b\) are positive real numbers. What is the value of \(\frac{\angle CDB}{\angle ADC}\)?<br<p><a class="gallery img-center-short cbox-Element" href="/public/week415.png"><img src="/public/week415.png" width="100%"></a></p>
+<div class="Solution">
+<p><a onclick="myCollapse('week7')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="week7" class="w3-container w3-hide">
+  Let \(x=\overline{AD}\). By Pythagorean Theorem applied to both right triangles, we have $$x^2=b^2-a^2=25b^2-121a^2$$$$5a^2=b^2$$So, \(x=2a\).<br><br>
+  Now, observe that the area of \(\triangle CDB\) is \(\frac12\cdot10a\cdot2a=10a^2\) since \(x\) is the height of the triangle. But, we can also use the formula \(A=\frac12ab\sin c\) to find the area, giving us $$\frac12b\cdot5b\cdot\sin\angle CDB=10a^2$$$$25a^2\sin\angle CDB=20a^2\to\sin\angle CDB=\frac45$$\(\sin\angle ADC=\frac1{\sqrt5}\) and \(\cos\angle ADC=\frac2{\sqrt5}\). Thus, $$\sin\angle ADC\cdot\cos\angle ADC=\frac25=\frac12\sin\angle CDB$$By our double angle formula, \(\sin2\theta=2\sin\theta\cos\theta\), so \(\angle CDB=2\angle ADC\).
+</div>
+</div>
+</div><br>
+<div class="Exercise" title="Week 8"> What is the smallest natural number \(n\) such that $$2^0+2^1+\ldots+2^n\equiv0\bmod{77}$$
+<div class="Solution">
+<p><a onclick="myCollapse('week8')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="week8" class="w3-container w3-hide">
+  \(2^{n+1}\equiv1\bmod{77}\) since the sum equals \(2^{n+1}-1\). Thus, by the Chinese Remainder Theorem, we need to find \(n\) such that \(2^{n+1}\equiv1\bmod7\) and \(2^{n+1}\equiv1\bmod{11}\). By the Totient Theorem, \(2^6\equiv1\bmod7\) and \(2^{10}\equiv1\bmod{11}\).<br><br>
+  So, we check the divisors of \(6\) and \(10\) to see if there is a smaller power that works as well. We find \(2^3\equiv1\bmod7\), and no divisor of \(10\) works mod \(11\). So, the smallest \(n+1\) that works is \(3\cdot10=30\). Thus, our answer is \(29\).
+</div>
+</div>
+</div><br>
+<div class="Exercise" title="Week 9"> Compute $$\sum\limits_{n=1}^\infty\frac1{n^2+4n+3}$$
+<div class="Solution">
+<p><a onclick="myCollapse('week9')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="week9" class="w3-container w3-hide">
+  Factoring the denominator gives us $$\sum\limits_{n=1}^\infty\frac1{(n+1)(n+3)}$$Decomposing this fraction into two gives us $$\frac12\left(\frac1{n+1}-\frac1{n+3}\right)=\frac1{n^2+4n+3}$$So, our sum becomes $$\frac12\sum\limits_{n=1}^\infty\frac1{n+1}-\frac1{n+3}$$The first few terms of the sum are \(\frac12-\frac14\), \(\frac13-\frac15\), \(\frac14-\frac16\), etc. All of the terms except \(\frac12\) and \(\frac13\) cancel. So the sum becomes $$\frac12\cdot\left(\frac12+\frac13\right)=\frac5{12}$$
+</div>
+</div>
+</div><br>
+<div class="Exercise" title="Week 10"> Find the flaw in the following "proof". To prove: every person in our class was born in the same year. We will prove the claim by induction on \(n\), the number of people.<ul><li><strong>Base Case:</strong> For \(n=1\), we consider groups of \(1\) people in our class. Since each group of one people is just one person, that person is the same age as themself, so the base case is true.</li><li><strong>Inductive Case:</strong> Suppose I have a subset of \(n+1\) people from our class. Remove person \(x\) from this subset. All \(n\) people in the remaining subset have the same age, by the inductive hypothesis. Then, add \(x\) back into the group and remove person \(y\). Again, all people in the new group have the same age by the inductive hypothesis. Thus, all of the people have the same age in the group.</li></ul>
+<div class="Solution">
+<p><a onclick="myCollapse('week10')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="week10" class="w3-container w3-hide">
+  This is a tricky proof. The issue is with case \(n=2\). Suppose in one group of \(2\) people is me and one of you students. Then, if I remove myself from the group, you obviously have the same age as yourself, so that is true. If I remove you, then I have the same age as myself, so that also is true. But those things don't imply that we both have the same age, since there is no third person in the group to compare with.
+</div>
+</div>
+</div><br>
+<div class="Exercise" title="Week 11"> Solve the following system of equations$$\begin{aligned}x_1+x_2+x_3&=6 \\x_2+x_3+x_4&=9 \\x_3+x_4+x_5&=3 \\x_4+x_5+x_6&=-3 \\x_5+x_6+x_7&=-9 \\x_6+x_7+x_8&=-6 \\x_7+x_8+x_1&=-2 \\x_8+x_1+x_2&=2\end{aligned}$$
+<div class="Solution">
+<p><a onclick="myCollapse('week11')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="week11" class="w3-container w3-hide">
+  Summing all of the equations gives us $$3(x_1+\ldots+x_8)=0$$Dividing by \(3\) and subtracting out the first, fourth, and seventh equations gives us \(-x_1=-1\). Thus, \(x_1=1\). <br><br>Similarly, subtracting out the second, fifth, and eigth equations gives us \(-x_2=-2\). Repeating this process for each variable gives us the following solution:$$1,2,3,4,-4,-3,-2,-1$$
+</div>
+</div>
+</div><br>
+<div class="Exercise" title="Week 12"> Given a sequence \(A_n\) with \(A_1=1\) and $$A_{n+1}=\frac{A_n}{1+nA_n}$$Compute \(A_{2022}\)
+<div class="Solution">
+<p><a onclick="myCollapse('week12')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="week12" class="w3-container w3-hide">
+  Let's manipulate the recursion to a form easier to handle. Inverting both sides gives us $$\frac1{A_{n+1}}=\frac{1+nA_n}{A_n}=n+\frac1{A_n}$$Letting \(B_n=\frac1{A_n}\), we have \(B_1=1\) and \(B_{n+1}=n+B_n\). Thus, \(B_n=1+\frac{n(n+1)}2=\frac{n^2+n+2}2\). So, $$A_n=\frac2{n^2+n+2}$$So, \(A_{2022}=\frac1{2\cdot1011^2+1012}\).
+</div>
+</div>
+</div><br>
+<div class="Exercise" title="Week 13"> \(\;\triangle ABC\) in the following diagram has area \(70\). The median \(\overline{AM}\) has slope \(-5\). Find the maximum value of \(p+q\).<br><br><p><a class="gallery img-center-short cbox-Element" href="/public/week1315.png"><img src="/public/week1315.png" width="100%"></a></p>
+<div class="Solution">
+<p><a onclick="myCollapse('week13')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="week13" class="w3-container w3-hide">
+  We could simply bash this out using coordinate geometry, but a faster solution uses the Shoelace Theorem. The area of the triangle via the Shoelace Theorem is \(\frac12|-p-197+11q|\), so $$|p+197-11q|=140$$Via the point-slope form of a line, we can find the equation of \(\overline{AM}\) to be \(y=-5x+107\). Plugging in point \(A\) into this equation gives us \(q\) in terms of \(p\). Plugging that into the Shoelace formula gives us $$|980-56p|=140\to980-56p=\pm140$$Solving these two possibilities gives us \(p=15,20\), which correspond to \(q=32,7\). Thus, the answer is \(15+32=47\).
+</div>
+</div>
+</div><br>
+<div class="Exercise" title="Week 14"> Find the positive real value \(x\) that satisfies $$x^{x^x}=\left(\frac12\right)^{\sqrt2}$$
+<div class="Solution">
+<p><a onclick="myCollapse('week14')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="week14" class="w3-container w3-hide">
+  Log both sides to get \(x^x\log_2x=-\sqrt2\) since \(\log_2\frac12=-1\). Divide both sides by \(\log_2x\) and log both sides again to get $$x\log_2x=\log_2\left(\sqrt2\cdot\frac{-1}{\log_2x}\right)=\frac12-\log_2(-\log_2x)$$This implies that \(x\lt1\) since \(\log_2x\lt0\) (otherwise the rightmost log wouldn't be defined.) Additionally, since every term we've seen is a power of \(2\), it's a fair guess to try letting \(x=2^{-k}\) for some natural \(k\). With this, we get $$k2^{-k}+2^{-1}=\log_2(k)$$Raising both sides with a base of \(2\) gives us $$k=2^{0.5+k2^{-k}}$$For \(k\) to be a natural number, \(0.5+k2^{-k}\) must be an integer. Clearly, this is only possible if \(k=2\). Plugging in \(2^{-2}=\frac14\) into the original equation, we see that it is a solution, and we are done.
+</div>
+</div>
 </div>
 
+</div>
+
+<div style="float:right"><a href="#" style="font-style: normal;"><bf>Top</bf></a></div>
     </div>
-
-
-
-  <!-- Footer -->
 
 
 <script>
@@ -487,7 +815,7 @@ function myCollapse(id) {
  $(".gallery").colorbox({
   width: "60%"
 });
-</script>
+</script><div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button type="button" id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div></div>
 
 <script>
 // sidebar collapse
@@ -503,4 +831,4 @@ function sidebar_close() {
 
 
 
-<div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button type="button" id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div></div></body></html>
+</body></html>

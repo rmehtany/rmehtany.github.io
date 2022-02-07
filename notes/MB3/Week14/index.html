@@ -612,6 +612,9 @@
 
 
   <ul id="markdown-toc">
+    <li><a href='#e'>Exponential Functions</a><ul><li><a href='#r'>Repeated Multiplication</a></li><li><a href='#i'>Interest</a></li><li><a href='#n'>Natural Exponentiation</a></li></ul></li>
+    <li><a href='#log'>Logarithmic Functions</a></li>
+    <li><a href='#challenge'>Challenge: Complex Logarithms</a></li>
   </ul>
 <p>In this week, we'll take a look at exponents and logarithms, and learn how to manipulate them to our advantage.</p>
 <h2 id='e'>Exponential Functions</h2>
@@ -623,7 +626,126 @@
 <p>When we first learn about exponents, we learn about them as repeated multiplication. In other words, $$a^b=\underbrace{a\cdot a\cdot\ldots\cdot a}_{b\text{ times}}$$However, this definition doesn't work for other types of exponents. What if \(b\) is a rational number? What if \(b\) is a real number? What if \(b\) is complex? In this section, we'll redefine exponents to be more general.</p>
 <h3 id='i'>Interest</h3>
 <p>Suppose I had \(\$100\), and I wanted to invest the money in a bank to earn interest. I have two deals available to me.<ul><li>Bank A offers to give me \(100\%\) interest (meaning that my money is doubled) every year.</li><li> Bank B offers to give me \(50\%\) interest every \(6\) months.</li></ul>Which deal should I take?</p>
-<p>Let's do the math. <ul><li>At the end of year \(1\), my balance in Bank A will be \(\$100\cdot(1+1)=\$200\).</li><li>At the end of year \(1\), my balance in Bank B will be \(\$100\cdot\left(1+\frac12\right)^2=\$225\).</li></ul>So, Bank B is offering the sweeter deal.
+<p>Let's do the math. <ul><li>At the end of year \(1\), my balance in Bank A will be \(\$100\cdot(1+1)=\$200\).</li><li>At the end of year \(1\), my balance in Bank B will be \(\$100\cdot\left(1+\frac12\right)^2=\$225\).</li></ul>So, Bank B is offering the sweeter deal.</p>
+<p>Another way to think about it is this: when Bank A offers \(100\%\) interest, that's the same as them paying \(\$50\) twice in the year. But Bank \(B\) initially pays us \(\$100\cdot0.5=\$50\), but on the second interest payment, the \(50\%\) is applied to \(\$150\), rather than \(\$100\), leading us to have more money in the Bank.</p>
+<p>So what happens if Bank C provides \(25\%\) interest every \(3\) months? Or Bank D provides \(10\%\) interest \(10\) times a year? How can we compare such deals?</p>
+<p>Suppose some Bank offers \(\frac{100\%}n\) interest \(n\) times a year. In that case, your principal investment of \(\$100\) will be increased by \(\frac1n\) of the total \(n\) times. In other words, the final amount is $$\$100\cdot\left(1+\frac1n\right)^n$$With this formula, we can compare the different interest models of our banks.</p>
+  <table class="w3-table w3-striped w3-bordered">
+    <tbody><tr>
+      <th>Frequency</th>
+      <th>Formula</th>
+      <th>Final Amount</th>
+    </tr>
+        <tr><td>Annually</td><td>\(\$100\cdot(1+1)^1\)</td><td>\(\$200\)</td></tr>
+        <tr><td>Semi-annually</td><td>\(\$100\cdot\left(1+\frac12\right)^2\)</td><td>\(\$225\)</td></tr>
+        <tr><td>Quarterly</td><td>\(\$100\cdot\left(1+\frac14\right)^4\)</td><td>\(\$244.14\)</td></tr>
+        <tr><td>Monthly</td><td>\(\$100\cdot\left(1+\frac1{12}\right)^{12}\)</td><td>\(\$261.30\)</td></tr>
+        <tr><td>Daily</td><td>\(\$100\cdot\left(1+\frac1{365}\right)^{365}\)</td><td>\(\$271.46\)</td></tr>
+        <tr><td>Hourly</td><td>\(\$100\cdot\left(1+\frac1{8760}\right)^{8760}\)</td><td>\(\$271.81\)</td></tr>
+        <tr><td>Per Minute</td><td>\(\$100\cdot\left(1+\frac1{525600}\right)^{525600}\)</td><td>\(\$271.83\)</td></tr>
+        <tr><td>Per Second</td><td>\(\$100\cdot\left(1+\frac1{31536000}\right)^{31536000}\)</td><td>\(\$271.83\)</td></tr>
+  </tbody></table>
+<p>Interestingly, while the final amount increases as the frequency of interest payments increases, it seems to be converging upon a number. In fact, we have a name for this phenomenon: a <strong>limit</strong>. We write our observation as follows:$$\lim\limits_{n\to\infty}\$100\cdot\left(1+\frac1n\right)^n\sim\$271.83$$</p>
+<p>This limit is such an important limit that we give it a name: \(e\). We define \(e\) as follows:$$e=\lim\limits_{n\to\infty}\left(1+\frac1n\right)^n$$\(e\) is approximately \(2.71828\).</p>
+<p>Now, we can define <strong>continuous interest</strong>. We get interest "infinitely often" at an "infinitesimal rate". The formula for the amount of money received is the following:$$Pe^{rt}$$<ul><li>\(P\) is the principal investment</li><li>\(r\) is the interest rate over the year</li><li>\(t\) is the number of years</li></ul></p>
+<p>In other words, we've ended up with a formula in terms of \(e^x\). But that gets us no closer to defining exponentiation. How do we evaluate this?</p>
+<h3 id='n'>Natural Exponentiation</h3>
+<p>Luckily for us, there's an alternate formula for \(e^x\) besides the limit one.</p>
+<div class="Theorem" title="e"> For any complex \(x\), the following formula holds$$\lim\limits_{n\to\infty}\left(1+\frac xn\right)^n=\sum\limits_{n=0}^\infty\frac{x^n}{n!}$$
+<div class="proof">
+<p><a onclick="myCollapse('thm1')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="thm1" class="w3-container w3-hide">
+  Using the Binomial Theorem from Week 3, $$\left(1+\frac xn\right)^n=1+\frac n{1!}\cdot\frac xn+\frac{n(n-1)}{2!}\cdot\frac{x^2}{n^2}+\frac{n(n-1)(n-2)}{3!}\cdot\frac{x^3}{n^3}+\ldots+\frac{x^n}{n^n}$$When \(n\) gets large, this expression approaches $$1+\frac {xn}n+\frac{x^2n^2}{2!\cdot n^2}+\frac{x^3n^3}{3!\cdot n^3}+\ldots$$To actually prove this, we'd have to use the definition of limits, which is outside the scope of this class.
+</div>
+</div>
+</div>
+<p>Letting \(x=1\), we have a formula for \(e\) that doesn't require taking a limit. That's a step in the right direction, but it doesn't help us evaluate \(e^x\). Or does it?</p>
+<p>In fact, without realizing it, we've just defined \(e^x\).</p>
+<div class="Definition" title="Natural Exponentiation"> We define \(e^x\) as $$e^x=\lim\limits_{n\to\infty}\left(1+\frac xn\right)^n=\sum\limits_{n=0}^\infty\frac{x^n}{n!}$$</div>
+<p>To see that this definition is in fact the exponentation we are used to, let's prove some basic properties.</p>
+<div class="Theorem" title="Additivity"> For all complex \(x,y\), \(e^{x+y}=e^x\cdot e^y\).
+<div class="proof">
+<p><a onclick="myCollapse('thm2')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="thm2" class="w3-container w3-hide">
+We'll use the \(\sum\limits_{n=0}^\infty\frac{x^n}{n!}\) definition for this proof. If we show that for any natural number \(i,j\), the coefficient of \(x^iy^j\) in \(e^{x+y}\) and \(e^xe^y\) are the same, then we are done.<br><br><br>
+In \(e^{x+y}\), the term \(x^iy^j\) is part of the term \(\frac{(x+y)^{i+j}}{(i+j)!}\). So, the term, via the Binomial Theorem, is $${i+j\choose i}\cdot\frac{x^iy^j}{(i+j)!}=\frac{x^iy^j}{i!j!}$$In \(e^xe^y\), the term \(x^iy^j\) comes from the product of the terms \(\frac{x^i}{i!}\) and \(\frac{y^j}{j!}\), giving us \(\frac{x^iy^j}{i!j!}\). This completes the proof.
+</div>
+</div>
+</div>
+<div class="Exercise" title="Positivity"> Using the summation definition of \(e^x\) and the above theorem, show the following facts:<ul><li>\(e^0=1\)</li><li>For all \(x\gt0\), \(e^x\gt0\)</li><li>For all real \(x\), \(e^x\gt0\)</li></ul></div><br>
+<p>This theorem shows that \(e^n=\underbrace{e\cdot e\cdot\ldots\cdot e}_{n\text{ times}}\) for natural \(n\).</p>
+<h2 id='log'>Logarithmic Functions</h2>
+<p>We now have a general definition of exponentiation, but there are several issues. One, we only defined exponentiation when \(e\) is the base. What about other bases? Also, given exponential equations like \(e^x=5\), how do we find the solution? To both of these questions, and many more, logarithms are the solution.</p>
+<div class="Definition" title="Natural Logarithm"> Given a positive real \(x\), we define the <strong>natural logarithm</strong> of \(x\), denoted by \(\ln x\) or sometimes just \(\log x\), the real number such that $$e^{\ln x}=x$$</div>
+<p>The logarithm should be viewed as almost an inverse function to the exponential function. By that logic, you'd expect the log function to grow very slowly, which it does!</p>
+<p>But there's an issue: How do we know that the log function even exists? How do we know that there is a unique \(\ln x\) such that \(e^{\ln x}=x\)?</p>
+<div class="Theorem" title="Existence of Logarithm"> For any positive \(x\), there exists a unique real \(\ln x\) such that \(e^{\ln x}=x\).
+<div class="proof">
+<p><a onclick="myCollapse('thm3')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="thm3" class="w3-container w3-hide">
+  <strong>Uniqueness</strong>: \(e^x\gt0\) for all real \(x\), as shown in an exercise above. Thus, for any real \(x,y\) such that \(x\neq y\), then \(y\gt x\) or \(x\gt y\). Assume \(y\gt x\), since the other case is identical (just switch the variable names). Then, \(y-x\gt0\), so \(e^{y-x}\gt0\) and $$e^y=e^xe^{y-x}\gt e^x$$So, there can only be one real solution to the equation \(e^x=z\).<br><br><br>
+  <strong>Existence</strong>: We want to find a real number \(\ln x\) such that \(e^{\ln x}=x\). Let's first show that for any real \(t\) and natural number \(n\) satisfying \(n\gt\frac{e-1}{t-1}\), \(e^{1/n}\lt t\). To see why, note that \(e^{1/n}\gt1\), so by the geometric series formula$$n=\sum\limits_{k=0}^{n-1}1\lt\sum\limits_{k=0}^{n-1}\left(e^{1/n}\right)^k=\frac{\left(e^{1/n}\right)^n-1}{e^{1/n}-1}$$Rewriting the inequality gives us \(e-1\gt n\left(e^{1/n}-1\right)\). Since \(n\gt\frac{e-1}{t-1}\), \(t\gt e^{1/n}\).<br><br>This implies that for any real \(w\) such that \(e^w\gt x\), letting \(t=x^{-1}e^w\gt1\) gives us \(e^{1/n}\gt e^wx^{-1}\) for \(n\gt\frac{e-1}{t-1}\), so $$e^{w-\frac1n}\gt x$$So, define \(\ln x\) as the smallest number such that \(e^w\not\lt x\). If \(e^{\ln x}\gt x\), then for some natural number \(n\) as we saw earlier, \(e^{\ln x-\frac1n}\gt x\), which is a contradiction since \(\ln x\) is the smallest real number such that \(e^{\ln x}\not\lt x\). So, it must be the case that \(e^{\ln x}=x\).
+</div>
+</div>
+</div>
+<p>The above proof is quite wordy, but with it, we are now able to take logarithms. Our first order of business is to define exponentiation by alternate bases.</p>
+<div class="Definition" title="Alternate Base"> For any positive real \(a\) and complex \(b\), we define $$a^b=e^{b\ln a}$$</div>
+<p>This definition may not make a lot of sense, until you see the following theorems.</p>
+<div class="Theorem" title="Multiplicativity"> For any real \(x\) and complex \(y\), \(e^{xy}=\left(e^x\right)^y\).
+<div class="proof">
+<p><a onclick="myCollapse('thm4')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="thm4" class="w3-container w3-hide">
+  $$\left(e^x\right)^y=e^{y\ln(e^x)}$$Note that the number \(z\) such that \(e^z=e^x\) is just \(x\), we have \(\ln(e^x)=x\). This completes the theorem.
+</div>
+</div>
+</div>
+<div class="Theorem" title="Alternate Bases"> For all complex numbers \(x,y\), \(a^{x+y}=a^xa^y\).
+<div class="proof">
+<p><a onclick="myCollapse('thm0')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="thm0" class="w3-container w3-hide">
+$$a^{x+y}=e^{\ln a\cdot x+\ln a\cdot y}=e^{\ln a\cdot x}e^{\ln a\cdot y}=a^xa^y$$
+</div>
+</div>
+</div>
+<p>With theses theorem, \(e^{b\ln a}=\left(e^{\ln a}\right)^b=a^b\). We now have a way of defining logarithms with arbitrary bases. Now, what about alternate bases for logs?</p>
+<div class="Definition" title="Log bases"> Given positive real numbers \(a,b\), note that $$a^{\frac{\ln b}{\ln a}}=\left(a^{\frac1{\ln a}}\right)^{\ln b}=\left(e^{\frac{\ln a}{\ln a}}\right)^{\ln b}=e^{\ln b}=b$$So, we define \(\log_ab\), the number for which \(a^{\log_ab}=b\), as $$\log_ab=\frac{\ln b}{\ln a}$$</div>
+<p>We can now prove a bunch of useful properties for logarithms.</p>
+<div class="Theorem" title="Log Properties"> Given positive reals \(a,b,c\) and real number \(x\), the following equations hold:$$\log_ab=\frac{\log_cb}{\log_ca}\tag{1}$$$$\log_ab+\log_ac=\log_a(bc)\tag{2}$$$$\log_ab^x=x\log_ab\tag{3}$$$$\log_a1=0\tag{4}$$
+<div class="proof">
+<p><a onclick="myCollapse('thm5')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="thm5" class="w3-container w3-hide">
+$$a^{\frac{\log_cb}{\log_ca}}=e^{\frac{\log_cb\ln a}{\log_ca}}=e^{\frac{\ln a\ln b\ln c}{\ln a\ln c}}=e^{\ln b}=b$$$$a^{\log_ab+\log_ac}=a^{\log_ab}a^{\log_ac}=bc$$$$a^{x\log_ab}=e^{x\ln a\cdot\frac{\ln b}{\ln a}}=e^{x\ln b}=b^x$$$$a^0=1$$
+</div>
+</div>
+</div>
+<div class="remark" title="Log Tables"> Back in the day when calculators weren't widely available, computing the product of large numbers was quite tedious. However, accountants soon realized equation \((2)\) could help them simplify the computation. Soon, accountants would print large books full of logarithms for the purpose of multiplying numbers. The process looks like this<ul><li>Given \(x,y\), find \(\ln |x|,\;\ln |y|\) in the log table.</li><li>Compute \(\ln|x|+\ln|y|\)</li><li>Find \(\ln|x|+\ln|y|\) in the exponent table</li></ul> Even up till as recently as the 1990s, log tables were omnipresent in businesses around the world.<p><a class="gallery img-center-short cbox-Element" href="/public/logtable.jpg"><img src="/public/logtable.jpg" width="100%"></a></p></div>
+<h3 id='a'>Applying Logarithms</h3>
+<p>Both exponents and logarithms are extremely useful in mathematics. Of course, we can't cover all of their applications here, but here are a few interesting ones.</p>
+<p>The prime number theorem answers the question: "Approximately how many primes are there less than \(N\)" for any \(N\). If we let \(\pi(n)\) be the number of primes \(\leq n\), then the prime number theorem tells us the following:$$\lim\limits_{n\to\infty}\frac{\pi(n)\ln n}n=1$$In other words, the ratio between \(\pi(n)\) and \(\frac n{\ln n}\) approaches \(1\) as \(n\) becomes very big. This result is quite powerful since it essentially tells us that for a large natural \(n\), the probability of a randomly chosen natural less than \(n\) being prime is \(\frac1{\ln n}\).</p>
+<p>The proof of this theorem unfortunately requires complex analysis, but Chebyshev proved a weaker version of the Prime Number Theorem back in 1850 that only uses the Binomial theorem! See that proof <a href='http://www.fen.bilkent.edu.tr/~franz/nt/cheb.pdf' target='_blank'>here</a>.</p>
+<p>Another fun application is the following equation:$$\ln 2=1-\frac12+\frac13-\frac14+\ldots$$Logarithms will show up in many places, so it's worth getting to know them well.</p>
+<h2 id='challenge'>Challenge: Complex Logarithms</h2>
+<p>So far, we've only defined \(\ln\) to take positive real numbers as inputs. But what about more general inputs? Can we define such a \(\ln\) function?</p>
+<p>Let's state our problem more precisely. Given some complex number \(z\neq0\), we want to solve the equation \(e^w=z\) for complex \(w\).</p>
+<p>Letting \(z=re^{i\theta}\) using the polar form presented in Week 7, and \(w=a+bi\), we get$$e^ae^{bi}=re^{i\theta}$$Two complex numbers are equal with at least one nonzero if and only if their magnitudes (i.e., distance from the origin) are the same, and their arguments (angle made with positive \(x\)-axis) are also the same. Since the magnitude of the left side of the equation is \(e^a\), and the argument is \(b\), while the magnitude of the right side is \(r\) and the argument is \(\theta\), we have \(r=e^a\) and \(b=\theta+2\pi k\) for some integer \(k\). We add the \(2\pi k\) term since rotating by \(2\pi\) has no effect on the argument of a complex number (since \(2\pi\) radians is \(360^\circ\)).</p>
+<p>Thus, \(a=\ln r\), so $$w=\ln r+i(\theta+2\pi)$$But this is an issue! There is more than one \(w\) satisfying the equation.</p>
+<p>Because of this, we call the logarithm over the complex numbers a <strong>multi-valued</strong> function, since there are multiple valid values of \(\ln z\) for any non-zero \(z\).</p>
+<div class="Definition" title="Log Branches"> We define the \(k\)th branch of the log function, written as \(^k\ln z\), as follows:$$^k\ln re^{i\theta}=\ln r+i\theta+2\pi ik$$We call the \(0\)th branch the <strong>principal</strong> branch of the logarithm.</div>
+<p>With branching, we can pick which output we want from the logarithm function.</p>
+<div class="Example" title="Calculating complex logs"> Given \(z=-1-\sqrt3i\), \(r=\sqrt{1^2+\sqrt3^2}=2\), and \(\theta=-\tan\frac{-\sqrt3}{-1}=-\frac{2\pi}3\). So, $$^k\ln z=\ln 2-\frac{2\pi i}3+2\pi ik$$</div>
+<div class="remark" title="Log Bases"> With our new definition of \(\ln\), we can now use our definition of \(\log_ab\) to define it for any complex \(a,b\) as long as \(b\neq0\). However, the choice of branch does influence the value of \(\log_ab\), so be careful when using such logs.</div>
+<h4>Roots of Unity</h4>
+<p>Let's use our complex logarithms to solve the following equation:$$x^n=z$$for complex \(x,z\neq0\), and natural \(n\).</p>
+<p>Letting \(z=re^{i\theta}\), we have $$x^n=re^{i\theta}$$Thus, if we let \(y=\sqrt[n]r\cdot e^{i\frac\theta n}\), then \(y^n=r\cdot\left(e^{i\frac\theta n}\right)^n=z\). Thus, \(y\) is a solution to our equation.</p>
+<p>But it isn't the only one. How do we find the others? Well, suppose \(\zeta\) is a solution to the similar equation \(x^n=1\). Then, for any natural number \(k\), $$(\zeta^ky)^n=(\zeta^n)^k\cdot y^n=re^{i\theta}$$Thus, \(\zeta^ky\) is another solution to our equation!</p>
+<p>And, if \(y\) and \(y_*\) are both solutions to \(x^n=re^{i\theta}\), then $$\left(\frac y{y_*}\right)^n=\frac{y^n}{y_*^n}=1$$In other words, \(\frac y{y_*}\) is a solution to \(x^n=1\).</p>
+<p>To summarize, if we can find the solutions to \(x^n=1\), by multiplying each of them by \(\sqrt[n]r\) and rotating them by \(\frac\theta n\), we have found all of the solutions to \(x^n=re^{i\theta}\). We call the solutions to \(x^n=1\) the <strong>roots of unity</strong>.</p>
+<p>So what are the roots of unity? The first root of unity is obvious: \(1\). \(1\) always is a solution to \(x^n=1\) no matter the value of \(n\). To find the others, let's use the definition of exponentiation.</p>
+<p>$$e^{n\ln x}=e^0\to n\ln x=2\pi ik\to x=e^{\frac{2\pi ik}n}$$In other words, the \(n\)th roots of unity are just the points in the complex plane that you get from rotating \(1+0i\) counterclockwise by \(\frac{360^\circ}n\) degrees. For example, here are the \(4\)th and \(5\)th degrees of unity.</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/rootsofunity.png"><img src="/public/rootsofunity.png" width="100%"></a></p>
+<p>Roots of unity always form a regular polygon, since all of the central angles are \(\frac{2\pi}n\). What other special properties do the roots of unity have?</p>
+<p>For starters, they can all be generated by taking powers of one root of unity. Note that the roots of unity are \(e^{\frac{2pi ik}n}\) for \(0\leq k\lt n\), and $$(e^{\frac{2\pi i}n})^k=e^{\frac{2pi ik}n}$$We call \(e^{\frac{2\pi i}n}\) the <strong>primitive \(n\)th root of unity</strong>, as it generates the other roots of unity.</p>
+<p>As a final interesting application, occasionally in problems with regular polygons, representing them in the complex plane and using the roots of unity as their vertices can simplify the geometry significantly.</p>
 
 </div>
 
