@@ -749,11 +749,11 @@ Finally, the area of \(\triangle NDC\) is \(\frac14\), so the volume of the whol
 </div>
 </div>
 </div><br>
-<div class="Exercise" title="Week 11"> Solve the following system of equations$$\begin{aligned}x_1+x_2+x_3&=6 \\x_2+x_3+x_4&=9 \\x_3+x_4+x_5&=3 \\x_4+x_5+x_6&=-3 \\x_5+x_6+x_7&=-9 \\x_6+x_7+x_8&=-6 \\x_7+x_8+x_1&=-2 \\x_8+x_1+x_2&=2\end{aligned}$$
+<div class="Exercise" title="Week 11"> Given the polynomial \(x^3+ax^2+bx+c\), if \(p,q,r\) are the roots of the polynomial, what is the value of \(p^4+q^4+r^4\)?
 <div class="Solution">
 <p><a onclick="myCollapse('week11')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
 <div id="week11" class="w3-container w3-hide">
-  Summing all of the equations gives us $$3(x_1+\ldots+x_8)=0$$Dividing by \(3\) and subtracting out the first, fourth, and seventh equations gives us \(-x_1=-1\). Thus, \(x_1=1\). <br><br>Similarly, subtracting out the second, fifth, and eigth equations gives us \(-x_2=-2\). Repeating this process for each variable gives us the following solution:$$1,2,3,4,-4,-3,-2,-1$$
+By Vieta's, we know that \(pqr=-c\), \(pq+qr+rp=b\), and \(p+q+r=-a\). First, let's find \(p^2+q^2+r^2\). $$\begin{aligned}a^2=p^2+q^2+r^2+2(pq+qr+rp)\\p^2+q^2+r^2=a^2-2b\end{aligned}$$Now, we find \(p^3+q^3+r^3\)$$\begin{aligned}-a^3=-2(p^3+q^3+r^3)+6pqr+3pqr(p^2+q^2+r^2)\\p^3+q^3+r^3=\frac{a^3-3c(a^2-2b+2)}2\end{aligned}$$Next, we find \(p^2q^2+q^2r^2+p^2r^2\)$$\begin{aligned}b^2=p^2q^2+q^2r^2+p^2r^2+2pqr(p+q+r)\\p^2q^2+q^2r^2+r^2p^2=b^2-2ac\end{aligned}$$So, $$\begin{aligned}a^4=-3(p^4+q^4+r^4)+4pqr(p^3+q^3+r^3)+6(b^2-2ac)+12pqr(p+q+r)\\p^4+q^4+r^4=\frac13\left(6c^2(a^2-2b+2)-2a^3c+6b^2\right)\end{aligned}$$
 </div>
 </div>
 </div><br>
