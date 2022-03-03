@@ -2,13 +2,11 @@
   <link href="https://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-
-  <!-- Enable responsiveness on mobile devices-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <title>
 
-      Rushabh Mehta - MB3
+      Random Problem Generator
 
   </title>
 
@@ -17,7 +15,9 @@
   <link rel="stylesheet" href="/public/css/syntax.css">
   <link rel="stylesheet" href="/public/css/hyde.css">
   <link rel="stylesheet" href="/public/css/mystyle.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
   <link rel="stylesheet" href="/public/css/theorem.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="/public/css/w3.css">
   <link rel="stylesheet" href="/public/css/color.css">
   <link rel="stylesheet" href="/public/css/colorbox.css">
@@ -40,27 +40,20 @@
   </script>
   <script type="text/javascript" async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
   </script>
-  <!-- MathJax local
-  <script type="text/javascript" async src="/js/MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-  -->
-  <script src="/js/jquery.min.js"></script>
-  <!--
-  <script type="text/javascript" src="/js/turn/turn.min.js"></script>
-  -->
+  <script src="/js/jquery.js"></script>
 
   <!-- colorbox -->
-  <script src="/js/jquery.colorbox-min.js"></script>
 
 
+  <!-- Add mermaid -->
 
-
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
 
   <!-- Icons -->
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/harvardicon.png">
   <link rel="shortcut icon" href="/public/harvardicon.png">
-
-  <!-- RSS -->
-  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
 
   <!-- tooltip -->
   <style>
@@ -309,7 +302,26 @@
 @font-face {font-family: MJXc-TeX-size3-Rw; src /*1*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/eot/MathJax_Size3-Regular.eot'); src /*2*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Size3-Regular.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Size3-Regular.otf') format('opentype')}
 @font-face {font-family: MJXc-TeX-size4-R; src: local('MathJax_Size4'), local('MathJax_Size4-Regular')}
 @font-face {font-family: MJXc-TeX-size4-Rw; src /*1*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/eot/MathJax_Size4-Regular.eot'); src /*2*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Size4-Regular.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Size4-Regular.otf') format('opentype')}
-</style></head>
+</style>
+<script>
+    function startup() {
+        var client = new XMLHttpRequest();
+        client.open('GET', (Math.floor(Math.random()*2+1)).toString().concat('problem.txt'));
+        client.onload = function()
+        {
+            if(client.responseText != '')
+            {
+              var elem = document.createElement('div');
+              elem.innerHTML=client.responseText;
+              document.getElementById('main').appendChild(elem);
+              MathJax.Hub.Typeset("main")
+            }
+        }
+	client.send();
+    }
+    window.addEventListener('load',startup);
+</script>
+</head>
 
 
   <body class="theme-base-0h"><div id="MathJax_Message" style="display: none;"></div>
@@ -319,10 +331,10 @@
     <button class="w3-button sidebar w3-text-white w3-hide-medium w3-hide-large w3-right" onclick="sidebar_close()">☰</button>
     <div class="sidebar-about">
       <div class="w3-text-white w3-center" style="font-size:20px;">
-        Rushabh Mehta
+         Rushabh Mehta
       </div>
 
-      <p class="lead" style="font-size:16px;font-style:italic;">An investment in knowledge pays the best interest.<br> - Benjamin Franklin</p>
+      <p class="lead" style="font-size:16px;font-style:italic;">There's a lot of randomness in the decisions that people make.<br> - David Kahneman</p>
 
     </div>
 
@@ -338,7 +350,8 @@
       <!--<a class="sidebar-nav-item" href="/conjecture/">Conjectures</a>-->
     </nav>
   </div>
-    <div class="w3-bottom">
+
+  <div class="w3-bottom">
     <p style="font-size:12px">© <script>document.write(new Date().getFullYear())</script> Rushabh Mehta</p>
   </div>
 </div>
@@ -351,29 +364,213 @@
     <div class="content container">
       <div style="display:none">
 <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-1-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mtext mathcolor=&quot;red&quot;>\ie</mtext></mrow><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mtext mathcolor=&quot;red&quot;>\cf</mtext></mrow></math>" role="presentation" style="font-size: 123%; position: relative;"><span id="MJXc-Node-1" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-2" class="mjx-mrow"><span id="MJXc-Node-3" class="mjx-texatom"><span id="MJXc-Node-4" class="mjx-mrow"><span id="MJXc-Node-5" class="mjx-mtext" style="color: red;"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.491em; padding-bottom: 0.599em;">\ie</span></span></span></span><span id="MJXc-Node-6" class="mjx-texatom"><span id="MJXc-Node-7" class="mjx-mrow"><span id="MJXc-Node-8" class="mjx-mtext" style="color: red;"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.491em; padding-bottom: 0.599em;">\cf</span></span></span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow class="MJX-TeXAtom-ORD"><mtext mathcolor="red">\ie</mtext></mrow><mrow class="MJX-TeXAtom-ORD"><mtext mathcolor="red">\cf</mtext></mrow></math></span></span><script type="math/tex" id="MathJax-Element-1">
+    \newcommand{\Var}{\mathbf{Var}}
+    \newcommand{\dist}{\text{dist}}
+    \newcommand{\rank}{\text{rank}}
+    \newcommand{\mor}{\text{Mor}}
+    \newcommand{\hom}{\text{Hom}}
+    \newcommand{\id}{\text{id}}
+    \newcommand{\obj}{\text{obj}}
+    \newcommand{\pr}{\text{pr}}
+    \newcommand{\ker}{\text{ker}}
+    \newcommand{\coker}{\text{coker}}
+    \newcommand{\im}{\text{im}}
+    \newcommand{\vol}{\text{vol}}
+    \newcommand{\disc}{\text{disc}}
 
-    \renewcommand{\P}{\mathcal{P}}
+    \newcommand{\bbA}{\mathbb A}
+    \newcommand{\bbB}{\mathbb B}
+    \newcommand{\bbC}{\mathbb C}
+    \newcommand{\bbD}{\mathbb D}
+    \newcommand{\bbE}{\mathbb E}
+    \newcommand{\bbF}{\mathbb F}
+    \newcommand{\bbG}{\mathbb G}
+    \newcommand{\bbH}{\mathbb H}
+    \newcommand{\bbI}{\mathbb I}
+    \newcommand{\bbJ}{\mathbb J}
+    \newcommand{\bbK}{\mathbb K}
+    \newcommand{\bbL}{\mathbb L}
+    \newcommand{\bbM}{\mathbb M}
+    \newcommand{\bbN}{\mathbb N}
+    \newcommand{\bbO}{\mathbb O}
+    \newcommand{\bbP}{\mathbb P}
+    \newcommand{\bbQ}{\mathbb Q}
+    \newcommand{\bbR}{\mathbb R}
+    \newcommand{\bbS}{\mathbb S}
+    \newcommand{\bbT}{\mathbb T}
+    \newcommand{\bbU}{\mathbb U}
+    \newcommand{\bbV}{\mathbb V}
+    \newcommand{\bbW}{\mathbb W}
+    \newcommand{\bbX}{\mathbb X}
+    \newcommand{\intp}{\int\limits_{-\pi}^\pi}
+    \newcommand{\bbZ}{\mathbb Z}
+
+    \newcommand{\cA}{\mathcal A}
+    \newcommand{\cB}{\mathcal B}
+    \newcommand{\cC}{\mathcal C}
+    \newcommand{\cD}{\mathcal D}
+    \newcommand{\cE}{\mathcal E}
+    \newcommand{\cF}{\mathcal F}
+    \newcommand{\cG}{\mathcal G}
+    \newcommand{\cH}{\mathcal H}
+    \newcommand{\cI}{\mathcal I}
+    \newcommand{\cJ}{\mathcal J}
+    \newcommand{\cK}{\mathcal K}
+    \newcommand{\cL}{\mathcal L}
+    \newcommand{\cM}{\mathcal M}
+    \newcommand{\cN}{\mathcal N}
+    \newcommand{\cO}{\mathcal O}
+    \newcommand{\cP}{\mathcal P}
+    \newcommand{\cQ}{\mathcal Q}
+    \newcommand{\cR}{\mathcal R}
+    \newcommand{\cS}{\mathcal S}
+    \newcommand{\cT}{\mathcal T}
+    \newcommand{\cU}{\mathcal U}
+    \newcommand{\cV}{\mathcal V}
+    \newcommand{\cW}{\mathcal W}
+    \newcommand{\cX}{\mathcal X}
+    \newcommand{\cY}{\mathcal Y}
+    \newcommand{\cZ}{\mathcal Z}
+
+    \newcommand{\rmA}{\mathfrak A}
+    \newcommand{\rmB}{\mathfrak B}
+    \newcommand{\rmC}{\mathfrak C}
+    \newcommand{\rmD}{\mathfrak D}
+    \newcommand{\rmE}{\mathfrak E}
+    \newcommand{\rmF}{\mathfrak F}
+    \newcommand{\rmG}{\mathfrak G}
+    \newcommand{\rmH}{\mathfrak H}
+    \newcommand{\rmI}{\mathfrak I}
+    \newcommand{\rmJ}{\mathfrak J}
+    \newcommand{\rmK}{\mathfrak K}
+    \newcommand{\rmL}{\mathfrak L}
+    \newcommand{\rmM}{\mathfrak M}
+    \newcommand{\rmN}{\mathfrak N}
+    \newcommand{\rmO}{\mathfrak O}
+    \newcommand{\rmP}{\mathfrak P}
+    \newcommand{\rmQ}{\mathfrak Q}
+    \newcommand{\rmR}{\mathfrak R}
+    \newcommand{\rmS}{\mathfrak S}
+    \newcommand{\rmT}{\mathfrak T}
+    \newcommand{\rmU}{\mathfrak U}
+    \newcommand{\rmV}{\mathfrak V}
+    \newcommand{\rmW}{\mathfrak W}
+    \newcommand{\rmX}{\mathfrak X}
+    \newcommand{\rmY}{\mathfrak Y}
+    \newcommand{\rmZ}{\mathfrak Z}
+
+
+
+
+    \newcommand{\paren}[1]{( #1 )}
+    \newcommand{\Paren}[1]{\left( #1 \right)}
+    \newcommand{\bigparen}[1]{\bigl( #1 \bigr)}
+    \newcommand{\Bigparen}[1]{\Bigl( #1 \Bigr)}
+    \newcommand{\biggparen}[1]{\biggl( #1 \biggr)}
+    \newcommand{\Biggparen}[1]{\Biggl( #1 \Biggr)}
+    \newcommand{\abs}[1]{\lvert #1 \rvert}
+    \newcommand{\Abs}[1]{\left\lvert #1 \right\rvert}
+    \newcommand{\bigabs}[1]{\bigl\lvert #1 \bigr\rvert}
+    \newcommand{\Bigabs}[1]{\Bigl\lvert #1 \Bigr\rvert}
+    \newcommand{\biggabs}[1]{\biggl\lvert #1 \biggr\rvert}
+    \newcommand{\Biggabs}[1]{\Biggl\lvert #1 \Biggr\rvert}
+    \newcommand{\card}[1]{\left| #1 \right|}
+    \newcommand{\Card}[1]{\left\lvert #1 \right\rvert}
+    \newcommand{\bigcard}[1]{\bigl\lvert #1 \bigr\rvert}
+    \newcommand{\Bigcard}[1]{\Bigl\lvert #1 \Bigr\rvert}
+    \newcommand{\biggcard}[1]{\biggl\lvert #1 \biggr\rvert}
+    \newcommand{\Biggcard}[1]{\Biggl\lvert #1 \Biggr\rvert}
+    \newcommand{\Norm}[1]{\left\| #1 \right\|}
+    \newcommand{\bignorm}[1]{\bigl\lVert #1 \bigr\rVert}
+    \newcommand{\Bignorm}[1]{\Bigl\lVert #1 \Bigr\rVert}
+    \newcommand{\biggnorm}[1]{\biggl\lVert #1 \biggr\rVert}
+    \newcommand{\Biggnorm}[1]{\Biggl\lVert #1 \Biggr\rVert}
+    \newcommand{\iprod}[1]{\langle #1 \rangle}
+    \newcommand{\Iprod}[1]{\left\langle #1 \right\rangle}
+    \newcommand{\bigiprod}[1]{\bigl\langle #1 \bigr\rangle}
+    \newcommand{\Bigiprod}[1]{\Bigl\langle #1 \Bigr\rangle}
+    \newcommand{\biggiprod}[1]{\biggl\langle #1 \biggr\rangle}
+    \newcommand{\Biggiprod}[1]{\Biggl\langle #1 \Biggr\rangle}
+    \newcommand{\set}[1]{\lbrace #1 \rbrace}
+    \newcommand{\Set}[1]{\left\lbrace #1 \right\rbrace}
+    \newcommand{\bigset}[1]{\bigl\lbrace #1 \bigr\rbrace}
+    \newcommand{\Bigset}[1]{\Bigl\lbrace #1 \Bigr\rbrace}
+    \newcommand{\biggset}[1]{\biggl\lbrace #1 \biggr\rbrace}
+    \newcommand{\Biggset}[1]{\Biggl\lbrace #1 \Biggr\rbrace}
+    \newcommand{\bracket}[1]{\lbrack #1 \rbrack}
+    \newcommand{\Bracket}[1]{\left\lbrack #1 \right\rbrack}
+    \newcommand{\bigbracket}[1]{\bigl\lbrack #1 \bigr\rbrack}
+    \newcommand{\Bigbracket}[1]{\Bigl\lbrack #1 \Bigr\rbrack}
+    \newcommand{\biggbracket}[1]{\biggl\lbrack #1 \biggr\rbrack}
+    \newcommand{\Biggbracket}[1]{\Biggl\lbrack #1 \Biggr\rbrack}
+    \newcommand{\ucorner}[1]{\ulcorner #1 \urcorner}
+    \newcommand{\Ucorner}[1]{\left\ulcorner #1 \right\urcorner}
+    \newcommand{\bigucorner}[1]{\bigl\ulcorner #1 \bigr\urcorner}
+    \newcommand{\Bigucorner}[1]{\Bigl\ulcorner #1 \Bigr\urcorner}
+    \newcommand{\biggucorner}[1]{\biggl\ulcorner #1 \biggr\urcorner}
+    \newcommand{\Biggucorner}[1]{\Biggl\ulcorner #1 \Biggr\urcorner}
+    \newcommand{\ceil}[1]{\lceil #1 \rceil}
+    \newcommand{\Ceil}[1]{\left\lceil #1 \right\rceil}
+    \newcommand{\bigceil}[1]{\bigl\lceil #1 \bigr\rceil}
+    \newcommand{\Bigceil}[1]{\Bigl\lceil #1 \Bigr\rceil}
+    \newcommand{\biggceil}[1]{\biggl\lceil #1 \biggr\rceil}
+    \newcommand{\Biggceil}[1]{\Biggl\lceil #1 \Biggr\rceil}
+    \newcommand{\floor}[1]{\lfloor #1 \rfloor}
+    \newcommand{\Floor}[1]{\left\lfloor #1 \right\rfloor}
+    \newcommand{\bigfloor}[1]{\bigl\lfloor #1 \bigr\rfloor}
+    \newcommand{\Bigfloor}[1]{\Bigl\lfloor #1 \Bigr\rfloor}
+    \newcommand{\biggfloor}[1]{\biggl\lfloor #1 \biggr\rfloor}
+    \newcommand{\Biggfloor}[1]{\Biggl\lfloor #1 \Biggr\rfloor}
+    \newcommand{\lcorner}[1]{\llcorner #1 \lrcorner}
+    \newcommand{\Lcorner}[1]{\left\llcorner #1 \right\lrcorner}
+    \newcommand{\biglcorner}[1]{\bigl\llcorner #1 \bigr\lrcorner}
+    \newcommand{\Biglcorner}[1]{\Bigl\llcorner #1 \Bigr\lrcorner}
+    \newcommand{\bigglcorner}[1]{\biggl\llcorner #1 \biggr\lrcorner}
+    \newcommand{\Bigglcorner}[1]{\Biggl\llcorner #1 \Biggr\lrcorner}
+
+    \DeclareMathOperator{\Tr}{Tr}
+
+    \DeclareMathOperator{\min}{min}
+    \DeclareMathOperator{\max}{max}
+    \DeclareMathOperator{\argmax}{arg\,max}
+    \DeclareMathOperator{\argmin}{arg\,min}
+
+    \DeclareMathOperator{\supp}{supp}
+    \DeclareMathOperator{\E}{\mathbb E}
+    \DeclareMathOperator{\pE}{\tilde{\mathbb E}}
+    \DeclareMathOperator{\Pr}{\mathbb P}
+    \DeclareMathOperator{\Span}{Span}
+
+    \DeclareMathOperator{\Det}{\textbf{Det}}
+    \DeclareMathOperator{\Perm}{\textbf{Perm}}
+    \DeclareMathOperator{\Sym}{\textbf{Sym}}
+    \DeclareMathOperator{\Pow}{\textbf{Pow}}
+    \DeclareMathOperator{\Gal}{\textbf{Gal}}
+    \DeclareMathOperator{\Aut}{\textbf{Aut}}
+
     \notag
 </script>
 </div>
 <div style="display:none">
 <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-2-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; />" role="presentation" style="font-size: 123%; position: relative;"><span id="MJXc-Node-9" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-10" class="mjx-mrow"></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"></math></span></span><script type="math/tex" id="MathJax-Element-2">
-  \newcommand{\sleq}{\ensuremath{\preceq}}
 
+  \newcommand{\xor}{\ensuremath{\oplus}}
+  \newcommand{\1}{\ensuremath{\mathrm{1}}}
   \notag
 </script>
 </div>
 <div style="display:none">
 <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-3-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; />" role="presentation" style="font-size: 123%; position: relative;"><span id="MJXc-Node-11" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-12" class="mjx-mrow"></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"></math></span></span><script type="math/tex" id="MathJax-Element-3">
   \newcommand{\transpose}[1]{\ensuremath{#1{}^{\mkern-2mu\intercal}}}
-
+  \newcommand{\dyad}[1]{\ensuremath{#1#1{}^{\mkern-2mu\intercal}}}
+  \newcommand{\nchoose}[1]{\ensuremath}
+  \newcommand{\generated}[1]{\ensuremath{\langle #1 \rangle}}
   \notag
 </script>
 </div>
 <div style="display:none">
 <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-4-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><merror><mtext>\newcommand{\eqdef}{\mathbin{\stackrel{\rm&amp;#xA0;def}{=}}}&amp;#xA0;&amp;#xA0;\newcommand{\R}&amp;#xA0;%&amp;#xA0;real&amp;#xA0;numbers&amp;#xA0;&amp;#xA0;\newcommand{\N}}&amp;#xA0;%&amp;#xA0;natural&amp;#xA0;numbers&amp;#xA0;&amp;#xA0;\newcommand{\Z}&amp;#xA0;%&amp;#xA0;integers&amp;#xA0;&amp;#xA0;\newcommand{\F}&amp;#xA0;%&amp;#xA0;a&amp;#xA0;field&amp;#xA0;&amp;#xA0;\newcommand{\Q}&amp;#xA0;%&amp;#xA0;the&amp;#xA0;rationals&amp;#xA0;&amp;#xA0;\newcommand{\C}{\mathbb{C}}&amp;#xA0;%&amp;#xA0;the&amp;#xA0;complexes&amp;#xA0;&amp;#xA0;\newcommand{\poly}}&amp;#xA0;&amp;#xA0;\newcommand{\polylog}}&amp;#xA0;&amp;#xA0;\newcommand{\loglog}}}&amp;#xA0;&amp;#xA0;\newcommand{\zo}{\{0,1\}}&amp;#xA0;&amp;#xA0;\newcommand{\suchthat}&amp;#xA0;&amp;#xA0;\newcommand{\pr}[1]{\Pr\left[#1\right]}&amp;#xA0;&amp;#xA0;\newcommand{\deffont}{\em}&amp;#xA0;&amp;#xA0;\newcommand{\getsr}{\mathbin{\stackrel{\mbox{\tiny&amp;#xA0;R}}{\gets}}}&amp;#xA0;&amp;#xA0;\newcommand{\Exp}{\mathop{\mathrm&amp;#xA0;E}\displaylimits}&amp;#xA0;%&amp;#xA0;expectation&amp;#xA0;&amp;#xA0;\newcommand{\Var}{\mathop{\mathrm&amp;#xA0;Var}\displaylimits}&amp;#xA0;%&amp;#xA0;variance&amp;#xA0;&amp;#xA0;\newcommand{\xor}{\oplus}&amp;#xA0;&amp;#xA0;\newcommand{\GF}{\mathrm{GF}}&amp;#xA0;&amp;#xA0;\newcommand{\eps}{\varepsilon}&amp;#xA0;&amp;#xA0;\notag</mtext></merror></math>" role="presentation" style="font-size: 123%; position: relative;"><span id="MJXc-Node-13" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-14" class="mjx-mrow"><span class="mjx-noError" style="vertical-align: -12.15em;">\newcommand{\eqdef}{\mathbin{\stackrel{\rm&nbsp;def}{=}}}<br>&nbsp;&nbsp;\newcommand{\R}&nbsp;%&nbsp;real&nbsp;numbers<br>&nbsp;&nbsp;\newcommand{\N}}&nbsp;%&nbsp;natural&nbsp;numbers<br>&nbsp;&nbsp;\newcommand{\Z}&nbsp;%&nbsp;integers<br>&nbsp;&nbsp;\newcommand{\F}&nbsp;%&nbsp;a&nbsp;field<br>&nbsp;&nbsp;\newcommand{\Q}&nbsp;%&nbsp;the&nbsp;rationals<br>&nbsp;&nbsp;\newcommand{\C}{\mathbb{C}}&nbsp;%&nbsp;the&nbsp;complexes<br>&nbsp;&nbsp;\newcommand{\poly}}<br>&nbsp;&nbsp;\newcommand{\polylog}}<br>&nbsp;&nbsp;\newcommand{\loglog}}}<br>&nbsp;&nbsp;\newcommand{\zo}{\{0,1\}}<br>&nbsp;&nbsp;\newcommand{\suchthat}<br>&nbsp;&nbsp;\newcommand{\pr}[1]{\Pr\left[#1\right]}<br>&nbsp;&nbsp;\newcommand{\deffont}{\em}<br>&nbsp;&nbsp;\newcommand{\getsr}{\mathbin{\stackrel{\mbox{\tiny&nbsp;R}}{\gets}}}<br>&nbsp;&nbsp;\newcommand{\Exp}{\mathop{\mathrm&nbsp;E}\displaylimits}&nbsp;%&nbsp;expectation<br>&nbsp;&nbsp;\newcommand{\Var}{\mathop{\mathrm&nbsp;Var}\displaylimits}&nbsp;%&nbsp;variance<br>&nbsp;&nbsp;\newcommand{\xor}{\oplus}<br>&nbsp;&nbsp;\newcommand{\GF}{\mathrm{GF}}<br>&nbsp;&nbsp;\newcommand{\eps}{\varepsilon}<br>&nbsp;&nbsp;\notag</span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><merror><mtext>\newcommand{\eqdef}{\mathbin{\stackrel{\rm&nbsp;def}{=}}}&nbsp;&nbsp;\newcommand{\R}&nbsp;%&nbsp;real&nbsp;numbers&nbsp;&nbsp;\newcommand{\N}}&nbsp;%&nbsp;natural&nbsp;numbers&nbsp;&nbsp;\newcommand{\Z}&nbsp;%&nbsp;integers&nbsp;&nbsp;\newcommand{\F}&nbsp;%&nbsp;a&nbsp;field&nbsp;&nbsp;\newcommand{\Q}&nbsp;%&nbsp;the&nbsp;rationals&nbsp;&nbsp;\newcommand{\C}{\mathbb{C}}&nbsp;%&nbsp;the&nbsp;complexes&nbsp;&nbsp;\newcommand{\poly}}&nbsp;&nbsp;\newcommand{\polylog}}&nbsp;&nbsp;\newcommand{\loglog}}}&nbsp;&nbsp;\newcommand{\zo}{\{0,1\}}&nbsp;&nbsp;\newcommand{\suchthat}&nbsp;&nbsp;\newcommand{\pr}[1]{\Pr\left[#1\right]}&nbsp;&nbsp;\newcommand{\deffont}{\em}&nbsp;&nbsp;\newcommand{\getsr}{\mathbin{\stackrel{\mbox{\tiny&nbsp;R}}{\gets}}}&nbsp;&nbsp;\newcommand{\Exp}{\mathop{\mathrm&nbsp;E}\displaylimits}&nbsp;%&nbsp;expectation&nbsp;&nbsp;\newcommand{\Var}{\mathop{\mathrm&nbsp;Var}\displaylimits}&nbsp;%&nbsp;variance&nbsp;&nbsp;\newcommand{\xor}{\oplus}&nbsp;&nbsp;\newcommand{\GF}{\mathrm{GF}}&nbsp;&nbsp;\newcommand{\eps}{\varepsilon}&nbsp;&nbsp;\notag</mtext></merror></math></span></span><script type="math/tex" id="MathJax-Element-4">
   \newcommand{\eqdef}{\mathbin{\stackrel{\rm def}{=}}}
-
   \newcommand{\eps}{\varepsilon}
   \notag
 </script>
@@ -381,86 +578,34 @@
 <div style="display:none">
 <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-5-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; />" role="presentation" style="font-size: 123%; position: relative;"><span id="MJXc-Node-15" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-16" class="mjx-mrow"></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"></math></span></span><script type="math/tex" id="MathJax-Element-5">
   \newcommand{\class}[1]{\mathbf{#1}}
+  \newcommand{\coclass}[1]{\mathbf{co\mbox{-}#1}} % and their complements
 
 </script>
 </div>
 <div style="display:none">
 <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-6-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mtext mathcolor=&quot;red&quot;>\no</mtext></mrow></math>" role="presentation" style="font-size: 123%; position: relative;"><span id="MJXc-Node-17" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-18" class="mjx-mrow"><span id="MJXc-Node-19" class="mjx-texatom"><span id="MJXc-Node-20" class="mjx-mrow"><span id="MJXc-Node-21" class="mjx-mtext" style="color: red;"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.491em; padding-bottom: 0.599em;">\no</span></span></span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow class="MJX-TeXAtom-ORD"><mtext mathcolor="red">\no</mtext></mrow></math></span></span><script type="math/tex" id="MathJax-Element-6">
   \newcommand{\textprob}[1]{\text{#1}}
-
+  \newcommand{\mathprob}[1]{\textbf{#1}}
+  \newcommand{\Satisfiability}{\textprob{Satisfiability}}
+  \newcommand{\Mor}{\textprob{Mor}}
+  \newcommand{\Hom}{\textprob{Hom}}
+  \newcommand{\cok}{\textprob{cok}}
+  \newcommand{\ker}{\textprob{ker}}
+  \newcommand{\im}{\textprob{im}}
+  \newcommand{\coim}{\textprob{coim}}
+  \newcommand{\id}{\textprob{id}}
 </script>
 </div>
 
 
-      <a href="../"><bf>Back to notes</bf></a>
+<div><a href="../"><bf>Back to MB3</bf></a></div>
 
-<div class="post">
-  <h1 class="post-title">MB3 Class Materials</h1>
 
-  <!-- Notes list -->
-
-  <table class="w3-table w3-striped w3-bordered">
-    <tbody><tr>
-      <th>Week</th>
-    </tr>
-
-        <tr>
-          <td><a href="Week1/">Week 1</a></td>
-        </tr>
-        <tr>
-          <td><a href="Week2/">Week 2</a></td>
-        </tr>
-        <tr>
-          <td><a href="Week3/">Week 3</a></td>
-        </tr>
-        <tr>
-          <td><a href="Week4/">Week 4</a></td>
-        </tr>
-        <tr>
-          <td><a href="Week5/">Week 5</a></td>
-        </tr>
-        <tr>
-          <td><a href="Week6/">Week 6</a></td>
-        </tr>
-        <tr>
-          <td><a href="Week7/">Week 7</a></td>
-        </tr>
-        <tr>
-          <td><a href="Week8/">Week 8</a></td>
-        </tr>
-        <tr>
-          <td><a href="Week9/">Week 9</a></td>
-        </tr>
-        <tr>
-          <td><a href="Week10/">Week 10</a></td>
-        </tr>
-        <tr>
-          <td><a href="Week11/">Week 11</a></td>
-        </tr>
-        <tr>
-          <td><a href="Week12/">Week 12</a></td>
-        </tr>
-        <tr>
-          <td><a href="Week13/">Week 13</a></td>
-        </tr>
-        <tr>
-          <td><a href="Week14/">Week 14</a></td>
-        </tr>
-        <tr>
-          <td><a href="Week15/">Week 15</a></td>
-        </tr>
-        <tr>
-          <td><a href="RandomProblemGenerator/">Additional Problems</a></td>
-        </tr>
-  </tbody></table>
-<p>These notes are meant for my class teaching Advanced Mathcounts (MB3) through NorthSouth.org. Please do not redistribute without my permission. Licensed under MIT Open License.</p>
-</div>
+<div class="post" id='main'>
+  <h1 class="post-title">Random Problem Generator</h1>
+  <p>Below is a randomly chosen problem from my problem data bank. Reload the page for a new problem!</p><hr>
 
     </div>
-
-
-
-  <!-- Footer -->
 
 
 <script>
@@ -490,7 +635,7 @@ function myCollapse(id) {
  $(".gallery").colorbox({
   width: "60%"
 });
-</script>
+</script><div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button type="button" id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div></div>
 
 <script>
 // sidebar collapse
@@ -506,4 +651,4 @@ function sidebar_close() {
 
 
 
-<div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button type="button" id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div></div></body></html>
+</body></html>

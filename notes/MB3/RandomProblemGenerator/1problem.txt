@@ -1,0 +1,6 @@
+Given $$\begin{aligned}\alpha^3-3\alpha^2+5\alpha-17&=0\\\beta^3-3\beta^2+5\beta+11&=0\end{aligned}$$What is \(\alpha+\beta\)?
+<div class="solution">
+<p><a onclick="myCollapse('1')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="11"></i></a><br></p>
+<div id="1" class="w3-container w3-hide">
+Substituting \(x=\alpha-1\), \(y=\beta-1\) removes the quadratic term from both equations, giving us $$\begin{aligned}x^3+2x-14&=0\\y^3+2y+14&=0\\x^3+y^3+2(x+y)&=0\\(x+y)(x^2-xy+y^2+2)&=0\end{aligned}$$Note that $$x^2-xy+y^2=\frac{x^2+y^2+(x-y)^2}2\geq0$$Thus, \(x^2-xy+y^2+2\gt0\), which implies \(x+y=0\) and \(\alpha+\beta=2\).
+</div>
