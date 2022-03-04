@@ -65,27 +65,53 @@ https://templatemo.com/tm-553-xtra-blog
 			var modify = document.getElementById("modify");
 			modify.insertBefore(titulardata,modify.firstChild);
 			var temp = document.createElement('div');
-			var bucket = [];
-			for (var i=0;i<num;i++) {
-				if (i != num - post_id) bucket.push(i);
-			}
-			for (var j=1;j<4;j++) {
-			data = txt[bucket.splice(Math.floor(Math.random()*bucket.length), 1)[0]].split('|');
-			var image = document.createElement('img');
-			image.setAttribute('alt','thumbnail');
-			image.setAttribute('src',data[1]);
-			image.setAttribute('class','mb-3 img-fluid');
-			var fig = document.createElement('figure');
-			fig.appendChild(image);
-			image = document.createElement('figcaption');
-			image.setAttribute('class','tm-color-primary')
-			image.innerHTML = data[2];
-			fig.appendChild(image);
-			image = document.createElement('a');
-			image.setAttribute('href',data[0]);
-			image.setAttribute('class','d-block tm-mb-40');
-			image.appendChild(fig);
-			temp.appendChild(image);
+			if (num < 5) {
+					var i = 1;
+					for (let j = 0; j < num; j++) {
+							if (num-post_id != j) {
+						data = txt[j].split('|');
+						var image = document.createElement('img');
+						image.setAttribute('alt','thumbnail');
+						image.setAttribute('src',data[1]);
+						image.setAttribute('class','mb-3 img-fluid');
+						var fig = document.createElement('figure');
+						fig.appendChild(image);
+						image = document.createElement('figcaption');
+						image.setAttribute('class','tm-color-primary')
+						image.innerHTML = data[2];
+						fig.appendChild(image);
+						image = document.createElement('a');
+						image.setAttribute('href',data[0]);
+						image.setAttribute('class','d-block tm-mb-40');
+						image.appendChild(fig);
+						temp.appendChild(image);
+						i++;
+				}
+					}
+			} else {
+					var bucket = [];
+					for (var i=0;i<num;i++) {
+				if (i != num - post_id) {
+						bucket.push(i);}
+					}
+					for (var j=1;j<4;j++) {
+				data = txt[bucket.splice(Math.floor(Math.random()*bucket.length), 1)[0]].split('|');
+				var image = document.createElement('img');
+				image.setAttribute('alt','thumbnail');
+				image.setAttribute('src',data[1]);
+				image.setAttribute('class','mb-3 img-fluid');
+				var fig = document.createElement('figure');
+				fig.appendChild(image);
+				image = document.createElement('figcaption');
+				image.setAttribute('class','tm-color-primary')
+				image.innerHTML = data[2];
+				fig.appendChild(image);
+				image = document.createElement('a');
+				image.setAttribute('href',data[0]);
+				image.setAttribute('class','d-block tm-mb-40');
+				image.appendChild(fig);
+				temp.appendChild(image);
+					}
 			}
 			document.getElementById("sidebar").appendChild(temp);
 							}
