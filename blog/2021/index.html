@@ -26,138 +26,97 @@
     <script src="/blog/js/templatemo-script.js"></script>
     <script src="/blog/js/jquery_ui.js"></script>
 
-<script>
-    let params = new URLSearchParams(document.location.search.substring(1));
-    var page = parseInt(params.get("page")) || 0;
-    if (page <= 0) {
-	    page = 1;
-    }
-    function startup() {
-	var page_str = "Page ";
-	document.getElementById('footer').innerHTML = page_str.concat(page.toString());
-	var next_button = true;
-        var client = new XMLHttpRequest();
-        client.open('GET', 'blogdata.txt');
-        client.onload = function()
-        {
-            if(client.responseText != '')
-            {
-                var txt = client.responseText.split("\n");
-		var num_entries = txt.length-1;
-		var entry = page*6-6;
-		if (entry >= 0 && entry < num_entries && txt[0] != ''){
-			var data = txt[page*6-6].split("|");
-			document.getElementById("link1").setAttribute("href",data[0]);
-			document.getElementById("image1").setAttribute("src",data[1]);
-			document.getElementById("title1").innerHTML = data[2];
-			document.getElementById("text1").innerHTML = data[3];
-			document.getElementById("tags1").innerHTML = data[4];
-			document.getElementById("date1").innerHTML = data[5];
-			$("#article1").show();
-		} else {
-			next_button = false;
-			$("#article1").hide();
-		}
-		entry++;
-		if (entry >= 0 && entry < num_entries){
-			var data = txt[page*6-5].split("|");
-			document.getElementById("link2").setAttribute("href",data[0]);
-			document.getElementById("image2").setAttribute("src",data[1]);
-			document.getElementById("title2").innerHTML = data[2];
-			document.getElementById("text2").innerHTML = data[3];
-			document.getElementById("tags2").innerHTML = data[4];
-			document.getElementById("date2").innerHTML = data[5];
-			$("#article2").show();
-		} else {
-			next_button = false;
-			$("#article2").hide();
-		}
-		entry++;
-		if (entry >= 0 && entry < num_entries){
-			var data = txt[page*6-4].split("|");
-			document.getElementById("link3").setAttribute("href",data[0]);
-			document.getElementById("image3").setAttribute("src",data[1]);
-			document.getElementById("title3").innerHTML = data[2];
-			document.getElementById("text3").innerHTML = data[3];
-			document.getElementById("tags3").innerHTML = data[4];
-			document.getElementById("date3").innerHTML = data[5];
-			$("#article3").show();
-		} else {
-			next_button = false;
-			$("#article3").hide();
-		}
-		entry++;
-		if (entry >= 0 && entry < num_entries){
-			var data = txt[page*6-3].split("|");
-			document.getElementById("link4").setAttribute("href",data[0]);
-			document.getElementById("image4").setAttribute("src",data[1]);
-			document.getElementById("title4").innerHTML = data[2];
-			document.getElementById("text4").innerHTML = data[3];
-			document.getElementById("tags4").innerHTML = data[4];
-			document.getElementById("date4").innerHTML = data[5];
-			$("#article4").show();
-		} else {
-			next_button = false;
-			$("#article4").hide();
-		}
-		entry++;
-		if (entry >= 0 && entry < num_entries){
-			var data = txt[page*6-2].split("|");
-			document.getElementById("link5").setAttribute("href",data[0]);
-			document.getElementById("image5").setAttribute("src",data[1]);
-			document.getElementById("title5").innerHTML = data[2];
-			document.getElementById("text5").innerHTML = data[3];
-			document.getElementById("tags5").innerHTML = data[4];
-			document.getElementById("date5").innerHTML = data[5];
-			$("#article5").show();
-		} else {
-			next_button = false;
-			$("#article5").hide();
-		}
-		entry++;
-		if (entry >= 0 && entry < num_entries){
-			var data = txt[page*6-1].split("|");
-			document.getElementById("link6").setAttribute("href",data[0]);
-			document.getElementById("image6").setAttribute("src",data[1]);
-			document.getElementById("title6").innerHTML = data[2];
-			document.getElementById("text6").innerHTML = data[3];
-			document.getElementById("tags6").innerHTML = data[4];
-			document.getElementById("date6").innerHTML = data[5];
-			$("#article6").show();
-		} else {
-			next_button = false;
-			$("#article6").hide();
-		}
-		if (next_button) {
-		        $("#next").removeClass("disabled tm-mr-20");
-		} else {
-			$("#next").addClass("disabled tm-mr-20");
-	    	}
-            }
-        }
-	if (page == 1) {
-		$("#prev").addClass("disabled tm-mr-20");
-	} else {
-		$("#prev").removeClass("disabled tm-mr-20");
-	}
-	document.getElementById('prev').addEventListener('click',prev_click);
-        document.getElementById('next').addEventListener('click',next_click);
-	client.send()
-    }
-    function prev_click() {
-	window.location.href = "?page=" + (page-1).toString();
-    }
-    function next_click() {
-	window.location.href = "?page=" + (page+1).toString();
-    }
-    $("#article1").hide();
-    $("#article2").hide();
-    $("#article3").hide();
-    $("#article4").hide();
-    $("#article5").hide();
-    $("#article6").hide();
-    window.addEventListener('load',startup);
-</script>
+		<script>
+		    let params = new URLSearchParams(document.location.search.substring(1));
+		    var page = parseInt(params.get("page")) || 0;
+		    if (page <= 0) {
+			    page = 1;
+		    }
+		    function startup() {
+			var page_str = "Page ";
+			document.getElementById('footer').innerHTML = page_str.concat(page.toString());
+			var next_button = true;
+			var posts = document.createElement('div');
+			posts.setAttribute('class','row tm-row');
+		        var client = new XMLHttpRequest();
+		        client.open('GET', 'blogdata.txt');
+		        client.onload = function()
+		        {
+		            if(client.responseText != '')
+		            {
+		                var txt = client.responseText.split("\n");
+				var num_entries = txt.length-1;
+				for(let entry=page*6-6;entry<page*6;entry++){
+					if (entry >= 0 && entry < num_entries && txt[0] != ''){
+						var data = txt[entry].split("|");
+						var temp = document.createElement('img');
+						temp.setAttribute('src',data[1]);
+						temp.setAttribute('alt','Thumbnail');
+						temp.setAttribute('class','img-fluid');
+						var temp2 = document.createElement('div');
+						temp2.setAttribute('class','tm-post-link-inner');
+						temp2.appendChild(temp);
+						temp = document.createElement('a');
+						temp.setAttribute('href',data[0]);
+						temp.setAttribute('class','effect-lily tm-post-link tm-pt-60');
+						temp.appendChild(temp2);
+						temp2 = document.createElement('h2');
+						temp2.setAttribute('class','tm-pt-30 tm-color-primary tm-post-title');
+						temp2.innerHTML = data[2];
+						temp.appendChild(temp2);
+						var temp3 = document.createElement('hr');
+						temp3.setAttribute('class',"tm-hr-primary");
+						temp2 = document.createElement('article');
+						temp2.setAttribute('class',"col-12 col-md-6 tm-post");
+						temp2.appendChild(temp3);
+						temp2.appendChild(temp);
+						temp = document.createElement('p');
+						temp.setAttribute('class',"tm-pt-30");
+						temp.innerHTML = data[3];
+						temp2.appendChild(temp);
+						temp = document.createElement('div');
+						temp.setAttribute('class',"d-flex justify-content-between tm-pt-45");
+						temp3 = document.createElement('span');
+						temp3.setAttribute('class',"tm-color-primary");
+						temp3.innerHTML = data[4];
+						temp.appendChild(temp3);
+						temp3 = document.createElement('span');
+						temp3.setAttribute('class',"tm-color-primary");
+						temp3.innerHTML = data[5];
+						temp.appendChild(temp3);
+						temp2.appendChild(temp);
+						posts.appendChild(temp2);
+					} else {
+						next_button = false;
+						break;
+					}
+				}
+				main = document.getElementById('main');
+				main.insertBefore(posts,main.firstChild);
+				if (next_button) {
+				        $("#next").removeClass("disabled tm-mr-20");
+				} else {
+					$("#next").addClass("disabled tm-mr-20");
+			    	}
+		            }
+		        }
+			if (page == 1) {
+				$("#prev").addClass("disabled tm-mr-20");
+			} else {
+				$("#prev").removeClass("disabled tm-mr-20");
+			}
+			document.getElementById('prev').addEventListener('click',prev_click);
+		        document.getElementById('next').addEventListener('click',next_click);
+			client.send()
+		    }
+		    function prev_click() {
+			window.location.href = "?page=" + (page-1).toString();
+		    }
+		    function next_click() {
+			window.location.href = "?page=" + (page+1).toString();
+		    }
+		    window.addEventListener('load',startup);
+		</script>
 </head>
 <body class="theme-base-0h">    <div class="sidebar w3-hide-small" id="mySidebar">
   <div class="container">
@@ -166,9 +125,9 @@
       <div class="w3-text-white w3-center" style="font-size:20px;">
         Rushabh Mehta
       </div>
-      
+
       <p class="lead" style="font-size:16px;font-style:italic;color:rgba(255,255,255,0.5)">Everything is clearer now. Life is just a dream, you know, that's never ending.<br> - Yoko Kanno</p>
-      
+
     </div>
 
     <nav class="sidebar-nav">
@@ -194,125 +153,20 @@
 </div>
 
    <div class="container-fluid">
-        <main class="tm-main">          
-            <div class="row tm-row">
-                <article class="col-12 col-md-6 tm-post" id="article1">
-                    <hr class="tm-hr-primary">
-                    <a href="posts/post1R.html" class="effect-lily tm-post-link tm-pt-60" id="link1">
-                        <div class="tm-post-link-inner">
-                            <img src="img/img-01.jpg" alt="Image" class="img-fluid" id="image1">                            
-                        </div>
-                        <h2 class="tm-pt-30 tm-color-primary tm-post-title" id="title1"></h2>
-                    </a>                    
-                    <p class="tm-pt-30" id="text1">
-                        
-                    </p>
-                    <div class="d-flex justify-content-between tm-pt-45">
-                        <span class="tm-color-primary" id="tags1">Travel . Events</span>
-                        <span class="tm-color-primary" id="date1">June 24, 2020</span>
-                    </div>
-            
-                </article>
-                <article class="col-12 col-md-6 tm-post" id="article2">
-                    <hr class="tm-hr-primary">
-                    <a href="posts/post1R.html" class="effect-lily tm-post-link tm-pt-60" id="link2">
-                        <div class=" tm-post-link-inner">
-                            <img src="img/img-02.jpg" alt="Image" class="img-fluid" id="image2">                            
-                        </div>
-                        <h2 class="tm-pt-30 tm-color-primary tm-post-title" id="title2"></h2>
-                    </a>                    
-                    <p class="tm-pt-30" id="text2">
-                        
-                    </p>
-                    <div class="d-flex justify-content-between tm-pt-45">
-                        <span class="tm-color-primary" id="tags2">Music . Audio</span>
-                        <span class="tm-color-primary" id="date2">June 11, 2020</span>
-                    </div>
-                </article>
-                <article class="col-12 col-md-6 tm-post" id="article3">
-                    <hr class="tm-hr-primary">
-                    <a href="posts/post1R.html" class="effect-lily tm-post-link tm-pt-20" id="link3">
-                        <div class="tm-post-link-inner">
-                            <img src="img/img-03.jpg" alt="Image" class="img-fluid" id="image3">
-                        </div>
-                        <h2 class="tm-pt-30 tm-color-primary tm-post-title" id="title3"></h2>
-                    </a>                    
-                    <p class="tm-pt-30" id="text3">
-                       
-                    </p>
-                    <div class="d-flex justify-content-between tm-pt-45">
-                        <span class="tm-color-primary" id="tags3">Music . Audio</span>
-                        <span class="tm-color-primary" id="date3">June 11, 2020</span>
-                    </div>
+        <main class="tm-main" id='main'>
 
-                </article>
-                <article class="col-12 col-md-6 tm-post" id="article4">
-                    <hr class="tm-hr-primary">
-                    <a href="posts/post1R.html" class="effect-lily tm-post-link tm-pt-20" id="link4">
-                        <div class="tm-post-link-inner">
-                            <img src="img/img-04.jpg" alt="Image" class="img-fluid" id="image4">
-                        </div>
-                        <h2 class="tm-pt-30 tm-color-primary tm-post-title" id="title4"></h2>
-                    </a>                    
-                    <p class="tm-pt-30" id="text4">
-                        
-                    </p>
-                    <div class="d-flex justify-content-between tm-pt-45">
-                        <span class="tm-color-primary" id="tags4">Artworks . Design</span>
-                        <span class="tm-color-primary" id="date4">June 4, 2020</span>
-                    </div>
-
-                </article>
-                <article class="col-12 col-md-6 tm-post" id="article5">
-                    <hr class="tm-hr-primary">
-                    <a href="posts/post1R.html" class="effect-lily tm-post-link tm-pt-20" id="link5">
-                        <div class="tm-post-link-inner">
-                            <img src="img/img-05.jpg" alt="Image" class="img-fluid" id="image5">
-                        </div>
-                        <h2 class="tm-pt-30 tm-color-primary tm-post-title" id="title5"></h2>
-                    </a>                    
-                    <p class="tm-pt-30" id="text5">
-                        
-                        <br>
-                        Title #099 New #0CC <br>
-                        <span class="tm-color-primary">Text #999 Line #CCC Next #0CC Prev #F0F0F0</span>
-                    </p>
-                    <div class="d-flex justify-content-between tm-pt-45">
-                        <span class="tm-color-primary" id="tags5">Creative . Video . Audio</span>
-                        <span class="tm-color-primary" id="date5">May 31, 2020</span>
-                    </div>
-
-                </article>
-                <article class="col-12 col-md-6 tm-post" id="article6">
-                    <hr class="tm-hr-primary">
-                    <a href="posts/post1R.html" class="effect-lily tm-post-link tm-pt-20" id="link6">
-                        <div class="tm-post-link-inner">
-                            <img src="img/img-06.jpg" alt="Image" class="img-fluid" id="image6">
-                        </div>
-                        <h2 class="tm-pt-30 tm-color-primary tm-post-title" id="title6"></h2>
-                    </a>                    
-                    <p class="tm-pt-30" id="text6">
-                    </p>
-                    <div class="d-flex justify-content-between tm-pt-45">
-                        <span class="tm-color-primary" id="tags6">Visual . Artworks</span>
-                        <span class="tm-color-primary" id="date6">June 16, 2020</span>
-                    </div>
-
-                </article>
-            </div>
             <div class="row tm-row tm-mt-100 tm-mb-75">
                 <div class="tm-prev-next-wrapper">
                     <label class="mb-2 tm-btn tm-btn-primary tm-prev-next" id="prev">Prev</label>
                     <label class="mb-2 tm-btn tm-btn-primary tm-prev-next" id="next">Next</label>
-                </div>            
-            </div>        
+                </div>
+            </div>
 		 <footer class="row tm-row">
                 <hr class="col-12">
                 <div class="col-md-6 col-12 tm-color-gray">
                     Category: 2021
                 </div>
                 <div class="col-md-6 col-12 tm-color-gray tm-copyright" id="footer">
-                    TO BE FILLED
                 </div>
             </footer>
         </main>

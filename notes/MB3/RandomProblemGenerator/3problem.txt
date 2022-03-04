@@ -1,0 +1,6 @@
+Suppose the remainder when polynomial \(f\) is divided by \((x-a)(x-b)(x-c)\) is \(px+q\) for some reals \(p,q\). Show that $$(b-c)f(a)+(c-a)f(b)+(a-b)f(c)=0$$
+<div class="solution">
+<p><a onclick="myCollapse('1')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="11"></i></a><br></p>
+<div id="1" class="w3-container w3-hide">
+We are given that there exists some polynomial \(g\) such that for all \(x\)$$f(x)=g(x)\cdot(x-a)(x-b)(x-c)+px+q$$Thus, \(f(a)=ap+q\), \(f(b)=bp+q\), and \(f(c)=cp+q\). With this,$$\begin{aligned}(b-c)f(a)+(c-a)f(b)+(a-b)f(c)&=0\\(b-c)(ap+q)+(c-a)(bp+q)+(a-b)(cp+q)&=0\\abp-acp+bcp-abp+acp-bcp+(b-c+c-a+a-b)q&=0\end{aligned}$$This completes the problem.
+</div>

@@ -306,7 +306,7 @@
 <script>
     function startup() {
         var client = new XMLHttpRequest();
-        client.open('GET', (Math.floor(Math.random()*2+1)).toString().concat('problem.txt'));
+        client.open('GET', (Math.floor(Math.random()*3+1)).toString().concat('problem.txt'));
         client.onload = function()
         {
             if(client.responseText != '')
@@ -314,7 +314,7 @@
               var elem = document.createElement('div');
               elem.innerHTML=client.responseText;
               document.getElementById('main').appendChild(elem);
-              MathJax.Hub.Typeset("main")
+              setTimeout(function(){MathJax.Hub.Typeset("main");},200);
             }
         }
 	client.send();
@@ -603,7 +603,7 @@
 
 <div class="post" id='main'>
   <h1 class="post-title">Random Problem Generator</h1>
-  <p>Below is a randomly chosen problem from my problem data bank. Reload the page for a new problem! (If the problem isn't rendering, wait a few seconds and then reload.)</p><hr>
+  <p>Below is a randomly chosen problem from my problem data bank. Reload the page for a new problem!</p><hr>
 
     </div>
 
