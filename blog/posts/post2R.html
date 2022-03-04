@@ -42,40 +42,57 @@ https://templatemo.com/tm-553-xtra-blog
   </script>
 
 	<script>
-	    function startup() {
+			function startup() {
 		var post_id = 2;
-	        var client = new XMLHttpRequest();
-	        client.open('GET', '/blog/reviews/blogdata.txt');
-	        client.onload = function()
-	        {
-	            if(client.responseText != '')
-	            {
-	                var txt = client.responseText.split('\n');
+					var client = new XMLHttpRequest();
+					client.open('GET', '/blog/reviews/blogdata.txt');
+					client.onload = function()
+					{
+							if(client.responseText != '')
+							{
+									var txt = client.responseText.split('\n');
 			var num = txt.length-1;
-			var im = "image";
-			var tit = "title";
-			var fig = "#fig";
-			var rel = "related";
 			var data = txt[num-post_id].split('|');
-			document.getElementById("title").innerHTML = data[2];
-			document.getElementById("date").innerHTML = data[4];
-
-			    var bucket = [];
-			    for (var i=0;i<num;i++) {
-				if (i != num - post_id) {
-	    			bucket.push(i);}
-			    }
-			    for (var j=1;j<4;j++) {
-				data = txt[bucket.splice(Math.floor(Math.random()*bucket.length), 1)[0]].split('|');
-				document.getElementById(rel.concat(j.toString())).setAttribute('href',data[0]);
-				document.getElementById(im.concat(j.toString())).setAttribute('src',data[1]);
-				document.getElementById(tit.concat(j.toString())).innerHTML = data[2];
-			    }
+			var title = document.createElement('h2');
+			title.setAttribute('class','pt-2 tm-color-primary tm-post-title')
+			title.innerHTML = data[2];
+			var date = document.createElement('p');
+			date.innerHTML = data[4];
+			date.setAttribute('class','tm-mb-40');
+			var titulardata = document.createElement('div');
+			titulardata.appendChild(title);
+			titulardata.appendChild(date);
+			var modify = document.getElementById("modify");
+			modify.insertBefore(titulardata,modify.firstChild);
+			var temp = document.createElement('div');
+			var bucket = [];
+			for (var i=0;i<num;i++) {
+				if (i != num - post_id) bucket.push(i);
 			}
-	        }
+			for (var j=1;j<4;j++) {
+			data = txt[bucket.splice(Math.floor(Math.random()*bucket.length), 1)[0]].split('|');
+			var image = document.createElement('img');
+			image.setAttribute('alt','thumbnail');
+			image.setAttribute('src',data[1]);
+			image.setAttribute('class','mb-3 img-fluid');
+			var fig = document.createElement('figure');
+			fig.appendChild(image);
+			image = document.createElement('figcaption');
+			image.setAttribute('class','tm-color-primary')
+			image.innerHTML = data[2];
+			fig.appendChild(image);
+			image = document.createElement('a');
+			image.setAttribute('href',data[0]);
+			image.setAttribute('class','d-block tm-mb-40');
+			image.appendChild(fig);
+			temp.appendChild(image);
+			}
+			document.getElementById("sidebar").appendChild(temp);
+							}
+					}
 		client.send();
-	    }
-	    window.addEventListener('load',startup);
+			}
+			window.addEventListener('load',startup);
 	</script>
 </head>
 <body class="theme-base-0h">    <div class="sidebar w3-hide-small" id="mySidebar">
@@ -126,9 +143,7 @@ https://templatemo.com/tm-553-xtra-blog
             <div class="row tm-row">
                 <div class="col-lg-8 tm-post-col">
                     <div class="tm-post-full">
-                        <div class="mb-4" style='color:black;'>
-                            <h2 class="pt-2 tm-color-primary tm-post-title" id='title'>TITLE TO BE FILLED</h2>
-                            <p class="tm-mb-40" id='date'>DATE TO BE FILLED</p>
+                        <div class="mb-4" style='color:black;' id='modify'>
 
 				<p>A few days ago, I was reading <a href='https://fossbytes.com/github-copilot-generating-functional-api-keys/' target='_blank' style='color:#0a37cc'>this article</a>, which mentioned an infamous inverse square root algorithm from the video game <i>Quake III</i>. Now, I'm not very knowledgeable on video games, but besides the obvious application of the <a href='https://en.wikipedia.org/wiki/Newton%27s_method' target='_blank' style='color:#0a37cc'>Newton-Raphson method</a>, I couldn't figure out what exactly the code was doing, and so I had to dig deeper. This post is based on the math of <a href='http://www.lomont.org/papers/2003/InvSqrt.pdf' target='_blank' style='color:#0a37cc'>this paper</a>.</p>
 				<p>So what exactly is this code? Based on the name of the function, you might guess that it has something to do with square roots. In fact, it's a fast algorithm for approximating the inverse of a square root of a number. Why exactly would anyone care about this?</p>
@@ -193,7 +208,7 @@ https://templatemo.com/tm-553-xtra-blog
                     </div>
                 </div>
                 <aside class="col-lg-4 tm-aside-col">
-                    <div class="tm-post-sidebar">
+                    <div class="tm-post-sidebar" id='sidebar'>
                         <hr class="mb-3 tm-hr-primary">
                         <h2 class="mb-4 tm-post-title tm-color-primary">Categories</h2>
                         <ul class="tm-mb-75 pl-5 tm-category-list">
@@ -206,24 +221,6 @@ https://templatemo.com/tm-553-xtra-blog
                         </ul>
                         <hr class="mb-3 tm-hr-primary">
                         <h2 class="tm-mb-40 tm-post-title tm-color-primary">Related Posts</h2>
-                        <a href="#" class="d-block tm-mb-40" id='related1'>
-                            <figure id='fig1'>
-                                <img src="/blog/img/img-02.jpg" alt="Image" class="mb-3 img-fluid" id='image1'>
-                                <figcaption class="tm-color-primary" id='title1'>Duis mollis diam nec ex viverra scelerisque a sit</figcaption>
-                            </figure>
-                        </a>
-                        <a href="#" class="d-block tm-mb-40" id='related2'>
-                            <figure id='fig2'>
-                                <img src="/blog/img/img-05.jpg" alt="Image" class="mb-3 img-fluid" id='image2'>
-                                <figcaption class="tm-color-primary" id='title2'>Integer quis lectus eget justo ullamcorper ullamcorper</figcaption>
-                            </figure>
-                        </a>
-                        <a href="#" class="d-block tm-mb-40" id='related3'>
-                            <figure id='fig3'>
-                                <img src="/blog/img/img-06.jpg" alt="Image" class="mb-3 img-fluid" id='image3'>
-                                <figcaption class="tm-color-primary" id='title3'>Nam lobortis nunc sed faucibus commodo</figcaption>
-                            </figure>
-                        </a>
                     </div>
                 </aside>
             </div>

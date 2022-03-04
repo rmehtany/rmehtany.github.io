@@ -43,13 +43,6 @@ https://templatemo.com/tm-553-xtra-blog
 
 	<script>
 	    function startup() {
-		document.getElementById("toggle").onclick = function() {
-	            if (document.getElementById("container").classList.contains("closed")) {
-	                document.getElementById("container").classList.remove("closed");
-	            } else {
-	                document.getElementById("container").classList.add("closed");
-	            }
-	        }
 		var post_id = 1;
 	        var client = new XMLHttpRequest();
 	        client.open('GET', '/blog/other/blogdata.txt');
@@ -72,53 +65,27 @@ https://templatemo.com/tm-553-xtra-blog
 			var modify = document.getElementById("modify");
 			modify.insertBefore(titulardata,modify.firstChild);
 			var temp = document.createElement('div');
-			if (num < 5) {
-			    var i = 1;
-			    for (let j = 0; j < num; j++) {
-			        if (num-post_id != j) {
-				    data = txt[j].split('|');
-						var image = document.createElement('img');
-						image.setAttribute('alt','thumbnail');
-						image.setAttribute('src',data[1]);
-						image.setAttribute('class','mb-3 img-fluid');
-						var fig = document.createElement('figure');
-						fig.appendChild(image);
-						image = document.createElement('figcaption');
-						image.setAttribute('class','tm-color-primary')
-						image.innerHTML = data[2];
-						fig.appendChild(image);
-						image = document.createElement('a');
-						image.setAttribute('href',data[0]);
-						image.setAttribute('class','d-block tm-mb-40');
-						image.appendChild(fig);
-						temp.appendChild(image);
-				    i++;
-				}
-			    }
-			} else {
-			    var bucket = [];
-			    for (var i=0;i<num;i++) {
-				if (i != num - post_id) {
-	    			bucket.push(i);}
-			    }
-			    for (var j=1;j<4;j++) {
-				data = txt[bucket.splice(Math.floor(Math.random()*bucket.length), 1)[0]].split('|');
-				var image = document.createElement('img');
-				image.setAttribute('alt','thumbnail');
-				image.setAttribute('src',data[1]);
-				image.setAttribute('class','mb-3 img-fluid');
-				var fig = document.createElement('figure');
-				fig.appendChild(image);
-				image = document.createElement('figcaption');
-				image.setAttribute('class','tm-color-primary')
-				image.innerHTML = data[2];
-				fig.appendChild(image);
-				image = document.createElement('a');
-				image.setAttribute('href',data[0]);
-				image.setAttribute('class','d-block tm-mb-40');
-				image.appendChild(fig);
-				temp.appendChild(image);
-			    }
+	    var bucket = [];
+	    for (var i=0;i<num;i++) {
+				if (i != num - post_id) bucket.push(i);
+		  }
+	    for (var j=1;j<4;j++) {
+			data = txt[bucket.splice(Math.floor(Math.random()*bucket.length), 1)[0]].split('|');
+			var image = document.createElement('img');
+			image.setAttribute('alt','thumbnail');
+			image.setAttribute('src',data[1]);
+			image.setAttribute('class','mb-3 img-fluid');
+			var fig = document.createElement('figure');
+			fig.appendChild(image);
+			image = document.createElement('figcaption');
+			image.setAttribute('class','tm-color-primary')
+			image.innerHTML = data[2];
+			fig.appendChild(image);
+			image = document.createElement('a');
+			image.setAttribute('href',data[0]);
+			image.setAttribute('class','d-block tm-mb-40');
+			image.appendChild(fig);
+			temp.appendChild(image);
 			}
 			document.getElementById("sidebar").appendChild(temp);
 	            }
@@ -176,11 +143,7 @@ https://templatemo.com/tm-553-xtra-blog
             <div class="row tm-row">
                 <div class="col-lg-8 tm-post-col">
                     <div class="tm-post-full">
-                        <div class="mb-4">
-                            <h2 class="pt-2 tm-color-primary tm-post-title" id='title'>TITLE TO BE FILLED</h2>
-                            <p class="tm-mb-40" id='date'>DATE TO BE FILLED</p>
-
-
+                        <div class="mb-4" id='modify'>
 
 				                   <p>Welcome to my blog! This is my first post! Please feel free to let me know if there's anything I can do to improve the quality of the blog.</p>
                            <p>One of my favorite blogs to visit when I have free time is <a href='https://eylemmath.weebly.com/' target="_blank" style="color:#0a37cc">eyleMMath</a> as it has a lot of pretty visualizations of geometric concepts.</p>
@@ -214,7 +177,7 @@ https://templatemo.com/tm-553-xtra-blog
                     </div>
                 </div>
                 <aside class="col-lg-4 tm-aside-col">
-                    <div class="tm-post-sidebar">
+                    <div class="tm-post-sidebar" id='sidebar'>
                         <hr class="mb-3 tm-hr-primary">
                         <h2 class="mb-4 tm-post-title tm-color-primary">Categories</h2>
                         <ul class="tm-mb-75 pl-5 tm-category-list">
@@ -227,24 +190,6 @@ https://templatemo.com/tm-553-xtra-blog
                         </ul>
                         <hr class="mb-3 tm-hr-primary">
                         <h2 class="tm-mb-40 tm-post-title tm-color-primary">Related Posts</h2>
-                        <a href="#" class="d-block tm-mb-40" id='related1'>
-                            <figure id='fig1'>
-                                <img src="/blog/img/img-02.jpg" alt="Image" class="mb-3 img-fluid" id='image1'>
-                                <figcaption class="tm-color-primary" id='title1'>Duis mollis diam nec ex viverra scelerisque a sit</figcaption>
-                            </figure>
-                        </a>
-                        <a href="#" class="d-block tm-mb-40" id='related2'>
-                            <figure id='fig2'>
-                                <img src="/blog/img/img-05.jpg" alt="Image" class="mb-3 img-fluid" id='image2'>
-                                <figcaption class="tm-color-primary" id='title2'>Integer quis lectus eget justo ullamcorper ullamcorper</figcaption>
-                            </figure>
-                        </a>
-                        <a href="#" class="d-block tm-mb-40" id='related3'>
-                            <figure id='fig3'>
-                                <img src="/blog/img/img-06.jpg" alt="Image" class="mb-3 img-fluid" id='image3'>
-                                <figcaption class="tm-color-primary" id='title3'>Nam lobortis nunc sed faucibus commodo</figcaption>
-                            </figure>
-                        </a>
                     </div>
                 </aside>
             </div>
