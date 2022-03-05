@@ -696,6 +696,14 @@ Since \(a\equiv c\) and \(b\equiv d\), there exists integers \(j,k\) such that \
 If such a \(q\) existed, by modulus properties, there'd exist an integer \(r\) such that \(qk+rn=\gcd(k,n)\). Thus, we seek to show that such a \(q,r\) exist.<br><br>Let \(k_1=\frac k{\gcd(k,n)}\) and \(n_1=\frac n{\gcd(k,n)}\). So, \(\gcd(n_1,k_1)=1\). Now suppose there exists integers \(0\leq a\lt b\lt k_1\) such that \(n_1a\equiv n_1b\bmod{k_1}\). Then, \(n_1(b-a)\) is a multiple of \(k_1\).<br><br> Since \(\gcd(n_1,k_1)=1\), this means that \(b-a\) is a multiple of \(k_1\). Since \(b-a\) is positive, this means that \(b-a\geq k_1\), a contradiction since \(b-a\lt b\lt k_1\).<br><br>So, we know that every \(n_1r\) for \(0\leq r\lt k_1\) has a different remainder mod \(k_1\). By the pigeonhole principle, since there are only \(k_1\) possible remainders, there must be some \(r\) for which \(n_1r\equiv1\bmod{k_1}\). That implies that there exists integer \(q\) such that \(rn_1+qk_1=1\).
 </div>
 </div>
+</div><br>
+<div class="Exercise" title="Applying Bezout's Lemma"> Prove that the following expression is an integer for all integers \(n\geq m\geq1\)$$\frac{\operatorname{gcd}(m,n)}n{n\choose m}$$
+<div class="proof">
+<p><a onclick="myCollapse('ex122')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="ex122" class="w3-container w3-hide">
+By Bezout's Lemma, there exists integers \(x,y\) such that \(mx+ny=\operatorname{gcd}(m,n)\). Thus, $$\frac{\operatorname{gcd}(m,n)}n{n\choose m}=\frac{mx+ny}n{n\choose m}=x\cdot\frac mn{n\choose m}+y{n\choose m}=x{n-1\choose m-1}+y{n\choose m}$$Clearly, this is an integer.
+</div>
+</div>
 </div>
 <p>If this proof was too complicated, don't worry. You won't need it for any competitions. But, for those of you who understood the proof, you'll notice that this lemma gives us no way of finding \(\frac1k\) when \(\gcd(k,n)=1\). So how do we find \(\frac1k\)?</p>
 <p>The "easiest" way to find \(\frac1k\) is to use the <a href = 'https://brilliant.org/wiki/extended-euclidean-algorithm/' target='_blank'>Extended Euclidean Algorithm</a>, although in most cases, trial and error can be faster than this algorithm.</p>

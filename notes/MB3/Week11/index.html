@@ -719,6 +719,20 @@ So, the result of our division is \(x^3-2x^2-4\) divided by \(x-3\) is \(x^2+x+3
 <br><p>Vieta's formulas imply another very useful theorem.</p>
 <div class="Theorem" title="Rational Root Theorem - RRT"> Given any polynomial \(a_nx^n+\ldots+a_0\) where \(a_0,\ldots,a_n\) are all integers, if \(\frac pq\) (in reduced form) is a root of this polynomial, then \(p\) is a divisor of \(a_0\) and \(q\) a divisor of \(a_n\).</div>
 <div class="Exercise" title="Using RRT"> Show using RRT that \(x^2+x+1\) has no rational roots.</div>
+<h3>Diophantine Equations</h3>
+<p>Often, we are interested in polynomial equations, but want to only find integer solutions to them. We call these equations <strong>Diophantine Equations</strong>. In general, these equations are extremely challenging to solve. However, there are some special types of Diophantine equations which are more easily solvable.</p>
+<p>A good example of such a Diophantine equation is known as <strong>Simon's Favorite Factoring Trick</strong>, which is the following simple observation:$$(x+i)(y+j)=xy+jx+iy+ij$$In particular, \(xy+x+y+1=(x+1)(y+1)\) and \(xy-x-y+1=(x-1)(y-1)\). We can use this observation to factor equations of the form \(Axy+Bx+Cy=D\).</p>
+<div class="Exercise" title="Simon's Favorite Factoring Trick"> Find all positive integers \(m,n\) with \(n\) odd such that $$\frac1m+\frac4n=\frac1{12}$$
+  <div class="solution">
+  <p><a onclick="myCollapse('dd')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+  <div id="dd" class="w3-container w3-hide">
+    Multiplying by \(12mn\) gives us \(mn-48m-12n=0\). Since \(48\cdot12=576\), we have $$\begin{aligned}mn-48m-12n+576&=576\\(m-12)(n-48)&=576\end{aligned}$$Since \(n\) is odd, so is \(n-48\). The positive odd factors of \(576\) are \(1,3,9\), leading to the solutions $$(m,n)=(588,49),\;(204,51),\;(76,57)$$
+  </div>
+  </div>
+</div><br>
+<p>Another useful Diophantine equation is <strong>Pell's Equation</strong>, which is of the form \(x^2-dy^2=1\) for some positive integer \(d\) which is not a perfect square. Then, the following theorem holds.</p>
+<div class="Theorem" title="Pell's Equation">There exist positive integers \(x_0,y_0\) such that \(x_0^2-dy_0^2=1\). And if these are the smallest positive integers which are solutions to Pell's Equation, then every positive solution to Pell's Equation is of the form \(x_n,y_n\), with $$\left(x_0+y_0\sqrt d\right)^n=x_n+y_n\sqrt d$$</div>
+<div class="Example" title="Solving Pell's Equation">It's easy to see that \((x_0,y_0)=(3,2)\) is the smallest positive solution to \(x^2-2y^2=1\). Thus,$$x_n+y_n\sqrt d=\left(3+2\sqrt2\right)^n$$Verify for yourself that$$x_n-y_n\sqrt d=\left(3-2\sqrt2\right)^n$$So, $$(x_n,y_n)=\left(\frac{\left(3+2\sqrt2\right)^n+\left(3-2\sqrt2\right)^n}2,\frac{\left(3+2\sqrt2\right)^n-\left(3-2\sqrt2\right)^n}2\right)$$These are all of the positive integer solutions to Pell's Equation</div>
 <h2 id='r'>Challenge: Polynomial Rings</h2>
 <p>In the previous section, we noted the similarity between long division in the integers and in the set of polynomials. And, we also defined what it means to compute the remainder when one polynomial is divided by the other. Using these ideas, we can define mods for polynomials.</p>
 <p>But before that, a bit of notation. \(\mathbb N\) is the set of natural numbers, \(\mathbb Z\) is the set of integers, \(\mathbb Q\) the set of rational numbers, and \(\mathbb R\) the set of real numbers.</p>
