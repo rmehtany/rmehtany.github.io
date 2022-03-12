@@ -1,0 +1,6 @@
+Let \(x,y\) be real numbers such that $$\frac{x^2+y^2}{x^2-y^2}+\frac{x^2-y^2}{x^2+y^2}=8$$Evaluate$$\frac{x^8+y^8}{x^8-y^8}-\frac{x^8-y^8}{x^8+y^8}$$
+<div class="solution">
+<p><a onclick="myCollapse('1')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="11"></i></a><br></p>
+<div id="1" class="w3-container w3-hide">
+Combining the left hand side into one fraction gives us \(\frac{x^4+y^4}{x^4-y^4}=4\). Thus, $$\frac{x^4+y^4}{x^4-y^4}+\frac{x^4-y^4}{x^4+y^4}=4.25$$Combining the left side into one fraction again gives us $$\frac{x^8+y^8}{x^8-y^8}=\frac{17}8$$So, our answer is \(\frac{17}8+\frac8{17}=\frac{353}{136}\)
+</div>
