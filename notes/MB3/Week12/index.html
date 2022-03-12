@@ -323,7 +323,7 @@
          Rushabh Mehta
       </div>
 
-      <p class="lead" style="font-size:16px;font-style:italic;">The full beauty of the subject of generating functions emerges only from tuning in on both channels: the discrete and the continuous.<br> - Herbert Wilf</p>
+      <p class="lead" style="font-size:16px;font-style:italic;">I love algebra. Love it.<br> - Ken Cuccinelli</p>
 
     </div>
 
@@ -615,7 +615,7 @@
 <li><a href='#r'>Recurrence Relations</a><ul><li><a href='#c'>Characteristic Polynomial</a></li><li><a href='#t'>Non-linear recurrences</a></li></ul></li>
 <li><a href='#m'>Induction</a></li>
 <li><a href='#p'>Pigeonhole Principle</a></li>
-<li><a href='#chal'>Challenge: Model Theory</a></li>
+<li><a href='#chal'>Challenge: Functional Equations</a></li>
 </ul>
 <p>In weeks 1-3, we studied permutations, combinations, and the many things one can do with them. In this week's notes, we'll be going over some more advanced topics in combinatorics that certainly are useful, but show up less frequently.</p>
 <h2 id='r'>Recurrence Relations</h2>
@@ -691,6 +691,8 @@ Let \(P_i\) for each \(0\leq i\leq N\) represent the probability of hitting \(N\
 </div>
 </div>
 </div>
+<div class="Exercise" title="Graph Theory"> Prove the exercise from the Challenge Section in Week 3 that requires induction.</div>
+
 <p>There are many variants of induction. The most useful variant is called <strong>Strong Induction</strong>. In this variant, we prove the following steps for our property \(P\).</p>
 <ul><li> <strong>Inductive Case:</strong> We show that for any natural number \(n\), if for all natural numbers \(m\) such that \(m\lt n\), property \(P\) is true, then property \(P\) is true for \(n\) as well.</li></ul>
 <p>Interestingly, for strong induction, you don't need a base case (why?). It is called strong, since instead of assuming that the property is true just for the natural number just below \(n\), we assume it is true for all natural numbers below \(n\). This can be useful in some induction proofs, like the following.</p>
@@ -706,8 +708,8 @@ Let \(P_i\) for each \(0\leq i\leq N\) represent the probability of hitting \(N\
 <div class="Exercise" title="De Moivre's"> Prove the follow equation is true for all natural numbers \(n\) <strong>without</strong> Euler's Formula$$(\cos\theta+i\sin\theta)^n=\cos n\theta+i\sin n\theta$$<strong>Hint:</strong> remember the formulas for \(\cos(a+b)\) and \(\sin(a+b)\).</div><br>
 <div class="Exercise" title="Fibonacci"> Prove that the following statements hold for all natural numbers \(n\)$$f_{n+1}\lt\left(\frac74\right)^n$$$$f_{2n+2}\text{ is a multiple of }f_{n+1}$$$$\gcd(f_{n+2},f_{n+1})=1$$</div><br>
 <div class="Exercise" title="Binomial"> Prove the Binomial Theorem from Week 3 for all natural numbers \(n\)$$(x+y)^n=\sum\limits_{k=0}^n{n\choose k}x^ky^{n-k}$$</div><br>
-<br><p>There is another variation of induction known as <strong>infinite descent</strong>. In essence, infinite descent is the principle that there is no infinite sequence of decreasing natural numbers. The first time this property is used is in the proof of the irrationality of \(\sqrt2\).</p>
-<div class="Theorem" title="Square roots are irrational"> \(\sqrt2\) is irrational.
+<p>There is another variation of induction known as <strong>infinite descent</strong>. In essence, infinite descent is the principle that there is no infinite sequence of decreasing natural numbers. The first known use of this property is in the proof of the irrationality of \(\sqrt2\).</p>
+<div class="Theorem" title="Square roots are irrational"> \(\;\sqrt2\) is irrational.
 <div class="proof">
 <p><a onclick="myCollapse('square')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
 <div id="square" class="w3-container w3-hide">
@@ -716,7 +718,7 @@ Let \(P_i\) for each \(0\leq i\leq N\) represent the probability of hitting \(N\
 </div>
 </div>
 <p>Now for some more interesting applications.</p>
-<div class="Exercise" title="Diophantine Descent">Prove that the equation \(a^2+b^2=3c^2\) has no positive integer solutions
+<div class="Exercise" title="Diophantine Descent"> Prove that the equation \(a^2+b^2=3c^2\) has no positive integer solutions
 <div class="Solution">
 <p><a onclick="myCollapse('asdadd')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
 <div id="asdadd" class="w3-container w3-hide">
@@ -775,78 +777,152 @@ For each natural number \(k\), consider the pair \((f_k\bmod n,f_{k+1}\bmod n)\)
 </div>
 </div>
 </div>
+<h2 id='chal'>Challenge: Functional Equations</h2>
+<p>In algebra, we are usually presented with a function first, and then we study its properties. However, in a functional equation, we are given the property first, and then we must deduce all functions that have the given property. For example, the problem might be to find all functions \(f :\mathbb R \to\mathbb R\) such that$$f(f(x)-f(f(y)))=x-y$$for all \(x,y\in\mathbb R\), where \(\mathbb R\) is the symbol for the real numbers.</p>
+<p>Before we start studying such equations, let's clarify some basic notation.</p>
+<p>A function \(f:A\to B\) is a function with <strong>domain</strong> \(A\) and <strong>codomain</strong> \(B\). The domain of a function is the set of inputs to the function, and the codomain is the set of possible outputs.</p>
+<div class="remark" title="Codomain vs Range"> In school, you probably have learned about ranges, rather than codomain. The range of a function is the set of actual outputs of the function. To see the difference, let's do an example. The function $$f:\mathbb R\to\mathbb R,\;f(x)=x^2$$has domain \(\mathbb R\) and codomain \(\mathbb R\), but the range of the function is the set of non-negative reals (sometimes written as \(\mathbb R^{\geq0}\)) since \(x^2\) outputs all non-negative reals.</div>
+<br><p>Functional Equations in general are very difficult to solve. However, if you see them on a contest, you can bet that there is some nice trick that will make them solvable. We'll review some of the more common tricks.</p>
+<h3>Substitution</h3>
+<p>With many functional equations, the best place to start is to substitute in values for the variables. \(0\) and \(1\) are often good candidates, but any substitution which leads to a simplified equation is helpful.</p>
+<div class="Exercise" title="Substitution"> Find all functions \(f:\mathbb R\to\mathbb R\) such that for all \(x,y\in\mathbb R\), $$f(f(x)-f(f(y)))=x-y$$
+<div class="Solution">
+<p><a onclick="myCollapse('ex001')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="ex001" class="w3-container w3-hide">
+  We might try \(x=0\) or \(y=0\), but these substitutions don't really help much. So how do we simplify the left hand side with a substitution? Note that if we let \(x=f(y)\), then we have \(f(x)-f(f(y))=0\), which gives us $$f(0)=f(y)-y$$This is very useful, because it tells us that \(f(y)=y+c\), where \(c\) is a constant. Let's check that this solution actually works. $$f(f(x)-f(f(y)))=(x+c-(y+2c))+c=x-y$$Thus, the solutions to this functional equation are of the form \(f(x)=x+c\).
+</div>
+</div>
+</div>
+<br><div class="remark" title="Checking solutions"> Make sure you check any solutions to functional equations you find! You may realize that these solutions aren't actually solutions.</div>
 
-<h2 id='chal'>Challenge: Model Theory</h2>
-<p>This section is quite pedantic, so I'd suggest skipping it unless you are interested in understanding the logical underpinnings of induction. All visuals in this section are thanks to Eliezer Yudkowsky, and his blog "Highly Advanced Epistemology 101 for Beginners".</p>
-<h4>Counting</h4>
-<p>The ability to count is one of the first skills we look for young children to grasp, but it often is forgotten how difficult a task this is.</p>
-<p>Zvonkin points to the following example. Let's step into the child's shoes and learn how to count, but in Japanese.</p>
-<p><i>ichi, ni, san, shi, go, roku, shichi, hachi, kyu, ju</i></p>
-<p>First, you have to memorize these names. It is not easy! Once you've done this, now you have to learn to count backwards. <i>ju, kyu, hachi,...</i> Once you have done this, try to do some basic arithmetic. What is <i>ichi</i> plus <i>roku</i>? <i>Hachi</i> divided by <i>shi</i>?</p>
-<p>Over time, though, we begin to forget how difficult the task of counting is. It is <i>natural</i>, we think. Why is \(1+1=2\)? What else would it be? After all, if I put one apple and another apple together, of course I get two apples!</p>
-<p>But we, as logicians, shouldn't be satisfied by this non-answer. After all, logic is the study of conclusions following from statements. From what statement does \(1+1=2\) follow?</p>
-<p>But even an answer to this question wouldn't feel particularly satisfactory. I could say, \(1+1=2\) due to the rules of arithmetic, made precise by the logicians before me. But \(1+1=2\) doesn't feel that way.</p>
-<p>Figuring out facts about the natural numbers doesn't feel like we are deducing conclusions from assumptions. It feels like we are <i>discovering</i> these numbers, and we have invented rules to describe them. The natural numbers, in some fashion, are baked into the universe. So what are they? Are numbers real? Inventions? Logical? Physical?</p>
-<div class="remark" title="Meditation"> These questions may seem silly, and in some sense, they are. But there is a legitimate philosophical question buried here. Is the act of recognizing that \(1\) apple and \(1\) apple form \(2\) apples different than \(1+1=2\)? If so, what would explain the uncanny ability of the equation \(1+1=2\) to describe real life? And if they are the same, then what exactly is arithmetic?</div>
-<h4>Models</h4>
-<p>In logic, we view the notion of \(1\) apple and \(1\) apple forming \(2\) apples to be a <strong>model</strong>, a representation of a rule. \(1+1=2\) is a rule which informs us about how objects behave, and the apples are a representation of it.</p>
-<p>But this, too, isn't the full picture, since the natural numbers themselves are a model. But of what?</p>
-<p>To answer this question, let's play a little game. Suppose I am a logician from another land, one where the ideas of the natural numbers aren't known. How exactly would you explain to me what they are?</p>
-<p>You could try showing me the apples, but that'd be of little use. As with the children learning to count, what gives meaning to the abstraction of apples combining to arithmetic is the idea that addition generalizes, and applies to all objects, not just apples.</p>
-<p>You may also try to get me to look at my fingers (if I have them), and teach me to count this way. But this would be a bit like teaching you the words <i>ichi, ni, san, ...</i> I would immediately understand that these words serve a function for you, but have little perspective as to what function.</p>
-<p>The best approach would be to set up rules. We'd hope to develop rules so that any model of these rules must behave intuitively like the natural numbers do. So where do we start?</p>
-<p>Perhaps we'd start with \(0\). You might inform the logician, there exists a special natural number, and we call it zero.</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/1.jpeg"><img src="/public/1.jpeg" width="100%"></a></p>
-<p>Next, we'd introduce the idea of a <strong>successor</strong>. For us normal folk, the successor of a natural number is just the number \(+1\), but since we haven't even gotten around to addition yet, we'll use this idea instead. To represent the successor of a number \(n\), we will write \(Sn\).</p>
-<p>This is all of the notation we need to write our rules. The first rule, simple as it sounds, is just "0 is a natural number".</p>
-<p>The second rule, as you may guess, is "every natural number has a successor". You may think these two rules are sufficient, but our alien friend presents us a model of our rules which puts that belief into question.</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/2.jpeg"><img src="/public/2.jpeg" width="100%"></a></p>
-<p>In our friend's model, \(1\) is the successor of \(0\), and \(0\) is the successor of \(1\). That, of course, isn't a model we want to allow, so we introduce a new rule: "No natural number has \(0\) as a successor". But this, too, isn't good enough. Our alien friend presents a revised model.</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/3.jpeg"><img src="/public/3.jpeg" width="100%"></a></p>
-<p>In this model, no number has \(0\) as a successor, but that doesn't prevent the looping behavior we'd like to avoid. So what rule can we introduce to avoid it?</p>
-<p>The rule we are looking for is <strong>injectivity</strong>. In other words, if for any two natural numbers \(x,y\), if \(Sx=Sy\), then \(x=y\). This ensures that \(Sx\) maps to new numbers, avoiding the loop. Right? Well, kind of.</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/4.jpeg"><img src="/public/4.jpeg" width="100%"></a></p>
-<p>Our friend presents a revised model which fits with our new rule set. In this model, we do get the infinite chain behavior we expect from the naturals, but we also have a secondary chain, which is undesirable. So how do we fix this? We can modify our second rule to be: "0 is the only natural number which is not the successor of any natural".</p>
-<p>But even this isn't sufficient. Our alien friend presents yet another model of the natural numbers that looks nothing like what we think of the natural numbers.</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/5.jpeg"><img src="/public/5.jpeg" width="100%"></a></p>
-<p>Clearly, in the model above, there is a \(0\) element, it is the only element without a successor, and successorship is injective.</p>
-<p>At this point, you are frustrated. No matter what rules you try, you aren't able to prevent our alien friend from coming up with a model of the rules different from your intuition of the numbers. So what is going on?</p>
-<h4>Logical Order</h4>
-<p>Let's attempt to write up the rules we've come up with so far. Our logical language has two symbols: \(0\) and \(S\), with symbols like \(1,2,\ldots\) as notation for \(S0,SS0,\ldots\).</p>
-<p>Our first rule is that there exists a \(0\) element. We write that as follows: $$\exists x\in\mathbb N,\;x=0$$</p>
-<p>Our second rule is that \(0\) is the only element that isn't the successor of any element. This is a bit messy to write out, but it would look like this: $$\left(\forall x\in\mathbb N,\;Sx\neq0\right)\wedge\left(\forall x\neq0\in\mathbb N\;\exists y\in\mathbb N,\;x=Sy\right)$$</p>
-<p>Our third rule is injectivity. We'd write it as follows:$$\forall x,y\in\mathbb N,\;Sx=Sy\to x=y$$As a brief side note, the symbol \(\to\) represents "implies". In other words, \(A\to B\) is true if it is not true that \(A\) is true and \(B\) is false.</p>
-<p>So why have we written these rules in logical notation? Well, so we can distinguish the different <strong>orders</strong> of logic. Any logical statement that doesn't use quantifiers is considered to be part of <strong>propositional logic</strong>, otherwise known as \(0\)th order logic.</p>
-<p>First order logic contains all of \(0\)th order logic, but also allows for quantifiers over the model. In our case, we are modelling the natural numbers, so we can quantify over them using \(\forall\) and \(\exists\).</p>
-<p>As you can tell, all three of our rules have been written in first order logic. Are there any other forms of logic?</p>
-<p>The answer is yes!</p>
-<p>What if we wanted to quantify not over the natural numbers, but over first order formulas! We can do this, and we call this sort of logic <strong>second order logic</strong>. If you are confused, let's do an example.</p>
-<div class="Example" title="Induction"> Earlier in these notes, we "defined" induction. Let's write induction logically now. The idea is that for any property \(P(x)\), if \(P(0)\) is true, and if \(P(x)\) implies \(P(x+1)\) for any natural number \(x\), then \(P(x)\) is true for all natural \(x\).<br><br>To write this in logical notation, we need to know what exactly \(P\) is. In fact, \(P\) is just a single-variable first-order logical formula! So we can write as follows: $$\forall\text{ first order formulas }P(x)\left(P(0)\wedge\forall n\in\mathbb N,\;P(x)\to P(x+1)\right)\to\forall n\in\mathbb N,\;P(n)$$This second order statement is the principle of mathematical induction.</div>
-<p>You can start to guess at what third order, fourth order, and even \(n\)th order logic looks like.</p>
-<h4>Induction</h4>
-<p>Let's return to our game with our newly discovered second order logic. How do we rule out our alien friend's model of the natural numbers? Intuitively, we want to say that all of the natural numbers should be "connected" to \(0\), or in other words, if I add one to \(0\) sufficiently many times, I should be able to reach any natural number.</p>
-<p>But we already have found a way of saying this! The final rule that we need is induction! Why does induction do the job?</p>
-<p>For any non-natural number, we can find some property \(P\) that satisfies the natural numbers, but doesn't satisfy the non-natural number, which we call <strong>non-standard</strong> numbers.</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/6.jpeg"><img src="/public/6.jpeg" width="100%"></a></p>
-<p>A property which does this for the \(3\) element loop \(A-B-C\) is the following:</p>
-<p><a class="gallery img-center-short cbox-Element" href="/public/7.jpeg"><img src="/public/7.jpeg" width="100%"></a></p>
-<p>That's awesome! So our final ruleset is as follows:<ul><li>\(\exists x\in\mathbb N,\;x=0\)</li><li>\(\left(\forall x\in\mathbb N,\;Sx\neq0\right)\wedge\left(\forall x\neq0\in\mathbb N\;\exists y\in\mathbb N,\;x=Sy\right)\)</li><li>\(\forall x,y\in\mathbb N,\;Sx=Sy\to x=y\)</li><li>\(\forall\text{ first order formulas }P(x)\left(P(0)\wedge\forall n\in\mathbb N,\;P(x)\to P(x+1)\right)\to\forall n\in\mathbb N,\;P(n)\)</li></ul></p>
-<p>So to answer our initial question, these \(4\) rules are the rules whose model is the natural numbers we are used to.</p>
-<div class="Exercise" title="Infinite Chain"> Can you come with a property \(P\) that the natural numbers satisfy but the infinite chain in the last alien diagram doesn't?</div>
-<h4>Consistency</h4>
-<p>Before we celebrate too much, there are still some considerations to be had. First, how do we know that there isn't some other weird model that our alien friend can think of that violates our rule set? Perhaps more troublingly, what if these rules are contradictory?</p>
-<p>Some of our concerns can be resolved by the following theorem.</p>
-<div class="Theorem" title="Gödel's Completeness Theorem"> For any set of rules in first order logic, they are consistent if and only if there is a model for them.</div>
-<p>This is great, since we have a model for our rules! This means that our rules are consistent! Well, almost. We'll only really described our models with nice pictures. To really establish the existence of a model, we'd have to build the natural numbers from scratch, which requires set theory (and we won't touch that for now).</p>
-<p>An alternate approach is to drop the \(4\)th rule of the natural numbers. With this, we can apply the above theorem to generate ourselves a model! Will it be a model of the natural numbers as we know them? Not necessarily: there might be non-standard numbers in there. But, there are ways of dealing with these numbers.</p>
-<h4>Non-Standard Models</h4>
-<p>For now, we'll resort to the second approach, since set theory is a no-go (for now). So how do we know that there even exists non-standard models? We invoke the next theorem.</p>
-<div class="Theorem" title="Compactness Theorem"> Given any infinite set of first order rules, if any finite subset of those rules has a model, the entire set of rules has a model.</div>
-<p>We'll use it as follows. We'll take our \(3\) natural number rules, and add a new symbol \(\infty\). And, we add the following rules: $$\infty\gt0$$$$\infty\gt1$$$$\vdots$$</p>
-<p>For any finite subset of these rules, we have finitely many of these \(\infty\gt k\) rules. Call them \(\infty\gt k_1\), \(\infty\gt k_2\), ..., \(\infty\gt k_n\). Let \(x = \max(k_1,\ldots,k_n)+1\). So, \(x\gt k_1\), \(x\gt k_2\), etc, and thus the natural numbers satisfies this rule set!</p>
-<p>By the compactness theorem, there exists a number \(\infty\) that is bigger than any natural number in a valid model of the natural numbers. This tells us that there are non-standard models.</p>
-<p>This is only the tip of the iceberg: much of logic is playing around with fun non-standard models to prove interesting things!</p>
-
+<h3>Separating Variables</h3>
+<p>If substitution isn't getting you anywhere, separating variables can be very useful. We saw this technique in the previous exercise, where we isolating \(y\) to one side of the equation, which allowed us to find the form of the solution. We can also apply this technique with multiple variables.</p>
+<div class="Exercise" title="Separating Variables"> Find all functions \(f:\mathbb R\to\mathbb R\) such that for all \(x,y\in\mathbb R\)$$(x-y)f(x+y)-(x+y)f(x-y)=4xy(x^2-y^2)$$
+<div class="Solution">
+<p><a onclick="myCollapse('ex002')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="ex002" class="w3-container w3-hide">
+  Clearly, we can substitute \(a=x+y\), \(b=x-y\) into our functional equation to simplify it. Note that \(a,b\) can be any real values.$$bf(a)-af(b)=(a^2-b^2)ab$$We want to isolate \(a,b\) to different sides of the equation. Dividing both sides by \(ab\) and moving terms around gives us $$\frac{f(a)}a-a^2=\frac{f(b)}b-b^2$$With this isolation, we know that \(\frac{f(x)}x-x^2\) must be constant for all \(x\neq0\in\mathbb R\). So, $$f(x)=x^3+kx$$for constant \(k\). Now, let's check whether this is actually a solution to the functional equation. $$\begin{aligned}&(x-y)f(x+y)-(x+y)f(x-y)\\&=(x-y)\left[(x+y)^3+k(x+y)\right]-(x+y)\left[(x-y)^3+k(x-y)\right]\\&=(x^2-y^2)\left[(x+y)^2-(x-y)^2\right]\\&=4xy(x^2-y^2)\end{aligned}$$
+</div>
+</div>
+</div>
+<div class="Exercise" title="Substitution and Separation"> Find all functions \(f:\mathbb R\to\mathbb R\) that satisfy the following equation for all \(x,y\in\mathbb R\)$$xf(x)-f(y)=(x-y)f(x+y)$$
+<div class="Solution">
+<p><a onclick="myCollapse('1ex')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="1ex" class="w3-container w3-hide">
+  Let's start by guessing some solutions. The identity function \(f(x)=x\) works, as does any function \(f(x)=ax\) for constant \(a\). Is that all of the solutions? Let's try the general form of a linear equation. If \(f(x)=ax+b\), we have $$\begin{aligned}x(ax+b)-y(ay+b)&=(x-y)(ax+ay-b)\\ax^2+bx-ay^2-by&=ax^2+axy+bx-axy-ay^2-by\end{aligned}$$Thus, all linear equations \(f(x)=ax+b\). How do we know that there aren't other solutions?<br><br>
+  There doesn't seem to be an easy way to see if there are other solutions. So, let's try to simplify our work by substituting in a new function. Let \(g(x)=f(x)-f(0)\). Note that since \(f(x)=g(x)+f(0)\), \(g(x)\) has the same domain and codomain as \(f(x)\). And, if \(f(x)\) is a solution to the functional equation, $$x(f(x)-f(0))-y(f(y)-f(0))=(x-y)(f(x+y)-f(0))$$is an equality, so \(g(x)\) is also a solution to the functional equation. Why is this a useful substitution? Because \(g(0)=0\), let \(y=-x\) to get $$x(g(x)+g(-x))=0$$Thus, \(-g(x)=g(-x)\) for all \(x\) (since \(g(0)=0\)). We can use this fact by letting \(x=u\), \(y=-v\) in the original functional equation to get $$u(g(u))-v(g(v))=(u+v)g(u-v)$$Letting \(x=u\), \(y=v\) gives us $$u(g(u))-v(g(v))=(u-v)g(u+v)$$Since \(u\) and \(v\) can be any real numbers, so can \(u+v\) and \(u-v\). So, letting \(a=u+v\) and \(b=u-v\), we have the equation $$ag(b)=bg(a)$$In particular, with \(b=1\), \(g(a)=ag(1)\). This proves that \(f(x)=f(1)x+f(0)\), which shows that we have found all solutions.
+</div>
+</div>
+</div>
+<h3>Iterated Functions</h3>
+<p>When a function is applied repeatedly to an input, we call the resulting function <strong>iterated</strong>. For example, we can write$$g^3(x)=g(g(g(x)))=g\circ g\circ g(x)$$We often prefer the latter notation when there is a lot of iteration, as the parentheses become distracting and the exponent might be confusing.</p>
+<p>With iterated functions, there are two things to look out for. The first are cyclic functions. A function \(g\) is called <strong>cyclic of order </strong>\(n\) if the following equations holds for all \(x\) in the domain of \(g\)$$\underbrace{g\circ g\circ\ldots\circ g}_{n\text{ times}}(x)=x$$Hidden cyclic functions are often the key to solving iterated functional equations.</p>
+<div class="Exercise" title="Cyclic Functions"> Suppose that \(f:\mathbb R\to\mathbb R\) satisfies $$2f(x)+3f\left(\frac{2x+29}{x-2}\right)=100x+80$$What is \(f(3)\)?
+<div class="Solution">
+<p><a onclick="myCollapse('ex003')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="ex003" class="w3-container w3-hide">
+Since we want to find \(f(3)\), we first try substituting \(x=3\) to get$$2f(3)+3f(35)=380$$Now, we want to find \(f(35)\), so we let \(x=35\) to get$$2f(35)+3f(3)=3580$$Surprised? This is because the function \(g(x)=\frac{2x+29}{x-2}\) is cyclic of order \(2\) (Prove it!). With these two equations, we have a linear system of equations we can solve, and we find \(f(3)=1996\).
+</div>
+</div>
+</div>
+<p>The second concept to look out for is commutativity. If \(f^n(x)=g(x)\) for all \(x\) for some \(n\gt0\), then $$f^{n+1}(x)=f(g(x))=g(f(x))$$for all \(x\).</p>
+<div class="Exercise" title="Iterated Functions"> Find all functions \(f:\mathbb Z\to\mathbb Z\) (\(\mathbb Z\) is the set of integers) such that for all \(n\in\mathbb Z\)$$f(f(n))=n+1$$
+<div class="Solution">
+<p><a onclick="myCollapse('ex004')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="ex004" class="w3-container w3-hide">
+  If \(g(n)=n+1\), \(f(f(n))=g(n)\) for all \(n\). Thus, $$f(n+1)=f(g(n))=g(f(n))=f(n)+1$$Thus, the only possible solutions are of the form \(f(n)=n+c\) for constant \(c\). To see whether these solutions are actually solutions, we plug them back into the functional equation.$$f(f(n))=n+2c=n+1$$This implies \(c=\frac12\), but that would mean \(f(0)\) is not an integer! So, there are no solutions to this functional equation.
+</div>
+</div>
+</div>
+<h3>Fixed Points</h3>
+<p>Another recurring concept in functional equations is that of <strong>fixed points</strong>. Given a function \(f:A\to B\), \(x\in A\cap B\) is said to be a fixed point of \(f\) if \(f(x)=x\). Recognizing functions with fixed points can quickly simplify functional equations.</p>
+<div class="Exercise" title="IMO 1983"> Find all functions \(f:\mathbb R^+\to\mathbb R^+\) (\(\mathbb R^+\) is the set of positive real numbers) satisfying the following for all \(x,y\in\mathbb R^+\)$$\begin{aligned}f(xf(y))=yf(x)\\\lim\limits_{x\to\infty}f(x)=0\end{aligned}$$
+<div class="Solution">
+<p><a onclick="myCollapse('ex005')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="ex005" class="w3-container w3-hide">
+  Letting \(x=y\), we have \(f(xf(x))=xf(x)\). Thus, \(xf(x)\) is a fixed point of \(f\) for all \(x\). In particular, this means that there is at least one fixed point of \(f\). Let \(S\) be the set of all fixed points of \(f\).<br><br>
+  For any \(y\in S\), let \(x=1\) in the given functional equation, which implies $$f(f(y))=yf(1)$$Since \(y\gt0\), we have \(f(1)=\frac yy=1\), and thus \(1\) is a fixed point of \(f\). Are there any others?<br><br>
+  There aren't, due to the second condition. Let \(y\in S\), \(x=\frac1y\) in the functional equation, which implies $$\begin{aligned}f\left(\frac1yf(y)\right)&=yf\left(\frac 1y\right)\\1&=yf\left(\frac 1y\right)\end{aligned}$$This implies \(\frac1y\in S\). Moreover, for any \(a,b\in S\), $$\begin{aligned}f(af(b))&=bf(a)\\f(ab)&=ab\end{aligned}$$Thus, \(ab\in S\). So, if \(y\gt1\in S\), then \(y^n\in S\) for any natural \(n\), which contradicts the limit approaching \(0\) (since \(y^n\) grows to infinity). On the other hand, if \(y\lt1\in S\), then \(\frac1y\gt1\in S\), which is a contradiction from our argument earlier. Thus, \(S=\{1\}\). More importantly, this tells us that \(xf(x)=1\) for all \(x\), since \(xf(x)\) is a fixed point for all \(x\). Thus, \(f(x)=\frac1x\) is the only possible solution. Plugging it into the functional equation shows that it is in fact a solution.
+</div>
+</div>
+</div>
+<h3>Injective, Surjective, Monotonic</h3>
+<p>Often, finding solutions to functional equations comes down to recognizing that they are either injective, surjective, monotonic, or some combination of these.</p>
+<div class="Definition" title="Injective Function"> A function \(f\) is <strong>injective</strong> if for any \(x\neq y\) in the domain, \(f(x)\neq f(y)\)</div>
+<p>We discussed injective mappings in the Challenge Section in Week 10, but the idea can be applied to functional equations as well. To summarize, an injective function is one in which each input has a unique output (no two inputs map to the same output).</p>
+<div class="Example" title="Injectivity"> Given the functional equation \(f(f(x))=x+f(x)\), observe that for any \(x,y\) such that \(f(x)=f(y)\), \(f(f(x))=f(f(y))\), so \(x+f(x)=y+f(y)\). Thus, \(x=y\), proving that any \(f\) satisfying the functional equation must be injective.</div>
+<div class="Definition" title="Surjective Function"> A function \(f\) is <strong>surjective</strong> if for any \(y\) in the codomain, there exists \(x\) in the domain such that \(f(x)=y\).</div>
+<p>Surjective functions are ones in which the range and codomain are the same. In other words, for every possible output, there exists an input that maps to that output. As an example, the function \(f:\mathbb R\to\mathbb R\) which is defined as \(f(x)=x^2\) is not surjective since there is no \(x\in\mathbb R\) that maps to \(-1\).</p>
+<div class="Definition" title="Monotonic Function"> A function \(f\) is called <strong>increasing</strong> if for all \(x\leq y\) in the domain, \(f(x)\leq f(y)\). A function \(f\) is called <strong>strictly increasing</strong> if for all \(x\lt y\) in the domain, \(f(x)\lt f(y)\). A function \(f\) is called <strong>monotonic</strong> if either \(f\) or \(-f\) is increasing. A function \(f\) is called <strong>strictly monotonic</strong> if either \(f\) or \(-f\) are strictly increasing.</div>
+<p>Monotonic functions either always increase or decrease. With these three types of functions, we can learn a lot of about the space of possible solutions to a functional equation.</p>
+<div class="Exercise" title="Injective Functions"> Find all \(f:\mathbb R\to\mathbb R\) such that for all \(x,y\in\mathbb R\)$$f(xf(y))+f(f(x)+f(y))=yf(x)+f(x+f(y))$$
+<div class="Solution">
+<p><a onclick="myCollapse('ex006')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="ex006" class="w3-container w3-hide">
+  None of the previous tactics we've discussed are much help here. However, observe that all of the inputs to \(f\) are just either \(x\), \(y\), or some combination of terms including \(f\). This is often a good hint that \(f\) might be injective.<br><br>
+  Suppose \(a,b\in\mathbb R\) such that \(f(a)=f(b)\). We'd like to show that \(a=b\) to prove \(f\) is injective. Let \(y=a\) and \(y=b\) in the given functional equation to get $$\begin{aligned}af(x)&=f(xf(a))+f(f(x)+f(a))-f(x+f(a))\\bf(x)&=f(xf(b))+f(f(x)+f(b))-f(x+f(b))\end{aligned}$$Since \(f(a)=f(b)\), the right hand sides of both equations are equal, so \(af(x)=bf(x)\). Thus, either \(f(x)=0\) for all \(x\), or \(a=b\), implying injectivity.<br><br>
+  It's not hard to see that \(f(x)=0\) is a solution to the functional equation. If \(f(x)\neq0\), it is injective. To use this, ideally we want to have an equation of the form \(f(\text{something})=f(\text{other thing})\), so that we can have something and other thing be equal. By playing around with values, we get this sort of equation by setting \(x=0\) and \(y=1\) to get $$f(f(0)+f(1))=f(f(1))$$With this, we know that \(f(0)+f(1)=f(1)\), and thus \(f(0)=0\). Now, plug \(y=0\) into the functional equation to get \(f(f(x))=f(x)\). Since \(f\) is injective, this implies \(f(x)=x\). We can check that this also is a solution. Thus, we have two solutions: \(f(x)=0\) and \(f(x)=x\).
+</div>
+</div>
+</div>
+<p>Many times, like the problem above, we aren't always able to prove injectivity of the function in the functional equation. But, the process of doing so helps progress our solution.</p>
+<div class="Exercise" title="Surjective Functions"> Find all \(f:\mathbb R\to\mathbb R\) such that for all \(x,y\in\mathbb R\)$$f(f(x)+y)=2x+f(f(y)-x)$$
+<div class="Solution">
+<p><a onclick="myCollapse('ex007')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="ex007" class="w3-container w3-hide">
+  We can try the tactics dicussed in previous sections, but none really make much progress. Trying to prove injectivity of \(f\) is an interesting idea, but the \(+y\) and \(-x\) terms make it challenging. Instead, let's try to prove that \(f\) is surjective.<br><br>
+  For any \(b\in\mathbb R\), we want to find some \(a\in\mathbb R\) such that \(f(a)=b\). Let \(y=-f(x)\) in the functional equation to get $$f(0)-2x=f(f(-f(x))-x)$$As gross as this looks, it proves surjectivity, since for any \(b\in\mathbb R\), letting \(x=\frac{f(0)-b}2\) and \(a=f(-f(x))-x\) shows \(f(a)=b\).<br><br>
+  Now let's use surjectivity. As a first idea, perhaps the fact that there exists some \(c\in\mathbb R\) such that \(f(c)=0\) is useful. Letting \(x=c\) gives us $$f(y)=2c+f(f(y)-c)$$Since \(f\) is surjective, \(f(y)\) can be any real value, so we can substitute \(x\) for \(f(y)\) to get $$x=2c+f(x-c)$$So, \(f(x)=x-c\) is the only class of possible solutions. We can plug this back into the functional equation to see that it works for all constants \(c\).
+</div>
+</div>
+</div>
+<p>Surjectivity is not all that common to see in functional equation problems, but a tell-tale sign to use it is when you can write the functional equation in a form \(f(\text{mess})=\{something\}\), and the "something" can be any value of the codomain.
+<div class="Exercise" title="Monotonic Functions"> Let \(\mathbb N^+\) be the set of positive integers. Find all strictly increasing functions \(f:\mathbb N^+\to\mathbb N^+\) such that \(f(2)=2\) and for all positive integers \(m,n\), \(f(mn)=f(m)f(n)\).
+<div class="Solution">
+<p><a onclick="myCollapse('ex008')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="ex008" class="w3-container w3-hide">
+If \(m=2\), we have \(f(2n)=2f(n)\). Thus, \(2=f(2)\lt f(3)\lt f(4)=4\). This implies \(f(3)=3\). In fact, we can generalize this via induction. Our inductive hypothesis is that for any positive integer \(m\) and any positive integer \(n\leq 2^m\), \(f(n)=n\).<br><br>
+<strong>Base Case:</strong> \(m=1\): Since \(f(2)=2\), \(f(1)=1\) since the function is monotonic.<br>
+<strong>Inductive Case</strong>: Assume the claim is true for \(m\). Then, \(f(2^m)=2^m\), and thus \(f(2^{m+1})=f(2\cdot2^m)=2^{m+1}\). And, we have $$2^m=f(2^m)\lt f(2^m+1)\lt f(2^m+2)\lt\ldots\lt f(2^{m+1}-1)\lt f(2^{m+1})=2^{m+1}$$We have to fit \(2^{m+1}-2^m-1\) values strictly in between \(2^m\) and \(2^{m+1}\), which is only possible if \(f(n)=n\) for all \(2^m\lt n\lt 2^{m+1}\). Thus, \(f(n)=n\) is the only possible solution, which can be checked to be a solution.
+</div>
+</div>
+</div>
+<p>The approach used in this problem is known as <strong>squeezing</strong>, and is very common in problems with monotonic conditions. Squeezing only works when the codomain is <strong>discrete</strong> (meaning that between adjacent numbers, there are no numbers.)</p>
+<h3>Traps!</h3>
+<p>Now that we've covered plenty of approaches to solving functional equations, let's go over some common traps/mistakes to make when solving them.</p>
+<p>The most common one is unexpected solutions. Often, when solving functional equations, we have to make a guess as to the form of the functions that satisfy them. While this may lead to some solutions, trying to prove that these solutions are the only ones can be odious. If you are struggling, consider the possibility that there are solutions you haven't accounted for.</p>
+<div class="Exercise" title="Cauchy Functional Equation"> Find all functions \(f:\mathbb R\to\mathbb R\) such that \(f(x+y)=f(x)+f(y)\)
+<div class="Solution">
+<p><a onclick="myCollapse('ex009')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="ex009" class="w3-container w3-hide">
+Clearly, \(f(x)=cx\) is a solution for all \(c\in\mathbb R\). You might try to prove that all solutions are of this form, but you'd be stuck. Why? Well, because there are other solutions! Using the Axiom of Choice, you can show that there are infinitely many other solutions, none of which are easily describable.
+</div>
+</div>
+</div>
+<p>As silly as the above example is, unexpected solutions show up all of the time. Just because you can't think of a solution, doesn't mean it is not there. Here's another example.</p>
+<div class="Exercise" title="IMO 2012"> Find all functions \(f:\mathbb Z\to\mathbb Z\) such that for all integers \(a,b,c\) that satisfy \(a+b+c=0\)$$f(a)^2+f(b)^2+f(c)^2=2f(a)f(b)+2f(a)f(c)+2f(b)f(c)$$
+<div class="proof">
+<p><a onclick="myCollapse('ex010')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="ex010" class="w3-container w3-hide">
+  Setting \(a,b,c=0\) gives us \(f(0)=0\). Setting \(a=0\), \(b=-c\) gives us $$(f(b)-f(-b))^2=0$$Which implies \(f(b)=f(-b)\). If we set \(a=b\) and \(c=-2a\), we get $$f(2a)^2=4f(2a)f(a)$$Assuming \(f(2a)\neq0\), we get \(f(2a)=4f(a)\). From this, you may suspect the solutions are of the form \(f(x)=cx^2\), which all work. Are these the solutions?<br><br>
+  The answer is no. We've ignored the possibility that \(f(2a)=0\), and the possibility that \(f(2a)=4f(a)\). The correct solution are the following functions for any integer \(a\):<ul><li>\(f(n)=an^2\)</li><li>\(f(n)=0\) for even \(n\) and \(f(n)=a\) for odd \(n\)</li><li>\(f(n)=0\) for \(n\equiv0\bmod4\), \(f(n)=a\) for odd \(n\), \(f(n)=4a\) for \(n\equiv2\bmod4\)</li></ul>
+</div>
+</div>
+</div>
+<p>The final trap is quite difficult to explain as it is quite a nuanced trap, and thus won't appear in most competitions. However, many contest writers have included this trap many times over the years, so I'd feel wrong to not include it.</p>
+<div class="Exercise" title="The pointwise value trap"> Find all functions \(f:\mathbb R^+\to\mathbb R^+\) such that for all \(w,x,y,z\in\mathbb R^+\) satisfying \(wx=yz\)$$\frac{f(w)^2+f(x)^2}{f(y^2)+f(z^2)}=\frac{w^2+x^2}{y^2+z^2}$$
+<div class="Solution">
+<p><a onclick="myCollapse('ex011')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="ex011" class="w3-container w3-hide">
+  We start with some basic substitutions. Setting all of the variables equal gives us $$f(w)^2=f(w^2)$$With \(w=1\), we have \(f(1)=1\) (since \(0\) is not in the codomain). This allows us to rewrite the functional equation as $$\frac{f(w^2)+f(x^2)}{f(y^2)+f(z^2)}=\frac{w^2+x^2}{y^2+z^2}$$Since \(w^2,x^2,y^2,z^2\) are arbitrary positive reals, we can let them be \(a,b,c,d\) respectively with \(ab=cd\) to rewrite the functional equation as $$\frac{f(a)+f(b)}{f(c)+f(d)}=\frac{a+b}{c+d}$$We might try letting \((a,b,c,d)=(t^2,1,t,t)\) for positive \(t\), as this allows us to exploit \(f(w^2)=f(w)^2\). Plugging these values in gives us $$\begin{aligned}tf(t)^2+t=(t^2+1)f(t)\\(tf(t)-1)(f(t)-t)=0$$Thus, \(f(t)=t\) or \(f(t)=\frac1t\) for each \(t\), so \(f(x)=x\) and \(f(x)=\frac1x\) are our two solutions. Right?
+</div>
+</div>
+</div>
+<p>In the partial solution above, we find that for every positive real \(t\), either \(f(t)=t\) or \(f(t)=\frac1t\). But that doesn't mean <strong>for all</strong> \(x\), \(f(x)=x\) or for all \(x\), \(f(x)=\frac1x\). What if \(f(x)=x\) for all \(x\in(0,1)\) and \(f(x)=\frac1x\) for all \(x\geq1\)? That satisfies the first statement, but not the second. This is known as the <strong>pointwise value trap</strong>.</p>
+<p>In fact, the two solutions we found are the only two solutions, but more work needs to be done to show this (can you complete the proof?)</p>
+<p>To summarize, functional equations are really hard, and the only way to get used to the tools above is to practice. Try applying the tools in order of how they appeared in this section (first try substituting, then separating variables, etc).</p>
+<div class="Exercise" title=""> Find all functions \(f:\mathbb R\to\mathbb R\) such that $$f(x^2-y^2)=xf(x)-yf(y)$$</div><br>
+<div class="Exercise" title=""> Let \(f:A\to A\) be a function such that for all \(x\in A\)$$\underbrace{f\circ f\circ\ldots\circ f}_{n\text{ times}}(x)=x$$Prove that \(f\) is both injective and surjective.</div>
 </div>
 
 <div style="float:right"><a href="#" style="font-style: normal;"><bf>Top</bf></a></div>

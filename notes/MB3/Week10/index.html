@@ -616,6 +616,7 @@
 <li><a href='#t'>Truth Tables</a></li>
 <li><a href='#i'>Logical Identities</a></li>
 <li><a href='#q'>Quantifiers</a></li>
+<li><a href='#chal'>Challenge: Model Theory</a></li>
 </ul>
 <p>The examples in these notes have been developed by Daniel Velleman in his book <i>How to Prove it</i></p>
 <h2 id='d'>Deductive Reasoning</h2>
@@ -811,7 +812,7 @@ Let \(S\) be the statement "John is stupid" and \(L\) the statement "John is laz
         <td>Double Negation</td><td>\(\lnot\lnot P\)</td><td>\(P\)</td>
       </tr>
 </tbody></table>
-<h2 id='q'>Challenge: Quantifiers</h2>
+<h2 id='q'>Quantifiers</h2>
 <p>Sometimes, we run into <strong>formulas</strong>, which are statements, but with certain variables. Given a choice of value for those variables, the statement becomes one whose truth value we can evaluate.</p>
 <p>Here's a silly example: consider the formula "\(x\) is an even number". The truth value of this formula depends on the value of \(x\). If \(x=0\), it is false. If \(x=1\), it is true. If \(x\) is a person, it is false.</p>
 <p>We often write formulas as \(P(x)\), where \(x\) is the variable in the formula. Formulas can have multiple variables, in which case we'd write \(P(x_1,\ldots,x_n)\).</p>
@@ -823,6 +824,78 @@ Let \(S\) be the statement "John is stupid" and \(L\) the statement "John is laz
 <p>The example above introduces the other common quantifier, known as the <strong>Existential Quantifier</strong>. These two quantifiers are widespread throughout mathematics.</p>
 
 <div class="Exercise" title="Negating Quantifiers">Prove that for any formula \(P(x)\), the following are equivalent statements:$$\lnot\forall x,P(x)\text{ and }\exists x\lnot P(x)$$$$\lnot\exists x,P(x)\text{ and }\forall x\lnot P(x)$$</div>
+
+<h2 id='chal'>Challenge: Model Theory</h2>
+<p>Knowledge of induction is a prerequisite for this section, so unless you are familiar with it, I'd suggest reading Week 12's notes prior to this section.</p>
+<h4>Counting</h4>
+<p>The ability to count is one of the first skills we look for young children to grasp, but it often is forgotten how difficult a task this is.</p>
+<p>Zvonkin points to the following example. Let's step into the child's shoes and learn how to count, but in Japanese.</p>
+<p><i>ichi, ni, san, shi, go, roku, shichi, hachi, kyu, ju</i></p>
+<p>First, you have to memorize these names. It is not easy! Once you've done this, now you have to learn to count backwards. <i>ju, kyu, hachi,...</i> Once you have done this, try to do some basic arithmetic. What is <i>ichi</i> plus <i>roku</i>? <i>Hachi</i> divided by <i>shi</i>?</p>
+<p>Over time, though, we begin to forget how difficult the task of counting is. It is <i>natural</i>, we think. Why is \(1+1=2\)? What else would it be? After all, if I put one apple and another apple together, of course I get two apples!</p>
+<p>But we, as logicians, shouldn't be satisfied by this non-answer. After all, logic is the study of conclusions following from statements. From what statement does \(1+1=2\) follow?</p>
+<p>But even an answer to this question wouldn't feel particularly satisfactory. I could say, \(1+1=2\) due to the rules of arithmetic, made precise by the logicians before me. But \(1+1=2\) doesn't feel that way.</p>
+<p>Figuring out facts about the natural numbers doesn't feel like we are deducing conclusions from assumptions. It feels like we are <i>discovering</i> these numbers, and we have invented rules to describe them. The natural numbers, in some fashion, are baked into the universe. So what are they? Are numbers real? Inventions? Logical? Physical?</p>
+<div class="remark" title="Meditation"> These questions may seem silly, and in some sense, they are. But there is a legitimate philosophical question buried here. Is the act of recognizing that \(1\) apple and \(1\) apple form \(2\) apples different than \(1+1=2\)? If so, what would explain the uncanny ability of the equation \(1+1=2\) to describe real life? And if they are the same, then what exactly is arithmetic?</div>
+<h4>Models</h4>
+<p>In logic, we view the notion of \(1\) apple and \(1\) apple forming \(2\) apples to be a <strong>model</strong>, a representation of a rule. \(1+1=2\) is a rule which informs us about how objects behave, and the apples are a representation of it.</p>
+<p>But this, too, isn't the full picture, since the natural numbers themselves are a model. But of what?</p>
+<p>To answer this question, let's play a little game. Suppose I am a logician from another land, one where the ideas of the natural numbers aren't known. How exactly would you explain to me what they are?</p>
+<p>You could try showing me the apples, but that'd be of little use. As with the children learning to count, what gives meaning to the abstraction of apples combining to arithmetic is the idea that addition generalizes, and applies to all objects, not just apples.</p>
+<p>You may also try to get me to look at my fingers (if I have them), and teach me to count this way. But this would be a bit like teaching you the words <i>ichi, ni, san, ...</i> I would immediately understand that these words serve a function for you, but have little perspective as to what function.</p>
+<p>The best approach would be to set up rules. We'd hope to develop rules so that any model of these rules must behave intuitively like the natural numbers do. So where do we start?</p>
+<p>Perhaps we'd start with \(0\). You might inform the logician, there exists a special natural number, and we call it zero.</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/1.jpeg"><img src="/public/1.jpeg" width="100%"></a></p>
+<p>Next, we'd introduce the idea of a <strong>successor</strong>. For us normal folk, the successor of a natural number is just the number \(+1\), but since we haven't even gotten around to addition yet, we'll use this idea instead. To represent the successor of a number \(n\), we will write \(Sn\).</p>
+<p>This is all of the notation we need to write our rules. The first rule, simple as it sounds, is just "0 is a natural number".</p>
+<p>The second rule, as you may guess, is "every natural number has a successor". You may think these two rules are sufficient, but our alien friend presents us a model of our rules which puts that belief into question.</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/2.jpeg"><img src="/public/2.jpeg" width="100%"></a></p>
+<p>In our friend's model, \(1\) is the successor of \(0\), and \(0\) is the successor of \(1\). That, of course, isn't a model we want to allow, so we introduce a new rule: "No natural number has \(0\) as a successor". But this, too, isn't good enough. Our alien friend presents a revised model.</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/3.jpeg"><img src="/public/3.jpeg" width="100%"></a></p>
+<p>In this model, no number has \(0\) as a successor, but that doesn't prevent the looping behavior we'd like to avoid. So what rule can we introduce to avoid it?</p>
+<p>The rule we are looking for is <strong>injectivity</strong>. In other words, if for any two natural numbers \(x,y\), if \(Sx=Sy\), then \(x=y\). This ensures that \(Sx\) maps to new numbers, avoiding the loop. Right? Well, kind of.</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/4.jpeg"><img src="/public/4.jpeg" width="100%"></a></p>
+<p>Our friend presents a revised model which fits with our new rule set. In this model, we do get the infinite chain behavior we expect from the naturals, but we also have a secondary chain, which is undesirable. So how do we fix this? We can modify our second rule to be: "0 is the only natural number which is not the successor of any natural".</p>
+<p>But even this isn't sufficient. Our alien friend presents yet another model of the natural numbers that looks nothing like what we think of the natural numbers.</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/5.jpeg"><img src="/public/5.jpeg" width="100%"></a></p>
+<p>Clearly, in the model above, there is a \(0\) element, it is the only element without a successor, and successorship is injective.</p>
+<p>At this point, you are frustrated. No matter what rules you try, you aren't able to prevent our alien friend from coming up with a model of the rules different from your intuition of the numbers. So what is going on?</p>
+<h4>Logical Order</h4>
+<p>Let's attempt to write up the rules we've come up with so far. Our logical language has two symbols: \(0\) and \(S\), with symbols like \(1,2,\ldots\) as notation for \(S0,SS0,\ldots\).</p>
+<p>Our first rule is that there exists a \(0\) element. We write that as follows: $$\exists x\in\mathbb N,\;x=0$$</p>
+<p>Our second rule is that \(0\) is the only element that isn't the successor of any element. This is a bit messy to write out, but it would look like this: $$\left(\forall x\in\mathbb N,\;Sx\neq0\right)\wedge\left(\forall x\neq0\in\mathbb N\;\exists y\in\mathbb N,\;x=Sy\right)$$</p>
+<p>Our third rule is injectivity. We'd write it as follows:$$\forall x,y\in\mathbb N,\;Sx=Sy\to x=y$$As a brief side note, the symbol \(\to\) represents "implies". In other words, \(A\to B\) is true if it is not true that \(A\) is true and \(B\) is false.</p>
+<p>So why have we written these rules in logical notation? Well, so we can distinguish the different <strong>orders</strong> of logic. Any logical statement that doesn't use quantifiers is considered to be part of <strong>propositional logic</strong>, otherwise known as \(0\)th order logic.</p>
+<p>First order logic contains all of \(0\)th order logic, but also allows for quantifiers over the model. In our case, we are modelling the natural numbers, so we can quantify over them using \(\forall\) and \(\exists\).</p>
+<p>As you can tell, all three of our rules have been written in first order logic. Are there any other forms of logic?</p>
+<p>The answer is yes!</p>
+<p>What if we wanted to quantify not over the natural numbers, but over first order formulas! We can do this, and we call this sort of logic <strong>second order logic</strong>. If you are confused, let's do an example.</p>
+<div class="Example" title="Induction"> In Week 12's notes, we "defined" induction. Let's write induction logically now. The idea is that for any property \(P(x)\), if \(P(0)\) is true, and if \(P(x)\) implies \(P(x+1)\) for any natural number \(x\), then \(P(x)\) is true for all natural \(x\).<br><br>To write this in logical notation, we need to know what exactly \(P\) is. In fact, \(P\) is just a single-variable first-order logical formula! So we can write as follows: $$\forall\text{ first order formulas }P(x)\left(P(0)\wedge\forall n\in\mathbb N,\;P(x)\to P(x+1)\right)\to\forall n\in\mathbb N,\;P(n)$$This second order statement is the principle of mathematical induction.</div>
+<p>You can start to guess at what third order, fourth order, and even \(n\)th order logic looks like.</p>
+<h4>Induction</h4>
+<p>Let's return to our game with our newly discovered second order logic. How do we rule out our alien friend's model of the natural numbers? Intuitively, we want to say that all of the natural numbers should be "connected" to \(0\), or in other words, if I add one to \(0\) sufficiently many times, I should be able to reach any natural number.</p>
+<p>But we already have found a way of saying this! The final rule that we need is induction! Why does induction do the job?</p>
+<p>For any non-natural number, we can find some property \(P\) that satisfies the natural numbers, but doesn't satisfy the non-natural number, which we call <strong>non-standard</strong> numbers.</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/6.jpeg"><img src="/public/6.jpeg" width="100%"></a></p>
+<p>A property which does this for the \(3\) element loop \(A-B-C\) is the following:</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/7.jpeg"><img src="/public/7.jpeg" width="100%"></a></p>
+<p>That's awesome! So our final ruleset is as follows:<ul><li>\(\exists x\in\mathbb N,\;x=0\)</li><li>\(\left(\forall x\in\mathbb N,\;Sx\neq0\right)\wedge\left(\forall x\neq0\in\mathbb N\;\exists y\in\mathbb N,\;x=Sy\right)\)</li><li>\(\forall x,y\in\mathbb N,\;Sx=Sy\to x=y\)</li><li>\(\forall\text{ first order formulas }P(x)\left(P(0)\wedge\forall n\in\mathbb N,\;P(x)\to P(x+1)\right)\to\forall n\in\mathbb N,\;P(n)\)</li></ul></p>
+<p>So to answer our initial question, these \(4\) rules are the rules whose model is the natural numbers we are used to.</p>
+<div class="Exercise" title="Infinite Chain"> Can you come with a property \(P\) that the natural numbers satisfy but the infinite chain in the last alien diagram doesn't?</div>
+<h4>Consistency</h4>
+<p>Before we celebrate too much, there are still some considerations to be had. First, how do we know that there isn't some other weird model that our alien friend can think of that violates our rule set? Perhaps more troublingly, what if these rules are contradictory?</p>
+<p>Some of our concerns can be resolved by the following theorem.</p>
+<div class="Theorem" title="Gödel's Completeness Theorem"> For any set of rules in first order logic, they are consistent if and only if there is a model for them.</div>
+<p>This is great, since we have a model for our rules! This means that our rules are consistent! Well, almost. We'll only really described our models with nice pictures. To really establish the existence of a model, we'd have to build the natural numbers from scratch, which requires set theory (and we won't touch that for now).</p>
+<p>An alternate approach is to drop the \(4\)th rule of the natural numbers. With this, we can apply the above theorem to generate ourselves a model! Will it be a model of the natural numbers as we know them? Not necessarily: there might be non-standard numbers in there. But, there are ways of dealing with these numbers.</p>
+<h4>Non-Standard Models</h4>
+<p>For now, we'll resort to the second approach, since set theory is a no-go (for now). So how do we know that there even exists non-standard models? We invoke the next theorem.</p>
+<div class="Theorem" title="Compactness Theorem"> Given any infinite set of first order rules, if any finite subset of those rules has a model, the entire set of rules has a model.</div>
+<p>We'll use it as follows. We'll take our \(3\) natural number rules, and add a new symbol \(\infty\). And, we add the following rules: $$\infty\gt0$$$$\infty\gt1$$$$\vdots$$</p>
+<p>For any finite subset of these rules, we have finitely many of these \(\infty\gt k\) rules. Call them \(\infty\gt k_1\), \(\infty\gt k_2\), ..., \(\infty\gt k_n\). Let \(x = \max(k_1,\ldots,k_n)+1\). So, \(x\gt k_1\), \(x\gt k_2\), etc, and thus the natural numbers satisfies this rule set!</p>
+<p>By the compactness theorem, there exists a number \(\infty\) that is bigger than any natural number in a valid model of the natural numbers. This tells us that there are non-standard models.</p>
+<p>This is only the tip of the iceberg: much of logic is playing around with fun non-standard models to prove interesting things!</p>
+
 
 </div>
 

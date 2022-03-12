@@ -614,7 +614,7 @@
   <ul id="markdown-toc">
 <li><a href='#binomial'>More about Combinations</a><ul><li><a href='#perspective1'>Perspective 1: Pascal's Triangle</a></li><li><a href='#perspective2'>Perspective 2: Binomial Distribution</a></li><li><a href='#perspective3'>Perspective 3: Polynomials</a></li></ul></li>
 <li><a href='#stat'>Introduction to Statistics</a><ul><li><a href='#central'>Measures of Centrality</a></li><li><a href='#variance'>Measures of Variability</a></li></ul></li>
-<li><a href='#challenge'>Challenge: Chebyshev's Rule</a></li>
+<li><a href='#challenge'>Challenge: Graph Theory</a></li>
 
 </ul>
 
@@ -829,16 +829,49 @@ $$\sum\limits_{k=1}^nx_k=26.45$$$$\sum\limits_{k=1}^nx_k^2=76.7321$$$$\sigma^2=\
 </div>
 
 
-<h2 id='challenge'>Challenge: Chebyshev's Rule</h2>
-<p>We commented earlier that using IQR to find outliers isn't the best idea. So how can we find outliers? We can use the standard deviation! Chebyshev's Rule says the following:</p>
-<blockquote class="w3-panel w3-leftbar w3-light-grey">At least \(1-\frac1{k^2}\) of the data of any data set is in between \(\bar x-k\sigma\) and \(\bar x+k\sigma\), where \(\sigma\) is the standard deviation and \(\bar x\) is the mean.</blockquote>
-<p>This means that at least \(88\%\) (and for nice datasets, much more) of the data lies between \(\bar x-3\sigma\) and \(\bar x+3\sigma\). Often, our outlier test is checking whether the data is within these limits.</p>
-<p>Chebyshev's rule is true thanks to <strong>Markov's inequality</strong>, which says that given a non-negative random variable (meaning that the state space contains no negative numbers) \(X\) and number \(a>0\), $$P(X\geq a)\leq\frac{E[X]}a$$</p>
-<div class="exercise" title="Chebyshev"> Show why Chebyshev's rule is true using Markov's inequality</div>
-<br><div class="exercise" title="Variance is linear"> Show that like expected value, for independent random variables \(X_1,\ldots,X_n\), the variance of \(X_1+\ldots+X_n\) is the sum of the variances of \(X_1,\ldots,X_n\).</div>
-<br><div class="exercise" title="Shortcut"> Show why the shortcut formula is true. More specifically, show that $$\sigma^2=E[X^2]-E[X]^2$$</div>
+<h2 id='challenge'>Challenge: Graph Theory</h2>
+<p>Graphs are combinatorial objects that are hugely important in today's world. As such, we will cover just the basics in this section.</p>
+<p>A (undirected) graph is just a collections of objects, which we call <strong>nodes</strong>, and <strong>edges</strong>, which are connections between pairs of nodes. For example, we can use a graph to show the six New England states, and which ones border each other.</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/newenglandgraph.png"><img src="/public/newenglandgraph.png" width="100%"></a></p>
+<p>The <strong>degree</strong> of a node is the number of nodes connected to it. For example, the degree of Vermont is \(2\) as it is connected to New Hampshire and Massachussetts.</p>
+<div class="Exercise" title="Uniform graphs"> A graph has \(10\) nodes. <ol><li>If each node has degree \(4\), how many edges are there in the graph?</li><li>Is it possible for half of the nodes to have degree \(5\) and the other half have degree \(4\)?</li><li>If every two nodes are connected, how many edges are there</li></ol>
+<div class="Solution">
+<p><a onclick="myCollapse('ex001')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="ex001" class="w3-container w3-hide">
+  <ol><li>Since each node has degree \(4\), and there are \(10\) nodes, the total number of edges is \(4\cdot10=40\), right? Well, we've double counted, since each edge is connected to \(2\) nodes. So, the number of edges is \(\frac{40}2=20\).</li><li>Since \(5\) nodes have degree \(5\), they contribute \(25\) edges, and the other \(5\) nodes with degree \(4\) contribute \(20\) edges. Thus, there are \(45\) edges, but we've double counted. So, there are \(22.5\) edges. This isn't possible, so there can't be such a graph.</li><li>Since there are \(n\choose2\) possible pairs of nodes in a graph with \(n\) nodes, the number of edges in this graph is \({10\choose2}=45\)</li></ol>
+</div>
+</div>
+</div>
+<p>With this exercise, you should be able to see that the sum of degrees of the nodes in a graph is twice the number of edges, and that the maximal number of edges in a graph with \(n\) nodes is \(n\choose2\). In particular, this implies that the number of nodes with odd degree must be even.</p>
+<h3>Paths</h3>
+<p>Many of the real world examples motivating graphs involve travel. Nodes can be viewed as destinations, and edges as routes to travel.</p>
+<p>But what if we wanted to travel between nodes with no direct route (in graph terms, edge) between them? We can travel along multiple paths!</p>
+<p>To get from Maine to Rhode Island, you can travel from Maine, to New Hampshire, to Massachussetts, to Rhode Island. We call a series of edges that be travelled consecutively in this way a <strong>path</strong>.</p>
+<p>In fact, the path from Maine to Rhode Island we mentioned isn't the only path (can you find another?), but it is the <strong>minimal path</strong>. A minimal path is a path from a start node to an end node that takes a minimal number of edges.</p>
+<p>A <strong>cycle</strong> is a path that starts and ends at the same node. A graph is called <strong>connected</strong> if there exists a path connecting any two nodes in the graph.</p>
+<div class="Example" title="Disconnected graph"> Imagine we drew a graph of cities across the world, and edges indicated bike paths between them. Cities like New York and Philadelphia would have a path between them, but there would be no path between New York and London because of the water barrier between the two cities. Thus, such a graph would be considered disconnected.</div><br>
+<p>A <strong>simple path</strong> is a path that doesn't cross any node twice</p>
+<p>A connected graph with no simple cycles is called a <strong>tree</strong>. Trees have a lot of special properties, as we'll discover.</p>
+<div class="Theorem" title="Simple Paths"> If there exists a path between \(A,B\), the minimal path between \(A,B\) is simple.
+<div class="proof">
+<p><a onclick="myCollapse('exx')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="exx" class="w3-container w3-hide">
+  Let \(e_1,\ldots,e_n\) be the minimal path between \(A,B\). Suppose that this path isn't simple. Thus, there exists edges \(e_i,e_j\) in this path that both end at some node \(C\). Thus, \(e_1,\ldots,e_i,e_{j+1},\ldots,e_n\) is also a path between \(A,B\), but is strictly smaller than the supposed minimal path, a contradiction.
+</div>
+</div>
+</div>
 
-
+<div class="Exercise" title="Trees"> Prove that a graph \(G\) is a tree if and only if between any two nodes \(A,B\), there exists exactly one simple path between them.
+<div class="proof">
+<p><a onclick="myCollapse('ex002')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="ex002" class="w3-container w3-hide">
+Suppose \(G\) is a tree. Then, between any two nodes \(A,B\), there exists a path because trees are connected. Thus, the minimal path between them is simple. Suppose there exists two paths \(p,q\) between \(A,B\). Let \(C\) be the first vertex at which these two paths differ, and \(D\) the first vertex after \(C\) where the paths meet up. Let \(p'\) be the part of path \(p\) that travels from \(C\) to \(D\), and define \(q'\) similarly.<a class="gallery img-center-short cbox-Element" href="/public/cycletree.png"><img src="/public/cycletree.png" width="100%"></a><br><br>Thus, the path that first travels from \(C\to D\) along \(p'\), and then from \(D\) to \(C\) along \(q'\) is a cycle. Moreover, since \(p'\) and \(q'\) don't touch any of the same nodes besides \(C\) and \(D\) (otherwise \(D\) wouldn't be the first meeting point), this cycle is simple, a contradiction.<br><br>Now suppose that our graph satisfies the property that every two nodes \(A,B\) has exactly one simple path between them. Then, the graph is obviously connected. Now suppose there is a simple cycle \(e_1,\ldots,e_n\). Then, the path \(e_n,e_{n-1},\ldots,e_2\) is a simple path from \(C\) to \(D\), where \(e_1\) is an edge from \(C\) to \(D\). This means that there are two simple paths from \(C\) to \(D\), a contradiction.
+</div>
+</div>
+</div>
+<p>The following exercise requires induction, so if you haven't seen it before, wait till Week 12 before attempting this exercise.</p>
+<div class="Exercise" title="Edge Count"> Prove the following:<ul><li>Any connected graph with \(n\) nodes has at least \(n-1\) edges</li><li>Any graph with \(n\) nodes and at least \(n\) edges has a simple cycle</li><li>Any tree with at least \(2\) nodes has at least \(2\) nodes of degree \(1\)</li></ul></div>
+<p>There is so much more to learn about graphs. Feel free to explore further (and share what you've learned!)</p>
 </div>
 
 <div style="float:right"><a href="#" style="font-style: normal;"><bf>Top</bf></a></div>

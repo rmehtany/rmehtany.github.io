@@ -759,7 +759,14 @@
 
 <p>Now that we have a way to check if a quadrilateral is cyclic, we can introduce two useful theorem involving cyclic quadrilaterals.</p>
 
-<div class="Theorem" title="Ptolemy"> Given cyclic quadrilateral \(ABCD\), the following equation is true: $$\overline{AB}\cdot\overline{CD}+\overline{BC}\cdot\overline{DA}=\overline{AC}\cdot\overline{BD}$$</div>
+<div class="Theorem" title="Ptolemy"> Given cyclic quadrilateral \(ABCD\), the following equation is true: $$\overline{AB}\cdot\overline{CD}+\overline{BC}\cdot\overline{DA}=\overline{AC}\cdot\overline{BD}$$
+  <div class="proof">
+  <p><a onclick="myCollapse('adsdddda')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+  <div id="adsdddda" class="w3-container w3-hide">
+    Pick a point \(P\) on \(\overline{BD}\) such that \(\angle DAP=\angle CAB\)<br><br><a class="gallery img-center-short cbox-Element" href="/public/ptolemy.png"><img src="/public/ptolemy.png" width="100%"></a><br>Since \(\angle ADP=\angle ADB=\angle ACB\), \(\triangle DAP\sim\triangle CAB\), so $$\frac{DP}{BC}=\frac{AD}{AC}$$Also, \(\angle APB=\angle180^\circ-\angle APD=180^\circ-\angle ABC=\angle ADC\) and \(\angle ABP=\angle ACD\), so \(\triangle APB\sim\triangle ADC\). Hence,$$\frac{BP}{CD}=\frac{AB}{AC}$$Combining these equations gives us$$\frac{BC\cdot AD+AB\cdot CD}{AC}=BP+DP=BD$$Multiplying by \(AC\) gives us Ptolemy's Theorem.
+  </div>
+  </div>
+</div>
 
 <div class="Theorem" title="Brahmagupta"> Given a cyclic quadrilateral with side lengths \(a,b,c,d\), if we let \(s=\frac{a+b+c+d}2\), the area of the quadrilateral is $$A=\sqrt{(s-a)(s-b)(s-c)(s-d)}$$</div>
 
@@ -772,7 +779,7 @@
 <p>Unfortunately, just a few years later, Rene Descartes published a breakthrough work introducing cartesian coordinates, and work on projective geometry was mostly abandoned.</p>
 <p>It was only in 1822, when mathematician Jean-Victor Poncelet published a foundational treatise on projective geometry, that interest in projective geometry reemerged.</p>
 <p>Since then, it has revolutionized the foundations of algebraic geometry, influencing the works of Riemann, Dirac, Einstein, Bohr, etc.</p>
-<h3>Perspective</h3>
+<h3>Motivation</h3>
 <p>Draw a picture of a large, flat plain with a pair of railroad tracks running through it. It looks something like the picture below. When we draw a perspective picture like this, the parallel train tracks appear to actually meet at the horizon. Let’s change the rules of geometry a little so that this actually happens.</p>
 <p><a class="gallery img-center-short cbox-Element" href="/public/DAFD434A-0F34-46DD-B00DA93BA02E0E27_source.jpeg"><img src="/public/DAFD434A-0F34-46DD-B00DA93BA02E0E27_source.jpeg" width="100%"></a></p>
 <p>So, we define the projective plane initially as just the ordinary Real plane. But, like in our railroad, we want our parallel lines to eventually meet. So to our real plane, we add points, one for each set of parallel lines in the plane. We call these points the <i>points at infinity</i>. Thus, any two parallel lines intersect at the point at infinity corresponding to their slope.</p>
@@ -780,8 +787,34 @@
 <p>So, a normal line and the line at infinity intersect at the point at infinity corresponding to the slope of the normal line. So, every pair of distinct lines intersect at a single point.</p>
 <p>And, every pair of distinct points has a single line passing through them. There's a notion of <i>duality</i> here: every two points determines a line, and every two lines determines a point. This is a key property of projective geometry.</p>
 <p>If you can't visualize what this space looks like, don't worry! For now, as long as you can appreciate the duality of points and lines in projective space, you are on your way to understanding it.</p>
+<h3>Homothety</h3>
+<p>Before dealing with the projective plane, let's try to understand the duality between lines and points via projections in the standard plane. The simplest example of projection is the introduction of a <strong>vanishing point</strong> into the plane. A vanishing point is simply a point around which we project objects, like in the diagram below</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/homothety1.png"><img src="/public/homothety1.png" width="100%"></a></p>
+<p>Point \(O\), the vanishing point, projects the square \(ABCD\) to the new square \(A'B'C'D'\). We call this projection <strong>homothety</strong>. The scale factor is the ratio \(\frac{OD'}{OD}\). We describe this homothety as \(H(O,D,D')\), or \(H\left(O,\frac{OD'}{OD}\right)\).</p>
+<p>Given a vanishing point \((a,b)\) and a scale factor \(k\), \(H((a,b),k)\) sends point \((x,y)\) to \((k(x-a)+a,k(y-b)+b)\). Some examples of homothety are presented below.</p>
+<ul><li>\(H(A,2)\) applied to \(\triangle ABC\):<p><a class="gallery img-center-short cbox-Element" href="/public/homothety2.png"><img src="/public/homothety2.png" width="100%"></a></p></li><li>\(H(T,0.5)\) applied to a circle \(\Gamma\), with \(T\) on its circumference.<p><a class="gallery img-center-short cbox-Element" href="/public/homothety3.png"><img src="/public/homothety3.png" width="100%"></a></p></li><li>\(H(P,-1)\) applied to the line \(XY\).<p><a class="gallery img-center-short cbox-Element" href="/public/homothety4.png"><img src="/public/homothety4.png" width="100%"></a></p></li></ul>
+<div class="Exercise" title="Properties of Homothety"> Prove the following basic properties of homothety:<ul><li>The image of any object under homothety is similar to the object</li><li>A homothety is uniquely defined by its action on two points</li><li>The slope of a line under homothety is preserved.</li><li>Angles are preserved under homothety</li><li>For \(k\neq1\), the lines preserved by the homothety \(H(P,k)\) are the lines that go through \(P\)</li><li>A shape with area \(A\) after homothety \(H(P,k)\) has area \(k^2A\), and a line segment with length \(l\) after the same homothety has length \(|k|l\).</li></ul></div>
+<p>As in art, the fun really begins when we introduce multiple vanishing points. How do multiple homotheties interact?</p>
+<div class="Theorem" title="Composing Homotheties 1"> The composition of homotheties \(H((a,b),k)\) and \(H((c,d),l)\) is a homothety \(H((e,f),kl)\) where \((a,b)\), \((c,d)\), \((e,f)\) are collinear, assuming \(kl\neq1\).
+<div class="proof">
+<p><a onclick="myCollapse('tat')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="tat" class="w3-container w3-hide">
+  Let $$\begin{aligned}e&=\frac{kla+(c-a)l-c}{kl-1}\\f&=\frac{klb+(d-b)l-d}{kl-1}\end{aligned}$$Check that \(H((a,b),k)\) followed by \(H((c,d),l)\) is the same as \(H((e,f),kl)\) via the formula. And, the line through points \((a,b)\) and \((c,d)\) is given by \(y-b=\frac{d-b}{c-a}\cdot(x-a)\). Thus, we want to show that \((e,f)\) is a solution to this equation.$$\begin{aligned}klb+(d-b)l-d-klb+b&=\frac{d-b}{c-a}\cdot(kla+(c-a)l-c-kla+a)\\(d-b)(l-1)&=\frac{d-b}{c-a}\cdot(c-a)(l-1)\\l-1&=l-1\end{aligned}$$
+</div>
+</div>
+</div>
+<div class="Theorem" title="Composing Homotheties 2"> If \(kl=1\), the composition of homotheties \(H((a,b),k)\) and \(H((c,d),l)\) is a translation
+<div class="proof">
+<p><a onclick="myCollapse('ta')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="ta" class="w3-container w3-hide">
+  By the formula, applying both homotheties to point \((x,y)\) results in \((x+(a-c)(l-1),y+(b-d)(l-1))\).
+</div>
+</div>
+</div>
+<p>As a corollary of the above theorem, a translation composed with a homothety is a homothety.</p>
+
 <h3>The projective plane</h3>
-<p>Now that we have some intuition as to what the projective plane should look like, let's try to develop a formal notion of a projective point (more commonly known as a <strong>homogenous coordinate</strong>).</p>
+<p>Now that we've developed an appreciation for projection in the standard plane, let's extend the standard plane to build the projective plane. First, we'll develop a formal notion of a projective point (more commonly known as a <strong>homogenous coordinate</strong>).</p>
 <div class="Definition" title="Homogenous Coordinate"> Let \((x,y)\) be a point in the real plane. If there are real numbers \(a,b,c\) such that \(x=\frac ac\) and \(y=\frac bc\), we call \([a;b;c]\) <strong>homogenous coordinates</strong> for point \((x,y)\).</div>
 <p>Note that if we are given homogenous coordinates \([a;b;c]\), we can find the corresponding cartesian point by division as \(\left(\frac ac,\frac bc\right)\). But, the other way around isn't possible. Given a cartesian point \((x,y)\), there are multiple homogenous points corresponding to that cartesian point. For example, corresponding to \((1,1)\) are homogenous coordinates \([1;1;1]\), \([2;2;2]\), \([-5;-5;-5]\), etc.</p>
 <div class="remark" title="Division by Zero"> What if \(c=0\) in the above example? For now, we'll define \(\frac x0\) for any \(x\) to be \(\infty\). In the world of projective geometry, \(\infty=-\infty\), so we don't need to worry about sign.</div><br>
@@ -792,7 +825,7 @@
 <p>There is one issue with this construction: every homogenous coordinate has infinitely many equivalent homogenous coordinates, except for \([0;0;0]\). Thus, we disallow this as a homogenous coordinate. Why we do this will become obvious in a moment.</p>
 <p>Now, we are ready to define the projective plane.</p>
 <div class="Definition" title="Projective Plane"> The projective plane \(\mathbb RP^2\) is defined as the set of homogenous coordinates \([a;b;c]\) with at least one of \(a,b,c\) nonzero under the equivalence \([a;b;c]\equiv[\lambda a;\lambda b;\lambda c]\) for all nonzero \(\lambda\).</div>
-<p>This is probably still very confusing. What is the difference between this and the normal cartesian coordinate system. How does this relate to the "points at infinity" that we talked about earlier? What does this space even look like? We'll answer all of these questions next.</p>
+<p>This is probably still very confusing. What is the difference between this and the normal cartesian coordinate system. How does this relate to the vanishing points that we talked about earlier? What does this space even look like? We'll answer all of these questions next.</p>
 <h3>Visualizing Projective Space</h3>
 <p>If we were to draw projective space, we might draw something like this:</p>
 <p><a class="gallery img-center-short cbox-Element" href="/public/projectiveplanepicture.gif"><img src="/public/projectiveplanepicture.gif" width="100%"></a></p>
@@ -846,6 +879,74 @@
 <p><a onclick="myCollapse('exy')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
 <div id="exy" class="w3-container w3-hide">
   <ul><li>\([0;1;0]\)</li><li>\([1;1;0],\;[1;-1;0]\)</li></ul>
+</div>
+</div>
+</div>
+<h3>Duality</h3>
+<p>Now that we've developed the projective plane, we can formalize our understanding of the duality between lines and points.</p>
+<div class="Definition" title="Polar"> Let \(\omega\) be the unit circle \(\{[\cos\theta;\sin\theta;1]\mid\theta\in[0,2\pi)\}\), and let \(O\) be the origin \([0;0;1]\). Let \(A\) be any point in the projective plane. If \(A=O\), the <strong>polar</strong> of \(A\) is the line at infinity. If \(A\) is on the line at infinity, the polar of \(A\) is the line through \(A\) perpendicular to \(OA\). Otherwise, let \(A'\) be the point on the ray \(\vec{OA}\) that is \(\frac1d\) away from \(O\), where \(d\) is the length of the line segment \(OA\). The polar of \(A\) is the line \(a\) through \(A'\) perpendicular to \(OA'\).</div>
+<p><a class="gallery img-center-short cbox-Element" href="/public/polarpole.jpeg"><img src="/public/polarpole.jpeg" width="100%"></a></p>
+<div class="Definition" title="Pole"> Given a line \(l\), if it intersects \(O\), the <strong>pole</strong> of \(l\) is the point on the intersection of the line perpendicular to \(l\) through \(O\) with the line at infinity. If \(l\) is the line at infinity, the pole of \(l\) is \(O\). Otherwise, let \(A'\) be the point on \(l\) closest to \(O\) as in the diagram above, and let \(A\) be the point on ray \(\vec{OA'}\) such that the distance \(OA=\frac1{d'}\), with \(d'\) being the length of the line segment \(OA'\).</div>
+<p>With these definitions, we've associated every point in projective space with a line, and vice versa. This association has several nice properties that will formalize our understanding of duality.</p>
+<div class="Theorem" title="Isomorphism"> The polar of a pole of a line is itself, and the pole of a polar of a point is itself.
+<div class="proof">
+<p><a onclick="myCollapse('ttt')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="ttt" class="w3-container w3-hide">
+  Let's do some casework<ul><li>If line \(l\) is the line at infinity, its pole is \(O\), whose polar is the line at infinity</li><li>If \(O\) is on line \(l\), then the pole is the intersection of the line perpendicular to \(l\) through \(O\) with the line at infinity. And, the polar of this point is just \(l\)</li><li>If neither of the above cases hold, then \(OA'\) has length \(0\lt d\lt\infty\), where \(A'\) is the closest point to \(O\) on line \(l\). Thus, \(A\) is the pole of \(l\) as defined above. And, the polar of \(A\) is the line that goes through \(A'\) that is perpendicular to \(OA'\). By standard geometry (prove it if it isn't obvious), the point closest to \(O\) on a line \(l\) satisfies \(OA'\perp l\).</li></ul>The other part of the proof is essentially identical, and is left to you as an exercise.
+</div>
+</div>
+</div>
+<div class="Theorem" title="Incidence"> If point \(p\) is on line \(l\), the pole of \(l\) is on the polar of \(p\).
+<div class="proof">
+<p><a onclick="myCollapse('tt')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="tt" class="w3-container w3-hide">
+<ul><li>If \(l\) is the line at infinity, then \(p\) is a point at infinity, meaning that the polar of \(p\) is a line through the origin and the pole of \(l\) is the origin.</li><li>If \(l\) goes through the origin, then the pole of \(l\) is the point at infinity perpendicular to \(l\). Thus, we just need to show that the polar of \(p\) is perpendicular to \(l\). If \(p\) is a point at infinity, the polar of \(p\) is the line perpendicular to \(l\) through the origin. If \(p\) is the origin, the polar is the line of infinity, containing the pole of \(l\). If \(p\) is any other point, the polar of \(p\) is a line perpendicular to \(l\).</li><li>If \(l\) is any other line, then the situation is akin to the diagram above with \(l=a\) and \(p=A'\). Thus, the pole of \(a\) is \(A\) and the polar of \(A'\) is the line through \(A\) perpendicular to \(OA\).</li></ul>
+</div>
+</div>
+</div>
+<p>Note that the incidence theorem implies that a point is on a line if and only if its polar contains the pole of the line (can you see why?). With the isomorphism and incidence theorems, we've established that the projective plane is <strong>dual</strong>, meaning that there is a one to one mapping between points and lines that preserves points being on lines. With self-duality, we gain a lot of power.</p>
+<p>Self-duality implies that for any theorem in the projective plane that involves points, lines, concurrency (lines intersecting at the same point), and collinearity (points on the same line), the dual theorem, which is the theorem with lines and points switched, and concurrency and collinearity switched, is also true. Let's see a few examples of dual theorems.</p>
+<div class="Theorem" title="Desargues"> If \(\triangle ABC\) and \(\triangle DEF\) have the property that lines \(AD\), \(BE\), and \(CF\) are concurrent, then \(X=AB\cap DE\), \(Y=BC\cap EF\), and \(Z=CA\cap FD\) are collinear.
+<div class="proof">
+<p><a onclick="myCollapse('t')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="t" class="w3-container w3-hide">
+  This proof requires linear algebra, which we haven't learned, so instead, I'm going to do a bit of handwaving. We'll use the perspective of the projective plane as the set of lines through the origin in 3D space. In this perspective, lines in the projective plane are planes in 3D space. Thus, \(X\) and \(Y\) are lines in 3D space, and there exists a unique plane that contains \(X,Y\). Since this plane goes through the origin, there exists some rotation of 3D space that makes this plane into the plane \(z=0\). This makes \(X,Y\) points at infinity. Thus, all we want to show is that \(Z\) is a point at infinity.<br><br> \(X,Y\) being points at infinity imply \(AB\parallel DE\) and \(BC\parallel EF\). Consider the homothety \(H(P,B,E)\) (the homothety at \(P\) that sends \(B\) to \(E\)). Since homothety preserves slope, sends \(B\) to \(E\), and sends lines \(PA\) and \(PC\) to themselves, it must send \(A\) to \(D\) and \(C\) to \(F\). This implies that \(CA\parallel FD\) as homothety preserves slope, proving that \(Z\) is on the line of infinity.
+</div>
+</div>
+</div>
+<p>We call the point of concurrency the <strong>center of perspective</strong> and the line of collinearity the <strong>axis of perspective</strong>.
+<p><a class="gallery img-center-short cbox-Element" href="/public/desargue.png"><img src="/public/desargue.png" width="100%"></a></p>
+<p>So what is the dual of Desargue's Theorem? It's just the converse!</p>
+<div class="Theorem" title="Desargue Dual"> If \(\triangle ABC\) and \(\triangle DEF\) have the property that \(AB\cap DE\), \(BC\cap EF\), and \(CA\cap FD\) are collinear, then lines \(AD\), \(BE\), and \(CF\) are concurrent.</div>
+<p>The next example is a bit more relevant in contest mathematics.</p>
+<div class="Theorem" title="Menelaus"> Given a \(\triangle ABC\) and some line \(l\), let \(D=BC\cap l\), \(E=CA\cap l\), \(F=AB\cap l\). Then, \(D,E,F\) are collinear if and only if $$\frac{AF}{FB}\cdot\frac{BD}{DC}\cdot\frac{CE}{EA}=1$$<p><a class="gallery img-center-short cbox-Element" href="/public/menelaus.png"><img src="/public/menelaus.png" width="100%"></a></p>
+<div class="proof">
+<p><a onclick="myCollapse('m')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="m" class="w3-container w3-hide">
+  Consider the homotheties \(H(D,B,C)\), \(H(E,C,A)\), \(H(F,A,B)\). Clearly, composing these homotheties leads to \(B\) staying in the same place. Moreover, the composition of the first two homotheties keeps line \(DE\) in the same place since the centers are \(D\) and \(E\). So, there are two cases<ul><li>If \(F\) is on line \(DE\), then the final homothety also keeps line \(DE\) fixed. Since points \(B,D,E\), which aren't collinear, are all fixed by the composition, the composition must be the identity. That means that the product of the scale factors must be \(1\). In other words, $$\frac{CD}{BC}\cdot\frac{AE}{EC}\cdot\frac{BF}{FA}=1$$</li><li>If \(F\) is not on \(DE\), then \(F\) doesn't fix \(DE\), so the composition doesn't either. Since \(B\) is fixed by the homothety, the composition of the three homotheties must be a homothety centered at \(B\) with scale factor not equal to \(1\). Thus, $$\frac{CD}{BC}\cdot\frac{AE}{EC}\cdot\frac{BF}{FA}\neq1$$</li></ul>
+</div>
+</div>
+</div>
+<div class="Exercise" title="Using Menelaus' Theorem"> Prove Composing Homotheties 1 with Menelaus' Theorem</div>
+<br><p>The dual of Menelaus's Theorem is <strong>Ceva's Theorem</strong>, which says the following:</p>
+<div class="Theorem" title="Ceva"> Given a \(\triangle ABC\) with point \(D\) on line \(BC\), point \(E\) on line \(AC\), and point \(F\) on line \(AB\), lines \(AD\), \(BE\), and \(CF\) are concurrent if and only if $$\frac{AF}{FB}\cdot\frac{BD}{DC}\cdot\frac{CE}{EA}=1$$<p><a class="gallery img-center-short cbox-Element" href="/public/ceva.png"><img src="/public/ceva.png" width="100%"></a></p>
+<div class="proof">
+<p><a onclick="myCollapse('css')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="css" class="w3-container w3-hide">
+  Let \(P\) be the intersection of lines \(AD\) and \(CF\). Applying Menelaus' Theorem on \(\triangle BDA\) with collinear points \(C,P,F\) gives $$\frac{BC}{CD}\cdot\frac{DP}{PA}\cdot\frac{AF}{FB}=1$$If we apply Menelaus' Theorem to \(\triangle DCA\) with points \(B,E,P\), we get $$\frac{DB}{BC}\cdot\frac{CE}{EA}\cdot\frac{AP}{PD}=1\text{ iff }P\text{ on }BE$$Multiplying the left hand sides of both equations results in$$\frac{BD}{DC}\cdot\frac{CE}{EA}\cdot\frac{AF}{FB}=1\text{ iff }P\text{ on }BE$$This completes the proof.
+</div>
+</div>
+</div>
+<div class="Exercise" title="Using Ceva's Theorem"> Prove that medians, altitudes, and angle bisectors of triangles are concurrent with Ceva's Theorem.</div>
+<br><p>These theorems and homothety/projection as general tools are immensely valuable in geometry problems. Here's an example.</p>
+<div class="Lemma" title="Nine Point Circle"> Let \(ABC\) be any triangle, with orthocenter \(H\), points \(D,E,F\) midpoints of sides \(BC\), \(CA\), \(AB\), points \(K,L,M\) the feet of altitudes to sides \(BC\), \(CA\), \(AB\), and points \(P,Q,S\) midpoints of segments \(AH\), \(BH\), and \(CH\). Then, points \(D,E,F,K,L,M,P,Q,S\) all lie on a circle.
+<div class="proof">
+<p><a onclick="myCollapse('nn')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="nn" class="w3-container w3-hide">
+  Let's first show some primary results. If \(Q\) was the orthocenter of \(\triangle ABC\), and \(Q'\) the reflection of point \(Q\) over side \(BC\), we'd have the following diagram:<br><br><a class="gallery img-center-short cbox-Element" href="/public/lemma1.png"><img src="/public/lemma1.png" width="100%"></a><br><br>Note by right triangle properties that \(\angle Q'AC+\angle A=90^\circ\), and \(\angle QCA+\angle C=90^\circ\). Thus, $$\angle CQ'A=\angle Q'QC=\angle Q'AC+\angle QCA=180^\circ-\angle A-\angle C=\angle B$$Thus, by the Secant Angles Theorem, \(Q'\) lies on the circumcircle. So, if \(H_1,H_2,H_3\) are the reflections of point \(H\) over the sides \(BC\), \(CA\), \(AB\), they'd all lie on the circumcircle.<br><br>
+  Next, let \(A',B',C'\) be the reflection of \(H\) over \(D,E,F\). Then, by right triangle properties$$\begin{aligned}\angle BCH+\angle ABC&=90^\circ\\\angle CBH+\angle ACB=90^\circ\end{aligned}$$So, $$\angle BHC=180^\circ-\angle BCH-\angle CBH=\angle ABC+\angle ACB=180^\circ-\angle BAC$$Since \(HD=DA'\) and \(BD=DC\), \(BHCA'\) is a parallelogram, and thus \(\angle BHC=\angle BA'C\). So, \(\angle BA'C+\angle BAC=180^\circ\), and by the cyclic quadrilateral theorem, \(A'\) is on the circumcircle. Thus, \(A',B',C'\) are all on the circle.<br><br>
+  Consider \(H(H,0.5)\). By definition, it maps \(A,B,C\) to \(P,Q,S\). By our work above, it maps \(H_1,H_2,H_3\) to \(K,L,M\) and \(A',B',C'\) to \(D,E,F\). Since all of these points are on the circumcircle, and the homothety of a circle is a circle, the theorem is proved.<br><br><a class="gallery img-center-short cbox-Element" href="/public/ninepoint.png"><img src="/public/ninepoint.png" width="100%"></a>
+
 </div>
 </div>
 </div>

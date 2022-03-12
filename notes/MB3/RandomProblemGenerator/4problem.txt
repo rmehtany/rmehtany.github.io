@@ -1,0 +1,7 @@
+Let \(\mathbb R^+\) be the set of all positive real numbers. Find all functions \(f:\mathbb R^+\to\mathbb R^+\) such that for all \(x,y\in\mathbb R^+\)$$x^2(f(x)+f(y))=(x+y)f(f(x)y)$$
+<div class="solution">
+<p><a onclick="myCollapse('1')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="11"></i></a><br></p>
+<div id="1" class="w3-container w3-hide">
+Setting \(x=y\) gives us $$2y^2f(y)=2yf(yf(y))$$Since \(y\gt0\),$$yf(y)=f(yf(y))$$Thus, \(yf(y)\) is a fixed point of \(f\) for all \(y\in\mathbb R^+\). Thus, there is at least one fixed point of \(f\).<br><br>
+If \(a\) is a fixed point of \(f\), and \(x=a\), \(y=1\),$$a^2(a+f(1))=(a+1)a$$Since \(a\gt0\),$$a^2+a(f(1)-1)-1=0$$By Vieta's formulas, the product of the roots of this polynomial is \(-1\), meaning that there is at most one positive root to this polynomial. Thus, there is exactly one fixed point for this functional equation. Moreover, plugging in \(x=y=a\) into the functional equation gives us $$af(a)=a^2$$So, if \(a\) is a fixed point, so is \(a^2\). Thus, the fixed point is \(1\). Since \(yf(y)\) is a fixed point, \(f(y)=\frac1y\) is the only possible solution. We can verify that this is a solution easily.
+</div>

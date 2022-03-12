@@ -653,7 +653,37 @@ Note that $$k!(k^2+1)=k^2\cdot k!+k!$$$$=k(k\cdot k!)+k!$$$$=k((k+1)!-k!)+k!$$$$
 </div>
 </div>
 </div>
-<h2 id='c'>Challenge: Test your Understanding</h2>
+<h2 id='c'>Challenge: Limits</h2>
+<p>We've seen several infinite sums in this class already, but what does it actually mean to sum infinitely many numbers? In this section, we'll explore what it means precisely.</p>
+<h3>Sequence limits</h3>
+<p>Consider the following sequence: $$\frac12,\;\frac23,\;\frac34,\;\frac45,\ldots$$The general form of this sequence is \(\frac n{n+1}\). Intuitively, we can see that the terms of this sequence are approaching \(1\). How can we make this idea precise?</p>
+<p>We can play a game. Pick any \(\varepsilon\gt0\). Can we find a natural number \(n\) such that all terms after the $n$th term are in the interval \((1-\varepsilon,1+\varepsilon)\)? The answer is yes! Find some natural number \(n\) such that \(n\gt\frac1\varepsilon\). Then, \(\frac1{n+1}\lt\varepsilon\), so \(1\gt\frac n{n+1}\gt1-\varepsilon\).</p>
+<p>In other words, regardless of how small we make \(\varepsilon\), there is a point in the sequence such that the distance of the terms of the sequence from \(1\) is less than \(\varepsilon\). We say that this sequence <strong>limits</strong> towards \(1\), or in mathematical notation, $$\lim\limits_{n\to\infty}\frac n{n+1}=1$$</p>
+<div class="Exercise" title="Limits to infinity"> Can you figure out what the following means?$$\lim\limits_{n\to\infty}f(n)=\infty$$
+<div class="proof">
+<p><a onclick="myCollapse('esss')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="esss" class="w3-container w3-hide">
+  It means the following: for any \(\varepsilon>0\), there exists a natural number \(n\) such that for any natural \(m\gt n\), \(f(m)>\varepsilon\). In other words, the sequence will eventually be bigger than any finite value.
+</div>
+</div>
+</div>
+<h3>Infinite Sums</h3>
+<p>So how do limits help us define infinite sums? We define infinite sums as follows:$$\sum\limits_{n=1}^\infty f(n)=\lim\limits_{m\to\infty}\sum\limits_{n=1}^mf(n)$$In other words, it is the limit on \(n\) of the sums of the first \(n\) terms.</p>
+<h3>Finite Limits</h3>
+<p>We can generalize limits over functions. To understand this, visualize an exchange between two parties, Alice and Bob. First, Alice challenges Bob, "I want to ensure that the values of \(f(x)\) will be no farther than \(\varepsilon \gt 0\) from \(L\)." If the limit is indeed \(L\), then Bob will be able to respond by giving her a value of \(\delta\), "If for all points \(x\) is within a \(\delta\)-radius interval of \(x_0\), then \(f(x)\) will always be within an \(\varepsilon\)-interval of \(L\)." If the limit exists, then Bob will be able to respond to Alice's challenge no matter how small she chooses \(\varepsilon\).</p>
+<p>For example, in the graph for function \(f(x)\) below, if Alice gives Bob the value \(\varepsilon\), then Bob gives her the number \(\delta\) such that for any \(x\) in the open interval \(( x_0 - \delta, x_0 + \delta )\), the value of \(f(x)\) lies in the interval \(( L - \varepsilon, L + \varepsilon)\). In this example, as Alice makes \(\varepsilon\) smaller and smaller, Bob can always find a smaller \(\delta\) satisfying this property.</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/limitsmb3.png"><img src="/public/limitsmb3.png" width="100%"></a></p>
+<p>If there is any value of \(\varepsilon\) for which Bob cannot find a corresponding \(\delta\), then the limit does not exist!</p>
+<p>If the limit exists, we write $$\lim\limits_{x\to x_0}f(x)=L$$
+<div class="Exercise" title="Understanding Epsilon-Delta"> Prove that $$\lim\limits_{x\to\infty}\frac1{x^2}=0$$
+<div class="proof">
+<p><a onclick="myCollapse('ddddd')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="ddddd" class="w3-container w3-hide">
+  Alice picks some \(\varepsilon\gt0\). What value of \(\delta\) can Bob pick so that any real number \(x\gt\delta\) satisfies \(\frac1{x^2}\in(0-\varepsilon,0+\varepsilon)\)? Well, if Bob picks \(\delta=\frac1{\sqrt\varepsilon}\), then if \(x\gt\delta\), $$0\lt\frac1{x^2}\lt\frac1{\delta^2}=\varepsilon$$Thus, Bob won the game, and that proves the limit.
+</div>
+</div>
+</div>
+
 <div class="Exercise" title=""> Let \(f(n)=\frac1{2^n}+\frac1{3^n}+\ldots\). Compute $$\sum\limits_{n=2}^\infty f(n)$$
 </div><br>
 <br><div class="Exercise" title=""> Compute $$\frac14\cdot\frac25\cdot\ldots\cdot\frac{50}{53}$$</div>
