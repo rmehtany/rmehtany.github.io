@@ -1,0 +1,8 @@
+Find all strictly increasing functions \(f:\mathbb Z\to\mathbb R\) such that for all \(x,y\in\mathbb Z\), there exists \(z\in\mathbb Z\) such that \(f(x)=f(y)+f(z)\)
+<div class="solution">
+<p><a onclick="myCollapse('1')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="11"></i></a><br></p>
+<div id="1" class="w3-container w3-hide">
+Note that given any \(f\) that satisfies the conditions, the function \(f^a_z\) for integer \(z\) and positive real \(a\), defined as \(f^a_z(x)=af(x+z)\), also is a solution. Moreover, since there exists \(z\in\mathbb Z\) such that \(f(z)=f(0)-f(0)=0\), we know that \(f(z+1)\gt0\). Thus, given any solution \(f\), let's consider the solution \(g=f_z^{1/f(z+1)}\). In this solution, \(g(0)=0\) and \(g(1)=1\).<br><br>
+Now, we'll do a two-step induction to prove that \(g\) must be the identity function.<ul><li>If we know that all integers \(i\in[-k,k]\) for some natural \(k\) satisfy \(g(i)=i\), then since \(g(1)-g(-k)=k+1\), there exists some \(j\gt k\) such that \(g(j)=k+1\). Thus, \(g(k+1)\leq k+1\). If \(g(k+1)\lt k+1\), then \(0\lt g(l)=g(k+1)-g(k)\lt 1\) for some integer \(l\). But, either \(l\lt 0\) or \(l\gt1\), a contradiction. Thus, \(g(k+1)=k+1\)</li><li>If we know that all integers \(i\in[-k,k+1]\) for some natural \(k\) satisfy \(g(i)=i\), then \(g(0)-g(k+1)=-k-1\), which implies there exists \(j\lt k\) such that \(g(j)=-k-1\). So, \(g(-k-1)\geq -k-1\). If \(g(-k-1)\gt-k-1\), then \(0\lt g(-k)-g(-k-1)\lt1\), which is a contradiction as we showed in the previous bullet. Thus, \(g(-k-1)=-k-1\).</li></ul>
+Thus, all solutions are of the form $$f(z)=az+b$$
+</div>

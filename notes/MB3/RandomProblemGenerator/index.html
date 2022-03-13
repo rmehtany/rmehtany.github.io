@@ -306,7 +306,7 @@
 <script>
     function startup() {
         var client = new XMLHttpRequest();
-        client.open('GET', (Math.floor(Math.random()*5+1)).toString().concat('problem.txt'));
+        client.open('GET', (Math.floor(Math.random()*6+1)).toString().concat('problem.txt'));
         client.onload = function()
         {
             if(client.responseText != '')
