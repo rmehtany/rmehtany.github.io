@@ -741,12 +741,53 @@ Finally, the area of \(\triangle NDC\) is \(\frac14\), so the volume of the whol
 </div>
 </div>
 </div><br>
-<div class="Exercise" title="Week 10"> Find the flaw in the following "proof". To prove: every person in our class was born in the same year. We will prove the claim by induction on \(n\), the number of people.<ul><li><strong>Base Case:</strong> For \(n=1\), we consider groups of \(1\) people in our class. Since each group of one people is just one person, that person is the same age as themself, so the base case is true.</li><li><strong>Inductive Case:</strong> Suppose I have a subset of \(n+1\) people from our class. Remove person \(x\) from this subset. All \(n\) people in the remaining subset have the same age, by the inductive hypothesis. Then, add \(x\) back into the group and remove person \(y\). Again, all people in the new group have the same age by the inductive hypothesis. Thus, all of the people have the same age in the group.</li></ul>
+<div class="Exercise" title="Week 10"> Write in second order logic the axioms of the real numbers (assume that there are binary operations \(+\) and \(\cdot\) and an order operation \(\lt\) defined). <strong>Hint:</strong> All but one of the axioms can be written in first order logic.
 <div class="Solution">
 <p><a onclick="myCollapse('week10')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
 <div id="week10" class="w3-container w3-hide">
-  This is a tricky proof. The issue is with case \(n=2\). Suppose in one group of \(2\) people is me and one of you students. Then, if I remove myself from the group, you obviously have the same age as yourself, so that is true. If I remove you, then I have the same age as myself, so that also is true. But those things don't imply that we both have the same age, since there is no third person in the group to compare with.
-</div>
+This is a bit of an unfair question, as we haven't really learned about the real numbers, but it's meant as an exercise to test your understanding of number systems you work with. \(\veebar\) represents XOR, the operation that is true iff exactly one of the inputs is true. Here are the axioms and their names (The last one is a second order axiom):
+<table class="w3-table w3-striped w3-bordered">
+  <tbody><tr><th>Name</th><th>Axiom</th></tr>
+      <tr>
+        <td>Additive Associativity</td><td>\(\forall a,b,c,\;a+(b+c)=(a+b)+c\)</td>
+      </tr>
+      <tr>
+        <td>Additive Identity</td><td>\(\exists0\forall a,\;a+0=a\)</td>
+      </tr>
+      <tr>
+        <td>Additive Inverse</td><td>\(\forall a\exists b,\;a+b=0\)</td>
+      </tr>
+      <tr>
+        <td>Additive Commutativity</td><td>\(\forall a,b,\;a+b=b+a\)</td>
+      </tr>
+      <tr>
+        <td>Multiplicative Associativity</td><td>\(\forall a,b,c,\;a\cdot(b\cdot c)=(a\cdot b)\cdot c\)</td>
+      </tr>
+      <tr>
+        <td>Multiplicative Identity</td><td>\(\exists 1\neq0\forall a,\;1\cdot a=a\)</td>
+      </tr>
+      <tr>
+        <td>Multiplicative Inverse</td><td>\(\forall a\neq0\exists b,\;a\cdot b=1\)</td>
+      </tr>
+      <tr>
+        <td>Multiplicative Commutativity</td><td>\(\forall a,b,\;a\cdot b=b\cdot a\)</td>
+      </tr>
+      <tr>
+        <td>Distributivity</td><td>\(\forall a,b,c,\;a\cdot(b+c)=a\cdot b+a\cdot c\)</td>
+      </tr>
+      <tr>
+        <td>Trichotomy</td><td>\(\forall a,\;(a\lt0)\veebar(a=0)\veebar(a\gt0)\)</td>
+      </tr>
+      <tr>
+        <td>Additive Closure</td><td>\(\forall a,b,\;a\gt0\wedge b\gt0\to a+b\gt0\)</td>
+      </tr>
+      <tr>
+        <td>Multiplicative Closure</td><td>\(\forall a,b,\;a\gt0\wedge b\gt0\to a\cdot b\gt0\)</td>
+      </tr>
+      <tr>
+        <td>Least Upper Bound</td><td>$$\begin{aligned}\forall\text{ properties }P,\;(\exists u\forall a,\;Pa\to a\lt u)\\\to\exists l,\;(\forall a,\;Pa\to a\lt l)\wedge\forall u(\forall a,\;Pa\to a\lt u),\;l\leq u\end{aligned}$$</td>
+      </tr>
+</tbody></table></div>
 </div>
 </div><br>
 <div class="Exercise" title="Week 11"> Given the polynomial \(x^3+ax^2+bx+c\), if \(p,q,r\) are the roots of the polynomial, what is the value of \(p^4+q^4+r^4\)?
