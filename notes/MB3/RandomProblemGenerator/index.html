@@ -305,8 +305,10 @@
 </style>
 <script>
     function startup() {
+        let params = new URLSearchParams(document.location.search.substring(1));
+        var problem = parseInt(params.get("problem"))||Math.floor(Math.random()*9+1);
         var client = new XMLHttpRequest();
-        client.open('GET', (Math.floor(Math.random()*9+1)).toString().concat('problem.txt'));
+        client.open('GET',problem.toString().concat('problem.txt'));
         client.onload = function()
         {
             if(client.responseText != '')
