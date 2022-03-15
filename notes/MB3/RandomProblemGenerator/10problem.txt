@@ -1,0 +1,6 @@
+If \(p\) is a quadratic polynomial such that \(p(1)=1\), \(p(2)=3\), and \(p(3)=2\), what are the four solutions to \(p(p(x))=x\)
+<div class="solution">
+<p><a onclick="myCollapse('1')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="11"></i></a><br></p>
+<div id="1" class="w3-container w3-hide">
+Using Lagrange Interpolation, we find \(p\) to be $$\frac12(x-2)(x-3)-2(x-1)(x-3)+(x-1)(x-2)=-1.5x^2+6.5x-4$$We already know \(3\) of the \(4\) solutions to \(p(p(x))=x\) (\(1,2,3\)), so we know that the final solution must be a fixed point of \(p\). Thus, it is a root of \(p(x)-x=-1.5x^2+5.5x-4\). The roots of \(p(x)\) are \(1\) and \(\frac{17}6\), so the solutions are \(1,2,\frac{17}6,3\).
+</div>
