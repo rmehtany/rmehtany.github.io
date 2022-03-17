@@ -1,0 +1,7 @@
+How many integer multiples of \(1001\) can be expressed as \(10^i-10^j\), for \(i,j\in\mathbb N\) such that \(j\lt i\lt100\).
+<div class="solution">
+<p><a onclick="myCollapse('1')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="2"></i></a><br></p>
+<div id="1" class="w3-container w3-hide">
+If \(10^i-10^j\) is a multiple of \(1001\), then $$10^j(10^{i-j})\equiv10^j(1)\bmod1001$$Since \(\gcd(10^j,1001)=1\), this equivalence is only true if $$10^{i-j}\equiv1\bmod1001$$As \(1000\equiv-1\bmod1001\), \(10^6\equiv1\bmod1001\). Thus, we can replace \(i-j\) with \((i-j)\bmod6\). Observe that <table class="w3-table w3-striped w3-bordered"><tbody><tr><th>Power of \(10\)</th><th>Remainder modulo \(1001\)</th></tr><tr><td>\(10^1\)</td><td>\(10\)</td></tr><tr><td>\(10^2\)</td><td>\(100\)</td></tr><tr><td>\(10^3\)</td><td>\(1000\)</td></tr><tr><td>\(10^4\)</td><td>\(991\)</td></tr><tr><td>\(10^5\)</td><td>\(901\)</td></tr></tbody></table>Thus, the given condition is true if and only if \(i-j\) is a multiple of \(6\).<br><br>
+Thus, the answer is $$4\cdot{17\choose2}+2\cdot{16\choose2}=784$$
+</div>

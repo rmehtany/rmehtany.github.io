@@ -742,7 +742,31 @@
 </div>
 </div>
 
-<div class="exercise" title="Power of a Point"> Show that the power of point \(P\) is the square of the length of the tangent from \(P\) to the circle if \(P\) is outside the circle, and \(R^2-\overline{PO}^2\) otherwise, where \(R\) is the radius and \(O\) is the center of the circle.</div>
+<div class="exercise" title="Power of a Point"> Show that the power of point \(P\) is \(\left\vert\overline{OP}^2-R^2\right\vert\), where \(R\) is the radius and \(O\) is the center of the circle.
+  <div class="proof">
+  <p><a onclick="myCollapse('sdfsdff')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+  <div id="sdfsdff" class="w3-container w3-hide">
+    If \(P\) is inside or on the circle, then consider the points of intersection \(A,B\) of the diameter that goes through \(P\). Thus, \(\overline{AP}=R-\overline{OP}\) and \(\overline{BP}=R+\overline{OP}\), or vice versa, so $$\overline{AP}\cdot\overline{BP}=(R+\overline{OP})(R-\overline{OP})=R^2-\overline{OP}^2$$If \(P\) is outside the circle, we know that the power of \(P\) is the square of the length of the tangent from \(P\) to the circle. Let \(T\) be the point of tangency. Then, \(\triangle OPT\) is a right triangle, so $$\overline{TP}^2=\overline{OP}^2-R^2$$
+  </div>
+  </div>
+</div>
+<p>We often will define the power of the point as \(\overline{OP}^2-R^2\), which is identical to the definition above, except that powers of points inside the circle are negated. This gives us the following important result.</p>
+<div class="Definition" title="Radical Axis"> Given two circles \(\omega_1,\omega_2\) with distinct centers \(O_1,O_2\) and radii \(R_1,R_2\), we define the <strong>radical axis</strong> of the two circles to be the set of points such that their powers with respect to both circles are the same. The following statements hold:<ol><li>The radical axis of \(\omega_1\) and \(\omega_2\) is a line perpendicular to \(\overline{O_1O_2}\)</li><li>The radical axis goes through any points of intersection of the circles \(\omega_1,\omega_2\)</li><li>There exists a unique point \(P\) on the line \(O_1O_2\) such that \(P\) is on the radical axis.</li></ol>
+  <div class="proof">
+<p><a onclick="myCollapse('thm111')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="thm111" class="w3-container w3-hide">Assume that the line \(O_1,O_2\) is the \(x\)-axis (rotate the plane if this isn't the case).
+  <ol><li>Let \(P\) be any point in the plane, and \(P'\) the intersection of the line \(O_1O_2\) and the line perpendicular to it through \(P\). By the Pythagorean Theorem, for \(i=1,2\)$$O_iP^2=O_iP'^2+PP'^2$$Thus, \(P\) is on the radical axis if and only if \(P'\) is. When combined with the result of part \(3\), this completes the proof.</li><li>Any point on the intersection of \(\omega_1\) and \(\omega_2\) has power \(0\) with respect to both circles, and thus is on the radical axis.</li><li>For some point \(P\) on line \(O_1O_2\), let \(d\) be the length \(PO_1\), and \(w\) the length \(O_1O_2\). If point \(P\) is to the left of \(O_1\), then the powers of \(P\) with respect to both circles are equal if and only if $$\begin{aligned}(d+w)^2-d^2&=R_2^2-R_1^2\\d&=\frac{R_2^2-R_1^2-w^2}{2w}\end{aligned}$$If \(P\) is to the right of \(O_1O_2\), the powers of \(P\) with respect to both circles are equal if and only if $$\begin{aligned}(d-w)^2-d^2&=R_2^2-R_1^2\\-d&=\frac{R_2^2-R_1^2-w^2}{2w}\end{aligned}$$So, if \(\frac{R_2^2-R_1^2-w^2}{2w}\) is \(0\), the only point that satisfies \(d=0\) is \(O_1\). If \(\frac{R_2^2-R_1^2-w^2}{2w}\gt0\), the second equation is impossible to satisfy as \(d\geq0\), and there is exactly one point on line to the left of \(O_1\) with distance \(d\) from \(O_1\). If \(\frac{R_2^2-R_1^2-w^2}{2w}\lt0\), the first equation is impossible to satisfy as \(d\geq0\), and there is exactly one point on the line to the right of \(O_1\) with distance \(d\) from \(O_1\).</li></ol>
+</div>
+</div>
+</div>
+<div class="Exercise" title="Radical Axes"> Given \(3\) circles \(\omega_1,\omega_2,\omega_3\) with centers not all on the same line, their pairwise radical axes intersect at a single point.
+<div class="proof">
+<p><a onclick="myCollapse('ex111')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="ex111" class="w3-container w3-hide">
+  Let \(P\) be the point of intersection between the radical axis of circles \(\omega_1\) and \(\omega_2\), and the radical axis of circles \(\omega_2\) and \(\omega_3\). If \(P_1,P_2,P_3\) are the powers of \(P\) with respect to circles \(\omega_1,\omega_2,\omega_3\), then since \(P\) is on the radical axis of \(\omega_1\) and \(\omega_2\), \(P_1=P_2\), and because \(P\) is on the radical axis of \(\omega_2\) and \(\omega_3\), \(P_2=P_3\). Thus, \(P_1=P_3\), so \(P\) is on the radical axis of \(\omega_1\) and \(\omega_3\).
+</div>
+</div>
+</div>
 
 <h3 id='cyclic'>Cyclic Quadrilaterals</h3>
 <p>Any quadrilateral whose vertices are on a circle is called a <strong>cyclic quadrilateral</strong>. Cyclic quadrilaterals are defined by the following theorem.</p>
