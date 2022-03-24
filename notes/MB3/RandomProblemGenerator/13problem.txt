@@ -2,5 +2,5 @@ Given a positive rational number \(x\), show that there exists \(n\) distinct na
 <div class="solution">
 <p><a onclick="myCollapse('1')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="11"></i></a><br></p>
 <div id="1" class="w3-container w3-hide">
-Let \(x=\frac ab\), where \(a,b\) are positive integers. Additionally, observe that for any positive integer \(k\), $$\frac1k=\frac1{k+1}+\frac1{k(k+1)}$$Thus, $$\fracab=\underbrace{\frac1b+\ldots+\frac1b}_{a\text{ times}}$$Now, while there exists at least two equal terms \(\frac1k\) in our sum for some positive integer \(k\), replace one of these fractions with \(\frac1{k+1}+\frac1{k(k+1)}\). Do this until we have all distinct fractions (prove that this takes a finite amount of time via induction).
+Let \(x=\frac ab\), where \(a,b\) are positive integers. Additionally, observe that for any positive integer \(k\), $$\frac1k=\frac1{k+1}+\frac1{k(k+1)}$$Thus, $$\frac ab=\underbrace{\frac1b+\ldots+\frac1b}_{a\text{ times}}$$Now, while there exists at least two equal terms \(\frac1k\) in our sum for some positive integer \(k\), replace one of these fractions with \(\frac1{k+1}+\frac1{k(k+1)}\). Do this until we have all distinct fractions (prove that this takes a finite amount of time via induction).
 </div>
