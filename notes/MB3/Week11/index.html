@@ -704,7 +704,24 @@ So, the result of our division is \(x^3-2x^2-4\) divided by \(x-3\) is \(x^2+x+3
 <p>Quadratic Polynomials are polynomials of degree \(2\). In other words, they are of the form \(ax^2+bx+c\). We can find the roots as follows.</p>
 <div class="Example" title="Completing the Square"> We want to find the roots of \(ax^2+bx+c\) where \(a\neq0\). Thus, we have the equation $$ax^2+bx+c=0$$Dividing both sides by \(a\) and subtracting \(\frac ca+\left(\frac b{2a}\right)^2\) from both sides gives us $$x^2+\frac bax+\left(\frac b{2a}\right)^2=\left(\frac b{2a}\right)^2-\frac ca$$Notice that \(\left(x+\frac b{2a}\right)^2=x^2+\frac ba+\left(\frac b{2a}\right)^2\), so $$\left(x+\frac b{2a}\right)^2=\left(\frac b{2a}\right)^2-\frac ca$$Square rooting both sides gives us $$x+\frac b{2a}=\pm\sqrt{\left(\frac b{2a}\right)^2-\frac ca}$$Multiplying both sides by \(2a\) and subtracting \(b\) from both sides gives us $$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$$This formula is known as the <strong>quadratic formula</strong>.</div>
 <div class="Exercise" title="Factorization Check"> Check that our theorems above are correct by showing that $$ax^2+bx+c=a\left(x+\frac{b+\sqrt{b^2-4ac}}{2a}\right)\left(x+\frac{b-\sqrt{b^2-4ac}}{2a}\right)$$</div>
-<p>This formula gives us a way of finding the factorization of any quadratic. Similarly, there are formulas for finding the factorization of cubics (degree 3) and quartics (degree 4) called <strong>Cardano's Formulas</strong>, but these formulas are tedious, and not worth remembering.</p>
+<p>We call the value \(b^2-4ac\) the <strong>discriminant</strong> of the quadratic polynomial. If it is positive, the polynomial has \(2\) real roots. If it is zero, it has \(1\) real root. Otherwise, it has \(0\) real roots. A classic application of the discriminant is the following theorem.</p>
+<div class="Theorem" title="Cauchy Schwarz"> For any sequences \(a_1,\ldots,a_n\) and \(b_1,\ldots,b_n\),$$\left(\sum\limits_{i=1}^na_i^2\right)\left(\sum\limits_{i=1}^nb_i^2\right)\geq\left(\sum\limits_{i=1}^na_ib_i\right)^2$$Equality holds only if there exists some \(t\) such that for all \(i\), \(b_i=a_i\cdot t\)
+<div class="proof">
+<p><a onclick="myCollapse('ex21')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="ex21" class="w3-container w3-hide">
+Consider the polynomial $$p(x)=\sum\limits_{i=1}^n(a_ix-b_i)^2$$Clearly, this polynomial is a non-negative quadratic, so it has at most one root. In other words, its discriminant is non-positive. Expanding the polynomial gives us $$p(x)=x^2\cdot\sum\limits_{i=1}^na_i^2-2x\sum\limits_{i=1}^na_ib_i+\sum\limits_{i=1}^nb_i^2$$So, the discriminant is $$4\left(\sum\limits_{i=1}^na_ib_i\right)^2-4\left(\sum\limits_{i=1}^na_i^2\right)\left(\sum\limits_{i=1}^nb_i^2\right)\leq0$$Dividing by \(4\) gives us the desired inequality. If this inequality is an equality, that implies that the discriminant is \(0\), and thus \(p\) has a single root \(t\). Thus, for each \(i\), \(a_it-b_i=0\), since \(p(t)\geq(a_it-b_i)^2\). This completes the proof.
+</div>
+</div>
+</div>
+<div class="Exercise" title="Applying Cauchy Schwarz"> Given real numbers \(x,y,z\) such that \(x^2+y^2+z^2=1\), what is the maximum value of \(x+2y+3z\)?
+<div class="Solution">
+<p><a onclick="myCollapse('fffhhh')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="fffhhh" class="w3-container w3-hide">
+  By Cauchy Schwarz, $$(x+2y+3z)^2\leq(1^2+2^2+3^2)(x^2+y^2+z^3)=14$$Equality holds when \(\frac x1=\frac y2=\frac z3\). So, letting $$x=\frac1{\sqrt14},\;y=\frac2{\sqrt14},\;z=\frac3{\sqrt14}$$we get \(x+2y+3z=\sqrt{14}\), which is the maximum value.
+</div>
+</div>
+</div>
+<p>The quadratic formula gives us a way of finding the factorization of any quadratic. Similarly, there are formulas for finding the factorization of cubics (degree 3) and quartics (degree 4) called <strong>Cardano's Formulas</strong>, but these formulas are tedious, and not worth remembering.</p>
 <div class="remark" title="Abel-Ruffini"> You may be wondering whether there is a formula for quintic (degree 5) polynomials and above. The answer is no, if we are only allowed to use simple formulas, and the proof of this fact is one you'll learn in an Algebra class in a few years.</div>
 <h3>Vieta's Formulas</h3>
 <p>As noted in the previous section, finding roots of quadratic polynomials is already hard, but the higher the degree is, the harder it gets. So are there ways of interacting with roots without directly calculating them? The answer is yes!</p>

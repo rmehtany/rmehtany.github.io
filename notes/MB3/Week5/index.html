@@ -611,14 +611,12 @@
   <br>
 
 <ul>
-  <li><a href='#seq'>Sequences</a><ul><li><a href='#arith'>Arithmetic Sequences</a></li><li><a href='#geo'>Geometric Sequences</a></li></ul></li><li><a href='#challenge'>Challenge: Euler Product</a></li>
+  <li><a href='#seq'>Sequences</a><ul><li><a href='#arith'>Arithmetic Sequences</a></li><li><a href='#geo'>Geometric Sequences</a></li></ul></li><li><a href='#challenge'>Challenge: Convexity</a></li>
 </ul>
 
 <p>This week is Countdown week, so the notes are going to be super short!</p>
 <p>Before you enjoy yourself too much, take some time to review the material from the first 4 weeks (it's a lot!) since this week's class will have \(80\) problems.</p>
 <p>The problems will be easier than normal, but you'll have to be quick on your feet. Be there or be square!</p>
-<p>You might want to read <a href='https://www.mathopenref.com/polygonconvex.html' target='_blank'>this definition</a> before class.</p>
-
 <h2 id ='seq'>Sequences</h2>
 <p>What is a sequence? Well, it is just an infinite list of numbers. That's it, really. There are two special types of sequences we care about, however.</p>
 <h3 id='arith'>Arithmetic Sequence</h3>
@@ -641,14 +639,54 @@ Assume \(r\neq1\). Then $$(a+ar+\ldots+ar^{n-1})\cdot(r-1)=a\cdot(1+r+\ldots+r^{
 <p>But, if \(|r|\lt1\), \(\sum\limits_{i=0}^\infty ar^i\) has a finite value. Here's how we can find it.</p>
 <p>Let \(S=\sum\limits_{i=0}^\infty ar^i\). So, $$S=a+ar+\ldots$$$$rS=ar+ar^2+\ldots$$$$a+rS=a+ar+\ldots=S$$$$a+rS=S$$$$S=\frac a{1-r}$$</p>
 <p>As an example of geometric series, suppose we wanted to compute the sum of all of the divisors of \(n\). We'd first prime factorize \(n\) as \(p_1^{e_1}p_2^{e_2}\ldots p_k^{e_k}\). Then, we observe that all divisors of \(n\) are of the form \(p_1^{a_1}\cdot\ldots\cdot p_k^{a_k}\), where \(a_i\leq e_i\) for each \(i\). Thus, the sum of divisors of \(n\) is $$(1+p_1+\ldots+p_1^{e_1})\cdot\ldots\cdot(1+p_k+\ldots+p_k^{e_k})$$However, each term is a geometric series, so we can replace each term by \(\frac{p_i^{e_i+1}-1}{p_i-1}\). Thus, our formula becomes $$\prod\limits_{i=1}^k\frac{p_k^{e_k+1}-1}{p_k-1}$$ (Side Note: \(\prod\) is similar to \(\sum\), except it is for products rather than sums.)</p>
-<h2 id='challenge'>Challenge: Euler Product</h2>
-<p>In the previous section, we observed that summing a geometric sequence when the ratio \(r\) is not in the range \((-1,1)\) leads to an undefined summation. When this happens, we say that the sum <strong>diverges</strong>. In this section, we'll show that the sum of reciprocals of primes diverges.</p>
-<p>One of the most beautiful results of the theory of sequences is the following fact: $$\sum\limits_{n=1}^\infty\frac1n=1+\frac12+\frac13+\ldots=\infty$$This sequence, which is known as the <strong>harmonic series</strong>, diverges. To see why, note that $$1+\underbrace{\frac12}_{\geq\frac12}+\underbrace{\frac13+\frac14}_{\geq\frac12}+\underbrace{\frac15+\frac16+\frac17+\frac18}_{\geq\frac12}$$In other words, $$\sum\limits_{n=1}^\infty\frac1n\geq1+\sum\limits_{n=1}^\infty\frac12=\infty$$</p>
-<p>Euler noticed that the harmonic series can be written as a product as follows, which is now called the <strong>Euler Product</strong>: $$\sum\limits_{n=1}^\infty\frac1n=\prod\limits_{p\text{ prime}}\left(1+\frac1p+\frac1{p^2}+\ldots\right)$$(Side Note: The notation \(p\text{ prime}\) means evaluate the expression for each prime \(p\), and multiply them all together). As an example, \(\prod\limits_{p\text{ prime}}p=2\cdot3\cdot5\cdot\ldots\))</p>
-<p>This product should be confusing to you. Why should I expect that equality to be true? Well, here is the really cool observation: every number \(n\) can be uniquely factorized as a product of prime powers. So, if \(n=p_1^{e_1}p_2^{e_2}\ldots p_k^{e_k}\), then $$\frac1n=\frac1{p_1^{e_1}}\cdot\frac1{p_2^{e_2}}\cdot\ldots\cdot\frac1{p_k^{e_k}}$$The right hand side of the equation above appears as a term in the Euler Product exactly once. This explains the rather mysterious, but in my opinion, beautiful equality.</p>
-<p>Now, we can make this equality even more beautiful by realizing that $$1+\frac1p+\frac1{p^2}+\ldots=\frac1{1-p^{-1}}$$So, we can rewrite Euler's Product as $$\sum\limits_{n=1}^\infty\frac1n=\prod\limits_{p\text{ prime}}\frac1{1-p^{-1}}=\prod\limits_{p\text{ prime}}\frac p{p-1}$$</p>
-
-
+<h2 id='challenge'>Challenge: Convexity</h2>
+<p>You may have learned about convex polygons before.</p>
+<div class="Definition" title="Convex Polygon"> A <strong>convex polgyon</strong> is a polygon with all angles having measure less than \(\180^\circ\)</div>
+<p><a class="gallery img-center-short cbox-Element" href="/public/convexpolygon.gif"><img src="/public/convexpolygon.gif" width="100%"></a></p>
+<p>Why do we call these polygons convex? What does it mean to be convex? In this section, we'll only be concerned with shapes in the cartesian plane, although convexity can be studied in other spaces, too.</p>
+<div class="Definition" title="Convex Shape"> A set of points in the plane is called a <strong>convex shape</strong> if for any two points in the shape, the line segment between these two points is inside the shape.</div>
+<p>Can you see why the convex polygon in the diagram above is convex? Can you see why the concave polygon is not convex? If not, we'll prove it.</p>
+<div class="Theorem" title="Convex Polygons are Convex"> Convex polygons are convex, and concave polygons are not convex.
+<div class="proof">
+<p><a onclick="myCollapse('cccc')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="cccc" class="w3-container w3-hide">
+  Like many theorems about convexity, the theorem seems obvious, but the proof is certainly not.<br><br><strong>Convex polygons are convex</strong>: Suppose \(P\) is a convex polygon. Then, if there exists points \(A,B\) in the polygon such that the line segment \(AB\) is not contained in \(P\), then \(AB\) separates the exterior of \(P\) into multiple regions, including at least one polygon. Call one of these polygons \(Q\). Consider the vertex \(x\) of \(Q\) farthest from the line segment \(AB\) (pick any if there is a tie). Clearly, since \(2\) of the vertices of \(Q\) are on \(AB\), and there are at least \(3\) vertices of a polygon, the vertex \(x\) is not on line segment \(AB\). Thus, it is also a vertex of polygon \(P\). Since all angles of \(P\) have \(\lt180^\circ\), the angle \(x\) in polygon \(Q\) has \(gt180^\circ\) as it is the exterior angle of \(P\) at vertex \(x\). But this implies that at least one of the two neighboring vertices to \(x\) is farther from \(AB\) than \(x\) is, a contradiction. Thus, if \(P\) is a convex polygon, it is a convex shape.<br><br><strong>Concave polygons are not convex</strong>: Suppose \(P\) is a concave polygon, with vertices \(A,B,C\) such that \(\angle ABC\) in the polygon has measure \(\gt180^\circ\). Consider the triangle \(\triangle ABC\). Clearly, \(\angle B\) in this triangle is the complement of \(\angle B\) in the polygon, since triangles can't have angles larger than \(180^\circ\). Thus, there exists a point inside \(\triangle ABC\) not contained in polygon \(P\). However, the line segments starting at point \(A\), and ending on points on the line segment \(BC\), go through all the point in the triangle \(\triangle ABC\). Thus, at least one of them is not contained in \(P\), implying that \(P\) is not a convex shape.
+</div>
+</div>
+</div>
+<p>An important application of convexity is perimeter.</p>
+<div class="Theorem" title="Perimeter"> Given convex shapes \(A,B\) such that \(A\) is contained in \(B\), the perimeter of \(A\) is \(\leq\) the perimeter of \(B\). And, for any shape \(C\), there exists some convex shape \(D\) that contains \(C\) such that its perimeter is \(\leq\) that of \(C\).</div>
+<div class="remark" title="The perimeter trap!"> In week \(1\), we discussed approximating the perimeter of the circle with regular polygons. But we have to be careful with this logic. Consider the following picture.<p><a class="gallery img-center-short cbox-Element" href="/public/piequalfour.png"><img src="/public/piequalfour.png" width="100%"></a></p>If we take a square around a circle, and invert its corners repeatedly until it looks like a circle, we can approximate the perimeter of the circle. But, doing so doesn't change the perimeter of the square, so this shows that the perimeter of the unit circle is \(16\), right? The issue with this argument is that the polygon formed by inverting the corners of the square isn't convex, so our perimeter approximation argument no longer holds. The only reason the perimeter approximation argument from Week 1 works is because the regular polygons we used to approximate the circle are convex.</div>
+<h3>Convex Functions</h3>
+<p>The most common use case of convexity are convex functions.</p>
+<div class="Definition" title="Convex Function"> Given a function \(f\) from a subset of the real numbers to the real numbers, \(f\) is a <strong>convex function</strong> if the area above the graph of \(f\) in the cartesian plane is a convex shape.</div>
+<p>The following function (in dark orange) is an example of a convex function, since the area above the function (in light orange) is a convex shape.</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/convexfuncsion.png"><img src="/public/convexfuncsion.png" width="100%"></a></p>
+<p>On the other hand, the following function is not convex, as the area above the function is not a convex shape.</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/concavefuncsion.png"><img src="/public/concavefuncsion.png" width="100%"></a></p>
+<p>So how do we characterize convex functions? For any real numbers \(x_1,x_2\), if the line segment between points \((x_1,f(x_1))\) and \((x_2,f(x_2))\) is above the function \(f\), then \(f\) is convex, as in the following diagram:</p>
+<p><a class="gallery img-center-short cbox-Element" href="/public/secantconvexwho.png"><img src="/public/secantconvexwho.png" width="100%"></a></p>
+<p>We can write this condition as follows: for any real numbers \(x_1,x_2\) and \(t\in[0,1]\),$$tf(x_1)+(1-t)f(x_2)\geq f(tx_1+(1-t)x_2)$$This inequality, known as <strong>Jensen's inequality</strong>, is an alternate way to define convex functions. We can also define <strong>concave functions</strong> to be functions for which the area below the function is convex, or in other words, the negation of convex functions.</p>
+<div class="Exercise" title="Concavity"> <ul><li>Can you show that a function \(f\) is concave if and only if for all real numbers \(x_1,x_2\) and \(t\in[0,1]\), \(tf(x_1)+(1-t)f(x_2)\leq f(tx_1+(1-t)x_2)\)</li><li>Can you find a function which is neither convex nor concave?</li></ul></div>
+<p>To demonstrate the usefulness of these ideas, we'll prove a famous inequality known as the Arithmetic Mean-Geometric Mean inequality (sometimes written as AM-GM). If you haven't learned about logarithms or induction, I'd suggest waiting till Weeks 12 and 14 before reading any further.</p>
+<div class="Theorem" title="AM-GM"> Given positive numbers \(x_1,\ldots, x_n\), $$\frac{x_1+x_2+\ldots+x_n}n\geq(x_1\cdot x_2\cdot\ldots\cdot x_n)^{1/n}$$
+<div class="proof">
+<p><a onclick="myCollapse('amgm')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="amgm" class="w3-container w3-hide">
+  Since \(\ln\) is an increasing function, the given inequality is true if and only if $$\begin{aligned}\ln\left(\frac{x_1+x_2+\ldots+x_n}n\right)&\geq\ln(x_1\cdot x_2\cdot\ldots\cdot x_n)^{1/n}\\&\geq\frac{\ln x_1+\ln x_2+\ldots+\ln x_n}n\end{aligned}$$We'll prove this inequality to be true using Jensen's inequality and induction.<br><br>
+  <strong>Base Case</strong>: \(n=1\): for any positive \(x_1\), \(\ln \frac{x_1}1\geq\frac{\ln x_1}1\)<br><br><strong>Inductive Case</strong>: Suppose that for any positive \(x_1,\ldots,x_n\), the inequality below holds$$\ln\left(\frac{x_1+x_2+\ldots+x_n}n\right)\geq\frac{\ln x_1+\ln x_2+\ldots+\ln x_n}n$$then, since \(\ln\) is a concave function, for any positive \(a,b\) and \(t\in[0,1]\), \(\ln(ta+(1-t)b)\geq t\ln a+(1-t)\ln b\). Letting \(t=\frac n{n+1}\), \(a=\frac{x_1+x_2+\ldots+x_n}n\), and \(b=x_{n+1}\), a positive number, we get $$\begin{aligned}\ln\left(\frac{x_1+x_2+\ldots+x_{n+1}}{n+1}\right)&\geq\frac n{n+1}\ln\left(\frac{x_1+x_2+\ldots+x_n}n\right)+\frac1{n+1}\ln x_{n+1}\\&\geq\frac n{n+1}\cdot\left(\frac{\ln x_1+\ln x_2+\ldots+\ln x_n}n\right)+\frac{\ln x_{n+1}}{n+1}\end{aligned}$$This completes the proof.
+</div>
+</div>
+</div>
+<p>Equality holds for the inequality in AM-GM only when all of the values \(x_1,\ldots,x_n\) are equal. Here's a basic application of the inequality.</p>
+<div class="Exercise" title="Applying AM-GM"> If \(x,y\) are positive real numbers, and \(x+y=8\), what is the minimum value of \(\left(1+\frac1x\right)\left(1+\frac1y\right)\)?
+<div class="proof">
+<p><a onclick="myCollapse('aa')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="aa" class="w3-container w3-hide">
+Expanding out the product gives $$\frac{1+x+y+xy}{xy}=1+\frac9{xy}$$From AM-GM, $$\frac{x+y}2\geq\sqrt{xy}$$Thus, \(\frac1{xy}\geq\frac1{16}\), with equality when \(x=y\). Thus, the minimum of the product is \(1+\frac9{16}\), with the minimum occuring at \(x=y=4\).
+</div>
+</div>
+</div>
 </div>
 
 <div style="float:right"><a href="#" style="font-style: normal;"><bf>Top</bf></a></div>

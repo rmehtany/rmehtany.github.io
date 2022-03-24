@@ -1,0 +1,6 @@
+Let \(f(n)\) be the minimum degree of a monic polynomial \(p\) such that for all integers \(m\), \(p(m)\) is a multiple of \(n\). Prove that \(f(10^{10})\leq50\).
+<div class="solution">
+<p><a onclick="myCollapse('1')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="11"></i></a><br></p>
+<div id="1" class="w3-container w3-hide">
+Note that \(10^{10}\) is a divisor of \(45!\). Consider the polynomial $$p(x)=\prod\limits_{k=0}^{44}(x+k)$$Clearly, \(p\) is monic, and has degree \(45\). If \(x\) is a positive integer, then \(p(x)=45!\cdot{x+44\choose45}\). If \(-45\lt x\leq0\) is an integer, then \(p(x)=0\). And, if \(x\leq-45\) is an integer, then \(p(x)=-45!{-x\choose45}\). In all of these cases, \(45!\) is a factor of \(p(x)\), so \(p(x)\) satisfies the requirements. This completes the proof as \(45\lt50\).
+</div>
