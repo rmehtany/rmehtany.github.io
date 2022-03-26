@@ -680,6 +680,15 @@
 <p>The <strong>altitude</strong> is a cevian which is perpendicular to the side of the triangle it intersects.</p>
 <p><a class="gallery img-center-short cbox-Element" href="/public/altitude.png"><img src="/public/altitude.png" width="100%"></a></p>
 <p>The most important thing to know about the altitude is the area formula (in the next section). However, altitudes also have special relationships with the <strong>circumcenter</strong> (center of the circumscribing circle) and incenter. Let \(R\) be the radius of the circumcircle and \(r\) the radius of the incircle.</p>
+<div class="Theorem" title="Circumcenter"> The circumcenter of triangle \(ABC\) is the point of intersection of the perpendicular bisectors of the triangle.
+<div class="Proof">
+<p><a onclick="myCollapse('dm')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="dm" class="w3-container w3-hide">
+The <strong>perpendicular bisector</strong> of a line segment \(XY\) is the line perpendicular to \(XY\) that goes through its midpoint. The three perpendicular bisectors of a triangle are the perpendicular bisectors of the three sides. So, all we need to show is that the circumcenter is on one of these perpendicular bisectors, since by symmetry, that would imply that it is on all of them.<br><br>
+Let \(O\) be the circumcenter of the triangle, and let \(D\) be the midpoint of side \(AB\). Then, \(AD=BD\), \(OD=OD\), and \(AO=BO\) since they are both radii. By \(SSS\), \(\triangle ADO\cong\triangle BDO\), which implies that \(\angle ADO=\angle BDO\). But, \(\angle ADO+\angle BDO=180^\circ\) as \(AB\) is a line, so \(\angle ADO=90^\circ\). Thus, \(OD\) is the perpendicular bisector of \(AB\), and thus, \(O\) is on the perpendicular bisector of \(AB\).
+</div>
+</div>
+</div>
 <p>Like the other two special cevians, all altitudes intersect at one point, which we call the <strong>orthocenter</strong>. If the lengths of the altitudes are \(h_a,h_b,h_c\), then the following formulas are true:$$h_ah_bh_c=\frac{(abc)^2}{8R^3}$$$$\frac1{h_a}+\frac1{h_b}+\frac1{h_c}=\frac1r$$where \(R\) is the radius of the circumcircle and \(r\) the radius of the incircle.</p>
 
 <h2 id='area'>Area of a Triangle</h2>
@@ -711,7 +720,7 @@
 <ul>
   <li>See-saw: For any line segment \(AEC\) with a fulcrum at \(E\), and \(m(X)\) referring to the mass at point \(X\),$$m(A)\cdot\overline{AE}=m(C)\cdot\overline{CE}$$This is just our see-saw example with the elephant and ant generalized.</li><li>$$m(E)=m(A)+m(C)$$To understand this rule, consider the diagram <p><a class="gallery img-center-short cbox-Element" href="/public/masapunto.png"><img src="/public/masapunto.png" width="100%"></a></p>If we choose the weights at points \(A,B,C\) well, the diagram will balance at point \(P\). We can view this diagram as a see-saw \(BPE\), with \(E\) itself being a see-saw \(AEC\), as in the following diagram:<p><a class="gallery img-center-short cbox-Element" href="/public/masapunto2.png"><img src="/public/masapunto2.png" width="100%"></a></p>Thus, we can replace the see-saw on the right with a weight whose value is the sum of the weights on the see-saw. This gives us the desired relation.</li></ul>
 <p>To test our understanding, let's solve some problems!</p>
-<div class="exercise" title="Applying Mass Points"> In the following diagram, \(CE=EA\) and \(3AF=FB\). Find \(\frac{CD}{DB}\)<p><a class="gallery img-center-short cbox-Element" href="/public/masapunto3.png"><img src="/public/masapunto3.png" width="100%"></a></p></div>
+<div class="exercise" title="Applying Mass Points"> In the following diagram, \(CE=EA\) and \(3AF=FB\). Find \(\frac{CD}{DB}\)<p><a class="gallery img-center-short cbox-Element" href="/public/masapunto3.png"><img src="/public/masapunto3.png" width="100%"></a></p>
 <div class="solution">
 <p><a onclick="myCollapse('ex3')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
 <div id="ex3" class="w3-container w3-hide">

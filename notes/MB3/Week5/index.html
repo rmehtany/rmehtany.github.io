@@ -664,9 +664,9 @@ Assume \(r\neq1\). Then $$(a+ar+\ldots+ar^{n-1})\cdot(r-1)=a\cdot(1+r+\ldots+r^{
 <p><a class="gallery img-center-short cbox-Element" href="/public/convexfuncsion.png"><img src="/public/convexfuncsion.png" width="100%"></a></p>
 <p>On the other hand, the following function is not convex, as the area above the function is not a convex shape.</p>
 <p><a class="gallery img-center-short cbox-Element" href="/public/concavefuncsion.png"><img src="/public/concavefuncsion.png" width="100%"></a></p>
-<p>So how do we characterize convex functions? For any real numbers \(x_1,x_2\), if the line segment between points \((x_1,f(x_1))\) and \((x_2,f(x_2))\) is above the function \(f\), then \(f\) is convex, as in the following diagram:</p>
+<p>So how do we characterize convex functions? For any numbers \(x_1,x_2\) in the domain of \(f\), if the line segment between points \((x_1,f(x_1))\) and \((x_2,f(x_2))\) is above the function \(f\), then \(f\) is convex, as in the following diagram:</p>
 <p><a class="gallery img-center-short cbox-Element" href="/public/secantconvexwho.png"><img src="/public/secantconvexwho.png" width="100%"></a></p>
-<p>We can write this condition as follows: for any real numbers \(x_1,x_2\) and \(t\in[0,1]\),$$tf(x_1)+(1-t)f(x_2)\geq f(tx_1+(1-t)x_2)$$This inequality, known as <strong>Jensen's inequality</strong>, is an alternate way to define convex functions. We can also define <strong>concave functions</strong> to be functions for which the area below the function is convex, or in other words, the negation of convex functions.</p>
+<p>We can write this condition as follows: for any numbers \(x_1,x_2\) in the domain of \(f\) and \(t\in[0,1]\),$$tf(x_1)+(1-t)f(x_2)\geq f(tx_1+(1-t)x_2)$$This inequality, known as <strong>Jensen's inequality</strong>, is an alternate way to define convex functions. We can also define <strong>concave functions</strong> to be functions for which the area below the function is convex, or in other words, the negation of convex functions.</p>
 <div class="Exercise" title="Concavity"> <ul><li>Can you show that a function \(f\) is concave if and only if for all real numbers \(x_1,x_2\) and \(t\in[0,1]\), \(tf(x_1)+(1-t)f(x_2)\leq f(tx_1+(1-t)x_2)\)</li><li>Can you find a function which is neither convex nor concave?</li></ul></div>
 <p>To demonstrate the usefulness of these ideas, we'll prove a famous inequality known as the Arithmetic Mean-Geometric Mean inequality (sometimes written as AM-GM). If you haven't learned about logarithms or induction, I'd suggest waiting till Weeks 12 and 14 before reading any further.</p>
 <div class="Theorem" title="AM-GM"> Given positive numbers \(x_1,\ldots, x_n\), $$\frac{x_1+x_2+\ldots+x_n}n\geq(x_1\cdot x_2\cdot\ldots\cdot x_n)^{1/n}$$
@@ -688,7 +688,15 @@ Expanding out the product gives $$\frac{1+x+y+xy}{xy}=1+\frac9{xy}$$From AM-GM, 
 </div>
 </div>
 </div>
-
+<div class="Exercise" title="Applying AM-GM 2"> Given a triangle \(ABC\) with \(\angle C=90^\circ\), such that \(h\) is the altitude from \(C\) to \(AB\), what is the maximum value of \(\frac h{AB}\)?.
+<div class="Solution">
+<p><a onclick="myCollapse('bb')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="bb" class="w3-container w3-hide">
+Let \(D\) be the foot of the altitude \(h\). Then, triangles \(ADC\) and \(BDC\) are similar because they are both right triangles, and $$\angle BDC=90^\circ-\angle B=90^\circ-(90^\circ-\angle A)=\angle A$$Thus, \(\frac h{AD}=\frac{BD}h\), so \(h=\sqrt{AD\cdot BD}\). By AM-GM, \(h\leq \frac{AD+BD}2=\frac{AB}2\), with equality when \(AD=BD\), which happens when the triangle is a \(45-45-90\) triangle. Thus, the maximum value is \(\frac12\).
+</div>
+</div>
+</div>
+</div>
 <div style="float:right"><a href="#" style="font-style: normal;"><bf>Top</bf></a></div>
     </div>
 

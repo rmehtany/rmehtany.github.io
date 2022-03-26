@@ -970,12 +970,19 @@
   Let's first show some primary results. If \(Q\) was the orthocenter of \(\triangle ABC\), and \(Q'\) the reflection of point \(Q\) over side \(BC\), we'd have the following diagram:<br><br><a class="gallery img-center-short cbox-Element" href="/public/lemma1.png"><img src="/public/lemma1.png" width="100%"></a><br><br>Note by right triangle properties that \(\angle Q'AC+\angle A=90^\circ\), and \(\angle QCA+\angle C=90^\circ\). Thus, $$\angle CQ'A=\angle Q'QC=\angle Q'AC+\angle QCA=180^\circ-\angle A-\angle C=\angle B$$Thus, by the Secant Angles Theorem, \(Q'\) lies on the circumcircle. So, if \(H_1,H_2,H_3\) are the reflections of point \(H\) over the sides \(BC\), \(CA\), \(AB\), they'd all lie on the circumcircle.<br><br>
   Next, let \(A',B',C'\) be the reflection of \(H\) over \(D,E,F\). Then, by right triangle properties$$\begin{aligned}\angle BCH+\angle ABC&=90^\circ\\\angle CBH+\angle ACB&=90^\circ\end{aligned}$$So, $$\angle BHC=180^\circ-\angle BCH-\angle CBH=\angle ABC+\angle ACB=180^\circ-\angle BAC$$Since \(HD=DA'\) and \(BD=DC\), \(BHCA'\) is a parallelogram, and thus \(\angle BHC=\angle BA'C\). So, \(\angle BA'C+\angle BAC=180^\circ\), and by the cyclic quadrilateral theorem, \(A'\) is on the circumcircle. Thus, \(A',B',C'\) are all on the circle.<br><br>
   Consider \(H(H,0.5)\). By definition, it maps \(A,B,C\) to \(P,Q,S\). By our work above, it maps \(H_1,H_2,H_3\) to \(K,L,M\) and \(A',B',C'\) to \(D,E,F\). Since all of these points are on the circumcircle, and the homothety of a circle is a circle, the theorem is proved.<br><br><a class="gallery img-center-short cbox-Element" href="/public/ninepoint.png"><img src="/public/ninepoint.png" width="100%"></a>
-
 </div>
 </div>
 </div>
-
-
+<div class="Exercise" title="Euler Line"> For any triangle \(ABC\), show that the orthocenter \(H\), circumcenter \(X\), centroid \(G\), and the center of the nine point circle \(N\) are collinear.
+<div class="proof">
+<p><a onclick="myCollapse('nan')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
+<div id="nan" class="w3-container w3-hide">
+  In the previous exercise, we showed that the homothety \(H(H,0.5)\) sends \(O\) to \(N\), so \(H,O,N\) are collinear. Now, consider the homothety \(H(G,-0.5)\). We've shown in Week \(4\) that this homothety sends \(A,B,C\) to \(D,E,F\), the midpoints of sides \(BC,AC,AB\) respectively. Thus, this homothety sends \(AB\) to \(DE\), implying that \(BC\parallel EF\). And, it sends line \(AH\) to \(DH'\), where \(H'\) is the point that \(H\) is sent to under the homothety. So, $$DH'\parallel AH\bot BC\parallel EF$$Thus, \(H'\) is on the altitude from \(D\) to \(EF\), and by parallel logic, \(H'\) is on all three altitudes. Thus, \(H'\) is the orthocenter of \(\triangle DEF\).<br><br>
+  Moreover, since altitudes of \(DEF\) are perpendicular bisectors of \(ABC\), \(H'\) is the point of intersection of the perpendicular bisectors of \(ABC\), which implies that \(H'=O\). This proof also implies the following relations:$$HG=2GO,\;ON=NH,\;OG=2GN,\;NH=3GN$$
+</div>
+</div>
+</div>
+<p>The Euler line also happens to contain a lot of other special points in the triangle. Look at this <a href='https://brilliant.org/wiki/euler-line/' target='_blank'>link</a> for more details.</p>
 </div>
 
 <div style="float:right"><a href="#" style="font-style: normal;"><bf>Top</bf></a></div>
