@@ -27,15 +27,15 @@ https://templatemo.com/tm-553-xtra-blog
     <script src="/blog/js/jquery_ui.js"></script>
 
 		<script>
-		    function startup() {
+				function startup() {
 			var post_id = 3;
-		        var client = new XMLHttpRequest();
-		        client.open('GET', '/blog/sports/blogdata.txt');
-		        client.onload = function()
-		        {
-		            if(client.responseText != '')
-		            {
-		                var txt = client.responseText.split('\n');
+						var client = new XMLHttpRequest();
+						client.open('GET', '/blog/sports/blogdata.txt');
+						client.onload = function()
+						{
+								if(client.responseText != '')
+								{
+										var txt = client.responseText.split('\n');
 				var num = txt.length-1;
 				var data = txt[num-post_id].split('|');
 				var title = document.createElement('h2');
@@ -50,36 +50,12 @@ https://templatemo.com/tm-553-xtra-blog
 				var modify = document.getElementById("modify");
 				modify.insertBefore(titulardata,modify.firstChild);
 				var temp = document.createElement('div');
-				if (num < 5) {
-				    var i = 1;
-				    for (let j = 0; j < num; j++) {
-				        if (num-post_id != j) {
-					    data = txt[j].split('|');
-							var image = document.createElement('img');
-							image.setAttribute('alt','thumbnail');
-							image.setAttribute('src',data[1]);
-							image.setAttribute('class','mb-3 img-fluid');
-							var fig = document.createElement('figure');
-							fig.appendChild(image);
-							image = document.createElement('figcaption');
-							image.setAttribute('class','tm-color-primary')
-							image.innerHTML = data[2];
-							fig.appendChild(image);
-							image = document.createElement('a');
-							image.setAttribute('href',data[0]);
-							image.setAttribute('class','d-block tm-mb-40');
-							image.appendChild(fig);
-							temp.appendChild(image);
-					    i++;
-					}
-				    }
-				} else {
-				    var bucket = [];
-				    for (var i=0;i<num;i++) {
+						var bucket = [];
+						for (var i=0;i<num;i++) {
 					if (i != num - post_id) {
-		    			bucket.push(i);}
-				    }
-				    for (var j=1;j<4;j++) {
+							bucket.push(i);}
+						}
+					for (var j=1;j<4;j++) {
 					data = txt[bucket.splice(Math.floor(Math.random()*bucket.length), 1)[0]].split('|');
 					var image = document.createElement('img');
 					image.setAttribute('alt','thumbnail');
@@ -96,14 +72,13 @@ https://templatemo.com/tm-553-xtra-blog
 					image.setAttribute('class','d-block tm-mb-40');
 					image.appendChild(fig);
 					temp.appendChild(image);
-				    }
-				}
+						}
 				document.getElementById("sidebar").appendChild(temp);
-		            }
-		        }
+								}
+						}
 			client.send();
-		    }
-		    window.addEventListener('load',startup);
+				}
+				window.addEventListener('load',startup);
 		</script>
 </head>
 <body class="theme-base-0h">    <div class="sidebar w3-hide-small" id="mySidebar">
