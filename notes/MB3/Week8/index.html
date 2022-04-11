@@ -709,7 +709,7 @@ By Bezout's Lemma, there exists integers \(x,y\) such that \(mx+ny=\operatorname
 <p>The "easiest" way to find \(\frac1k\) is to use the <a href = 'https://brilliant.org/wiki/extended-euclidean-algorithm/' target='_blank'>Extended Euclidean Algorithm</a>, although in most cases, trial and error can be faster than this algorithm.</p>
 <div class="exercise" title="Extended Euclidean Algorithm"> Find integers \(x,y\) such that $$102\cdot x+38\cdot y=\operatorname{gcd}(102,38)$$
 <div class="Solution">
-<p><a onclick="myCollapse('e')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></a><br></p>
+<p><a onclick="myCollapse('e')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i></a><br></p>
 <div id="e" class="w3-container w3-hide">
 First, we apply the Euclidean algorithm to find the gcd of \(102\) and \(38\).$$\begin{aligned}102&=2\times38+26\\38&=1\times26+12\\26&=2\times12+2\\12=6\times2+0\end{aligned}$$With this, we know that \(\operatorname{gcd}(102,38)=2\). Now, rearrange the equations to isolate the remainders$$\begin{aligned}26&=102-2\times38\\12=38-1\times26\\2=26-2\times12\end{aligned}$$Now, we start with the bottom equation, replacing any occurrence of \(12\) or \(26\) with the right sides of their corresponding equations.$$\begin{aligned}2&=26-2\times12\\&=(102-2\times38)-2\times(38-26)\\&=102-2\times38-2\times(38-(102-2\times38))\\&=102-2\times38+2\times102-6\times38\\&=3\times102-8\times38\end{aligned}$$
 </div>
