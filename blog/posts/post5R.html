@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Blog - Rushabh Mehta</title>
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet"> <!-- https://fonts.google.com/ -->
+    <link href="/blog/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/blog/css/templatemo-xtra-blog.css" rel="stylesheet">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="/public/css/mystyle.css">
+  <link rel="stylesheet" href="/public/css/w3.css">
+  <link rel="stylesheet" href="/public/css/color.css">
+<!--
+
+TemplateMo 553 Xtra Blog
+https://templatemo.com/tm-553-xtra-blog
+-->
+    <script src="/blog/js/jquery.min.js"></script>
+    <script src="/blog/js/templatemo-script.js"></script>
+    <script src="/blog/js/jquery_ui.js"></script>
+    <script type="text/javascript" async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/x-mathjax-config;executed=true">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      displayMath: [ ['$$','$$'] ],
+      processEscapes: true,
+    }
+  });
+  </script>
+
+	<script>
+			function startup() {
+		var post_id = 4;
+					var client = new XMLHttpRequest();
+					client.open('GET', '/blog/reviews/blogdata.txt');
+					client.onload = function()
+					{
+							if(client.responseText != '')
+							{
+									var txt = client.responseText.split('\n');
+			var num = txt.length-1;
+			var data = txt[num-post_id].split('|');
+			var title = document.createElement('h2');
+			title.setAttribute('class','pt-2 tm-color-primary tm-post-title')
+			title.innerHTML = data[2];
+			var date = document.createElement('p');
+			date.innerHTML = data[4];
+			date.setAttribute('class','tm-mb-40');
+			var titulardata = document.createElement('div');
+			titulardata.appendChild(title);
+			titulardata.appendChild(date);
+			var modify = document.getElementById("modify");
+			modify.insertBefore(titulardata,modify.firstChild);
+			var temp = document.createElement('div');
+			var bucket = [];
+			for (var i=0;i<num;i++) {
+				if (i != num - post_id) bucket.push(i);
+			}
+			for (var j=1;j<4;j++) {
+			data = txt[bucket.splice(Math.floor(Math.random()*bucket.length), 1)[0]].split('|');
+			var image = document.createElement('img');
+			image.setAttribute('alt','thumbnail');
+			image.setAttribute('src',data[1]);
+			image.setAttribute('class','mb-3 img-fluid');
+			var fig = document.createElement('figure');
+			fig.appendChild(image);
+			image = document.createElement('figcaption');
+			image.setAttribute('class','tm-color-primary')
+			image.innerHTML = data[2];
+			fig.appendChild(image);
+			image = document.createElement('a');
+			image.setAttribute('href',data[0]);
+			image.setAttribute('class','d-block tm-mb-40');
+			image.appendChild(fig);
+			temp.appendChild(image);
+			}
+			document.getElementById("sidebar").appendChild(temp);
+							}
+					}
+		client.send();
+			}
+			window.addEventListener('load',startup);
+	</script>
+</head>
+<body class="theme-base-0h">    <div class="sidebar w3-hide-small" id="mySidebar">
+  <div class="container">
+    <button class="w3-button sidebar w3-text-white w3-hide-medium w3-hide-large w3-right" onclick="sidebar_close()">☰</button>
+    <div class="sidebar-about">
+      <div class="w3-text-white w3-center" style="font-size:20px;">
+        Rushabh Mehta
+      </div>
+
+      <p class="lead" style="font-size:16px;font-style:italic;color:rgba(255,255,255,0.5)">When dealing with people, let us remember we are not dealing with creatures of logic. We are dealing with creatures of emotion, creatures bristling with prejudices and motivated by pride and vanity.<br> - Dale Carnegie</p>
+
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">About Me</a>
+      <a class="sidebar-nav-item" href="/research/">Research</a>
+      <!--<a class="sidebar-nav-item" href="/book/">Book</a>-->
+      <a class="sidebar-nav-item active" href="/blog/">Blog</a>
+      <!--<a class="sidebar-nav-item" href="/coffee/">Coffee</a>-->
+      <a class="sidebar-nav-item" href="/notes/">Notes</a>
+      <a class="sidebar-nav-item" href="/resources/">Resources</a>
+	    <a class="sidebar-nav-item" href="/contact/">Contact</a>
+      <!--<a class="sidebar-nav-item" href="/conjecture/">Conjectures</a>-->
+    </nav>
+  </div>
+
+    <div class="w3-bottom">
+    <p style="font-size:12px;color:rgba(255,255,255,0.5);">© <script>document.write(new Date().getFullYear())</script> Rushabh Mehta</p>
+  </div>
+</div>
+
+<div class="sidebar w3-hide-medium w3-hide-large w3-right" id="mySmallSidebar">
+  <button class="w3-button sidebar w3-text-white" onclick="sidebar_open()">☰</button>
+</div>
+
+    <div class="container-fluid">
+        <main class="tm-main">
+            <div class="row tm-row">
+                <div class="col-12">
+                    <hr class="tm-hr-primary tm-mb-55">
+                    <div style='float:left;position:relative;'>
+                    <img src='/public/css_hack.webp' style='display:block;height:auto;width:100%;' alt=''/>
+                      <iframe src='https://www.youtube.com/embed/dDtFVpudkNk' style="width:100%;height:100%;left:0;top:0;position:absolute;border: 1px solid #10cccc" frameborder=0></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="row tm-row">
+                <div class="col-lg-8 tm-post-col">
+                    <div class="tm-post-full">
+                        <div class="mb-4" style='color:black;' id='modify'>
+
+			                     <p>I've been reading Extreme Ownership by Jocko Willink lately, and it leaves me frustrated. It's not that I'm particularly bothered by any of its advice: in fact, I believe strongly in being disciplined, a team player, and flexible. But I think the messaging is counterproductive. Early on, Jocko presents the following litmus test for self-discipline.</p>
+                           <blockquote class="w3-panel w3-leftbar w3-light-grey"><p>“The test is not a complex one: when the alarm goes off, do you get up out of bed, or do you lie there in comfort and fall back to sleep? If you have the discipline to get out of bed, you win—you pass the test. If you are mentally weak for that moment and you let that weakness keep you in bed, you fail. Though it seems small, that weakness translates to more significant decisions. But if you exercise discipline, that too translates to more substantial elements of your life.”</p></blockquote>
+                          <p>Notice what Jocko is telling you here. If you lie in the camp of alarm-snoozers, you are mentally weak. That weakness pervades the way you live your life. In other words, you suck.</p>
+                          <p>This sort of chest-thumping, machismo inspired motivation books do well because they trigger a sense of envy. Reading about Jocko's military exploits makes your life seem listless and without meaning in comparison. That insecurity, exacerbated by Jocko yelling at you through each turn of the page, leads you to accept Jocko's testimony as gospel. But does this really change how you live your life?</p>
+                          <p>If you're anything like me, probably not. In high school, I fell down a similar hole with fellow Navy Seal David Goggins, well known for his ultra long distance running and <i>pain is gain</i> mindset. In almost every podcast Goggins made, he'd admonish listeners for becoming slaves to their dreams and prescribe military style routines to get Americans back on track. Feeling motivated, I started running early in the morning before school until akrasia inevitably settled in and I fell back into my normal habits. Listening to more podcasts made me feel worse about myself, but occassionally would reignite motivation to begin running. However, this motivation was never anything but ephemeral. It just wasn't good enough.</p>
+                          <p>The flaw in this style of motivational material, whether intentional or due to ignorance on part of the preacher, is that the prescribed treatment doesn't actually result in long-term behavioral change as it doesn't address the fundamental cause of akrasia. If intentional, it's brilliant, because it creates an audience that is guaranteed to return to the material once they've inevitably relapsed to old patterns of behavior.</p>
+                          <p>The truth is more sobering: humans are not rational creatures. But, humans are irrational in predictable ways. In this post, I'll present to you 3 "dark arts" for leveraging this irrationality to create behavioral change. Truly, these are dark arts, but I hope to convince you that sometimes, the benefits are worth the price.</p>
+                          <h3>Goal Hacking</h3>
+                          <p>Humans tend to have two types of goals: <i>terminal goals</i> and <i>progressive goals</i>. A terminal goal is one that a human wants to reach purely because they enjoy it, i.e. getting a six pack. A progressive goal is one that a human wants to reach in order to reach a terminal goal, i.e. working out daily for an hour. Almost all symptoms of akrasia begin to emerge when a human, who rationally understands that it's in their benefit to accomplish a progressive goal, isn't able to wire their subconcious mind to trigger the same sort of dopamine response that accomplishing a terminal goal produces.</p>
+                          <p>Dark Art #1 is <i>Goal Hacking</i>, tricking your brain to thinking that a progressive goal is actually a terminal goal. Let's start with an example.</p>
+                          <p>Joe spent most of the COVID years stuck in his home and wants to become a socialite admired by those around him. But, attending gatherings drains his social battery and leaves him avoiding future invitations. To rectify this, Joe begins artificially creating a new terminal goal: to learn the favorite TV show of as many people as he can. Joe attends a gathering with this goal in mind, and immediately finds it easier to socialize. He spends less time worrying about impressing the other person, and has a line of questions ready to go in order to get to the answer of the person's favorite TV show. Since Joe is genuinely interested in the answer to the questions, he naturally emits positive body language, which makes conversing more natural for him.</p>
+                          <p>This artificial goal worked for Joe because it was a true progressive goal for his desired terminal goal, it was quirky enough that it felt orthogonal to the progressive goal that was causing his akrasia, and it was a goal he could genuinely be convinced of being a terminal goal.</p>
+                          <p>How do you convince yourself that this new goal is a "terminal goal" for you? It's awfully easy, as long as the goal has three properties:</p>
+                          <h4>It's easy to start</h4>
+                          <p>Goals need to be easy to start since we want them to be started subconsciously. For a goal like reading more, that might mean buying books to keep in the house, as opposed to needing to go to the library to borrow a book. It's easy to start a hard goal when fully motivated, but if we want the goals to happen organically, the goal needs to be easy peasy to start.</p>
+                          <h4>It feels good to do</h4>
+                          <p>Goals also need to rewarding. For goals like Joe's, the goal itself may be rewarding, with the dopamine hit coming from the small talk Joe initiates with others. For goals with a more nebulous enjoyment factor like running, an artificial source of happiness may be in order. Perhaps you treat yourself to a fancy pair of running shoes every time you wear off the treads of your current pair. Or maybe you get yourself a donut every time you run a 5K.</p>
+                          <h4>Progress is trackable</h4>
+                          <p>Finally, goals need to be trackable. In Joe's example, it was much easier to track the number of TV shows he learned about, as compared to the more subjective terminal goal he held of being socially esteemed. Our brains love seeing numbers go up, so any goal with a clear metric that improves over time is bound to keep your attention.</p>
+                          <p>These properties may seem hard to meet, but the truth is quite the opposite. Goal hacking is so easy, you probably do it all the time. Have you ever been addicted to a video game? Chances are over time, the core gameplay grew boring, but you still found yourself playing all the time, since making progress in the game is a goal that meets all three properties for goal hacking.</p>
+                          <p>Thus is the danger of this Dark Art. Choosing the wrong goal to hack yourself into doing can be disastrous. We've all met people who are acting as if "Acquiring Money" is a terminal goal, never noticing that money is almost entirely progressive in nature. When you ask them "but what would you do if money was no issue and you had a lot of time", all you get is a blank stare.</p>
+                          <p>Goal hacking can be a powerful technique when correctly applied. Remember, you're not in direct control of your motivation circuits. Sometimes, strange though it seems, the optimal action involves fooling yourself.</p>
+                          <p>You don't get good at programming by sitting down and forcing yourself to practice for three hours a day. I mean, I suppose you could get good at programming that way. But it's much easier to get good at programming by loving programming, by being the type of person who spends every spare hour tinkering on a project. Because then it doesn't feel like practice, it feels like fun.</p>
+                          <p>For goal hacking to work, though, you need to truly be convinced of the terminality of the goal you pursue, regardless of how important that goal is in reality. That segues nicely into the second Dark Art.</p>
+                          <h3>Self Deception</h3>
+                          <p>Goal hacking is a form of self-deception, as you've convinced yourself that a certain desirable outcome is an existential need. A rational agent shouldn't be able to do this, but fortunately for us, we're fantastic at being irrational. It's entirely possible for us to hold an irrational belief <i>locally</i> while knowing that this belief is untrue in reality.</p>
+                          <p>This is Dark Art #2: Self Deception. Holding beliefs <i>locally</i> that we know to be untrue in reality can make us more effective in our tasks. Here are a few examples of these sorts of beliefs.</p>
+                          <h4>My Judgement is always right</h4>
+                          <p>Imagine this: you're on an American submarine, and you've been notified by internal sources that the tanker Volga-Neft-147 carrying illicit Iraqi oil has departed from the Gulf of Oman. Do you command your team to pursue the tanker, alerting the Russians to the fact that their communications are compromised, or do you let the tanker go?</p>
+                          <p>Jocko, without a moment's hesitation, decides to command his team to pursue the tanker. How did he make the decision, knowing the thousands of individuals it'd impact, the sheer amount of information about the situation he wasn't aware of, and the urgency of the crisis? Rationally, we'd understand that the likelihood of us making the "right" decision in this environment is quite low, as human judgement is fallible and too many variables are at play. But, to have the confidence to make a decision in this environment and stand by it requires truly believing that our judgement is truly infallible. Once you believe that you fully understand every situation thrown at you, uncertainty is no longer a cause for anxiety.</p>
+                          <h4>Nothing is beyond my grasp</h4>
+                          <p>Fundamentally, I have a belief that given enough time and effort, I can do most things: repair a malfunctioning car, read Tolstoy, learn a new language, you name it. But I'm also aware of things I know that I'll never be able to do, i.e. play in the NBA. But simply having a high degree of confidence in my abilities to do things isn't always sufficient for maintaining motivation. Often, I need to believe I can do <i>anything</i></p>
+                          <p>As an example, I use this form of self-deception often when running. When I'm aiming to set a new PR, part of me wonders whether this PR lies in the range of things that I can't do. But, when I'm truly convinced by the belief that I can do anything, I'm able to resist the pull of akrasia and achieve my PR.</p>
+                          <p>Self-deception is often leveraged in fields where there are many players but few winners. It's irrational to think that you are capable of being the winner in a large field, but truly believing that nothing is beyond your grasp enables you to put your best foot forward in attempting to do so.</p>
+                          <h4>Anything is a Placebo</h4>
+                          <p>This is perhaps the most wild variation of self-deception. Self-deception can allow you to trigger the placebo effect on demand. Feeling sick? Drink some water. It'll make you feel better.</p>
+                          <p>It's just a placebo, you retort? Doesn't matter. Truly believe that this water makes it better. Want to be more productive? Tell yourself that dancing in a circle on one leg will make you more productive. You'll be surprised at the results.</p>
+                          <p>Self-deception is a awfully powerful tool, but as the name dark art implies, it's dangerous if misused. Blurring the lines between locally held beliefs and your perception of reality may mean that some of these beliefs may become ideas you deeply hold, and that can have consequences.</p>
+                          <p>Imagine you're a high school student, aiming to be drafted by the MLB. You've found that believing you are capable of it purely with your own skills will mean you'll put your best foot forward towards the goal. But if you still fall short, the cognitive dissonance created by your belief and the reality may lead you to resort to consipiracy, or worse, fall into a state of hopelessness. Use this dark art with caution.</p>
+                          <h3>Renouncing Responsibility</h3>
+                          <p>The dark arts are effective because we are not in control of our motiviation systems, but only in control of the input variables to the motivation systems. We think we have far more control over our behaviors than we do.</p>
+                          <p>This leads us to Dark Art #3: Renouncing Responsibility. Not taking responsibility for undesired behaviors can make it easier to not engage in those behaviors any further. To renounce responsibility for actions effectively, I propose a 3 step process.</p>
+                          <h4>Self Forgiveness</h4>
+                          <p>You had one too many spoons of nutella at 2 AM. Maybe you procrastinated on an essay till the day before. Perhaps you embellished your life story to impress some new friends. Don't feel bad about any of this! After all, it wasn't your fault: your body did it, not you. You are the noble soul that decided to live life in an enviable manner. It's your fallible body that let you down!</p>
+                          <p>In fact, let's take this a step further. Celebrate our body's failings! Every failure is a behavior that our noble soul has identified as needing improvement. What better validation of our ideals than for our soul to reject so many of our actions as unacceptable. We should aim to fail more often!</p>
+                          <p>What happens if I allow myself to eat as much nutella as I want? What happens if I never buy nutella at all? What happens if I only eat nutella if I've done a 30 minute workout in the morning? Try every possibility of inputs into your body's decision making system, and see what comes out!</p>
+                          <h4>Finding Inflection Points</h4>
+                          <p>Once we aren't blaming ourselves for our past failures and instead blaming our foolish body, we're now ready to study it in detail. After all, we often blame ourselves for decisions that weren't actually decisions at all.</p>
+                          <p>It's a Saturday morning, and you've allowed yourself a break from studying to play Overwatch for an hour. Soon enough, you find it's 5 PM, and you've been playing for over 8 hours. What happened here?</p>
+                          <p>You may conclude that it was your decision to keep playing post the first hour of Overwatch that was the mistake. After all, you allocated an hour to play the game, right? Well, our motivation system is fickle, and it's likely that at that point, your motivation levels to close the game were too low to make a decision. That's not your fault at all. Rather, the true inflection point for determining whether you spent your day studying or gaming was at the beginning of the day, as you decided to spend an hour gaming instead of studying.</p>
+                          <p>Understanding the ebb and flow of your motivation levels helps you find the true points of failure in your decision making process. You can't expect that you'll be motivated to stop playing Overwatch after the hour of play, so your mistake was only budgeting an hour to play the game. Go into the game with the understanding that you won't come out for the next several hours. You'll enjoy the game more, and not stress as it's all within the plan.</p>
+                          <p>Finding inflection points for your decision making can pay dividends. I've often had ideas for blog posts which I've excitedly started, left midway to handle some pressing issue, and never returned to as the enthusiasm I had for the idea never returned. I could blame my decision to not return to writing the post, but that's not where my motivation levels were highest. Rather, it's when I decided to not complete the post at the time of writing that I decided that I won't be finishing the post at all.</p>
+                          <h4>Observe and Repeat</h4>
+                          <p>Once you've found your inflection points and are making decisions based on it, observe the resulting actions you make, and adjust accordingly. Are you making better choices more consistently? In the case of Overwatch, since you know you're making an 8 hour commitment when you play, perhaps you play only twice a month to compensate. If you know you indulge on Nutella, perhaps you only buy a jar on your birthday. If your decision making isn't improving, you return to the previous steps in this process, and find new inflection points to make decisions on.</p>
+                          <p>This dark art is tremendously powerful, as it allows us to escape from the learned hopelessness that often accompanies our behavioral failings. But, it too has a downside. Should we really be forgiving ourselves for everything we do? What happens if we forgive bad behaviors, but adjust our goals to treat them as acceptable ones? I'm not here to resolve these philosophical quandries. Instead, I'll warn you to use these dark arts with caution.</p>
+                          <p>Employing these dark arts is useful because we live in strange, hampered control systems. Your brain was optimized with no concern for truth, and optimal performance may require self deception. We are weird agents without full control of our own minds. We lack direct control over important aspects of ourselves. For that reason, it's often necessary to take actions that may seem contradictory, crazy, or downright irrational.</p>
+
+
+
+                            <span class="d-block text-right tm-color-primary" id='tags'><a href='/blog/reviews/'>Category: Reviews</a></span>
+                        </div>
+		    <script src="https://utteranc.es/client.js"
+        repo="rmehtany/comments"
+        issue-term="post5R"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+                    </div>
+                </div>
+                <aside class="col-lg-4 tm-aside-col">
+                    <div class="tm-post-sidebar" id='sidebar'>
+                        <hr class="mb-3 tm-hr-primary">
+                        <h2 class="mb-4 tm-post-title tm-color-primary">Categories</h2>
+                        <ul class="tm-mb-75 pl-5 tm-category-list">
+                            <li><a href="/blog/food/" class="tm-color-primary">Food</a></li>
+                            <li><a href="/blog/puzzles/" class="tm-color-primary">Puzzles</a></li>
+                            <li><a href="/blog/travel/" class="tm-color-primary">Travel</a></li>
+                            <li><a href="/blog/sports/" class="tm-color-primary">Sports</a></li>
+                            <li><a href="/blog/reviews/" class="tm-color-primary">Reviews</a></li>
+                            <li><a href="/blog/other/" class="tm-color-primary">Other</a></li>
+                        </ul>
+                        <hr class="mb-3 tm-hr-primary">
+                        <h2 class="tm-mb-40 tm-post-title tm-color-primary">Related Posts</h2>
+                    </div>
+                </aside>
+            </div>
+        </main>
+    </div>
+    <script src="/blog/js/jquery.min.js"></script>
+    <script src="/blog/js/templatemo-script.js"></script>
+<script>
+// sidebar collapse
+function sidebar_open() {
+  document.getElementById("mySidebar").classList.remove("w3-hide-small");
+  document.getElementById("mySmallSidebar").classList.add("w3-hide-small");
+}
+function sidebar_close() {
+  document.getElementById("mySidebar").classList.add("w3-hide-small");
+  document.getElementById("mySmallSidebar").classList.remove("w3-hide-small");
+}
+</script>
+
+</body>
+</html>
