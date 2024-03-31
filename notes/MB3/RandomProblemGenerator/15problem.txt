@@ -10,7 +10,7 @@ g(1) &amp;= c_1 + c_2 + c_3 + c_4 + c_5 + c_6 + \ldots\\
 +g(\psi^2) &amp;= c_1\psi^2 + c_2\psi^4 + c_3\psi + c_4\psi^3 + c_5 + c_6\psi^2 + \ldots\\
 +g(\psi^3) &amp;= c_1\psi^3 + c_2\psi + c_3\psi^4 + c_4\psi^2 + c_5 + c_6\psi^3 + \ldots\\
 +g(\psi^4) &amp;= c_1\psi^4 + c_2\psi^3 + c_3\psi^2 + c_4\psi + c_5 + c_6\psi^4 + \ldots\\\hline\\
-g(1) + g(\psi) + g(\psi^2) + g(\psi^3) + g(\psi^4) &amp;= 5c_5 + 5c_{10} + \ldots + 5c_{2020}
+&amp;= 5c_5 + 5c_{10} + \ldots + 5c_{2020}
 \end{split}
 \end{align}
 
@@ -18,14 +18,14 @@ To evaluate the left side, we can use the original generating form of \(g\)
 \begin{align}
 \begin{split}
 g(1) &amp;= (1+1^1)(1+1^2)\ldots(1+1^{2020}) = 2^{2020}\\
-g(\psi) &amp;= (1+\psi)(1+psi^2)(1+psi^3)(1+\psi^4)(1+1)(1+\psi)\ldots(1+1)\\
-g(\psi^2) &amp;= (1+\psi^2)(1+psi^4)(1+psi)(1+\psi^3)(1+1)(1+\psi^2)\ldots(1+1)\\
-g(\psi^3) &amp;= (1+\psi^3)(1+psi)(1+psi^4)(1+\psi^2)(1+1)(1+\psi^3)\ldots(1+1)\\
-g(\psi^4) &amp;= (1+\psi^4)(1+psi^3)(1+psi^2)(1+\psi)(1+1)(1+\psi^4)\ldots(1+1)
+g(\psi) &amp;= (1+\psi)(1+\psi^2)(1+\psi^3)(1+\psi^4)(1+1)(1+\psi)\ldots(1+1)\\
+g(\psi^2) &amp;= (1+\psi^2)(1+\psi^4)(1+\psi)(1+\psi^3)(1+1)(1+\psi^2)\ldots(1+1)\\
+g(\psi^3) &amp;= (1+\psi^3)(1+\psi)(1+\psi^4)(1+\psi^2)(1+1)(1+\psi^3)\ldots(1+1)\\
+g(\psi^4) &amp;= (1+\psi^4)(1+\psi^3)(1+\psi^2)(1+\psi)(1+1)(1+\psi^4)\ldots(1+1)
 \end{split}
 \end{align}
 
-Thus, $$g(\psi) = g(\psi^2) = g(\psi^3) = g(\psi^4) = \left[2(1+\psi)(1+psi^2)(1+psi^3)(1+\psi^4)\right]^{404}$$
+Thus, $$g(\psi) = g(\psi^2) = g(\psi^3) = g(\psi^4) = \left[2(1+\psi)(1+\psi^2)(1+\psi^3)(1+\psi^4)\right]^{404}$$
 
-And, we find that $$(1+\psi)(1+psi^2)(1+psi^3)(1+\psi^4)=3(1+\psi+\psi^2+\psi^3+\psi^4) + 1 = 1$$So, $$g(\psi) = g(\psi^2) = g(\psi^3) = g(\psi^4) = 2^{404}$$Thus, our final answer is $$\frac{2^{2020}+2^{406}}5$$
+And, we find that $$(1+\psi)(1+\psi^2)(1+\psi^3)(1+\psi^4)=3(1+\psi+\psi^2+\psi^3+\psi^4) + 1 = 1$$So, $$g(\psi) = g(\psi^2) = g(\psi^3) = g(\psi^4) = 2^{404}$$Thus, our final answer is $$\frac{2^{2020}+2^{406}}5$$
 </div>
