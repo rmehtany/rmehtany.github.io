@@ -1,0 +1,31 @@
+How many subsets of \(\{1, \;2,\; \ldots,\; 2020\}\) have a sum that is a multiple of \(5\)?
+<div class="solution">
+<p><a onclick="myCollapse('1')"><i class="fa fa-chevron-circle-down fa-lg" aria-hidden="true" id="11"></i></a><br></p>
+<div id="1" class="w3-container w3-hide">
+We'll approach this problem via generating functionology. For each element of the set, we can either include it in the subset, or not include it. Thus, the problem is equivalent to finding the sum of the coefficients of the terms \(x^5, x^{10}, \ldots, x^{2020}\) in the product $$g(x) = \prod\limits_{k=1}^{2020}1+x^k = (1+x)(1+x^2)\ldots(1+x^{2020})$$We can write the polynomial \(g\) in standard form as follows$$g(x) = c_1x + c_2x^2 + \ldots$$This allows us to reframe our answer as \(c_5 + c_{10} + \ldots\). We want to find a value for \(x\) such that \(x^5=1\), as \(g(x)\) in this case will be of the form $$g(x) = c_1x+c_2x^2+c_3x^3+c_4x^4+c_5+c_6x+\ldots$$This is close to our desired expression, as the \(c_{5k}\) terms no longer involve \(x\). We also ideally do not want \(x=1\), as there's no obvious way to convert the sum of all coefficients of \(g\) to the desired expression. Thus, if we let \(\psi\) be our desired \(x\) value, we know that $$0=\frac{\psi^5-1}{\psi-1} = 1 + \psi + \psi^2 + \psi^3 + \psi^4$$(Note: we could find such a value for \(\psi\), but it's not necessary for this problem.) Thus, 
+\begin{align}
+\begin{split}
+g(1) &amp;= c_1 + c_2 + c_3 + c_4 + c_5 + c_6 + \ldots\\
++g(\psi) &amp;= c_1\psi + c_2\psi^2 + c_3\psi^3 + c_4\psi^4 + c_5 + c_6\psi + \ldots\\
++g(\psi^2) &amp;= c_1\psi^2 + c_2\psi^4 + c_3\psi + c_4\psi^3 + c_5 + c_6\psi^2 + \ldots\\
++g(\psi^3) &amp;= c_1\psi^3 + c_2\psi + c_3\psi^4 + c_4\psi^2 + c_5 + c_6\psi^3 + \ldots\\
++g(\psi^4) &amp;= c_1\psi^4 + c_2\psi^3 + c_3\psi^2 + c_4\psi + c_5 + c_6\psi^4 + \ldots\\\hline\\
+g(1) + g(\psi) + g(\psi^2) + g(\psi^3) + g(\psi^4) &amp;= 5c_5 + 5c_{10} + \ldots + 5c_{2020}
+\end{split}
+\end{align}
+
+To evaluate the left side, we can use the original generating form of \(g\)
+\begin{align}
+\begin{split}
+g(1) &amp;= (1+1^1)(1+1^2)\ldots(1+1^{2020}) = 2^{2020}\\
+g(\psi) &amp;= (1+\psi)(1+psi^2)(1+psi^3)(1+\psi^4)(1+1)(1+\psi)\ldots(1+1)\\
+g(\psi^2) &amp;= (1+\psi^2)(1+psi^4)(1+psi)(1+\psi^3)(1+1)(1+\psi^2)\ldots(1+1)\\
+g(\psi^3) &amp;= (1+\psi^3)(1+psi)(1+psi^4)(1+\psi^2)(1+1)(1+\psi^3)\ldots(1+1)\\
+g(\psi^4) &amp;= (1+\psi^4)(1+psi^3)(1+psi^2)(1+\psi)(1+1)(1+\psi^4)\ldots(1+1)
+\end{split}
+\end{align}
+
+Thus, $$g(\psi) = g(\psi^2) = g(\psi^3) = g(\psi^4) = \left[2(1+\psi)(1+psi^2)(1+psi^3)(1+\psi^4)\right]^{404}$$
+
+And, we find that $$(1+\psi)(1+psi^2)(1+psi^3)(1+\psi^4)=3(1+\psi+\psi^2+\psi^3+\psi^4) + 1 = 1$$So, $$g(\psi) = g(\psi^2) = g(\psi^3) = g(\psi^4) = 2^{404}$$Thus, our final answer is $$\frac{2^{2020}+2^{406}}5$$
+</div>
